@@ -43,6 +43,7 @@ public class GraphicsSystem : System
             //)
             //{
 
+            if (current.textureList.Count > 1) {
                 current.timeOnCurrentFrame += gameTime.ElapsedGameTime.TotalSeconds;
                 //Console.WriteLine(current.timeOnCurrentFrame);
                 while (current.timeOnCurrentFrame >= current.timePerFrame)
@@ -60,7 +61,7 @@ public class GraphicsSystem : System
                         }
                     }
                 }
-            //}
+            }
         }
     }
 
