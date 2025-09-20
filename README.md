@@ -14,12 +14,12 @@ MonoGameECS is a minimal, beginner-friendly engine that prioritises ease of use.
 * Clear, fully commented code. This repo should serve as a guide to simple ECS development.
 
 ### Changelog
-- [CHANGELOG.md](CHANGELOG.md)
-- [ROADMAP.md](ROADMAP.md)
+- [CHANGELOG](CHANGELOG.md)
+- [ROADMAP](ROADMAP.md)
 
 ### Contributing
 - Contributions meeting the above design principles are very welcome!
 - Add feedback, requests and bugs as [issues](https://github.com/rik-cross/monogame-milk/issues).
 
 ### Licence
-MonoGameECS is shared under the MIT licence. Code can be adapted and shared without attribution. See [LICENSE.md](LICENSE.md) for more information.
+MonoGameECS is shared under the MIT licence. Code can be adapted and shared without attribution. See [LICENSE](LICENSE) for more information.
