@@ -2,6 +2,11 @@
 
 MILK is an ECS engine based on MonoGame, with a focus on ease of use.
 
+### Usage
+
+- Example game repository.
+- Documentation coming soon.
+
 ### Design Principles
 
 MonoGameECS is a minimal, beginner-friendly engine that prioritises ease of use. This means:

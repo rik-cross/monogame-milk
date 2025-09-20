@@ -10,3 +10,4 @@
 /home/rik/Documents/MonoGameEngineSolution/MonoGameECS/obj/Debug/net8.0/refint/MonoGameECS.dll
 /home/rik/Documents/MonoGameEngineSolution/MonoGameECS/obj/Debug/net8.0/MonoGameECS.pdb
 /home/rik/Documents/MonoGameEngineSolution/MonoGameECS/obj/Debug/net8.0/ref/MonoGameECS.dll
+/home/rik/Documents/MonoGameEngineSolution/MonoGameECS/obj/Debug/net8.0/MonoGameECS.sourcelink.json
