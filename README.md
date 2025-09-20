@@ -4,7 +4,7 @@ MILK is a simple ECS engine based on MonoGame, with a focus on ease of use.
 
 ### Usage
 
-- Example game repository.
+- Example [Tiny Town](https://github.com/rik-cross/tiny-town) RPG game repository.
 - Documentation coming soon.
 
 ### Design Principles
