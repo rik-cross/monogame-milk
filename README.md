@@ -1,6 +1,6 @@
 # MILK -- MonoGame Intuitive Library Kit
 
-MILK is an ECS engine based on MonoGame, with a focus on ease of use.
+MILK is a simple ECS engine based on MonoGame, with a focus on ease of use.
 
 ### Usage
 
