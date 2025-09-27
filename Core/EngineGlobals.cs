@@ -2,9 +2,9 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Content;
 
-namespace MonoGameECS;
+namespace milk;
 
-internal static class EngineGlobals
+public static class EngineGlobals
 {
-    internal static Game game;
+    public static Game game;
 }

@@ -15,7 +15,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace MonoGameECS;
+namespace milk;
 
 public class EntityManager
 {
@@ -50,7 +50,7 @@ public class EntityManager
         {
             for (int i = scene.entities.Count - 1; i >= 0; i--)
             {
-                if (scene.entities[i].IsDeleted())
+                if (scene.entities[i].Delete == true)
                 {
                     Entity e = scene.entities[i];
                     _componentManager.RemoveAllComponentsFromEntity(scene.entities[i]);
@@ -64,7 +64,7 @@ public class EntityManager
         // delete entity from list of all entities
         for (int i = _allEntities.Count - 1; i >= 0; i--)
         {
-            if (_allEntities[i].IsDeleted())
+            if (_allEntities[i].Delete == true)
             {
                 CheckInID(_allEntities[i].ID);
                 _allEntities.RemoveAt(i);

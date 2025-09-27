@@ -17,7 +17,7 @@
 using System;
 using Microsoft.Xna.Framework;
 
-namespace MonoGameECS;
+namespace milk;
 
 public enum Anchor
 {

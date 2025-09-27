@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
-namespace MonoGameECS;
+namespace milk;
 
 public abstract class Transition {
     public float elapsedDuration;
@@ -59,6 +59,7 @@ public abstract class Transition {
         percentageComplete = elapsedDuration / totalDuration;
         easedPercentage = easing(percentageComplete);
         elapsedDuration += gameTime.ElapsedGameTime.Milliseconds;
+        //Console.WriteLine(percentageComplete);
         if (percentageComplete >= 1)
         {
             finished = true;

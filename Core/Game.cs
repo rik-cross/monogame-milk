@@ -21,14 +21,16 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Content;
 
-namespace MonoGameECS;
+namespace milk;
 
 public class Game : Microsoft.Xna.Framework.Game
 {
     // Init callback funtion, called just before the game runs
-    public Action? Init;
-    public readonly string _title;
-    public readonly Vector2 _size;
+    public Action Init;
+    public readonly string Title;
+    public readonly Vector2 Size;
+    private readonly int _maxEntities;
+    private readonly int _maxComponents;
 
     internal ContentManager content;
     internal GraphicsDeviceManager graphics;
@@ -40,9 +42,15 @@ public class Game : Microsoft.Xna.Framework.Game
     internal SceneManager sceneManager;
     internal SystemManager systemManager;
 
+    bool firstFrame;
+
     public Game(
-        Vector2 size = default,
-        string? title = "MonoGame ECS")
+        string? title = null,
+        Vector2? size = null,
+        bool isMouseVisible = true,
+        int maxEntities = 1000,
+        int maxComponents = 128
+    )
     {
 
         EngineGlobals.game = this;
@@ -50,22 +58,24 @@ public class Game : Microsoft.Xna.Framework.Game
         graphics = new GraphicsDeviceManager(this);
         content = Content;
         Content.RootDirectory = "Content";
-        IsMouseVisible = true;
-        Init = null;
 
-        _title = title;
-        if (size == default)
-            _size = new Vector2(800, 480);
-        else
-            _size = size;
+        Title = title ?? "milk";
+        Size = size ?? new Vector2(800, 480);
+        IsMouseVisible = isMouseVisible;
+
+        _maxEntities = maxEntities;
+        _maxComponents = maxComponents;
+
+        bool firstFrame = true;
+
     }
 
     protected override void Initialize()
     {
 
         // Set the size used for scenes
-        graphics.PreferredBackBufferWidth = (int)_size.X;
-        graphics.PreferredBackBufferHeight = (int)_size.Y;
+        graphics.PreferredBackBufferWidth = (int)Size.X;
+        graphics.PreferredBackBufferHeight = (int)Size.Y;
         graphics.ApplyChanges();
 
         base.Initialize();
@@ -80,7 +90,7 @@ public class Game : Microsoft.Xna.Framework.Game
     {
 
         //EngineGlobals.gameWindow = Window;
-        Window.Title = _title;
+        Window.Title = Title;
         //EngineGlobals.content = Content;
         graphicsDevice = GraphicsDevice;
         spriteBatch = new SpriteBatch(GraphicsDevice);
@@ -90,18 +100,23 @@ public class Game : Microsoft.Xna.Framework.Game
 
         // Create 'manager' instances
         sceneManager = new SceneManager();
-        componentManager = new ComponentManager(maxComponents: 4, maxEntities: 4);
+        componentManager = new ComponentManager(maxComponents: _maxComponents, maxEntities: _maxComponents);
         systemManager = new SystemManager();
-        entityManager = new EntityManager(maxExtities: 4);
+        entityManager = new EntityManager(maxExtities: _maxEntities);
 
         // Register all provided systems
         RegisterSystem(new PhysicsSystem());
-        RegisterSystem(new GraphicsSystem());
+        RegisterSystem(new SpriteSystem());
         RegisterSystem(new LightingSystem());
+        RegisterSystem(new InputSystem());
 
         // Run the Init callback if one has been specified
         if (Init != null)
             Init();
+
+        // Set a default scene if the scene stack is empty
+        if (sceneManager._currentSceneList.Count == 0)
+            SetScene(new DefaultScene());
 
     }
 
@@ -114,9 +129,9 @@ public class Game : Microsoft.Xna.Framework.Game
         EngineGlobals.game.sceneManager.SetScene([scene], transition, keepExistingScenes);
     }
 
-    public void SetScene(List<Scene> sceneList, Transition transition = null, bool keepExistingScenes = false)
+    public void SetScene(List<Scene> scenes, Transition transition = null, bool keepExistingScenes = false)
     {
-        EngineGlobals.game.sceneManager.SetScene(sceneList, transition, keepExistingScenes);
+        EngineGlobals.game.sceneManager.SetScene(scenes, transition, keepExistingScenes);
     }
 
     public void RemoveScene(Transition transition = null, int numberOfScenesToRemove = 1)
@@ -144,6 +159,13 @@ public class Game : Microsoft.Xna.Framework.Game
 
     protected override void Draw(GameTime gameTime)
     {
+
+        if (firstFrame == true)
+        {
+            firstFrame = false;
+            return;
+        }
+
         // Defer to the scene manager's draw method
         EngineGlobals.game.sceneManager.Draw();
         //EngineGlobals.inputManager.Draw();

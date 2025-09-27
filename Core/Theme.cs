@@ -1,4 +1,4 @@
-namespace MonoGameECS;
+namespace milk;
 
 public static class Theme {
     public static int consoleOutputLength = 40;

@@ -14,7 +14,7 @@
    A component is a collection of data, with some additional useful callbacks.
 */
 
-namespace MonoGameECS;
+namespace milk;
 
 public abstract class Component
 {

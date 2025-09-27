@@ -16,7 +16,7 @@ using System.Collections;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
-namespace MonoGameECS;
+namespace milk;
 
 public abstract class System {
     private ComponentManager _componentManager = EngineGlobals.game.componentManager;

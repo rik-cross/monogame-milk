@@ -1,21 +1,21 @@
 using System;
 using Microsoft.Xna.Framework;
 
-namespace MonoGameECS;
+namespace milk;
 
 public class TimedAction
 {
     public readonly float ElapsedTime = 0f;
-    public readonly Action<GameTime> Action;
+    public readonly Action Action;
     public readonly string Name;
-    public TimedAction(float elapsedTime, Action<GameTime> action, string? name = null)
+    public TimedAction(float elapsedTime, Action action, string? name = null)
     {
         this.ElapsedTime = elapsedTime;
         this.Action = action;
         this.Name = name ?? "";
     }
-    public void Execute(GameTime gameTime)
+    public void Execute()
     {
-        Action(gameTime);
+        Action();
     }
 }

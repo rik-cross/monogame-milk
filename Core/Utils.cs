@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 
-namespace MonoGameECS;
+namespace milk;
 
 public static class Utils {
 

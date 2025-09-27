@@ -9,10 +9,19 @@
       "MonoGameECS/1.0.0": {
         "dependencies": {
           "MonoGame.Extended": "4.0.4",
+          "MonoGame.Extended.Content.Pipeline": "4.0.0",
           "MonoGame.Framework.DesktopGL": "3.8.4"
         },
         "runtime": {
           "MonoGameECS.dll": {}
+        }
+      },
+      "Autofac/5.2.0": {
+        "runtime": {
+          "lib/netstandard2.1/Autofac.dll": {
+            "assemblyVersion": "5.2.0.0",
+            "fileVersion": "5.2.0.0"
+          }
         }
       },
       "MonoGame.Extended/4.0.4": {
@@ -20,6 +29,18 @@
           "lib/net8.0/MonoGame.Extended.dll": {
             "assemblyVersion": "4.0.4.0",
             "fileVersion": "4.0.4.0"
+          }
+        }
+      },
+      "MonoGame.Extended.Content.Pipeline/4.0.0": {
+        "dependencies": {
+          "Autofac": "5.2.0",
+          "MonoGame.Extended": "4.0.4"
+        },
+        "runtime": {
+          "lib/net6.0/MonoGame.Extended.Content.Pipeline.dll": {
+            "assemblyVersion": "4.0.0.0",
+            "fileVersion": "4.0.0.0"
           }
         }
       },
@@ -131,12 +152,26 @@
       "serviceable": false,
       "sha512": ""
     },
+    "Autofac/5.2.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-V8dBH0dsv75uDzl7Sw+HkhKDPUw2eXnlMjcSVMH+tLo2s67MpTKGyDj1pDcpR+IF2u4YRs0s3/x7R88YJzIWvg==",
+      "path": "autofac/5.2.0",
+      "hashPath": "autofac.5.2.0.nupkg.sha512"
+    },
     "MonoGame.Extended/4.0.4": {
       "type": "package",
       "serviceable": true,
       "sha512": "sha512-4CXSHzChnp72GXZo/RoK+iKL7nm1X1XI6uer/osbSjyT+YGhXwnta6+P5+ZnwNp+NyeZtYuN+q/9L98pJgYCHQ==",
       "path": "monogame.extended/4.0.4",
       "hashPath": "monogame.extended.4.0.4.nupkg.sha512"
+    },
+    "MonoGame.Extended.Content.Pipeline/4.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-rRPmPkZ+Hh83cL36gndwWFzBrunmbhrX8cjtyEsbyTPHYu448uaCdB9/i9bIPSUCjsgaYjqNhPjlikZxLqIppw==",
+      "path": "monogame.extended.content.pipeline/4.0.0",
+      "hashPath": "monogame.extended.content.pipeline.4.0.0.nupkg.sha512"
     },
     "MonoGame.Framework.DesktopGL/3.8.4": {
       "type": "package",

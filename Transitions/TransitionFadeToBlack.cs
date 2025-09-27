@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
-namespace MonoGameECS.Transitions;
+namespace milk.Transitions;
 
 public class TransitionFadeToBlack : Transition
 {
@@ -19,8 +19,8 @@ public class TransitionFadeToBlack : Transition
     {
 
         // this should be in the update
-        int w = (int)EngineGlobals.game._size.X;// graphicsDevice.PresentationParameters.BackBufferWidth;
-        int h = (int)EngineGlobals.game._size.Y;// graphicsDevice.PresentationParameters.BackBufferHeight;
+        int w = (int)EngineGlobals.game.Size.X;// graphicsDevice.PresentationParameters.BackBufferWidth;
+        int h = (int)EngineGlobals.game.Size.Y;// graphicsDevice.PresentationParameters.BackBufferHeight;
         float p = easedPercentage; // not percentage
 
         if (p < 0.5f)
@@ -30,7 +30,7 @@ public class TransitionFadeToBlack : Transition
             spriteBatch.Draw(newScenesRenderTarget, Vector2.Zero, Color.White);
 
         double alpha = 1 - Math.Abs(p * 2 - 1);
-        spriteBatch.Draw(Scene.whiteRectangle, new Rectangle(0, 0, (int)EngineGlobals.game._size.X, (int)EngineGlobals.game._size.Y), Color.Black * (float)alpha);
+        spriteBatch.Draw(Scene.whiteRectangle, new Rectangle(0, 0, (int)EngineGlobals.game.Size.X, (int)EngineGlobals.game.Size.Y), Color.Black * (float)alpha);
 
     }
 }

@@ -3,9 +3,9 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using MonoGame.Extended;
 
-namespace MonoGameECS;
+namespace milk;
 
-public class GraphicsSystem : System
+public class SpriteSystem : System
 {
     public override void Init()
     {

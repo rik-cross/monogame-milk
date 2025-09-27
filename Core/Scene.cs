@@ -21,7 +21,7 @@ using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
 using MonoGame.Extended;
 
-namespace MonoGameECS;
+namespace milk;
 
 public abstract class Scene {
 
@@ -49,7 +49,7 @@ public abstract class Scene {
 
     public Vector2? mapSize = null;
 
-    public void AddTimedAction(float elapsedTime, Action<GameTime> action, string name = null)
+    public void AddTimedAction(float elapsedTime, Action action, string name = null)
     {
         timedActions.Add(new TimedAction(elapsedTime, action, name));
     }
@@ -66,8 +66,7 @@ public abstract class Scene {
     public Scene()
     {
 
-
-        Size = EngineGlobals.game._size;
+        Size = EngineGlobals.game.Size;
 
         Middle = new Vector2(Size.X / 2, Size.Y / 2);
 
@@ -104,7 +103,7 @@ public abstract class Scene {
         {
             if (elapsedTime >= timedActions[i].ElapsedTime)
             {
-                timedActions[i].Execute(gameTime);
+                timedActions[i].Execute();
                 timedActions.RemoveAt(i);
             }
         }
@@ -310,9 +309,9 @@ public abstract class Scene {
         return _entityManager.GetEntityByNameInList(entities, name);
     }
 
-    public List<Entity> GetEntitiesByTag(string tag)
+    public List<Entity> GetEntitiesByTag(params string[] tags)
     {
-        return _entityManager.GetEntitiesByTagInList(entities, tag);
+        return _entityManager.GetEntitiesByTagInList(entities, tags);
     }
 
     public void RemoveEntityByName(string name)

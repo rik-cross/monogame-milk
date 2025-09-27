@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
-namespace MonoGameECS.Transitions;
+namespace milk.Transitions;
 
 public class TransitionFadeIn : Transition
 {
@@ -19,8 +19,8 @@ public class TransitionFadeIn : Transition
     {
 
         // this should be in the update
-        int w = (int)EngineGlobals.game._size.X;// graphicsDevice.PresentationParameters.BackBufferWidth;
-        int h = (int)EngineGlobals.game._size.Y;// graphicsDevice.PresentationParameters.BackBufferHeight;
+        int w = (int)EngineGlobals.game.Size.X;// graphicsDevice.PresentationParameters.BackBufferWidth;
+        int h = (int)EngineGlobals.game.Size.Y;// graphicsDevice.PresentationParameters.BackBufferHeight;
         float p = easedPercentage; // not percentage
 
         spriteBatch.Draw(existingScenesRenderTarget, Vector2.Zero, Color.White);

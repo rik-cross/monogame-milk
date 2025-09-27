@@ -1,6 +1,6 @@
 using Microsoft.Xna.Framework;
 
-namespace MonoGameECS;
+namespace milk;
 
 public class TransformComponent : Component
 {
@@ -64,6 +64,5 @@ public class TransformComponent : Component
         get { return Position.X + Size.X; }
         set { Position.X = value - Size.X; }
     }
-
 
 }

@@ -14,7 +14,7 @@
 
 using System.Collections.Generic;
 
-namespace MonoGameECS;
+namespace milk;
 
 public class SystemManager
 {

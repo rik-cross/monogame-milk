@@ -1,7 +1,7 @@
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
-namespace MonoGameECS;
+namespace milk;
 
 public class Camera
 {
@@ -45,8 +45,9 @@ public class Camera
     private float _targetZoomLog;
     private float _lerpProgress = 1.0f;
     private float _zoomDuration = 0;
+    public Entity TrackedEntity;
 
-    public Camera(Vector2 size, Vector2 screenPosition = default, Vector2 worldPosition = default, float zoom = 1, bool clampToMap = false, Color backgroundColor = default, int borderWidth = 0, Color borderColor = default, string name = null)
+    public Camera(Vector2 size, Vector2 screenPosition = default, Vector2 worldPosition = default, float zoom = 1, bool clampToMap = false, Color backgroundColor = default, int borderWidth = 0, Color borderColor = default, string name = null, Entity trackedEntity = null)
     {
         ScreenSize = size;
 
@@ -89,10 +90,21 @@ public class Camera
             Name = name;
         }
 
+        this.TrackedEntity = trackedEntity;
+
     }
 
     public void Update(GameTime gameTime, Scene scene)
     {
+
+        if (TrackedEntity != null)
+        {
+            TransformComponent transformComponent = TrackedEntity.GetComponent<TransformComponent>();
+            WorldPosition = new Vector2(
+                transformComponent.Center * -1,
+                transformComponent.Middle * -1
+            );
+        }
 
         UpdateClamp(scene);
         UpdatePosition();
@@ -100,7 +112,7 @@ public class Camera
  
     }
 
-    public void UpdateClamp(Scene scene)
+    private void UpdateClamp(Scene scene)
     {
         if (ClampToMap == true && scene.mapSize.HasValue)
         {
@@ -158,14 +170,13 @@ public class Camera
 
     }
 
-    public void UpdatePosition()
+    private void UpdatePosition()
     {
         _currentWorldPosition.X = (_currentWorldPosition.X * (1 - FollowPercentage)) + (WorldPosition.X * FollowPercentage);
         _currentWorldPosition.Y = (_currentWorldPosition.Y * (1 - FollowPercentage)) + (WorldPosition.Y * FollowPercentage);
-
     }
 
-    public void UpdateZoom(GameTime gameTime)
+    private void UpdateZoom(GameTime gameTime)
     {
         if (_lerpProgress < 1.0f)
         {
@@ -241,6 +252,8 @@ public class Camera
     // use a getter and setter???
     public void SetWorldPosition(Vector2 newPosition, bool instant = false)
     {
+
+        TrackedEntity = null;
 
         // Set the target position
         WorldPosition = newPosition * -1;

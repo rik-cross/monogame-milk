@@ -1,6 +1,6 @@
 using System;
 
-namespace MonoGameECS;
+namespace milk;
 
 public static class EasingFunctions
 {

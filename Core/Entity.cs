@@ -5,7 +5,7 @@
 using System;
 using System.Collections;
 
-namespace MonoGameECS;
+namespace milk;
 
 /// <summary>
 /// An Entity is...
@@ -71,10 +71,10 @@ public class Entity
         set { _owner = (value == null) ? this : value; }
     }
 
-    // Calling Delete() on an entity marks the entity
+    // Setting Delete to true on an entity marks the entity
     // for deletion, so that it can be deleted after
     // processing a scene
-    private bool _markForDeletion = false;
+    public bool Delete { get; set; }
 
     // A bit array indicating which components
     // the entity contains. The position of each
@@ -124,20 +124,6 @@ public class Entity
         // Add the entity to the list of all entities        
         _entityManager.AddEntity(this);
 
-    }
-
-    //
-    // Deletion methods
-    //
-
-    public void Delete()
-    {
-        _markForDeletion = true;
-    }
-
-    public bool IsDeleted()
-    {
-        return _markForDeletion;
     }
 
     //
@@ -223,7 +209,7 @@ public class Entity
         output += Theme.PrintConsoleVar("Owner ID", ownerString);
         string bitMaskOutput = Utils.PrintBitArray(bitMask);
         output += Theme.PrintConsoleVar("BitMask", bitMaskOutput);
-        output += Theme.PrintConsoleVar("To Delete", _markForDeletion.ToString());
+        output += Theme.PrintConsoleVar("To Delete", Delete.ToString());
         output += "\n";
         return output;
     }
