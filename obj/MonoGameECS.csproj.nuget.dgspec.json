@@ -40,7 +40,7 @@
           "dependencies": {
             "MonoGame.Extended": {
               "target": "Package",
-              "version": "[4.0.4, )"
+              "version": "[4.0.3, )"
             },
             "MonoGame.Extended.Content.Pipeline": {
               "target": "Package",

@@ -7,15 +7,17 @@ namespace milk;
 
 public class InputSystem : System
 {
+
     public override void Init()
     {
         AddRequiredComponentType<InputComponent>();
     }
-    public override void Update(GameTime gameTime, Scene scene)
-    {
 
+    public override void Input(GameTime gameTime, Scene scene)
+    {
     }
-    public override void UpdateEntity(GameTime gameTime, Scene scene, Entity entity)
+
+    public override void InputEntity(GameTime gameTime, Scene scene, Entity entity)
     {
         InputComponent inputComponent = entity.GetComponent<InputComponent>();
         if (inputComponent.inputController != null)
@@ -23,10 +25,5 @@ public class InputSystem : System
             inputComponent.inputController(scene, entity);
         }
     }
-    public override void Draw(Scene scene)
-    {
-    }
-    public override void DrawEntity(Scene scene, Entity entity)
-    {
-    }
+
 }

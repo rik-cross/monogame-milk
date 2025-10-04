@@ -148,7 +148,7 @@ public class SceneManager
         }
     }
 
-    public void ClearAllScenes()
+    public void ClearScenes()
     {
         while (_currentSceneList.Count > 0)
         {

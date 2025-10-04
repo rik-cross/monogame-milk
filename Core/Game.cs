@@ -1,47 +1,43 @@
 ﻿/*
-   [ ] Finished
-   
-   Monogame ECS Engine
-   By Rik Cross
-   -- github.com/rik-cross/monogame-ecs
-   Shared under the MIT licence
-
-   ------------------------------------
-
-   MonogameECS.Game
-   ================
-  
-   A Game is a subclass of a MonoGame.Game, with
-   some additional methods for managing scenes, systems, etc.
+   milk, By Rik Cross
+   -- github.com/rik-cross/monogame-milk
+   -- Shared under the MIT licence
 */
 
 using System;
 using System.Collections.Generic;
+
 using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Content;
+using Microsoft.Xna.Framework.Graphics;
 
 namespace milk;
 
 public class Game : Microsoft.Xna.Framework.Game
 {
-    // Init callback funtion, called just before the game runs
+
+    // Init callback funtion, called just before the game loop runs
     public Action Init;
     public readonly string Title;
     public readonly Vector2 Size;
     private readonly int _maxEntities;
     private readonly int _maxComponents;
 
+    // MonoGame graphics helper instances 
     internal ContentManager content;
     internal GraphicsDeviceManager graphics;
     internal GraphicsDevice graphicsDevice;
     internal SpriteBatch spriteBatch;
 
+    // Manager instances
     internal EntityManager entityManager;
     internal ComponentManager componentManager;
     internal SceneManager sceneManager;
     internal SystemManager systemManager;
 
+    // TODO
+    // This is set to 'true' initially, and then set to 'false' after the first frame
+    // It prevents the window looking 'glitchy' on the first game frame 
     bool firstFrame;
 
     public Game(
@@ -53,16 +49,19 @@ public class Game : Microsoft.Xna.Framework.Game
     )
     {
 
+        // TODO
+        // I'm not sure of the best place to store and pass the main game object
+        // An alternative might be to pass this around to other objects, but that feels clunky
         EngineGlobals.game = this;
 
         graphics = new GraphicsDeviceManager(this);
         content = Content;
         Content.RootDirectory = "Content";
 
+        // Use arguments to set game properties
         Title = title ?? "milk";
         Size = size ?? new Vector2(800, 480);
         IsMouseVisible = isMouseVisible;
-
         _maxEntities = maxEntities;
         _maxComponents = maxComponents;
 
@@ -70,20 +69,17 @@ public class Game : Microsoft.Xna.Framework.Game
 
     }
 
+    //
+    // Overridden MonoGame.Game methods
+    //
+
     protected override void Initialize()
     {
-
-        // Set the size used for scenes
+        // Set the window (and therefore future Scene) size
         graphics.PreferredBackBufferWidth = (int)Size.X;
         graphics.PreferredBackBufferHeight = (int)Size.Y;
         graphics.ApplyChanges();
-
         base.Initialize();
-    }
-
-    public void RegisterSystem(System system)
-    {
-        systemManager.RegisterSystem(system);
     }
 
     protected override void LoadContent()
@@ -121,7 +117,16 @@ public class Game : Microsoft.Xna.Framework.Game
     }
 
     //
-    // SCENES
+    // System methods
+    //
+
+    public void RegisterSystem(System system)
+    {
+        systemManager.RegisterSystem(system);
+    }
+
+    //
+    // Scene methods
     //
 
     public void SetScene(Scene scene, Transition transition = null, bool keepExistingScenes = false)
@@ -139,10 +144,14 @@ public class Game : Microsoft.Xna.Framework.Game
         EngineGlobals.game.sceneManager.RemoveScene(transition, numberOfScenesToRemove);
     }
 
-    public void ClearAllScenes()
+    public void ClearScenes()
     {
-        EngineGlobals.game.sceneManager.ClearAllScenes();
+        EngineGlobals.game.sceneManager.ClearScenes();
     }
+
+    //
+    // Game loop methods
+    //
 
     protected override void Update(GameTime gameTime)
     {
@@ -155,6 +164,7 @@ public class Game : Microsoft.Xna.Framework.Game
         // Defer to the scene manager's update method
         EngineGlobals.game.sceneManager.Update(gameTime);
         base.Update(gameTime);
+
     }
 
     protected override void Draw(GameTime gameTime)
@@ -170,11 +180,13 @@ public class Game : Microsoft.Xna.Framework.Game
         EngineGlobals.game.sceneManager.Draw();
         //EngineGlobals.inputManager.Draw();
         base.Draw(gameTime);
+
     }
 
     public void Quit()
     {
-        ClearAllScenes();
+        ClearScenes();
+        Exit();
     }
 
 }

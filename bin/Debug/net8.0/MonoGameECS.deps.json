@@ -8,7 +8,7 @@
     ".NETCoreApp,Version=v8.0": {
       "MonoGameECS/1.0.0": {
         "dependencies": {
-          "MonoGame.Extended": "4.0.4",
+          "MonoGame.Extended": "4.0.3",
           "MonoGame.Extended.Content.Pipeline": "4.0.0",
           "MonoGame.Framework.DesktopGL": "3.8.4"
         },
@@ -24,18 +24,18 @@
           }
         }
       },
-      "MonoGame.Extended/4.0.4": {
+      "MonoGame.Extended/4.0.3": {
         "runtime": {
           "lib/net8.0/MonoGame.Extended.dll": {
-            "assemblyVersion": "4.0.4.0",
-            "fileVersion": "4.0.4.0"
+            "assemblyVersion": "4.0.3.0",
+            "fileVersion": "4.0.3.0"
           }
         }
       },
       "MonoGame.Extended.Content.Pipeline/4.0.0": {
         "dependencies": {
           "Autofac": "5.2.0",
-          "MonoGame.Extended": "4.0.4"
+          "MonoGame.Extended": "4.0.3"
         },
         "runtime": {
           "lib/net6.0/MonoGame.Extended.Content.Pipeline.dll": {
@@ -159,12 +159,12 @@
       "path": "autofac/5.2.0",
       "hashPath": "autofac.5.2.0.nupkg.sha512"
     },
-    "MonoGame.Extended/4.0.4": {
+    "MonoGame.Extended/4.0.3": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-4CXSHzChnp72GXZo/RoK+iKL7nm1X1XI6uer/osbSjyT+YGhXwnta6+P5+ZnwNp+NyeZtYuN+q/9L98pJgYCHQ==",
-      "path": "monogame.extended/4.0.4",
-      "hashPath": "monogame.extended.4.0.4.nupkg.sha512"
+      "sha512": "sha512-txxXEjMLwEGpAd0QYuYuDZ7HCZMpIha467tE0PDGAzuMzxkhtIgwDloFv61mgV8YJr40EYye6L3oeXdB4kV32g==",
+      "path": "monogame.extended/4.0.3",
+      "hashPath": "monogame.extended.4.0.3.nupkg.sha512"
     },
     "MonoGame.Extended.Content.Pipeline/4.0.0": {
       "type": "package",

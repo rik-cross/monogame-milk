@@ -17,7 +17,7 @@ public class DefaultScene : Scene
 
     public override void Init()
     {
-        backgroundColor = Color.CornflowerBlue;
+        BackgroundColor = Color.CornflowerBlue;
 
         milkImage = new Image(
             texture: content.Load<Texture2D>("images/milk"),
