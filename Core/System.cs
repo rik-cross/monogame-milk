@@ -1,23 +1,38 @@
-/*
-   milk, By Rik Cross
-   -- github.com/rik-cross/monogame-milk
-   -- Shared under the MIT licence
-*/
+//   Monogame Intuitive Library Kit (milk)
+//   A MonoGame ECS Engine, By Rik Cross
+//   -- Code: github.com/rik-cross/monogame-milk
+//   -- Docs: github.com/rik-cross/milk-docs
+//   -- Shared under the MIT licence
 
+using System;
 using System.Collections;
-
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
-namespace milk;
+namespace milk.Core;
 
+/// <summary>
+/// A system within a scene runs on entities with the reqiured set of components.
+/// </summary>
 public abstract class System {
+
     private ComponentManager _componentManager = EngineGlobals.game.componentManager;
-    //private SystemManager _systemManager = EngineGlobals.game.systemManager;
+    
+    /// <summary>
+    /// MonoGame spriteBatch used for drawing.
+    /// </summary>
     protected SpriteBatch spriteBatch = EngineGlobals.game.spriteBatch;
 
+    //
+    // System draw order
+    //
 
     private bool _drawAboveEntities = true;
+    
+    /// <summary>
+    /// Decides whether the system Draw method is called before
+    /// (below) or after (above) the entities are drawn.
+    /// </summary>
     public bool DrawAboveEntities
     {
         get
@@ -32,7 +47,12 @@ public abstract class System {
         }
     }
 
-    public bool _drawAboveMap = true;
+    private bool _drawAboveMap = true;
+    
+    /// <summary>
+    /// Decides whether the system Draw method is called before
+    /// (below) or after (above) the map is drawn.
+    /// </summary>
     public bool DrawAboveMap
     {
         get
@@ -47,14 +67,21 @@ public abstract class System {
         }
     }
 
-    public BitArray RequiredComponentBitMask;
+    internal BitArray RequiredComponentBitMask;
+    
+    /// <summary>
+    /// System constructor.
+    /// </summary>
     public System() {
         RequiredComponentBitMask = new BitArray(_componentManager.maxComponents, false);
         Init();
     }
 
-    // Adds the specified component type as a requirement
-    // (Systems only run on entities with the required components)
+    /// <summary>
+    /// Adds a component type that is required by an entity 
+    /// in order to be processed by the system.
+    /// </summary>
+    /// <typeparam name="T">The type of the component required.</typeparam>
     public void AddRequiredComponentType<T>() where T : Component
     {
 
@@ -66,13 +93,101 @@ public abstract class System {
 
     }
 
-    // Optional methods
+    //
+    // Optional game loop methods
+    //
+
+    /// <summary>
+    /// Called once when a system is created.
+    /// </summary>
     public virtual void Init() { }
+
+    /// <summary>
+    /// A top-level input method, called once per frame.
+    /// </summary>
+    /// <param name="gameTime">The MonoGame gameTime object.</param>
+    /// <param name="scene">The scene that the system is in.</param>
     public virtual void Input(GameTime gameTime, Scene scene) { }
+
+    /// <summary>
+    /// An entity-specific input method, called once per frame
+    /// for each entity with the required set of components.
+    /// </summary>
+    /// <param name="gameTime">The MonoGame gameTime object.</param>
+    /// <param name="scene">The scene that the system is in</param>
+    /// <param name="entity">The entity to be acted upon.</param>
     public virtual void InputEntity(GameTime gameTime, Scene scene, Entity entity) { }    
+
+    /// <summary>
+    /// A top-level update method, called once per frame.
+    /// </summary>
+    /// <param name="gameTime">The MonoGame gameTime object.</param>
+    /// <param name="scene">The scene that the system is in.</param>
     public virtual void Update(GameTime gameTime, Scene scene) { }
+
+    /// <summary>
+    /// An entity-specific update method, called once per frame
+    /// for each entity with the required set of components.
+    /// </summary>
+    /// <param name="gameTime">The MonoGame gameTime object.</param>
+    /// <param name="scene">The scene that the system is in</param>
+    /// <param name="entity">The entity to be acted upon.</param>
     public virtual void UpdateEntity(GameTime gameTime, Scene scene, Entity entity) { }
+
+    /// <summary>
+    /// A top-level draw method, called once per frame.
+    /// </summary>
+    /// <param name="scene">The scene that the system is in.</param>
     public virtual void Draw(Scene scene) {}
-    public virtual void DrawEntity(Scene scene, Entity entity) {}
+
+    /// <summary>
+    /// An entity-specific draw method, called once per frame
+    /// for each entity with the required set of components.
+    /// </summary>
+    /// <param name="scene">The scene that the system is in</param>
+    /// <param name="entity">The entity to be acted upon.</param>
+    public virtual void DrawEntity(Scene scene, Entity entity) { }
+
+    //
+    // Optional callbacks
+    //
+
+    /// <summary>
+    /// Called once when the scene becomes active;
+    /// </summary>
+    /// <param name="scene">The scene that the system is in.</param>
+    public virtual void OnEnterScene(Scene scene) { }
+
+    /// <summary>
+    /// Called once when the scene is no longer active.
+    /// </summary>
+    /// <param name="scene">The scene that the system is in.</param>
+    public virtual void OnExitScene(Scene scene) { }
+
+    /// <summary>
+    /// Called once when an entity is added to the scene containing the system.
+    /// </summary>
+    /// <param name="scene">The scene containing the system that the entity is being added to.</param>
+    /// <param name="entity">The entity being added to the scene.</param>
+    public virtual void OnEntityAddedToScene(Scene scene, Entity entity) { }
+    
+    /// <summary>
+    /// Called once when an entity is removed from the scene containing the system.
+    /// </summary>
+    /// <param name="scene">The scene containing the system that the entity is being removed from.</param>
+    /// <param name="entity">The entity being removed from the scene.</param>
+    public virtual void OnEntityRemovedFromScene(Scene scene, Entity entity) { }
+
+    /// <summary>
+    /// Called once when a system is added to a scene.
+    /// </summary>
+    /// <param name="scene">The scene the system is being added to.</param>
+    public virtual void OnAddedToScene(Scene scene) { }
+
+    /// <summary>
+    /// Called once when a system is removed from a scene.
+    /// </summary>
+    /// <param name="scene">The scene the system is being removed from.</param>
+    public virtual void OnRemovedFromScene(Scene scene) { }
     
 }

@@ -1,0 +1,806 @@
+### YamlMime:ManagedReference
+items:
+- uid: milk.ComponentManager
+  commentId: T:milk.ComponentManager
+  id: ComponentManager
+  parent: milk
+  children:
+  - milk.ComponentManager.#ctor(System.Int32,System.Int32)
+  - milk.ComponentManager.AddComponentToEntity(milk.Entity,milk.Component)
+  - milk.ComponentManager.EntityHasComponentOfType``1(milk.Entity)
+  - milk.ComponentManager.GetComponentForEntity``1(milk.Entity)
+  - milk.ComponentManager.GetComponentTypeID(System.Type)
+  - milk.ComponentManager.IsComponentTypeRegistered(System.Type)
+  - milk.ComponentManager.RegisterComponentType(System.Type)
+  - milk.ComponentManager.RemoveAllComponentsFromEntity(milk.Entity)
+  - milk.ComponentManager.RemoveComponentFromEntity``1(milk.Entity)
+  - milk.ComponentManager.ToString
+  - milk.ComponentManager.UpdateEntityComponentFlagsForEntity(milk.Entity)
+  - milk.ComponentManager.maxComponents
+  langs:
+  - csharp
+  - vb
+  name: ComponentManager
+  nameWithType: ComponentManager
+  fullName: milk.ComponentManager
+  type: Class
+  source:
+    remote:
+      path: Managers/ComponentManager.cs
+      branch: main
+      repo: git@github.com:rik-cross/monogame-milk.git
+    id: ComponentManager
+    path: ../MonoGameECS (Copy)/Managers/ComponentManager.cs
+    startLine: 20
+  assemblies:
+  - MonoGameECS
+  namespace: milk
+  syntax:
+    content: public class ComponentManager
+    content.vb: Public Class ComponentManager
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+- uid: milk.ComponentManager.maxComponents
+  commentId: F:milk.ComponentManager.maxComponents
+  id: maxComponents
+  parent: milk.ComponentManager
+  langs:
+  - csharp
+  - vb
+  name: maxComponents
+  nameWithType: ComponentManager.maxComponents
+  fullName: milk.ComponentManager.maxComponents
+  type: Field
+  source:
+    remote:
+      path: Managers/ComponentManager.cs
+      branch: main
+      repo: git@github.com:rik-cross/monogame-milk.git
+    id: maxComponents
+    path: ../MonoGameECS (Copy)/Managers/ComponentManager.cs
+    startLine: 24
+  assemblies:
+  - MonoGameECS
+  namespace: milk
+  syntax:
+    content: public readonly int maxComponents
+    return:
+      type: System.Int32
+    content.vb: Public ReadOnly maxComponents As Integer
+- uid: milk.ComponentManager.#ctor(System.Int32,System.Int32)
+  commentId: M:milk.ComponentManager.#ctor(System.Int32,System.Int32)
+  id: '#ctor(System.Int32,System.Int32)'
+  parent: milk.ComponentManager
+  langs:
+  - csharp
+  - vb
+  name: ComponentManager(int, int)
+  nameWithType: ComponentManager.ComponentManager(int, int)
+  fullName: milk.ComponentManager.ComponentManager(int, int)
+  type: Constructor
+  source:
+    remote:
+      path: Managers/ComponentManager.cs
+      branch: main
+      repo: git@github.com:rik-cross/monogame-milk.git
+    id: .ctor
+    path: ../MonoGameECS (Copy)/Managers/ComponentManager.cs
+    startLine: 35
+  assemblies:
+  - MonoGameECS
+  namespace: milk
+  syntax:
+    content: public ComponentManager(int maxComponents, int maxEntities)
+    parameters:
+    - id: maxComponents
+      type: System.Int32
+    - id: maxEntities
+      type: System.Int32
+    content.vb: Public Sub New(maxComponents As Integer, maxEntities As Integer)
+  overload: milk.ComponentManager.#ctor*
+  nameWithType.vb: ComponentManager.New(Integer, Integer)
+  fullName.vb: milk.ComponentManager.New(Integer, Integer)
+  name.vb: New(Integer, Integer)
+- uid: milk.ComponentManager.RegisterComponentType(System.Type)
+  commentId: M:milk.ComponentManager.RegisterComponentType(System.Type)
+  id: RegisterComponentType(System.Type)
+  parent: milk.ComponentManager
+  langs:
+  - csharp
+  - vb
+  name: RegisterComponentType(Type)
+  nameWithType: ComponentManager.RegisterComponentType(Type)
+  fullName: milk.ComponentManager.RegisterComponentType(System.Type)
+  type: Method
+  source:
+    remote:
+      path: Managers/ComponentManager.cs
+      branch: main
+      repo: git@github.com:rik-cross/monogame-milk.git
+    id: RegisterComponentType
+    path: ../MonoGameECS (Copy)/Managers/ComponentManager.cs
+    startLine: 46
+  assemblies:
+  - MonoGameECS
+  namespace: milk
+  syntax:
+    content: public void RegisterComponentType(Type componentType)
+    parameters:
+    - id: componentType
+      type: System.Type
+    content.vb: Public Sub RegisterComponentType(componentType As Type)
+  overload: milk.ComponentManager.RegisterComponentType*
+- uid: milk.ComponentManager.IsComponentTypeRegistered(System.Type)
+  commentId: M:milk.ComponentManager.IsComponentTypeRegistered(System.Type)
+  id: IsComponentTypeRegistered(System.Type)
+  parent: milk.ComponentManager
+  langs:
+  - csharp
+  - vb
+  name: IsComponentTypeRegistered(Type)
+  nameWithType: ComponentManager.IsComponentTypeRegistered(Type)
+  fullName: milk.ComponentManager.IsComponentTypeRegistered(System.Type)
+  type: Method
+  source:
+    remote:
+      path: Managers/ComponentManager.cs
+      branch: main
+      repo: git@github.com:rik-cross/monogame-milk.git
+    id: IsComponentTypeRegistered
+    path: ../MonoGameECS (Copy)/Managers/ComponentManager.cs
+    startLine: 54
+  assemblies:
+  - MonoGameECS
+  namespace: milk
+  syntax:
+    content: public bool IsComponentTypeRegistered(Type componentType)
+    parameters:
+    - id: componentType
+      type: System.Type
+    return:
+      type: System.Boolean
+    content.vb: Public Function IsComponentTypeRegistered(componentType As Type) As Boolean
+  overload: milk.ComponentManager.IsComponentTypeRegistered*
+- uid: milk.ComponentManager.GetComponentTypeID(System.Type)
+  commentId: M:milk.ComponentManager.GetComponentTypeID(System.Type)
+  id: GetComponentTypeID(System.Type)
+  parent: milk.ComponentManager
+  langs:
+  - csharp
+  - vb
+  name: GetComponentTypeID(Type)
+  nameWithType: ComponentManager.GetComponentTypeID(Type)
+  fullName: milk.ComponentManager.GetComponentTypeID(System.Type)
+  type: Method
+  source:
+    remote:
+      path: Managers/ComponentManager.cs
+      branch: main
+      repo: git@github.com:rik-cross/monogame-milk.git
+    id: GetComponentTypeID
+    path: ../MonoGameECS (Copy)/Managers/ComponentManager.cs
+    startLine: 65
+  assemblies:
+  - MonoGameECS
+  namespace: milk
+  syntax:
+    content: public int GetComponentTypeID(Type componentType)
+    parameters:
+    - id: componentType
+      type: System.Type
+    return:
+      type: System.Int32
+    content.vb: Public Function GetComponentTypeID(componentType As Type) As Integer
+  overload: milk.ComponentManager.GetComponentTypeID*
+- uid: milk.ComponentManager.AddComponentToEntity(milk.Entity,milk.Component)
+  commentId: M:milk.ComponentManager.AddComponentToEntity(milk.Entity,milk.Component)
+  id: AddComponentToEntity(milk.Entity,milk.Component)
+  parent: milk.ComponentManager
+  langs:
+  - csharp
+  - vb
+  name: AddComponentToEntity(Entity, Component)
+  nameWithType: ComponentManager.AddComponentToEntity(Entity, Component)
+  fullName: milk.ComponentManager.AddComponentToEntity(milk.Entity, milk.Component)
+  type: Method
+  source:
+    remote:
+      path: Managers/ComponentManager.cs
+      branch: main
+      repo: git@github.com:rik-cross/monogame-milk.git
+    id: AddComponentToEntity
+    path: ../MonoGameECS (Copy)/Managers/ComponentManager.cs
+    startLine: 74
+  assemblies:
+  - MonoGameECS
+  namespace: milk
+  syntax:
+    content: public void AddComponentToEntity(Entity entity, Component component)
+    parameters:
+    - id: entity
+      type: milk.Entity
+    - id: component
+      type: milk.Component
+    content.vb: Public Sub AddComponentToEntity(entity As Entity, component As Component)
+  overload: milk.ComponentManager.AddComponentToEntity*
+- uid: milk.ComponentManager.GetComponentForEntity``1(milk.Entity)
+  commentId: M:milk.ComponentManager.GetComponentForEntity``1(milk.Entity)
+  id: GetComponentForEntity``1(milk.Entity)
+  parent: milk.ComponentManager
+  langs:
+  - csharp
+  - vb
+  name: GetComponentForEntity<T>(Entity)
+  nameWithType: ComponentManager.GetComponentForEntity<T>(Entity)
+  fullName: milk.ComponentManager.GetComponentForEntity<T>(milk.Entity)
+  type: Method
+  source:
+    remote:
+      path: Managers/ComponentManager.cs
+      branch: main
+      repo: git@github.com:rik-cross/monogame-milk.git
+    id: GetComponentForEntity
+    path: ../MonoGameECS (Copy)/Managers/ComponentManager.cs
+    startLine: 98
+  assemblies:
+  - MonoGameECS
+  namespace: milk
+  syntax:
+    content: 'public T? GetComponentForEntity<T>(Entity entity) where T : Component'
+    parameters:
+    - id: entity
+      type: milk.Entity
+    typeParameters:
+    - id: T
+    return:
+      type: '{T}'
+    content.vb: Public Function GetComponentForEntity(Of T As Component)(entity As Entity) As T
+  overload: milk.ComponentManager.GetComponentForEntity*
+  nameWithType.vb: ComponentManager.GetComponentForEntity(Of T)(Entity)
+  fullName.vb: milk.ComponentManager.GetComponentForEntity(Of T)(milk.Entity)
+  name.vb: GetComponentForEntity(Of T)(Entity)
+- uid: milk.ComponentManager.EntityHasComponentOfType``1(milk.Entity)
+  commentId: M:milk.ComponentManager.EntityHasComponentOfType``1(milk.Entity)
+  id: EntityHasComponentOfType``1(milk.Entity)
+  parent: milk.ComponentManager
+  langs:
+  - csharp
+  - vb
+  name: EntityHasComponentOfType<T>(Entity)
+  nameWithType: ComponentManager.EntityHasComponentOfType<T>(Entity)
+  fullName: milk.ComponentManager.EntityHasComponentOfType<T>(milk.Entity)
+  type: Method
+  source:
+    remote:
+      path: Managers/ComponentManager.cs
+      branch: main
+      repo: git@github.com:rik-cross/monogame-milk.git
+    id: EntityHasComponentOfType
+    path: ../MonoGameECS (Copy)/Managers/ComponentManager.cs
+    startLine: 117
+  assemblies:
+  - MonoGameECS
+  namespace: milk
+  syntax:
+    content: 'public bool EntityHasComponentOfType<T>(Entity entity) where T : Component'
+    parameters:
+    - id: entity
+      type: milk.Entity
+    typeParameters:
+    - id: T
+    return:
+      type: System.Boolean
+    content.vb: Public Function EntityHasComponentOfType(Of T As Component)(entity As Entity) As Boolean
+  overload: milk.ComponentManager.EntityHasComponentOfType*
+  nameWithType.vb: ComponentManager.EntityHasComponentOfType(Of T)(Entity)
+  fullName.vb: milk.ComponentManager.EntityHasComponentOfType(Of T)(milk.Entity)
+  name.vb: EntityHasComponentOfType(Of T)(Entity)
+- uid: milk.ComponentManager.RemoveComponentFromEntity``1(milk.Entity)
+  commentId: M:milk.ComponentManager.RemoveComponentFromEntity``1(milk.Entity)
+  id: RemoveComponentFromEntity``1(milk.Entity)
+  parent: milk.ComponentManager
+  langs:
+  - csharp
+  - vb
+  name: RemoveComponentFromEntity<T>(Entity)
+  nameWithType: ComponentManager.RemoveComponentFromEntity<T>(Entity)
+  fullName: milk.ComponentManager.RemoveComponentFromEntity<T>(milk.Entity)
+  type: Method
+  source:
+    remote:
+      path: Managers/ComponentManager.cs
+      branch: main
+      repo: git@github.com:rik-cross/monogame-milk.git
+    id: RemoveComponentFromEntity
+    path: ../MonoGameECS (Copy)/Managers/ComponentManager.cs
+    startLine: 132
+  assemblies:
+  - MonoGameECS
+  namespace: milk
+  syntax:
+    content: 'public void RemoveComponentFromEntity<T>(Entity entity) where T : Component'
+    parameters:
+    - id: entity
+      type: milk.Entity
+    typeParameters:
+    - id: T
+    content.vb: Public Sub RemoveComponentFromEntity(Of T As Component)(entity As Entity)
+  overload: milk.ComponentManager.RemoveComponentFromEntity*
+  nameWithType.vb: ComponentManager.RemoveComponentFromEntity(Of T)(Entity)
+  fullName.vb: milk.ComponentManager.RemoveComponentFromEntity(Of T)(milk.Entity)
+  name.vb: RemoveComponentFromEntity(Of T)(Entity)
+- uid: milk.ComponentManager.RemoveAllComponentsFromEntity(milk.Entity)
+  commentId: M:milk.ComponentManager.RemoveAllComponentsFromEntity(milk.Entity)
+  id: RemoveAllComponentsFromEntity(milk.Entity)
+  parent: milk.ComponentManager
+  langs:
+  - csharp
+  - vb
+  name: RemoveAllComponentsFromEntity(Entity)
+  nameWithType: ComponentManager.RemoveAllComponentsFromEntity(Entity)
+  fullName: milk.ComponentManager.RemoveAllComponentsFromEntity(milk.Entity)
+  type: Method
+  source:
+    remote:
+      path: Managers/ComponentManager.cs
+      branch: main
+      repo: git@github.com:rik-cross/monogame-milk.git
+    id: RemoveAllComponentsFromEntity
+    path: ../MonoGameECS (Copy)/Managers/ComponentManager.cs
+    startLine: 159
+  assemblies:
+  - MonoGameECS
+  namespace: milk
+  syntax:
+    content: public void RemoveAllComponentsFromEntity(Entity entity)
+    parameters:
+    - id: entity
+      type: milk.Entity
+    content.vb: Public Sub RemoveAllComponentsFromEntity(entity As Entity)
+  overload: milk.ComponentManager.RemoveAllComponentsFromEntity*
+- uid: milk.ComponentManager.UpdateEntityComponentFlagsForEntity(milk.Entity)
+  commentId: M:milk.ComponentManager.UpdateEntityComponentFlagsForEntity(milk.Entity)
+  id: UpdateEntityComponentFlagsForEntity(milk.Entity)
+  parent: milk.ComponentManager
+  langs:
+  - csharp
+  - vb
+  name: UpdateEntityComponentFlagsForEntity(Entity)
+  nameWithType: ComponentManager.UpdateEntityComponentFlagsForEntity(Entity)
+  fullName: milk.ComponentManager.UpdateEntityComponentFlagsForEntity(milk.Entity)
+  type: Method
+  source:
+    remote:
+      path: Managers/ComponentManager.cs
+      branch: main
+      repo: git@github.com:rik-cross/monogame-milk.git
+    id: UpdateEntityComponentFlagsForEntity
+    path: ../MonoGameECS (Copy)/Managers/ComponentManager.cs
+    startLine: 183
+  assemblies:
+  - MonoGameECS
+  namespace: milk
+  syntax:
+    content: public void UpdateEntityComponentFlagsForEntity(Entity entity)
+    parameters:
+    - id: entity
+      type: milk.Entity
+    content.vb: Public Sub UpdateEntityComponentFlagsForEntity(entity As Entity)
+  overload: milk.ComponentManager.UpdateEntityComponentFlagsForEntity*
+- uid: milk.ComponentManager.ToString
+  commentId: M:milk.ComponentManager.ToString
+  id: ToString
+  parent: milk.ComponentManager
+  langs:
+  - csharp
+  - vb
+  name: ToString()
+  nameWithType: ComponentManager.ToString()
+  fullName: milk.ComponentManager.ToString()
+  type: Method
+  source:
+    remote:
+      path: Managers/ComponentManager.cs
+      branch: main
+      repo: git@github.com:rik-cross/monogame-milk.git
+    id: ToString
+    path: ../MonoGameECS (Copy)/Managers/ComponentManager.cs
+    startLine: 195
+  assemblies:
+  - MonoGameECS
+  namespace: milk
+  summary: Returns a string that represents the current object.
+  example: []
+  syntax:
+    content: public override string ToString()
+    return:
+      type: System.String
+      description: A string that represents the current object.
+    content.vb: Public Overrides Function ToString() As String
+  overridden: System.Object.ToString
+  overload: milk.ComponentManager.ToString*
+references:
+- uid: milk
+  commentId: N:milk
+  href: milk.html
+  name: milk
+  nameWithType: milk
+  fullName: milk
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer
+- uid: milk.ComponentManager.#ctor*
+  commentId: Overload:milk.ComponentManager.#ctor
+  href: milk.ComponentManager.html#milk_ComponentManager__ctor_System_Int32_System_Int32_
+  name: ComponentManager
+  nameWithType: ComponentManager.ComponentManager
+  fullName: milk.ComponentManager.ComponentManager
+  nameWithType.vb: ComponentManager.New
+  fullName.vb: milk.ComponentManager.New
+  name.vb: New
+- uid: milk.ComponentManager.RegisterComponentType*
+  commentId: Overload:milk.ComponentManager.RegisterComponentType
+  href: milk.ComponentManager.html#milk_ComponentManager_RegisterComponentType_System_Type_
+  name: RegisterComponentType
+  nameWithType: ComponentManager.RegisterComponentType
+  fullName: milk.ComponentManager.RegisterComponentType
+- uid: System.Type
+  commentId: T:System.Type
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.type
+  name: Type
+  nameWithType: Type
+  fullName: System.Type
+- uid: milk.ComponentManager.IsComponentTypeRegistered*
+  commentId: Overload:milk.ComponentManager.IsComponentTypeRegistered
+  href: milk.ComponentManager.html#milk_ComponentManager_IsComponentTypeRegistered_System_Type_
+  name: IsComponentTypeRegistered
+  nameWithType: ComponentManager.IsComponentTypeRegistered
+  fullName: milk.ComponentManager.IsComponentTypeRegistered
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: bool
+  nameWithType: bool
+  fullName: bool
+  nameWithType.vb: Boolean
+  fullName.vb: Boolean
+  name.vb: Boolean
+- uid: milk.ComponentManager.GetComponentTypeID*
+  commentId: Overload:milk.ComponentManager.GetComponentTypeID
+  href: milk.ComponentManager.html#milk_ComponentManager_GetComponentTypeID_System_Type_
+  name: GetComponentTypeID
+  nameWithType: ComponentManager.GetComponentTypeID
+  fullName: milk.ComponentManager.GetComponentTypeID
+- uid: milk.ComponentManager.AddComponentToEntity*
+  commentId: Overload:milk.ComponentManager.AddComponentToEntity
+  href: milk.ComponentManager.html#milk_ComponentManager_AddComponentToEntity_milk_Entity_milk_Component_
+  name: AddComponentToEntity
+  nameWithType: ComponentManager.AddComponentToEntity
+  fullName: milk.ComponentManager.AddComponentToEntity
+- uid: milk.Entity
+  commentId: T:milk.Entity
+  parent: milk
+  href: milk.Entity.html
+  name: Entity
+  nameWithType: Entity
+  fullName: milk.Entity
+- uid: milk.Component
+  commentId: T:milk.Component
+  parent: milk
+  href: milk.Component.html
+  name: Component
+  nameWithType: Component
+  fullName: milk.Component
+- uid: milk.ComponentManager.GetComponentForEntity*
+  commentId: Overload:milk.ComponentManager.GetComponentForEntity
+  href: milk.ComponentManager.html#milk_ComponentManager_GetComponentForEntity__1_milk_Entity_
+  name: GetComponentForEntity
+  nameWithType: ComponentManager.GetComponentForEntity
+  fullName: milk.ComponentManager.GetComponentForEntity
+- uid: '{T}'
+  commentId: '!:T'
+  definition: T
+  name: T
+  nameWithType: T
+  fullName: T
+- uid: T
+  name: T
+  nameWithType: T
+  fullName: T
+- uid: milk.ComponentManager.EntityHasComponentOfType*
+  commentId: Overload:milk.ComponentManager.EntityHasComponentOfType
+  href: milk.ComponentManager.html#milk_ComponentManager_EntityHasComponentOfType__1_milk_Entity_
+  name: EntityHasComponentOfType
+  nameWithType: ComponentManager.EntityHasComponentOfType
+  fullName: milk.ComponentManager.EntityHasComponentOfType
+- uid: milk.ComponentManager.RemoveComponentFromEntity*
+  commentId: Overload:milk.ComponentManager.RemoveComponentFromEntity
+  href: milk.ComponentManager.html#milk_ComponentManager_RemoveComponentFromEntity__1_milk_Entity_
+  name: RemoveComponentFromEntity
+  nameWithType: ComponentManager.RemoveComponentFromEntity
+  fullName: milk.ComponentManager.RemoveComponentFromEntity
+- uid: milk.ComponentManager.RemoveAllComponentsFromEntity*
+  commentId: Overload:milk.ComponentManager.RemoveAllComponentsFromEntity
+  href: milk.ComponentManager.html#milk_ComponentManager_RemoveAllComponentsFromEntity_milk_Entity_
+  name: RemoveAllComponentsFromEntity
+  nameWithType: ComponentManager.RemoveAllComponentsFromEntity
+  fullName: milk.ComponentManager.RemoveAllComponentsFromEntity
+- uid: milk.ComponentManager.UpdateEntityComponentFlagsForEntity*
+  commentId: Overload:milk.ComponentManager.UpdateEntityComponentFlagsForEntity
+  href: milk.ComponentManager.html#milk_ComponentManager_UpdateEntityComponentFlagsForEntity_milk_Entity_
+  name: UpdateEntityComponentFlagsForEntity
+  nameWithType: ComponentManager.UpdateEntityComponentFlagsForEntity
+  fullName: milk.ComponentManager.UpdateEntityComponentFlagsForEntity
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: milk.ComponentManager.ToString*
+  commentId: Overload:milk.ComponentManager.ToString
+  href: milk.ComponentManager.html#milk_ComponentManager_ToString
+  name: ToString
+  nameWithType: ComponentManager.ToString
+  fullName: milk.ComponentManager.ToString
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String

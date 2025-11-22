@@ -1,13 +1,10 @@
-/*
-   milk, By Rik Cross
-   -- github.com/rik-cross/monogame-milk
-   -- Shared under the MIT licence
-*/
+//   Monogame Intuitive Library Kit (milk)
+//   A MonoGame ECS Engine, By Rik Cross
+//   -- Code: github.com/rik-cross/monogame-milk
+//   -- Docs: github.com/rik-cross/milk-docs
+//   -- Shared under the MIT licence
 
-using System;
 using System.Collections;
-using System.Collections.Generic;
-
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
@@ -16,38 +13,99 @@ using MonoGame.Extended;
 using MonoGame.Extended.Tiled;
 using MonoGame.Extended.Tiled.Renderers;
 
-namespace milk;
+namespace milk.Core;
 
+/// <summary>
+/// A scene is a collection of entities and systems, and can be thought
+/// of as game 'screens'. Each system in a scene acts on all entities in
+/// the scene with the required set of components.
+/// </summary>
 public abstract class Scene
 {
 
-    // Local references to global objects
-    protected ContentManager content = EngineGlobals.game.content;
-    protected Game game = EngineGlobals.game;
     private EntityManager _entityManager = EngineGlobals.game.entityManager;
     private SystemManager _systemManager = EngineGlobals.game.systemManager;
     private SceneManager _sceneManager = EngineGlobals.game.sceneManager;
     private GraphicsDevice _graphicsDevice = EngineGlobals.game.graphicsDevice;
+    private List<Entity> entitiesToRemoveFromScene = new List<Entity>();
+
+    /// <summary>
+    /// MonoGame content object for working with game assets.
+    /// </summary>
+    protected ContentManager content = EngineGlobals.game.content;
+
+    /// <summary>
+    /// The parent game object.
+    /// </summary>
+    public Game game = EngineGlobals.game;
+
+    /// <summary>
+    /// The spriteBatch object.
+    /// </summary>
     protected SpriteBatch spriteBatch = EngineGlobals.game.spriteBatch;
+    
+    /// <summary>
+    /// The (x,y) scene dimensions.
+    /// </summary>
     public readonly Vector2 Size;
+
+    /// <summary>
+    /// The (x,y) center point of the scene.
+    /// </summary>
     public readonly Vector2 Middle;
     public float elapsedTime;
-    public List<Entity> entities;
-    public List<System> systems;
-    public static Texture2D whiteRectangle;
+    internal List<Entity> entities;
+    internal List<System> systems;
+    internal static Texture2D whiteRectangle;
+    
+    /// <summary>
+    /// Background color.
+    /// </summary>
     public Microsoft.Xna.Framework.Color BackgroundColor = Microsoft.Xna.Framework.Color.Transparent;
+    
+    /// <summary>
+    /// By default all systems are present in all scenes.
+    /// Setting this to `false` allows control over which
+    /// systems should be present within a scene.
+    /// </summary>
     public bool IncludeAlRegisteredSystems = true;
     protected List<Camera> cameras = new List<Camera>();
-    public bool UpdateSceneBelow = true;
-    public bool InputSceneBelow = false;
-    public bool DrawSceneBelow = true;
-    public List<TimedAction> timedActions = new List<TimedAction>();
 
+    /// <summary>
+    /// Specifies whether to update the scene below this one in the scene stack.
+    /// </summary>
+    public bool UpdateSceneBelow = true;
+
+    /// <summary>
+    /// Specifies whether to process input in the scene below this one in the scene stack.
+    /// </summary>
+    public bool InputSceneBelow = false;
+
+    /// <summary>
+    /// Specifies whether to draw the scene below this one in the scene stack.
+    /// </summary>
+    public bool DrawSceneBelow = true;
+
+    private List<TimedAction> timedActions = new List<TimedAction>();
+
+    /// <summary>
+    /// Set a method for sorting entities.
+    /// </summary>
+    public Comparison<Entity>? EntitySortMethod = null;
+
+    /// <summary>
+    /// Set the size of the map. The size is set automatically if
+    /// adding a Tiled Map.
+    /// </summary>
     public Vector2? mapSize = null;
 
-    private TiledMapRenderer _mapRenderer = null;
-    private TiledMap _map = null;
-    public TiledMap Map
+    private TiledMapRenderer? _mapRenderer = null;
+    private TiledMap? _map = null;
+
+    /// <summary>
+    /// A Tiled map.
+    /// </summary>
+    public TiledMap? Map
     {
         get
         {
@@ -56,34 +114,40 @@ public abstract class Scene
         set
         {
             _map = value;
-            mapSize = new Vector2(_map.Width * _map.TileWidth, _map.Height * _map.TileHeight);
-            _mapRenderer = new TiledMapRenderer(_graphicsDevice, _map);
+
+            if (value != null)
+            {
+                mapSize = new Vector2(_map.Width * _map.TileWidth, _map.Height * _map.TileHeight);
+                _mapRenderer = new TiledMapRenderer(_graphicsDevice, _map);
+            } else
+            {
+                mapSize = Vector2.Zero;
+                _mapRenderer = null;
+            }
         }
     }
 
+    /// <summary>
+    /// The scene's velocity, which is applied to all entities.
+    /// </summary>
+    public Vector2 Velocity = Vector2.Zero;
 
+    /// <summary>
+    /// The scene's acceleration, which is applied to all entities.
+    /// </summary>
+    public Vector2 Acceleration = Vector2.Zero;
 
-    public void AddTimedAction(float elapsedTime, Action action, string name = null)
-    {
-        timedActions.Add(new TimedAction(elapsedTime, action, name));
-    }
-
-    public void RemoveTimedActionByName(string name)
-    {
-        for (int i = timedActions.Count - 1; i >= 0; i--)
-        {
-            if (timedActions[i].Name.ToLower() == name.ToLower())
-                timedActions.RemoveAt(i);
-        }
-    }
-
+    /// <summary>
+    /// A scene is a bit like a game 'screen' and holds
+    /// entities and systems, along with other functionalilty
+    /// such as cameras. Systems in a scene act on scene entities
+    /// with the required set of components present.
+    /// </summary>
     public Scene()
     {
 
         Size = EngineGlobals.game.Size;
-
         Middle = new Vector2(Size.X / 2, Size.Y / 2);
-
         elapsedTime = 0f;
         entities = new List<Entity>();
         systems = new List<System>();
@@ -97,24 +161,22 @@ public abstract class Scene
 
         Init();
 
-        //if (_map != null)
-        //    mapRenderer = new TiledMapRenderer(_graphicsDevice, _map);
-
     }
 
     internal void _Update(GameTime gameTime, List<Scene> scenes)
     {
 
         // update scene below
-        if (UpdateSceneBelow == true && GetSceneBelow(scenes) != null)
-            GetSceneBelow(scenes)._Update(gameTime, scenes);
+        Scene? sceneBelow = GetSceneBelow(scenes);
+        if (sceneBelow!= null && UpdateSceneBelow == true)
+            sceneBelow._Update(gameTime, scenes);
 
         elapsedTime += gameTime.ElapsedGameTime.Milliseconds;
 
         // Update entity State here??
         foreach (Entity e in entities)
         {
-            e._previousState = e.State;
+            e.PreviousState = e.State;
         }
 
         // Process the timed actions
@@ -146,21 +208,29 @@ public abstract class Scene
         }
 
         foreach (Camera camera in cameras)
-            camera.Update(gameTime, this);
+            camera.Update(gameTime);
 
         Update(gameTime);
+
+        // Remove entities
+        RemoveEntitiesFromSceneAtEndOfUpdate();
 
         // delete all entities
         EngineGlobals.game.entityManager.DeleteEntities();
 
+        // Sort entities
+        if (EntitySortMethod != null)
+            entities.Sort(EntitySortMethod);
+
     }
 
-    public void _Input(GameTime gameTime, List<Scene> scenes)
+    internal void _Input(GameTime gameTime, List<Scene> scenes)
     {
 
         // Process the scene below's input
-        if (GetSceneBelow(scenes) != null && InputSceneBelow == true)
-            GetSceneBelow(scenes)._Input(gameTime, scenes);
+        Scene? sceneBelow = GetSceneBelow(scenes);
+        if (sceneBelow != null && InputSceneBelow == true)
+            sceneBelow._Input(gameTime, scenes);
 
         // high-level input
         foreach (System system in systems)
@@ -183,16 +253,17 @@ public abstract class Scene
         // Call the user-defined Input method
         Input(gameTime);
 
-
     }
 
-    public void _Draw(RenderTarget2D renderTarget, List<Scene> scenes, bool drawSceneBelow = true)
+    internal void _Draw(RenderTarget2D renderTarget, List<Scene> scenes, bool drawSceneBelow = true)
     {
 
         _graphicsDevice.SetRenderTarget(renderTarget);
 
-        if (drawSceneBelow == true && GetSceneBelow(scenes) != null)
-            GetSceneBelow(scenes)._Draw(renderTarget, scenes);
+        // Draw scene below
+        Scene? sceneBelow = GetSceneBelow(scenes);
+        if (sceneBelow != null && drawSceneBelow == true)
+            sceneBelow._Draw(renderTarget, scenes);
 
         // TODO
         // Add lighting shader here
@@ -202,6 +273,7 @@ public abstract class Scene
         // Draw scene background
         spriteBatch.Begin(samplerState: SamplerState.PointClamp);
         spriteBatch.Draw(whiteRectangle, new Rectangle(0, 0, (int)Size.X, (int)Size.Y), BackgroundColor);
+        
         spriteBatch.End();
 
         // Iterate over each camera in the scene
@@ -307,14 +379,24 @@ public abstract class Scene
     //
     // Cameras
     //
+
+    /// <summary>
+    /// Adds a camera object to a scene.
+    /// </summary>
+    /// <param name="camera"></param>
     protected void AddCamera(Camera camera)
     {
         cameras.Add(camera);
+        camera.Scene = this;
     }
 
-    // Returns a camera with the specified name, and returns the
-    // first camera with the name if more than one exists
-    protected Camera GetCameraByName(string name)
+    /// <summary>
+    /// Returns a camera with the specified (unique) name.
+    /// The name is checked in lower-case.
+    /// </summary>
+    /// <param name="name">The name of the camera to find.</param>
+    /// <returns>A camera, or null if no camera exists with the specified name.</returns>
+    public Camera? GetCameraByName(string name)
     {
         foreach (Camera camera in cameras)
         {
@@ -328,60 +410,212 @@ public abstract class Scene
     // Entity methods
     //
 
-    public void AddEntity(Entity entity)
-    {
-        if (entities.Contains(entity) == false)
-        {
-            entities.Add(entity);
-            OnEntityAdded(entity);
-        }
-    }
-
+    /// <summary>
+    /// Returns `true` is the entity provided exists in the scene.
+    /// </summary>
+    /// <param name="entity">The entity to check.</param>
+    /// <returns>A Boolean indicating the presence of the entity in the scene.</returns>
     public bool HasEntity(Entity entity)
     {
         return entities.Contains(entity);
     }
 
-    public void RemoveEntity(Entity entity)
+    /// <summary>
+    /// Adds an entity object to the scene.
+    /// </summary>
+    /// <param name="entity">The entity to add.</param>
+    public void AddEntity(Entity entity)
     {
-        if (entities.Contains(entity) == true)
+
+        // only allow each entity to be added once
+        if (entities.Contains(entity) == false)
         {
-            OnEntityRemoved(entity);
-            entities.Remove(entity);
+
+            entities.Add(entity);
+
+            // call OnEntityAddedToScene for all relevant systems in the scene
+            foreach (System system in systems)
+            {
+
+                // only if the entity has the required components for the system
+                BitArray temp = (BitArray)system.RequiredComponentBitMask.Clone();
+                temp.And(entity.bitMask);
+                if (Utils.CompareBitArrays(temp, system.RequiredComponentBitMask) == true)
+                    system.OnEntityAddedToScene(this, entity);
+
+            }
+
+            OnEntityAdded(entity);
         }
     }
 
-    public void RemoveAllEntities()
+    //
+    // entity removal (not deletion)
+    //
+
+    /// <summary>
+    /// Removes the specified entity from the scene.
+    /// Note that the entity isn't 'deleted'.
+    /// </summary>
+    /// <param name="entity">The entity to remove.</param>
+    public void RemoveEntity(Entity entity)
     {
-        entities.Clear();
+        // only add the entity to a scene once
+        if (entitiesToRemoveFromScene.Contains(entity) == false)
+            entitiesToRemoveFromScene.Add(entity);
+        
+        // TODO: can this be removed?
+        foreach (Camera camera in cameras)
+        {
+            if (camera.TrackedEntity == entity)
+                camera.TrackedEntity = null;
+        }
     }
 
-    public Entity GetEntityByName(string name)
+    /// <summary>
+    /// Removes the entity with the specified name from the scene.
+    /// </summary>
+    /// <param name="name">The name of the entity to remove.</param>
+    public void RemoveEntityByName(string name)
+    {
+        Entity? entity = GetEntityByName(name);
+        if (entity != null)
+        {
+            RemoveEntity(entity);
+        }
+    }
+
+    /// <summary>
+    /// Removes the entities with the specified tags from the scene.
+    /// </summary>
+    /// <param name="tags">One or more tags that the entities must have.</param>
+    public void RemoveEntitiesByTag(params string[] tags)
+    {
+        List<Entity> entities = GetEntitiesByTag(tags);
+        foreach (Entity entity in entities)
+        {
+            RemoveEntity(entity);
+        }
+    }
+
+    /// <summary>
+    /// Removes all entities from the scene.
+    /// </summary>
+    public void RemoveAllEntities()
+    {
+        foreach (Entity entity in entities)
+            RemoveEntity(entity);
+    }
+
+    //
+    // entities are deleted by adding them to the entitiesToRemoveFromScene list.
+    // at the end of each game loop, all entities in this list are removed from the scene.
+    // this stops corruption caused by removal of entities when processing the scene.
+    internal void RemoveEntitiesFromSceneAtEndOfUpdate()
+    {
+        foreach (Entity entity in entitiesToRemoveFromScene)
+        {
+            if (entities.Contains(entity))
+            {
+
+                // OnEntityRemovedFromScene
+                // ...for each system
+
+                foreach (System system in systems)
+                {
+
+                    // only if the entity has the required components for the system
+
+                    BitArray temp = (BitArray)system.RequiredComponentBitMask.Clone();
+                    temp.And(entity.bitMask);
+                    if (Utils.CompareBitArrays(temp, system.RequiredComponentBitMask) == true)
+                        system.OnEntityRemovedFromScene(this, entity);
+
+                }
+
+                foreach (Camera camera in cameras)
+                {
+                    if (camera.TrackedEntity == entity)
+                        camera.TrackedEntity = null;
+                }
+
+                OnEntityRemoved(entity);
+                entities.Remove(entity);
+
+            }
+        }
+        entitiesToRemoveFromScene.Clear();
+    }
+
+    /// <summary>
+    /// Gets the entity with the provided (unique) name.
+    /// The name supplied is converted to lower-case.
+    /// </summary>
+    /// <param name="name">The name to check.</param>
+    /// <returns>An entity if one is found, or null.</returns>
+    public Entity? GetEntityByName(string name)
     {
         return _entityManager.GetEntityByNameInList(entities, name);
     }
 
+    /// <summary>
+    /// Gets all entities that include all supplied tags.
+    /// </summary>
+    /// <param name="tags">One or more tags to check.</param>
+    /// <returns>A list of all entities with all tags. This is always a list, and could be empty.</returns>
     public List<Entity> GetEntitiesByTag(params string[] tags)
     {
         return _entityManager.GetEntitiesByTagInList(entities, tags);
     }
 
-    public void RemoveEntityByName(string name)
+    //
+    // entity deletion
+    //
+
+    /// <summary>
+    /// Deletes the entity in the scene with the specified name.
+    /// The name supplied is checked in lower-case.
+    /// </summary>
+    /// <param name="name">The name of the entity to delete.</param>
+    public void DeleteEntityByName(string name)
     {
-        _entityManager.RemoveEntityByNameInList(entities, name);
+        //_entityManager.RemoveEntityByNameInList(entities, name);
+        foreach (Entity entity in entities)
+        {
+            if (entity.Name != null && entity.Name.ToLower() == name.ToLower())
+            {
+                entity.Delete = true;
+                // entity names are unique, so nothing more to do.
+                return;
+            }
+        }
     }
 
-    public void RemoveEntitiesByTag(params string[] tags)
+    /// <summary>
+    /// Deletes all entities containing the specified tags.
+    /// Tags are checked in lower-case.
+    /// </summary>
+    /// <param name="tags">One or more tags to</param>
+    public void DeleteEntitiesByTag(params string[] tags)
     {
-        _entityManager.RemoveEntitiesByTagInList(entities, tags);
+        //_entityManager.RemoveEntitiesByTagInList(entities, tags);
+        foreach (Entity entity in entities)
+        {
+            if (entity.HasTag(tags))
+                entity.Delete = true;
+        }
     }
 
     //
-    // System methods
+    // system methods
     //
 
-    // Add a (registered) system type to a scene (Calling this
-    // method isn't required if IncludeAlRegisteredSystems == true)
+    /// <summary>
+    /// Add a (registered) system type to a scene (calling this
+    /// method isn't required if IncludeAlRegisteredSystems == true, 
+    /// which it is by default).
+    /// </summary>
+    /// <typeparam name="T">The type of the registered system to add.</typeparam>
     public void AddSystem<T>() where T : System
     {
         // Can only add registered systems to a scene
@@ -390,30 +624,51 @@ public abstract class Scene
 
         // Add the instance of the specified type
         systems.Add(_systemManager.GetSystem<T>());
+
+        // OnAddedToScene callback
+        _systemManager.GetSystem<T>().OnAddedToScene(this);
     }
 
-    // Removes the first/only instance of the specified type
-    // in the systems list, defering to the system manager's method
+    /// <summary>
+    /// Removes the sysytem of the specified type from the scene.
+    /// </summary>
+    /// <typeparam name="T">The type of system to remove.</typeparam>
     public void RemoveSystem<T>() where T : System
     {
         _systemManager.RemoveSystemOfTypeFromList<T>(systems);
+        
+        // OnRemovedFromScene callback
+        _systemManager.GetSystem<T>().OnRemovedFromScene(this);
     }
 
-    // Removes all systems from the scene
+    /// <summary>
+    /// Removes all systems from the scene
+    /// </summary>
     public void RemoveAllSystems()
     {
+        foreach (System system in systems)
+            system.OnRemovedFromScene(this);
         systems.Clear();
     }
 
-    // Defers to the system manager's method, and returns true
-    // If a system of the specified type exists in the list of
-    // scene systems
+    /// <summary>
+    /// Returns true if a system of the specified type
+    /// exists in the scene.
+    /// </summary>
+    /// <typeparam name="T">The type of system to find.</typeparam>
+    /// <returns>Bool, true if a system of the specified type exists.</returns>
     public bool HasSystem<T>() where T : System
     {
         return _systemManager.HasSystemOfTypeInList<T>(systems);
     }
 
-    public Scene GetSceneBelow(List<Scene> scenes)
+    /// <summary>
+    /// Gets the scene below this scene in the scene list
+    /// (or null if there isn't one).
+    /// </summary>
+    /// <param name="scenes">The scene list to check against.</param>
+    /// <returns>A scene, or null if no scene exists.</returns>
+    public Scene? GetSceneBelow(List<Scene> scenes)
     {
         for (int i = 0; i < scenes.Count - 1; i++)
         {
@@ -425,7 +680,7 @@ public abstract class Scene
         return null;
     }
 
-    private void DrawMap(Camera camera, string property = null, string value = null)
+    private void DrawMap(Camera camera, string? property = null, string? value = null)
     {
 
         if (_map == null)
@@ -441,13 +696,84 @@ public abstract class Scene
 
     }
 
+    //
+    // Timed actions.
+    //
+
+    /// <summary>
+    /// Adds an action to execute after a set time.
+    /// </summary>
+    /// <param name="elapsedTime">The delay before executing the action.</param>
+    /// <param name="action">The action to execute.</param>
+    /// <param name="name">Optional name, to facilitate deletion.</param>
+    public void AddTimedAction(float elapsedTime, Action action, string? name = null)
+    {
+        timedActions.Add(new TimedAction(elapsedTime, action, name));
+    }
+
+    /// <summary>
+    /// Remove a timed action by name, if one has been set.
+    /// </summary>
+    /// <param name="name">The name of the action to remove.</param>
+    public void RemoveTimedActionByName(string name)
+    {
+        for (int i = timedActions.Count - 1; i >= 0; i--)
+        {
+            if (timedActions[i].Name.ToLower() == name.ToLower())
+                timedActions.RemoveAt(i);
+        }
+    }
+
+    //
+    // optional scene methods
+    //
+
+    /// <summary>
+    /// Called once when a scene is created.
+    /// </summary>
     public virtual void Init() { }
+
+    /// <summary>
+    /// Called once per frame of the game loop, and handles scene-level updating.
+    /// </summary>
+    /// <param name="gameTime">The MonoGame gameTime object.</param>
     public virtual void Update(GameTime gameTime) { }
+
+    /// <summary>
+    /// Called once per frame of the game loop, and handles scene-level input.
+    /// </summary>
+    /// <param name="gameTime">The MonoGame gameTime object.</param>
     public virtual void Input(GameTime gameTime) { }
+
+    /// <summary>
+    /// Called once per frame of the game loop, and handles scene-level drawing.
+    /// </summary>
     public virtual void Draw() { }
+
+    //
+    // optional scene callback functions
+    //
+
+    /// <summary>
+    /// Called once when the scene becomes the active scene.
+    /// </summary>
     public virtual void OnEnter() { }
+
+    /// <summary>
+    /// Called once when the scene is no longer the active scene.
+    /// </summary>
     public virtual void OnExit() { }
+    
+    /// <summary>
+    /// Called once whenever an entity is added to the scene.
+    /// </summary>
+    /// <param name="entity">The entity that has been added.</param>
     public virtual void OnEntityAdded(Entity entity) { }
+
+    /// <summary>
+    /// Called once whenever an entity is removed from the scene.
+    /// </summary>
+    /// <param name="entity">The entity that is being removed.</param>
     public virtual void OnEntityRemoved(Entity entity) { }
 
 }

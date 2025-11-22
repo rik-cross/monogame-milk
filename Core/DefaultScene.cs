@@ -6,9 +6,9 @@ using System.Collections.Generic;
 using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Graphics;
 
-namespace milk;
+namespace milk.Core;
 
-public class DefaultScene : Scene
+internal class DefaultScene : Scene
 {
 
     private Image milkImage;

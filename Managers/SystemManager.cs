@@ -14,9 +14,9 @@
 
 using System.Collections.Generic;
 
-namespace milk;
+namespace milk.Core;
 
-public class SystemManager
+internal class SystemManager
 {
 
     private SceneManager _sceneManager = EngineGlobals.game.sceneManager;
@@ -27,6 +27,18 @@ public class SystemManager
     //
     // Registered systems
     //
+
+    public string PrintSystems()
+    {
+        string returnString = "";
+
+        foreach (System system in registeredSystems)
+        {
+            returnString += system.ToString() + " ";
+        }
+
+        return returnString;
+    }
 
     public void RegisterSystem(System system)
     {
@@ -44,7 +56,7 @@ public class SystemManager
         // Add to scenes that should contain all systems
         foreach (Scene scene in _sceneManager.allScenes)
         {
-            if (scene.IncludeAlRegisteredSystems == true)
+            if (scene.IncludeAlRegisteredSystems == true && scene.systems.Contains(system))
                 AddSystemToScene(system, scene);
         }
 
@@ -83,14 +95,22 @@ public class SystemManager
             return;
 
         if (scene.systems.Contains(system) == false)
+        {
             scene.systems.Add(system);
+            // Callback
+            system.OnAddedToScene(scene);
+        }
     }
 
     // Adds all registered systems to a specified scene
     public void AddAllRegisteredSystemsToScene(Scene scene)
     {
         foreach (System system in registeredSystems)
+        {
             AddSystemToScene(system, scene);
+            // Callback
+            system.OnAddedToScene(scene);
+        }
     }
 
     //
@@ -125,6 +145,8 @@ public class SystemManager
 
     // Adds a system of the specified type to the
     // provided system list
+    // TODO: add to scene instead, and use this method in Scene()
+    // to add a system
     public void AddSystemOfTypeToList<T>(List<System> systemsList)
     {
 

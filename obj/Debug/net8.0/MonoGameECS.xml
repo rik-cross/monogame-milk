@@ -1,0 +1,930 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>MonoGameECS</name>
+    </assembly>
+    <members>
+        <member name="T:milk.Components.ColliderComponent">
+            <summary>
+            Sets a collision bounding box for an entity.
+            </summary>
+        </member>
+        <member name="F:milk.Components.ColliderComponent.size">
+            <summary>
+            The (x,y) size of the collider.
+            </summary>
+        </member>
+        <member name="F:milk.Components.ColliderComponent.offset">
+            <summary>
+            The (x,y) distance from the entity position.
+            </summary>
+        </member>
+        <member name="M:milk.Components.ColliderComponent.#ctor(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)">
+            <summary>
+            Creates a new collider component.
+            </summary>
+            <param name="size">The (x,y) size of the collider.</param>
+            <param name="offset">The (x,y) distance from the entity position.</param>
+        </member>
+        <member name="T:milk.Components.InputComponent">
+            <summary>
+            Supports entity input through an input controller.
+            </summary>
+        </member>
+        <member name="F:milk.Components.InputComponent.inputController">
+            <summary>
+            A function that describes entity input behaviour.
+            </summary>
+        </member>
+        <member name="M:milk.Components.InputComponent.#ctor(System.Action{milk.Core.Scene,milk.Core.Entity})">
+            <summary>
+            Creates a new input component.
+            </summary>
+            <param name="inputController">The input function to be called.</param>
+        </member>
+        <member name="T:milk.Components.PhysicsComponent">
+            <summary>
+            Allows an entity to move within a scene.
+            </summary>
+        </member>
+        <member name="F:milk.Components.PhysicsComponent.Velocity">
+            <summary>
+            The (x,y) velocity.
+            </summary>
+        </member>
+        <member name="F:milk.Components.PhysicsComponent.Acceleration">
+            <summary>
+            The (x,y) acceleration.
+            </summary>
+        </member>
+        <member name="M:milk.Components.PhysicsComponent.#ctor(System.Nullable{Microsoft.Xna.Framework.Vector2},System.Nullable{Microsoft.Xna.Framework.Vector2})">
+            <summary>
+            Creates a new physics component.
+            </summary>
+            <param name="velocity">The (x,y) velocity.</param>
+            <param name="acceleration">The (x,y) acceleration.</param>
+        </member>
+        <member name="T:milk.Components.SpriteComponent">
+            <summary>
+            Associates one or more textures (in a `Sprite`) with a state.
+            </summary>
+        </member>
+        <member name="P:milk.Components.SpriteComponent.Play">
+            <summary>
+            Plays / pauses the sprite's animation.
+            </summary>
+        </member>
+        <member name="M:milk.Components.SpriteComponent.#ctor(Microsoft.Xna.Framework.Graphics.Texture2D,System.String)">
+            <summary>
+            Simple creation of a sprite component with a single image.
+            </summary>
+            <param name="texture"></param>
+        </member>
+        <member name="M:milk.Components.SpriteComponent.AddSprite(milk.Core.Sprite,System.String)">
+            <summary>
+            Add a sprite (1 or more textures) to the component.
+            </summary>
+            <param name="sprite">A sprite object.</param>
+            <param name="state">An optional state to associate the sprite with.</param>
+        </member>
+        <member name="M:milk.Components.SpriteComponent.HasSpriteForState(System.String)">
+            <summary>
+            Returns 'true' if a sprite exists for the specified state.
+            </summary>
+            <param name="state">The state to check.</param>
+            <returns>A bool, true if a sprite exists.</returns>
+        </member>
+        <member name="M:milk.Components.SpriteComponent.GetSpriteForState(System.String)">
+            <summary>
+            Returns the sprite object for the specified state.
+            </summary>
+            <param name="state">The state to check.</param>
+            <returns>A sprite object, or null.</returns>
+        </member>
+        <member name="T:milk.Components.TransformComponent">
+            <summary>
+            Allows an entity to take up space in a scene.
+            </summary>
+        </member>
+        <member name="F:milk.Components.TransformComponent.Position">
+            <summary>
+            The (x,y) top-left entity position. 
+            </summary>
+        </member>
+        <member name="F:milk.Components.TransformComponent.Size">
+            <summary>
+            The (x,y) size of the entity in pixels.
+            </summary>
+        </member>
+        <member name="M:milk.Components.TransformComponent.#ctor(Microsoft.Xna.Framework.Vector2,System.Nullable{Microsoft.Xna.Framework.Vector2})">
+            <summary>
+            Create a new transform component.
+            </summary>
+            <param name="position">The (x,y) top-left entity position.</param>
+            <param name="size">The (x,y) size of the entity in pixels.</param>
+        </member>
+        <member name="P:milk.Components.TransformComponent.Width">
+            <summary>
+            The width.
+            </summary>
+        </member>
+        <member name="P:milk.Components.TransformComponent.Height">
+            <summary>
+            The height.
+            </summary>
+        </member>
+        <member name="P:milk.Components.TransformComponent.X">
+            <summary>
+            The x position.
+            </summary>
+        </member>
+        <member name="P:milk.Components.TransformComponent.Y">
+            <summary>
+            The y position.
+            </summary>
+        </member>
+        <member name="P:milk.Components.TransformComponent.Top">
+            <summary>
+            The top (y) position.
+            </summary>
+        </member>
+        <member name="P:milk.Components.TransformComponent.Middle">
+            <summary>
+            The middle (y + 1/2 height).
+            </summary>
+        </member>
+        <member name="P:milk.Components.TransformComponent.Bottom">
+            <summary>
+            The bottom (y + height).
+            </summary>
+        </member>
+        <member name="P:milk.Components.TransformComponent.Left">
+            <summary>
+            The left (x) position.
+            </summary>
+        </member>
+        <member name="P:milk.Components.TransformComponent.Center">
+            <summary>
+            The center (x + 1/2 width).
+            </summary>
+        </member>
+        <member name="P:milk.Components.TransformComponent.Right">
+            <summary>
+            The right (x + width).
+            </summary>
+        </member>
+        <member name="T:milk.Components.TriggerComponent">
+            <summary>
+            Executes the specified callbacks when 2 triggers collide.
+            </summary>
+        </member>
+        <member name="F:milk.Components.TriggerComponent.size">
+            <summary>
+            The (x,y) size of the trigger.
+            </summary>
+        </member>
+        <member name="F:milk.Components.TriggerComponent.offset">
+            <summary>
+            The (x,y) offset from the entity top-left position.
+            </summary>
+        </member>
+        <member name="F:milk.Components.TriggerComponent.onCollisionEnter">
+            <summary>
+            Called once when 2 colliders first intersect.
+            </summary>
+        </member>
+        <member name="F:milk.Components.TriggerComponent.onCollide">
+            <summary>
+            Called for every frame that 2 colliders intersect.
+            </summary>
+        </member>
+        <member name="F:milk.Components.TriggerComponent.onCollisionExit">
+            <summary>
+            Called once when 2 colliders no longer intersect.
+            </summary>
+        </member>
+        <member name="M:milk.Components.TriggerComponent.#ctor(Microsoft.Xna.Framework.Vector2,System.Nullable{Microsoft.Xna.Framework.Vector2},System.Action{milk.Core.Entity,milk.Core.Entity,System.Single},System.Action{milk.Core.Entity,milk.Core.Entity,System.Single},System.Action{milk.Core.Entity,milk.Core.Entity,System.Single})">
+            <summary>
+            Creates a new trigger component.
+            </summary>
+            <param name="size">The (x,y) size of the trigger.</param>
+            <param name="offset">The (x,y) offset from the entity top-left position.</param>
+            <param name="onCollisionEnter">Called once when 2 colliders first intersect.</param>
+            <param name="onCollide">Called for every frame that 2 colliders intersect.</param>
+            <param name="onCollisionExit">Called once when 2 colliders no longer intersect.</param>
+        </member>
+        <member name="T:milk.Core.Component">
+            <summary>
+            A component stores data for systems to use,
+            and has some useful additional callback methods.
+            </summary>
+        </member>
+        <member name="M:milk.Core.Component.OnAddedToEntity(milk.Core.Entity)">
+            <summary>
+            This method is called automatically whenever a component is added to an entity.
+            </summary>
+            <param name="entity">The entity that the component has been added to.</param>
+        </member>
+        <member name="M:milk.Core.Component.OnRemovedFromEntity(milk.Core.Entity)">
+            <summary>
+            This method is called automatically whenever a component is removed from an entity.
+            </summary>
+            <param name="entity">The entity that the component has been added to.</param>
+        </member>
+        <member name="M:milk.Core.Component.ToString">
+            <summary>
+            Debug entity string print method.
+            </summary>
+            <returns>A string output representing the entity.</returns>
+        </member>
+        <member name="T:milk.Core.EasingFunctions.EasingDelegate">
+            <summary>
+            Represents a delegate for an easing function.
+            An easing function takes a single float parameter (typically a normalized time value from 0 to 1)
+            and returns a float value, which is the eased output.
+            </summary>
+        </member>
+        <member name="M:milk.Core.EasingFunctions.Linear(System.Single)">
+            <summary>
+            No easing, no acceleration.
+            </summary>
+        </member>
+        <member name="M:milk.Core.EasingFunctions.SineEaseIn(System.Single)">
+            <summary>
+            Easing in (accelerating from zero velocity).
+            </summary>
+        </member>
+        <member name="M:milk.Core.EasingFunctions.SineEaseOut(System.Single)">
+            <summary>
+            Easing out (decelerating to zero velocity).
+            </summary>
+        </member>
+        <member name="M:milk.Core.EasingFunctions.SineEaseInOut(System.Single)">
+            <summary>
+            Easing in and out (accelerating until halfway, then decelerating).
+            </summary>
+        </member>
+        <member name="M:milk.Core.EasingFunctions.QuadEaseIn(System.Single)">
+            <summary>
+            Easing in (accelerating from zero velocity).
+            </summary>
+        </member>
+        <member name="M:milk.Core.EasingFunctions.QuadEaseOut(System.Single)">
+            <summary>
+            Easing out (decelerating to zero velocity).
+            </summary>
+        </member>
+        <member name="M:milk.Core.EasingFunctions.QuadEaseInOut(System.Single)">
+            <summary>
+            Easing in and out (accelerating until halfway, then decelerating).
+            </summary>
+        </member>
+        <member name="M:milk.Core.EasingFunctions.CubicEaseIn(System.Single)">
+            <summary>
+            Easing in (accelerating from zero velocity).
+            </summary>
+        </member>
+        <member name="M:milk.Core.EasingFunctions.CubicEaseOut(System.Single)">
+            <summary>
+            Easing out (decelerating to zero velocity).
+            </summary>
+        </member>
+        <member name="M:milk.Core.EasingFunctions.CubicEaseInOut(System.Single)">
+            <summary>
+            Easing in and out (accelerating until halfway, then decelerating).
+            </summary>
+        </member>
+        <member name="M:milk.Core.EasingFunctions.QuartEaseIn(System.Single)">
+            <summary>
+            Easing in (accelerating from zero velocity).
+            </summary>
+        </member>
+        <member name="M:milk.Core.EasingFunctions.QuartEaseOut(System.Single)">
+            <summary>
+            Easing out (decelerating to zero velocity).
+            </summary>
+        </member>
+        <member name="M:milk.Core.EasingFunctions.QuartEaseInOut(System.Single)">
+            <summary>
+            Easing in and out (accelerating until halfway, then decelerating).
+            </summary>
+        </member>
+        <member name="M:milk.Core.EasingFunctions.QuintEaseIn(System.Single)">
+            <summary>
+            Easing in (accelerating from zero velocity).
+            </summary>
+        </member>
+        <member name="M:milk.Core.EasingFunctions.QuintEaseOut(System.Single)">
+            <summary>
+            Easing out (decelerating to zero velocity).
+            </summary>
+        </member>
+        <member name="M:milk.Core.EasingFunctions.QuintEaseInOut(System.Single)">
+            <summary>
+            Easing in and out (accelerating until halfway, then decelerating).
+            </summary>
+        </member>
+        <member name="M:milk.Core.EasingFunctions.ExpoEaseIn(System.Single)">
+            <summary>
+            Easing in (accelerating from zero velocity).
+            </summary>
+        </member>
+        <member name="M:milk.Core.EasingFunctions.ExpoEaseOut(System.Single)">
+            <summary>
+            Easing out (decelerating to zero velocity).
+            </summary>
+        </member>
+        <member name="M:milk.Core.EasingFunctions.ExpoEaseInOut(System.Single)">
+            <summary>
+            Easing in and out (accelerating until halfway, then decelerating).
+            </summary>
+        </member>
+        <member name="M:milk.Core.EasingFunctions.CircEaseIn(System.Single)">
+            <summary>
+            Easing in (accelerating from zero velocity).
+            </summary>
+        </member>
+        <member name="M:milk.Core.EasingFunctions.CircEaseOut(System.Single)">
+            <summary>
+            Easing out (decelerating to zero velocity).
+            </summary>
+        </member>
+        <member name="M:milk.Core.EasingFunctions.CircEaseInOut(System.Single)">
+            <summary>
+            Easing in and out (accelerating until halfway, then decelerating).
+            </summary>
+        </member>
+        <member name="M:milk.Core.EasingFunctions.BackEaseIn(System.Single)">
+            <summary>
+            Easing in (pulls back slightly before accelerating).
+            </summary>
+        </member>
+        <member name="M:milk.Core.EasingFunctions.BackEaseOut(System.Single)">
+            <summary>
+            Easing out (overshoots the target slightly before settling).
+            </summary>
+        </member>
+        <member name="M:milk.Core.EasingFunctions.BackEaseInOut(System.Single)">
+            <summary>
+            Easing in and out (pulls back at start, overshoots at end).
+            </summary>
+        </member>
+        <member name="M:milk.Core.EasingFunctions.ElasticEaseIn(System.Single)">
+            <summary>
+            Easing in (bounces in towards the target).
+            </summary>
+        </member>
+        <member name="M:milk.Core.EasingFunctions.ElasticEaseOut(System.Single)">
+            <summary>
+            Easing out (bounces out from the target).
+            </summary>
+        </member>
+        <member name="M:milk.Core.EasingFunctions.ElasticEaseInOut(System.Single)">
+            <summary>
+            Easing in and out (bounces in then out).
+            </summary>
+        </member>
+        <member name="M:milk.Core.EasingFunctions.BounceEaseIn(System.Single)">
+            <summary>
+            Easing in (bounces as it approaches the start).
+            </summary>
+        </member>
+        <member name="M:milk.Core.EasingFunctions.BounceEaseOut(System.Single)">
+            <summary>
+            Easing out (bounces as it reaches the end).
+            </summary>
+        </member>
+        <member name="M:milk.Core.EasingFunctions.BounceEaseInOut(System.Single)">
+            <summary>
+            Easing in and out (bounces at start and end).
+            </summary>
+        </member>
+        <member name="T:milk.Core.Entity">
+            <summary>
+            An Entity is a logical container for components.
+            Systems in a Scene act on entities with the required set of components.
+            </summary>
+        </member>
+        <member name="P:milk.Core.Entity.ID">
+            <summary>
+            The unique ID of the entity.
+            </summary>
+        </member>
+        <member name="P:milk.Core.Entity.Name">
+            <summary>
+            The unique (not case-sensitive) name of the entity.
+            Setting a non-unique, non-null name will raise an InvalidOperationException.
+            </summary>
+        </member>
+        <member name="P:milk.Core.Entity.PreviousState">
+            <summary>
+            The state of the entity in the previous frame.
+            </summary>
+        </member>
+        <member name="P:milk.Core.Entity.State">
+            <summary>
+            The current state of the entity.
+            </summary>
+        </member>
+        <member name="P:milk.Core.Entity.Owner">
+            <summary>
+            The owner Entity.
+            This is set to itself if null is passed.
+            </summary>
+        </member>
+        <member name="P:milk.Core.Entity.Delete">
+            <summary>
+            Setting Delete = true marks an entity for deletion.
+            Deletion happens at the end of each game loop.
+            </summary>
+        </member>
+        <member name="F:milk.Core.Entity.bitMask">
+            <summary>
+            The bitMask of an Entity uses each component ID
+            to record which components are present for an entity.
+            </summary>
+        </member>
+        <member name="P:milk.Core.Entity.Tags">
+            <summary>
+            A list of string tags, used to categorise and/or identify an entity.
+            Tags are stored as lower-case.
+            They must be unique (non case-sensitive) per-entity,
+            but the same tag can exist across multiple entities.
+            (Repeated tags are ignored, and not added to an entities tag list.)
+            </summary>
+        </member>
+        <member name="P:milk.Core.Entity.Visible">
+            <summary>
+            Sets the visibility of an entity.
+            </summary>
+        </member>
+        <member name="M:milk.Core.Entity.#ctor(System.String,System.Collections.Generic.List{System.String},System.String,System.Boolean,milk.Core.Entity,milk.Core.Component[])">
+            <summary>
+            Create a new entity.
+            </summary>
+            <param name="name">The unique name of the entity.</param>
+            <param name="tags">A list of tags to identify and/or categorise the entity.</param>
+            <param name="state">The state of the entity.</param>
+            <param name="visible">The entity visibility.</param>
+            <param name="owner">The parent of the entity.</param>
+            <param name="components">A list of components to add to the entity.</param>
+        </member>
+        <member name="M:milk.Core.Entity.HasComponent``1">
+            <summary>
+            Checks whether the entity has a component of the specified type.
+            </summary>
+            <typeparam name="T">The type of the component to check for.</typeparam>
+            <returns>A boolean indicating the presence of a component.</returns>
+        </member>
+        <member name="M:milk.Core.Entity.AddComponent(milk.Core.Component[])">
+            <summary>
+            Adds one or more components to the entity,
+            overwriting an existing component if one exists.
+            </summary>
+            <param name="components">One or more components to add.</param>
+        </member>
+        <member name="M:milk.Core.Entity.GetComponent``1">
+            <summary>
+            Returns the component of the specified type.
+            </summary>
+            <typeparam name="T">The type of the componet to retrieve.</typeparam>
+            <returns>The requested component, or null.</returns>
+        </member>
+        <member name="M:milk.Core.Entity.RemoveComponent``1">
+            <summary>
+            Removes the component of the specified type (if one exists).
+            </summary>
+            <typeparam name="T">The type of the component to remove.</typeparam>
+        </member>
+        <member name="M:milk.Core.Entity.AddTag(System.String[])">
+            <summary>
+            Adds one or more tags, stored in lower-case with duplicates removed.
+            </summary>
+            <param name="tags">One or more tags to add.</param>
+        </member>
+        <member name="M:milk.Core.Entity.HasTag(System.String[])">
+            <summary>
+            Checks whether the entity has all of the tags specified.
+            Tags are checked as lower-case.
+            </summary>
+            <param name="tags">One or more tags to check.</param>
+            <returns>A boolean, indicating the preence of all specified tags.</returns>
+        </member>
+        <member name="M:milk.Core.Entity.RemoveTag(System.String[])">
+            <summary>
+            Removes the specified tags (if they exist).
+            </summary>
+            <param name="tags">One or more tags to remove.</param>
+        </member>
+        <member name="M:milk.Core.Entity.ToString">
+            <summary>
+            Debug entity string print method.
+            </summary>
+            <returns>A string output representing the entity.</returns>
+        </member>
+        <member name="M:milk.Core.Game.PrintSystems">
+            <summary>
+            Returns a string showing the order of execution of systems.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:milk.Core.Game.PositionSystemType``1(System.Int32)">
+            <summary>
+            Positions the system of the specified type at the requested position.
+            This is useful for setting the order in which systems execute.
+            (Use `PrintSystems()` to see the order of systems.)
+            </summary>
+            <typeparam name="T">The type of system to move.</typeparam>
+            <param name="position">The new position of the system.</param>
+        </member>
+        <member name="T:milk.Core.Scene">
+            <summary>
+            A scene is a collection of entities and systems, and can be thought
+            of as game 'screens'. Each system in a scene acts on all entities in
+            the scene with the required set of components.
+            </summary>
+        </member>
+        <member name="F:milk.Core.Scene.content">
+            <summary>
+            MonoGame content object for working with game assets.
+            </summary>
+        </member>
+        <member name="F:milk.Core.Scene.game">
+            <summary>
+            The parent game object.
+            </summary>
+        </member>
+        <member name="F:milk.Core.Scene.spriteBatch">
+            <summary>
+            The spriteBatch object.
+            </summary>
+        </member>
+        <member name="F:milk.Core.Scene.Size">
+            <summary>
+            The (x,y) scene dimensions.
+            </summary>
+        </member>
+        <member name="F:milk.Core.Scene.Middle">
+            <summary>
+            The (x,y) center point of the scene.
+            </summary>
+        </member>
+        <member name="F:milk.Core.Scene.BackgroundColor">
+            <summary>
+            Background color.
+            </summary>
+        </member>
+        <member name="F:milk.Core.Scene.IncludeAlRegisteredSystems">
+            <summary>
+            By default all systems are present in all scenes.
+            Setting this to `false` allows control over which
+            systems should be present within a scene.
+            </summary>
+        </member>
+        <member name="F:milk.Core.Scene.UpdateSceneBelow">
+            <summary>
+            Specifies whether to update the scene below this one in the scene stack.
+            </summary>
+        </member>
+        <member name="F:milk.Core.Scene.InputSceneBelow">
+            <summary>
+            Specifies whether to process input in the scene below this one in the scene stack.
+            </summary>
+        </member>
+        <member name="F:milk.Core.Scene.DrawSceneBelow">
+            <summary>
+            Specifies whether to draw the scene below this one in the scene stack.
+            </summary>
+        </member>
+        <member name="F:milk.Core.Scene.EntitySortMethod">
+            <summary>
+            Set a method for sorting entities.
+            </summary>
+        </member>
+        <member name="F:milk.Core.Scene.mapSize">
+            <summary>
+            Set the size of the map. The size is set automatically if
+            adding a Tiled Map.
+            </summary>
+        </member>
+        <member name="P:milk.Core.Scene.Map">
+            <summary>
+            A Tiled map.
+            </summary>
+        </member>
+        <member name="F:milk.Core.Scene.Velocity">
+            <summary>
+            The scene's velocity, which is applied to all entities.
+            </summary>
+        </member>
+        <member name="F:milk.Core.Scene.Acceleration">
+            <summary>
+            The scene's acceleration, which is applied to all entities.
+            </summary>
+        </member>
+        <member name="M:milk.Core.Scene.#ctor">
+            <summary>
+            A scene is a bit like a game 'screen' and holds
+            entities and systems, along with other functionalilty
+            such as cameras. Systems in a scene act on scene entities
+            with the required set of components present.
+            </summary>
+        </member>
+        <member name="M:milk.Core.Scene.AddCamera(milk.Core.Camera)">
+            <summary>
+            Adds a camera object to a scene.
+            </summary>
+            <param name="camera"></param>
+        </member>
+        <member name="M:milk.Core.Scene.GetCameraByName(System.String)">
+            <summary>
+            Returns a camera with the specified (unique) name.
+            The name is checked in lower-case.
+            </summary>
+            <param name="name">The name of the camera to find.</param>
+            <returns>A camera, or null if no camera exists with the specified name.</returns>
+        </member>
+        <member name="M:milk.Core.Scene.HasEntity(milk.Core.Entity)">
+            <summary>
+            Returns `true` is the entity provided exists in the scene.
+            </summary>
+            <param name="entity">The entity to check.</param>
+            <returns>A Boolean indicating the presence of the entity in the scene.</returns>
+        </member>
+        <member name="M:milk.Core.Scene.AddEntity(milk.Core.Entity)">
+            <summary>
+            Adds an entity object to the scene.
+            </summary>
+            <param name="entity">The entity to add.</param>
+        </member>
+        <member name="M:milk.Core.Scene.RemoveEntity(milk.Core.Entity)">
+            <summary>
+            Removes the specified entity from the scene.
+            Note that the entity isn't 'deleted'.
+            </summary>
+            <param name="entity">The entity to remove.</param>
+        </member>
+        <member name="M:milk.Core.Scene.RemoveEntityByName(System.String)">
+            <summary>
+            Removes the entity with the specified name from the scene.
+            </summary>
+            <param name="name">The name of the entity to remove.</param>
+        </member>
+        <member name="M:milk.Core.Scene.RemoveEntitiesByTag(System.String[])">
+            <summary>
+            Removes the entities with the specified tags from the scene.
+            </summary>
+            <param name="tags">One or more tags that the entities must have.</param>
+        </member>
+        <member name="M:milk.Core.Scene.RemoveAllEntities">
+            <summary>
+            Removes all entities from the scene.
+            </summary>
+        </member>
+        <member name="M:milk.Core.Scene.GetEntityByName(System.String)">
+            <summary>
+            Gets the entity with the provided (unique) name.
+            The name supplied is converted to lower-case.
+            </summary>
+            <param name="name">The name to check.</param>
+            <returns>An entity if one is found, or null.</returns>
+        </member>
+        <member name="M:milk.Core.Scene.GetEntitiesByTag(System.String[])">
+            <summary>
+            Gets all entities that include all supplied tags.
+            </summary>
+            <param name="tags">One or more tags to check.</param>
+            <returns>A list of all entities with all tags. This is always a list, and could be empty.</returns>
+        </member>
+        <member name="M:milk.Core.Scene.DeleteEntityByName(System.String)">
+            <summary>
+            Deletes the entity in the scene with the specified name.
+            The name supplied is checked in lower-case.
+            </summary>
+            <param name="name">The name of the entity to delete.</param>
+        </member>
+        <member name="M:milk.Core.Scene.DeleteEntitiesByTag(System.String[])">
+            <summary>
+            Deletes all entities containing the specified tags.
+            Tags are checked in lower-case.
+            </summary>
+            <param name="tags">One or more tags to</param>
+        </member>
+        <member name="M:milk.Core.Scene.AddSystem``1">
+            <summary>
+            Add a (registered) system type to a scene (calling this
+            method isn't required if IncludeAlRegisteredSystems == true, 
+            which it is by default).
+            </summary>
+            <typeparam name="T">The type of the registered system to add.</typeparam>
+        </member>
+        <member name="M:milk.Core.Scene.RemoveSystem``1">
+            <summary>
+            Removes the sysytem of the specified type from the scene.
+            </summary>
+            <typeparam name="T">The type of system to remove.</typeparam>
+        </member>
+        <member name="M:milk.Core.Scene.RemoveAllSystems">
+            <summary>
+            Removes all systems from the scene
+            </summary>
+        </member>
+        <member name="M:milk.Core.Scene.HasSystem``1">
+            <summary>
+            Returns true if a system of the specified type
+            exists in the scene.
+            </summary>
+            <typeparam name="T">The type of system to find.</typeparam>
+            <returns>Bool, true if a system of the specified type exists.</returns>
+        </member>
+        <member name="M:milk.Core.Scene.GetSceneBelow(System.Collections.Generic.List{milk.Core.Scene})">
+            <summary>
+            Gets the scene below this scene in the scene list
+            (or null if there isn't one).
+            </summary>
+            <param name="scenes">The scene list to check against.</param>
+            <returns>A scene, or null if no scene exists.</returns>
+        </member>
+        <member name="M:milk.Core.Scene.AddTimedAction(System.Single,System.Action,System.String)">
+            <summary>
+            Adds an action to execute after a set time.
+            </summary>
+            <param name="elapsedTime">The delay before executing the action.</param>
+            <param name="action">The action to execute.</param>
+            <param name="name">Optional name, to facilitate deletion.</param>
+        </member>
+        <member name="M:milk.Core.Scene.RemoveTimedActionByName(System.String)">
+            <summary>
+            Remove a timed action by name, if one has been set.
+            </summary>
+            <param name="name">The name of the action to remove.</param>
+        </member>
+        <member name="M:milk.Core.Scene.Init">
+            <summary>
+            Called once when a scene is created.
+            </summary>
+        </member>
+        <member name="M:milk.Core.Scene.Update(Microsoft.Xna.Framework.GameTime)">
+            <summary>
+            Called once per frame of the game loop, and handles scene-level updating.
+            </summary>
+            <param name="gameTime">The MonoGame gameTime object.</param>
+        </member>
+        <member name="M:milk.Core.Scene.Input(Microsoft.Xna.Framework.GameTime)">
+            <summary>
+            Called once per frame of the game loop, and handles scene-level input.
+            </summary>
+            <param name="gameTime">The MonoGame gameTime object.</param>
+        </member>
+        <member name="M:milk.Core.Scene.Draw">
+            <summary>
+            Called once per frame of the game loop, and handles scene-level drawing.
+            </summary>
+        </member>
+        <member name="M:milk.Core.Scene.OnEnter">
+            <summary>
+            Called once when the scene becomes the active scene.
+            </summary>
+        </member>
+        <member name="M:milk.Core.Scene.OnExit">
+            <summary>
+            Called once when the scene is no longer the active scene.
+            </summary>
+        </member>
+        <member name="M:milk.Core.Scene.OnEntityAdded(milk.Core.Entity)">
+            <summary>
+            Called once whenever an entity is added to the scene.
+            </summary>
+            <param name="entity">The entity that has been added.</param>
+        </member>
+        <member name="M:milk.Core.Scene.OnEntityRemoved(milk.Core.Entity)">
+            <summary>
+            Called once whenever an entity is removed from the scene.
+            </summary>
+            <param name="entity">The entity that is being removed.</param>
+        </member>
+        <member name="T:milk.Core.System">
+            <summary>
+            A system within a scene runs on entities with the reqiured set of components.
+            </summary>
+        </member>
+        <member name="F:milk.Core.System.spriteBatch">
+            <summary>
+            MonoGame spriteBatch used for drawing.
+            </summary>
+        </member>
+        <member name="P:milk.Core.System.DrawAboveEntities">
+            <summary>
+            Decides whether the system Draw method is called before
+            (below) or after (above) the entities are drawn.
+            </summary>
+        </member>
+        <member name="P:milk.Core.System.DrawAboveMap">
+            <summary>
+            Decides whether the system Draw method is called before
+            (below) or after (above) the map is drawn.
+            </summary>
+        </member>
+        <member name="M:milk.Core.System.#ctor">
+            <summary>
+            System constructor.
+            </summary>
+        </member>
+        <member name="M:milk.Core.System.AddRequiredComponentType``1">
+            <summary>
+            Adds a component type that is required by an entity 
+            in order to be processed by the system.
+            </summary>
+            <typeparam name="T">The type of the component required.</typeparam>
+        </member>
+        <member name="M:milk.Core.System.Init">
+            <summary>
+            Called once when a system is created.
+            </summary>
+        </member>
+        <member name="M:milk.Core.System.Input(Microsoft.Xna.Framework.GameTime,milk.Core.Scene)">
+            <summary>
+            A top-level input method, called once per frame.
+            </summary>
+            <param name="gameTime">The MonoGame gameTime object.</param>
+            <param name="scene">The scene that the system is in.</param>
+        </member>
+        <member name="M:milk.Core.System.InputEntity(Microsoft.Xna.Framework.GameTime,milk.Core.Scene,milk.Core.Entity)">
+            <summary>
+            An entity-specific input method, called once per frame
+            for each entity with the required set of components.
+            </summary>
+            <param name="gameTime">The MonoGame gameTime object.</param>
+            <param name="scene">The scene that the system is in</param>
+            <param name="entity">The entity to be acted upon.</param>
+        </member>
+        <member name="M:milk.Core.System.Update(Microsoft.Xna.Framework.GameTime,milk.Core.Scene)">
+            <summary>
+            A top-level update method, called once per frame.
+            </summary>
+            <param name="gameTime">The MonoGame gameTime object.</param>
+            <param name="scene">The scene that the system is in.</param>
+        </member>
+        <member name="M:milk.Core.System.UpdateEntity(Microsoft.Xna.Framework.GameTime,milk.Core.Scene,milk.Core.Entity)">
+            <summary>
+            An entity-specific update method, called once per frame
+            for each entity with the required set of components.
+            </summary>
+            <param name="gameTime">The MonoGame gameTime object.</param>
+            <param name="scene">The scene that the system is in</param>
+            <param name="entity">The entity to be acted upon.</param>
+        </member>
+        <member name="M:milk.Core.System.Draw(milk.Core.Scene)">
+            <summary>
+            A top-level draw method, called once per frame.
+            </summary>
+            <param name="scene">The scene that the system is in.</param>
+        </member>
+        <member name="M:milk.Core.System.DrawEntity(milk.Core.Scene,milk.Core.Entity)">
+            <summary>
+            An entity-specific draw method, called once per frame
+            for each entity with the required set of components.
+            </summary>
+            <param name="scene">The scene that the system is in</param>
+            <param name="entity">The entity to be acted upon.</param>
+        </member>
+        <member name="M:milk.Core.System.OnEnterScene(milk.Core.Scene)">
+            <summary>
+            Called once when the scene becomes active;
+            </summary>
+            <param name="scene">The scene that the system is in.</param>
+        </member>
+        <member name="M:milk.Core.System.OnExitScene(milk.Core.Scene)">
+            <summary>
+            Called once when the scene is no longer active.
+            </summary>
+            <param name="scene">The scene that the system is in.</param>
+        </member>
+        <member name="M:milk.Core.System.OnEntityAddedToScene(milk.Core.Scene,milk.Core.Entity)">
+            <summary>
+            Called once when an entity is added to the scene containing the system.
+            </summary>
+            <param name="scene">The scene containing the system that the entity is being added to.</param>
+            <param name="entity">The entity being added to the scene.</param>
+        </member>
+        <member name="M:milk.Core.System.OnEntityRemovedFromScene(milk.Core.Scene,milk.Core.Entity)">
+            <summary>
+            Called once when an entity is removed from the scene containing the system.
+            </summary>
+            <param name="scene">The scene containing the system that the entity is being removed from.</param>
+            <param name="entity">The entity being removed from the scene.</param>
+        </member>
+        <member name="M:milk.Core.System.OnAddedToScene(milk.Core.Scene)">
+            <summary>
+            Called once when a system is added to a scene.
+            </summary>
+            <param name="scene">The scene the system is being added to.</param>
+        </member>
+        <member name="M:milk.Core.System.OnRemovedFromScene(milk.Core.Scene)">
+            <summary>
+            Called once when a system is removed from a scene.
+            </summary>
+            <param name="scene">The scene the system is being removed from.</param>
+        </member>
+    </members>
+</doc>

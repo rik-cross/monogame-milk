@@ -1,0 +1,58 @@
+### YamlMime:ManagedReference
+items:
+- uid: milk.Components
+  commentId: N:milk.Components
+  id: milk.Components
+  children:
+  - milk.Components.ColliderComponent
+  - milk.Components.InputComponent
+  - milk.Components.PhysicsComponent
+  - milk.Components.SpriteComponent
+  - milk.Components.TransformComponent
+  - milk.Components.TriggerComponent
+  langs:
+  - csharp
+  - vb
+  name: milk.Components
+  nameWithType: milk.Components
+  fullName: milk.Components
+  type: Namespace
+  assemblies:
+  - MonoGameECS
+references:
+- uid: milk.Components.ColliderComponent
+  commentId: T:milk.Components.ColliderComponent
+  href: milk.Components.ColliderComponent.html
+  name: ColliderComponent
+  nameWithType: ColliderComponent
+  fullName: milk.Components.ColliderComponent
+- uid: milk.Components.InputComponent
+  commentId: T:milk.Components.InputComponent
+  href: milk.Components.InputComponent.html
+  name: InputComponent
+  nameWithType: InputComponent
+  fullName: milk.Components.InputComponent
+- uid: milk.Components.PhysicsComponent
+  commentId: T:milk.Components.PhysicsComponent
+  href: milk.Components.PhysicsComponent.html
+  name: PhysicsComponent
+  nameWithType: PhysicsComponent
+  fullName: milk.Components.PhysicsComponent
+- uid: milk.Components.SpriteComponent
+  commentId: T:milk.Components.SpriteComponent
+  href: milk.Components.SpriteComponent.html
+  name: SpriteComponent
+  nameWithType: SpriteComponent
+  fullName: milk.Components.SpriteComponent
+- uid: milk.Components.TransformComponent
+  commentId: T:milk.Components.TransformComponent
+  href: milk.Components.TransformComponent.html
+  name: TransformComponent
+  nameWithType: TransformComponent
+  fullName: milk.Components.TransformComponent
+- uid: milk.Components.TriggerComponent
+  commentId: T:milk.Components.TriggerComponent
+  href: milk.Components.TriggerComponent.html
+  name: TriggerComponent
+  nameWithType: TriggerComponent
+  fullName: milk.Components.TriggerComponent

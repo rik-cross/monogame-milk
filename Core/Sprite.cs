@@ -2,19 +2,16 @@ using System;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
-namespace milk;
+namespace milk.Core;
 
 public class Sprite
 {
 
     public List<Texture2D> textureList;
-    private bool play;
-    private Vector2 size;
-    private float alpha;
-    private Color hue;
+    public Color hue;
     public Vector2 offset;
-    private bool flipH;
-    private bool flipV;
+    public bool flipH;
+    public bool flipV;
     public Vector2 scale;
 
     // animated stuff
@@ -26,7 +23,6 @@ public class Sprite
     public bool resizeToEntity = true;
     public bool loop;
     
-
     public Sprite(
         List<Texture2D> textureList,
         //float duration = default,
@@ -34,7 +30,10 @@ public class Sprite
         double duration = 0,
         Vector2 offset = default,
         Vector2 scale = default,
-        bool loop = true
+        bool loop = true,
+        Color? hue = null,
+        bool flipH = false,
+        bool flipV = false
     )
     {
         //
@@ -42,7 +41,6 @@ public class Sprite
         this.resizeToEntity = resizeToEntity;
         this.duration = duration;
 
-        // offset * scale 
         if (offset == default)
             offset = Vector2.Zero;
         else
@@ -54,6 +52,11 @@ public class Sprite
             this.scale = scale;
 
         this.loop = loop;
+        
+        this.hue = hue ?? Color.White;
+
+        this.flipH = flipH;
+        this.flipV = flipV;
 
         //
         currentFrame = 0;
@@ -66,7 +69,6 @@ public class Sprite
     {
         numberOfFrames = textureList.Count;
         timePerFrame = duration / numberOfFrames;
-        //Console.WriteLine(timePerFrame);
     }
 
     public Texture2D GetCurrentTexture()

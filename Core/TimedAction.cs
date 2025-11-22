@@ -1,9 +1,9 @@
 using System;
 using Microsoft.Xna.Framework;
 
-namespace milk;
+namespace milk.Core;
 
-public class TimedAction
+internal class TimedAction
 {
     public readonly float ElapsedTime = 0f;
     public readonly Action Action;

@@ -1,0 +1,1218 @@
+{
+  "source_base_path": "/home/rik/Documents/MonoGameEngineSolution/MonoGameECS",
+  "xrefmap": "xrefmap.yml",
+  "files": [
+    {
+      "type": "Resource",
+      "output": {
+        "resource": {
+          "relative_path": "index.json"
+        }
+      }
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "README.md",
+      "output": {
+        ".html": {
+          "relative_path": "README.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/milk.Anchor.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/milk.Anchor.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "milk.Anchor",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/milk.Camera.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/milk.Camera.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "milk.Camera",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/milk.ColliderComponent.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/milk.ColliderComponent.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "milk.ColliderComponent",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/milk.Component.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/milk.Component.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "milk.Component",
+      "Summary": "<p sourcefile=\"api/milk.Component.yml\" sourcestartlinenumber=\"1\">A component stores data for systems to use,\nand has some useful additional callback methods.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/milk.ComponentManager.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/milk.ComponentManager.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "milk.ComponentManager",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/milk.Components.ColliderComponent.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/milk.Components.ColliderComponent.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "milk.Components.ColliderComponent",
+      "Summary": "<p sourcefile=\"api/milk.Components.ColliderComponent.yml\" sourcestartlinenumber=\"1\">Sets a collision bounding box for an entity.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/milk.Components.InputComponent.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/milk.Components.InputComponent.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "milk.Components.InputComponent",
+      "Summary": "<p sourcefile=\"api/milk.Components.InputComponent.yml\" sourcestartlinenumber=\"1\">Supports entity input through an input controller.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/milk.Components.LightingComponent.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/milk.Components.LightingComponent.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "milk.Components.LightingComponent",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/milk.Components.PhysicsComponent.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/milk.Components.PhysicsComponent.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "milk.Components.PhysicsComponent",
+      "Summary": "<p sourcefile=\"api/milk.Components.PhysicsComponent.yml\" sourcestartlinenumber=\"1\">Allows an entity to move within a scene.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/milk.Components.SpriteComponent.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/milk.Components.SpriteComponent.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "milk.Components.SpriteComponent",
+      "Summary": "<p sourcefile=\"api/milk.Components.SpriteComponent.yml\" sourcestartlinenumber=\"1\">Associates one of more textures (in a <code sourcefile=\"api/milk.Components.SpriteComponent.yml\" sourcestartlinenumber=\"1\">Sprite</code>) with a state.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/milk.Components.TransformComponent.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/milk.Components.TransformComponent.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "milk.Components.TransformComponent",
+      "Summary": "<p sourcefile=\"api/milk.Components.TransformComponent.yml\" sourcestartlinenumber=\"1\">Allows an entity to take up space in a scene.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/milk.Components.TriggerComponent.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/milk.Components.TriggerComponent.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "milk.Components.TriggerComponent",
+      "Summary": "<p sourcefile=\"api/milk.Components.TriggerComponent.yml\" sourcestartlinenumber=\"1\">Executes the specified callbacks when 2 triggers collide.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/milk.Components.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/milk.Components.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "milk.Components",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/milk.Core.Anchor.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/milk.Core.Anchor.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "milk.Core.Anchor",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/milk.Core.Camera.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/milk.Core.Camera.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "milk.Core.Camera",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/milk.Core.Component.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/milk.Core.Component.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "milk.Core.Component",
+      "Summary": "<p sourcefile=\"api/milk.Core.Component.yml\" sourcestartlinenumber=\"1\">A component stores data for systems to use,\nand has some useful additional callback methods.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/milk.Core.EasingFunctions.EasingDelegate.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/milk.Core.EasingFunctions.EasingDelegate.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "milk.Core.EasingFunctions.EasingDelegate",
+      "Summary": "<p sourcefile=\"api/milk.Core.EasingFunctions.EasingDelegate.yml\" sourcestartlinenumber=\"1\">Represents a delegate for an easing function.\nAn easing function takes a single float parameter (typically a normalized time value from 0 to 1)\nand returns a float value, which is the eased output.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/milk.Core.EasingFunctions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/milk.Core.EasingFunctions.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "milk.Core.EasingFunctions",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/milk.Core.EngineGlobals.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/milk.Core.EngineGlobals.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "milk.Core.EngineGlobals",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/milk.Core.Entity.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/milk.Core.Entity.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "milk.Core.Entity",
+      "Summary": "<p sourcefile=\"api/milk.Core.Entity.yml\" sourcestartlinenumber=\"1\">An Entity is a logical container for components.\nSystems in a Scene act on entities with the required set of components.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/milk.Core.EntitySortMethods.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/milk.Core.EntitySortMethods.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "milk.Core.EntitySortMethods",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/milk.Core.Game.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/milk.Core.Game.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "milk.Core.Game",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/milk.Core.Image.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/milk.Core.Image.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "milk.Core.Image",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/milk.Core.InputManager.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/milk.Core.InputManager.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "milk.Core.InputManager",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/milk.Core.Scene.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/milk.Core.Scene.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "milk.Core.Scene",
+      "Summary": "<p sourcefile=\"api/milk.Core.Scene.yml\" sourcestartlinenumber=\"1\">A scene is a collection of entities and systems, and can be thought\nof as game 'screens'. Each system in a scene acts on all entities in\nthe scene with the required set of components.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/milk.Core.SceneRenderable.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/milk.Core.SceneRenderable.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "milk.Core.SceneRenderable",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/milk.Core.Sprite.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/milk.Core.Sprite.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "milk.Core.Sprite",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/milk.Core.System.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/milk.Core.System.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "milk.Core.System",
+      "Summary": "<p sourcefile=\"api/milk.Core.System.yml\" sourcestartlinenumber=\"1\">A system within a scene runs on entities with the reqiured set of components.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/milk.Core.Text.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/milk.Core.Text.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "milk.Core.Text",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/milk.Core.Theme.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/milk.Core.Theme.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "milk.Core.Theme",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/milk.Core.Transition.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/milk.Core.Transition.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "milk.Core.Transition",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/milk.Core.Utilities.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/milk.Core.Utilities.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "milk.Core.Utilities",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/milk.Core.Utils.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/milk.Core.Utils.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "milk.Core.Utils",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/milk.Core.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/milk.Core.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "milk.Core",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/milk.DefaultScene.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/milk.DefaultScene.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "milk.DefaultScene",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/milk.EasingFunctions.EasingDelegate.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/milk.EasingFunctions.EasingDelegate.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "milk.EasingFunctions.EasingDelegate",
+      "Summary": "<p sourcefile=\"api/milk.EasingFunctions.EasingDelegate.yml\" sourcestartlinenumber=\"1\">Represents a delegate for an easing function.\nAn easing function takes a single float parameter (typically a normalized time value from 0 to 1)\nand returns a float value, which is the eased output.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/milk.EasingFunctions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/milk.EasingFunctions.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "milk.EasingFunctions",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/milk.EngineGlobals.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/milk.EngineGlobals.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "milk.EngineGlobals",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/milk.Entity.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/milk.Entity.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "milk.Entity",
+      "Summary": "<p sourcefile=\"api/milk.Entity.yml\" sourcestartlinenumber=\"1\">An Entity is a logical container for components.\nSystems in a Scene act on entities with the required set of components.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/milk.EntityManager.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/milk.EntityManager.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "milk.EntityManager",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/milk.EntitySortMethods.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/milk.EntitySortMethods.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "milk.EntitySortMethods",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/milk.Game.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/milk.Game.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "milk.Game",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/milk.Image.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/milk.Image.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "milk.Image",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/milk.InputComponent.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/milk.InputComponent.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "milk.InputComponent",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/milk.InputManager.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/milk.InputManager.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "milk.InputManager",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/milk.InputSystem.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/milk.InputSystem.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "milk.InputSystem",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/milk.LightingComponent.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/milk.LightingComponent.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "milk.LightingComponent",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/milk.LightingSystem.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/milk.LightingSystem.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "milk.LightingSystem",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/milk.PhysicsComponent.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/milk.PhysicsComponent.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "milk.PhysicsComponent",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/milk.PhysicsSystem.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/milk.PhysicsSystem.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "milk.PhysicsSystem",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/milk.PhysicsSystem2.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/milk.PhysicsSystem2.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "milk.PhysicsSystem2",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/milk.Scene.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/milk.Scene.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "milk.Scene",
+      "Summary": "<p sourcefile=\"api/milk.Scene.yml\" sourcestartlinenumber=\"1\">A scene is a collection of entities and systems, and can be thought\nof as game 'screens'. Each system in a scene acts on all entities in\nthe scene with the required set of components.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/milk.SceneManager.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/milk.SceneManager.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "milk.SceneManager",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/milk.SceneRenderable.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/milk.SceneRenderable.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "milk.SceneRenderable",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/milk.Sprite.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/milk.Sprite.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "milk.Sprite",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/milk.SpriteComponent.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/milk.SpriteComponent.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "milk.SpriteComponent",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/milk.SpriteSystem.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/milk.SpriteSystem.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "milk.SpriteSystem",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/milk.System.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/milk.System.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "milk.System",
+      "Summary": "<p sourcefile=\"api/milk.System.yml\" sourcestartlinenumber=\"1\">A system within a scene runs on entities with the reqiured set of components.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/milk.SystemManager.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/milk.SystemManager.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "milk.SystemManager",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/milk.Systems.InputSystem.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/milk.Systems.InputSystem.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "milk.Systems.InputSystem",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/milk.Systems.LightingSystem.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/milk.Systems.LightingSystem.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "milk.Systems.LightingSystem",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/milk.Systems.PhysicsSystem.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/milk.Systems.PhysicsSystem.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "milk.Systems.PhysicsSystem",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/milk.Systems.SpriteSystem.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/milk.Systems.SpriteSystem.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "milk.Systems.SpriteSystem",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/milk.Systems.TriggerSystem.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/milk.Systems.TriggerSystem.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "milk.Systems.TriggerSystem",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/milk.Systems.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/milk.Systems.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "milk.Systems",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/milk.Text.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/milk.Text.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "milk.Text",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/milk.Theme.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/milk.Theme.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "milk.Theme",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/milk.TimedAction.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/milk.TimedAction.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "milk.TimedAction",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/milk.TransformComponent.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/milk.TransformComponent.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "milk.TransformComponent",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/milk.Transition.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/milk.Transition.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "milk.Transition",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/milk.Transitions.TransitionFadeBetween.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/milk.Transitions.TransitionFadeBetween.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "milk.Transitions.TransitionFadeBetween",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/milk.Transitions.TransitionFadeIn.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/milk.Transitions.TransitionFadeIn.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "milk.Transitions.TransitionFadeIn",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/milk.Transitions.TransitionFadeToBlack.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/milk.Transitions.TransitionFadeToBlack.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "milk.Transitions.TransitionFadeToBlack",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/milk.Transitions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/milk.Transitions.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "milk.Transitions",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/milk.TriggerComponent.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/milk.TriggerComponent.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "milk.TriggerComponent",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/milk.TriggerEntity.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/milk.TriggerEntity.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "milk.TriggerEntity",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/milk.TriggerSystem.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/milk.TriggerSystem.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "milk.TriggerSystem",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/milk.Utilities.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/milk.Utilities.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "milk.Utilities",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/milk.Utils.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/milk.Utils.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "milk.Utils",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/milk.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/milk.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "milk",
+      "Summary": null
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "api/toc.yml",
+      "output": {
+        ".json": {
+          "relative_path": "api/toc.json"
+        },
+        ".html": {
+          "relative_path": "api/toc.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/getting-started.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/getting-started.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/introduction.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/introduction.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "docs/toc.yml",
+      "output": {
+        ".json": {
+          "relative_path": "docs/toc.json"
+        },
+        ".html": {
+          "relative_path": "docs/toc.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "index.md",
+      "output": {
+        ".html": {
+          "relative_path": "index.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "toc.yml",
+      "output": {
+        ".json": {
+          "relative_path": "toc.json"
+        },
+        ".html": {
+          "relative_path": "toc.html"
+        }
+      },
+      "version": ""
+    }
+  ],
+  "groups": [
+    {
+      "xrefmap": "xrefmap.yml"
+    }
+  ]
+}

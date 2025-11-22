@@ -1,0 +1,1133 @@
+### YamlMime:ManagedReference
+items:
+- uid: milk.System
+  commentId: T:milk.System
+  id: System
+  parent: milk
+  children:
+  - milk.System.#ctor
+  - milk.System.AddRequiredComponentType``1
+  - milk.System.Draw(milk.Scene)
+  - milk.System.DrawAboveEntities
+  - milk.System.DrawAboveMap
+  - milk.System.DrawEntity(milk.Scene,milk.Entity)
+  - milk.System.Init
+  - milk.System.Input(Microsoft.Xna.Framework.GameTime,milk.Scene)
+  - milk.System.InputEntity(Microsoft.Xna.Framework.GameTime,milk.Scene,milk.Entity)
+  - milk.System.OnAddedToScene(milk.Scene)
+  - milk.System.OnEnterScene(milk.Scene)
+  - milk.System.OnEntityAddedToScene(milk.Scene,milk.Entity)
+  - milk.System.OnEntityRemovedFromScene(milk.Scene,milk.Entity)
+  - milk.System.OnExitScene(milk.Scene)
+  - milk.System.OnRemovedFromScene(milk.Scene)
+  - milk.System.Update(Microsoft.Xna.Framework.GameTime,milk.Scene)
+  - milk.System.UpdateEntity(Microsoft.Xna.Framework.GameTime,milk.Scene,milk.Entity)
+  - milk.System.spriteBatch
+  langs:
+  - csharp
+  - vb
+  name: System
+  nameWithType: System
+  fullName: milk.System
+  type: Class
+  source:
+    remote:
+      path: Core/System.cs
+      branch: main
+      repo: git@github.com:rik-cross/monogame-milk.git
+    id: System
+    path: Core/System.cs
+    startLine: 17
+  assemblies:
+  - MonoGameECS
+  namespace: milk
+  summary: A system within a scene runs on entities with the reqiured set of components.
+  example: []
+  syntax:
+    content: public abstract class System
+    content.vb: Public MustInherit Class System
+  inheritance:
+  - System.Object
+  derivedClasses:
+  - milk.InputSystem
+  - milk.LightingSystem
+  - milk.PhysicsSystem
+  - milk.SpriteSystem
+  - milk.TriggerSystem
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: milk.System.spriteBatch
+  commentId: F:milk.System.spriteBatch
+  id: spriteBatch
+  parent: milk.System
+  langs:
+  - csharp
+  - vb
+  name: spriteBatch
+  nameWithType: System.spriteBatch
+  fullName: milk.System.spriteBatch
+  type: Field
+  source:
+    remote:
+      path: Core/System.cs
+      branch: main
+      repo: git@github.com:rik-cross/monogame-milk.git
+    id: spriteBatch
+    path: Core/System.cs
+    startLine: 25
+  assemblies:
+  - MonoGameECS
+  namespace: milk
+  summary: MonoGame spriteBatch used for drawing.
+  example: []
+  syntax:
+    content: protected SpriteBatch spriteBatch
+    return:
+      type: Microsoft.Xna.Framework.Graphics.SpriteBatch
+    content.vb: Protected spriteBatch As SpriteBatch
+- uid: milk.System.DrawAboveEntities
+  commentId: P:milk.System.DrawAboveEntities
+  id: DrawAboveEntities
+  parent: milk.System
+  langs:
+  - csharp
+  - vb
+  name: DrawAboveEntities
+  nameWithType: System.DrawAboveEntities
+  fullName: milk.System.DrawAboveEntities
+  type: Property
+  source:
+    remote:
+      path: Core/System.cs
+      branch: main
+      repo: git@github.com:rik-cross/monogame-milk.git
+    id: DrawAboveEntities
+    path: Core/System.cs
+    startLine: 37
+  assemblies:
+  - MonoGameECS
+  namespace: milk
+  summary: >-
+    Decides whether the system Draw method is called before
+
+    (below) or after (above) the entities are drawn.
+  example: []
+  syntax:
+    content: public bool DrawAboveEntities { get; set; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public Property DrawAboveEntities As Boolean
+  overload: milk.System.DrawAboveEntities*
+- uid: milk.System.DrawAboveMap
+  commentId: P:milk.System.DrawAboveMap
+  id: DrawAboveMap
+  parent: milk.System
+  langs:
+  - csharp
+  - vb
+  name: DrawAboveMap
+  nameWithType: System.DrawAboveMap
+  fullName: milk.System.DrawAboveMap
+  type: Property
+  source:
+    remote:
+      path: Core/System.cs
+      branch: main
+      repo: git@github.com:rik-cross/monogame-milk.git
+    id: DrawAboveMap
+    path: Core/System.cs
+    startLine: 57
+  assemblies:
+  - MonoGameECS
+  namespace: milk
+  summary: >-
+    Decides whether the system Draw method is called before
+
+    (below) or after (above) the map is drawn.
+  example: []
+  syntax:
+    content: public bool DrawAboveMap { get; set; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public Property DrawAboveMap As Boolean
+  overload: milk.System.DrawAboveMap*
+- uid: milk.System.#ctor
+  commentId: M:milk.System.#ctor
+  id: '#ctor'
+  parent: milk.System
+  langs:
+  - csharp
+  - vb
+  name: System()
+  nameWithType: System.System()
+  fullName: milk.System.System()
+  type: Constructor
+  source:
+    remote:
+      path: Core/System.cs
+      branch: main
+      repo: git@github.com:rik-cross/monogame-milk.git
+    id: .ctor
+    path: Core/System.cs
+    startLine: 76
+  assemblies:
+  - MonoGameECS
+  namespace: milk
+  summary: System constructor.
+  example: []
+  syntax:
+    content: public System()
+    content.vb: Public Sub New()
+  overload: milk.System.#ctor*
+  nameWithType.vb: System.New()
+  fullName.vb: milk.System.New()
+  name.vb: New()
+- uid: milk.System.AddRequiredComponentType``1
+  commentId: M:milk.System.AddRequiredComponentType``1
+  id: AddRequiredComponentType``1
+  parent: milk.System
+  langs:
+  - csharp
+  - vb
+  name: AddRequiredComponentType<T>()
+  nameWithType: System.AddRequiredComponentType<T>()
+  fullName: milk.System.AddRequiredComponentType<T>()
+  type: Method
+  source:
+    remote:
+      path: Core/System.cs
+      branch: main
+      repo: git@github.com:rik-cross/monogame-milk.git
+    id: AddRequiredComponentType
+    path: Core/System.cs
+    startLine: 86
+  assemblies:
+  - MonoGameECS
+  namespace: milk
+  summary: >-
+    Adds a component type that is required by an entity 
+
+    in order to be processed by the system.
+  example: []
+  syntax:
+    content: 'public void AddRequiredComponentType<T>() where T : Component'
+    typeParameters:
+    - id: T
+      description: The type of the component required.
+    content.vb: Public Sub AddRequiredComponentType(Of T As Component)()
+  overload: milk.System.AddRequiredComponentType*
+  nameWithType.vb: System.AddRequiredComponentType(Of T)()
+  fullName.vb: milk.System.AddRequiredComponentType(Of T)()
+  name.vb: AddRequiredComponentType(Of T)()
+- uid: milk.System.Init
+  commentId: M:milk.System.Init
+  id: Init
+  parent: milk.System
+  langs:
+  - csharp
+  - vb
+  name: Init()
+  nameWithType: System.Init()
+  fullName: milk.System.Init()
+  type: Method
+  source:
+    remote:
+      path: Core/System.cs
+      branch: main
+      repo: git@github.com:rik-cross/monogame-milk.git
+    id: Init
+    path: Core/System.cs
+    startLine: 104
+  assemblies:
+  - MonoGameECS
+  namespace: milk
+  summary: Called once when a system is created.
+  example: []
+  syntax:
+    content: public virtual void Init()
+    content.vb: Public Overridable Sub Init()
+  overload: milk.System.Init*
+- uid: milk.System.Input(Microsoft.Xna.Framework.GameTime,milk.Scene)
+  commentId: M:milk.System.Input(Microsoft.Xna.Framework.GameTime,milk.Scene)
+  id: Input(Microsoft.Xna.Framework.GameTime,milk.Scene)
+  parent: milk.System
+  langs:
+  - csharp
+  - vb
+  name: Input(GameTime, Scene)
+  nameWithType: System.Input(GameTime, Scene)
+  fullName: milk.System.Input(Microsoft.Xna.Framework.GameTime, milk.Scene)
+  type: Method
+  source:
+    remote:
+      path: Core/System.cs
+      branch: main
+      repo: git@github.com:rik-cross/monogame-milk.git
+    id: Input
+    path: Core/System.cs
+    startLine: 111
+  assemblies:
+  - MonoGameECS
+  namespace: milk
+  summary: A top-level input method, called once per frame.
+  example: []
+  syntax:
+    content: public virtual void Input(GameTime gameTime, Scene scene)
+    parameters:
+    - id: gameTime
+      type: Microsoft.Xna.Framework.GameTime
+      description: The MonoGame gameTime object.
+    - id: scene
+      type: milk.Scene
+      description: The scene that the system is in.
+    content.vb: Public Overridable Sub Input(gameTime As GameTime, scene As Scene)
+  overload: milk.System.Input*
+- uid: milk.System.InputEntity(Microsoft.Xna.Framework.GameTime,milk.Scene,milk.Entity)
+  commentId: M:milk.System.InputEntity(Microsoft.Xna.Framework.GameTime,milk.Scene,milk.Entity)
+  id: InputEntity(Microsoft.Xna.Framework.GameTime,milk.Scene,milk.Entity)
+  parent: milk.System
+  langs:
+  - csharp
+  - vb
+  name: InputEntity(GameTime, Scene, Entity)
+  nameWithType: System.InputEntity(GameTime, Scene, Entity)
+  fullName: milk.System.InputEntity(Microsoft.Xna.Framework.GameTime, milk.Scene, milk.Entity)
+  type: Method
+  source:
+    remote:
+      path: Core/System.cs
+      branch: main
+      repo: git@github.com:rik-cross/monogame-milk.git
+    id: InputEntity
+    path: Core/System.cs
+    startLine: 120
+  assemblies:
+  - MonoGameECS
+  namespace: milk
+  summary: >-
+    An entity-specific input method, called once per frame
+
+    for each entity with the required set of components.
+  example: []
+  syntax:
+    content: public virtual void InputEntity(GameTime gameTime, Scene scene, Entity entity)
+    parameters:
+    - id: gameTime
+      type: Microsoft.Xna.Framework.GameTime
+      description: The MonoGame gameTime object.
+    - id: scene
+      type: milk.Scene
+      description: The scene that the system is in
+    - id: entity
+      type: milk.Entity
+      description: The entity to be acted upon.
+    content.vb: Public Overridable Sub InputEntity(gameTime As GameTime, scene As Scene, entity As Entity)
+  overload: milk.System.InputEntity*
+- uid: milk.System.Update(Microsoft.Xna.Framework.GameTime,milk.Scene)
+  commentId: M:milk.System.Update(Microsoft.Xna.Framework.GameTime,milk.Scene)
+  id: Update(Microsoft.Xna.Framework.GameTime,milk.Scene)
+  parent: milk.System
+  langs:
+  - csharp
+  - vb
+  name: Update(GameTime, Scene)
+  nameWithType: System.Update(GameTime, Scene)
+  fullName: milk.System.Update(Microsoft.Xna.Framework.GameTime, milk.Scene)
+  type: Method
+  source:
+    remote:
+      path: Core/System.cs
+      branch: main
+      repo: git@github.com:rik-cross/monogame-milk.git
+    id: Update
+    path: Core/System.cs
+    startLine: 127
+  assemblies:
+  - MonoGameECS
+  namespace: milk
+  summary: A top-level update method, called once per frame.
+  example: []
+  syntax:
+    content: public virtual void Update(GameTime gameTime, Scene scene)
+    parameters:
+    - id: gameTime
+      type: Microsoft.Xna.Framework.GameTime
+      description: The MonoGame gameTime object.
+    - id: scene
+      type: milk.Scene
+      description: The scene that the system is in.
+    content.vb: Public Overridable Sub Update(gameTime As GameTime, scene As Scene)
+  overload: milk.System.Update*
+- uid: milk.System.UpdateEntity(Microsoft.Xna.Framework.GameTime,milk.Scene,milk.Entity)
+  commentId: M:milk.System.UpdateEntity(Microsoft.Xna.Framework.GameTime,milk.Scene,milk.Entity)
+  id: UpdateEntity(Microsoft.Xna.Framework.GameTime,milk.Scene,milk.Entity)
+  parent: milk.System
+  langs:
+  - csharp
+  - vb
+  name: UpdateEntity(GameTime, Scene, Entity)
+  nameWithType: System.UpdateEntity(GameTime, Scene, Entity)
+  fullName: milk.System.UpdateEntity(Microsoft.Xna.Framework.GameTime, milk.Scene, milk.Entity)
+  type: Method
+  source:
+    remote:
+      path: Core/System.cs
+      branch: main
+      repo: git@github.com:rik-cross/monogame-milk.git
+    id: UpdateEntity
+    path: Core/System.cs
+    startLine: 136
+  assemblies:
+  - MonoGameECS
+  namespace: milk
+  summary: >-
+    An entity-specific update method, called once per frame
+
+    for each entity with the required set of components.
+  example: []
+  syntax:
+    content: public virtual void UpdateEntity(GameTime gameTime, Scene scene, Entity entity)
+    parameters:
+    - id: gameTime
+      type: Microsoft.Xna.Framework.GameTime
+      description: The MonoGame gameTime object.
+    - id: scene
+      type: milk.Scene
+      description: The scene that the system is in
+    - id: entity
+      type: milk.Entity
+      description: The entity to be acted upon.
+    content.vb: Public Overridable Sub UpdateEntity(gameTime As GameTime, scene As Scene, entity As Entity)
+  overload: milk.System.UpdateEntity*
+- uid: milk.System.Draw(milk.Scene)
+  commentId: M:milk.System.Draw(milk.Scene)
+  id: Draw(milk.Scene)
+  parent: milk.System
+  langs:
+  - csharp
+  - vb
+  name: Draw(Scene)
+  nameWithType: System.Draw(Scene)
+  fullName: milk.System.Draw(milk.Scene)
+  type: Method
+  source:
+    remote:
+      path: Core/System.cs
+      branch: main
+      repo: git@github.com:rik-cross/monogame-milk.git
+    id: Draw
+    path: Core/System.cs
+    startLine: 142
+  assemblies:
+  - MonoGameECS
+  namespace: milk
+  summary: A top-level draw method, called once per frame.
+  example: []
+  syntax:
+    content: public virtual void Draw(Scene scene)
+    parameters:
+    - id: scene
+      type: milk.Scene
+      description: The scene that the system is in.
+    content.vb: Public Overridable Sub Draw(scene As Scene)
+  overload: milk.System.Draw*
+- uid: milk.System.DrawEntity(milk.Scene,milk.Entity)
+  commentId: M:milk.System.DrawEntity(milk.Scene,milk.Entity)
+  id: DrawEntity(milk.Scene,milk.Entity)
+  parent: milk.System
+  langs:
+  - csharp
+  - vb
+  name: DrawEntity(Scene, Entity)
+  nameWithType: System.DrawEntity(Scene, Entity)
+  fullName: milk.System.DrawEntity(milk.Scene, milk.Entity)
+  type: Method
+  source:
+    remote:
+      path: Core/System.cs
+      branch: main
+      repo: git@github.com:rik-cross/monogame-milk.git
+    id: DrawEntity
+    path: Core/System.cs
+    startLine: 150
+  assemblies:
+  - MonoGameECS
+  namespace: milk
+  summary: >-
+    An entity-specific draw method, called once per frame
+
+    for each entity with the required set of components.
+  example: []
+  syntax:
+    content: public virtual void DrawEntity(Scene scene, Entity entity)
+    parameters:
+    - id: scene
+      type: milk.Scene
+      description: The scene that the system is in
+    - id: entity
+      type: milk.Entity
+      description: The entity to be acted upon.
+    content.vb: Public Overridable Sub DrawEntity(scene As Scene, entity As Entity)
+  overload: milk.System.DrawEntity*
+- uid: milk.System.OnEnterScene(milk.Scene)
+  commentId: M:milk.System.OnEnterScene(milk.Scene)
+  id: OnEnterScene(milk.Scene)
+  parent: milk.System
+  langs:
+  - csharp
+  - vb
+  name: OnEnterScene(Scene)
+  nameWithType: System.OnEnterScene(Scene)
+  fullName: milk.System.OnEnterScene(milk.Scene)
+  type: Method
+  source:
+    remote:
+      path: Core/System.cs
+      branch: main
+      repo: git@github.com:rik-cross/monogame-milk.git
+    id: OnEnterScene
+    path: Core/System.cs
+    startLine: 160
+  assemblies:
+  - MonoGameECS
+  namespace: milk
+  summary: Called once when the scene becomes active;
+  example: []
+  syntax:
+    content: public virtual void OnEnterScene(Scene scene)
+    parameters:
+    - id: scene
+      type: milk.Scene
+      description: The scene that the system is in.
+    content.vb: Public Overridable Sub OnEnterScene(scene As Scene)
+  overload: milk.System.OnEnterScene*
+- uid: milk.System.OnExitScene(milk.Scene)
+  commentId: M:milk.System.OnExitScene(milk.Scene)
+  id: OnExitScene(milk.Scene)
+  parent: milk.System
+  langs:
+  - csharp
+  - vb
+  name: OnExitScene(Scene)
+  nameWithType: System.OnExitScene(Scene)
+  fullName: milk.System.OnExitScene(milk.Scene)
+  type: Method
+  source:
+    remote:
+      path: Core/System.cs
+      branch: main
+      repo: git@github.com:rik-cross/monogame-milk.git
+    id: OnExitScene
+    path: Core/System.cs
+    startLine: 166
+  assemblies:
+  - MonoGameECS
+  namespace: milk
+  summary: Called once when the scene is no longer active.
+  example: []
+  syntax:
+    content: public virtual void OnExitScene(Scene scene)
+    parameters:
+    - id: scene
+      type: milk.Scene
+      description: The scene that the system is in.
+    content.vb: Public Overridable Sub OnExitScene(scene As Scene)
+  overload: milk.System.OnExitScene*
+- uid: milk.System.OnEntityAddedToScene(milk.Scene,milk.Entity)
+  commentId: M:milk.System.OnEntityAddedToScene(milk.Scene,milk.Entity)
+  id: OnEntityAddedToScene(milk.Scene,milk.Entity)
+  parent: milk.System
+  langs:
+  - csharp
+  - vb
+  name: OnEntityAddedToScene(Scene, Entity)
+  nameWithType: System.OnEntityAddedToScene(Scene, Entity)
+  fullName: milk.System.OnEntityAddedToScene(milk.Scene, milk.Entity)
+  type: Method
+  source:
+    remote:
+      path: Core/System.cs
+      branch: main
+      repo: git@github.com:rik-cross/monogame-milk.git
+    id: OnEntityAddedToScene
+    path: Core/System.cs
+    startLine: 173
+  assemblies:
+  - MonoGameECS
+  namespace: milk
+  summary: Called once when an entity is added to the scene containing the system.
+  example: []
+  syntax:
+    content: public virtual void OnEntityAddedToScene(Scene scene, Entity entity)
+    parameters:
+    - id: scene
+      type: milk.Scene
+      description: The scene containing the system that the entity is being added to.
+    - id: entity
+      type: milk.Entity
+      description: The entity being added to the scene.
+    content.vb: Public Overridable Sub OnEntityAddedToScene(scene As Scene, entity As Entity)
+  overload: milk.System.OnEntityAddedToScene*
+- uid: milk.System.OnEntityRemovedFromScene(milk.Scene,milk.Entity)
+  commentId: M:milk.System.OnEntityRemovedFromScene(milk.Scene,milk.Entity)
+  id: OnEntityRemovedFromScene(milk.Scene,milk.Entity)
+  parent: milk.System
+  langs:
+  - csharp
+  - vb
+  name: OnEntityRemovedFromScene(Scene, Entity)
+  nameWithType: System.OnEntityRemovedFromScene(Scene, Entity)
+  fullName: milk.System.OnEntityRemovedFromScene(milk.Scene, milk.Entity)
+  type: Method
+  source:
+    remote:
+      path: Core/System.cs
+      branch: main
+      repo: git@github.com:rik-cross/monogame-milk.git
+    id: OnEntityRemovedFromScene
+    path: Core/System.cs
+    startLine: 180
+  assemblies:
+  - MonoGameECS
+  namespace: milk
+  summary: Called once when an entity is removed from the scene containing the system.
+  example: []
+  syntax:
+    content: public virtual void OnEntityRemovedFromScene(Scene scene, Entity entity)
+    parameters:
+    - id: scene
+      type: milk.Scene
+      description: The scene containing the system that the entity is being removed from.
+    - id: entity
+      type: milk.Entity
+      description: The entity being removed from the scene.
+    content.vb: Public Overridable Sub OnEntityRemovedFromScene(scene As Scene, entity As Entity)
+  overload: milk.System.OnEntityRemovedFromScene*
+- uid: milk.System.OnAddedToScene(milk.Scene)
+  commentId: M:milk.System.OnAddedToScene(milk.Scene)
+  id: OnAddedToScene(milk.Scene)
+  parent: milk.System
+  langs:
+  - csharp
+  - vb
+  name: OnAddedToScene(Scene)
+  nameWithType: System.OnAddedToScene(Scene)
+  fullName: milk.System.OnAddedToScene(milk.Scene)
+  type: Method
+  source:
+    remote:
+      path: Core/System.cs
+      branch: main
+      repo: git@github.com:rik-cross/monogame-milk.git
+    id: OnAddedToScene
+    path: Core/System.cs
+    startLine: 186
+  assemblies:
+  - MonoGameECS
+  namespace: milk
+  summary: Called once when a system is added to a scene.
+  example: []
+  syntax:
+    content: public virtual void OnAddedToScene(Scene scene)
+    parameters:
+    - id: scene
+      type: milk.Scene
+      description: The scene the system is being added to.
+    content.vb: Public Overridable Sub OnAddedToScene(scene As Scene)
+  overload: milk.System.OnAddedToScene*
+- uid: milk.System.OnRemovedFromScene(milk.Scene)
+  commentId: M:milk.System.OnRemovedFromScene(milk.Scene)
+  id: OnRemovedFromScene(milk.Scene)
+  parent: milk.System
+  langs:
+  - csharp
+  - vb
+  name: OnRemovedFromScene(Scene)
+  nameWithType: System.OnRemovedFromScene(Scene)
+  fullName: milk.System.OnRemovedFromScene(milk.Scene)
+  type: Method
+  source:
+    remote:
+      path: Core/System.cs
+      branch: main
+      repo: git@github.com:rik-cross/monogame-milk.git
+    id: OnRemovedFromScene
+    path: Core/System.cs
+    startLine: 192
+  assemblies:
+  - MonoGameECS
+  namespace: milk
+  summary: Called once when a system is removed from a scene.
+  example: []
+  syntax:
+    content: public virtual void OnRemovedFromScene(Scene scene)
+    parameters:
+    - id: scene
+      type: milk.Scene
+      description: The scene the system is being removed from.
+    content.vb: Public Overridable Sub OnRemovedFromScene(scene As Scene)
+  overload: milk.System.OnRemovedFromScene*
+references:
+- uid: milk
+  commentId: N:milk
+  href: milk.html
+  name: milk
+  nameWithType: milk
+  fullName: milk
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: Microsoft.Xna.Framework.Graphics.SpriteBatch
+  commentId: T:Microsoft.Xna.Framework.Graphics.SpriteBatch
+  parent: Microsoft.Xna.Framework.Graphics
+  isExternal: true
+  name: SpriteBatch
+  nameWithType: SpriteBatch
+  fullName: Microsoft.Xna.Framework.Graphics.SpriteBatch
+- uid: Microsoft.Xna.Framework.Graphics
+  commentId: N:Microsoft.Xna.Framework.Graphics
+  isExternal: true
+  name: Microsoft.Xna.Framework.Graphics
+  nameWithType: Microsoft.Xna.Framework.Graphics
+  fullName: Microsoft.Xna.Framework.Graphics
+  spec.csharp:
+  - uid: Microsoft
+    name: Microsoft
+    isExternal: true
+  - name: .
+  - uid: Microsoft.Xna
+    name: Xna
+    isExternal: true
+  - name: .
+  - uid: Microsoft.Xna.Framework
+    name: Framework
+    isExternal: true
+  - name: .
+  - uid: Microsoft.Xna.Framework.Graphics
+    name: Graphics
+    isExternal: true
+  spec.vb:
+  - uid: Microsoft
+    name: Microsoft
+    isExternal: true
+  - name: .
+  - uid: Microsoft.Xna
+    name: Xna
+    isExternal: true
+  - name: .
+  - uid: Microsoft.Xna.Framework
+    name: Framework
+    isExternal: true
+  - name: .
+  - uid: Microsoft.Xna.Framework.Graphics
+    name: Graphics
+    isExternal: true
+- uid: milk.System.DrawAboveEntities*
+  commentId: Overload:milk.System.DrawAboveEntities
+  href: milk.System.html#milk_System_DrawAboveEntities
+  name: DrawAboveEntities
+  nameWithType: System.DrawAboveEntities
+  fullName: milk.System.DrawAboveEntities
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: bool
+  nameWithType: bool
+  fullName: bool
+  nameWithType.vb: Boolean
+  fullName.vb: Boolean
+  name.vb: Boolean
+- uid: milk.System.DrawAboveMap*
+  commentId: Overload:milk.System.DrawAboveMap
+  href: milk.System.html#milk_System_DrawAboveMap
+  name: DrawAboveMap
+  nameWithType: System.DrawAboveMap
+  fullName: milk.System.DrawAboveMap
+- uid: milk.System.#ctor*
+  commentId: Overload:milk.System.#ctor
+  href: milk.System.html#milk_System__ctor
+  name: System
+  nameWithType: System.System
+  fullName: milk.System.System
+  nameWithType.vb: System.New
+  fullName.vb: milk.System.New
+  name.vb: New
+- uid: milk.System.AddRequiredComponentType*
+  commentId: Overload:milk.System.AddRequiredComponentType
+  href: milk.System.html#milk_System_AddRequiredComponentType__1
+  name: AddRequiredComponentType
+  nameWithType: System.AddRequiredComponentType
+  fullName: milk.System.AddRequiredComponentType
+- uid: milk.System.Init*
+  commentId: Overload:milk.System.Init
+  href: milk.System.html#milk_System_Init
+  name: Init
+  nameWithType: System.Init
+  fullName: milk.System.Init
+- uid: milk.System.Input*
+  commentId: Overload:milk.System.Input
+  href: milk.System.html#milk_System_Input_Microsoft_Xna_Framework_GameTime_milk_Scene_
+  name: Input
+  nameWithType: System.Input
+  fullName: milk.System.Input
+- uid: Microsoft.Xna.Framework.GameTime
+  commentId: T:Microsoft.Xna.Framework.GameTime
+  parent: Microsoft.Xna.Framework
+  isExternal: true
+  name: GameTime
+  nameWithType: GameTime
+  fullName: Microsoft.Xna.Framework.GameTime
+- uid: milk.Scene
+  commentId: T:milk.Scene
+  parent: milk
+  href: milk.Scene.html
+  name: Scene
+  nameWithType: Scene
+  fullName: milk.Scene
+- uid: Microsoft.Xna.Framework
+  commentId: N:Microsoft.Xna.Framework
+  isExternal: true
+  name: Microsoft.Xna.Framework
+  nameWithType: Microsoft.Xna.Framework
+  fullName: Microsoft.Xna.Framework
+  spec.csharp:
+  - uid: Microsoft
+    name: Microsoft
+    isExternal: true
+  - name: .
+  - uid: Microsoft.Xna
+    name: Xna
+    isExternal: true
+  - name: .
+  - uid: Microsoft.Xna.Framework
+    name: Framework
+    isExternal: true
+  spec.vb:
+  - uid: Microsoft
+    name: Microsoft
+    isExternal: true
+  - name: .
+  - uid: Microsoft.Xna
+    name: Xna
+    isExternal: true
+  - name: .
+  - uid: Microsoft.Xna.Framework
+    name: Framework
+    isExternal: true
+- uid: milk.System.InputEntity*
+  commentId: Overload:milk.System.InputEntity
+  href: milk.System.html#milk_System_InputEntity_Microsoft_Xna_Framework_GameTime_milk_Scene_milk_Entity_
+  name: InputEntity
+  nameWithType: System.InputEntity
+  fullName: milk.System.InputEntity
+- uid: milk.Entity
+  commentId: T:milk.Entity
+  parent: milk
+  href: milk.Entity.html
+  name: Entity
+  nameWithType: Entity
+  fullName: milk.Entity
+- uid: milk.System.Update*
+  commentId: Overload:milk.System.Update
+  href: milk.System.html#milk_System_Update_Microsoft_Xna_Framework_GameTime_milk_Scene_
+  name: Update
+  nameWithType: System.Update
+  fullName: milk.System.Update
+- uid: milk.System.UpdateEntity*
+  commentId: Overload:milk.System.UpdateEntity
+  href: milk.System.html#milk_System_UpdateEntity_Microsoft_Xna_Framework_GameTime_milk_Scene_milk_Entity_
+  name: UpdateEntity
+  nameWithType: System.UpdateEntity
+  fullName: milk.System.UpdateEntity
+- uid: milk.System.Draw*
+  commentId: Overload:milk.System.Draw
+  href: milk.System.html#milk_System_Draw_milk_Scene_
+  name: Draw
+  nameWithType: System.Draw
+  fullName: milk.System.Draw
+- uid: milk.System.DrawEntity*
+  commentId: Overload:milk.System.DrawEntity
+  href: milk.System.html#milk_System_DrawEntity_milk_Scene_milk_Entity_
+  name: DrawEntity
+  nameWithType: System.DrawEntity
+  fullName: milk.System.DrawEntity
+- uid: milk.System.OnEnterScene*
+  commentId: Overload:milk.System.OnEnterScene
+  href: milk.System.html#milk_System_OnEnterScene_milk_Scene_
+  name: OnEnterScene
+  nameWithType: System.OnEnterScene
+  fullName: milk.System.OnEnterScene
+- uid: milk.System.OnExitScene*
+  commentId: Overload:milk.System.OnExitScene
+  href: milk.System.html#milk_System_OnExitScene_milk_Scene_
+  name: OnExitScene
+  nameWithType: System.OnExitScene
+  fullName: milk.System.OnExitScene
+- uid: milk.System.OnEntityAddedToScene*
+  commentId: Overload:milk.System.OnEntityAddedToScene
+  href: milk.System.html#milk_System_OnEntityAddedToScene_milk_Scene_milk_Entity_
+  name: OnEntityAddedToScene
+  nameWithType: System.OnEntityAddedToScene
+  fullName: milk.System.OnEntityAddedToScene
+- uid: milk.System.OnEntityRemovedFromScene*
+  commentId: Overload:milk.System.OnEntityRemovedFromScene
+  href: milk.System.html#milk_System_OnEntityRemovedFromScene_milk_Scene_milk_Entity_
+  name: OnEntityRemovedFromScene
+  nameWithType: System.OnEntityRemovedFromScene
+  fullName: milk.System.OnEntityRemovedFromScene
+- uid: milk.System.OnAddedToScene*
+  commentId: Overload:milk.System.OnAddedToScene
+  href: milk.System.html#milk_System_OnAddedToScene_milk_Scene_
+  name: OnAddedToScene
+  nameWithType: System.OnAddedToScene
+  fullName: milk.System.OnAddedToScene
+- uid: milk.System.OnRemovedFromScene*
+  commentId: Overload:milk.System.OnRemovedFromScene
+  href: milk.System.html#milk_System_OnRemovedFromScene_milk_Scene_
+  name: OnRemovedFromScene
+  nameWithType: System.OnRemovedFromScene
+  fullName: milk.System.OnRemovedFromScene

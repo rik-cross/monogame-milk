@@ -1,0 +1,301 @@
+### YamlMime:ManagedReference
+items:
+- uid: milk.Core.Anchor
+  commentId: T:milk.Core.Anchor
+  id: Anchor
+  parent: milk.Core
+  children:
+  - milk.Core.Anchor.BottomCenter
+  - milk.Core.Anchor.BottomLeft
+  - milk.Core.Anchor.BottomRight
+  - milk.Core.Anchor.MiddleCenter
+  - milk.Core.Anchor.MiddleLeft
+  - milk.Core.Anchor.MiddleRight
+  - milk.Core.Anchor.TopCenter
+  - milk.Core.Anchor.TopLeft
+  - milk.Core.Anchor.TopRight
+  langs:
+  - csharp
+  - vb
+  name: Anchor
+  nameWithType: Anchor
+  fullName: milk.Core.Anchor
+  type: Enum
+  source:
+    remote:
+      path: Core/SceneRenderable.cs
+      branch: main
+      repo: git@github.com:rik-cross/monogame-milk.git
+    id: Anchor
+    path: Core/SceneRenderable.cs
+    startLine: 21
+  assemblies:
+  - MonoGameECS
+  namespace: milk.Core
+  syntax:
+    content: public enum Anchor
+    content.vb: Public Enum Anchor
+- uid: milk.Core.Anchor.TopLeft
+  commentId: F:milk.Core.Anchor.TopLeft
+  id: TopLeft
+  parent: milk.Core.Anchor
+  langs:
+  - csharp
+  - vb
+  name: TopLeft
+  nameWithType: Anchor.TopLeft
+  fullName: milk.Core.Anchor.TopLeft
+  type: Field
+  source:
+    remote:
+      path: Core/SceneRenderable.cs
+      branch: main
+      repo: git@github.com:rik-cross/monogame-milk.git
+    id: TopLeft
+    path: Core/SceneRenderable.cs
+    startLine: 23
+  assemblies:
+  - MonoGameECS
+  namespace: milk.Core
+  syntax:
+    content: TopLeft = 0
+    return:
+      type: milk.Core.Anchor
+- uid: milk.Core.Anchor.TopCenter
+  commentId: F:milk.Core.Anchor.TopCenter
+  id: TopCenter
+  parent: milk.Core.Anchor
+  langs:
+  - csharp
+  - vb
+  name: TopCenter
+  nameWithType: Anchor.TopCenter
+  fullName: milk.Core.Anchor.TopCenter
+  type: Field
+  source:
+    remote:
+      path: Core/SceneRenderable.cs
+      branch: main
+      repo: git@github.com:rik-cross/monogame-milk.git
+    id: TopCenter
+    path: Core/SceneRenderable.cs
+    startLine: 23
+  assemblies:
+  - MonoGameECS
+  namespace: milk.Core
+  syntax:
+    content: TopCenter = 1
+    return:
+      type: milk.Core.Anchor
+- uid: milk.Core.Anchor.TopRight
+  commentId: F:milk.Core.Anchor.TopRight
+  id: TopRight
+  parent: milk.Core.Anchor
+  langs:
+  - csharp
+  - vb
+  name: TopRight
+  nameWithType: Anchor.TopRight
+  fullName: milk.Core.Anchor.TopRight
+  type: Field
+  source:
+    remote:
+      path: Core/SceneRenderable.cs
+      branch: main
+      repo: git@github.com:rik-cross/monogame-milk.git
+    id: TopRight
+    path: Core/SceneRenderable.cs
+    startLine: 23
+  assemblies:
+  - MonoGameECS
+  namespace: milk.Core
+  syntax:
+    content: TopRight = 2
+    return:
+      type: milk.Core.Anchor
+- uid: milk.Core.Anchor.MiddleLeft
+  commentId: F:milk.Core.Anchor.MiddleLeft
+  id: MiddleLeft
+  parent: milk.Core.Anchor
+  langs:
+  - csharp
+  - vb
+  name: MiddleLeft
+  nameWithType: Anchor.MiddleLeft
+  fullName: milk.Core.Anchor.MiddleLeft
+  type: Field
+  source:
+    remote:
+      path: Core/SceneRenderable.cs
+      branch: main
+      repo: git@github.com:rik-cross/monogame-milk.git
+    id: MiddleLeft
+    path: Core/SceneRenderable.cs
+    startLine: 24
+  assemblies:
+  - MonoGameECS
+  namespace: milk.Core
+  syntax:
+    content: MiddleLeft = 3
+    return:
+      type: milk.Core.Anchor
+- uid: milk.Core.Anchor.MiddleCenter
+  commentId: F:milk.Core.Anchor.MiddleCenter
+  id: MiddleCenter
+  parent: milk.Core.Anchor
+  langs:
+  - csharp
+  - vb
+  name: MiddleCenter
+  nameWithType: Anchor.MiddleCenter
+  fullName: milk.Core.Anchor.MiddleCenter
+  type: Field
+  source:
+    remote:
+      path: Core/SceneRenderable.cs
+      branch: main
+      repo: git@github.com:rik-cross/monogame-milk.git
+    id: MiddleCenter
+    path: Core/SceneRenderable.cs
+    startLine: 24
+  assemblies:
+  - MonoGameECS
+  namespace: milk.Core
+  syntax:
+    content: MiddleCenter = 4
+    return:
+      type: milk.Core.Anchor
+- uid: milk.Core.Anchor.MiddleRight
+  commentId: F:milk.Core.Anchor.MiddleRight
+  id: MiddleRight
+  parent: milk.Core.Anchor
+  langs:
+  - csharp
+  - vb
+  name: MiddleRight
+  nameWithType: Anchor.MiddleRight
+  fullName: milk.Core.Anchor.MiddleRight
+  type: Field
+  source:
+    remote:
+      path: Core/SceneRenderable.cs
+      branch: main
+      repo: git@github.com:rik-cross/monogame-milk.git
+    id: MiddleRight
+    path: Core/SceneRenderable.cs
+    startLine: 24
+  assemblies:
+  - MonoGameECS
+  namespace: milk.Core
+  syntax:
+    content: MiddleRight = 5
+    return:
+      type: milk.Core.Anchor
+- uid: milk.Core.Anchor.BottomLeft
+  commentId: F:milk.Core.Anchor.BottomLeft
+  id: BottomLeft
+  parent: milk.Core.Anchor
+  langs:
+  - csharp
+  - vb
+  name: BottomLeft
+  nameWithType: Anchor.BottomLeft
+  fullName: milk.Core.Anchor.BottomLeft
+  type: Field
+  source:
+    remote:
+      path: Core/SceneRenderable.cs
+      branch: main
+      repo: git@github.com:rik-cross/monogame-milk.git
+    id: BottomLeft
+    path: Core/SceneRenderable.cs
+    startLine: 25
+  assemblies:
+  - MonoGameECS
+  namespace: milk.Core
+  syntax:
+    content: BottomLeft = 6
+    return:
+      type: milk.Core.Anchor
+- uid: milk.Core.Anchor.BottomCenter
+  commentId: F:milk.Core.Anchor.BottomCenter
+  id: BottomCenter
+  parent: milk.Core.Anchor
+  langs:
+  - csharp
+  - vb
+  name: BottomCenter
+  nameWithType: Anchor.BottomCenter
+  fullName: milk.Core.Anchor.BottomCenter
+  type: Field
+  source:
+    remote:
+      path: Core/SceneRenderable.cs
+      branch: main
+      repo: git@github.com:rik-cross/monogame-milk.git
+    id: BottomCenter
+    path: Core/SceneRenderable.cs
+    startLine: 25
+  assemblies:
+  - MonoGameECS
+  namespace: milk.Core
+  syntax:
+    content: BottomCenter = 7
+    return:
+      type: milk.Core.Anchor
+- uid: milk.Core.Anchor.BottomRight
+  commentId: F:milk.Core.Anchor.BottomRight
+  id: BottomRight
+  parent: milk.Core.Anchor
+  langs:
+  - csharp
+  - vb
+  name: BottomRight
+  nameWithType: Anchor.BottomRight
+  fullName: milk.Core.Anchor.BottomRight
+  type: Field
+  source:
+    remote:
+      path: Core/SceneRenderable.cs
+      branch: main
+      repo: git@github.com:rik-cross/monogame-milk.git
+    id: BottomRight
+    path: Core/SceneRenderable.cs
+    startLine: 25
+  assemblies:
+  - MonoGameECS
+  namespace: milk.Core
+  syntax:
+    content: BottomRight = 8
+    return:
+      type: milk.Core.Anchor
+references:
+- uid: milk.Core
+  commentId: N:milk.Core
+  href: milk.html
+  name: milk.Core
+  nameWithType: milk.Core
+  fullName: milk.Core
+  spec.csharp:
+  - uid: milk
+    name: milk
+    href: milk.html
+  - name: .
+  - uid: milk.Core
+    name: Core
+    href: milk.Core.html
+  spec.vb:
+  - uid: milk
+    name: milk
+    href: milk.html
+  - name: .
+  - uid: milk.Core
+    name: Core
+    href: milk.Core.html
+- uid: milk.Core.Anchor
+  commentId: T:milk.Core.Anchor
+  parent: milk.Core
+  href: milk.Core.Anchor.html
+  name: Anchor
+  nameWithType: Anchor
+  fullName: milk.Core.Anchor

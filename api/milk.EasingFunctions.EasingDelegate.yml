@@ -1,0 +1,65 @@
+### YamlMime:ManagedReference
+items:
+- uid: milk.EasingFunctions.EasingDelegate
+  commentId: T:milk.EasingFunctions.EasingDelegate
+  id: EasingFunctions.EasingDelegate
+  parent: milk
+  children: []
+  langs:
+  - csharp
+  - vb
+  name: EasingFunctions.EasingDelegate
+  nameWithType: EasingFunctions.EasingDelegate
+  fullName: milk.EasingFunctions.EasingDelegate
+  type: Delegate
+  source:
+    remote:
+      path: Core/EasingFunctions.cs
+      branch: main
+      repo: git@github.com:rik-cross/monogame-milk.git
+    id: EasingDelegate
+    path: Core/EasingFunctions.cs
+    startLine: 11
+  assemblies:
+  - MonoGameECS
+  namespace: milk
+  summary: >-
+    Represents a delegate for an easing function.
+
+    An easing function takes a single float parameter (typically a normalized time value from 0 to 1)
+
+    and returns a float value, which is the eased output.
+  example: []
+  syntax:
+    content: public delegate float EasingFunctions.EasingDelegate(float t)
+    parameters:
+    - id: t
+      type: System.Single
+    return:
+      type: System.Single
+    content.vb: Public Delegate Function EasingFunctions.EasingDelegate(t As Single) As Single
+references:
+- uid: milk
+  commentId: N:milk
+  href: milk.html
+  name: milk
+  nameWithType: milk
+  fullName: milk
+- uid: System.Single
+  commentId: T:System.Single
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.single
+  name: float
+  nameWithType: float
+  fullName: float
+  nameWithType.vb: Single
+  fullName.vb: Single
+  name.vb: Single
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System

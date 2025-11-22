@@ -2,7 +2,7 @@ using System;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
-namespace milk;
+namespace milk.Core;
 
 public static class Utilities
 {

@@ -1,0 +1,460 @@
+### YamlMime:ManagedReference
+items:
+- uid: milk.Core.Theme
+  commentId: T:milk.Core.Theme
+  id: Theme
+  parent: milk.Core
+  children:
+  - milk.Core.Theme.CreateConsoleTitle(System.String)
+  - milk.Core.Theme.PrintConsoleVar(System.String,System.String)
+  - milk.Core.Theme.consoleOutputLength
+  - milk.Core.Theme.valuePosition
+  langs:
+  - csharp
+  - vb
+  name: Theme
+  nameWithType: Theme
+  fullName: milk.Core.Theme
+  type: Class
+  source:
+    remote:
+      path: Core/Theme.cs
+      branch: main
+      repo: git@github.com:rik-cross/monogame-milk.git
+    id: Theme
+    path: Core/Theme.cs
+    startLine: 2
+  assemblies:
+  - MonoGameECS
+  namespace: milk.Core
+  syntax:
+    content: public static class Theme
+    content.vb: Public Module Theme
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: milk.Core.Theme.consoleOutputLength
+  commentId: F:milk.Core.Theme.consoleOutputLength
+  id: consoleOutputLength
+  parent: milk.Core.Theme
+  langs:
+  - csharp
+  - vb
+  name: consoleOutputLength
+  nameWithType: Theme.consoleOutputLength
+  fullName: milk.Core.Theme.consoleOutputLength
+  type: Field
+  source:
+    remote:
+      path: Core/Theme.cs
+      branch: main
+      repo: git@github.com:rik-cross/monogame-milk.git
+    id: consoleOutputLength
+    path: Core/Theme.cs
+    startLine: 3
+  assemblies:
+  - MonoGameECS
+  namespace: milk.Core
+  syntax:
+    content: public static int consoleOutputLength
+    return:
+      type: System.Int32
+    content.vb: Public Shared consoleOutputLength As Integer
+- uid: milk.Core.Theme.valuePosition
+  commentId: F:milk.Core.Theme.valuePosition
+  id: valuePosition
+  parent: milk.Core.Theme
+  langs:
+  - csharp
+  - vb
+  name: valuePosition
+  nameWithType: Theme.valuePosition
+  fullName: milk.Core.Theme.valuePosition
+  type: Field
+  source:
+    remote:
+      path: Core/Theme.cs
+      branch: main
+      repo: git@github.com:rik-cross/monogame-milk.git
+    id: valuePosition
+    path: Core/Theme.cs
+    startLine: 4
+  assemblies:
+  - MonoGameECS
+  namespace: milk.Core
+  syntax:
+    content: public static int valuePosition
+    return:
+      type: System.Int32
+    content.vb: Public Shared valuePosition As Integer
+- uid: milk.Core.Theme.CreateConsoleTitle(System.String)
+  commentId: M:milk.Core.Theme.CreateConsoleTitle(System.String)
+  id: CreateConsoleTitle(System.String)
+  parent: milk.Core.Theme
+  langs:
+  - csharp
+  - vb
+  name: CreateConsoleTitle(string)
+  nameWithType: Theme.CreateConsoleTitle(string)
+  fullName: milk.Core.Theme.CreateConsoleTitle(string)
+  type: Method
+  source:
+    remote:
+      path: Core/Theme.cs
+      branch: main
+      repo: git@github.com:rik-cross/monogame-milk.git
+    id: CreateConsoleTitle
+    path: Core/Theme.cs
+    startLine: 5
+  assemblies:
+  - MonoGameECS
+  namespace: milk.Core
+  syntax:
+    content: public static string CreateConsoleTitle(string title)
+    parameters:
+    - id: title
+      type: System.String
+    return:
+      type: System.String
+    content.vb: Public Shared Function CreateConsoleTitle(title As String) As String
+  overload: milk.Core.Theme.CreateConsoleTitle*
+  nameWithType.vb: Theme.CreateConsoleTitle(String)
+  fullName.vb: milk.Core.Theme.CreateConsoleTitle(String)
+  name.vb: CreateConsoleTitle(String)
+- uid: milk.Core.Theme.PrintConsoleVar(System.String,System.String)
+  commentId: M:milk.Core.Theme.PrintConsoleVar(System.String,System.String)
+  id: PrintConsoleVar(System.String,System.String)
+  parent: milk.Core.Theme
+  langs:
+  - csharp
+  - vb
+  name: PrintConsoleVar(string, string)
+  nameWithType: Theme.PrintConsoleVar(string, string)
+  fullName: milk.Core.Theme.PrintConsoleVar(string, string)
+  type: Method
+  source:
+    remote:
+      path: Core/Theme.cs
+      branch: main
+      repo: git@github.com:rik-cross/monogame-milk.git
+    id: PrintConsoleVar
+    path: Core/Theme.cs
+    startLine: 12
+  assemblies:
+  - MonoGameECS
+  namespace: milk.Core
+  syntax:
+    content: public static string PrintConsoleVar(string name, string value)
+    parameters:
+    - id: name
+      type: System.String
+    - id: value
+      type: System.String
+    return:
+      type: System.String
+    content.vb: Public Shared Function PrintConsoleVar(name As String, value As String) As String
+  overload: milk.Core.Theme.PrintConsoleVar*
+  nameWithType.vb: Theme.PrintConsoleVar(String, String)
+  fullName.vb: milk.Core.Theme.PrintConsoleVar(String, String)
+  name.vb: PrintConsoleVar(String, String)
+references:
+- uid: milk.Core
+  commentId: N:milk.Core
+  href: milk.html
+  name: milk.Core
+  nameWithType: milk.Core
+  fullName: milk.Core
+  spec.csharp:
+  - uid: milk
+    name: milk
+    href: milk.html
+  - name: .
+  - uid: milk.Core
+    name: Core
+    href: milk.Core.html
+  spec.vb:
+  - uid: milk
+    name: milk
+    href: milk.html
+  - name: .
+  - uid: milk.Core
+    name: Core
+    href: milk.Core.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer
+- uid: milk.Core.Theme.CreateConsoleTitle*
+  commentId: Overload:milk.Core.Theme.CreateConsoleTitle
+  href: milk.Core.Theme.html#milk_Core_Theme_CreateConsoleTitle_System_String_
+  name: CreateConsoleTitle
+  nameWithType: Theme.CreateConsoleTitle
+  fullName: milk.Core.Theme.CreateConsoleTitle
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: milk.Core.Theme.PrintConsoleVar*
+  commentId: Overload:milk.Core.Theme.PrintConsoleVar
+  href: milk.Core.Theme.html#milk_Core_Theme_PrintConsoleVar_System_String_System_String_
+  name: PrintConsoleVar
+  nameWithType: Theme.PrintConsoleVar
+  fullName: milk.Core.Theme.PrintConsoleVar

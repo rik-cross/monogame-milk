@@ -1,0 +1,44 @@
+### YamlMime:ManagedReference
+items:
+- uid: milk.Systems
+  commentId: N:milk.Systems
+  id: milk.Systems
+  children:
+  - milk.Systems.InputSystem
+  - milk.Systems.PhysicsSystem
+  - milk.Systems.SpriteSystem
+  - milk.Systems.TriggerSystem
+  langs:
+  - csharp
+  - vb
+  name: milk.Systems
+  nameWithType: milk.Systems
+  fullName: milk.Systems
+  type: Namespace
+  assemblies:
+  - MonoGameECS
+references:
+- uid: milk.Systems.InputSystem
+  commentId: T:milk.Systems.InputSystem
+  href: milk.Systems.InputSystem.html
+  name: InputSystem
+  nameWithType: InputSystem
+  fullName: milk.Systems.InputSystem
+- uid: milk.Systems.PhysicsSystem
+  commentId: T:milk.Systems.PhysicsSystem
+  href: milk.Systems.PhysicsSystem.html
+  name: PhysicsSystem
+  nameWithType: PhysicsSystem
+  fullName: milk.Systems.PhysicsSystem
+- uid: milk.Systems.SpriteSystem
+  commentId: T:milk.Systems.SpriteSystem
+  href: milk.Systems.SpriteSystem.html
+  name: SpriteSystem
+  nameWithType: SpriteSystem
+  fullName: milk.Systems.SpriteSystem
+- uid: milk.Systems.TriggerSystem
+  commentId: T:milk.Systems.TriggerSystem
+  href: milk.Systems.TriggerSystem.html
+  name: TriggerSystem
+  nameWithType: TriggerSystem
+  fullName: milk.Systems.TriggerSystem

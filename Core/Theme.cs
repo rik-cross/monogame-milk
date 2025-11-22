@@ -1,4 +1,4 @@
-namespace milk;
+namespace milk.Core;
 
 public static class Theme {
     public static int consoleOutputLength = 40;

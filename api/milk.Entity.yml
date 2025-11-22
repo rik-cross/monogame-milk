@@ -1,0 +1,1208 @@
+### YamlMime:ManagedReference
+items:
+- uid: milk.Entity
+  commentId: T:milk.Entity
+  id: Entity
+  parent: milk
+  children:
+  - milk.Entity.#ctor(System.String,System.Collections.Generic.List{System.String},System.String,System.Boolean,milk.Entity,milk.Component[])
+  - milk.Entity.AddComponent(milk.Component[])
+  - milk.Entity.AddTag(System.String[])
+  - milk.Entity.Delete
+  - milk.Entity.GetComponent``1
+  - milk.Entity.HasComponent``1
+  - milk.Entity.HasTag(System.String[])
+  - milk.Entity.ID
+  - milk.Entity.Name
+  - milk.Entity.Owner
+  - milk.Entity.PreviousState
+  - milk.Entity.RemoveComponent``1
+  - milk.Entity.RemoveTag(System.String[])
+  - milk.Entity.State
+  - milk.Entity.Tags
+  - milk.Entity.ToString
+  - milk.Entity.Visible
+  langs:
+  - csharp
+  - vb
+  name: Entity
+  nameWithType: Entity
+  fullName: milk.Entity
+  type: Class
+  source:
+    remote:
+      path: Core/Entity.cs
+      branch: main
+      repo: git@github.com:rik-cross/monogame-milk.git
+    id: Entity
+    path: Core/Entity.cs
+    startLine: 16
+  assemblies:
+  - MonoGameECS
+  namespace: milk
+  summary: >-
+    An Entity is a logical container for components.
+
+    Systems in a Scene act on entities with the required set of components.
+  example: []
+  syntax:
+    content: public class Entity
+    content.vb: Public Class Entity
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+- uid: milk.Entity.ID
+  commentId: P:milk.Entity.ID
+  id: ID
+  parent: milk.Entity
+  langs:
+  - csharp
+  - vb
+  name: ID
+  nameWithType: Entity.ID
+  fullName: milk.Entity.ID
+  type: Property
+  source:
+    remote:
+      path: Core/Entity.cs
+      branch: main
+      repo: git@github.com:rik-cross/monogame-milk.git
+    id: ID
+    path: Core/Entity.cs
+    startLine: 26
+  assemblies:
+  - MonoGameECS
+  namespace: milk
+  summary: The unique ID of the entity.
+  example: []
+  syntax:
+    content: public int ID { get; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public Property ID As Integer
+  overload: milk.Entity.ID*
+- uid: milk.Entity.Name
+  commentId: P:milk.Entity.Name
+  id: Name
+  parent: milk.Entity
+  langs:
+  - csharp
+  - vb
+  name: Name
+  nameWithType: Entity.Name
+  fullName: milk.Entity.Name
+  type: Property
+  source:
+    remote:
+      path: Core/Entity.cs
+      branch: main
+      repo: git@github.com:rik-cross/monogame-milk.git
+    id: Name
+    path: Core/Entity.cs
+    startLine: 38
+  assemblies:
+  - MonoGameECS
+  namespace: milk
+  summary: >-
+    The unique (not case-sensitive) name of the entity.
+
+    Setting a non-unique, non-null name will raise an InvalidOperationException.
+  example: []
+  syntax:
+    content: public string? Name { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property Name As String
+  overload: milk.Entity.Name*
+- uid: milk.Entity.PreviousState
+  commentId: P:milk.Entity.PreviousState
+  id: PreviousState
+  parent: milk.Entity
+  langs:
+  - csharp
+  - vb
+  name: PreviousState
+  nameWithType: Entity.PreviousState
+  fullName: milk.Entity.PreviousState
+  type: Property
+  source:
+    remote:
+      path: Core/Entity.cs
+      branch: main
+      repo: git@github.com:rik-cross/monogame-milk.git
+    id: PreviousState
+    path: Core/Entity.cs
+    startLine: 61
+  assemblies:
+  - MonoGameECS
+  namespace: milk
+  summary: The state of the entity in the previous frame.
+  example: []
+  syntax:
+    content: public string PreviousState { get; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property PreviousState As String
+  overload: milk.Entity.PreviousState*
+- uid: milk.Entity.State
+  commentId: P:milk.Entity.State
+  id: State
+  parent: milk.Entity
+  langs:
+  - csharp
+  - vb
+  name: State
+  nameWithType: Entity.State
+  fullName: milk.Entity.State
+  type: Property
+  source:
+    remote:
+      path: Core/Entity.cs
+      branch: main
+      repo: git@github.com:rik-cross/monogame-milk.git
+    id: State
+    path: Core/Entity.cs
+    startLine: 66
+  assemblies:
+  - MonoGameECS
+  namespace: milk
+  summary: The current state of the entity.
+  example: []
+  syntax:
+    content: public string State { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property State As String
+  overload: milk.Entity.State*
+- uid: milk.Entity.Owner
+  commentId: P:milk.Entity.Owner
+  id: Owner
+  parent: milk.Entity
+  langs:
+  - csharp
+  - vb
+  name: Owner
+  nameWithType: Entity.Owner
+  fullName: milk.Entity.Owner
+  type: Property
+  source:
+    remote:
+      path: Core/Entity.cs
+      branch: main
+      repo: git@github.com:rik-cross/monogame-milk.git
+    id: Owner
+    path: Core/Entity.cs
+    startLine: 86
+  assemblies:
+  - MonoGameECS
+  namespace: milk
+  summary: >-
+    The owner Entity.
+
+    This is set to itself if null is passed.
+  example: []
+  syntax:
+    content: public Entity? Owner { get; set; }
+    parameters: []
+    return:
+      type: milk.Entity
+    content.vb: Public Property Owner As Entity
+  overload: milk.Entity.Owner*
+- uid: milk.Entity.Delete
+  commentId: P:milk.Entity.Delete
+  id: Delete
+  parent: milk.Entity
+  langs:
+  - csharp
+  - vb
+  name: Delete
+  nameWithType: Entity.Delete
+  fullName: milk.Entity.Delete
+  type: Property
+  source:
+    remote:
+      path: Core/Entity.cs
+      branch: main
+      repo: git@github.com:rik-cross/monogame-milk.git
+    id: Delete
+    path: Core/Entity.cs
+    startLine: 96
+  assemblies:
+  - MonoGameECS
+  namespace: milk
+  summary: >-
+    Setting Delete = true marks an entity for deletion.
+
+    Deletion happens at the end of each game loop.
+  example: []
+  syntax:
+    content: public bool Delete { get; set; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public Property Delete As Boolean
+  overload: milk.Entity.Delete*
+- uid: milk.Entity.Tags
+  commentId: P:milk.Entity.Tags
+  id: Tags
+  parent: milk.Entity
+  langs:
+  - csharp
+  - vb
+  name: Tags
+  nameWithType: Entity.Tags
+  fullName: milk.Entity.Tags
+  type: Property
+  source:
+    remote:
+      path: Core/Entity.cs
+      branch: main
+      repo: git@github.com:rik-cross/monogame-milk.git
+    id: Tags
+    path: Core/Entity.cs
+    startLine: 122
+  assemblies:
+  - MonoGameECS
+  namespace: milk
+  summary: >-
+    A list of string tags, used to categorise and/or identify an entity.
+
+    Tags are stored as lower-case.
+
+    They must be unique (non case-sensitive) per-entity,
+
+    but the same tag can exist across multiple entities.
+
+    (Repeated tags are ignored, and not added to an entities tag list.)
+  example: []
+  syntax:
+    content: public List<string> Tags { get; }
+    parameters: []
+    return:
+      type: System.Collections.Generic.List{System.String}
+    content.vb: Public Property Tags As List(Of String)
+  overload: milk.Entity.Tags*
+- uid: milk.Entity.Visible
+  commentId: P:milk.Entity.Visible
+  id: Visible
+  parent: milk.Entity
+  langs:
+  - csharp
+  - vb
+  name: Visible
+  nameWithType: Entity.Visible
+  fullName: milk.Entity.Visible
+  type: Property
+  source:
+    remote:
+      path: Core/Entity.cs
+      branch: main
+      repo: git@github.com:rik-cross/monogame-milk.git
+    id: Visible
+    path: Core/Entity.cs
+    startLine: 140
+  assemblies:
+  - MonoGameECS
+  namespace: milk
+  summary: Sets the visibility of an entity.
+  example: []
+  syntax:
+    content: public bool Visible { get; set; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public Property Visible As Boolean
+  overload: milk.Entity.Visible*
+- uid: milk.Entity.#ctor(System.String,System.Collections.Generic.List{System.String},System.String,System.Boolean,milk.Entity,milk.Component[])
+  commentId: M:milk.Entity.#ctor(System.String,System.Collections.Generic.List{System.String},System.String,System.Boolean,milk.Entity,milk.Component[])
+  id: '#ctor(System.String,System.Collections.Generic.List{System.String},System.String,System.Boolean,milk.Entity,milk.Component[])'
+  parent: milk.Entity
+  langs:
+  - csharp
+  - vb
+  name: Entity(string?, List<string>?, string, bool, Entity?, Component[]?)
+  nameWithType: Entity.Entity(string?, List<string>?, string, bool, Entity?, Component[]?)
+  fullName: milk.Entity.Entity(string?, System.Collections.Generic.List<string>?, string, bool, milk.Entity?, milk.Component[]?)
+  type: Constructor
+  source:
+    remote:
+      path: Core/Entity.cs
+      branch: main
+      repo: git@github.com:rik-cross/monogame-milk.git
+    id: .ctor
+    path: Core/Entity.cs
+    startLine: 151
+  assemblies:
+  - MonoGameECS
+  namespace: milk
+  summary: Create a new entity.
+  example: []
+  syntax:
+    content: public Entity(string? name = null, List<string>? tags = null, string state = "default", bool visible = true, Entity? owner = null, Component[]? components = null)
+    parameters:
+    - id: name
+      type: System.String
+      description: The unique name of the entity.
+    - id: tags
+      type: System.Collections.Generic.List{System.String}
+      description: A list of tags to identify and/or categorise the entity.
+    - id: state
+      type: System.String
+      description: The state of the entity.
+    - id: visible
+      type: System.Boolean
+      description: The entity visibility.
+    - id: owner
+      type: milk.Entity
+      description: The parent of the entity.
+    - id: components
+      type: milk.Component[]
+      description: A list of components to add to the entity.
+    content.vb: Public Sub New(name As String = Nothing, tags As List(Of String) = Nothing, state As String = "default", visible As Boolean = True, owner As Entity = Nothing, components As Component() = Nothing)
+  overload: milk.Entity.#ctor*
+  nameWithType.vb: Entity.New(String, List(Of String), String, Boolean, Entity, Component())
+  fullName.vb: milk.Entity.New(String, System.Collections.Generic.List(Of String), String, Boolean, milk.Entity, milk.Component())
+  name.vb: New(String, List(Of String), String, Boolean, Entity, Component())
+- uid: milk.Entity.HasComponent``1
+  commentId: M:milk.Entity.HasComponent``1
+  id: HasComponent``1
+  parent: milk.Entity
+  langs:
+  - csharp
+  - vb
+  name: HasComponent<T>()
+  nameWithType: Entity.HasComponent<T>()
+  fullName: milk.Entity.HasComponent<T>()
+  type: Method
+  source:
+    remote:
+      path: Core/Entity.cs
+      branch: main
+      repo: git@github.com:rik-cross/monogame-milk.git
+    id: HasComponent
+    path: Core/Entity.cs
+    startLine: 189
+  assemblies:
+  - MonoGameECS
+  namespace: milk
+  summary: Checks whether the entity has a component of the specified type.
+  example: []
+  syntax:
+    content: 'public bool HasComponent<T>() where T : Component'
+    typeParameters:
+    - id: T
+      description: The type of the component to check for.
+    return:
+      type: System.Boolean
+      description: A boolean indicating the presence of a component.
+    content.vb: Public Function HasComponent(Of T As Component)() As Boolean
+  overload: milk.Entity.HasComponent*
+  nameWithType.vb: Entity.HasComponent(Of T)()
+  fullName.vb: milk.Entity.HasComponent(Of T)()
+  name.vb: HasComponent(Of T)()
+- uid: milk.Entity.AddComponent(milk.Component[])
+  commentId: M:milk.Entity.AddComponent(milk.Component[])
+  id: AddComponent(milk.Component[])
+  parent: milk.Entity
+  langs:
+  - csharp
+  - vb
+  name: AddComponent(params Component[])
+  nameWithType: Entity.AddComponent(params Component[])
+  fullName: milk.Entity.AddComponent(params milk.Component[])
+  type: Method
+  source:
+    remote:
+      path: Core/Entity.cs
+      branch: main
+      repo: git@github.com:rik-cross/monogame-milk.git
+    id: AddComponent
+    path: Core/Entity.cs
+    startLine: 199
+  assemblies:
+  - MonoGameECS
+  namespace: milk
+  summary: >-
+    Adds one or more components to the entity,
+
+    overwriting an existing component if one exists.
+  example: []
+  syntax:
+    content: public void AddComponent(params Component[] components)
+    parameters:
+    - id: components
+      type: milk.Component[]
+      description: One or more components to add.
+    content.vb: Public Sub AddComponent(ParamArray components As Component())
+  overload: milk.Entity.AddComponent*
+  nameWithType.vb: Entity.AddComponent(ParamArray Component())
+  fullName.vb: milk.Entity.AddComponent(ParamArray milk.Component())
+  name.vb: AddComponent(ParamArray Component())
+- uid: milk.Entity.GetComponent``1
+  commentId: M:milk.Entity.GetComponent``1
+  id: GetComponent``1
+  parent: milk.Entity
+  langs:
+  - csharp
+  - vb
+  name: GetComponent<T>()
+  nameWithType: Entity.GetComponent<T>()
+  fullName: milk.Entity.GetComponent<T>()
+  type: Method
+  source:
+    remote:
+      path: Core/Entity.cs
+      branch: main
+      repo: git@github.com:rik-cross/monogame-milk.git
+    id: GetComponent
+    path: Core/Entity.cs
+    startLine: 210
+  assemblies:
+  - MonoGameECS
+  namespace: milk
+  summary: Returns the component of the specified type.
+  example: []
+  syntax:
+    content: 'public T? GetComponent<T>() where T : Component'
+    typeParameters:
+    - id: T
+      description: The type of the componet to retrieve.
+    return:
+      type: '{T}'
+      description: The requested component, or null.
+    content.vb: Public Function GetComponent(Of T As Component)() As T
+  overload: milk.Entity.GetComponent*
+  nameWithType.vb: Entity.GetComponent(Of T)()
+  fullName.vb: milk.Entity.GetComponent(Of T)()
+  name.vb: GetComponent(Of T)()
+- uid: milk.Entity.RemoveComponent``1
+  commentId: M:milk.Entity.RemoveComponent``1
+  id: RemoveComponent``1
+  parent: milk.Entity
+  langs:
+  - csharp
+  - vb
+  name: RemoveComponent<T>()
+  nameWithType: Entity.RemoveComponent<T>()
+  fullName: milk.Entity.RemoveComponent<T>()
+  type: Method
+  source:
+    remote:
+      path: Core/Entity.cs
+      branch: main
+      repo: git@github.com:rik-cross/monogame-milk.git
+    id: RemoveComponent
+    path: Core/Entity.cs
+    startLine: 219
+  assemblies:
+  - MonoGameECS
+  namespace: milk
+  summary: Removes the component of the specified type (if one exists).
+  example: []
+  syntax:
+    content: 'public void RemoveComponent<T>() where T : Component'
+    typeParameters:
+    - id: T
+      description: The type of the component to remove.
+    content.vb: Public Sub RemoveComponent(Of T As Component)()
+  overload: milk.Entity.RemoveComponent*
+  nameWithType.vb: Entity.RemoveComponent(Of T)()
+  fullName.vb: milk.Entity.RemoveComponent(Of T)()
+  name.vb: RemoveComponent(Of T)()
+- uid: milk.Entity.AddTag(System.String[])
+  commentId: M:milk.Entity.AddTag(System.String[])
+  id: AddTag(System.String[])
+  parent: milk.Entity
+  langs:
+  - csharp
+  - vb
+  name: AddTag(params string[])
+  nameWithType: Entity.AddTag(params string[])
+  fullName: milk.Entity.AddTag(params string[])
+  type: Method
+  source:
+    remote:
+      path: Core/Entity.cs
+      branch: main
+      repo: git@github.com:rik-cross/monogame-milk.git
+    id: AddTag
+    path: Core/Entity.cs
+    startLine: 232
+  assemblies:
+  - MonoGameECS
+  namespace: milk
+  summary: Adds one or more tags, stored in lower-case with duplicates removed.
+  example: []
+  syntax:
+    content: public void AddTag(params string[] tags)
+    parameters:
+    - id: tags
+      type: System.String[]
+      description: One or more tags to add.
+    content.vb: Public Sub AddTag(ParamArray tags As String())
+  overload: milk.Entity.AddTag*
+  nameWithType.vb: Entity.AddTag(ParamArray String())
+  fullName.vb: milk.Entity.AddTag(ParamArray String())
+  name.vb: AddTag(ParamArray String())
+- uid: milk.Entity.HasTag(System.String[])
+  commentId: M:milk.Entity.HasTag(System.String[])
+  id: HasTag(System.String[])
+  parent: milk.Entity
+  langs:
+  - csharp
+  - vb
+  name: HasTag(params string[])
+  nameWithType: Entity.HasTag(params string[])
+  fullName: milk.Entity.HasTag(params string[])
+  type: Method
+  source:
+    remote:
+      path: Core/Entity.cs
+      branch: main
+      repo: git@github.com:rik-cross/monogame-milk.git
+    id: HasTag
+    path: Core/Entity.cs
+    startLine: 248
+  assemblies:
+  - MonoGameECS
+  namespace: milk
+  summary: >-
+    Checks whether the entity has all of the tags specified.
+
+    Tags are checked as lower-case.
+  example: []
+  syntax:
+    content: public bool HasTag(params string[] tags)
+    parameters:
+    - id: tags
+      type: System.String[]
+      description: One or more tags to check.
+    return:
+      type: System.Boolean
+      description: A boolean, indicating the preence of all specified tags.
+    content.vb: Public Function HasTag(ParamArray tags As String()) As Boolean
+  overload: milk.Entity.HasTag*
+  nameWithType.vb: Entity.HasTag(ParamArray String())
+  fullName.vb: milk.Entity.HasTag(ParamArray String())
+  name.vb: HasTag(ParamArray String())
+- uid: milk.Entity.RemoveTag(System.String[])
+  commentId: M:milk.Entity.RemoveTag(System.String[])
+  id: RemoveTag(System.String[])
+  parent: milk.Entity
+  langs:
+  - csharp
+  - vb
+  name: RemoveTag(params string[])
+  nameWithType: Entity.RemoveTag(params string[])
+  fullName: milk.Entity.RemoveTag(params string[])
+  type: Method
+  source:
+    remote:
+      path: Core/Entity.cs
+      branch: main
+      repo: git@github.com:rik-cross/monogame-milk.git
+    id: RemoveTag
+    path: Core/Entity.cs
+    startLine: 263
+  assemblies:
+  - MonoGameECS
+  namespace: milk
+  summary: Removes the specified tags (if they exist).
+  example: []
+  syntax:
+    content: public void RemoveTag(params string[] tags)
+    parameters:
+    - id: tags
+      type: System.String[]
+      description: One or more tags to remove.
+    content.vb: Public Sub RemoveTag(ParamArray tags As String())
+  overload: milk.Entity.RemoveTag*
+  nameWithType.vb: Entity.RemoveTag(ParamArray String())
+  fullName.vb: milk.Entity.RemoveTag(ParamArray String())
+  name.vb: RemoveTag(ParamArray String())
+- uid: milk.Entity.ToString
+  commentId: M:milk.Entity.ToString
+  id: ToString
+  parent: milk.Entity
+  langs:
+  - csharp
+  - vb
+  name: ToString()
+  nameWithType: Entity.ToString()
+  fullName: milk.Entity.ToString()
+  type: Method
+  source:
+    remote:
+      path: Core/Entity.cs
+      branch: main
+      repo: git@github.com:rik-cross/monogame-milk.git
+    id: ToString
+    path: Core/Entity.cs
+    startLine: 281
+  assemblies:
+  - MonoGameECS
+  namespace: milk
+  summary: Debug entity string print method.
+  example: []
+  syntax:
+    content: public override string ToString()
+    return:
+      type: System.String
+      description: A string output representing the entity.
+    content.vb: Public Overrides Function ToString() As String
+  overridden: System.Object.ToString
+  overload: milk.Entity.ToString*
+references:
+- uid: milk
+  commentId: N:milk
+  href: milk.html
+  name: milk
+  nameWithType: milk
+  fullName: milk
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: milk.Entity.ID*
+  commentId: Overload:milk.Entity.ID
+  href: milk.Entity.html#milk_Entity_ID
+  name: ID
+  nameWithType: Entity.ID
+  fullName: milk.Entity.ID
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer
+- uid: milk.Entity.Name*
+  commentId: Overload:milk.Entity.Name
+  href: milk.Entity.html#milk_Entity_Name
+  name: Name
+  nameWithType: Entity.Name
+  fullName: milk.Entity.Name
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: milk.Entity.PreviousState*
+  commentId: Overload:milk.Entity.PreviousState
+  href: milk.Entity.html#milk_Entity_PreviousState
+  name: PreviousState
+  nameWithType: Entity.PreviousState
+  fullName: milk.Entity.PreviousState
+- uid: milk.Entity.State*
+  commentId: Overload:milk.Entity.State
+  href: milk.Entity.html#milk_Entity_State
+  name: State
+  nameWithType: Entity.State
+  fullName: milk.Entity.State
+- uid: milk.Entity.Owner*
+  commentId: Overload:milk.Entity.Owner
+  href: milk.Entity.html#milk_Entity_Owner
+  name: Owner
+  nameWithType: Entity.Owner
+  fullName: milk.Entity.Owner
+- uid: milk.Entity
+  commentId: T:milk.Entity
+  parent: milk
+  href: milk.Entity.html
+  name: Entity
+  nameWithType: Entity
+  fullName: milk.Entity
+- uid: milk.Entity.Delete*
+  commentId: Overload:milk.Entity.Delete
+  href: milk.Entity.html#milk_Entity_Delete
+  name: Delete
+  nameWithType: Entity.Delete
+  fullName: milk.Entity.Delete
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: bool
+  nameWithType: bool
+  fullName: bool
+  nameWithType.vb: Boolean
+  fullName.vb: Boolean
+  name.vb: Boolean
+- uid: milk.Entity.Tags*
+  commentId: Overload:milk.Entity.Tags
+  href: milk.Entity.html#milk_Entity_Tags
+  name: Tags
+  nameWithType: Entity.Tags
+  fullName: milk.Entity.Tags
+- uid: System.Collections.Generic.List{System.String}
+  commentId: T:System.Collections.Generic.List{System.String}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.List`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  name: List<string>
+  nameWithType: List<string>
+  fullName: System.Collections.Generic.List<string>
+  nameWithType.vb: List(Of String)
+  fullName.vb: System.Collections.Generic.List(Of String)
+  name.vb: List(Of String)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: <
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+- uid: System.Collections.Generic.List`1
+  commentId: T:System.Collections.Generic.List`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  name: List<T>
+  nameWithType: List<T>
+  fullName: System.Collections.Generic.List<T>
+  nameWithType.vb: List(Of T)
+  fullName.vb: System.Collections.Generic.List(Of T)
+  name.vb: List(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+- uid: milk.Entity.Visible*
+  commentId: Overload:milk.Entity.Visible
+  href: milk.Entity.html#milk_Entity_Visible
+  name: Visible
+  nameWithType: Entity.Visible
+  fullName: milk.Entity.Visible
+- uid: milk.Entity.#ctor*
+  commentId: Overload:milk.Entity.#ctor
+  href: milk.Entity.html#milk_Entity__ctor_System_String_System_Collections_Generic_List_System_String__System_String_System_Boolean_milk_Entity_milk_Component___
+  name: Entity
+  nameWithType: Entity.Entity
+  fullName: milk.Entity.Entity
+  nameWithType.vb: Entity.New
+  fullName.vb: milk.Entity.New
+  name.vb: New
+- uid: milk.Component[]
+  isExternal: true
+  href: milk.Component.html
+  name: Component[]
+  nameWithType: Component[]
+  fullName: milk.Component[]
+  nameWithType.vb: Component()
+  fullName.vb: milk.Component()
+  name.vb: Component()
+  spec.csharp:
+  - uid: milk.Component
+    name: Component
+    href: milk.Component.html
+  - name: '['
+  - name: ']'
+  spec.vb:
+  - uid: milk.Component
+    name: Component
+    href: milk.Component.html
+  - name: (
+  - name: )
+- uid: milk.Entity.HasComponent*
+  commentId: Overload:milk.Entity.HasComponent
+  href: milk.Entity.html#milk_Entity_HasComponent__1
+  name: HasComponent
+  nameWithType: Entity.HasComponent
+  fullName: milk.Entity.HasComponent
+- uid: milk.Entity.AddComponent*
+  commentId: Overload:milk.Entity.AddComponent
+  href: milk.Entity.html#milk_Entity_AddComponent_milk_Component___
+  name: AddComponent
+  nameWithType: Entity.AddComponent
+  fullName: milk.Entity.AddComponent
+- uid: milk.Entity.GetComponent*
+  commentId: Overload:milk.Entity.GetComponent
+  href: milk.Entity.html#milk_Entity_GetComponent__1
+  name: GetComponent
+  nameWithType: Entity.GetComponent
+  fullName: milk.Entity.GetComponent
+- uid: '{T}'
+  commentId: '!:T'
+  definition: T
+  name: T
+  nameWithType: T
+  fullName: T
+- uid: T
+  commentId: '!:T'
+  name: T
+  nameWithType: T
+  fullName: T
+- uid: milk.Entity.RemoveComponent*
+  commentId: Overload:milk.Entity.RemoveComponent
+  href: milk.Entity.html#milk_Entity_RemoveComponent__1
+  name: RemoveComponent
+  nameWithType: Entity.RemoveComponent
+  fullName: milk.Entity.RemoveComponent
+- uid: milk.Entity.AddTag*
+  commentId: Overload:milk.Entity.AddTag
+  href: milk.Entity.html#milk_Entity_AddTag_System_String___
+  name: AddTag
+  nameWithType: Entity.AddTag
+  fullName: milk.Entity.AddTag
+- uid: System.String[]
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string[]
+  nameWithType: string[]
+  fullName: string[]
+  nameWithType.vb: String()
+  fullName.vb: String()
+  name.vb: String()
+  spec.csharp:
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: '['
+  - name: ']'
+  spec.vb:
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: (
+  - name: )
+- uid: milk.Entity.HasTag*
+  commentId: Overload:milk.Entity.HasTag
+  href: milk.Entity.html#milk_Entity_HasTag_System_String___
+  name: HasTag
+  nameWithType: Entity.HasTag
+  fullName: milk.Entity.HasTag
+- uid: milk.Entity.RemoveTag*
+  commentId: Overload:milk.Entity.RemoveTag
+  href: milk.Entity.html#milk_Entity_RemoveTag_System_String___
+  name: RemoveTag
+  nameWithType: Entity.RemoveTag
+  fullName: milk.Entity.RemoveTag
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: milk.Entity.ToString*
+  commentId: Overload:milk.Entity.ToString
+  href: milk.Entity.html#milk_Entity_ToString
+  name: ToString
+  nameWithType: Entity.ToString
+  fullName: milk.Entity.ToString

@@ -1,0 +1,37 @@
+### YamlMime:ManagedReference
+items:
+- uid: milk.Transitions
+  commentId: N:milk.Transitions
+  id: milk.Transitions
+  children:
+  - milk.Transitions.TransitionFadeBetween
+  - milk.Transitions.TransitionFadeIn
+  - milk.Transitions.TransitionFadeToBlack
+  langs:
+  - csharp
+  - vb
+  name: milk.Transitions
+  nameWithType: milk.Transitions
+  fullName: milk.Transitions
+  type: Namespace
+  assemblies:
+  - MonoGameECS
+references:
+- uid: milk.Transitions.TransitionFadeBetween
+  commentId: T:milk.Transitions.TransitionFadeBetween
+  href: milk.Transitions.TransitionFadeBetween.html
+  name: TransitionFadeBetween
+  nameWithType: TransitionFadeBetween
+  fullName: milk.Transitions.TransitionFadeBetween
+- uid: milk.Transitions.TransitionFadeIn
+  commentId: T:milk.Transitions.TransitionFadeIn
+  href: milk.Transitions.TransitionFadeIn.html
+  name: TransitionFadeIn
+  nameWithType: TransitionFadeIn
+  fullName: milk.Transitions.TransitionFadeIn
+- uid: milk.Transitions.TransitionFadeToBlack
+  commentId: T:milk.Transitions.TransitionFadeToBlack
+  href: milk.Transitions.TransitionFadeToBlack.html
+  name: TransitionFadeToBlack
+  nameWithType: TransitionFadeToBlack
+  fullName: milk.Transitions.TransitionFadeToBlack

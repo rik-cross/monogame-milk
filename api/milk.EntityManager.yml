@@ -1,0 +1,961 @@
+### YamlMime:ManagedReference
+items:
+- uid: milk.EntityManager
+  commentId: T:milk.EntityManager
+  id: EntityManager
+  parent: milk
+  children:
+  - milk.EntityManager.#ctor(System.Int32)
+  - milk.EntityManager.AddEntity(milk.Entity)
+  - milk.EntityManager.CheckInID(System.Int32)
+  - milk.EntityManager.CheckOutID
+  - milk.EntityManager.DeleteEntities
+  - milk.EntityManager.GetEntitiesByTag(System.String[])
+  - milk.EntityManager.GetEntitiesByTagInList(System.Collections.Generic.List{milk.Entity},System.String[])
+  - milk.EntityManager.GetEntityByName(System.String)
+  - milk.EntityManager.GetEntityByNameInList(System.Collections.Generic.List{milk.Entity},System.String)
+  - milk.EntityManager.MaxExtities
+  - milk.EntityManager.RemoveEntitiesByTagInList(System.Collections.Generic.List{milk.Entity},System.String[])
+  - milk.EntityManager.RemoveEntityByNameInList(System.Collections.Generic.List{milk.Entity},System.String)
+  - milk.EntityManager.ToString
+  - milk.EntityManager._allEntities
+  langs:
+  - csharp
+  - vb
+  name: EntityManager
+  nameWithType: EntityManager
+  fullName: milk.EntityManager
+  type: Class
+  source:
+    remote:
+      path: Managers/EntityManager.cs
+      branch: main
+      repo: git@github.com:rik-cross/monogame-milk.git
+    id: EntityManager
+    path: ../MonoGameECS (Copy)/Managers/EntityManager.cs
+    startLine: 20
+  assemblies:
+  - MonoGameECS
+  namespace: milk
+  syntax:
+    content: public class EntityManager
+    content.vb: Public Class EntityManager
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+- uid: milk.EntityManager.MaxExtities
+  commentId: F:milk.EntityManager.MaxExtities
+  id: MaxExtities
+  parent: milk.EntityManager
+  langs:
+  - csharp
+  - vb
+  name: MaxExtities
+  nameWithType: EntityManager.MaxExtities
+  fullName: milk.EntityManager.MaxExtities
+  type: Field
+  source:
+    remote:
+      path: Managers/EntityManager.cs
+      branch: main
+      repo: git@github.com:rik-cross/monogame-milk.git
+    id: MaxExtities
+    path: ../MonoGameECS (Copy)/Managers/EntityManager.cs
+    startLine: 26
+  assemblies:
+  - MonoGameECS
+  namespace: milk
+  syntax:
+    content: public readonly int MaxExtities
+    return:
+      type: System.Int32
+    content.vb: Public ReadOnly MaxExtities As Integer
+- uid: milk.EntityManager._allEntities
+  commentId: F:milk.EntityManager._allEntities
+  id: _allEntities
+  parent: milk.EntityManager
+  langs:
+  - csharp
+  - vb
+  name: _allEntities
+  nameWithType: EntityManager._allEntities
+  fullName: milk.EntityManager._allEntities
+  type: Field
+  source:
+    remote:
+      path: Managers/EntityManager.cs
+      branch: main
+      repo: git@github.com:rik-cross/monogame-milk.git
+    id: _allEntities
+    path: ../MonoGameECS (Copy)/Managers/EntityManager.cs
+    startLine: 27
+  assemblies:
+  - MonoGameECS
+  namespace: milk
+  syntax:
+    content: public List<Entity> _allEntities
+    return:
+      type: System.Collections.Generic.List{milk.Entity}
+    content.vb: Public _allEntities As List(Of Entity)
+- uid: milk.EntityManager.#ctor(System.Int32)
+  commentId: M:milk.EntityManager.#ctor(System.Int32)
+  id: '#ctor(System.Int32)'
+  parent: milk.EntityManager
+  langs:
+  - csharp
+  - vb
+  name: EntityManager(int)
+  nameWithType: EntityManager.EntityManager(int)
+  fullName: milk.EntityManager.EntityManager(int)
+  type: Constructor
+  source:
+    remote:
+      path: Managers/EntityManager.cs
+      branch: main
+      repo: git@github.com:rik-cross/monogame-milk.git
+    id: .ctor
+    path: ../MonoGameECS (Copy)/Managers/EntityManager.cs
+    startLine: 30
+  assemblies:
+  - MonoGameECS
+  namespace: milk
+  syntax:
+    content: public EntityManager(int maxExtities)
+    parameters:
+    - id: maxExtities
+      type: System.Int32
+    content.vb: Public Sub New(maxExtities As Integer)
+  overload: milk.EntityManager.#ctor*
+  nameWithType.vb: EntityManager.New(Integer)
+  fullName.vb: milk.EntityManager.New(Integer)
+  name.vb: New(Integer)
+- uid: milk.EntityManager.AddEntity(milk.Entity)
+  commentId: M:milk.EntityManager.AddEntity(milk.Entity)
+  id: AddEntity(milk.Entity)
+  parent: milk.EntityManager
+  langs:
+  - csharp
+  - vb
+  name: AddEntity(Entity)
+  nameWithType: EntityManager.AddEntity(Entity)
+  fullName: milk.EntityManager.AddEntity(milk.Entity)
+  type: Method
+  source:
+    remote:
+      path: Managers/EntityManager.cs
+      branch: main
+      repo: git@github.com:rik-cross/monogame-milk.git
+    id: AddEntity
+    path: ../MonoGameECS (Copy)/Managers/EntityManager.cs
+    startLine: 40
+  assemblies:
+  - MonoGameECS
+  namespace: milk
+  syntax:
+    content: public void AddEntity(Entity entity)
+    parameters:
+    - id: entity
+      type: milk.Entity
+    content.vb: Public Sub AddEntity(entity As Entity)
+  overload: milk.EntityManager.AddEntity*
+- uid: milk.EntityManager.DeleteEntities
+  commentId: M:milk.EntityManager.DeleteEntities
+  id: DeleteEntities
+  parent: milk.EntityManager
+  langs:
+  - csharp
+  - vb
+  name: DeleteEntities()
+  nameWithType: EntityManager.DeleteEntities()
+  fullName: milk.EntityManager.DeleteEntities()
+  type: Method
+  source:
+    remote:
+      path: Managers/EntityManager.cs
+      branch: main
+      repo: git@github.com:rik-cross/monogame-milk.git
+    id: DeleteEntities
+    path: ../MonoGameECS (Copy)/Managers/EntityManager.cs
+    startLine: 45
+  assemblies:
+  - MonoGameECS
+  namespace: milk
+  syntax:
+    content: public void DeleteEntities()
+    content.vb: Public Sub DeleteEntities()
+  overload: milk.EntityManager.DeleteEntities*
+- uid: milk.EntityManager.CheckInID(System.Int32)
+  commentId: M:milk.EntityManager.CheckInID(System.Int32)
+  id: CheckInID(System.Int32)
+  parent: milk.EntityManager
+  langs:
+  - csharp
+  - vb
+  name: CheckInID(int)
+  nameWithType: EntityManager.CheckInID(int)
+  fullName: milk.EntityManager.CheckInID(int)
+  type: Method
+  source:
+    remote:
+      path: Managers/EntityManager.cs
+      branch: main
+      repo: git@github.com:rik-cross/monogame-milk.git
+    id: CheckInID
+    path: ../MonoGameECS (Copy)/Managers/EntityManager.cs
+    startLine: 89
+  assemblies:
+  - MonoGameECS
+  namespace: milk
+  syntax:
+    content: public void CheckInID(int ID)
+    parameters:
+    - id: ID
+      type: System.Int32
+    content.vb: Public Sub CheckInID(ID As Integer)
+  overload: milk.EntityManager.CheckInID*
+  nameWithType.vb: EntityManager.CheckInID(Integer)
+  fullName.vb: milk.EntityManager.CheckInID(Integer)
+  name.vb: CheckInID(Integer)
+- uid: milk.EntityManager.CheckOutID
+  commentId: M:milk.EntityManager.CheckOutID
+  id: CheckOutID
+  parent: milk.EntityManager
+  langs:
+  - csharp
+  - vb
+  name: CheckOutID()
+  nameWithType: EntityManager.CheckOutID()
+  fullName: milk.EntityManager.CheckOutID()
+  type: Method
+  source:
+    remote:
+      path: Managers/EntityManager.cs
+      branch: main
+      repo: git@github.com:rik-cross/monogame-milk.git
+    id: CheckOutID
+    path: ../MonoGameECS (Copy)/Managers/EntityManager.cs
+    startLine: 97
+  assemblies:
+  - MonoGameECS
+  namespace: milk
+  syntax:
+    content: public int CheckOutID()
+    return:
+      type: System.Int32
+    content.vb: Public Function CheckOutID() As Integer
+  overload: milk.EntityManager.CheckOutID*
+- uid: milk.EntityManager.GetEntityByName(System.String)
+  commentId: M:milk.EntityManager.GetEntityByName(System.String)
+  id: GetEntityByName(System.String)
+  parent: milk.EntityManager
+  langs:
+  - csharp
+  - vb
+  name: GetEntityByName(string)
+  nameWithType: EntityManager.GetEntityByName(string)
+  fullName: milk.EntityManager.GetEntityByName(string)
+  type: Method
+  source:
+    remote:
+      path: Managers/EntityManager.cs
+      branch: main
+      repo: git@github.com:rik-cross/monogame-milk.git
+    id: GetEntityByName
+    path: ../MonoGameECS (Copy)/Managers/EntityManager.cs
+    startLine: 103
+  assemblies:
+  - MonoGameECS
+  namespace: milk
+  syntax:
+    content: public Entity? GetEntityByName(string name)
+    parameters:
+    - id: name
+      type: System.String
+    return:
+      type: milk.Entity
+    content.vb: Public Function GetEntityByName(name As String) As Entity
+  overload: milk.EntityManager.GetEntityByName*
+  nameWithType.vb: EntityManager.GetEntityByName(String)
+  fullName.vb: milk.EntityManager.GetEntityByName(String)
+  name.vb: GetEntityByName(String)
+- uid: milk.EntityManager.GetEntityByNameInList(System.Collections.Generic.List{milk.Entity},System.String)
+  commentId: M:milk.EntityManager.GetEntityByNameInList(System.Collections.Generic.List{milk.Entity},System.String)
+  id: GetEntityByNameInList(System.Collections.Generic.List{milk.Entity},System.String)
+  parent: milk.EntityManager
+  langs:
+  - csharp
+  - vb
+  name: GetEntityByNameInList(List<Entity>, string)
+  nameWithType: EntityManager.GetEntityByNameInList(List<Entity>, string)
+  fullName: milk.EntityManager.GetEntityByNameInList(System.Collections.Generic.List<milk.Entity>, string)
+  type: Method
+  source:
+    remote:
+      path: Managers/EntityManager.cs
+      branch: main
+      repo: git@github.com:rik-cross/monogame-milk.git
+    id: GetEntityByNameInList
+    path: ../MonoGameECS (Copy)/Managers/EntityManager.cs
+    startLine: 109
+  assemblies:
+  - MonoGameECS
+  namespace: milk
+  syntax:
+    content: public Entity? GetEntityByNameInList(List<Entity> entityList, string name)
+    parameters:
+    - id: entityList
+      type: System.Collections.Generic.List{milk.Entity}
+    - id: name
+      type: System.String
+    return:
+      type: milk.Entity
+    content.vb: Public Function GetEntityByNameInList(entityList As List(Of Entity), name As String) As Entity
+  overload: milk.EntityManager.GetEntityByNameInList*
+  nameWithType.vb: EntityManager.GetEntityByNameInList(List(Of Entity), String)
+  fullName.vb: milk.EntityManager.GetEntityByNameInList(System.Collections.Generic.List(Of milk.Entity), String)
+  name.vb: GetEntityByNameInList(List(Of Entity), String)
+- uid: milk.EntityManager.GetEntitiesByTag(System.String[])
+  commentId: M:milk.EntityManager.GetEntitiesByTag(System.String[])
+  id: GetEntitiesByTag(System.String[])
+  parent: milk.EntityManager
+  langs:
+  - csharp
+  - vb
+  name: GetEntitiesByTag(params string[])
+  nameWithType: EntityManager.GetEntitiesByTag(params string[])
+  fullName: milk.EntityManager.GetEntitiesByTag(params string[])
+  type: Method
+  source:
+    remote:
+      path: Managers/EntityManager.cs
+      branch: main
+      repo: git@github.com:rik-cross/monogame-milk.git
+    id: GetEntitiesByTag
+    path: ../MonoGameECS (Copy)/Managers/EntityManager.cs
+    startLine: 119
+  assemblies:
+  - MonoGameECS
+  namespace: milk
+  syntax:
+    content: public List<Entity> GetEntitiesByTag(params string[] tags)
+    parameters:
+    - id: tags
+      type: System.String[]
+    return:
+      type: System.Collections.Generic.List{milk.Entity}
+    content.vb: Public Function GetEntitiesByTag(ParamArray tags As String()) As List(Of Entity)
+  overload: milk.EntityManager.GetEntitiesByTag*
+  nameWithType.vb: EntityManager.GetEntitiesByTag(ParamArray String())
+  fullName.vb: milk.EntityManager.GetEntitiesByTag(ParamArray String())
+  name.vb: GetEntitiesByTag(ParamArray String())
+- uid: milk.EntityManager.GetEntitiesByTagInList(System.Collections.Generic.List{milk.Entity},System.String[])
+  commentId: M:milk.EntityManager.GetEntitiesByTagInList(System.Collections.Generic.List{milk.Entity},System.String[])
+  id: GetEntitiesByTagInList(System.Collections.Generic.List{milk.Entity},System.String[])
+  parent: milk.EntityManager
+  langs:
+  - csharp
+  - vb
+  name: GetEntitiesByTagInList(List<Entity>, params string[])
+  nameWithType: EntityManager.GetEntitiesByTagInList(List<Entity>, params string[])
+  fullName: milk.EntityManager.GetEntitiesByTagInList(System.Collections.Generic.List<milk.Entity>, params string[])
+  type: Method
+  source:
+    remote:
+      path: Managers/EntityManager.cs
+      branch: main
+      repo: git@github.com:rik-cross/monogame-milk.git
+    id: GetEntitiesByTagInList
+    path: ../MonoGameECS (Copy)/Managers/EntityManager.cs
+    startLine: 124
+  assemblies:
+  - MonoGameECS
+  namespace: milk
+  syntax:
+    content: public List<Entity> GetEntitiesByTagInList(List<Entity> entityList, params string[] tags)
+    parameters:
+    - id: entityList
+      type: System.Collections.Generic.List{milk.Entity}
+    - id: tags
+      type: System.String[]
+    return:
+      type: System.Collections.Generic.List{milk.Entity}
+    content.vb: Public Function GetEntitiesByTagInList(entityList As List(Of Entity), ParamArray tags As String()) As List(Of Entity)
+  overload: milk.EntityManager.GetEntitiesByTagInList*
+  nameWithType.vb: EntityManager.GetEntitiesByTagInList(List(Of Entity), ParamArray String())
+  fullName.vb: milk.EntityManager.GetEntitiesByTagInList(System.Collections.Generic.List(Of milk.Entity), ParamArray String())
+  name.vb: GetEntitiesByTagInList(List(Of Entity), ParamArray String())
+- uid: milk.EntityManager.RemoveEntityByNameInList(System.Collections.Generic.List{milk.Entity},System.String)
+  commentId: M:milk.EntityManager.RemoveEntityByNameInList(System.Collections.Generic.List{milk.Entity},System.String)
+  id: RemoveEntityByNameInList(System.Collections.Generic.List{milk.Entity},System.String)
+  parent: milk.EntityManager
+  langs:
+  - csharp
+  - vb
+  name: RemoveEntityByNameInList(List<Entity>, string)
+  nameWithType: EntityManager.RemoveEntityByNameInList(List<Entity>, string)
+  fullName: milk.EntityManager.RemoveEntityByNameInList(System.Collections.Generic.List<milk.Entity>, string)
+  type: Method
+  source:
+    remote:
+      path: Managers/EntityManager.cs
+      branch: main
+      repo: git@github.com:rik-cross/monogame-milk.git
+    id: RemoveEntityByNameInList
+    path: ../MonoGameECS (Copy)/Managers/EntityManager.cs
+    startLine: 135
+  assemblies:
+  - MonoGameECS
+  namespace: milk
+  syntax:
+    content: public void RemoveEntityByNameInList(List<Entity> entityList, string name)
+    parameters:
+    - id: entityList
+      type: System.Collections.Generic.List{milk.Entity}
+    - id: name
+      type: System.String
+    content.vb: Public Sub RemoveEntityByNameInList(entityList As List(Of Entity), name As String)
+  overload: milk.EntityManager.RemoveEntityByNameInList*
+  nameWithType.vb: EntityManager.RemoveEntityByNameInList(List(Of Entity), String)
+  fullName.vb: milk.EntityManager.RemoveEntityByNameInList(System.Collections.Generic.List(Of milk.Entity), String)
+  name.vb: RemoveEntityByNameInList(List(Of Entity), String)
+- uid: milk.EntityManager.RemoveEntitiesByTagInList(System.Collections.Generic.List{milk.Entity},System.String[])
+  commentId: M:milk.EntityManager.RemoveEntitiesByTagInList(System.Collections.Generic.List{milk.Entity},System.String[])
+  id: RemoveEntitiesByTagInList(System.Collections.Generic.List{milk.Entity},System.String[])
+  parent: milk.EntityManager
+  langs:
+  - csharp
+  - vb
+  name: RemoveEntitiesByTagInList(List<Entity>, params string[])
+  nameWithType: EntityManager.RemoveEntitiesByTagInList(List<Entity>, params string[])
+  fullName: milk.EntityManager.RemoveEntitiesByTagInList(System.Collections.Generic.List<milk.Entity>, params string[])
+  type: Method
+  source:
+    remote:
+      path: Managers/EntityManager.cs
+      branch: main
+      repo: git@github.com:rik-cross/monogame-milk.git
+    id: RemoveEntitiesByTagInList
+    path: ../MonoGameECS (Copy)/Managers/EntityManager.cs
+    startLine: 151
+  assemblies:
+  - MonoGameECS
+  namespace: milk
+  syntax:
+    content: public void RemoveEntitiesByTagInList(List<Entity> entityList, params string[] tags)
+    parameters:
+    - id: entityList
+      type: System.Collections.Generic.List{milk.Entity}
+    - id: tags
+      type: System.String[]
+    content.vb: Public Sub RemoveEntitiesByTagInList(entityList As List(Of Entity), ParamArray tags As String())
+  overload: milk.EntityManager.RemoveEntitiesByTagInList*
+  nameWithType.vb: EntityManager.RemoveEntitiesByTagInList(List(Of Entity), ParamArray String())
+  fullName.vb: milk.EntityManager.RemoveEntitiesByTagInList(System.Collections.Generic.List(Of milk.Entity), ParamArray String())
+  name.vb: RemoveEntitiesByTagInList(List(Of Entity), ParamArray String())
+- uid: milk.EntityManager.ToString
+  commentId: M:milk.EntityManager.ToString
+  id: ToString
+  parent: milk.EntityManager
+  langs:
+  - csharp
+  - vb
+  name: ToString()
+  nameWithType: EntityManager.ToString()
+  fullName: milk.EntityManager.ToString()
+  type: Method
+  source:
+    remote:
+      path: Managers/EntityManager.cs
+      branch: main
+      repo: git@github.com:rik-cross/monogame-milk.git
+    id: ToString
+    path: ../MonoGameECS (Copy)/Managers/EntityManager.cs
+    startLine: 160
+  assemblies:
+  - MonoGameECS
+  namespace: milk
+  summary: Returns a string that represents the current object.
+  example: []
+  syntax:
+    content: public override string ToString()
+    return:
+      type: System.String
+      description: A string that represents the current object.
+    content.vb: Public Overrides Function ToString() As String
+  overridden: System.Object.ToString
+  overload: milk.EntityManager.ToString*
+references:
+- uid: milk
+  commentId: N:milk
+  href: milk.html
+  name: milk
+  nameWithType: milk
+  fullName: milk
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer
+- uid: System.Collections.Generic.List{milk.Entity}
+  commentId: T:System.Collections.Generic.List{milk.Entity}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.List`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  name: List<Entity>
+  nameWithType: List<Entity>
+  fullName: System.Collections.Generic.List<milk.Entity>
+  nameWithType.vb: List(Of Entity)
+  fullName.vb: System.Collections.Generic.List(Of milk.Entity)
+  name.vb: List(Of Entity)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: <
+  - uid: milk.Entity
+    name: Entity
+    href: milk.Entity.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: milk.Entity
+    name: Entity
+    href: milk.Entity.html
+  - name: )
+- uid: System.Collections.Generic.List`1
+  commentId: T:System.Collections.Generic.List`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  name: List<T>
+  nameWithType: List<T>
+  fullName: System.Collections.Generic.List<T>
+  nameWithType.vb: List(Of T)
+  fullName.vb: System.Collections.Generic.List(Of T)
+  name.vb: List(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+- uid: milk.EntityManager.#ctor*
+  commentId: Overload:milk.EntityManager.#ctor
+  href: milk.EntityManager.html#milk_EntityManager__ctor_System_Int32_
+  name: EntityManager
+  nameWithType: EntityManager.EntityManager
+  fullName: milk.EntityManager.EntityManager
+  nameWithType.vb: EntityManager.New
+  fullName.vb: milk.EntityManager.New
+  name.vb: New
+- uid: milk.EntityManager.AddEntity*
+  commentId: Overload:milk.EntityManager.AddEntity
+  href: milk.EntityManager.html#milk_EntityManager_AddEntity_milk_Entity_
+  name: AddEntity
+  nameWithType: EntityManager.AddEntity
+  fullName: milk.EntityManager.AddEntity
+- uid: milk.Entity
+  commentId: T:milk.Entity
+  parent: milk
+  href: milk.Entity.html
+  name: Entity
+  nameWithType: Entity
+  fullName: milk.Entity
+- uid: milk.EntityManager.DeleteEntities*
+  commentId: Overload:milk.EntityManager.DeleteEntities
+  href: milk.EntityManager.html#milk_EntityManager_DeleteEntities
+  name: DeleteEntities
+  nameWithType: EntityManager.DeleteEntities
+  fullName: milk.EntityManager.DeleteEntities
+- uid: milk.EntityManager.CheckInID*
+  commentId: Overload:milk.EntityManager.CheckInID
+  href: milk.EntityManager.html#milk_EntityManager_CheckInID_System_Int32_
+  name: CheckInID
+  nameWithType: EntityManager.CheckInID
+  fullName: milk.EntityManager.CheckInID
+- uid: milk.EntityManager.CheckOutID*
+  commentId: Overload:milk.EntityManager.CheckOutID
+  href: milk.EntityManager.html#milk_EntityManager_CheckOutID
+  name: CheckOutID
+  nameWithType: EntityManager.CheckOutID
+  fullName: milk.EntityManager.CheckOutID
+- uid: milk.EntityManager.GetEntityByName*
+  commentId: Overload:milk.EntityManager.GetEntityByName
+  href: milk.EntityManager.html#milk_EntityManager_GetEntityByName_System_String_
+  name: GetEntityByName
+  nameWithType: EntityManager.GetEntityByName
+  fullName: milk.EntityManager.GetEntityByName
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: milk.EntityManager.GetEntityByNameInList*
+  commentId: Overload:milk.EntityManager.GetEntityByNameInList
+  href: milk.EntityManager.html#milk_EntityManager_GetEntityByNameInList_System_Collections_Generic_List_milk_Entity__System_String_
+  name: GetEntityByNameInList
+  nameWithType: EntityManager.GetEntityByNameInList
+  fullName: milk.EntityManager.GetEntityByNameInList
+- uid: milk.EntityManager.GetEntitiesByTag*
+  commentId: Overload:milk.EntityManager.GetEntitiesByTag
+  href: milk.EntityManager.html#milk_EntityManager_GetEntitiesByTag_System_String___
+  name: GetEntitiesByTag
+  nameWithType: EntityManager.GetEntitiesByTag
+  fullName: milk.EntityManager.GetEntitiesByTag
+- uid: System.String[]
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string[]
+  nameWithType: string[]
+  fullName: string[]
+  nameWithType.vb: String()
+  fullName.vb: String()
+  name.vb: String()
+  spec.csharp:
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: '['
+  - name: ']'
+  spec.vb:
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: (
+  - name: )
+- uid: milk.EntityManager.GetEntitiesByTagInList*
+  commentId: Overload:milk.EntityManager.GetEntitiesByTagInList
+  href: milk.EntityManager.html#milk_EntityManager_GetEntitiesByTagInList_System_Collections_Generic_List_milk_Entity__System_String___
+  name: GetEntitiesByTagInList
+  nameWithType: EntityManager.GetEntitiesByTagInList
+  fullName: milk.EntityManager.GetEntitiesByTagInList
+- uid: milk.EntityManager.RemoveEntityByNameInList*
+  commentId: Overload:milk.EntityManager.RemoveEntityByNameInList
+  href: milk.EntityManager.html#milk_EntityManager_RemoveEntityByNameInList_System_Collections_Generic_List_milk_Entity__System_String_
+  name: RemoveEntityByNameInList
+  nameWithType: EntityManager.RemoveEntityByNameInList
+  fullName: milk.EntityManager.RemoveEntityByNameInList
+- uid: milk.EntityManager.RemoveEntitiesByTagInList*
+  commentId: Overload:milk.EntityManager.RemoveEntitiesByTagInList
+  href: milk.EntityManager.html#milk_EntityManager_RemoveEntitiesByTagInList_System_Collections_Generic_List_milk_Entity__System_String___
+  name: RemoveEntitiesByTagInList
+  nameWithType: EntityManager.RemoveEntitiesByTagInList
+  fullName: milk.EntityManager.RemoveEntitiesByTagInList
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: milk.EntityManager.ToString*
+  commentId: Overload:milk.EntityManager.ToString
+  href: milk.EntityManager.html#milk_EntityManager_ToString
+  name: ToString
+  nameWithType: EntityManager.ToString
+  fullName: milk.EntityManager.ToString

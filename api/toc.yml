@@ -1,0 +1,118 @@
+### YamlMime:TableOfContent
+items:
+- uid: milk.Components
+  name: milk.Components
+  type: Namespace
+  items:
+  - uid: milk.Components.ColliderComponent
+    name: ColliderComponent
+    type: Class
+  - uid: milk.Components.InputComponent
+    name: InputComponent
+    type: Class
+  - uid: milk.Components.PhysicsComponent
+    name: PhysicsComponent
+    type: Class
+  - uid: milk.Components.SpriteComponent
+    name: SpriteComponent
+    type: Class
+  - uid: milk.Components.TransformComponent
+    name: TransformComponent
+    type: Class
+  - uid: milk.Components.TriggerComponent
+    name: TriggerComponent
+    type: Class
+- uid: milk.Core
+  name: milk.Core
+  type: Namespace
+  items:
+  - uid: milk.Core.Anchor
+    name: Anchor
+    type: Enum
+  - uid: milk.Core.Camera
+    name: Camera
+    type: Class
+  - uid: milk.Core.Component
+    name: Component
+    type: Class
+  - uid: milk.Core.EasingFunctions
+    name: EasingFunctions
+    type: Class
+  - uid: milk.Core.EasingFunctions.EasingDelegate
+    name: EasingFunctions.EasingDelegate
+    type: Delegate
+  - uid: milk.Core.EngineGlobals
+    name: EngineGlobals
+    type: Class
+  - uid: milk.Core.Entity
+    name: Entity
+    type: Class
+  - uid: milk.Core.EntitySortMethods
+    name: EntitySortMethods
+    type: Class
+  - uid: milk.Core.Game
+    name: Game
+    type: Class
+  - uid: milk.Core.Image
+    name: Image
+    type: Class
+  - uid: milk.Core.InputManager
+    name: InputManager
+    type: Class
+  - uid: milk.Core.Scene
+    name: Scene
+    type: Class
+  - uid: milk.Core.SceneRenderable
+    name: SceneRenderable
+    type: Class
+  - uid: milk.Core.Sprite
+    name: Sprite
+    type: Class
+  - uid: milk.Core.System
+    name: System
+    type: Class
+  - uid: milk.Core.Text
+    name: Text
+    type: Class
+  - uid: milk.Core.Theme
+    name: Theme
+    type: Class
+  - uid: milk.Core.Transition
+    name: Transition
+    type: Class
+  - uid: milk.Core.Utilities
+    name: Utilities
+    type: Class
+  - uid: milk.Core.Utils
+    name: Utils
+    type: Class
+- uid: milk.Systems
+  name: milk.Systems
+  type: Namespace
+  items:
+  - uid: milk.Systems.InputSystem
+    name: InputSystem
+    type: Class
+  - uid: milk.Systems.PhysicsSystem
+    name: PhysicsSystem
+    type: Class
+  - uid: milk.Systems.SpriteSystem
+    name: SpriteSystem
+    type: Class
+  - uid: milk.Systems.TriggerSystem
+    name: TriggerSystem
+    type: Class
+- uid: milk.Transitions
+  name: milk.Transitions
+  type: Namespace
+  items:
+  - uid: milk.Transitions.TransitionFadeBetween
+    name: TransitionFadeBetween
+    type: Class
+  - uid: milk.Transitions.TransitionFadeIn
+    name: TransitionFadeIn
+    type: Class
+  - uid: milk.Transitions.TransitionFadeToBlack
+    name: TransitionFadeToBlack
+    type: Class
+memberLayout: SamePage

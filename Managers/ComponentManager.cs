@@ -16,9 +16,9 @@
 using System;
 using System.Collections.Generic;
 
-namespace milk;
+namespace milk.Core;
 
-public class ComponentManager {
+internal class ComponentManager {
 
     // The maximum number of components is used to create
     // a 2D entity-component list of the correct size
@@ -96,7 +96,7 @@ public class ComponentManager {
     // Returns the component of the specified template type
     // for the specified entity. Returns null if the entity doesn't have
     // a component of the specified type
-    public T GetComponentForEntity<T>(Entity entity) where T : Component
+    public T? GetComponentForEntity<T>(Entity entity) where T : Component
     {
 
         // Return null if the component type isn't registered

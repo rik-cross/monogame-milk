@@ -1,0 +1,1429 @@
+### YamlMime:ManagedReference
+items:
+- uid: milk.DefaultScene
+  commentId: T:milk.DefaultScene
+  id: DefaultScene
+  parent: milk
+  children:
+  - milk.DefaultScene.Draw
+  - milk.DefaultScene.Init
+  - milk.DefaultScene.Input(Microsoft.Xna.Framework.GameTime)
+  langs:
+  - csharp
+  - vb
+  name: DefaultScene
+  nameWithType: DefaultScene
+  fullName: milk.DefaultScene
+  type: Class
+  source:
+    remote:
+      path: Core/DefaultScene.cs
+      branch: main
+      repo: git@github.com:rik-cross/monogame-milk.git
+    id: DefaultScene
+    path: ../MonoGameECS (Copy)/Core/DefaultScene.cs
+    startLine: 10
+  assemblies:
+  - MonoGameECS
+  namespace: milk
+  syntax:
+    content: 'public class DefaultScene : Scene'
+    content.vb: Public Class DefaultScene Inherits Scene
+  inheritance:
+  - System.Object
+  - milk.Scene
+  inheritedMembers:
+  - milk.Scene.content
+  - milk.Scene.game
+  - milk.Scene.spriteBatch
+  - milk.Scene.Size
+  - milk.Scene.Middle
+  - milk.Scene.elapsedTime
+  - milk.Scene.entities
+  - milk.Scene.systems
+  - milk.Scene.whiteRectangle
+  - milk.Scene.BackgroundColor
+  - milk.Scene.IncludeAlRegisteredSystems
+  - milk.Scene.cameras
+  - milk.Scene.UpdateSceneBelow
+  - milk.Scene.InputSceneBelow
+  - milk.Scene.DrawSceneBelow
+  - milk.Scene.timedActions
+  - milk.Scene.EntitySortMethod
+  - milk.Scene.mapSize
+  - milk.Scene.Map
+  - milk.Scene.Velocity
+  - milk.Scene.Acceleration
+  - milk.Scene.AddTimedAction(System.Single,System.Action,System.String)
+  - milk.Scene.RemoveTimedActionByName(System.String)
+  - milk.Scene.AddCamera(milk.Camera)
+  - milk.Scene.GetCameraByName(System.String)
+  - milk.Scene.AddEntity(milk.Entity)
+  - milk.Scene.HasEntity(milk.Entity)
+  - milk.Scene.RemoveEntity(milk.Entity)
+  - milk.Scene.RemoveEntityByName(System.String)
+  - milk.Scene.RemoveEntitiesByTag(System.String[])
+  - milk.Scene.DeleteEntity(milk.Entity)
+  - milk.Scene.DeleteAllEntities
+  - milk.Scene.GetEntityByName(System.String)
+  - milk.Scene.GetEntitiesByTag(System.String[])
+  - milk.Scene.DeleteEntityByName(System.String)
+  - milk.Scene.DeleteEntitiesByTag(System.String[])
+  - milk.Scene.AddSystem``1
+  - milk.Scene.RemoveSystem``1
+  - milk.Scene.RemoveAllSystems
+  - milk.Scene.HasSystem``1
+  - milk.Scene.GetSceneBelow(System.Collections.Generic.List{milk.Scene})
+  - milk.Scene.Update(Microsoft.Xna.Framework.GameTime)
+  - milk.Scene.OnEnter
+  - milk.Scene.OnExit
+  - milk.Scene.OnEntityAdded(milk.Entity)
+  - milk.Scene.OnEntityRemoved(milk.Entity)
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: milk.DefaultScene.Init
+  commentId: M:milk.DefaultScene.Init
+  id: Init
+  parent: milk.DefaultScene
+  langs:
+  - csharp
+  - vb
+  name: Init()
+  nameWithType: DefaultScene.Init()
+  fullName: milk.DefaultScene.Init()
+  type: Method
+  source:
+    remote:
+      path: Core/DefaultScene.cs
+      branch: main
+      repo: git@github.com:rik-cross/monogame-milk.git
+    id: Init
+    path: ../MonoGameECS (Copy)/Core/DefaultScene.cs
+    startLine: 17
+  assemblies:
+  - MonoGameECS
+  namespace: milk
+  example: []
+  syntax:
+    content: public override void Init()
+    content.vb: Public Overrides Sub Init()
+  overridden: milk.Scene.Init
+  overload: milk.DefaultScene.Init*
+- uid: milk.DefaultScene.Input(Microsoft.Xna.Framework.GameTime)
+  commentId: M:milk.DefaultScene.Input(Microsoft.Xna.Framework.GameTime)
+  id: Input(Microsoft.Xna.Framework.GameTime)
+  parent: milk.DefaultScene
+  langs:
+  - csharp
+  - vb
+  name: Input(GameTime)
+  nameWithType: DefaultScene.Input(GameTime)
+  fullName: milk.DefaultScene.Input(Microsoft.Xna.Framework.GameTime)
+  type: Method
+  source:
+    remote:
+      path: Core/DefaultScene.cs
+      branch: main
+      repo: git@github.com:rik-cross/monogame-milk.git
+    id: Input
+    path: ../MonoGameECS (Copy)/Core/DefaultScene.cs
+    startLine: 48
+  assemblies:
+  - MonoGameECS
+  namespace: milk
+  example: []
+  syntax:
+    content: public override void Input(GameTime gameTime)
+    parameters:
+    - id: gameTime
+      type: Microsoft.Xna.Framework.GameTime
+    content.vb: Public Overrides Sub Input(gameTime As GameTime)
+  overridden: milk.Scene.Input(Microsoft.Xna.Framework.GameTime)
+  overload: milk.DefaultScene.Input*
+- uid: milk.DefaultScene.Draw
+  commentId: M:milk.DefaultScene.Draw
+  id: Draw
+  parent: milk.DefaultScene
+  langs:
+  - csharp
+  - vb
+  name: Draw()
+  nameWithType: DefaultScene.Draw()
+  fullName: milk.DefaultScene.Draw()
+  type: Method
+  source:
+    remote:
+      path: Core/DefaultScene.cs
+      branch: main
+      repo: git@github.com:rik-cross/monogame-milk.git
+    id: Draw
+    path: ../MonoGameECS (Copy)/Core/DefaultScene.cs
+    startLine: 55
+  assemblies:
+  - MonoGameECS
+  namespace: milk
+  example: []
+  syntax:
+    content: public override void Draw()
+    content.vb: Public Overrides Sub Draw()
+  overridden: milk.Scene.Draw
+  overload: milk.DefaultScene.Draw*
+references:
+- uid: milk
+  commentId: N:milk
+  href: milk.html
+  name: milk
+  nameWithType: milk
+  fullName: milk
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: milk.Scene
+  commentId: T:milk.Scene
+  parent: milk
+  href: milk.Scene.html
+  name: Scene
+  nameWithType: Scene
+  fullName: milk.Scene
+- uid: milk.Scene.content
+  commentId: F:milk.Scene.content
+  parent: milk.Scene
+  href: milk.Scene.html#milk_Scene_content
+  name: content
+  nameWithType: Scene.content
+  fullName: milk.Scene.content
+- uid: milk.Scene.game
+  commentId: F:milk.Scene.game
+  parent: milk.Scene
+  href: milk.Scene.html#milk_Scene_game
+  name: game
+  nameWithType: Scene.game
+  fullName: milk.Scene.game
+- uid: milk.Scene.spriteBatch
+  commentId: F:milk.Scene.spriteBatch
+  parent: milk.Scene
+  href: milk.Scene.html#milk_Scene_spriteBatch
+  name: spriteBatch
+  nameWithType: Scene.spriteBatch
+  fullName: milk.Scene.spriteBatch
+- uid: milk.Scene.Size
+  commentId: F:milk.Scene.Size
+  parent: milk.Scene
+  href: milk.Scene.html#milk_Scene_Size
+  name: Size
+  nameWithType: Scene.Size
+  fullName: milk.Scene.Size
+- uid: milk.Scene.Middle
+  commentId: F:milk.Scene.Middle
+  parent: milk.Scene
+  href: milk.Scene.html#milk_Scene_Middle
+  name: Middle
+  nameWithType: Scene.Middle
+  fullName: milk.Scene.Middle
+- uid: milk.Scene.elapsedTime
+  commentId: F:milk.Scene.elapsedTime
+  parent: milk.Scene
+  href: milk.Scene.html#milk_Scene_elapsedTime
+  name: elapsedTime
+  nameWithType: Scene.elapsedTime
+  fullName: milk.Scene.elapsedTime
+- uid: milk.Scene.entities
+  commentId: F:milk.Scene.entities
+  parent: milk.Scene
+  href: milk.Scene.html#milk_Scene_entities
+  name: entities
+  nameWithType: Scene.entities
+  fullName: milk.Scene.entities
+- uid: milk.Scene.systems
+  commentId: F:milk.Scene.systems
+  parent: milk.Scene
+  href: milk.Scene.html#milk_Scene_systems
+  name: systems
+  nameWithType: Scene.systems
+  fullName: milk.Scene.systems
+- uid: milk.Scene.whiteRectangle
+  commentId: F:milk.Scene.whiteRectangle
+  parent: milk.Scene
+  href: milk.Scene.html#milk_Scene_whiteRectangle
+  name: whiteRectangle
+  nameWithType: Scene.whiteRectangle
+  fullName: milk.Scene.whiteRectangle
+- uid: milk.Scene.BackgroundColor
+  commentId: F:milk.Scene.BackgroundColor
+  parent: milk.Scene
+  href: milk.Scene.html#milk_Scene_BackgroundColor
+  name: BackgroundColor
+  nameWithType: Scene.BackgroundColor
+  fullName: milk.Scene.BackgroundColor
+- uid: milk.Scene.IncludeAlRegisteredSystems
+  commentId: F:milk.Scene.IncludeAlRegisteredSystems
+  parent: milk.Scene
+  href: milk.Scene.html#milk_Scene_IncludeAlRegisteredSystems
+  name: IncludeAlRegisteredSystems
+  nameWithType: Scene.IncludeAlRegisteredSystems
+  fullName: milk.Scene.IncludeAlRegisteredSystems
+- uid: milk.Scene.cameras
+  commentId: F:milk.Scene.cameras
+  parent: milk.Scene
+  href: milk.Scene.html#milk_Scene_cameras
+  name: cameras
+  nameWithType: Scene.cameras
+  fullName: milk.Scene.cameras
+- uid: milk.Scene.UpdateSceneBelow
+  commentId: F:milk.Scene.UpdateSceneBelow
+  parent: milk.Scene
+  href: milk.Scene.html#milk_Scene_UpdateSceneBelow
+  name: UpdateSceneBelow
+  nameWithType: Scene.UpdateSceneBelow
+  fullName: milk.Scene.UpdateSceneBelow
+- uid: milk.Scene.InputSceneBelow
+  commentId: F:milk.Scene.InputSceneBelow
+  parent: milk.Scene
+  href: milk.Scene.html#milk_Scene_InputSceneBelow
+  name: InputSceneBelow
+  nameWithType: Scene.InputSceneBelow
+  fullName: milk.Scene.InputSceneBelow
+- uid: milk.Scene.DrawSceneBelow
+  commentId: F:milk.Scene.DrawSceneBelow
+  parent: milk.Scene
+  href: milk.Scene.html#milk_Scene_DrawSceneBelow
+  name: DrawSceneBelow
+  nameWithType: Scene.DrawSceneBelow
+  fullName: milk.Scene.DrawSceneBelow
+- uid: milk.Scene.timedActions
+  commentId: F:milk.Scene.timedActions
+  parent: milk.Scene
+  href: milk.Scene.html#milk_Scene_timedActions
+  name: timedActions
+  nameWithType: Scene.timedActions
+  fullName: milk.Scene.timedActions
+- uid: milk.Scene.EntitySortMethod
+  commentId: F:milk.Scene.EntitySortMethod
+  parent: milk.Scene
+  href: milk.Scene.html#milk_Scene_EntitySortMethod
+  name: EntitySortMethod
+  nameWithType: Scene.EntitySortMethod
+  fullName: milk.Scene.EntitySortMethod
+- uid: milk.Scene.mapSize
+  commentId: F:milk.Scene.mapSize
+  parent: milk.Scene
+  href: milk.Scene.html#milk_Scene_mapSize
+  name: mapSize
+  nameWithType: Scene.mapSize
+  fullName: milk.Scene.mapSize
+- uid: milk.Scene.Map
+  commentId: P:milk.Scene.Map
+  parent: milk.Scene
+  href: milk.Scene.html#milk_Scene_Map
+  name: Map
+  nameWithType: Scene.Map
+  fullName: milk.Scene.Map
+- uid: milk.Scene.Velocity
+  commentId: F:milk.Scene.Velocity
+  parent: milk.Scene
+  href: milk.Scene.html#milk_Scene_Velocity
+  name: Velocity
+  nameWithType: Scene.Velocity
+  fullName: milk.Scene.Velocity
+- uid: milk.Scene.Acceleration
+  commentId: F:milk.Scene.Acceleration
+  parent: milk.Scene
+  href: milk.Scene.html#milk_Scene_Acceleration
+  name: Acceleration
+  nameWithType: Scene.Acceleration
+  fullName: milk.Scene.Acceleration
+- uid: milk.Scene.AddTimedAction(System.Single,System.Action,System.String)
+  commentId: M:milk.Scene.AddTimedAction(System.Single,System.Action,System.String)
+  parent: milk.Scene
+  isExternal: true
+  href: milk.Scene.html#milk_Scene_AddTimedAction_System_Single_System_Action_System_String_
+  name: AddTimedAction(float, Action, string)
+  nameWithType: Scene.AddTimedAction(float, Action, string)
+  fullName: milk.Scene.AddTimedAction(float, System.Action, string)
+  nameWithType.vb: Scene.AddTimedAction(Single, Action, String)
+  fullName.vb: milk.Scene.AddTimedAction(Single, System.Action, String)
+  name.vb: AddTimedAction(Single, Action, String)
+  spec.csharp:
+  - uid: milk.Scene.AddTimedAction(System.Single,System.Action,System.String)
+    name: AddTimedAction
+    href: milk.Scene.html#milk_Scene_AddTimedAction_System_Single_System_Action_System_String_
+  - name: (
+  - uid: System.Single
+    name: float
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.single
+  - name: ','
+  - name: " "
+  - uid: System.Action
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+  spec.vb:
+  - uid: milk.Scene.AddTimedAction(System.Single,System.Action,System.String)
+    name: AddTimedAction
+    href: milk.Scene.html#milk_Scene_AddTimedAction_System_Single_System_Action_System_String_
+  - name: (
+  - uid: System.Single
+    name: Single
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.single
+  - name: ','
+  - name: " "
+  - uid: System.Action
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+- uid: milk.Scene.RemoveTimedActionByName(System.String)
+  commentId: M:milk.Scene.RemoveTimedActionByName(System.String)
+  parent: milk.Scene
+  isExternal: true
+  href: milk.Scene.html#milk_Scene_RemoveTimedActionByName_System_String_
+  name: RemoveTimedActionByName(string)
+  nameWithType: Scene.RemoveTimedActionByName(string)
+  fullName: milk.Scene.RemoveTimedActionByName(string)
+  nameWithType.vb: Scene.RemoveTimedActionByName(String)
+  fullName.vb: milk.Scene.RemoveTimedActionByName(String)
+  name.vb: RemoveTimedActionByName(String)
+  spec.csharp:
+  - uid: milk.Scene.RemoveTimedActionByName(System.String)
+    name: RemoveTimedActionByName
+    href: milk.Scene.html#milk_Scene_RemoveTimedActionByName_System_String_
+  - name: (
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+  spec.vb:
+  - uid: milk.Scene.RemoveTimedActionByName(System.String)
+    name: RemoveTimedActionByName
+    href: milk.Scene.html#milk_Scene_RemoveTimedActionByName_System_String_
+  - name: (
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+- uid: milk.Scene.AddCamera(milk.Camera)
+  commentId: M:milk.Scene.AddCamera(milk.Camera)
+  parent: milk.Scene
+  href: milk.Scene.html#milk_Scene_AddCamera_milk_Camera_
+  name: AddCamera(Camera)
+  nameWithType: Scene.AddCamera(Camera)
+  fullName: milk.Scene.AddCamera(milk.Camera)
+  spec.csharp:
+  - uid: milk.Scene.AddCamera(milk.Camera)
+    name: AddCamera
+    href: milk.Scene.html#milk_Scene_AddCamera_milk_Camera_
+  - name: (
+  - uid: milk.Camera
+    name: Camera
+    href: milk.Camera.html
+  - name: )
+  spec.vb:
+  - uid: milk.Scene.AddCamera(milk.Camera)
+    name: AddCamera
+    href: milk.Scene.html#milk_Scene_AddCamera_milk_Camera_
+  - name: (
+  - uid: milk.Camera
+    name: Camera
+    href: milk.Camera.html
+  - name: )
+- uid: milk.Scene.GetCameraByName(System.String)
+  commentId: M:milk.Scene.GetCameraByName(System.String)
+  parent: milk.Scene
+  isExternal: true
+  href: milk.Scene.html#milk_Scene_GetCameraByName_System_String_
+  name: GetCameraByName(string)
+  nameWithType: Scene.GetCameraByName(string)
+  fullName: milk.Scene.GetCameraByName(string)
+  nameWithType.vb: Scene.GetCameraByName(String)
+  fullName.vb: milk.Scene.GetCameraByName(String)
+  name.vb: GetCameraByName(String)
+  spec.csharp:
+  - uid: milk.Scene.GetCameraByName(System.String)
+    name: GetCameraByName
+    href: milk.Scene.html#milk_Scene_GetCameraByName_System_String_
+  - name: (
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+  spec.vb:
+  - uid: milk.Scene.GetCameraByName(System.String)
+    name: GetCameraByName
+    href: milk.Scene.html#milk_Scene_GetCameraByName_System_String_
+  - name: (
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+- uid: milk.Scene.AddEntity(milk.Entity)
+  commentId: M:milk.Scene.AddEntity(milk.Entity)
+  parent: milk.Scene
+  href: milk.Scene.html#milk_Scene_AddEntity_milk_Entity_
+  name: AddEntity(Entity)
+  nameWithType: Scene.AddEntity(Entity)
+  fullName: milk.Scene.AddEntity(milk.Entity)
+  spec.csharp:
+  - uid: milk.Scene.AddEntity(milk.Entity)
+    name: AddEntity
+    href: milk.Scene.html#milk_Scene_AddEntity_milk_Entity_
+  - name: (
+  - uid: milk.Entity
+    name: Entity
+    href: milk.Entity.html
+  - name: )
+  spec.vb:
+  - uid: milk.Scene.AddEntity(milk.Entity)
+    name: AddEntity
+    href: milk.Scene.html#milk_Scene_AddEntity_milk_Entity_
+  - name: (
+  - uid: milk.Entity
+    name: Entity
+    href: milk.Entity.html
+  - name: )
+- uid: milk.Scene.HasEntity(milk.Entity)
+  commentId: M:milk.Scene.HasEntity(milk.Entity)
+  parent: milk.Scene
+  href: milk.Scene.html#milk_Scene_HasEntity_milk_Entity_
+  name: HasEntity(Entity)
+  nameWithType: Scene.HasEntity(Entity)
+  fullName: milk.Scene.HasEntity(milk.Entity)
+  spec.csharp:
+  - uid: milk.Scene.HasEntity(milk.Entity)
+    name: HasEntity
+    href: milk.Scene.html#milk_Scene_HasEntity_milk_Entity_
+  - name: (
+  - uid: milk.Entity
+    name: Entity
+    href: milk.Entity.html
+  - name: )
+  spec.vb:
+  - uid: milk.Scene.HasEntity(milk.Entity)
+    name: HasEntity
+    href: milk.Scene.html#milk_Scene_HasEntity_milk_Entity_
+  - name: (
+  - uid: milk.Entity
+    name: Entity
+    href: milk.Entity.html
+  - name: )
+- uid: milk.Scene.RemoveEntity(milk.Entity)
+  commentId: M:milk.Scene.RemoveEntity(milk.Entity)
+  parent: milk.Scene
+  href: milk.Scene.html#milk_Scene_RemoveEntity_milk_Entity_
+  name: RemoveEntity(Entity)
+  nameWithType: Scene.RemoveEntity(Entity)
+  fullName: milk.Scene.RemoveEntity(milk.Entity)
+  spec.csharp:
+  - uid: milk.Scene.RemoveEntity(milk.Entity)
+    name: RemoveEntity
+    href: milk.Scene.html#milk_Scene_RemoveEntity_milk_Entity_
+  - name: (
+  - uid: milk.Entity
+    name: Entity
+    href: milk.Entity.html
+  - name: )
+  spec.vb:
+  - uid: milk.Scene.RemoveEntity(milk.Entity)
+    name: RemoveEntity
+    href: milk.Scene.html#milk_Scene_RemoveEntity_milk_Entity_
+  - name: (
+  - uid: milk.Entity
+    name: Entity
+    href: milk.Entity.html
+  - name: )
+- uid: milk.Scene.RemoveEntityByName(System.String)
+  commentId: M:milk.Scene.RemoveEntityByName(System.String)
+  parent: milk.Scene
+  isExternal: true
+  href: milk.Scene.html#milk_Scene_RemoveEntityByName_System_String_
+  name: RemoveEntityByName(string)
+  nameWithType: Scene.RemoveEntityByName(string)
+  fullName: milk.Scene.RemoveEntityByName(string)
+  nameWithType.vb: Scene.RemoveEntityByName(String)
+  fullName.vb: milk.Scene.RemoveEntityByName(String)
+  name.vb: RemoveEntityByName(String)
+  spec.csharp:
+  - uid: milk.Scene.RemoveEntityByName(System.String)
+    name: RemoveEntityByName
+    href: milk.Scene.html#milk_Scene_RemoveEntityByName_System_String_
+  - name: (
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+  spec.vb:
+  - uid: milk.Scene.RemoveEntityByName(System.String)
+    name: RemoveEntityByName
+    href: milk.Scene.html#milk_Scene_RemoveEntityByName_System_String_
+  - name: (
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+- uid: milk.Scene.RemoveEntitiesByTag(System.String[])
+  commentId: M:milk.Scene.RemoveEntitiesByTag(System.String[])
+  parent: milk.Scene
+  isExternal: true
+  href: milk.Scene.html#milk_Scene_RemoveEntitiesByTag_System_String___
+  name: RemoveEntitiesByTag(params string[])
+  nameWithType: Scene.RemoveEntitiesByTag(params string[])
+  fullName: milk.Scene.RemoveEntitiesByTag(params string[])
+  nameWithType.vb: Scene.RemoveEntitiesByTag(ParamArray String())
+  fullName.vb: milk.Scene.RemoveEntitiesByTag(ParamArray String())
+  name.vb: RemoveEntitiesByTag(ParamArray String())
+  spec.csharp:
+  - uid: milk.Scene.RemoveEntitiesByTag(System.String[])
+    name: RemoveEntitiesByTag
+    href: milk.Scene.html#milk_Scene_RemoveEntitiesByTag_System_String___
+  - name: (
+  - name: params
+  - name: " "
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: '['
+  - name: ']'
+  - name: )
+  spec.vb:
+  - uid: milk.Scene.RemoveEntitiesByTag(System.String[])
+    name: RemoveEntitiesByTag
+    href: milk.Scene.html#milk_Scene_RemoveEntitiesByTag_System_String___
+  - name: (
+  - name: ParamArray
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: (
+  - name: )
+  - name: )
+- uid: milk.Scene.DeleteEntity(milk.Entity)
+  commentId: M:milk.Scene.DeleteEntity(milk.Entity)
+  parent: milk.Scene
+  href: milk.Scene.html#milk_Scene_DeleteEntity_milk_Entity_
+  name: DeleteEntity(Entity)
+  nameWithType: Scene.DeleteEntity(Entity)
+  fullName: milk.Scene.DeleteEntity(milk.Entity)
+  spec.csharp:
+  - uid: milk.Scene.DeleteEntity(milk.Entity)
+    name: DeleteEntity
+    href: milk.Scene.html#milk_Scene_DeleteEntity_milk_Entity_
+  - name: (
+  - uid: milk.Entity
+    name: Entity
+    href: milk.Entity.html
+  - name: )
+  spec.vb:
+  - uid: milk.Scene.DeleteEntity(milk.Entity)
+    name: DeleteEntity
+    href: milk.Scene.html#milk_Scene_DeleteEntity_milk_Entity_
+  - name: (
+  - uid: milk.Entity
+    name: Entity
+    href: milk.Entity.html
+  - name: )
+- uid: milk.Scene.DeleteAllEntities
+  commentId: M:milk.Scene.DeleteAllEntities
+  parent: milk.Scene
+  href: milk.Scene.html#milk_Scene_DeleteAllEntities
+  name: DeleteAllEntities()
+  nameWithType: Scene.DeleteAllEntities()
+  fullName: milk.Scene.DeleteAllEntities()
+  spec.csharp:
+  - uid: milk.Scene.DeleteAllEntities
+    name: DeleteAllEntities
+    href: milk.Scene.html#milk_Scene_DeleteAllEntities
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: milk.Scene.DeleteAllEntities
+    name: DeleteAllEntities
+    href: milk.Scene.html#milk_Scene_DeleteAllEntities
+  - name: (
+  - name: )
+- uid: milk.Scene.GetEntityByName(System.String)
+  commentId: M:milk.Scene.GetEntityByName(System.String)
+  parent: milk.Scene
+  isExternal: true
+  href: milk.Scene.html#milk_Scene_GetEntityByName_System_String_
+  name: GetEntityByName(string)
+  nameWithType: Scene.GetEntityByName(string)
+  fullName: milk.Scene.GetEntityByName(string)
+  nameWithType.vb: Scene.GetEntityByName(String)
+  fullName.vb: milk.Scene.GetEntityByName(String)
+  name.vb: GetEntityByName(String)
+  spec.csharp:
+  - uid: milk.Scene.GetEntityByName(System.String)
+    name: GetEntityByName
+    href: milk.Scene.html#milk_Scene_GetEntityByName_System_String_
+  - name: (
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+  spec.vb:
+  - uid: milk.Scene.GetEntityByName(System.String)
+    name: GetEntityByName
+    href: milk.Scene.html#milk_Scene_GetEntityByName_System_String_
+  - name: (
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+- uid: milk.Scene.GetEntitiesByTag(System.String[])
+  commentId: M:milk.Scene.GetEntitiesByTag(System.String[])
+  parent: milk.Scene
+  isExternal: true
+  href: milk.Scene.html#milk_Scene_GetEntitiesByTag_System_String___
+  name: GetEntitiesByTag(params string[])
+  nameWithType: Scene.GetEntitiesByTag(params string[])
+  fullName: milk.Scene.GetEntitiesByTag(params string[])
+  nameWithType.vb: Scene.GetEntitiesByTag(ParamArray String())
+  fullName.vb: milk.Scene.GetEntitiesByTag(ParamArray String())
+  name.vb: GetEntitiesByTag(ParamArray String())
+  spec.csharp:
+  - uid: milk.Scene.GetEntitiesByTag(System.String[])
+    name: GetEntitiesByTag
+    href: milk.Scene.html#milk_Scene_GetEntitiesByTag_System_String___
+  - name: (
+  - name: params
+  - name: " "
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: '['
+  - name: ']'
+  - name: )
+  spec.vb:
+  - uid: milk.Scene.GetEntitiesByTag(System.String[])
+    name: GetEntitiesByTag
+    href: milk.Scene.html#milk_Scene_GetEntitiesByTag_System_String___
+  - name: (
+  - name: ParamArray
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: (
+  - name: )
+  - name: )
+- uid: milk.Scene.DeleteEntityByName(System.String)
+  commentId: M:milk.Scene.DeleteEntityByName(System.String)
+  parent: milk.Scene
+  isExternal: true
+  href: milk.Scene.html#milk_Scene_DeleteEntityByName_System_String_
+  name: DeleteEntityByName(string)
+  nameWithType: Scene.DeleteEntityByName(string)
+  fullName: milk.Scene.DeleteEntityByName(string)
+  nameWithType.vb: Scene.DeleteEntityByName(String)
+  fullName.vb: milk.Scene.DeleteEntityByName(String)
+  name.vb: DeleteEntityByName(String)
+  spec.csharp:
+  - uid: milk.Scene.DeleteEntityByName(System.String)
+    name: DeleteEntityByName
+    href: milk.Scene.html#milk_Scene_DeleteEntityByName_System_String_
+  - name: (
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+  spec.vb:
+  - uid: milk.Scene.DeleteEntityByName(System.String)
+    name: DeleteEntityByName
+    href: milk.Scene.html#milk_Scene_DeleteEntityByName_System_String_
+  - name: (
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+- uid: milk.Scene.DeleteEntitiesByTag(System.String[])
+  commentId: M:milk.Scene.DeleteEntitiesByTag(System.String[])
+  parent: milk.Scene
+  isExternal: true
+  href: milk.Scene.html#milk_Scene_DeleteEntitiesByTag_System_String___
+  name: DeleteEntitiesByTag(params string[])
+  nameWithType: Scene.DeleteEntitiesByTag(params string[])
+  fullName: milk.Scene.DeleteEntitiesByTag(params string[])
+  nameWithType.vb: Scene.DeleteEntitiesByTag(ParamArray String())
+  fullName.vb: milk.Scene.DeleteEntitiesByTag(ParamArray String())
+  name.vb: DeleteEntitiesByTag(ParamArray String())
+  spec.csharp:
+  - uid: milk.Scene.DeleteEntitiesByTag(System.String[])
+    name: DeleteEntitiesByTag
+    href: milk.Scene.html#milk_Scene_DeleteEntitiesByTag_System_String___
+  - name: (
+  - name: params
+  - name: " "
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: '['
+  - name: ']'
+  - name: )
+  spec.vb:
+  - uid: milk.Scene.DeleteEntitiesByTag(System.String[])
+    name: DeleteEntitiesByTag
+    href: milk.Scene.html#milk_Scene_DeleteEntitiesByTag_System_String___
+  - name: (
+  - name: ParamArray
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: (
+  - name: )
+  - name: )
+- uid: milk.Scene.AddSystem``1
+  commentId: M:milk.Scene.AddSystem``1
+  parent: milk.Scene
+  href: milk.Scene.html#milk_Scene_AddSystem__1
+  name: AddSystem<T>()
+  nameWithType: Scene.AddSystem<T>()
+  fullName: milk.Scene.AddSystem<T>()
+  nameWithType.vb: Scene.AddSystem(Of T)()
+  fullName.vb: milk.Scene.AddSystem(Of T)()
+  name.vb: AddSystem(Of T)()
+  spec.csharp:
+  - uid: milk.Scene.AddSystem``1
+    name: AddSystem
+    href: milk.Scene.html#milk_Scene_AddSystem__1
+  - name: <
+  - name: T
+  - name: '>'
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: milk.Scene.AddSystem``1
+    name: AddSystem
+    href: milk.Scene.html#milk_Scene_AddSystem__1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+  - name: (
+  - name: )
+- uid: milk.Scene.RemoveSystem``1
+  commentId: M:milk.Scene.RemoveSystem``1
+  parent: milk.Scene
+  href: milk.Scene.html#milk_Scene_RemoveSystem__1
+  name: RemoveSystem<T>()
+  nameWithType: Scene.RemoveSystem<T>()
+  fullName: milk.Scene.RemoveSystem<T>()
+  nameWithType.vb: Scene.RemoveSystem(Of T)()
+  fullName.vb: milk.Scene.RemoveSystem(Of T)()
+  name.vb: RemoveSystem(Of T)()
+  spec.csharp:
+  - uid: milk.Scene.RemoveSystem``1
+    name: RemoveSystem
+    href: milk.Scene.html#milk_Scene_RemoveSystem__1
+  - name: <
+  - name: T
+  - name: '>'
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: milk.Scene.RemoveSystem``1
+    name: RemoveSystem
+    href: milk.Scene.html#milk_Scene_RemoveSystem__1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+  - name: (
+  - name: )
+- uid: milk.Scene.RemoveAllSystems
+  commentId: M:milk.Scene.RemoveAllSystems
+  parent: milk.Scene
+  href: milk.Scene.html#milk_Scene_RemoveAllSystems
+  name: RemoveAllSystems()
+  nameWithType: Scene.RemoveAllSystems()
+  fullName: milk.Scene.RemoveAllSystems()
+  spec.csharp:
+  - uid: milk.Scene.RemoveAllSystems
+    name: RemoveAllSystems
+    href: milk.Scene.html#milk_Scene_RemoveAllSystems
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: milk.Scene.RemoveAllSystems
+    name: RemoveAllSystems
+    href: milk.Scene.html#milk_Scene_RemoveAllSystems
+  - name: (
+  - name: )
+- uid: milk.Scene.HasSystem``1
+  commentId: M:milk.Scene.HasSystem``1
+  parent: milk.Scene
+  href: milk.Scene.html#milk_Scene_HasSystem__1
+  name: HasSystem<T>()
+  nameWithType: Scene.HasSystem<T>()
+  fullName: milk.Scene.HasSystem<T>()
+  nameWithType.vb: Scene.HasSystem(Of T)()
+  fullName.vb: milk.Scene.HasSystem(Of T)()
+  name.vb: HasSystem(Of T)()
+  spec.csharp:
+  - uid: milk.Scene.HasSystem``1
+    name: HasSystem
+    href: milk.Scene.html#milk_Scene_HasSystem__1
+  - name: <
+  - name: T
+  - name: '>'
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: milk.Scene.HasSystem``1
+    name: HasSystem
+    href: milk.Scene.html#milk_Scene_HasSystem__1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+  - name: (
+  - name: )
+- uid: milk.Scene.GetSceneBelow(System.Collections.Generic.List{milk.Scene})
+  commentId: M:milk.Scene.GetSceneBelow(System.Collections.Generic.List{milk.Scene})
+  parent: milk.Scene
+  isExternal: true
+  href: milk.Scene.html#milk_Scene_GetSceneBelow_System_Collections_Generic_List_milk_Scene__
+  name: GetSceneBelow(List<Scene>)
+  nameWithType: Scene.GetSceneBelow(List<Scene>)
+  fullName: milk.Scene.GetSceneBelow(System.Collections.Generic.List<milk.Scene>)
+  nameWithType.vb: Scene.GetSceneBelow(List(Of Scene))
+  fullName.vb: milk.Scene.GetSceneBelow(System.Collections.Generic.List(Of milk.Scene))
+  name.vb: GetSceneBelow(List(Of Scene))
+  spec.csharp:
+  - uid: milk.Scene.GetSceneBelow(System.Collections.Generic.List{milk.Scene})
+    name: GetSceneBelow
+    href: milk.Scene.html#milk_Scene_GetSceneBelow_System_Collections_Generic_List_milk_Scene__
+  - name: (
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: <
+  - uid: milk.Scene
+    name: Scene
+    href: milk.Scene.html
+  - name: '>'
+  - name: )
+  spec.vb:
+  - uid: milk.Scene.GetSceneBelow(System.Collections.Generic.List{milk.Scene})
+    name: GetSceneBelow
+    href: milk.Scene.html#milk_Scene_GetSceneBelow_System_Collections_Generic_List_milk_Scene__
+  - name: (
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: milk.Scene
+    name: Scene
+    href: milk.Scene.html
+  - name: )
+  - name: )
+- uid: milk.Scene.Update(Microsoft.Xna.Framework.GameTime)
+  commentId: M:milk.Scene.Update(Microsoft.Xna.Framework.GameTime)
+  parent: milk.Scene
+  isExternal: true
+  href: milk.Scene.html#milk_Scene_Update_Microsoft_Xna_Framework_GameTime_
+  name: Update(GameTime)
+  nameWithType: Scene.Update(GameTime)
+  fullName: milk.Scene.Update(Microsoft.Xna.Framework.GameTime)
+  spec.csharp:
+  - uid: milk.Scene.Update(Microsoft.Xna.Framework.GameTime)
+    name: Update
+    href: milk.Scene.html#milk_Scene_Update_Microsoft_Xna_Framework_GameTime_
+  - name: (
+  - uid: Microsoft.Xna.Framework.GameTime
+    name: GameTime
+    isExternal: true
+  - name: )
+  spec.vb:
+  - uid: milk.Scene.Update(Microsoft.Xna.Framework.GameTime)
+    name: Update
+    href: milk.Scene.html#milk_Scene_Update_Microsoft_Xna_Framework_GameTime_
+  - name: (
+  - uid: Microsoft.Xna.Framework.GameTime
+    name: GameTime
+    isExternal: true
+  - name: )
+- uid: milk.Scene.OnEnter
+  commentId: M:milk.Scene.OnEnter
+  parent: milk.Scene
+  href: milk.Scene.html#milk_Scene_OnEnter
+  name: OnEnter()
+  nameWithType: Scene.OnEnter()
+  fullName: milk.Scene.OnEnter()
+  spec.csharp:
+  - uid: milk.Scene.OnEnter
+    name: OnEnter
+    href: milk.Scene.html#milk_Scene_OnEnter
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: milk.Scene.OnEnter
+    name: OnEnter
+    href: milk.Scene.html#milk_Scene_OnEnter
+  - name: (
+  - name: )
+- uid: milk.Scene.OnExit
+  commentId: M:milk.Scene.OnExit
+  parent: milk.Scene
+  href: milk.Scene.html#milk_Scene_OnExit
+  name: OnExit()
+  nameWithType: Scene.OnExit()
+  fullName: milk.Scene.OnExit()
+  spec.csharp:
+  - uid: milk.Scene.OnExit
+    name: OnExit
+    href: milk.Scene.html#milk_Scene_OnExit
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: milk.Scene.OnExit
+    name: OnExit
+    href: milk.Scene.html#milk_Scene_OnExit
+  - name: (
+  - name: )
+- uid: milk.Scene.OnEntityAdded(milk.Entity)
+  commentId: M:milk.Scene.OnEntityAdded(milk.Entity)
+  parent: milk.Scene
+  href: milk.Scene.html#milk_Scene_OnEntityAdded_milk_Entity_
+  name: OnEntityAdded(Entity)
+  nameWithType: Scene.OnEntityAdded(Entity)
+  fullName: milk.Scene.OnEntityAdded(milk.Entity)
+  spec.csharp:
+  - uid: milk.Scene.OnEntityAdded(milk.Entity)
+    name: OnEntityAdded
+    href: milk.Scene.html#milk_Scene_OnEntityAdded_milk_Entity_
+  - name: (
+  - uid: milk.Entity
+    name: Entity
+    href: milk.Entity.html
+  - name: )
+  spec.vb:
+  - uid: milk.Scene.OnEntityAdded(milk.Entity)
+    name: OnEntityAdded
+    href: milk.Scene.html#milk_Scene_OnEntityAdded_milk_Entity_
+  - name: (
+  - uid: milk.Entity
+    name: Entity
+    href: milk.Entity.html
+  - name: )
+- uid: milk.Scene.OnEntityRemoved(milk.Entity)
+  commentId: M:milk.Scene.OnEntityRemoved(milk.Entity)
+  parent: milk.Scene
+  href: milk.Scene.html#milk_Scene_OnEntityRemoved_milk_Entity_
+  name: OnEntityRemoved(Entity)
+  nameWithType: Scene.OnEntityRemoved(Entity)
+  fullName: milk.Scene.OnEntityRemoved(milk.Entity)
+  spec.csharp:
+  - uid: milk.Scene.OnEntityRemoved(milk.Entity)
+    name: OnEntityRemoved
+    href: milk.Scene.html#milk_Scene_OnEntityRemoved_milk_Entity_
+  - name: (
+  - uid: milk.Entity
+    name: Entity
+    href: milk.Entity.html
+  - name: )
+  spec.vb:
+  - uid: milk.Scene.OnEntityRemoved(milk.Entity)
+    name: OnEntityRemoved
+    href: milk.Scene.html#milk_Scene_OnEntityRemoved_milk_Entity_
+  - name: (
+  - uid: milk.Entity
+    name: Entity
+    href: milk.Entity.html
+  - name: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: milk.Scene.Init
+  commentId: M:milk.Scene.Init
+  parent: milk.Scene
+  href: milk.Scene.html#milk_Scene_Init
+  name: Init()
+  nameWithType: Scene.Init()
+  fullName: milk.Scene.Init()
+  spec.csharp:
+  - uid: milk.Scene.Init
+    name: Init
+    href: milk.Scene.html#milk_Scene_Init
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: milk.Scene.Init
+    name: Init
+    href: milk.Scene.html#milk_Scene_Init
+  - name: (
+  - name: )
+- uid: milk.DefaultScene.Init*
+  commentId: Overload:milk.DefaultScene.Init
+  href: milk.DefaultScene.html#milk_DefaultScene_Init
+  name: Init
+  nameWithType: DefaultScene.Init
+  fullName: milk.DefaultScene.Init
+- uid: milk.Scene.Input(Microsoft.Xna.Framework.GameTime)
+  commentId: M:milk.Scene.Input(Microsoft.Xna.Framework.GameTime)
+  parent: milk.Scene
+  isExternal: true
+  href: milk.Scene.html#milk_Scene_Input_Microsoft_Xna_Framework_GameTime_
+  name: Input(GameTime)
+  nameWithType: Scene.Input(GameTime)
+  fullName: milk.Scene.Input(Microsoft.Xna.Framework.GameTime)
+  spec.csharp:
+  - uid: milk.Scene.Input(Microsoft.Xna.Framework.GameTime)
+    name: Input
+    href: milk.Scene.html#milk_Scene_Input_Microsoft_Xna_Framework_GameTime_
+  - name: (
+  - uid: Microsoft.Xna.Framework.GameTime
+    name: GameTime
+    isExternal: true
+  - name: )
+  spec.vb:
+  - uid: milk.Scene.Input(Microsoft.Xna.Framework.GameTime)
+    name: Input
+    href: milk.Scene.html#milk_Scene_Input_Microsoft_Xna_Framework_GameTime_
+  - name: (
+  - uid: Microsoft.Xna.Framework.GameTime
+    name: GameTime
+    isExternal: true
+  - name: )
+- uid: milk.DefaultScene.Input*
+  commentId: Overload:milk.DefaultScene.Input
+  href: milk.DefaultScene.html#milk_DefaultScene_Input_Microsoft_Xna_Framework_GameTime_
+  name: Input
+  nameWithType: DefaultScene.Input
+  fullName: milk.DefaultScene.Input
+- uid: Microsoft.Xna.Framework.GameTime
+  commentId: T:Microsoft.Xna.Framework.GameTime
+  parent: Microsoft.Xna.Framework
+  isExternal: true
+  name: GameTime
+  nameWithType: GameTime
+  fullName: Microsoft.Xna.Framework.GameTime
+- uid: Microsoft.Xna.Framework
+  commentId: N:Microsoft.Xna.Framework
+  isExternal: true
+  name: Microsoft.Xna.Framework
+  nameWithType: Microsoft.Xna.Framework
+  fullName: Microsoft.Xna.Framework
+  spec.csharp:
+  - uid: Microsoft
+    name: Microsoft
+    isExternal: true
+  - name: .
+  - uid: Microsoft.Xna
+    name: Xna
+    isExternal: true
+  - name: .
+  - uid: Microsoft.Xna.Framework
+    name: Framework
+    isExternal: true
+  spec.vb:
+  - uid: Microsoft
+    name: Microsoft
+    isExternal: true
+  - name: .
+  - uid: Microsoft.Xna
+    name: Xna
+    isExternal: true
+  - name: .
+  - uid: Microsoft.Xna.Framework
+    name: Framework
+    isExternal: true
+- uid: milk.Scene.Draw
+  commentId: M:milk.Scene.Draw
+  parent: milk.Scene
+  href: milk.Scene.html#milk_Scene_Draw
+  name: Draw()
+  nameWithType: Scene.Draw()
+  fullName: milk.Scene.Draw()
+  spec.csharp:
+  - uid: milk.Scene.Draw
+    name: Draw
+    href: milk.Scene.html#milk_Scene_Draw
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: milk.Scene.Draw
+    name: Draw
+    href: milk.Scene.html#milk_Scene_Draw
+  - name: (
+  - name: )
+- uid: milk.DefaultScene.Draw*
+  commentId: Overload:milk.DefaultScene.Draw
+  href: milk.DefaultScene.html#milk_DefaultScene_Draw
+  name: Draw
+  nameWithType: DefaultScene.Draw
+  fullName: milk.DefaultScene.Draw

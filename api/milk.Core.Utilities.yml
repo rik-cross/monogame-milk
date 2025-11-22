@@ -1,0 +1,601 @@
+### YamlMime:ManagedReference
+items:
+- uid: milk.Core.Utilities
+  commentId: T:milk.Core.Utilities
+  id: Utilities
+  parent: milk.Core
+  children:
+  - milk.Core.Utilities.GetSubTexture(Microsoft.Xna.Framework.Graphics.Texture2D,System.Int32,System.Int32,System.Int32,System.Int32)
+  - milk.Core.Utilities.SplitTexture(Microsoft.Xna.Framework.Graphics.Texture2D,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Rectangle)
+  langs:
+  - csharp
+  - vb
+  name: Utilities
+  nameWithType: Utilities
+  fullName: milk.Core.Utilities
+  type: Class
+  source:
+    remote:
+      path: Utilities/Utilities.cs
+      branch: main
+      repo: git@github.com:rik-cross/monogame-milk.git
+    id: Utilities
+    path: Utilities/Utilities.cs
+    startLine: 6
+  assemblies:
+  - MonoGameECS
+  namespace: milk.Core
+  syntax:
+    content: public static class Utilities
+    content.vb: Public Module Utilities
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: milk.Core.Utilities.SplitTexture(Microsoft.Xna.Framework.Graphics.Texture2D,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Rectangle)
+  commentId: M:milk.Core.Utilities.SplitTexture(Microsoft.Xna.Framework.Graphics.Texture2D,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Rectangle)
+  id: SplitTexture(Microsoft.Xna.Framework.Graphics.Texture2D,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Rectangle)
+  parent: milk.Core.Utilities
+  langs:
+  - csharp
+  - vb
+  name: SplitTexture(Texture2D, Vector2, Rectangle)
+  nameWithType: Utilities.SplitTexture(Texture2D, Vector2, Rectangle)
+  fullName: milk.Core.Utilities.SplitTexture(Microsoft.Xna.Framework.Graphics.Texture2D, Microsoft.Xna.Framework.Vector2, Microsoft.Xna.Framework.Rectangle)
+  type: Method
+  source:
+    remote:
+      path: Utilities/Utilities.cs
+      branch: main
+      repo: git@github.com:rik-cross/monogame-milk.git
+    id: SplitTexture
+    path: Utilities/Utilities.cs
+    startLine: 8
+  assemblies:
+  - MonoGameECS
+  namespace: milk.Core
+  syntax:
+    content: public static List<List<Texture2D>> SplitTexture(Texture2D originalTexture, Vector2 subTextureSize, Rectangle subTextureClippingRect = default)
+    parameters:
+    - id: originalTexture
+      type: Microsoft.Xna.Framework.Graphics.Texture2D
+    - id: subTextureSize
+      type: Microsoft.Xna.Framework.Vector2
+    - id: subTextureClippingRect
+      type: Microsoft.Xna.Framework.Rectangle
+    return:
+      type: System.Collections.Generic.List{System.Collections.Generic.List{Microsoft.Xna.Framework.Graphics.Texture2D}}
+    content.vb: Public Shared Function SplitTexture(originalTexture As Texture2D, subTextureSize As Vector2, subTextureClippingRect As Rectangle = Nothing) As List(Of List(Of Texture2D))
+  overload: milk.Core.Utilities.SplitTexture*
+- uid: milk.Core.Utilities.GetSubTexture(Microsoft.Xna.Framework.Graphics.Texture2D,System.Int32,System.Int32,System.Int32,System.Int32)
+  commentId: M:milk.Core.Utilities.GetSubTexture(Microsoft.Xna.Framework.Graphics.Texture2D,System.Int32,System.Int32,System.Int32,System.Int32)
+  id: GetSubTexture(Microsoft.Xna.Framework.Graphics.Texture2D,System.Int32,System.Int32,System.Int32,System.Int32)
+  parent: milk.Core.Utilities
+  langs:
+  - csharp
+  - vb
+  name: GetSubTexture(Texture2D, int, int, int, int)
+  nameWithType: Utilities.GetSubTexture(Texture2D, int, int, int, int)
+  fullName: milk.Core.Utilities.GetSubTexture(Microsoft.Xna.Framework.Graphics.Texture2D, int, int, int, int)
+  type: Method
+  source:
+    remote:
+      path: Utilities/Utilities.cs
+      branch: main
+      repo: git@github.com:rik-cross/monogame-milk.git
+    id: GetSubTexture
+    path: Utilities/Utilities.cs
+    startLine: 42
+  assemblies:
+  - MonoGameECS
+  namespace: milk.Core
+  syntax:
+    content: public static Texture2D GetSubTexture(Texture2D texture, int x, int y, int width, int height)
+    parameters:
+    - id: texture
+      type: Microsoft.Xna.Framework.Graphics.Texture2D
+    - id: x
+      type: System.Int32
+    - id: y
+      type: System.Int32
+    - id: width
+      type: System.Int32
+    - id: height
+      type: System.Int32
+    return:
+      type: Microsoft.Xna.Framework.Graphics.Texture2D
+    content.vb: Public Shared Function GetSubTexture(texture As Texture2D, x As Integer, y As Integer, width As Integer, height As Integer) As Texture2D
+  overload: milk.Core.Utilities.GetSubTexture*
+  nameWithType.vb: Utilities.GetSubTexture(Texture2D, Integer, Integer, Integer, Integer)
+  fullName.vb: milk.Core.Utilities.GetSubTexture(Microsoft.Xna.Framework.Graphics.Texture2D, Integer, Integer, Integer, Integer)
+  name.vb: GetSubTexture(Texture2D, Integer, Integer, Integer, Integer)
+references:
+- uid: milk.Core
+  commentId: N:milk.Core
+  href: milk.html
+  name: milk.Core
+  nameWithType: milk.Core
+  fullName: milk.Core
+  spec.csharp:
+  - uid: milk
+    name: milk
+    href: milk.html
+  - name: .
+  - uid: milk.Core
+    name: Core
+    href: milk.Core.html
+  spec.vb:
+  - uid: milk
+    name: milk
+    href: milk.html
+  - name: .
+  - uid: milk.Core
+    name: Core
+    href: milk.Core.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: milk.Core.Utilities.SplitTexture*
+  commentId: Overload:milk.Core.Utilities.SplitTexture
+  href: milk.Core.Utilities.html#milk_Core_Utilities_SplitTexture_Microsoft_Xna_Framework_Graphics_Texture2D_Microsoft_Xna_Framework_Vector2_Microsoft_Xna_Framework_Rectangle_
+  name: SplitTexture
+  nameWithType: Utilities.SplitTexture
+  fullName: milk.Core.Utilities.SplitTexture
+- uid: Microsoft.Xna.Framework.Graphics.Texture2D
+  commentId: T:Microsoft.Xna.Framework.Graphics.Texture2D
+  parent: Microsoft.Xna.Framework.Graphics
+  isExternal: true
+  name: Texture2D
+  nameWithType: Texture2D
+  fullName: Microsoft.Xna.Framework.Graphics.Texture2D
+- uid: Microsoft.Xna.Framework.Vector2
+  commentId: T:Microsoft.Xna.Framework.Vector2
+  parent: Microsoft.Xna.Framework
+  isExternal: true
+  name: Vector2
+  nameWithType: Vector2
+  fullName: Microsoft.Xna.Framework.Vector2
+- uid: Microsoft.Xna.Framework.Rectangle
+  commentId: T:Microsoft.Xna.Framework.Rectangle
+  parent: Microsoft.Xna.Framework
+  isExternal: true
+  name: Rectangle
+  nameWithType: Rectangle
+  fullName: Microsoft.Xna.Framework.Rectangle
+- uid: System.Collections.Generic.List{System.Collections.Generic.List{Microsoft.Xna.Framework.Graphics.Texture2D}}
+  commentId: T:System.Collections.Generic.List{System.Collections.Generic.List{Microsoft.Xna.Framework.Graphics.Texture2D}}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.List`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  name: List<List<Texture2D>>
+  nameWithType: List<List<Texture2D>>
+  fullName: System.Collections.Generic.List<System.Collections.Generic.List<Microsoft.Xna.Framework.Graphics.Texture2D>>
+  nameWithType.vb: List(Of List(Of Texture2D))
+  fullName.vb: System.Collections.Generic.List(Of System.Collections.Generic.List(Of Microsoft.Xna.Framework.Graphics.Texture2D))
+  name.vb: List(Of List(Of Texture2D))
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: <
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: <
+  - uid: Microsoft.Xna.Framework.Graphics.Texture2D
+    name: Texture2D
+    isExternal: true
+  - name: '>'
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: Microsoft.Xna.Framework.Graphics.Texture2D
+    name: Texture2D
+    isExternal: true
+  - name: )
+  - name: )
+- uid: Microsoft.Xna.Framework.Graphics
+  commentId: N:Microsoft.Xna.Framework.Graphics
+  isExternal: true
+  name: Microsoft.Xna.Framework.Graphics
+  nameWithType: Microsoft.Xna.Framework.Graphics
+  fullName: Microsoft.Xna.Framework.Graphics
+  spec.csharp:
+  - uid: Microsoft
+    name: Microsoft
+    isExternal: true
+  - name: .
+  - uid: Microsoft.Xna
+    name: Xna
+    isExternal: true
+  - name: .
+  - uid: Microsoft.Xna.Framework
+    name: Framework
+    isExternal: true
+  - name: .
+  - uid: Microsoft.Xna.Framework.Graphics
+    name: Graphics
+    isExternal: true
+  spec.vb:
+  - uid: Microsoft
+    name: Microsoft
+    isExternal: true
+  - name: .
+  - uid: Microsoft.Xna
+    name: Xna
+    isExternal: true
+  - name: .
+  - uid: Microsoft.Xna.Framework
+    name: Framework
+    isExternal: true
+  - name: .
+  - uid: Microsoft.Xna.Framework.Graphics
+    name: Graphics
+    isExternal: true
+- uid: Microsoft.Xna.Framework
+  commentId: N:Microsoft.Xna.Framework
+  isExternal: true
+  name: Microsoft.Xna.Framework
+  nameWithType: Microsoft.Xna.Framework
+  fullName: Microsoft.Xna.Framework
+  spec.csharp:
+  - uid: Microsoft
+    name: Microsoft
+    isExternal: true
+  - name: .
+  - uid: Microsoft.Xna
+    name: Xna
+    isExternal: true
+  - name: .
+  - uid: Microsoft.Xna.Framework
+    name: Framework
+    isExternal: true
+  spec.vb:
+  - uid: Microsoft
+    name: Microsoft
+    isExternal: true
+  - name: .
+  - uid: Microsoft.Xna
+    name: Xna
+    isExternal: true
+  - name: .
+  - uid: Microsoft.Xna.Framework
+    name: Framework
+    isExternal: true
+- uid: System.Collections.Generic.List`1
+  commentId: T:System.Collections.Generic.List`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  name: List<T>
+  nameWithType: List<T>
+  fullName: System.Collections.Generic.List<T>
+  nameWithType.vb: List(Of T)
+  fullName.vb: System.Collections.Generic.List(Of T)
+  name.vb: List(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+- uid: milk.Core.Utilities.GetSubTexture*
+  commentId: Overload:milk.Core.Utilities.GetSubTexture
+  href: milk.Core.Utilities.html#milk_Core_Utilities_GetSubTexture_Microsoft_Xna_Framework_Graphics_Texture2D_System_Int32_System_Int32_System_Int32_System_Int32_
+  name: GetSubTexture
+  nameWithType: Utilities.GetSubTexture
+  fullName: milk.Core.Utilities.GetSubTexture
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer

@@ -1,9 +1,10 @@
+using System.Reflection.Metadata;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
-namespace milk;
+namespace milk.Core;
 
-public class SceneManager
+internal class SceneManager
 {
     // should this store one of each type of scene?
     // and then use LoadScene<>() etc...
@@ -14,7 +15,7 @@ public class SceneManager
     public bool unload = true;
 
 
-    public Transition currentTransition = null;
+    public Transition? currentTransition = null;
     private RenderTarget2D existingScenesRenderTarget = new RenderTarget2D(
         EngineGlobals.game.graphicsDevice,
         EngineGlobals.game.graphicsDevice.PresentationParameters.BackBufferWidth,
@@ -52,7 +53,9 @@ public class SceneManager
         {
             currentTransition._Update(gameTime, _newSceneList, unload);
             if (currentTransition.finished)
+            {
                 currentTransition = null;
+            }
         }
 
         if (currentTransition != null && _newSceneList != null && _newSceneList.Count > 0)
@@ -97,7 +100,12 @@ public class SceneManager
 
     }
 
-    internal void SetScene(List<Scene> sceneList, Transition transition = null, bool keepExistingScenes = false)
+    internal void SetScene(
+        List<Scene> sceneList,
+        Transition? transition = null,
+        bool keepExistingScenes = false,
+        bool calledFromTransition = false
+    )
     {
 
         if (sceneList.Count == 0)
@@ -106,7 +114,17 @@ public class SceneManager
         if (transition == null)
         {
             if (_currentSceneList.Count > 0)
-                _currentSceneList[0].OnExit();
+            {
+
+                foreach (System system in _currentSceneList[0].systems)
+                {
+                    system.OnExitScene(_currentSceneList[0]);
+                }
+
+                //Console.WriteLine("Exit");
+                if (calledFromTransition == false)
+                    _currentSceneList[0].OnExit();
+            }
 
             if (keepExistingScenes == false)
                 _currentSceneList.Clear();
@@ -114,35 +132,81 @@ public class SceneManager
             for (int i = sceneList.Count - 1; i >= 0; i--)
                 _currentSceneList.Insert(0, sceneList[i]);
 
-            _currentSceneList[0].OnEnter();
+            foreach (System system in _currentSceneList[0].systems)
+            {
+                system.OnEnterScene(_currentSceneList[0]);
+            }
+
+            //if (calledFromTransition == false)
+            //{
+                //Console.WriteLine("Enter -- without transition");
+                _currentSceneList[0].OnEnter();
+            //}
         }
         else
         {
             currentTransition = transition;
+
+            _currentSceneList[0].OnExit();
+            //sceneList[0].OnEnter();
+            
             _newSceneList = sceneList;
             unload = !keepExistingScenes;
             numberOfScenesToRemove = 1;
         }
 
+        
+
     }
 
-    public void RemoveScene(Transition transition = null, int nScenesToRemove = 1)
+    public void RemoveScene(
+        Transition? transition = null,
+        int nScenesToRemove = 1,
+        bool calledFromTransition = false
+    )
     {
         _newSceneList.Clear();
         if (transition == null)
         {
             while (_currentSceneList.Count > 0 && nScenesToRemove > 0)
             {
-                _currentSceneList[0].OnExit();
+
+                // systems.onExit(scene)
+                foreach (System system in _currentSceneList[0].systems)
+                {
+                    system.OnExitScene(_currentSceneList[0]);
+                }
+
+                //Console.WriteLine("Exit");
+                if (calledFromTransition == false)
+                    _currentSceneList[0].OnExit();
+
                 _currentSceneList.RemoveAt(0);
                 nScenesToRemove--;
             }
             if (_currentSceneList.Count > 0)
-                _currentSceneList[0].OnEnter();
+            {
+
+                foreach (System system in _currentSceneList[0].systems)
+                {
+                    system.OnEnterScene(_currentSceneList[0]);
+                }
+
+                // ??
+                //if (calledFromTransition == false) {
+                    //Console.WriteLine("Enter -- no transition");
+                    _currentSceneList[0].OnEnter();
+                //}
+            } 
+                
         }
         else
         {
             currentTransition = transition;
+
+            _currentSceneList[0].OnExit();
+            //_currentSceneList[nScenesToRemove].OnEnter();
+
             unload = false;
             this.numberOfScenesToRemove = nScenesToRemove;
         }
@@ -152,6 +216,12 @@ public class SceneManager
     {
         while (_currentSceneList.Count > 0)
         {
+
+            foreach(System system in _currentSceneList[0].systems)
+            {
+                system.OnExitScene(_currentSceneList[0]);
+            }
+
             _currentSceneList[0].OnExit();
             _currentSceneList.RemoveAt(0);
         }

@@ -1,0 +1,763 @@
+### YamlMime:ManagedReference
+items:
+- uid: milk.SystemManager
+  commentId: T:milk.SystemManager
+  id: SystemManager
+  parent: milk
+  children:
+  - milk.SystemManager.AddAllRegisteredSystemsToScene(milk.Scene)
+  - milk.SystemManager.AddSystemOfTypeToList``1(System.Collections.Generic.List{milk.System})
+  - milk.SystemManager.GetSystemOfTypeFromList``1(System.Collections.Generic.List{milk.System})
+  - milk.SystemManager.GetSystem``1
+  - milk.SystemManager.HasSystemOfTypeInList``1(System.Collections.Generic.List{milk.System})
+  - milk.SystemManager.IsRegistered``1
+  - milk.SystemManager.RegisterSystem(milk.System)
+  - milk.SystemManager.RemoveSystemOfTypeFromList``1(System.Collections.Generic.List{milk.System})
+  - milk.SystemManager.registeredSystems
+  langs:
+  - csharp
+  - vb
+  name: SystemManager
+  nameWithType: SystemManager
+  fullName: milk.SystemManager
+  type: Class
+  source:
+    remote:
+      path: Managers/SystemManager.cs
+      branch: main
+      repo: git@github.com:rik-cross/monogame-milk.git
+    id: SystemManager
+    path: ../MonoGameECS (Copy)/Managers/SystemManager.cs
+    startLine: 18
+  assemblies:
+  - MonoGameECS
+  namespace: milk
+  syntax:
+    content: public class SystemManager
+    content.vb: Public Class SystemManager
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: milk.SystemManager.registeredSystems
+  commentId: F:milk.SystemManager.registeredSystems
+  id: registeredSystems
+  parent: milk.SystemManager
+  langs:
+  - csharp
+  - vb
+  name: registeredSystems
+  nameWithType: SystemManager.registeredSystems
+  fullName: milk.SystemManager.registeredSystems
+  type: Field
+  source:
+    remote:
+      path: Managers/SystemManager.cs
+      branch: main
+      repo: git@github.com:rik-cross/monogame-milk.git
+    id: registeredSystems
+    path: ../MonoGameECS (Copy)/Managers/SystemManager.cs
+    startLine: 24
+  assemblies:
+  - MonoGameECS
+  namespace: milk
+  syntax:
+    content: public List<System> registeredSystems
+    return:
+      type: System.Collections.Generic.List{milk.System}
+    content.vb: Public registeredSystems As List(Of System)
+- uid: milk.SystemManager.RegisterSystem(milk.System)
+  commentId: M:milk.SystemManager.RegisterSystem(milk.System)
+  id: RegisterSystem(milk.System)
+  parent: milk.SystemManager
+  langs:
+  - csharp
+  - vb
+  name: RegisterSystem(System)
+  nameWithType: SystemManager.RegisterSystem(System)
+  fullName: milk.SystemManager.RegisterSystem(milk.System)
+  type: Method
+  source:
+    remote:
+      path: Managers/SystemManager.cs
+      branch: main
+      repo: git@github.com:rik-cross/monogame-milk.git
+    id: RegisterSystem
+    path: ../MonoGameECS (Copy)/Managers/SystemManager.cs
+    startLine: 30
+  assemblies:
+  - MonoGameECS
+  namespace: milk
+  syntax:
+    content: public void RegisterSystem(System system)
+    parameters:
+    - id: system
+      type: milk.System
+    content.vb: Public Sub RegisterSystem(system As System)
+  overload: milk.SystemManager.RegisterSystem*
+- uid: milk.SystemManager.IsRegistered``1
+  commentId: M:milk.SystemManager.IsRegistered``1
+  id: IsRegistered``1
+  parent: milk.SystemManager
+  langs:
+  - csharp
+  - vb
+  name: IsRegistered<T>()
+  nameWithType: SystemManager.IsRegistered<T>()
+  fullName: milk.SystemManager.IsRegistered<T>()
+  type: Method
+  source:
+    remote:
+      path: Managers/SystemManager.cs
+      branch: main
+      repo: git@github.com:rik-cross/monogame-milk.git
+    id: IsRegistered
+    path: ../MonoGameECS (Copy)/Managers/SystemManager.cs
+    startLine: 54
+  assemblies:
+  - MonoGameECS
+  namespace: milk
+  syntax:
+    content: public bool IsRegistered<T>()
+    typeParameters:
+    - id: T
+    return:
+      type: System.Boolean
+    content.vb: Public Function IsRegistered(Of T)() As Boolean
+  overload: milk.SystemManager.IsRegistered*
+  nameWithType.vb: SystemManager.IsRegistered(Of T)()
+  fullName.vb: milk.SystemManager.IsRegistered(Of T)()
+  name.vb: IsRegistered(Of T)()
+- uid: milk.SystemManager.GetSystem``1
+  commentId: M:milk.SystemManager.GetSystem``1
+  id: GetSystem``1
+  parent: milk.SystemManager
+  langs:
+  - csharp
+  - vb
+  name: GetSystem<T>()
+  nameWithType: SystemManager.GetSystem<T>()
+  fullName: milk.SystemManager.GetSystem<T>()
+  type: Method
+  source:
+    remote:
+      path: Managers/SystemManager.cs
+      branch: main
+      repo: git@github.com:rik-cross/monogame-milk.git
+    id: GetSystem
+    path: ../MonoGameECS (Copy)/Managers/SystemManager.cs
+    startLine: 61
+  assemblies:
+  - MonoGameECS
+  namespace: milk
+  syntax:
+    content: 'public T GetSystem<T>() where T : System'
+    typeParameters:
+    - id: T
+    return:
+      type: '{T}'
+    content.vb: Public Function GetSystem(Of T As System)() As T
+  overload: milk.SystemManager.GetSystem*
+  nameWithType.vb: SystemManager.GetSystem(Of T)()
+  fullName.vb: milk.SystemManager.GetSystem(Of T)()
+  name.vb: GetSystem(Of T)()
+- uid: milk.SystemManager.AddAllRegisteredSystemsToScene(milk.Scene)
+  commentId: M:milk.SystemManager.AddAllRegisteredSystemsToScene(milk.Scene)
+  id: AddAllRegisteredSystemsToScene(milk.Scene)
+  parent: milk.SystemManager
+  langs:
+  - csharp
+  - vb
+  name: AddAllRegisteredSystemsToScene(Scene)
+  nameWithType: SystemManager.AddAllRegisteredSystemsToScene(Scene)
+  fullName: milk.SystemManager.AddAllRegisteredSystemsToScene(milk.Scene)
+  type: Method
+  source:
+    remote:
+      path: Managers/SystemManager.cs
+      branch: main
+      repo: git@github.com:rik-cross/monogame-milk.git
+    id: AddAllRegisteredSystemsToScene
+    path: ../MonoGameECS (Copy)/Managers/SystemManager.cs
+    startLine: 93
+  assemblies:
+  - MonoGameECS
+  namespace: milk
+  syntax:
+    content: public void AddAllRegisteredSystemsToScene(Scene scene)
+    parameters:
+    - id: scene
+      type: milk.Scene
+    content.vb: Public Sub AddAllRegisteredSystemsToScene(scene As Scene)
+  overload: milk.SystemManager.AddAllRegisteredSystemsToScene*
+- uid: milk.SystemManager.HasSystemOfTypeInList``1(System.Collections.Generic.List{milk.System})
+  commentId: M:milk.SystemManager.HasSystemOfTypeInList``1(System.Collections.Generic.List{milk.System})
+  id: HasSystemOfTypeInList``1(System.Collections.Generic.List{milk.System})
+  parent: milk.SystemManager
+  langs:
+  - csharp
+  - vb
+  name: HasSystemOfTypeInList<T>(List<System>)
+  nameWithType: SystemManager.HasSystemOfTypeInList<T>(List<System>)
+  fullName: milk.SystemManager.HasSystemOfTypeInList<T>(System.Collections.Generic.List<milk.System>)
+  type: Method
+  source:
+    remote:
+      path: Managers/SystemManager.cs
+      branch: main
+      repo: git@github.com:rik-cross/monogame-milk.git
+    id: HasSystemOfTypeInList
+    path: ../MonoGameECS (Copy)/Managers/SystemManager.cs
+    startLine: 109
+  assemblies:
+  - MonoGameECS
+  namespace: milk
+  syntax:
+    content: public bool HasSystemOfTypeInList<T>(List<System> systems)
+    parameters:
+    - id: systems
+      type: System.Collections.Generic.List{milk.System}
+    typeParameters:
+    - id: T
+    return:
+      type: System.Boolean
+    content.vb: Public Function HasSystemOfTypeInList(Of T)(systems As List(Of System)) As Boolean
+  overload: milk.SystemManager.HasSystemOfTypeInList*
+  nameWithType.vb: SystemManager.HasSystemOfTypeInList(Of T)(List(Of System))
+  fullName.vb: milk.SystemManager.HasSystemOfTypeInList(Of T)(System.Collections.Generic.List(Of milk.System))
+  name.vb: HasSystemOfTypeInList(Of T)(List(Of System))
+- uid: milk.SystemManager.GetSystemOfTypeFromList``1(System.Collections.Generic.List{milk.System})
+  commentId: M:milk.SystemManager.GetSystemOfTypeFromList``1(System.Collections.Generic.List{milk.System})
+  id: GetSystemOfTypeFromList``1(System.Collections.Generic.List{milk.System})
+  parent: milk.SystemManager
+  langs:
+  - csharp
+  - vb
+  name: GetSystemOfTypeFromList<T>(List<System>)
+  nameWithType: SystemManager.GetSystemOfTypeFromList<T>(List<System>)
+  fullName: milk.SystemManager.GetSystemOfTypeFromList<T>(System.Collections.Generic.List<milk.System>)
+  type: Method
+  source:
+    remote:
+      path: Managers/SystemManager.cs
+      branch: main
+      repo: git@github.com:rik-cross/monogame-milk.git
+    id: GetSystemOfTypeFromList
+    path: ../MonoGameECS (Copy)/Managers/SystemManager.cs
+    startLine: 121
+  assemblies:
+  - MonoGameECS
+  namespace: milk
+  syntax:
+    content: 'public T GetSystemOfTypeFromList<T>(List<System> systems) where T : System'
+    parameters:
+    - id: systems
+      type: System.Collections.Generic.List{milk.System}
+    typeParameters:
+    - id: T
+    return:
+      type: '{T}'
+    content.vb: Public Function GetSystemOfTypeFromList(Of T As System)(systems As List(Of System)) As T
+  overload: milk.SystemManager.GetSystemOfTypeFromList*
+  nameWithType.vb: SystemManager.GetSystemOfTypeFromList(Of T)(List(Of System))
+  fullName.vb: milk.SystemManager.GetSystemOfTypeFromList(Of T)(System.Collections.Generic.List(Of milk.System))
+  name.vb: GetSystemOfTypeFromList(Of T)(List(Of System))
+- uid: milk.SystemManager.AddSystemOfTypeToList``1(System.Collections.Generic.List{milk.System})
+  commentId: M:milk.SystemManager.AddSystemOfTypeToList``1(System.Collections.Generic.List{milk.System})
+  id: AddSystemOfTypeToList``1(System.Collections.Generic.List{milk.System})
+  parent: milk.SystemManager
+  langs:
+  - csharp
+  - vb
+  name: AddSystemOfTypeToList<T>(List<System>)
+  nameWithType: SystemManager.AddSystemOfTypeToList<T>(List<System>)
+  fullName: milk.SystemManager.AddSystemOfTypeToList<T>(System.Collections.Generic.List<milk.System>)
+  type: Method
+  source:
+    remote:
+      path: Managers/SystemManager.cs
+      branch: main
+      repo: git@github.com:rik-cross/monogame-milk.git
+    id: AddSystemOfTypeToList
+    path: ../MonoGameECS (Copy)/Managers/SystemManager.cs
+    startLine: 137
+  assemblies:
+  - MonoGameECS
+  namespace: milk
+  syntax:
+    content: public void AddSystemOfTypeToList<T>(List<System> systemsList)
+    parameters:
+    - id: systemsList
+      type: System.Collections.Generic.List{milk.System}
+    typeParameters:
+    - id: T
+    content.vb: Public Sub AddSystemOfTypeToList(Of T)(systemsList As List(Of System))
+  overload: milk.SystemManager.AddSystemOfTypeToList*
+  nameWithType.vb: SystemManager.AddSystemOfTypeToList(Of T)(List(Of System))
+  fullName.vb: milk.SystemManager.AddSystemOfTypeToList(Of T)(System.Collections.Generic.List(Of milk.System))
+  name.vb: AddSystemOfTypeToList(Of T)(List(Of System))
+- uid: milk.SystemManager.RemoveSystemOfTypeFromList``1(System.Collections.Generic.List{milk.System})
+  commentId: M:milk.SystemManager.RemoveSystemOfTypeFromList``1(System.Collections.Generic.List{milk.System})
+  id: RemoveSystemOfTypeFromList``1(System.Collections.Generic.List{milk.System})
+  parent: milk.SystemManager
+  langs:
+  - csharp
+  - vb
+  name: RemoveSystemOfTypeFromList<T>(List<System>)
+  nameWithType: SystemManager.RemoveSystemOfTypeFromList<T>(List<System>)
+  fullName: milk.SystemManager.RemoveSystemOfTypeFromList<T>(System.Collections.Generic.List<milk.System>)
+  type: Method
+  source:
+    remote:
+      path: Managers/SystemManager.cs
+      branch: main
+      repo: git@github.com:rik-cross/monogame-milk.git
+    id: RemoveSystemOfTypeFromList
+    path: ../MonoGameECS (Copy)/Managers/SystemManager.cs
+    startLine: 158
+  assemblies:
+  - MonoGameECS
+  namespace: milk
+  syntax:
+    content: public void RemoveSystemOfTypeFromList<T>(List<System> systemsList)
+    parameters:
+    - id: systemsList
+      type: System.Collections.Generic.List{milk.System}
+    typeParameters:
+    - id: T
+    content.vb: Public Sub RemoveSystemOfTypeFromList(Of T)(systemsList As List(Of System))
+  overload: milk.SystemManager.RemoveSystemOfTypeFromList*
+  nameWithType.vb: SystemManager.RemoveSystemOfTypeFromList(Of T)(List(Of System))
+  fullName.vb: milk.SystemManager.RemoveSystemOfTypeFromList(Of T)(System.Collections.Generic.List(Of milk.System))
+  name.vb: RemoveSystemOfTypeFromList(Of T)(List(Of System))
+references:
+- uid: milk
+  commentId: N:milk
+  href: milk.html
+  name: milk
+  nameWithType: milk
+  fullName: milk
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: System.Collections.Generic.List{milk.System}
+  commentId: T:System.Collections.Generic.List{milk.System}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.List`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  name: List<System>
+  nameWithType: List<System>
+  fullName: System.Collections.Generic.List<milk.System>
+  nameWithType.vb: List(Of System)
+  fullName.vb: System.Collections.Generic.List(Of milk.System)
+  name.vb: List(Of System)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: <
+  - uid: milk.System
+    name: System
+    href: milk.System.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: milk.System
+    name: System
+    href: milk.System.html
+  - name: )
+- uid: System.Collections.Generic.List`1
+  commentId: T:System.Collections.Generic.List`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  name: List<T>
+  nameWithType: List<T>
+  fullName: System.Collections.Generic.List<T>
+  nameWithType.vb: List(Of T)
+  fullName.vb: System.Collections.Generic.List(Of T)
+  name.vb: List(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+- uid: milk.SystemManager.RegisterSystem*
+  commentId: Overload:milk.SystemManager.RegisterSystem
+  href: milk.SystemManager.html#milk_SystemManager_RegisterSystem_milk_System_
+  name: RegisterSystem
+  nameWithType: SystemManager.RegisterSystem
+  fullName: milk.SystemManager.RegisterSystem
+- uid: milk.System
+  commentId: T:milk.System
+  parent: milk
+  href: milk.System.html
+  name: System
+  nameWithType: System
+  fullName: milk.System
+- uid: milk.SystemManager.IsRegistered*
+  commentId: Overload:milk.SystemManager.IsRegistered
+  href: milk.SystemManager.html#milk_SystemManager_IsRegistered__1
+  name: IsRegistered
+  nameWithType: SystemManager.IsRegistered
+  fullName: milk.SystemManager.IsRegistered
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: bool
+  nameWithType: bool
+  fullName: bool
+  nameWithType.vb: Boolean
+  fullName.vb: Boolean
+  name.vb: Boolean
+- uid: milk.SystemManager.GetSystem*
+  commentId: Overload:milk.SystemManager.GetSystem
+  href: milk.SystemManager.html#milk_SystemManager_GetSystem__1
+  name: GetSystem
+  nameWithType: SystemManager.GetSystem
+  fullName: milk.SystemManager.GetSystem
+- uid: '{T}'
+  commentId: '!:T'
+  definition: T
+  name: T
+  nameWithType: T
+  fullName: T
+- uid: T
+  name: T
+  nameWithType: T
+  fullName: T
+- uid: milk.SystemManager.AddAllRegisteredSystemsToScene*
+  commentId: Overload:milk.SystemManager.AddAllRegisteredSystemsToScene
+  href: milk.SystemManager.html#milk_SystemManager_AddAllRegisteredSystemsToScene_milk_Scene_
+  name: AddAllRegisteredSystemsToScene
+  nameWithType: SystemManager.AddAllRegisteredSystemsToScene
+  fullName: milk.SystemManager.AddAllRegisteredSystemsToScene
+- uid: milk.Scene
+  commentId: T:milk.Scene
+  parent: milk
+  href: milk.Scene.html
+  name: Scene
+  nameWithType: Scene
+  fullName: milk.Scene
+- uid: milk.SystemManager.HasSystemOfTypeInList*
+  commentId: Overload:milk.SystemManager.HasSystemOfTypeInList
+  href: milk.SystemManager.html#milk_SystemManager_HasSystemOfTypeInList__1_System_Collections_Generic_List_milk_System__
+  name: HasSystemOfTypeInList
+  nameWithType: SystemManager.HasSystemOfTypeInList
+  fullName: milk.SystemManager.HasSystemOfTypeInList
+- uid: milk.SystemManager.GetSystemOfTypeFromList*
+  commentId: Overload:milk.SystemManager.GetSystemOfTypeFromList
+  href: milk.SystemManager.html#milk_SystemManager_GetSystemOfTypeFromList__1_System_Collections_Generic_List_milk_System__
+  name: GetSystemOfTypeFromList
+  nameWithType: SystemManager.GetSystemOfTypeFromList
+  fullName: milk.SystemManager.GetSystemOfTypeFromList
+- uid: milk.SystemManager.AddSystemOfTypeToList*
+  commentId: Overload:milk.SystemManager.AddSystemOfTypeToList
+  href: milk.SystemManager.html#milk_SystemManager_AddSystemOfTypeToList__1_System_Collections_Generic_List_milk_System__
+  name: AddSystemOfTypeToList
+  nameWithType: SystemManager.AddSystemOfTypeToList
+  fullName: milk.SystemManager.AddSystemOfTypeToList
+- uid: milk.SystemManager.RemoveSystemOfTypeFromList*
+  commentId: Overload:milk.SystemManager.RemoveSystemOfTypeFromList
+  href: milk.SystemManager.html#milk_SystemManager_RemoveSystemOfTypeFromList__1_System_Collections_Generic_List_milk_System__
+  name: RemoveSystemOfTypeFromList
+  nameWithType: SystemManager.RemoveSystemOfTypeFromList
+  fullName: milk.SystemManager.RemoveSystemOfTypeFromList

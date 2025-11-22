@@ -1,0 +1,947 @@
+### YamlMime:ManagedReference
+items:
+- uid: milk.InputSystem
+  commentId: T:milk.InputSystem
+  id: InputSystem
+  parent: milk
+  children:
+  - milk.InputSystem.Init
+  - milk.InputSystem.Input(Microsoft.Xna.Framework.GameTime,milk.Scene)
+  - milk.InputSystem.InputEntity(Microsoft.Xna.Framework.GameTime,milk.Scene,milk.Entity)
+  langs:
+  - csharp
+  - vb
+  name: InputSystem
+  nameWithType: InputSystem
+  fullName: milk.InputSystem
+  type: Class
+  source:
+    remote:
+      path: Systems/InputSystem.cs
+      branch: main
+      repo: git@github.com:rik-cross/monogame-milk.git
+    id: InputSystem
+    path: Systems/InputSystem.cs
+    startLine: 7
+  assemblies:
+  - MonoGameECS
+  namespace: milk
+  syntax:
+    content: 'public class InputSystem : System'
+    content.vb: Public Class InputSystem Inherits System
+  inheritance:
+  - System.Object
+  - milk.System
+  inheritedMembers:
+  - milk.System.spriteBatch
+  - milk.System.DrawAboveEntities
+  - milk.System.DrawAboveMap
+  - milk.System.AddRequiredComponentType``1
+  - milk.System.Update(Microsoft.Xna.Framework.GameTime,milk.Scene)
+  - milk.System.UpdateEntity(Microsoft.Xna.Framework.GameTime,milk.Scene,milk.Entity)
+  - milk.System.Draw(milk.Scene)
+  - milk.System.DrawEntity(milk.Scene,milk.Entity)
+  - milk.System.OnEnterScene(milk.Scene)
+  - milk.System.OnExitScene(milk.Scene)
+  - milk.System.OnEntityAddedToScene(milk.Scene,milk.Entity)
+  - milk.System.OnEntityRemovedFromScene(milk.Scene,milk.Entity)
+  - milk.System.OnAddedToScene(milk.Scene)
+  - milk.System.OnRemovedFromScene(milk.Scene)
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: milk.InputSystem.Init
+  commentId: M:milk.InputSystem.Init
+  id: Init
+  parent: milk.InputSystem
+  langs:
+  - csharp
+  - vb
+  name: Init()
+  nameWithType: InputSystem.Init()
+  fullName: milk.InputSystem.Init()
+  type: Method
+  source:
+    remote:
+      path: Systems/InputSystem.cs
+      branch: main
+      repo: git@github.com:rik-cross/monogame-milk.git
+    id: Init
+    path: Systems/InputSystem.cs
+    startLine: 10
+  assemblies:
+  - MonoGameECS
+  namespace: milk
+  summary: Called once when a system is created.
+  example: []
+  syntax:
+    content: public override void Init()
+    content.vb: Public Overrides Sub Init()
+  overridden: milk.System.Init
+  overload: milk.InputSystem.Init*
+- uid: milk.InputSystem.Input(Microsoft.Xna.Framework.GameTime,milk.Scene)
+  commentId: M:milk.InputSystem.Input(Microsoft.Xna.Framework.GameTime,milk.Scene)
+  id: Input(Microsoft.Xna.Framework.GameTime,milk.Scene)
+  parent: milk.InputSystem
+  langs:
+  - csharp
+  - vb
+  name: Input(GameTime, Scene)
+  nameWithType: InputSystem.Input(GameTime, Scene)
+  fullName: milk.InputSystem.Input(Microsoft.Xna.Framework.GameTime, milk.Scene)
+  type: Method
+  source:
+    remote:
+      path: Systems/InputSystem.cs
+      branch: main
+      repo: git@github.com:rik-cross/monogame-milk.git
+    id: Input
+    path: Systems/InputSystem.cs
+    startLine: 15
+  assemblies:
+  - MonoGameECS
+  namespace: milk
+  summary: A top-level input method, called once per frame.
+  example: []
+  syntax:
+    content: public override void Input(GameTime gameTime, Scene scene)
+    parameters:
+    - id: gameTime
+      type: Microsoft.Xna.Framework.GameTime
+      description: The MonoGame gameTime object.
+    - id: scene
+      type: milk.Scene
+      description: The scene that the system is in.
+    content.vb: Public Overrides Sub Input(gameTime As GameTime, scene As Scene)
+  overridden: milk.System.Input(Microsoft.Xna.Framework.GameTime,milk.Scene)
+  overload: milk.InputSystem.Input*
+- uid: milk.InputSystem.InputEntity(Microsoft.Xna.Framework.GameTime,milk.Scene,milk.Entity)
+  commentId: M:milk.InputSystem.InputEntity(Microsoft.Xna.Framework.GameTime,milk.Scene,milk.Entity)
+  id: InputEntity(Microsoft.Xna.Framework.GameTime,milk.Scene,milk.Entity)
+  parent: milk.InputSystem
+  langs:
+  - csharp
+  - vb
+  name: InputEntity(GameTime, Scene, Entity)
+  nameWithType: InputSystem.InputEntity(GameTime, Scene, Entity)
+  fullName: milk.InputSystem.InputEntity(Microsoft.Xna.Framework.GameTime, milk.Scene, milk.Entity)
+  type: Method
+  source:
+    remote:
+      path: Systems/InputSystem.cs
+      branch: main
+      repo: git@github.com:rik-cross/monogame-milk.git
+    id: InputEntity
+    path: Systems/InputSystem.cs
+    startLine: 19
+  assemblies:
+  - MonoGameECS
+  namespace: milk
+  summary: >-
+    An entity-specific input method, called once per frame
+
+    for each entity with the required set of components.
+  example: []
+  syntax:
+    content: public override void InputEntity(GameTime gameTime, Scene scene, Entity entity)
+    parameters:
+    - id: gameTime
+      type: Microsoft.Xna.Framework.GameTime
+      description: The MonoGame gameTime object.
+    - id: scene
+      type: milk.Scene
+      description: The scene that the system is in
+    - id: entity
+      type: milk.Entity
+      description: The entity to be acted upon.
+    content.vb: Public Overrides Sub InputEntity(gameTime As GameTime, scene As Scene, entity As Entity)
+  overridden: milk.System.InputEntity(Microsoft.Xna.Framework.GameTime,milk.Scene,milk.Entity)
+  overload: milk.InputSystem.InputEntity*
+references:
+- uid: milk
+  commentId: N:milk
+  href: milk.html
+  name: milk
+  nameWithType: milk
+  fullName: milk
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: milk.System
+  commentId: T:milk.System
+  parent: milk
+  href: milk.System.html
+  name: System
+  nameWithType: System
+  fullName: milk.System
+- uid: milk.System.spriteBatch
+  commentId: F:milk.System.spriteBatch
+  parent: milk.System
+  href: milk.System.html#milk_System_spriteBatch
+  name: spriteBatch
+  nameWithType: System.spriteBatch
+  fullName: milk.System.spriteBatch
+- uid: milk.System.DrawAboveEntities
+  commentId: P:milk.System.DrawAboveEntities
+  parent: milk.System
+  href: milk.System.html#milk_System_DrawAboveEntities
+  name: DrawAboveEntities
+  nameWithType: System.DrawAboveEntities
+  fullName: milk.System.DrawAboveEntities
+- uid: milk.System.DrawAboveMap
+  commentId: P:milk.System.DrawAboveMap
+  parent: milk.System
+  href: milk.System.html#milk_System_DrawAboveMap
+  name: DrawAboveMap
+  nameWithType: System.DrawAboveMap
+  fullName: milk.System.DrawAboveMap
+- uid: milk.System.AddRequiredComponentType``1
+  commentId: M:milk.System.AddRequiredComponentType``1
+  parent: milk.System
+  href: milk.System.html#milk_System_AddRequiredComponentType__1
+  name: AddRequiredComponentType<T>()
+  nameWithType: System.AddRequiredComponentType<T>()
+  fullName: milk.System.AddRequiredComponentType<T>()
+  nameWithType.vb: System.AddRequiredComponentType(Of T)()
+  fullName.vb: milk.System.AddRequiredComponentType(Of T)()
+  name.vb: AddRequiredComponentType(Of T)()
+  spec.csharp:
+  - uid: milk.System.AddRequiredComponentType``1
+    name: AddRequiredComponentType
+    href: milk.System.html#milk_System_AddRequiredComponentType__1
+  - name: <
+  - name: T
+  - name: '>'
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: milk.System.AddRequiredComponentType``1
+    name: AddRequiredComponentType
+    href: milk.System.html#milk_System_AddRequiredComponentType__1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+  - name: (
+  - name: )
+- uid: milk.System.Update(Microsoft.Xna.Framework.GameTime,milk.Scene)
+  commentId: M:milk.System.Update(Microsoft.Xna.Framework.GameTime,milk.Scene)
+  parent: milk.System
+  isExternal: true
+  href: milk.System.html#milk_System_Update_Microsoft_Xna_Framework_GameTime_milk_Scene_
+  name: Update(GameTime, Scene)
+  nameWithType: System.Update(GameTime, Scene)
+  fullName: milk.System.Update(Microsoft.Xna.Framework.GameTime, milk.Scene)
+  spec.csharp:
+  - uid: milk.System.Update(Microsoft.Xna.Framework.GameTime,milk.Scene)
+    name: Update
+    href: milk.System.html#milk_System_Update_Microsoft_Xna_Framework_GameTime_milk_Scene_
+  - name: (
+  - uid: Microsoft.Xna.Framework.GameTime
+    name: GameTime
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: milk.Scene
+    name: Scene
+    href: milk.Scene.html
+  - name: )
+  spec.vb:
+  - uid: milk.System.Update(Microsoft.Xna.Framework.GameTime,milk.Scene)
+    name: Update
+    href: milk.System.html#milk_System_Update_Microsoft_Xna_Framework_GameTime_milk_Scene_
+  - name: (
+  - uid: Microsoft.Xna.Framework.GameTime
+    name: GameTime
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: milk.Scene
+    name: Scene
+    href: milk.Scene.html
+  - name: )
+- uid: milk.System.UpdateEntity(Microsoft.Xna.Framework.GameTime,milk.Scene,milk.Entity)
+  commentId: M:milk.System.UpdateEntity(Microsoft.Xna.Framework.GameTime,milk.Scene,milk.Entity)
+  parent: milk.System
+  isExternal: true
+  href: milk.System.html#milk_System_UpdateEntity_Microsoft_Xna_Framework_GameTime_milk_Scene_milk_Entity_
+  name: UpdateEntity(GameTime, Scene, Entity)
+  nameWithType: System.UpdateEntity(GameTime, Scene, Entity)
+  fullName: milk.System.UpdateEntity(Microsoft.Xna.Framework.GameTime, milk.Scene, milk.Entity)
+  spec.csharp:
+  - uid: milk.System.UpdateEntity(Microsoft.Xna.Framework.GameTime,milk.Scene,milk.Entity)
+    name: UpdateEntity
+    href: milk.System.html#milk_System_UpdateEntity_Microsoft_Xna_Framework_GameTime_milk_Scene_milk_Entity_
+  - name: (
+  - uid: Microsoft.Xna.Framework.GameTime
+    name: GameTime
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: milk.Scene
+    name: Scene
+    href: milk.Scene.html
+  - name: ','
+  - name: " "
+  - uid: milk.Entity
+    name: Entity
+    href: milk.Entity.html
+  - name: )
+  spec.vb:
+  - uid: milk.System.UpdateEntity(Microsoft.Xna.Framework.GameTime,milk.Scene,milk.Entity)
+    name: UpdateEntity
+    href: milk.System.html#milk_System_UpdateEntity_Microsoft_Xna_Framework_GameTime_milk_Scene_milk_Entity_
+  - name: (
+  - uid: Microsoft.Xna.Framework.GameTime
+    name: GameTime
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: milk.Scene
+    name: Scene
+    href: milk.Scene.html
+  - name: ','
+  - name: " "
+  - uid: milk.Entity
+    name: Entity
+    href: milk.Entity.html
+  - name: )
+- uid: milk.System.Draw(milk.Scene)
+  commentId: M:milk.System.Draw(milk.Scene)
+  parent: milk.System
+  href: milk.System.html#milk_System_Draw_milk_Scene_
+  name: Draw(Scene)
+  nameWithType: System.Draw(Scene)
+  fullName: milk.System.Draw(milk.Scene)
+  spec.csharp:
+  - uid: milk.System.Draw(milk.Scene)
+    name: Draw
+    href: milk.System.html#milk_System_Draw_milk_Scene_
+  - name: (
+  - uid: milk.Scene
+    name: Scene
+    href: milk.Scene.html
+  - name: )
+  spec.vb:
+  - uid: milk.System.Draw(milk.Scene)
+    name: Draw
+    href: milk.System.html#milk_System_Draw_milk_Scene_
+  - name: (
+  - uid: milk.Scene
+    name: Scene
+    href: milk.Scene.html
+  - name: )
+- uid: milk.System.DrawEntity(milk.Scene,milk.Entity)
+  commentId: M:milk.System.DrawEntity(milk.Scene,milk.Entity)
+  parent: milk.System
+  href: milk.System.html#milk_System_DrawEntity_milk_Scene_milk_Entity_
+  name: DrawEntity(Scene, Entity)
+  nameWithType: System.DrawEntity(Scene, Entity)
+  fullName: milk.System.DrawEntity(milk.Scene, milk.Entity)
+  spec.csharp:
+  - uid: milk.System.DrawEntity(milk.Scene,milk.Entity)
+    name: DrawEntity
+    href: milk.System.html#milk_System_DrawEntity_milk_Scene_milk_Entity_
+  - name: (
+  - uid: milk.Scene
+    name: Scene
+    href: milk.Scene.html
+  - name: ','
+  - name: " "
+  - uid: milk.Entity
+    name: Entity
+    href: milk.Entity.html
+  - name: )
+  spec.vb:
+  - uid: milk.System.DrawEntity(milk.Scene,milk.Entity)
+    name: DrawEntity
+    href: milk.System.html#milk_System_DrawEntity_milk_Scene_milk_Entity_
+  - name: (
+  - uid: milk.Scene
+    name: Scene
+    href: milk.Scene.html
+  - name: ','
+  - name: " "
+  - uid: milk.Entity
+    name: Entity
+    href: milk.Entity.html
+  - name: )
+- uid: milk.System.OnEnterScene(milk.Scene)
+  commentId: M:milk.System.OnEnterScene(milk.Scene)
+  parent: milk.System
+  href: milk.System.html#milk_System_OnEnterScene_milk_Scene_
+  name: OnEnterScene(Scene)
+  nameWithType: System.OnEnterScene(Scene)
+  fullName: milk.System.OnEnterScene(milk.Scene)
+  spec.csharp:
+  - uid: milk.System.OnEnterScene(milk.Scene)
+    name: OnEnterScene
+    href: milk.System.html#milk_System_OnEnterScene_milk_Scene_
+  - name: (
+  - uid: milk.Scene
+    name: Scene
+    href: milk.Scene.html
+  - name: )
+  spec.vb:
+  - uid: milk.System.OnEnterScene(milk.Scene)
+    name: OnEnterScene
+    href: milk.System.html#milk_System_OnEnterScene_milk_Scene_
+  - name: (
+  - uid: milk.Scene
+    name: Scene
+    href: milk.Scene.html
+  - name: )
+- uid: milk.System.OnExitScene(milk.Scene)
+  commentId: M:milk.System.OnExitScene(milk.Scene)
+  parent: milk.System
+  href: milk.System.html#milk_System_OnExitScene_milk_Scene_
+  name: OnExitScene(Scene)
+  nameWithType: System.OnExitScene(Scene)
+  fullName: milk.System.OnExitScene(milk.Scene)
+  spec.csharp:
+  - uid: milk.System.OnExitScene(milk.Scene)
+    name: OnExitScene
+    href: milk.System.html#milk_System_OnExitScene_milk_Scene_
+  - name: (
+  - uid: milk.Scene
+    name: Scene
+    href: milk.Scene.html
+  - name: )
+  spec.vb:
+  - uid: milk.System.OnExitScene(milk.Scene)
+    name: OnExitScene
+    href: milk.System.html#milk_System_OnExitScene_milk_Scene_
+  - name: (
+  - uid: milk.Scene
+    name: Scene
+    href: milk.Scene.html
+  - name: )
+- uid: milk.System.OnEntityAddedToScene(milk.Scene,milk.Entity)
+  commentId: M:milk.System.OnEntityAddedToScene(milk.Scene,milk.Entity)
+  parent: milk.System
+  href: milk.System.html#milk_System_OnEntityAddedToScene_milk_Scene_milk_Entity_
+  name: OnEntityAddedToScene(Scene, Entity)
+  nameWithType: System.OnEntityAddedToScene(Scene, Entity)
+  fullName: milk.System.OnEntityAddedToScene(milk.Scene, milk.Entity)
+  spec.csharp:
+  - uid: milk.System.OnEntityAddedToScene(milk.Scene,milk.Entity)
+    name: OnEntityAddedToScene
+    href: milk.System.html#milk_System_OnEntityAddedToScene_milk_Scene_milk_Entity_
+  - name: (
+  - uid: milk.Scene
+    name: Scene
+    href: milk.Scene.html
+  - name: ','
+  - name: " "
+  - uid: milk.Entity
+    name: Entity
+    href: milk.Entity.html
+  - name: )
+  spec.vb:
+  - uid: milk.System.OnEntityAddedToScene(milk.Scene,milk.Entity)
+    name: OnEntityAddedToScene
+    href: milk.System.html#milk_System_OnEntityAddedToScene_milk_Scene_milk_Entity_
+  - name: (
+  - uid: milk.Scene
+    name: Scene
+    href: milk.Scene.html
+  - name: ','
+  - name: " "
+  - uid: milk.Entity
+    name: Entity
+    href: milk.Entity.html
+  - name: )
+- uid: milk.System.OnEntityRemovedFromScene(milk.Scene,milk.Entity)
+  commentId: M:milk.System.OnEntityRemovedFromScene(milk.Scene,milk.Entity)
+  parent: milk.System
+  href: milk.System.html#milk_System_OnEntityRemovedFromScene_milk_Scene_milk_Entity_
+  name: OnEntityRemovedFromScene(Scene, Entity)
+  nameWithType: System.OnEntityRemovedFromScene(Scene, Entity)
+  fullName: milk.System.OnEntityRemovedFromScene(milk.Scene, milk.Entity)
+  spec.csharp:
+  - uid: milk.System.OnEntityRemovedFromScene(milk.Scene,milk.Entity)
+    name: OnEntityRemovedFromScene
+    href: milk.System.html#milk_System_OnEntityRemovedFromScene_milk_Scene_milk_Entity_
+  - name: (
+  - uid: milk.Scene
+    name: Scene
+    href: milk.Scene.html
+  - name: ','
+  - name: " "
+  - uid: milk.Entity
+    name: Entity
+    href: milk.Entity.html
+  - name: )
+  spec.vb:
+  - uid: milk.System.OnEntityRemovedFromScene(milk.Scene,milk.Entity)
+    name: OnEntityRemovedFromScene
+    href: milk.System.html#milk_System_OnEntityRemovedFromScene_milk_Scene_milk_Entity_
+  - name: (
+  - uid: milk.Scene
+    name: Scene
+    href: milk.Scene.html
+  - name: ','
+  - name: " "
+  - uid: milk.Entity
+    name: Entity
+    href: milk.Entity.html
+  - name: )
+- uid: milk.System.OnAddedToScene(milk.Scene)
+  commentId: M:milk.System.OnAddedToScene(milk.Scene)
+  parent: milk.System
+  href: milk.System.html#milk_System_OnAddedToScene_milk_Scene_
+  name: OnAddedToScene(Scene)
+  nameWithType: System.OnAddedToScene(Scene)
+  fullName: milk.System.OnAddedToScene(milk.Scene)
+  spec.csharp:
+  - uid: milk.System.OnAddedToScene(milk.Scene)
+    name: OnAddedToScene
+    href: milk.System.html#milk_System_OnAddedToScene_milk_Scene_
+  - name: (
+  - uid: milk.Scene
+    name: Scene
+    href: milk.Scene.html
+  - name: )
+  spec.vb:
+  - uid: milk.System.OnAddedToScene(milk.Scene)
+    name: OnAddedToScene
+    href: milk.System.html#milk_System_OnAddedToScene_milk_Scene_
+  - name: (
+  - uid: milk.Scene
+    name: Scene
+    href: milk.Scene.html
+  - name: )
+- uid: milk.System.OnRemovedFromScene(milk.Scene)
+  commentId: M:milk.System.OnRemovedFromScene(milk.Scene)
+  parent: milk.System
+  href: milk.System.html#milk_System_OnRemovedFromScene_milk_Scene_
+  name: OnRemovedFromScene(Scene)
+  nameWithType: System.OnRemovedFromScene(Scene)
+  fullName: milk.System.OnRemovedFromScene(milk.Scene)
+  spec.csharp:
+  - uid: milk.System.OnRemovedFromScene(milk.Scene)
+    name: OnRemovedFromScene
+    href: milk.System.html#milk_System_OnRemovedFromScene_milk_Scene_
+  - name: (
+  - uid: milk.Scene
+    name: Scene
+    href: milk.Scene.html
+  - name: )
+  spec.vb:
+  - uid: milk.System.OnRemovedFromScene(milk.Scene)
+    name: OnRemovedFromScene
+    href: milk.System.html#milk_System_OnRemovedFromScene_milk_Scene_
+  - name: (
+  - uid: milk.Scene
+    name: Scene
+    href: milk.Scene.html
+  - name: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: milk.System.Init
+  commentId: M:milk.System.Init
+  parent: milk.System
+  href: milk.System.html#milk_System_Init
+  name: Init()
+  nameWithType: System.Init()
+  fullName: milk.System.Init()
+  spec.csharp:
+  - uid: milk.System.Init
+    name: Init
+    href: milk.System.html#milk_System_Init
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: milk.System.Init
+    name: Init
+    href: milk.System.html#milk_System_Init
+  - name: (
+  - name: )
+- uid: milk.InputSystem.Init*
+  commentId: Overload:milk.InputSystem.Init
+  href: milk.InputSystem.html#milk_InputSystem_Init
+  name: Init
+  nameWithType: InputSystem.Init
+  fullName: milk.InputSystem.Init
+- uid: milk.System.Input(Microsoft.Xna.Framework.GameTime,milk.Scene)
+  commentId: M:milk.System.Input(Microsoft.Xna.Framework.GameTime,milk.Scene)
+  parent: milk.System
+  isExternal: true
+  href: milk.System.html#milk_System_Input_Microsoft_Xna_Framework_GameTime_milk_Scene_
+  name: Input(GameTime, Scene)
+  nameWithType: System.Input(GameTime, Scene)
+  fullName: milk.System.Input(Microsoft.Xna.Framework.GameTime, milk.Scene)
+  spec.csharp:
+  - uid: milk.System.Input(Microsoft.Xna.Framework.GameTime,milk.Scene)
+    name: Input
+    href: milk.System.html#milk_System_Input_Microsoft_Xna_Framework_GameTime_milk_Scene_
+  - name: (
+  - uid: Microsoft.Xna.Framework.GameTime
+    name: GameTime
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: milk.Scene
+    name: Scene
+    href: milk.Scene.html
+  - name: )
+  spec.vb:
+  - uid: milk.System.Input(Microsoft.Xna.Framework.GameTime,milk.Scene)
+    name: Input
+    href: milk.System.html#milk_System_Input_Microsoft_Xna_Framework_GameTime_milk_Scene_
+  - name: (
+  - uid: Microsoft.Xna.Framework.GameTime
+    name: GameTime
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: milk.Scene
+    name: Scene
+    href: milk.Scene.html
+  - name: )
+- uid: milk.InputSystem.Input*
+  commentId: Overload:milk.InputSystem.Input
+  href: milk.InputSystem.html#milk_InputSystem_Input_Microsoft_Xna_Framework_GameTime_milk_Scene_
+  name: Input
+  nameWithType: InputSystem.Input
+  fullName: milk.InputSystem.Input
+- uid: Microsoft.Xna.Framework.GameTime
+  commentId: T:Microsoft.Xna.Framework.GameTime
+  parent: Microsoft.Xna.Framework
+  isExternal: true
+  name: GameTime
+  nameWithType: GameTime
+  fullName: Microsoft.Xna.Framework.GameTime
+- uid: milk.Scene
+  commentId: T:milk.Scene
+  parent: milk
+  href: milk.Scene.html
+  name: Scene
+  nameWithType: Scene
+  fullName: milk.Scene
+- uid: Microsoft.Xna.Framework
+  commentId: N:Microsoft.Xna.Framework
+  isExternal: true
+  name: Microsoft.Xna.Framework
+  nameWithType: Microsoft.Xna.Framework
+  fullName: Microsoft.Xna.Framework
+  spec.csharp:
+  - uid: Microsoft
+    name: Microsoft
+    isExternal: true
+  - name: .
+  - uid: Microsoft.Xna
+    name: Xna
+    isExternal: true
+  - name: .
+  - uid: Microsoft.Xna.Framework
+    name: Framework
+    isExternal: true
+  spec.vb:
+  - uid: Microsoft
+    name: Microsoft
+    isExternal: true
+  - name: .
+  - uid: Microsoft.Xna
+    name: Xna
+    isExternal: true
+  - name: .
+  - uid: Microsoft.Xna.Framework
+    name: Framework
+    isExternal: true
+- uid: milk.System.InputEntity(Microsoft.Xna.Framework.GameTime,milk.Scene,milk.Entity)
+  commentId: M:milk.System.InputEntity(Microsoft.Xna.Framework.GameTime,milk.Scene,milk.Entity)
+  parent: milk.System
+  isExternal: true
+  href: milk.System.html#milk_System_InputEntity_Microsoft_Xna_Framework_GameTime_milk_Scene_milk_Entity_
+  name: InputEntity(GameTime, Scene, Entity)
+  nameWithType: System.InputEntity(GameTime, Scene, Entity)
+  fullName: milk.System.InputEntity(Microsoft.Xna.Framework.GameTime, milk.Scene, milk.Entity)
+  spec.csharp:
+  - uid: milk.System.InputEntity(Microsoft.Xna.Framework.GameTime,milk.Scene,milk.Entity)
+    name: InputEntity
+    href: milk.System.html#milk_System_InputEntity_Microsoft_Xna_Framework_GameTime_milk_Scene_milk_Entity_
+  - name: (
+  - uid: Microsoft.Xna.Framework.GameTime
+    name: GameTime
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: milk.Scene
+    name: Scene
+    href: milk.Scene.html
+  - name: ','
+  - name: " "
+  - uid: milk.Entity
+    name: Entity
+    href: milk.Entity.html
+  - name: )
+  spec.vb:
+  - uid: milk.System.InputEntity(Microsoft.Xna.Framework.GameTime,milk.Scene,milk.Entity)
+    name: InputEntity
+    href: milk.System.html#milk_System_InputEntity_Microsoft_Xna_Framework_GameTime_milk_Scene_milk_Entity_
+  - name: (
+  - uid: Microsoft.Xna.Framework.GameTime
+    name: GameTime
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: milk.Scene
+    name: Scene
+    href: milk.Scene.html
+  - name: ','
+  - name: " "
+  - uid: milk.Entity
+    name: Entity
+    href: milk.Entity.html
+  - name: )
+- uid: milk.InputSystem.InputEntity*
+  commentId: Overload:milk.InputSystem.InputEntity
+  href: milk.InputSystem.html#milk_InputSystem_InputEntity_Microsoft_Xna_Framework_GameTime_milk_Scene_milk_Entity_
+  name: InputEntity
+  nameWithType: InputSystem.InputEntity
+  fullName: milk.InputSystem.InputEntity
+- uid: milk.Entity
+  commentId: T:milk.Entity
+  parent: milk
+  href: milk.Entity.html
+  name: Entity
+  nameWithType: Entity
+  fullName: milk.Entity

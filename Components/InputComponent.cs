@@ -1,13 +1,29 @@
-using Microsoft.Xna.Framework;
+//   Monogame Intuitive Library Kit (milk)
+//   A MonoGame ECS Engine, By Rik Cross
+//   -- Code: github.com/rik-cross/monogame-milk
+//   -- Docs: github.com/rik-cross/milk-docs
+//   -- Shared under the MIT licence
 
-namespace milk;
+using milk.Core;
 
+namespace milk.Components;
+
+/// <summary>
+/// Supports entity input through an input controller.
+/// </summary>
 public class InputComponent : Component
 {
 
-    public Action<Scene, Entity> inputController;
+    /// <summary>
+    /// A function that describes entity input behaviour.
+    /// </summary>
+    public Action<Scene, Entity>? inputController;
 
-    public InputComponent(Action<Scene, Entity> inputController = null)
+    /// <summary>
+    /// Creates a new input component.
+    /// </summary>
+    /// <param name="inputController">The input function to be called.</param>
+    public InputComponent(Action<Scene, Entity>? inputController = null)
     {
         this.inputController = inputController;
     }

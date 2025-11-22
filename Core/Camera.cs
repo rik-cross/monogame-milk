@@ -1,11 +1,25 @@
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using milk.Components;
 
-namespace milk;
+namespace milk.Core;
 
 public class Camera
 {
-    public string Name;
+    private string? _name;
+    public Scene Scene;
+    public string? Name
+    {
+        get
+        {
+            return _name;
+        }
+        set
+        {
+            _name = value;
+        }
+    }
+
     public Vector2 ScreenPosition;
     public Vector2 ScreenSize;
 
@@ -13,7 +27,7 @@ public class Camera
     // Position
     //
 
-
+    private bool firstUpdate = true;
 
     // should have a getter and setter to swap to negative * -1!!!
     public Vector2 WorldPosition; // target
@@ -35,69 +49,34 @@ public class Camera
     // Zoom
     //
 
-    private const float _defaultZoomIncrement = 0.05f;
-
     public float _currentZoom;
     public float _startZoom;
     private float _targetZoom;
-    private float _zoomIncrement = _defaultZoomIncrement;
     private float _startZoomLog;
     private float _targetZoomLog;
     private float _lerpProgress = 1.0f;
     private float _zoomDuration = 0;
-    public Entity TrackedEntity;
+    public Entity? TrackedEntity;
 
-    public Camera(Vector2 size, Vector2 screenPosition = default, Vector2 worldPosition = default, float zoom = 1, bool clampToMap = false, Color backgroundColor = default, int borderWidth = 0, Color borderColor = default, string name = null, Entity trackedEntity = null)
+    public Camera(Vector2 size, Vector2? screenPosition = null, Vector2? worldPosition = null, float zoom = 1, bool clampToMap = false, Color? backgroundColor = null, int borderWidth = 0, Color? borderColor = null, string? name = null, Entity? trackedEntity = null)
     {
         ScreenSize = size;
-
-        if (screenPosition == default)
-            ScreenPosition = new Vector2(0, 0);
-        else
-            ScreenPosition = screenPosition;
-
-        if (worldPosition == default)
-            SetWorldPosition(new Vector2(0, 0), instant: true);
-        else
-            SetWorldPosition(worldPosition, instant: true);
-
-        _currentZoom = zoom;
+        ScreenPosition = screenPosition ?? Vector2.Zero;
+        WorldPosition = worldPosition ?? Vector2.Zero;
         _targetZoom = zoom;
-        _startZoom = zoom;
-
-        //_zoomIncrement = _defaultZoomIncrement;
-
         ClampToMap = clampToMap;
-
-        if (backgroundColor == default)
-            BackgroundColor = Color.Transparent;
-        else
-            BackgroundColor = backgroundColor;
-
+        BackgroundColor = backgroundColor ?? Color.Transparent;
         BorderWidth = borderWidth;
-
-        if (borderColor == default)
-            BorderColor = Color.Black;
-        else
-            BorderColor = borderColor;
-
-        // unique name
-        // need to pass scene in order to check??
-        if (name == null)
-            Name = "";
-        else
-        {
-            Name = name;
-        }
-
+        BorderColor = borderColor ?? Color.Black;
+        Name = name;
         this.TrackedEntity = trackedEntity;
 
     }
 
-    public void Update(GameTime gameTime, Scene scene)
+    public void Update(GameTime gameTime)
     {
 
-        if (TrackedEntity != null)
+        if (TrackedEntity != null && Scene.entities.Contains(TrackedEntity))
         {
             TransformComponent transformComponent = TrackedEntity.GetComponent<TransformComponent>();
             WorldPosition = new Vector2(
@@ -106,64 +85,60 @@ public class Camera
             );
         }
 
-        UpdateClamp(scene);
-        UpdatePosition();
         UpdateZoom(gameTime);
- 
+        UpdatePosition();
+        UpdateClamp();
+        
+        if (firstUpdate == true)
+        {
+
+            firstUpdate = false;
+
+            _currentWorldPosition = WorldPosition;
+
+            _currentZoom = _targetZoom;
+            _startZoom = _targetZoom;
+            _zoomDuration = 0;
+            _lerpProgress = 1.0f;        
+
+        }
+      
     }
 
-    private void UpdateClamp(Scene scene)
+    private void UpdateClamp()
     {
-        if (ClampToMap == true && scene.mapSize.HasValue)
+        if (ClampToMap == true && Scene.mapSize.HasValue)
         {
 
             // Set the camera world center to the map center
             // if the map*zoom is smaller than the camera screen size
 
             // X
-            if (ScreenSize.X > scene.mapSize.Value.X * _currentZoom)
-            {
-                //Console.WriteLine("yep");
-                WorldPosition.X = scene.mapSize.Value.X / 2 * -1;
-            }
+            if (ScreenSize.X > Scene.mapSize.Value.X * _currentZoom)
+                _currentWorldPosition.X = Scene.mapSize.Value.X / 2 * -1;
             // else ensure no off-world is seen
             else
             {
                 // left
-                if (WorldPosition.X * -1 < ScreenSize.X / _currentZoom / 2)
-                {
-                    WorldPosition.X = ScreenSize.X / _currentZoom / 2 * -1;
-                    //Console.WriteLine("left");
-                }
+                if (_currentWorldPosition.X * -1 < ScreenSize.X / _currentZoom / 2)
+                    _currentWorldPosition.X = ScreenSize.X / _currentZoom / 2 * -1;
                 // right
-                if (WorldPosition.X * -1 > (scene.mapSize.Value.X - (ScreenSize.X / _currentZoom / 2)))
-                {
-                    //Console.WriteLine("right");
-                    WorldPosition.X = (scene.mapSize.Value.X - (ScreenSize.X / _currentZoom / 2)) * -1;
-                }
+                if (_currentWorldPosition.X * -1 > (Scene.mapSize.Value.X - (ScreenSize.X / _currentZoom / 2)))
+                    _currentWorldPosition.X = (Scene.mapSize.Value.X - (ScreenSize.X / _currentZoom / 2)) * -1;
             }
 
             // Y
-            if (ScreenSize.Y > scene.mapSize.Value.Y * _currentZoom)
-            {
-                //Console.WriteLine("yep");
-                WorldPosition.Y = scene.mapSize.Value.Y / 2 * -1;
-            }
+            if (ScreenSize.Y > Scene.mapSize.Value.Y * _currentZoom)
+                _currentWorldPosition.Y = Scene.mapSize.Value.Y / 2 * -1;
             // else ensure no off-world is seen
             else
             {
                 // left
-                if (WorldPosition.Y * -1 < ScreenSize.Y / _currentZoom / 2)
-                {
-                    WorldPosition.Y = ScreenSize.Y / _currentZoom / 2 * -1;
-                    //Console.WriteLine("left");
-                }
+                if (_currentWorldPosition.Y * -1 < ScreenSize.Y / _currentZoom / 2)
+                    _currentWorldPosition.Y = ScreenSize.Y / _currentZoom / 2 * -1;
                 // right
-                if (WorldPosition.Y * -1 > (scene.mapSize.Value.Y - (ScreenSize.Y / _currentZoom / 2)))
-                {
-                    //Console.WriteLine("right");
-                    WorldPosition.Y = (scene.mapSize.Value.Y - (ScreenSize.Y / _currentZoom / 2)) * -1;
-                }
+                if (_currentWorldPosition.Y * -1 > (Scene.mapSize.Value.Y - (ScreenSize.Y / _currentZoom / 2)))
+                    _currentWorldPosition.Y = (Scene.mapSize.Value.Y - (ScreenSize.Y / _currentZoom / 2)) * -1;
             }
 
         }
@@ -249,7 +224,6 @@ public class Camera
         );
     }
 
-    // use a getter and setter???
     public void SetWorldPosition(Vector2 newPosition, bool instant = false)
     {
 
@@ -262,6 +236,7 @@ public class Camera
         if (instant == true)
         {
             _currentWorldPosition = WorldPosition;
+            UpdateClamp();
         }
 
     }

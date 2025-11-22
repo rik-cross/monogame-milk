@@ -1,13 +1,15 @@
 /home/rik/Documents/MonoGameEngineSolution/MonoGameECS/bin/Debug/net8.0/MonoGameECS.deps.json
 /home/rik/Documents/MonoGameEngineSolution/MonoGameECS/bin/Debug/net8.0/MonoGameECS.dll
 /home/rik/Documents/MonoGameEngineSolution/MonoGameECS/bin/Debug/net8.0/MonoGameECS.pdb
+/home/rik/Documents/MonoGameEngineSolution/MonoGameECS/bin/Debug/net8.0/MonoGameECS.xml
 /home/rik/Documents/MonoGameEngineSolution/MonoGameECS/obj/Debug/net8.0/MonoGameECS.csproj.AssemblyReference.cache
 /home/rik/Documents/MonoGameEngineSolution/MonoGameECS/obj/Debug/net8.0/MonoGameECS.GeneratedMSBuildEditorConfig.editorconfig
 /home/rik/Documents/MonoGameEngineSolution/MonoGameECS/obj/Debug/net8.0/MonoGameECS.AssemblyInfoInputs.cache
 /home/rik/Documents/MonoGameEngineSolution/MonoGameECS/obj/Debug/net8.0/MonoGameECS.AssemblyInfo.cs
 /home/rik/Documents/MonoGameEngineSolution/MonoGameECS/obj/Debug/net8.0/MonoGameECS.csproj.CoreCompileInputs.cache
+/home/rik/Documents/MonoGameEngineSolution/MonoGameECS/obj/Debug/net8.0/MonoGameECS.sourcelink.json
 /home/rik/Documents/MonoGameEngineSolution/MonoGameECS/obj/Debug/net8.0/MonoGameECS.dll
 /home/rik/Documents/MonoGameEngineSolution/MonoGameECS/obj/Debug/net8.0/refint/MonoGameECS.dll
+/home/rik/Documents/MonoGameEngineSolution/MonoGameECS/obj/Debug/net8.0/MonoGameECS.xml
 /home/rik/Documents/MonoGameEngineSolution/MonoGameECS/obj/Debug/net8.0/MonoGameECS.pdb
 /home/rik/Documents/MonoGameEngineSolution/MonoGameECS/obj/Debug/net8.0/ref/MonoGameECS.dll
-/home/rik/Documents/MonoGameEngineSolution/MonoGameECS/obj/Debug/net8.0/MonoGameECS.sourcelink.json

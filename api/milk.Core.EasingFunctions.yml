@@ -1,0 +1,1642 @@
+### YamlMime:ManagedReference
+items:
+- uid: milk.Core.EasingFunctions
+  commentId: T:milk.Core.EasingFunctions
+  id: EasingFunctions
+  parent: milk.Core
+  children:
+  - milk.Core.EasingFunctions.BackEaseIn(System.Single)
+  - milk.Core.EasingFunctions.BackEaseInOut(System.Single)
+  - milk.Core.EasingFunctions.BackEaseOut(System.Single)
+  - milk.Core.EasingFunctions.BounceEaseIn(System.Single)
+  - milk.Core.EasingFunctions.BounceEaseInOut(System.Single)
+  - milk.Core.EasingFunctions.BounceEaseOut(System.Single)
+  - milk.Core.EasingFunctions.CircEaseIn(System.Single)
+  - milk.Core.EasingFunctions.CircEaseInOut(System.Single)
+  - milk.Core.EasingFunctions.CircEaseOut(System.Single)
+  - milk.Core.EasingFunctions.CubicEaseIn(System.Single)
+  - milk.Core.EasingFunctions.CubicEaseInOut(System.Single)
+  - milk.Core.EasingFunctions.CubicEaseOut(System.Single)
+  - milk.Core.EasingFunctions.ElasticEaseIn(System.Single)
+  - milk.Core.EasingFunctions.ElasticEaseInOut(System.Single)
+  - milk.Core.EasingFunctions.ElasticEaseOut(System.Single)
+  - milk.Core.EasingFunctions.ExpoEaseIn(System.Single)
+  - milk.Core.EasingFunctions.ExpoEaseInOut(System.Single)
+  - milk.Core.EasingFunctions.ExpoEaseOut(System.Single)
+  - milk.Core.EasingFunctions.Linear(System.Single)
+  - milk.Core.EasingFunctions.QuadEaseIn(System.Single)
+  - milk.Core.EasingFunctions.QuadEaseInOut(System.Single)
+  - milk.Core.EasingFunctions.QuadEaseOut(System.Single)
+  - milk.Core.EasingFunctions.QuartEaseIn(System.Single)
+  - milk.Core.EasingFunctions.QuartEaseInOut(System.Single)
+  - milk.Core.EasingFunctions.QuartEaseOut(System.Single)
+  - milk.Core.EasingFunctions.QuintEaseIn(System.Single)
+  - milk.Core.EasingFunctions.QuintEaseInOut(System.Single)
+  - milk.Core.EasingFunctions.QuintEaseOut(System.Single)
+  - milk.Core.EasingFunctions.SineEaseIn(System.Single)
+  - milk.Core.EasingFunctions.SineEaseInOut(System.Single)
+  - milk.Core.EasingFunctions.SineEaseOut(System.Single)
+  langs:
+  - csharp
+  - vb
+  name: EasingFunctions
+  nameWithType: EasingFunctions
+  fullName: milk.Core.EasingFunctions
+  type: Class
+  source:
+    remote:
+      path: Core/EasingFunctions.cs
+      branch: main
+      repo: git@github.com:rik-cross/monogame-milk.git
+    id: EasingFunctions
+    path: Core/EasingFunctions.cs
+    startLine: 4
+  assemblies:
+  - MonoGameECS
+  namespace: milk.Core
+  syntax:
+    content: public static class EasingFunctions
+    content.vb: Public Module EasingFunctions
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: milk.Core.EasingFunctions.Linear(System.Single)
+  commentId: M:milk.Core.EasingFunctions.Linear(System.Single)
+  id: Linear(System.Single)
+  parent: milk.Core.EasingFunctions
+  langs:
+  - csharp
+  - vb
+  name: Linear(float)
+  nameWithType: EasingFunctions.Linear(float)
+  fullName: milk.Core.EasingFunctions.Linear(float)
+  type: Method
+  source:
+    remote:
+      path: Core/EasingFunctions.cs
+      branch: main
+      repo: git@github.com:rik-cross/monogame-milk.git
+    id: Linear
+    path: Core/EasingFunctions.cs
+    startLine: 16
+  assemblies:
+  - MonoGameECS
+  namespace: milk.Core
+  summary: No easing, no acceleration.
+  example: []
+  syntax:
+    content: public static float Linear(float t)
+    parameters:
+    - id: t
+      type: System.Single
+    return:
+      type: System.Single
+    content.vb: Public Shared Function Linear(t As Single) As Single
+  overload: milk.Core.EasingFunctions.Linear*
+  nameWithType.vb: EasingFunctions.Linear(Single)
+  fullName.vb: milk.Core.EasingFunctions.Linear(Single)
+  name.vb: Linear(Single)
+- uid: milk.Core.EasingFunctions.SineEaseIn(System.Single)
+  commentId: M:milk.Core.EasingFunctions.SineEaseIn(System.Single)
+  id: SineEaseIn(System.Single)
+  parent: milk.Core.EasingFunctions
+  langs:
+  - csharp
+  - vb
+  name: SineEaseIn(float)
+  nameWithType: EasingFunctions.SineEaseIn(float)
+  fullName: milk.Core.EasingFunctions.SineEaseIn(float)
+  type: Method
+  source:
+    remote:
+      path: Core/EasingFunctions.cs
+      branch: main
+      repo: git@github.com:rik-cross/monogame-milk.git
+    id: SineEaseIn
+    path: Core/EasingFunctions.cs
+    startLine: 24
+  assemblies:
+  - MonoGameECS
+  namespace: milk.Core
+  summary: Easing in (accelerating from zero velocity).
+  example: []
+  syntax:
+    content: public static float SineEaseIn(float t)
+    parameters:
+    - id: t
+      type: System.Single
+    return:
+      type: System.Single
+    content.vb: Public Shared Function SineEaseIn(t As Single) As Single
+  overload: milk.Core.EasingFunctions.SineEaseIn*
+  nameWithType.vb: EasingFunctions.SineEaseIn(Single)
+  fullName.vb: milk.Core.EasingFunctions.SineEaseIn(Single)
+  name.vb: SineEaseIn(Single)
+- uid: milk.Core.EasingFunctions.SineEaseOut(System.Single)
+  commentId: M:milk.Core.EasingFunctions.SineEaseOut(System.Single)
+  id: SineEaseOut(System.Single)
+  parent: milk.Core.EasingFunctions
+  langs:
+  - csharp
+  - vb
+  name: SineEaseOut(float)
+  nameWithType: EasingFunctions.SineEaseOut(float)
+  fullName: milk.Core.EasingFunctions.SineEaseOut(float)
+  type: Method
+  source:
+    remote:
+      path: Core/EasingFunctions.cs
+      branch: main
+      repo: git@github.com:rik-cross/monogame-milk.git
+    id: SineEaseOut
+    path: Core/EasingFunctions.cs
+    startLine: 32
+  assemblies:
+  - MonoGameECS
+  namespace: milk.Core
+  summary: Easing out (decelerating to zero velocity).
+  example: []
+  syntax:
+    content: public static float SineEaseOut(float t)
+    parameters:
+    - id: t
+      type: System.Single
+    return:
+      type: System.Single
+    content.vb: Public Shared Function SineEaseOut(t As Single) As Single
+  overload: milk.Core.EasingFunctions.SineEaseOut*
+  nameWithType.vb: EasingFunctions.SineEaseOut(Single)
+  fullName.vb: milk.Core.EasingFunctions.SineEaseOut(Single)
+  name.vb: SineEaseOut(Single)
+- uid: milk.Core.EasingFunctions.SineEaseInOut(System.Single)
+  commentId: M:milk.Core.EasingFunctions.SineEaseInOut(System.Single)
+  id: SineEaseInOut(System.Single)
+  parent: milk.Core.EasingFunctions
+  langs:
+  - csharp
+  - vb
+  name: SineEaseInOut(float)
+  nameWithType: EasingFunctions.SineEaseInOut(float)
+  fullName: milk.Core.EasingFunctions.SineEaseInOut(float)
+  type: Method
+  source:
+    remote:
+      path: Core/EasingFunctions.cs
+      branch: main
+      repo: git@github.com:rik-cross/monogame-milk.git
+    id: SineEaseInOut
+    path: Core/EasingFunctions.cs
+    startLine: 40
+  assemblies:
+  - MonoGameECS
+  namespace: milk.Core
+  summary: Easing in and out (accelerating until halfway, then decelerating).
+  example: []
+  syntax:
+    content: public static float SineEaseInOut(float t)
+    parameters:
+    - id: t
+      type: System.Single
+    return:
+      type: System.Single
+    content.vb: Public Shared Function SineEaseInOut(t As Single) As Single
+  overload: milk.Core.EasingFunctions.SineEaseInOut*
+  nameWithType.vb: EasingFunctions.SineEaseInOut(Single)
+  fullName.vb: milk.Core.EasingFunctions.SineEaseInOut(Single)
+  name.vb: SineEaseInOut(Single)
+- uid: milk.Core.EasingFunctions.QuadEaseIn(System.Single)
+  commentId: M:milk.Core.EasingFunctions.QuadEaseIn(System.Single)
+  id: QuadEaseIn(System.Single)
+  parent: milk.Core.EasingFunctions
+  langs:
+  - csharp
+  - vb
+  name: QuadEaseIn(float)
+  nameWithType: EasingFunctions.QuadEaseIn(float)
+  fullName: milk.Core.EasingFunctions.QuadEaseIn(float)
+  type: Method
+  source:
+    remote:
+      path: Core/EasingFunctions.cs
+      branch: main
+      repo: git@github.com:rik-cross/monogame-milk.git
+    id: QuadEaseIn
+    path: Core/EasingFunctions.cs
+    startLine: 48
+  assemblies:
+  - MonoGameECS
+  namespace: milk.Core
+  summary: Easing in (accelerating from zero velocity).
+  example: []
+  syntax:
+    content: public static float QuadEaseIn(float t)
+    parameters:
+    - id: t
+      type: System.Single
+    return:
+      type: System.Single
+    content.vb: Public Shared Function QuadEaseIn(t As Single) As Single
+  overload: milk.Core.EasingFunctions.QuadEaseIn*
+  nameWithType.vb: EasingFunctions.QuadEaseIn(Single)
+  fullName.vb: milk.Core.EasingFunctions.QuadEaseIn(Single)
+  name.vb: QuadEaseIn(Single)
+- uid: milk.Core.EasingFunctions.QuadEaseOut(System.Single)
+  commentId: M:milk.Core.EasingFunctions.QuadEaseOut(System.Single)
+  id: QuadEaseOut(System.Single)
+  parent: milk.Core.EasingFunctions
+  langs:
+  - csharp
+  - vb
+  name: QuadEaseOut(float)
+  nameWithType: EasingFunctions.QuadEaseOut(float)
+  fullName: milk.Core.EasingFunctions.QuadEaseOut(float)
+  type: Method
+  source:
+    remote:
+      path: Core/EasingFunctions.cs
+      branch: main
+      repo: git@github.com:rik-cross/monogame-milk.git
+    id: QuadEaseOut
+    path: Core/EasingFunctions.cs
+    startLine: 56
+  assemblies:
+  - MonoGameECS
+  namespace: milk.Core
+  summary: Easing out (decelerating to zero velocity).
+  example: []
+  syntax:
+    content: public static float QuadEaseOut(float t)
+    parameters:
+    - id: t
+      type: System.Single
+    return:
+      type: System.Single
+    content.vb: Public Shared Function QuadEaseOut(t As Single) As Single
+  overload: milk.Core.EasingFunctions.QuadEaseOut*
+  nameWithType.vb: EasingFunctions.QuadEaseOut(Single)
+  fullName.vb: milk.Core.EasingFunctions.QuadEaseOut(Single)
+  name.vb: QuadEaseOut(Single)
+- uid: milk.Core.EasingFunctions.QuadEaseInOut(System.Single)
+  commentId: M:milk.Core.EasingFunctions.QuadEaseInOut(System.Single)
+  id: QuadEaseInOut(System.Single)
+  parent: milk.Core.EasingFunctions
+  langs:
+  - csharp
+  - vb
+  name: QuadEaseInOut(float)
+  nameWithType: EasingFunctions.QuadEaseInOut(float)
+  fullName: milk.Core.EasingFunctions.QuadEaseInOut(float)
+  type: Method
+  source:
+    remote:
+      path: Core/EasingFunctions.cs
+      branch: main
+      repo: git@github.com:rik-cross/monogame-milk.git
+    id: QuadEaseInOut
+    path: Core/EasingFunctions.cs
+    startLine: 64
+  assemblies:
+  - MonoGameECS
+  namespace: milk.Core
+  summary: Easing in and out (accelerating until halfway, then decelerating).
+  example: []
+  syntax:
+    content: public static float QuadEaseInOut(float t)
+    parameters:
+    - id: t
+      type: System.Single
+    return:
+      type: System.Single
+    content.vb: Public Shared Function QuadEaseInOut(t As Single) As Single
+  overload: milk.Core.EasingFunctions.QuadEaseInOut*
+  nameWithType.vb: EasingFunctions.QuadEaseInOut(Single)
+  fullName.vb: milk.Core.EasingFunctions.QuadEaseInOut(Single)
+  name.vb: QuadEaseInOut(Single)
+- uid: milk.Core.EasingFunctions.CubicEaseIn(System.Single)
+  commentId: M:milk.Core.EasingFunctions.CubicEaseIn(System.Single)
+  id: CubicEaseIn(System.Single)
+  parent: milk.Core.EasingFunctions
+  langs:
+  - csharp
+  - vb
+  name: CubicEaseIn(float)
+  nameWithType: EasingFunctions.CubicEaseIn(float)
+  fullName: milk.Core.EasingFunctions.CubicEaseIn(float)
+  type: Method
+  source:
+    remote:
+      path: Core/EasingFunctions.cs
+      branch: main
+      repo: git@github.com:rik-cross/monogame-milk.git
+    id: CubicEaseIn
+    path: Core/EasingFunctions.cs
+    startLine: 75
+  assemblies:
+  - MonoGameECS
+  namespace: milk.Core
+  summary: Easing in (accelerating from zero velocity).
+  example: []
+  syntax:
+    content: public static float CubicEaseIn(float t)
+    parameters:
+    - id: t
+      type: System.Single
+    return:
+      type: System.Single
+    content.vb: Public Shared Function CubicEaseIn(t As Single) As Single
+  overload: milk.Core.EasingFunctions.CubicEaseIn*
+  nameWithType.vb: EasingFunctions.CubicEaseIn(Single)
+  fullName.vb: milk.Core.EasingFunctions.CubicEaseIn(Single)
+  name.vb: CubicEaseIn(Single)
+- uid: milk.Core.EasingFunctions.CubicEaseOut(System.Single)
+  commentId: M:milk.Core.EasingFunctions.CubicEaseOut(System.Single)
+  id: CubicEaseOut(System.Single)
+  parent: milk.Core.EasingFunctions
+  langs:
+  - csharp
+  - vb
+  name: CubicEaseOut(float)
+  nameWithType: EasingFunctions.CubicEaseOut(float)
+  fullName: milk.Core.EasingFunctions.CubicEaseOut(float)
+  type: Method
+  source:
+    remote:
+      path: Core/EasingFunctions.cs
+      branch: main
+      repo: git@github.com:rik-cross/monogame-milk.git
+    id: CubicEaseOut
+    path: Core/EasingFunctions.cs
+    startLine: 83
+  assemblies:
+  - MonoGameECS
+  namespace: milk.Core
+  summary: Easing out (decelerating to zero velocity).
+  example: []
+  syntax:
+    content: public static float CubicEaseOut(float t)
+    parameters:
+    - id: t
+      type: System.Single
+    return:
+      type: System.Single
+    content.vb: Public Shared Function CubicEaseOut(t As Single) As Single
+  overload: milk.Core.EasingFunctions.CubicEaseOut*
+  nameWithType.vb: EasingFunctions.CubicEaseOut(Single)
+  fullName.vb: milk.Core.EasingFunctions.CubicEaseOut(Single)
+  name.vb: CubicEaseOut(Single)
+- uid: milk.Core.EasingFunctions.CubicEaseInOut(System.Single)
+  commentId: M:milk.Core.EasingFunctions.CubicEaseInOut(System.Single)
+  id: CubicEaseInOut(System.Single)
+  parent: milk.Core.EasingFunctions
+  langs:
+  - csharp
+  - vb
+  name: CubicEaseInOut(float)
+  nameWithType: EasingFunctions.CubicEaseInOut(float)
+  fullName: milk.Core.EasingFunctions.CubicEaseInOut(float)
+  type: Method
+  source:
+    remote:
+      path: Core/EasingFunctions.cs
+      branch: main
+      repo: git@github.com:rik-cross/monogame-milk.git
+    id: CubicEaseInOut
+    path: Core/EasingFunctions.cs
+    startLine: 92
+  assemblies:
+  - MonoGameECS
+  namespace: milk.Core
+  summary: Easing in and out (accelerating until halfway, then decelerating).
+  example: []
+  syntax:
+    content: public static float CubicEaseInOut(float t)
+    parameters:
+    - id: t
+      type: System.Single
+    return:
+      type: System.Single
+    content.vb: Public Shared Function CubicEaseInOut(t As Single) As Single
+  overload: milk.Core.EasingFunctions.CubicEaseInOut*
+  nameWithType.vb: EasingFunctions.CubicEaseInOut(Single)
+  fullName.vb: milk.Core.EasingFunctions.CubicEaseInOut(Single)
+  name.vb: CubicEaseInOut(Single)
+- uid: milk.Core.EasingFunctions.QuartEaseIn(System.Single)
+  commentId: M:milk.Core.EasingFunctions.QuartEaseIn(System.Single)
+  id: QuartEaseIn(System.Single)
+  parent: milk.Core.EasingFunctions
+  langs:
+  - csharp
+  - vb
+  name: QuartEaseIn(float)
+  nameWithType: EasingFunctions.QuartEaseIn(float)
+  fullName: milk.Core.EasingFunctions.QuartEaseIn(float)
+  type: Method
+  source:
+    remote:
+      path: Core/EasingFunctions.cs
+      branch: main
+      repo: git@github.com:rik-cross/monogame-milk.git
+    id: QuartEaseIn
+    path: Core/EasingFunctions.cs
+    startLine: 103
+  assemblies:
+  - MonoGameECS
+  namespace: milk.Core
+  summary: Easing in (accelerating from zero velocity).
+  example: []
+  syntax:
+    content: public static float QuartEaseIn(float t)
+    parameters:
+    - id: t
+      type: System.Single
+    return:
+      type: System.Single
+    content.vb: Public Shared Function QuartEaseIn(t As Single) As Single
+  overload: milk.Core.EasingFunctions.QuartEaseIn*
+  nameWithType.vb: EasingFunctions.QuartEaseIn(Single)
+  fullName.vb: milk.Core.EasingFunctions.QuartEaseIn(Single)
+  name.vb: QuartEaseIn(Single)
+- uid: milk.Core.EasingFunctions.QuartEaseOut(System.Single)
+  commentId: M:milk.Core.EasingFunctions.QuartEaseOut(System.Single)
+  id: QuartEaseOut(System.Single)
+  parent: milk.Core.EasingFunctions
+  langs:
+  - csharp
+  - vb
+  name: QuartEaseOut(float)
+  nameWithType: EasingFunctions.QuartEaseOut(float)
+  fullName: milk.Core.EasingFunctions.QuartEaseOut(float)
+  type: Method
+  source:
+    remote:
+      path: Core/EasingFunctions.cs
+      branch: main
+      repo: git@github.com:rik-cross/monogame-milk.git
+    id: QuartEaseOut
+    path: Core/EasingFunctions.cs
+    startLine: 111
+  assemblies:
+  - MonoGameECS
+  namespace: milk.Core
+  summary: Easing out (decelerating to zero velocity).
+  example: []
+  syntax:
+    content: public static float QuartEaseOut(float t)
+    parameters:
+    - id: t
+      type: System.Single
+    return:
+      type: System.Single
+    content.vb: Public Shared Function QuartEaseOut(t As Single) As Single
+  overload: milk.Core.EasingFunctions.QuartEaseOut*
+  nameWithType.vb: EasingFunctions.QuartEaseOut(Single)
+  fullName.vb: milk.Core.EasingFunctions.QuartEaseOut(Single)
+  name.vb: QuartEaseOut(Single)
+- uid: milk.Core.EasingFunctions.QuartEaseInOut(System.Single)
+  commentId: M:milk.Core.EasingFunctions.QuartEaseInOut(System.Single)
+  id: QuartEaseInOut(System.Single)
+  parent: milk.Core.EasingFunctions
+  langs:
+  - csharp
+  - vb
+  name: QuartEaseInOut(float)
+  nameWithType: EasingFunctions.QuartEaseInOut(float)
+  fullName: milk.Core.EasingFunctions.QuartEaseInOut(float)
+  type: Method
+  source:
+    remote:
+      path: Core/EasingFunctions.cs
+      branch: main
+      repo: git@github.com:rik-cross/monogame-milk.git
+    id: QuartEaseInOut
+    path: Core/EasingFunctions.cs
+    startLine: 120
+  assemblies:
+  - MonoGameECS
+  namespace: milk.Core
+  summary: Easing in and out (accelerating until halfway, then decelerating).
+  example: []
+  syntax:
+    content: public static float QuartEaseInOut(float t)
+    parameters:
+    - id: t
+      type: System.Single
+    return:
+      type: System.Single
+    content.vb: Public Shared Function QuartEaseInOut(t As Single) As Single
+  overload: milk.Core.EasingFunctions.QuartEaseInOut*
+  nameWithType.vb: EasingFunctions.QuartEaseInOut(Single)
+  fullName.vb: milk.Core.EasingFunctions.QuartEaseInOut(Single)
+  name.vb: QuartEaseInOut(Single)
+- uid: milk.Core.EasingFunctions.QuintEaseIn(System.Single)
+  commentId: M:milk.Core.EasingFunctions.QuintEaseIn(System.Single)
+  id: QuintEaseIn(System.Single)
+  parent: milk.Core.EasingFunctions
+  langs:
+  - csharp
+  - vb
+  name: QuintEaseIn(float)
+  nameWithType: EasingFunctions.QuintEaseIn(float)
+  fullName: milk.Core.EasingFunctions.QuintEaseIn(float)
+  type: Method
+  source:
+    remote:
+      path: Core/EasingFunctions.cs
+      branch: main
+      repo: git@github.com:rik-cross/monogame-milk.git
+    id: QuintEaseIn
+    path: Core/EasingFunctions.cs
+    startLine: 131
+  assemblies:
+  - MonoGameECS
+  namespace: milk.Core
+  summary: Easing in (accelerating from zero velocity).
+  example: []
+  syntax:
+    content: public static float QuintEaseIn(float t)
+    parameters:
+    - id: t
+      type: System.Single
+    return:
+      type: System.Single
+    content.vb: Public Shared Function QuintEaseIn(t As Single) As Single
+  overload: milk.Core.EasingFunctions.QuintEaseIn*
+  nameWithType.vb: EasingFunctions.QuintEaseIn(Single)
+  fullName.vb: milk.Core.EasingFunctions.QuintEaseIn(Single)
+  name.vb: QuintEaseIn(Single)
+- uid: milk.Core.EasingFunctions.QuintEaseOut(System.Single)
+  commentId: M:milk.Core.EasingFunctions.QuintEaseOut(System.Single)
+  id: QuintEaseOut(System.Single)
+  parent: milk.Core.EasingFunctions
+  langs:
+  - csharp
+  - vb
+  name: QuintEaseOut(float)
+  nameWithType: EasingFunctions.QuintEaseOut(float)
+  fullName: milk.Core.EasingFunctions.QuintEaseOut(float)
+  type: Method
+  source:
+    remote:
+      path: Core/EasingFunctions.cs
+      branch: main
+      repo: git@github.com:rik-cross/monogame-milk.git
+    id: QuintEaseOut
+    path: Core/EasingFunctions.cs
+    startLine: 139
+  assemblies:
+  - MonoGameECS
+  namespace: milk.Core
+  summary: Easing out (decelerating to zero velocity).
+  example: []
+  syntax:
+    content: public static float QuintEaseOut(float t)
+    parameters:
+    - id: t
+      type: System.Single
+    return:
+      type: System.Single
+    content.vb: Public Shared Function QuintEaseOut(t As Single) As Single
+  overload: milk.Core.EasingFunctions.QuintEaseOut*
+  nameWithType.vb: EasingFunctions.QuintEaseOut(Single)
+  fullName.vb: milk.Core.EasingFunctions.QuintEaseOut(Single)
+  name.vb: QuintEaseOut(Single)
+- uid: milk.Core.EasingFunctions.QuintEaseInOut(System.Single)
+  commentId: M:milk.Core.EasingFunctions.QuintEaseInOut(System.Single)
+  id: QuintEaseInOut(System.Single)
+  parent: milk.Core.EasingFunctions
+  langs:
+  - csharp
+  - vb
+  name: QuintEaseInOut(float)
+  nameWithType: EasingFunctions.QuintEaseInOut(float)
+  fullName: milk.Core.EasingFunctions.QuintEaseInOut(float)
+  type: Method
+  source:
+    remote:
+      path: Core/EasingFunctions.cs
+      branch: main
+      repo: git@github.com:rik-cross/monogame-milk.git
+    id: QuintEaseInOut
+    path: Core/EasingFunctions.cs
+    startLine: 148
+  assemblies:
+  - MonoGameECS
+  namespace: milk.Core
+  summary: Easing in and out (accelerating until halfway, then decelerating).
+  example: []
+  syntax:
+    content: public static float QuintEaseInOut(float t)
+    parameters:
+    - id: t
+      type: System.Single
+    return:
+      type: System.Single
+    content.vb: Public Shared Function QuintEaseInOut(t As Single) As Single
+  overload: milk.Core.EasingFunctions.QuintEaseInOut*
+  nameWithType.vb: EasingFunctions.QuintEaseInOut(Single)
+  fullName.vb: milk.Core.EasingFunctions.QuintEaseInOut(Single)
+  name.vb: QuintEaseInOut(Single)
+- uid: milk.Core.EasingFunctions.ExpoEaseIn(System.Single)
+  commentId: M:milk.Core.EasingFunctions.ExpoEaseIn(System.Single)
+  id: ExpoEaseIn(System.Single)
+  parent: milk.Core.EasingFunctions
+  langs:
+  - csharp
+  - vb
+  name: ExpoEaseIn(float)
+  nameWithType: EasingFunctions.ExpoEaseIn(float)
+  fullName: milk.Core.EasingFunctions.ExpoEaseIn(float)
+  type: Method
+  source:
+    remote:
+      path: Core/EasingFunctions.cs
+      branch: main
+      repo: git@github.com:rik-cross/monogame-milk.git
+    id: ExpoEaseIn
+    path: Core/EasingFunctions.cs
+    startLine: 159
+  assemblies:
+  - MonoGameECS
+  namespace: milk.Core
+  summary: Easing in (accelerating from zero velocity).
+  example: []
+  syntax:
+    content: public static float ExpoEaseIn(float t)
+    parameters:
+    - id: t
+      type: System.Single
+    return:
+      type: System.Single
+    content.vb: Public Shared Function ExpoEaseIn(t As Single) As Single
+  overload: milk.Core.EasingFunctions.ExpoEaseIn*
+  nameWithType.vb: EasingFunctions.ExpoEaseIn(Single)
+  fullName.vb: milk.Core.EasingFunctions.ExpoEaseIn(Single)
+  name.vb: ExpoEaseIn(Single)
+- uid: milk.Core.EasingFunctions.ExpoEaseOut(System.Single)
+  commentId: M:milk.Core.EasingFunctions.ExpoEaseOut(System.Single)
+  id: ExpoEaseOut(System.Single)
+  parent: milk.Core.EasingFunctions
+  langs:
+  - csharp
+  - vb
+  name: ExpoEaseOut(float)
+  nameWithType: EasingFunctions.ExpoEaseOut(float)
+  fullName: milk.Core.EasingFunctions.ExpoEaseOut(float)
+  type: Method
+  source:
+    remote:
+      path: Core/EasingFunctions.cs
+      branch: main
+      repo: git@github.com:rik-cross/monogame-milk.git
+    id: ExpoEaseOut
+    path: Core/EasingFunctions.cs
+    startLine: 167
+  assemblies:
+  - MonoGameECS
+  namespace: milk.Core
+  summary: Easing out (decelerating to zero velocity).
+  example: []
+  syntax:
+    content: public static float ExpoEaseOut(float t)
+    parameters:
+    - id: t
+      type: System.Single
+    return:
+      type: System.Single
+    content.vb: Public Shared Function ExpoEaseOut(t As Single) As Single
+  overload: milk.Core.EasingFunctions.ExpoEaseOut*
+  nameWithType.vb: EasingFunctions.ExpoEaseOut(Single)
+  fullName.vb: milk.Core.EasingFunctions.ExpoEaseOut(Single)
+  name.vb: ExpoEaseOut(Single)
+- uid: milk.Core.EasingFunctions.ExpoEaseInOut(System.Single)
+  commentId: M:milk.Core.EasingFunctions.ExpoEaseInOut(System.Single)
+  id: ExpoEaseInOut(System.Single)
+  parent: milk.Core.EasingFunctions
+  langs:
+  - csharp
+  - vb
+  name: ExpoEaseInOut(float)
+  nameWithType: EasingFunctions.ExpoEaseInOut(float)
+  fullName: milk.Core.EasingFunctions.ExpoEaseInOut(float)
+  type: Method
+  source:
+    remote:
+      path: Core/EasingFunctions.cs
+      branch: main
+      repo: git@github.com:rik-cross/monogame-milk.git
+    id: ExpoEaseInOut
+    path: Core/EasingFunctions.cs
+    startLine: 175
+  assemblies:
+  - MonoGameECS
+  namespace: milk.Core
+  summary: Easing in and out (accelerating until halfway, then decelerating).
+  example: []
+  syntax:
+    content: public static float ExpoEaseInOut(float t)
+    parameters:
+    - id: t
+      type: System.Single
+    return:
+      type: System.Single
+    content.vb: Public Shared Function ExpoEaseInOut(t As Single) As Single
+  overload: milk.Core.EasingFunctions.ExpoEaseInOut*
+  nameWithType.vb: EasingFunctions.ExpoEaseInOut(Single)
+  fullName.vb: milk.Core.EasingFunctions.ExpoEaseInOut(Single)
+  name.vb: ExpoEaseInOut(Single)
+- uid: milk.Core.EasingFunctions.CircEaseIn(System.Single)
+  commentId: M:milk.Core.EasingFunctions.CircEaseIn(System.Single)
+  id: CircEaseIn(System.Single)
+  parent: milk.Core.EasingFunctions
+  langs:
+  - csharp
+  - vb
+  name: CircEaseIn(float)
+  nameWithType: EasingFunctions.CircEaseIn(float)
+  fullName: milk.Core.EasingFunctions.CircEaseIn(float)
+  type: Method
+  source:
+    remote:
+      path: Core/EasingFunctions.cs
+      branch: main
+      repo: git@github.com:rik-cross/monogame-milk.git
+    id: CircEaseIn
+    path: Core/EasingFunctions.cs
+    startLine: 188
+  assemblies:
+  - MonoGameECS
+  namespace: milk.Core
+  summary: Easing in (accelerating from zero velocity).
+  example: []
+  syntax:
+    content: public static float CircEaseIn(float t)
+    parameters:
+    - id: t
+      type: System.Single
+    return:
+      type: System.Single
+    content.vb: Public Shared Function CircEaseIn(t As Single) As Single
+  overload: milk.Core.EasingFunctions.CircEaseIn*
+  nameWithType.vb: EasingFunctions.CircEaseIn(Single)
+  fullName.vb: milk.Core.EasingFunctions.CircEaseIn(Single)
+  name.vb: CircEaseIn(Single)
+- uid: milk.Core.EasingFunctions.CircEaseOut(System.Single)
+  commentId: M:milk.Core.EasingFunctions.CircEaseOut(System.Single)
+  id: CircEaseOut(System.Single)
+  parent: milk.Core.EasingFunctions
+  langs:
+  - csharp
+  - vb
+  name: CircEaseOut(float)
+  nameWithType: EasingFunctions.CircEaseOut(float)
+  fullName: milk.Core.EasingFunctions.CircEaseOut(float)
+  type: Method
+  source:
+    remote:
+      path: Core/EasingFunctions.cs
+      branch: main
+      repo: git@github.com:rik-cross/monogame-milk.git
+    id: CircEaseOut
+    path: Core/EasingFunctions.cs
+    startLine: 196
+  assemblies:
+  - MonoGameECS
+  namespace: milk.Core
+  summary: Easing out (decelerating to zero velocity).
+  example: []
+  syntax:
+    content: public static float CircEaseOut(float t)
+    parameters:
+    - id: t
+      type: System.Single
+    return:
+      type: System.Single
+    content.vb: Public Shared Function CircEaseOut(t As Single) As Single
+  overload: milk.Core.EasingFunctions.CircEaseOut*
+  nameWithType.vb: EasingFunctions.CircEaseOut(Single)
+  fullName.vb: milk.Core.EasingFunctions.CircEaseOut(Single)
+  name.vb: CircEaseOut(Single)
+- uid: milk.Core.EasingFunctions.CircEaseInOut(System.Single)
+  commentId: M:milk.Core.EasingFunctions.CircEaseInOut(System.Single)
+  id: CircEaseInOut(System.Single)
+  parent: milk.Core.EasingFunctions
+  langs:
+  - csharp
+  - vb
+  name: CircEaseInOut(float)
+  nameWithType: EasingFunctions.CircEaseInOut(float)
+  fullName: milk.Core.EasingFunctions.CircEaseInOut(float)
+  type: Method
+  source:
+    remote:
+      path: Core/EasingFunctions.cs
+      branch: main
+      repo: git@github.com:rik-cross/monogame-milk.git
+    id: CircEaseInOut
+    path: Core/EasingFunctions.cs
+    startLine: 205
+  assemblies:
+  - MonoGameECS
+  namespace: milk.Core
+  summary: Easing in and out (accelerating until halfway, then decelerating).
+  example: []
+  syntax:
+    content: public static float CircEaseInOut(float t)
+    parameters:
+    - id: t
+      type: System.Single
+    return:
+      type: System.Single
+    content.vb: Public Shared Function CircEaseInOut(t As Single) As Single
+  overload: milk.Core.EasingFunctions.CircEaseInOut*
+  nameWithType.vb: EasingFunctions.CircEaseInOut(Single)
+  fullName.vb: milk.Core.EasingFunctions.CircEaseInOut(Single)
+  name.vb: CircEaseInOut(Single)
+- uid: milk.Core.EasingFunctions.BackEaseIn(System.Single)
+  commentId: M:milk.Core.EasingFunctions.BackEaseIn(System.Single)
+  id: BackEaseIn(System.Single)
+  parent: milk.Core.EasingFunctions
+  langs:
+  - csharp
+  - vb
+  name: BackEaseIn(float)
+  nameWithType: EasingFunctions.BackEaseIn(float)
+  fullName: milk.Core.EasingFunctions.BackEaseIn(float)
+  type: Method
+  source:
+    remote:
+      path: Core/EasingFunctions.cs
+      branch: main
+      repo: git@github.com:rik-cross/monogame-milk.git
+    id: BackEaseIn
+    path: Core/EasingFunctions.cs
+    startLine: 216
+  assemblies:
+  - MonoGameECS
+  namespace: milk.Core
+  summary: Easing in (pulls back slightly before accelerating).
+  example: []
+  syntax:
+    content: public static float BackEaseIn(float t)
+    parameters:
+    - id: t
+      type: System.Single
+    return:
+      type: System.Single
+    content.vb: Public Shared Function BackEaseIn(t As Single) As Single
+  overload: milk.Core.EasingFunctions.BackEaseIn*
+  nameWithType.vb: EasingFunctions.BackEaseIn(Single)
+  fullName.vb: milk.Core.EasingFunctions.BackEaseIn(Single)
+  name.vb: BackEaseIn(Single)
+- uid: milk.Core.EasingFunctions.BackEaseOut(System.Single)
+  commentId: M:milk.Core.EasingFunctions.BackEaseOut(System.Single)
+  id: BackEaseOut(System.Single)
+  parent: milk.Core.EasingFunctions
+  langs:
+  - csharp
+  - vb
+  name: BackEaseOut(float)
+  nameWithType: EasingFunctions.BackEaseOut(float)
+  fullName: milk.Core.EasingFunctions.BackEaseOut(float)
+  type: Method
+  source:
+    remote:
+      path: Core/EasingFunctions.cs
+      branch: main
+      repo: git@github.com:rik-cross/monogame-milk.git
+    id: BackEaseOut
+    path: Core/EasingFunctions.cs
+    startLine: 225
+  assemblies:
+  - MonoGameECS
+  namespace: milk.Core
+  summary: Easing out (overshoots the target slightly before settling).
+  example: []
+  syntax:
+    content: public static float BackEaseOut(float t)
+    parameters:
+    - id: t
+      type: System.Single
+    return:
+      type: System.Single
+    content.vb: Public Shared Function BackEaseOut(t As Single) As Single
+  overload: milk.Core.EasingFunctions.BackEaseOut*
+  nameWithType.vb: EasingFunctions.BackEaseOut(Single)
+  fullName.vb: milk.Core.EasingFunctions.BackEaseOut(Single)
+  name.vb: BackEaseOut(Single)
+- uid: milk.Core.EasingFunctions.BackEaseInOut(System.Single)
+  commentId: M:milk.Core.EasingFunctions.BackEaseInOut(System.Single)
+  id: BackEaseInOut(System.Single)
+  parent: milk.Core.EasingFunctions
+  langs:
+  - csharp
+  - vb
+  name: BackEaseInOut(float)
+  nameWithType: EasingFunctions.BackEaseInOut(float)
+  fullName: milk.Core.EasingFunctions.BackEaseInOut(float)
+  type: Method
+  source:
+    remote:
+      path: Core/EasingFunctions.cs
+      branch: main
+      repo: git@github.com:rik-cross/monogame-milk.git
+    id: BackEaseInOut
+    path: Core/EasingFunctions.cs
+    startLine: 235
+  assemblies:
+  - MonoGameECS
+  namespace: milk.Core
+  summary: Easing in and out (pulls back at start, overshoots at end).
+  example: []
+  syntax:
+    content: public static float BackEaseInOut(float t)
+    parameters:
+    - id: t
+      type: System.Single
+    return:
+      type: System.Single
+    content.vb: Public Shared Function BackEaseInOut(t As Single) As Single
+  overload: milk.Core.EasingFunctions.BackEaseInOut*
+  nameWithType.vb: EasingFunctions.BackEaseInOut(Single)
+  fullName.vb: milk.Core.EasingFunctions.BackEaseInOut(Single)
+  name.vb: BackEaseInOut(Single)
+- uid: milk.Core.EasingFunctions.ElasticEaseIn(System.Single)
+  commentId: M:milk.Core.EasingFunctions.ElasticEaseIn(System.Single)
+  id: ElasticEaseIn(System.Single)
+  parent: milk.Core.EasingFunctions
+  langs:
+  - csharp
+  - vb
+  name: ElasticEaseIn(float)
+  nameWithType: EasingFunctions.ElasticEaseIn(float)
+  fullName: milk.Core.EasingFunctions.ElasticEaseIn(float)
+  type: Method
+  source:
+    remote:
+      path: Core/EasingFunctions.cs
+      branch: main
+      repo: git@github.com:rik-cross/monogame-milk.git
+    id: ElasticEaseIn
+    path: Core/EasingFunctions.cs
+    startLine: 247
+  assemblies:
+  - MonoGameECS
+  namespace: milk.Core
+  summary: Easing in (bounces in towards the target).
+  example: []
+  syntax:
+    content: public static float ElasticEaseIn(float t)
+    parameters:
+    - id: t
+      type: System.Single
+    return:
+      type: System.Single
+    content.vb: Public Shared Function ElasticEaseIn(t As Single) As Single
+  overload: milk.Core.EasingFunctions.ElasticEaseIn*
+  nameWithType.vb: EasingFunctions.ElasticEaseIn(Single)
+  fullName.vb: milk.Core.EasingFunctions.ElasticEaseIn(Single)
+  name.vb: ElasticEaseIn(Single)
+- uid: milk.Core.EasingFunctions.ElasticEaseOut(System.Single)
+  commentId: M:milk.Core.EasingFunctions.ElasticEaseOut(System.Single)
+  id: ElasticEaseOut(System.Single)
+  parent: milk.Core.EasingFunctions
+  langs:
+  - csharp
+  - vb
+  name: ElasticEaseOut(float)
+  nameWithType: EasingFunctions.ElasticEaseOut(float)
+  fullName: milk.Core.EasingFunctions.ElasticEaseOut(float)
+  type: Method
+  source:
+    remote:
+      path: Core/EasingFunctions.cs
+      branch: main
+      repo: git@github.com:rik-cross/monogame-milk.git
+    id: ElasticEaseOut
+    path: Core/EasingFunctions.cs
+    startLine: 259
+  assemblies:
+  - MonoGameECS
+  namespace: milk.Core
+  summary: Easing out (bounces out from the target).
+  example: []
+  syntax:
+    content: public static float ElasticEaseOut(float t)
+    parameters:
+    - id: t
+      type: System.Single
+    return:
+      type: System.Single
+    content.vb: Public Shared Function ElasticEaseOut(t As Single) As Single
+  overload: milk.Core.EasingFunctions.ElasticEaseOut*
+  nameWithType.vb: EasingFunctions.ElasticEaseOut(Single)
+  fullName.vb: milk.Core.EasingFunctions.ElasticEaseOut(Single)
+  name.vb: ElasticEaseOut(Single)
+- uid: milk.Core.EasingFunctions.ElasticEaseInOut(System.Single)
+  commentId: M:milk.Core.EasingFunctions.ElasticEaseInOut(System.Single)
+  id: ElasticEaseInOut(System.Single)
+  parent: milk.Core.EasingFunctions
+  langs:
+  - csharp
+  - vb
+  name: ElasticEaseInOut(float)
+  nameWithType: EasingFunctions.ElasticEaseInOut(float)
+  fullName: milk.Core.EasingFunctions.ElasticEaseInOut(float)
+  type: Method
+  source:
+    remote:
+      path: Core/EasingFunctions.cs
+      branch: main
+      repo: git@github.com:rik-cross/monogame-milk.git
+    id: ElasticEaseInOut
+    path: Core/EasingFunctions.cs
+    startLine: 270
+  assemblies:
+  - MonoGameECS
+  namespace: milk.Core
+  summary: Easing in and out (bounces in then out).
+  example: []
+  syntax:
+    content: public static float ElasticEaseInOut(float t)
+    parameters:
+    - id: t
+      type: System.Single
+    return:
+      type: System.Single
+    content.vb: Public Shared Function ElasticEaseInOut(t As Single) As Single
+  overload: milk.Core.EasingFunctions.ElasticEaseInOut*
+  nameWithType.vb: EasingFunctions.ElasticEaseInOut(Single)
+  fullName.vb: milk.Core.EasingFunctions.ElasticEaseInOut(Single)
+  name.vb: ElasticEaseInOut(Single)
+- uid: milk.Core.EasingFunctions.BounceEaseIn(System.Single)
+  commentId: M:milk.Core.EasingFunctions.BounceEaseIn(System.Single)
+  id: BounceEaseIn(System.Single)
+  parent: milk.Core.EasingFunctions
+  langs:
+  - csharp
+  - vb
+  name: BounceEaseIn(float)
+  nameWithType: EasingFunctions.BounceEaseIn(float)
+  fullName: milk.Core.EasingFunctions.BounceEaseIn(float)
+  type: Method
+  source:
+    remote:
+      path: Core/EasingFunctions.cs
+      branch: main
+      repo: git@github.com:rik-cross/monogame-milk.git
+    id: BounceEaseIn
+    path: Core/EasingFunctions.cs
+    startLine: 293
+  assemblies:
+  - MonoGameECS
+  namespace: milk.Core
+  summary: Easing in (bounces as it approaches the start).
+  example: []
+  syntax:
+    content: public static float BounceEaseIn(float t)
+    parameters:
+    - id: t
+      type: System.Single
+    return:
+      type: System.Single
+    content.vb: Public Shared Function BounceEaseIn(t As Single) As Single
+  overload: milk.Core.EasingFunctions.BounceEaseIn*
+  nameWithType.vb: EasingFunctions.BounceEaseIn(Single)
+  fullName.vb: milk.Core.EasingFunctions.BounceEaseIn(Single)
+  name.vb: BounceEaseIn(Single)
+- uid: milk.Core.EasingFunctions.BounceEaseOut(System.Single)
+  commentId: M:milk.Core.EasingFunctions.BounceEaseOut(System.Single)
+  id: BounceEaseOut(System.Single)
+  parent: milk.Core.EasingFunctions
+  langs:
+  - csharp
+  - vb
+  name: BounceEaseOut(float)
+  nameWithType: EasingFunctions.BounceEaseOut(float)
+  fullName: milk.Core.EasingFunctions.BounceEaseOut(float)
+  type: Method
+  source:
+    remote:
+      path: Core/EasingFunctions.cs
+      branch: main
+      repo: git@github.com:rik-cross/monogame-milk.git
+    id: BounceEaseOut
+    path: Core/EasingFunctions.cs
+    startLine: 301
+  assemblies:
+  - MonoGameECS
+  namespace: milk.Core
+  summary: Easing out (bounces as it reaches the end).
+  example: []
+  syntax:
+    content: public static float BounceEaseOut(float t)
+    parameters:
+    - id: t
+      type: System.Single
+    return:
+      type: System.Single
+    content.vb: Public Shared Function BounceEaseOut(t As Single) As Single
+  overload: milk.Core.EasingFunctions.BounceEaseOut*
+  nameWithType.vb: EasingFunctions.BounceEaseOut(Single)
+  fullName.vb: milk.Core.EasingFunctions.BounceEaseOut(Single)
+  name.vb: BounceEaseOut(Single)
+- uid: milk.Core.EasingFunctions.BounceEaseInOut(System.Single)
+  commentId: M:milk.Core.EasingFunctions.BounceEaseInOut(System.Single)
+  id: BounceEaseInOut(System.Single)
+  parent: milk.Core.EasingFunctions
+  langs:
+  - csharp
+  - vb
+  name: BounceEaseInOut(float)
+  nameWithType: EasingFunctions.BounceEaseInOut(float)
+  fullName: milk.Core.EasingFunctions.BounceEaseInOut(float)
+  type: Method
+  source:
+    remote:
+      path: Core/EasingFunctions.cs
+      branch: main
+      repo: git@github.com:rik-cross/monogame-milk.git
+    id: BounceEaseInOut
+    path: Core/EasingFunctions.cs
+    startLine: 327
+  assemblies:
+  - MonoGameECS
+  namespace: milk.Core
+  summary: Easing in and out (bounces at start and end).
+  example: []
+  syntax:
+    content: public static float BounceEaseInOut(float t)
+    parameters:
+    - id: t
+      type: System.Single
+    return:
+      type: System.Single
+    content.vb: Public Shared Function BounceEaseInOut(t As Single) As Single
+  overload: milk.Core.EasingFunctions.BounceEaseInOut*
+  nameWithType.vb: EasingFunctions.BounceEaseInOut(Single)
+  fullName.vb: milk.Core.EasingFunctions.BounceEaseInOut(Single)
+  name.vb: BounceEaseInOut(Single)
+references:
+- uid: milk.Core
+  commentId: N:milk.Core
+  href: milk.html
+  name: milk.Core
+  nameWithType: milk.Core
+  fullName: milk.Core
+  spec.csharp:
+  - uid: milk
+    name: milk
+    href: milk.html
+  - name: .
+  - uid: milk.Core
+    name: Core
+    href: milk.Core.html
+  spec.vb:
+  - uid: milk
+    name: milk
+    href: milk.html
+  - name: .
+  - uid: milk.Core
+    name: Core
+    href: milk.Core.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: milk.Core.EasingFunctions.Linear*
+  commentId: Overload:milk.Core.EasingFunctions.Linear
+  href: milk.Core.EasingFunctions.html#milk_Core_EasingFunctions_Linear_System_Single_
+  name: Linear
+  nameWithType: EasingFunctions.Linear
+  fullName: milk.Core.EasingFunctions.Linear
+- uid: System.Single
+  commentId: T:System.Single
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.single
+  name: float
+  nameWithType: float
+  fullName: float
+  nameWithType.vb: Single
+  fullName.vb: Single
+  name.vb: Single
+- uid: milk.Core.EasingFunctions.SineEaseIn*
+  commentId: Overload:milk.Core.EasingFunctions.SineEaseIn
+  href: milk.Core.EasingFunctions.html#milk_Core_EasingFunctions_SineEaseIn_System_Single_
+  name: SineEaseIn
+  nameWithType: EasingFunctions.SineEaseIn
+  fullName: milk.Core.EasingFunctions.SineEaseIn
+- uid: milk.Core.EasingFunctions.SineEaseOut*
+  commentId: Overload:milk.Core.EasingFunctions.SineEaseOut
+  href: milk.Core.EasingFunctions.html#milk_Core_EasingFunctions_SineEaseOut_System_Single_
+  name: SineEaseOut
+  nameWithType: EasingFunctions.SineEaseOut
+  fullName: milk.Core.EasingFunctions.SineEaseOut
+- uid: milk.Core.EasingFunctions.SineEaseInOut*
+  commentId: Overload:milk.Core.EasingFunctions.SineEaseInOut
+  href: milk.Core.EasingFunctions.html#milk_Core_EasingFunctions_SineEaseInOut_System_Single_
+  name: SineEaseInOut
+  nameWithType: EasingFunctions.SineEaseInOut
+  fullName: milk.Core.EasingFunctions.SineEaseInOut
+- uid: milk.Core.EasingFunctions.QuadEaseIn*
+  commentId: Overload:milk.Core.EasingFunctions.QuadEaseIn
+  href: milk.Core.EasingFunctions.html#milk_Core_EasingFunctions_QuadEaseIn_System_Single_
+  name: QuadEaseIn
+  nameWithType: EasingFunctions.QuadEaseIn
+  fullName: milk.Core.EasingFunctions.QuadEaseIn
+- uid: milk.Core.EasingFunctions.QuadEaseOut*
+  commentId: Overload:milk.Core.EasingFunctions.QuadEaseOut
+  href: milk.Core.EasingFunctions.html#milk_Core_EasingFunctions_QuadEaseOut_System_Single_
+  name: QuadEaseOut
+  nameWithType: EasingFunctions.QuadEaseOut
+  fullName: milk.Core.EasingFunctions.QuadEaseOut
+- uid: milk.Core.EasingFunctions.QuadEaseInOut*
+  commentId: Overload:milk.Core.EasingFunctions.QuadEaseInOut
+  href: milk.Core.EasingFunctions.html#milk_Core_EasingFunctions_QuadEaseInOut_System_Single_
+  name: QuadEaseInOut
+  nameWithType: EasingFunctions.QuadEaseInOut
+  fullName: milk.Core.EasingFunctions.QuadEaseInOut
+- uid: milk.Core.EasingFunctions.CubicEaseIn*
+  commentId: Overload:milk.Core.EasingFunctions.CubicEaseIn
+  href: milk.Core.EasingFunctions.html#milk_Core_EasingFunctions_CubicEaseIn_System_Single_
+  name: CubicEaseIn
+  nameWithType: EasingFunctions.CubicEaseIn
+  fullName: milk.Core.EasingFunctions.CubicEaseIn
+- uid: milk.Core.EasingFunctions.CubicEaseOut*
+  commentId: Overload:milk.Core.EasingFunctions.CubicEaseOut
+  href: milk.Core.EasingFunctions.html#milk_Core_EasingFunctions_CubicEaseOut_System_Single_
+  name: CubicEaseOut
+  nameWithType: EasingFunctions.CubicEaseOut
+  fullName: milk.Core.EasingFunctions.CubicEaseOut
+- uid: milk.Core.EasingFunctions.CubicEaseInOut*
+  commentId: Overload:milk.Core.EasingFunctions.CubicEaseInOut
+  href: milk.Core.EasingFunctions.html#milk_Core_EasingFunctions_CubicEaseInOut_System_Single_
+  name: CubicEaseInOut
+  nameWithType: EasingFunctions.CubicEaseInOut
+  fullName: milk.Core.EasingFunctions.CubicEaseInOut
+- uid: milk.Core.EasingFunctions.QuartEaseIn*
+  commentId: Overload:milk.Core.EasingFunctions.QuartEaseIn
+  href: milk.Core.EasingFunctions.html#milk_Core_EasingFunctions_QuartEaseIn_System_Single_
+  name: QuartEaseIn
+  nameWithType: EasingFunctions.QuartEaseIn
+  fullName: milk.Core.EasingFunctions.QuartEaseIn
+- uid: milk.Core.EasingFunctions.QuartEaseOut*
+  commentId: Overload:milk.Core.EasingFunctions.QuartEaseOut
+  href: milk.Core.EasingFunctions.html#milk_Core_EasingFunctions_QuartEaseOut_System_Single_
+  name: QuartEaseOut
+  nameWithType: EasingFunctions.QuartEaseOut
+  fullName: milk.Core.EasingFunctions.QuartEaseOut
+- uid: milk.Core.EasingFunctions.QuartEaseInOut*
+  commentId: Overload:milk.Core.EasingFunctions.QuartEaseInOut
+  href: milk.Core.EasingFunctions.html#milk_Core_EasingFunctions_QuartEaseInOut_System_Single_
+  name: QuartEaseInOut
+  nameWithType: EasingFunctions.QuartEaseInOut
+  fullName: milk.Core.EasingFunctions.QuartEaseInOut
+- uid: milk.Core.EasingFunctions.QuintEaseIn*
+  commentId: Overload:milk.Core.EasingFunctions.QuintEaseIn
+  href: milk.Core.EasingFunctions.html#milk_Core_EasingFunctions_QuintEaseIn_System_Single_
+  name: QuintEaseIn
+  nameWithType: EasingFunctions.QuintEaseIn
+  fullName: milk.Core.EasingFunctions.QuintEaseIn
+- uid: milk.Core.EasingFunctions.QuintEaseOut*
+  commentId: Overload:milk.Core.EasingFunctions.QuintEaseOut
+  href: milk.Core.EasingFunctions.html#milk_Core_EasingFunctions_QuintEaseOut_System_Single_
+  name: QuintEaseOut
+  nameWithType: EasingFunctions.QuintEaseOut
+  fullName: milk.Core.EasingFunctions.QuintEaseOut
+- uid: milk.Core.EasingFunctions.QuintEaseInOut*
+  commentId: Overload:milk.Core.EasingFunctions.QuintEaseInOut
+  href: milk.Core.EasingFunctions.html#milk_Core_EasingFunctions_QuintEaseInOut_System_Single_
+  name: QuintEaseInOut
+  nameWithType: EasingFunctions.QuintEaseInOut
+  fullName: milk.Core.EasingFunctions.QuintEaseInOut
+- uid: milk.Core.EasingFunctions.ExpoEaseIn*
+  commentId: Overload:milk.Core.EasingFunctions.ExpoEaseIn
+  href: milk.Core.EasingFunctions.html#milk_Core_EasingFunctions_ExpoEaseIn_System_Single_
+  name: ExpoEaseIn
+  nameWithType: EasingFunctions.ExpoEaseIn
+  fullName: milk.Core.EasingFunctions.ExpoEaseIn
+- uid: milk.Core.EasingFunctions.ExpoEaseOut*
+  commentId: Overload:milk.Core.EasingFunctions.ExpoEaseOut
+  href: milk.Core.EasingFunctions.html#milk_Core_EasingFunctions_ExpoEaseOut_System_Single_
+  name: ExpoEaseOut
+  nameWithType: EasingFunctions.ExpoEaseOut
+  fullName: milk.Core.EasingFunctions.ExpoEaseOut
+- uid: milk.Core.EasingFunctions.ExpoEaseInOut*
+  commentId: Overload:milk.Core.EasingFunctions.ExpoEaseInOut
+  href: milk.Core.EasingFunctions.html#milk_Core_EasingFunctions_ExpoEaseInOut_System_Single_
+  name: ExpoEaseInOut
+  nameWithType: EasingFunctions.ExpoEaseInOut
+  fullName: milk.Core.EasingFunctions.ExpoEaseInOut
+- uid: milk.Core.EasingFunctions.CircEaseIn*
+  commentId: Overload:milk.Core.EasingFunctions.CircEaseIn
+  href: milk.Core.EasingFunctions.html#milk_Core_EasingFunctions_CircEaseIn_System_Single_
+  name: CircEaseIn
+  nameWithType: EasingFunctions.CircEaseIn
+  fullName: milk.Core.EasingFunctions.CircEaseIn
+- uid: milk.Core.EasingFunctions.CircEaseOut*
+  commentId: Overload:milk.Core.EasingFunctions.CircEaseOut
+  href: milk.Core.EasingFunctions.html#milk_Core_EasingFunctions_CircEaseOut_System_Single_
+  name: CircEaseOut
+  nameWithType: EasingFunctions.CircEaseOut
+  fullName: milk.Core.EasingFunctions.CircEaseOut
+- uid: milk.Core.EasingFunctions.CircEaseInOut*
+  commentId: Overload:milk.Core.EasingFunctions.CircEaseInOut
+  href: milk.Core.EasingFunctions.html#milk_Core_EasingFunctions_CircEaseInOut_System_Single_
+  name: CircEaseInOut
+  nameWithType: EasingFunctions.CircEaseInOut
+  fullName: milk.Core.EasingFunctions.CircEaseInOut
+- uid: milk.Core.EasingFunctions.BackEaseIn*
+  commentId: Overload:milk.Core.EasingFunctions.BackEaseIn
+  href: milk.Core.EasingFunctions.html#milk_Core_EasingFunctions_BackEaseIn_System_Single_
+  name: BackEaseIn
+  nameWithType: EasingFunctions.BackEaseIn
+  fullName: milk.Core.EasingFunctions.BackEaseIn
+- uid: milk.Core.EasingFunctions.BackEaseOut*
+  commentId: Overload:milk.Core.EasingFunctions.BackEaseOut
+  href: milk.Core.EasingFunctions.html#milk_Core_EasingFunctions_BackEaseOut_System_Single_
+  name: BackEaseOut
+  nameWithType: EasingFunctions.BackEaseOut
+  fullName: milk.Core.EasingFunctions.BackEaseOut
+- uid: milk.Core.EasingFunctions.BackEaseInOut*
+  commentId: Overload:milk.Core.EasingFunctions.BackEaseInOut
+  href: milk.Core.EasingFunctions.html#milk_Core_EasingFunctions_BackEaseInOut_System_Single_
+  name: BackEaseInOut
+  nameWithType: EasingFunctions.BackEaseInOut
+  fullName: milk.Core.EasingFunctions.BackEaseInOut
+- uid: milk.Core.EasingFunctions.ElasticEaseIn*
+  commentId: Overload:milk.Core.EasingFunctions.ElasticEaseIn
+  href: milk.Core.EasingFunctions.html#milk_Core_EasingFunctions_ElasticEaseIn_System_Single_
+  name: ElasticEaseIn
+  nameWithType: EasingFunctions.ElasticEaseIn
+  fullName: milk.Core.EasingFunctions.ElasticEaseIn
+- uid: milk.Core.EasingFunctions.ElasticEaseOut*
+  commentId: Overload:milk.Core.EasingFunctions.ElasticEaseOut
+  href: milk.Core.EasingFunctions.html#milk_Core_EasingFunctions_ElasticEaseOut_System_Single_
+  name: ElasticEaseOut
+  nameWithType: EasingFunctions.ElasticEaseOut
+  fullName: milk.Core.EasingFunctions.ElasticEaseOut
+- uid: milk.Core.EasingFunctions.ElasticEaseInOut*
+  commentId: Overload:milk.Core.EasingFunctions.ElasticEaseInOut
+  href: milk.Core.EasingFunctions.html#milk_Core_EasingFunctions_ElasticEaseInOut_System_Single_
+  name: ElasticEaseInOut
+  nameWithType: EasingFunctions.ElasticEaseInOut
+  fullName: milk.Core.EasingFunctions.ElasticEaseInOut
+- uid: milk.Core.EasingFunctions.BounceEaseIn*
+  commentId: Overload:milk.Core.EasingFunctions.BounceEaseIn
+  href: milk.Core.EasingFunctions.html#milk_Core_EasingFunctions_BounceEaseIn_System_Single_
+  name: BounceEaseIn
+  nameWithType: EasingFunctions.BounceEaseIn
+  fullName: milk.Core.EasingFunctions.BounceEaseIn
+- uid: milk.Core.EasingFunctions.BounceEaseOut*
+  commentId: Overload:milk.Core.EasingFunctions.BounceEaseOut
+  href: milk.Core.EasingFunctions.html#milk_Core_EasingFunctions_BounceEaseOut_System_Single_
+  name: BounceEaseOut
+  nameWithType: EasingFunctions.BounceEaseOut
+  fullName: milk.Core.EasingFunctions.BounceEaseOut
+- uid: milk.Core.EasingFunctions.BounceEaseInOut*
+  commentId: Overload:milk.Core.EasingFunctions.BounceEaseInOut
+  href: milk.Core.EasingFunctions.html#milk_Core_EasingFunctions_BounceEaseInOut_System_Single_
+  name: BounceEaseInOut
+  nameWithType: EasingFunctions.BounceEaseInOut
+  fullName: milk.Core.EasingFunctions.BounceEaseInOut

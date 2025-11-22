@@ -2,10 +2,11 @@ using System;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using MonoGame.Extended;
+using milk.Core;
+using milk.Components;
+namespace milk.Systems;
 
-namespace milk;
-
-public class InputSystem : System
+public class InputSystem : milk.Core.System
 {
 
     public override void Init()

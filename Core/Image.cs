@@ -3,7 +3,7 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using MonoGame.Extended;
 
-namespace milk;
+namespace milk.Core;
 
 public class Image : SceneRenderable
 {
@@ -20,7 +20,7 @@ public class Image : SceneRenderable
         Vector2 position = default,
         float alpha = 1,
         Anchor anchor = Anchor.TopLeft,
-        SceneRenderable parent = null,
+        SceneRenderable? parent = null,
         Color backgroundColor = default,
         int borderWidth = 0,
         Color borderColor = default,

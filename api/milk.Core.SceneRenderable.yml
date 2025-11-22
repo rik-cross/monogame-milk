@@ -1,0 +1,686 @@
+### YamlMime:ManagedReference
+items:
+- uid: milk.Core.SceneRenderable
+  commentId: T:milk.Core.SceneRenderable
+  id: SceneRenderable
+  parent: milk.Core
+  children:
+  - milk.Core.SceneRenderable.#ctor(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,System.Single,milk.Core.Anchor,milk.Core.SceneRenderable)
+  - milk.Core.SceneRenderable.Alpha
+  - milk.Core.SceneRenderable.Anchor
+  - milk.Core.SceneRenderable.CalculateTopLeftPositionFromAnchor(Microsoft.Xna.Framework.Vector2)
+  - milk.Core.SceneRenderable.Draw
+  - milk.Core.SceneRenderable.GetPositionIncludingParent(Microsoft.Xna.Framework.Vector2)
+  - milk.Core.SceneRenderable.Parent
+  - milk.Core.SceneRenderable.Position
+  - milk.Core.SceneRenderable.Size
+  langs:
+  - csharp
+  - vb
+  name: SceneRenderable
+  nameWithType: SceneRenderable
+  fullName: milk.Core.SceneRenderable
+  type: Class
+  source:
+    remote:
+      path: Core/SceneRenderable.cs
+      branch: main
+      repo: git@github.com:rik-cross/monogame-milk.git
+    id: SceneRenderable
+    path: Core/SceneRenderable.cs
+    startLine: 28
+  assemblies:
+  - MonoGameECS
+  namespace: milk.Core
+  syntax:
+    content: public class SceneRenderable
+    content.vb: Public Class SceneRenderable
+  inheritance:
+  - System.Object
+  derivedClasses:
+  - milk.Core.Image
+  - milk.Core.Text
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: milk.Core.SceneRenderable.Position
+  commentId: P:milk.Core.SceneRenderable.Position
+  id: Position
+  parent: milk.Core.SceneRenderable
+  langs:
+  - csharp
+  - vb
+  name: Position
+  nameWithType: SceneRenderable.Position
+  fullName: milk.Core.SceneRenderable.Position
+  type: Property
+  source:
+    remote:
+      path: Core/SceneRenderable.cs
+      branch: main
+      repo: git@github.com:rik-cross/monogame-milk.git
+    id: Position
+    path: Core/SceneRenderable.cs
+    startLine: 30
+  assemblies:
+  - MonoGameECS
+  namespace: milk.Core
+  syntax:
+    content: public Vector2 Position { get; set; }
+    parameters: []
+    return:
+      type: Microsoft.Xna.Framework.Vector2
+    content.vb: Public Property Position As Vector2
+  overload: milk.Core.SceneRenderable.Position*
+- uid: milk.Core.SceneRenderable.Size
+  commentId: P:milk.Core.SceneRenderable.Size
+  id: Size
+  parent: milk.Core.SceneRenderable
+  langs:
+  - csharp
+  - vb
+  name: Size
+  nameWithType: SceneRenderable.Size
+  fullName: milk.Core.SceneRenderable.Size
+  type: Property
+  source:
+    remote:
+      path: Core/SceneRenderable.cs
+      branch: main
+      repo: git@github.com:rik-cross/monogame-milk.git
+    id: Size
+    path: Core/SceneRenderable.cs
+    startLine: 31
+  assemblies:
+  - MonoGameECS
+  namespace: milk.Core
+  syntax:
+    content: public Vector2 Size { get; set; }
+    parameters: []
+    return:
+      type: Microsoft.Xna.Framework.Vector2
+    content.vb: Public Property Size As Vector2
+  overload: milk.Core.SceneRenderable.Size*
+- uid: milk.Core.SceneRenderable.Alpha
+  commentId: F:milk.Core.SceneRenderable.Alpha
+  id: Alpha
+  parent: milk.Core.SceneRenderable
+  langs:
+  - csharp
+  - vb
+  name: Alpha
+  nameWithType: SceneRenderable.Alpha
+  fullName: milk.Core.SceneRenderable.Alpha
+  type: Field
+  source:
+    remote:
+      path: Core/SceneRenderable.cs
+      branch: main
+      repo: git@github.com:rik-cross/monogame-milk.git
+    id: Alpha
+    path: Core/SceneRenderable.cs
+    startLine: 32
+  assemblies:
+  - MonoGameECS
+  namespace: milk.Core
+  syntax:
+    content: public float Alpha
+    return:
+      type: System.Single
+    content.vb: Public Alpha As Single
+- uid: milk.Core.SceneRenderable.Anchor
+  commentId: P:milk.Core.SceneRenderable.Anchor
+  id: Anchor
+  parent: milk.Core.SceneRenderable
+  langs:
+  - csharp
+  - vb
+  name: Anchor
+  nameWithType: SceneRenderable.Anchor
+  fullName: milk.Core.SceneRenderable.Anchor
+  type: Property
+  source:
+    remote:
+      path: Core/SceneRenderable.cs
+      branch: main
+      repo: git@github.com:rik-cross/monogame-milk.git
+    id: Anchor
+    path: Core/SceneRenderable.cs
+    startLine: 33
+  assemblies:
+  - MonoGameECS
+  namespace: milk.Core
+  syntax:
+    content: public Anchor Anchor { get; set; }
+    parameters: []
+    return:
+      type: milk.Core.Anchor
+    content.vb: Public Property Anchor As Anchor
+  overload: milk.Core.SceneRenderable.Anchor*
+- uid: milk.Core.SceneRenderable.Parent
+  commentId: F:milk.Core.SceneRenderable.Parent
+  id: Parent
+  parent: milk.Core.SceneRenderable
+  langs:
+  - csharp
+  - vb
+  name: Parent
+  nameWithType: SceneRenderable.Parent
+  fullName: milk.Core.SceneRenderable.Parent
+  type: Field
+  source:
+    remote:
+      path: Core/SceneRenderable.cs
+      branch: main
+      repo: git@github.com:rik-cross/monogame-milk.git
+    id: Parent
+    path: Core/SceneRenderable.cs
+    startLine: 34
+  assemblies:
+  - MonoGameECS
+  namespace: milk.Core
+  syntax:
+    content: protected readonly SceneRenderable? Parent
+    return:
+      type: milk.Core.SceneRenderable
+    content.vb: Protected ReadOnly Parent As SceneRenderable
+- uid: milk.Core.SceneRenderable.#ctor(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,System.Single,milk.Core.Anchor,milk.Core.SceneRenderable)
+  commentId: M:milk.Core.SceneRenderable.#ctor(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,System.Single,milk.Core.Anchor,milk.Core.SceneRenderable)
+  id: '#ctor(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,System.Single,milk.Core.Anchor,milk.Core.SceneRenderable)'
+  parent: milk.Core.SceneRenderable
+  langs:
+  - csharp
+  - vb
+  name: SceneRenderable(Vector2, Vector2, float, Anchor, SceneRenderable?)
+  nameWithType: SceneRenderable.SceneRenderable(Vector2, Vector2, float, Anchor, SceneRenderable?)
+  fullName: milk.Core.SceneRenderable.SceneRenderable(Microsoft.Xna.Framework.Vector2, Microsoft.Xna.Framework.Vector2, float, milk.Core.Anchor, milk.Core.SceneRenderable?)
+  type: Constructor
+  source:
+    remote:
+      path: Core/SceneRenderable.cs
+      branch: main
+      repo: git@github.com:rik-cross/monogame-milk.git
+    id: .ctor
+    path: Core/SceneRenderable.cs
+    startLine: 36
+  assemblies:
+  - MonoGameECS
+  namespace: milk.Core
+  syntax:
+    content: public SceneRenderable(Vector2 size, Vector2 position = default, float alpha = 1, Anchor anchor = Anchor.TopLeft, SceneRenderable? parent = null)
+    parameters:
+    - id: size
+      type: Microsoft.Xna.Framework.Vector2
+    - id: position
+      type: Microsoft.Xna.Framework.Vector2
+    - id: alpha
+      type: System.Single
+    - id: anchor
+      type: milk.Core.Anchor
+    - id: parent
+      type: milk.Core.SceneRenderable
+    content.vb: Public Sub New(size As Vector2, position As Vector2 = Nothing, alpha As Single = 1, anchor As Anchor = Anchor.TopLeft, parent As SceneRenderable = Nothing)
+  overload: milk.Core.SceneRenderable.#ctor*
+  nameWithType.vb: SceneRenderable.New(Vector2, Vector2, Single, Anchor, SceneRenderable)
+  fullName.vb: milk.Core.SceneRenderable.New(Microsoft.Xna.Framework.Vector2, Microsoft.Xna.Framework.Vector2, Single, milk.Core.Anchor, milk.Core.SceneRenderable)
+  name.vb: New(Vector2, Vector2, Single, Anchor, SceneRenderable)
+- uid: milk.Core.SceneRenderable.CalculateTopLeftPositionFromAnchor(Microsoft.Xna.Framework.Vector2)
+  commentId: M:milk.Core.SceneRenderable.CalculateTopLeftPositionFromAnchor(Microsoft.Xna.Framework.Vector2)
+  id: CalculateTopLeftPositionFromAnchor(Microsoft.Xna.Framework.Vector2)
+  parent: milk.Core.SceneRenderable
+  langs:
+  - csharp
+  - vb
+  name: CalculateTopLeftPositionFromAnchor(Vector2)
+  nameWithType: SceneRenderable.CalculateTopLeftPositionFromAnchor(Vector2)
+  fullName: milk.Core.SceneRenderable.CalculateTopLeftPositionFromAnchor(Microsoft.Xna.Framework.Vector2)
+  type: Method
+  source:
+    remote:
+      path: Core/SceneRenderable.cs
+      branch: main
+      repo: git@github.com:rik-cross/monogame-milk.git
+    id: CalculateTopLeftPositionFromAnchor
+    path: Core/SceneRenderable.cs
+    startLine: 58
+  assemblies:
+  - MonoGameECS
+  namespace: milk.Core
+  syntax:
+    content: protected Vector2 CalculateTopLeftPositionFromAnchor(Vector2 position)
+    parameters:
+    - id: position
+      type: Microsoft.Xna.Framework.Vector2
+    return:
+      type: Microsoft.Xna.Framework.Vector2
+    content.vb: Protected Function CalculateTopLeftPositionFromAnchor(position As Vector2) As Vector2
+  overload: milk.Core.SceneRenderable.CalculateTopLeftPositionFromAnchor*
+- uid: milk.Core.SceneRenderable.GetPositionIncludingParent(Microsoft.Xna.Framework.Vector2)
+  commentId: M:milk.Core.SceneRenderable.GetPositionIncludingParent(Microsoft.Xna.Framework.Vector2)
+  id: GetPositionIncludingParent(Microsoft.Xna.Framework.Vector2)
+  parent: milk.Core.SceneRenderable
+  langs:
+  - csharp
+  - vb
+  name: GetPositionIncludingParent(Vector2)
+  nameWithType: SceneRenderable.GetPositionIncludingParent(Vector2)
+  fullName: milk.Core.SceneRenderable.GetPositionIncludingParent(Microsoft.Xna.Framework.Vector2)
+  type: Method
+  source:
+    remote:
+      path: Core/SceneRenderable.cs
+      branch: main
+      repo: git@github.com:rik-cross/monogame-milk.git
+    id: GetPositionIncludingParent
+    path: Core/SceneRenderable.cs
+    startLine: 75
+  assemblies:
+  - MonoGameECS
+  namespace: milk.Core
+  syntax:
+    content: protected Vector2 GetPositionIncludingParent(Vector2 position)
+    parameters:
+    - id: position
+      type: Microsoft.Xna.Framework.Vector2
+    return:
+      type: Microsoft.Xna.Framework.Vector2
+    content.vb: Protected Function GetPositionIncludingParent(position As Vector2) As Vector2
+  overload: milk.Core.SceneRenderable.GetPositionIncludingParent*
+- uid: milk.Core.SceneRenderable.Draw
+  commentId: M:milk.Core.SceneRenderable.Draw
+  id: Draw
+  parent: milk.Core.SceneRenderable
+  langs:
+  - csharp
+  - vb
+  name: Draw()
+  nameWithType: SceneRenderable.Draw()
+  fullName: milk.Core.SceneRenderable.Draw()
+  type: Method
+  source:
+    remote:
+      path: Core/SceneRenderable.cs
+      branch: main
+      repo: git@github.com:rik-cross/monogame-milk.git
+    id: Draw
+    path: Core/SceneRenderable.cs
+    startLine: 83
+  assemblies:
+  - MonoGameECS
+  namespace: milk.Core
+  syntax:
+    content: public virtual void Draw()
+    content.vb: Public Overridable Sub Draw()
+  overload: milk.Core.SceneRenderable.Draw*
+references:
+- uid: milk.Core
+  commentId: N:milk.Core
+  href: milk.html
+  name: milk.Core
+  nameWithType: milk.Core
+  fullName: milk.Core
+  spec.csharp:
+  - uid: milk
+    name: milk
+    href: milk.html
+  - name: .
+  - uid: milk.Core
+    name: Core
+    href: milk.Core.html
+  spec.vb:
+  - uid: milk
+    name: milk
+    href: milk.html
+  - name: .
+  - uid: milk.Core
+    name: Core
+    href: milk.Core.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: milk.Core.SceneRenderable.Position*
+  commentId: Overload:milk.Core.SceneRenderable.Position
+  href: milk.Core.SceneRenderable.html#milk_Core_SceneRenderable_Position
+  name: Position
+  nameWithType: SceneRenderable.Position
+  fullName: milk.Core.SceneRenderable.Position
+- uid: Microsoft.Xna.Framework.Vector2
+  commentId: T:Microsoft.Xna.Framework.Vector2
+  parent: Microsoft.Xna.Framework
+  isExternal: true
+  name: Vector2
+  nameWithType: Vector2
+  fullName: Microsoft.Xna.Framework.Vector2
+- uid: Microsoft.Xna.Framework
+  commentId: N:Microsoft.Xna.Framework
+  isExternal: true
+  name: Microsoft.Xna.Framework
+  nameWithType: Microsoft.Xna.Framework
+  fullName: Microsoft.Xna.Framework
+  spec.csharp:
+  - uid: Microsoft
+    name: Microsoft
+    isExternal: true
+  - name: .
+  - uid: Microsoft.Xna
+    name: Xna
+    isExternal: true
+  - name: .
+  - uid: Microsoft.Xna.Framework
+    name: Framework
+    isExternal: true
+  spec.vb:
+  - uid: Microsoft
+    name: Microsoft
+    isExternal: true
+  - name: .
+  - uid: Microsoft.Xna
+    name: Xna
+    isExternal: true
+  - name: .
+  - uid: Microsoft.Xna.Framework
+    name: Framework
+    isExternal: true
+- uid: milk.Core.SceneRenderable.Size*
+  commentId: Overload:milk.Core.SceneRenderable.Size
+  href: milk.Core.SceneRenderable.html#milk_Core_SceneRenderable_Size
+  name: Size
+  nameWithType: SceneRenderable.Size
+  fullName: milk.Core.SceneRenderable.Size
+- uid: System.Single
+  commentId: T:System.Single
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.single
+  name: float
+  nameWithType: float
+  fullName: float
+  nameWithType.vb: Single
+  fullName.vb: Single
+  name.vb: Single
+- uid: milk.Core.SceneRenderable.Anchor*
+  commentId: Overload:milk.Core.SceneRenderable.Anchor
+  href: milk.Core.SceneRenderable.html#milk_Core_SceneRenderable_Anchor
+  name: Anchor
+  nameWithType: SceneRenderable.Anchor
+  fullName: milk.Core.SceneRenderable.Anchor
+- uid: milk.Core.Anchor
+  commentId: T:milk.Core.Anchor
+  parent: milk.Core
+  href: milk.Core.Anchor.html
+  name: Anchor
+  nameWithType: Anchor
+  fullName: milk.Core.Anchor
+- uid: milk.Core.SceneRenderable
+  commentId: T:milk.Core.SceneRenderable
+  parent: milk.Core
+  href: milk.Core.SceneRenderable.html
+  name: SceneRenderable
+  nameWithType: SceneRenderable
+  fullName: milk.Core.SceneRenderable
+- uid: milk.Core.SceneRenderable.#ctor*
+  commentId: Overload:milk.Core.SceneRenderable.#ctor
+  href: milk.Core.SceneRenderable.html#milk_Core_SceneRenderable__ctor_Microsoft_Xna_Framework_Vector2_Microsoft_Xna_Framework_Vector2_System_Single_milk_Core_Anchor_milk_Core_SceneRenderable_
+  name: SceneRenderable
+  nameWithType: SceneRenderable.SceneRenderable
+  fullName: milk.Core.SceneRenderable.SceneRenderable
+  nameWithType.vb: SceneRenderable.New
+  fullName.vb: milk.Core.SceneRenderable.New
+  name.vb: New
+- uid: milk.Core.SceneRenderable.CalculateTopLeftPositionFromAnchor*
+  commentId: Overload:milk.Core.SceneRenderable.CalculateTopLeftPositionFromAnchor
+  href: milk.Core.SceneRenderable.html#milk_Core_SceneRenderable_CalculateTopLeftPositionFromAnchor_Microsoft_Xna_Framework_Vector2_
+  name: CalculateTopLeftPositionFromAnchor
+  nameWithType: SceneRenderable.CalculateTopLeftPositionFromAnchor
+  fullName: milk.Core.SceneRenderable.CalculateTopLeftPositionFromAnchor
+- uid: milk.Core.SceneRenderable.GetPositionIncludingParent*
+  commentId: Overload:milk.Core.SceneRenderable.GetPositionIncludingParent
+  href: milk.Core.SceneRenderable.html#milk_Core_SceneRenderable_GetPositionIncludingParent_Microsoft_Xna_Framework_Vector2_
+  name: GetPositionIncludingParent
+  nameWithType: SceneRenderable.GetPositionIncludingParent
+  fullName: milk.Core.SceneRenderable.GetPositionIncludingParent
+- uid: milk.Core.SceneRenderable.Draw*
+  commentId: Overload:milk.Core.SceneRenderable.Draw
+  href: milk.Core.SceneRenderable.html#milk_Core_SceneRenderable_Draw
+  name: Draw
+  nameWithType: SceneRenderable.Draw
+  fullName: milk.Core.SceneRenderable.Draw

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
-namespace milk;
+namespace milk.Core;
 
 public abstract class Transition {
     public float elapsedDuration;
@@ -64,9 +64,9 @@ public abstract class Transition {
         {
             finished = true;
             if (toScenes.Count > 0)
-                EngineGlobals.game.sceneManager.SetScene(toScenes, null, !unload);
+                EngineGlobals.game.sceneManager.SetScene(toScenes, null, !unload, true);
             else
-                EngineGlobals.game.sceneManager.RemoveScene(null, EngineGlobals.game.sceneManager.numberOfScenesToRemove);
+                EngineGlobals.game.sceneManager.RemoveScene(null, EngineGlobals.game.sceneManager.numberOfScenesToRemove, true);
         }
         //Update(gameTime);
     }

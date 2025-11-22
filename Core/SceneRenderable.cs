@@ -17,7 +17,7 @@
 using System;
 using Microsoft.Xna.Framework;
 
-namespace milk;
+namespace milk.Core;
 
 public enum Anchor
 {

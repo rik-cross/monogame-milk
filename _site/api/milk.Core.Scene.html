@@ -1,0 +1,1659 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Class Scene | milk </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Class Scene | milk ">
+      
+      <meta name="description" content="A scene is a collection of entities and systems, and can be thought of as game &#39;screens&#39;. Each system in a scene acts on all entities in the scene with the required set of components.">
+      <link rel="icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/rik-cross/monogame-milk/new/main/apiSpec/new?filename=milk_Core_Scene.md&amp;value=---%0Auid%3A%20milk.Core.Scene%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../logo.svg" alt="milk">
+            milk
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="milk.Core.Scene">
+
+
+
+  <h1 id="milk_Core_Scene" data-uid="milk.Core.Scene" class="text-break">
+Class Scene  <a class="header-action link-secondary" title="View source" href="https://github.com/rik-cross/monogame-milk/blob/main/Core/Scene.cs/#L23"><i class="bi bi-code-slash"></i></a>
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><a class="xref" href="milk.html">milk</a>.<a class="xref" href="milk.Core.html">Core</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>MonoGameECS.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"><p>A scene is a collection of entities and systems, and can be thought
+of as game 'screens'. Each system in a scene acts on all entities in
+the scene with the required set of components.</p>
+</div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public abstract class Scene</code></pre>
+  </div>
+
+
+
+
+  <dl class="typelist inheritance">
+    <dt>Inheritance</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+      <div><span class="xref">Scene</span></div>
+    </dd>
+  </dl>
+
+
+
+  <dl class="typelist inheritedMembers">
+    <dt>Inherited Members</dt>
+    <dd>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
+    </div>
+  </dd></dl>
+
+
+
+
+
+
+  <h2 class="section" id="constructors">Constructors
+</h2>
+
+
+  <a id="milk_Core_Scene__ctor_" data-uid="milk.Core.Scene.#ctor*"></a>
+
+  <h3 id="milk_Core_Scene__ctor" data-uid="milk.Core.Scene.#ctor">
+  Scene()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/rik-cross/monogame-milk/blob/main/Core/Scene.cs/#L146"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>A scene is a bit like a game 'screen' and holds
+entities and systems, along with other functionalilty
+such as cameras. Systems in a scene act on scene entities
+with the required set of components present.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Scene()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="fields">Fields
+</h2>
+
+
+
+  <h3 id="milk_Core_Scene_Acceleration" data-uid="milk.Core.Scene.Acceleration">
+  Acceleration
+  <a class="header-action link-secondary" title="View source" href="https://github.com/rik-cross/monogame-milk/blob/main/Core/Scene.cs/#L138"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>The scene's acceleration, which is applied to all entities.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Vector2 Acceleration</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">Vector2</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="milk_Core_Scene_BackgroundColor" data-uid="milk.Core.Scene.BackgroundColor">
+  BackgroundColor
+  <a class="header-action link-secondary" title="View source" href="https://github.com/rik-cross/monogame-milk/blob/main/Core/Scene.cs/#L64"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Background color.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Color BackgroundColor</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">Color</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="milk_Core_Scene_DrawSceneBelow" data-uid="milk.Core.Scene.DrawSceneBelow">
+  DrawSceneBelow
+  <a class="header-action link-secondary" title="View source" href="https://github.com/rik-cross/monogame-milk/blob/main/Core/Scene.cs/#L87"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Specifies whether to draw the scene below this one in the scene stack.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool DrawSceneBelow</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="milk_Core_Scene_EntitySortMethod" data-uid="milk.Core.Scene.EntitySortMethod">
+  EntitySortMethod
+  <a class="header-action link-secondary" title="View source" href="https://github.com/rik-cross/monogame-milk/blob/main/Core/Scene.cs/#L94"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Set a method for sorting entities.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Comparison&lt;Entity&gt;? EntitySortMethod</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.comparison-1">Comparison</a>&lt;<a class="xref" href="milk.Core.Entity.html">Entity</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="milk_Core_Scene_IncludeAlRegisteredSystems" data-uid="milk.Core.Scene.IncludeAlRegisteredSystems">
+  IncludeAlRegisteredSystems
+  <a class="header-action link-secondary" title="View source" href="https://github.com/rik-cross/monogame-milk/blob/main/Core/Scene.cs/#L71"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>By default all systems are present in all scenes.
+Setting this to <code>false</code> allows control over which
+systems should be present within a scene.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IncludeAlRegisteredSystems</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="milk_Core_Scene_InputSceneBelow" data-uid="milk.Core.Scene.InputSceneBelow">
+  InputSceneBelow
+  <a class="header-action link-secondary" title="View source" href="https://github.com/rik-cross/monogame-milk/blob/main/Core/Scene.cs/#L82"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Specifies whether to process input in the scene below this one in the scene stack.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool InputSceneBelow</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="milk_Core_Scene_Middle" data-uid="milk.Core.Scene.Middle">
+  Middle
+  <a class="header-action link-secondary" title="View source" href="https://github.com/rik-cross/monogame-milk/blob/main/Core/Scene.cs/#L55"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>The (x,y) center point of the scene.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public readonly Vector2 Middle</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">Vector2</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="milk_Core_Scene_Size" data-uid="milk.Core.Scene.Size">
+  Size
+  <a class="header-action link-secondary" title="View source" href="https://github.com/rik-cross/monogame-milk/blob/main/Core/Scene.cs/#L50"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>The (x,y) scene dimensions.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public readonly Vector2 Size</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">Vector2</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="milk_Core_Scene_UpdateSceneBelow" data-uid="milk.Core.Scene.UpdateSceneBelow">
+  UpdateSceneBelow
+  <a class="header-action link-secondary" title="View source" href="https://github.com/rik-cross/monogame-milk/blob/main/Core/Scene.cs/#L77"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Specifies whether to update the scene below this one in the scene stack.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool UpdateSceneBelow</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="milk_Core_Scene_Velocity" data-uid="milk.Core.Scene.Velocity">
+  Velocity
+  <a class="header-action link-secondary" title="View source" href="https://github.com/rik-cross/monogame-milk/blob/main/Core/Scene.cs/#L133"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>The scene's velocity, which is applied to all entities.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Vector2 Velocity</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">Vector2</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="milk_Core_Scene_cameras" data-uid="milk.Core.Scene.cameras">
+  cameras
+  <a class="header-action link-secondary" title="View source" href="https://github.com/rik-cross/monogame-milk/blob/main/Core/Scene.cs/#L72"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected List&lt;Camera&gt; cameras</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="milk.Core.Camera.html">Camera</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="milk_Core_Scene_content" data-uid="milk.Core.Scene.content">
+  content
+  <a class="header-action link-secondary" title="View source" href="https://github.com/rik-cross/monogame-milk/blob/main/Core/Scene.cs/#L35"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>MonoGame content object for working with game assets.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected ContentManager content</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">ContentManager</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="milk_Core_Scene_elapsedTime" data-uid="milk.Core.Scene.elapsedTime">
+  elapsedTime
+  <a class="header-action link-secondary" title="View source" href="https://github.com/rik-cross/monogame-milk/blob/main/Core/Scene.cs/#L56"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float elapsedTime</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="milk_Core_Scene_game" data-uid="milk.Core.Scene.game">
+  game
+  <a class="header-action link-secondary" title="View source" href="https://github.com/rik-cross/monogame-milk/blob/main/Core/Scene.cs/#L40"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>The parent game object.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Game game</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="milk.Core.Game.html">Game</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="milk_Core_Scene_mapSize" data-uid="milk.Core.Scene.mapSize">
+  mapSize
+  <a class="header-action link-secondary" title="View source" href="https://github.com/rik-cross/monogame-milk/blob/main/Core/Scene.cs/#L100"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Set the size of the map. The size is set automatically if
+adding a Tiled Map.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Vector2? mapSize</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">Vector2</span>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="milk_Core_Scene_spriteBatch" data-uid="milk.Core.Scene.spriteBatch">
+  spriteBatch
+  <a class="header-action link-secondary" title="View source" href="https://github.com/rik-cross/monogame-milk/blob/main/Core/Scene.cs/#L45"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>The spriteBatch object.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected SpriteBatch spriteBatch</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">SpriteBatch</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="properties">Properties
+</h2>
+
+
+  <a id="milk_Core_Scene_Map_" data-uid="milk.Core.Scene.Map*"></a>
+
+  <h3 id="milk_Core_Scene_Map" data-uid="milk.Core.Scene.Map">
+  Map
+  <a class="header-action link-secondary" title="View source" href="https://github.com/rik-cross/monogame-milk/blob/main/Core/Scene.cs/#L108"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>A Tiled map.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public TiledMap? Map { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">TiledMap</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h2 class="section" id="methods">Methods
+</h2>
+
+
+  <a id="milk_Core_Scene_AddCamera_" data-uid="milk.Core.Scene.AddCamera*"></a>
+
+  <h3 id="milk_Core_Scene_AddCamera_milk_Core_Camera_" data-uid="milk.Core.Scene.AddCamera(milk.Core.Camera)">
+  AddCamera(Camera)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/rik-cross/monogame-milk/blob/main/Core/Scene.cs/#L387"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Adds a camera object to a scene.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected void AddCamera(Camera camera)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>camera</code> <a class="xref" href="milk.Core.Camera.html">Camera</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="milk_Core_Scene_AddEntity_" data-uid="milk.Core.Scene.AddEntity*"></a>
+
+  <h3 id="milk_Core_Scene_AddEntity_milk_Core_Entity_" data-uid="milk.Core.Scene.AddEntity(milk.Core.Entity)">
+  AddEntity(Entity)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/rik-cross/monogame-milk/blob/main/Core/Scene.cs/#L427"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Adds an entity object to the scene.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void AddEntity(Entity entity)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>entity</code> <a class="xref" href="milk.Core.Entity.html">Entity</a></dt>
+    <dd><p>The entity to add.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="milk_Core_Scene_AddSystem_" data-uid="milk.Core.Scene.AddSystem*"></a>
+
+  <h3 id="milk_Core_Scene_AddSystem__1" data-uid="milk.Core.Scene.AddSystem``1">
+  AddSystem&lt;T&gt;()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/rik-cross/monogame-milk/blob/main/Core/Scene.cs/#L619"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Add a (registered) system type to a scene (calling this
+method isn't required if IncludeAlRegisteredSystems == true,
+which it is by default).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void AddSystem&lt;T&gt;() where T : System</code></pre>
+  </div>
+
+
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd><p>The type of the registered system to add.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="milk_Core_Scene_AddTimedAction_" data-uid="milk.Core.Scene.AddTimedAction*"></a>
+
+  <h3 id="milk_Core_Scene_AddTimedAction_System_Single_System_Action_System_String_" data-uid="milk.Core.Scene.AddTimedAction(System.Single,System.Action,System.String)">
+  AddTimedAction(float, Action, string?)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/rik-cross/monogame-milk/blob/main/Core/Scene.cs/#L709"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Adds an action to execute after a set time.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void AddTimedAction(float elapsedTime, Action action, string? name = null)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>elapsedTime</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd><p>The delay before executing the action.</p>
+</dd>
+    <dt><code>action</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.action">Action</a></dt>
+    <dd><p>The action to execute.</p>
+</dd>
+    <dt><code>name</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>Optional name, to facilitate deletion.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="milk_Core_Scene_DeleteEntitiesByTag_" data-uid="milk.Core.Scene.DeleteEntitiesByTag*"></a>
+
+  <h3 id="milk_Core_Scene_DeleteEntitiesByTag_System_String___" data-uid="milk.Core.Scene.DeleteEntitiesByTag(System.String[])">
+  DeleteEntitiesByTag(params string[])
+  <a class="header-action link-secondary" title="View source" href="https://github.com/rik-cross/monogame-milk/blob/main/Core/Scene.cs/#L599"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Deletes all entities containing the specified tags.
+Tags are checked in lower-case.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void DeleteEntitiesByTag(params string[] tags)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>tags</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>[]</dt>
+    <dd><p>One or more tags to</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="milk_Core_Scene_DeleteEntityByName_" data-uid="milk.Core.Scene.DeleteEntityByName*"></a>
+
+  <h3 id="milk_Core_Scene_DeleteEntityByName_System_String_" data-uid="milk.Core.Scene.DeleteEntityByName(System.String)">
+  DeleteEntityByName(string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/rik-cross/monogame-milk/blob/main/Core/Scene.cs/#L580"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Deletes the entity in the scene with the specified name.
+The name supplied is checked in lower-case.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void DeleteEntityByName(string name)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>name</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>The name of the entity to delete.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="milk_Core_Scene_Draw_" data-uid="milk.Core.Scene.Draw*"></a>
+
+  <h3 id="milk_Core_Scene_Draw" data-uid="milk.Core.Scene.Draw">
+  Draw()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/rik-cross/monogame-milk/blob/main/Core/Scene.cs/#L751"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Called once per frame of the game loop, and handles scene-level drawing.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void Draw()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="milk_Core_Scene_GetCameraByName_" data-uid="milk.Core.Scene.GetCameraByName*"></a>
+
+  <h3 id="milk_Core_Scene_GetCameraByName_System_String_" data-uid="milk.Core.Scene.GetCameraByName(System.String)">
+  GetCameraByName(string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/rik-cross/monogame-milk/blob/main/Core/Scene.cs/#L399"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Returns a camera with the specified (unique) name.
+The name is checked in lower-case.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Camera? GetCameraByName(string name)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>name</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>The name of the camera to find.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="milk.Core.Camera.html">Camera</a></dt>
+    <dd><p>A camera, or null if no camera exists with the specified name.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="milk_Core_Scene_GetEntitiesByTag_" data-uid="milk.Core.Scene.GetEntitiesByTag*"></a>
+
+  <h3 id="milk_Core_Scene_GetEntitiesByTag_System_String___" data-uid="milk.Core.Scene.GetEntitiesByTag(System.String[])">
+  GetEntitiesByTag(params string[])
+  <a class="header-action link-secondary" title="View source" href="https://github.com/rik-cross/monogame-milk/blob/main/Core/Scene.cs/#L566"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets all entities that include all supplied tags.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public List&lt;Entity&gt; GetEntitiesByTag(params string[] tags)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>tags</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>[]</dt>
+    <dd><p>One or more tags to check.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="milk.Core.Entity.html">Entity</a>&gt;</dt>
+    <dd><p>A list of all entities with all tags. This is always a list, and could be empty.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="milk_Core_Scene_GetEntityByName_" data-uid="milk.Core.Scene.GetEntityByName*"></a>
+
+  <h3 id="milk_Core_Scene_GetEntityByName_System_String_" data-uid="milk.Core.Scene.GetEntityByName(System.String)">
+  GetEntityByName(string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/rik-cross/monogame-milk/blob/main/Core/Scene.cs/#L556"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets the entity with the provided (unique) name.
+The name supplied is converted to lower-case.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Entity? GetEntityByName(string name)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>name</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>The name to check.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="milk.Core.Entity.html">Entity</a></dt>
+    <dd><p>An entity if one is found, or null.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="milk_Core_Scene_GetSceneBelow_" data-uid="milk.Core.Scene.GetSceneBelow*"></a>
+
+  <h3 id="milk_Core_Scene_GetSceneBelow_System_Collections_Generic_List_milk_Core_Scene__" data-uid="milk.Core.Scene.GetSceneBelow(System.Collections.Generic.List{milk.Core.Scene})">
+  GetSceneBelow(List&lt;Scene&gt;)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/rik-cross/monogame-milk/blob/main/Core/Scene.cs/#L671"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets the scene below this scene in the scene list
+(or null if there isn't one).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Scene? GetSceneBelow(List&lt;Scene&gt; scenes)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>scenes</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="milk.Core.Scene.html">Scene</a>&gt;</dt>
+    <dd><p>The scene list to check against.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="milk.Core.Scene.html">Scene</a></dt>
+    <dd><p>A scene, or null if no scene exists.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="milk_Core_Scene_HasEntity_" data-uid="milk.Core.Scene.HasEntity*"></a>
+
+  <h3 id="milk_Core_Scene_HasEntity_milk_Core_Entity_" data-uid="milk.Core.Scene.HasEntity(milk.Core.Entity)">
+  HasEntity(Entity)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/rik-cross/monogame-milk/blob/main/Core/Scene.cs/#L418"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Returns <code>true</code> is the entity provided exists in the scene.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool HasEntity(Entity entity)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>entity</code> <a class="xref" href="milk.Core.Entity.html">Entity</a></dt>
+    <dd><p>The entity to check.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p>A Boolean indicating the presence of the entity in the scene.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="milk_Core_Scene_HasSystem_" data-uid="milk.Core.Scene.HasSystem*"></a>
+
+  <h3 id="milk_Core_Scene_HasSystem__1" data-uid="milk.Core.Scene.HasSystem``1">
+  HasSystem&lt;T&gt;()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/rik-cross/monogame-milk/blob/main/Core/Scene.cs/#L660"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Returns true if a system of the specified type
+exists in the scene.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool HasSystem&lt;T&gt;() where T : System</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p>Bool, true if a system of the specified type exists.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd><p>The type of system to find.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="milk_Core_Scene_Init_" data-uid="milk.Core.Scene.Init*"></a>
+
+  <h3 id="milk_Core_Scene_Init" data-uid="milk.Core.Scene.Init">
+  Init()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/rik-cross/monogame-milk/blob/main/Core/Scene.cs/#L734"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Called once when a scene is created.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void Init()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="milk_Core_Scene_Input_" data-uid="milk.Core.Scene.Input*"></a>
+
+  <h3 id="milk_Core_Scene_Input_Microsoft_Xna_Framework_GameTime_" data-uid="milk.Core.Scene.Input(Microsoft.Xna.Framework.GameTime)">
+  Input(GameTime)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/rik-cross/monogame-milk/blob/main/Core/Scene.cs/#L746"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Called once per frame of the game loop, and handles scene-level input.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void Input(GameTime gameTime)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>gameTime</code> <span class="xref">GameTime</span></dt>
+    <dd><p>The MonoGame gameTime object.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="milk_Core_Scene_OnEnter_" data-uid="milk.Core.Scene.OnEnter*"></a>
+
+  <h3 id="milk_Core_Scene_OnEnter" data-uid="milk.Core.Scene.OnEnter">
+  OnEnter()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/rik-cross/monogame-milk/blob/main/Core/Scene.cs/#L760"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Called once when the scene becomes the active scene.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void OnEnter()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="milk_Core_Scene_OnEntityAdded_" data-uid="milk.Core.Scene.OnEntityAdded*"></a>
+
+  <h3 id="milk_Core_Scene_OnEntityAdded_milk_Core_Entity_" data-uid="milk.Core.Scene.OnEntityAdded(milk.Core.Entity)">
+  OnEntityAdded(Entity)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/rik-cross/monogame-milk/blob/main/Core/Scene.cs/#L771"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Called once whenever an entity is added to the scene.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void OnEntityAdded(Entity entity)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>entity</code> <a class="xref" href="milk.Core.Entity.html">Entity</a></dt>
+    <dd><p>The entity that has been added.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="milk_Core_Scene_OnEntityRemoved_" data-uid="milk.Core.Scene.OnEntityRemoved*"></a>
+
+  <h3 id="milk_Core_Scene_OnEntityRemoved_milk_Core_Entity_" data-uid="milk.Core.Scene.OnEntityRemoved(milk.Core.Entity)">
+  OnEntityRemoved(Entity)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/rik-cross/monogame-milk/blob/main/Core/Scene.cs/#L777"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Called once whenever an entity is removed from the scene.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void OnEntityRemoved(Entity entity)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>entity</code> <a class="xref" href="milk.Core.Entity.html">Entity</a></dt>
+    <dd><p>The entity that is being removed.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="milk_Core_Scene_OnExit_" data-uid="milk.Core.Scene.OnExit*"></a>
+
+  <h3 id="milk_Core_Scene_OnExit" data-uid="milk.Core.Scene.OnExit">
+  OnExit()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/rik-cross/monogame-milk/blob/main/Core/Scene.cs/#L765"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Called once when the scene is no longer the active scene.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void OnExit()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="milk_Core_Scene_RemoveAllEntities_" data-uid="milk.Core.Scene.RemoveAllEntities*"></a>
+
+  <h3 id="milk_Core_Scene_RemoveAllEntities" data-uid="milk.Core.Scene.RemoveAllEntities">
+  RemoveAllEntities()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/rik-cross/monogame-milk/blob/main/Core/Scene.cs/#L504"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Removes all entities from the scene.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void RemoveAllEntities()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="milk_Core_Scene_RemoveAllSystems_" data-uid="milk.Core.Scene.RemoveAllSystems*"></a>
+
+  <h3 id="milk_Core_Scene_RemoveAllSystems" data-uid="milk.Core.Scene.RemoveAllSystems">
+  RemoveAllSystems()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/rik-cross/monogame-milk/blob/main/Core/Scene.cs/#L647"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Removes all systems from the scene</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void RemoveAllSystems()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="milk_Core_Scene_RemoveEntitiesByTag_" data-uid="milk.Core.Scene.RemoveEntitiesByTag*"></a>
+
+  <h3 id="milk_Core_Scene_RemoveEntitiesByTag_System_String___" data-uid="milk.Core.Scene.RemoveEntitiesByTag(System.String[])">
+  RemoveEntitiesByTag(params string[])
+  <a class="header-action link-secondary" title="View source" href="https://github.com/rik-cross/monogame-milk/blob/main/Core/Scene.cs/#L492"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Removes the entities with the specified tags from the scene.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void RemoveEntitiesByTag(params string[] tags)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>tags</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>[]</dt>
+    <dd><p>One or more tags that the entities must have.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="milk_Core_Scene_RemoveEntity_" data-uid="milk.Core.Scene.RemoveEntity*"></a>
+
+  <h3 id="milk_Core_Scene_RemoveEntity_milk_Core_Entity_" data-uid="milk.Core.Scene.RemoveEntity(milk.Core.Entity)">
+  RemoveEntity(Entity)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/rik-cross/monogame-milk/blob/main/Core/Scene.cs/#L461"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Removes the specified entity from the scene.
+Note that the entity isn't 'deleted'.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void RemoveEntity(Entity entity)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>entity</code> <a class="xref" href="milk.Core.Entity.html">Entity</a></dt>
+    <dd><p>The entity to remove.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="milk_Core_Scene_RemoveEntityByName_" data-uid="milk.Core.Scene.RemoveEntityByName*"></a>
+
+  <h3 id="milk_Core_Scene_RemoveEntityByName_System_String_" data-uid="milk.Core.Scene.RemoveEntityByName(System.String)">
+  RemoveEntityByName(string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/rik-cross/monogame-milk/blob/main/Core/Scene.cs/#L479"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Removes the entity with the specified name from the scene.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void RemoveEntityByName(string name)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>name</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>The name of the entity to remove.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="milk_Core_Scene_RemoveSystem_" data-uid="milk.Core.Scene.RemoveSystem*"></a>
+
+  <h3 id="milk_Core_Scene_RemoveSystem__1" data-uid="milk.Core.Scene.RemoveSystem``1">
+  RemoveSystem&lt;T&gt;()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/rik-cross/monogame-milk/blob/main/Core/Scene.cs/#L636"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Removes the sysytem of the specified type from the scene.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void RemoveSystem&lt;T&gt;() where T : System</code></pre>
+  </div>
+
+
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd><p>The type of system to remove.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="milk_Core_Scene_RemoveTimedActionByName_" data-uid="milk.Core.Scene.RemoveTimedActionByName*"></a>
+
+  <h3 id="milk_Core_Scene_RemoveTimedActionByName_System_String_" data-uid="milk.Core.Scene.RemoveTimedActionByName(System.String)">
+  RemoveTimedActionByName(string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/rik-cross/monogame-milk/blob/main/Core/Scene.cs/#L718"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Remove a timed action by name, if one has been set.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void RemoveTimedActionByName(string name)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>name</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>The name of the action to remove.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="milk_Core_Scene_Update_" data-uid="milk.Core.Scene.Update*"></a>
+
+  <h3 id="milk_Core_Scene_Update_Microsoft_Xna_Framework_GameTime_" data-uid="milk.Core.Scene.Update(Microsoft.Xna.Framework.GameTime)">
+  Update(GameTime)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/rik-cross/monogame-milk/blob/main/Core/Scene.cs/#L740"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Called once per frame of the game loop, and handles scene-level updating.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void Update(GameTime gameTime)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>gameTime</code> <span class="xref">GameTime</span></dt>
+    <dd><p>The MonoGame gameTime object.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/rik-cross/monogame-milk/blob/main/Core/Scene.cs/#L23" class="edit-link">Edit this page</a>
+        </div>
+
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

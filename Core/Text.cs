@@ -16,7 +16,7 @@ using System;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
-namespace milk;
+namespace milk.Core;
 
 public class Text : SceneRenderable
 {
@@ -69,7 +69,7 @@ public class Text : SceneRenderable
         int outlineWidth = 0,
         Color? outlineColor = null,
         Anchor anchor = Anchor.TopLeft,
-        SceneRenderable parent = null
+        SceneRenderable? parent = null
         ) : base(GenerateTextWidth(caption, font, outlineWidth), position, alpha, anchor, parent)
     {
 

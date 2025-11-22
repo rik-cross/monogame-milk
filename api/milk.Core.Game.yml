@@ -1,0 +1,1811 @@
+### YamlMime:ManagedReference
+items:
+- uid: milk.Core.Game
+  commentId: T:milk.Core.Game
+  id: Game
+  parent: milk.Core
+  children:
+  - milk.Core.Game.#ctor(System.String,System.Nullable{Microsoft.Xna.Framework.Vector2},System.Boolean,System.Int32,System.Int32,System.Boolean)
+  - milk.Core.Game.ClearScenes
+  - milk.Core.Game.Debug
+  - milk.Core.Game.Draw(Microsoft.Xna.Framework.GameTime)
+  - milk.Core.Game.Init
+  - milk.Core.Game.Initialize
+  - milk.Core.Game.LoadContent
+  - milk.Core.Game.Quit
+  - milk.Core.Game.RegisterSystem(milk.Core.System)
+  - milk.Core.Game.RemoveScene(milk.Core.Transition,System.Int32)
+  - milk.Core.Game.SetScene(System.Collections.Generic.List{milk.Core.Scene},milk.Core.Transition,System.Boolean)
+  - milk.Core.Game.SetScene(milk.Core.Scene,milk.Core.Transition,System.Boolean)
+  - milk.Core.Game.Size
+  - milk.Core.Game.Title
+  - milk.Core.Game.Update(Microsoft.Xna.Framework.GameTime)
+  - milk.Core.Game.inputManager
+  langs:
+  - csharp
+  - vb
+  name: Game
+  nameWithType: Game
+  fullName: milk.Core.Game
+  type: Class
+  source:
+    remote:
+      path: Core/Game.cs
+      branch: main
+      repo: git@github.com:rik-cross/monogame-milk.git
+    id: Game
+    path: Core/Game.cs
+    startLine: 17
+  assemblies:
+  - MonoGameECS
+  namespace: milk.Core
+  syntax:
+    content: 'public class Game : Game, IDisposable'
+    content.vb: Public Class Game Inherits Game Implements IDisposable
+  inheritance:
+  - System.Object
+  - Microsoft.Xna.Framework.Game
+  implements:
+  - System.IDisposable
+  inheritedMembers:
+  - Microsoft.Xna.Framework.Game.Dispose
+  - Microsoft.Xna.Framework.Game.Dispose(System.Boolean)
+  - Microsoft.Xna.Framework.Game.Exit
+  - Microsoft.Xna.Framework.Game.ResetElapsedTime
+  - Microsoft.Xna.Framework.Game.SuppressDraw
+  - Microsoft.Xna.Framework.Game.RunOneFrame
+  - Microsoft.Xna.Framework.Game.Run
+  - Microsoft.Xna.Framework.Game.Run(Microsoft.Xna.Framework.GameRunBehavior)
+  - Microsoft.Xna.Framework.Game.Tick
+  - Microsoft.Xna.Framework.Game.BeginDraw
+  - Microsoft.Xna.Framework.Game.EndDraw
+  - Microsoft.Xna.Framework.Game.BeginRun
+  - Microsoft.Xna.Framework.Game.EndRun
+  - Microsoft.Xna.Framework.Game.UnloadContent
+  - Microsoft.Xna.Framework.Game.OnExiting(System.Object,Microsoft.Xna.Framework.ExitingEventArgs)
+  - Microsoft.Xna.Framework.Game.OnActivated(System.Object,System.EventArgs)
+  - Microsoft.Xna.Framework.Game.OnDeactivated(System.Object,System.EventArgs)
+  - Microsoft.Xna.Framework.Game.LaunchParameters
+  - Microsoft.Xna.Framework.Game.Components
+  - Microsoft.Xna.Framework.Game.InactiveSleepTime
+  - Microsoft.Xna.Framework.Game.MaxElapsedTime
+  - Microsoft.Xna.Framework.Game.IsActive
+  - Microsoft.Xna.Framework.Game.IsMouseVisible
+  - Microsoft.Xna.Framework.Game.TargetElapsedTime
+  - Microsoft.Xna.Framework.Game.IsFixedTimeStep
+  - Microsoft.Xna.Framework.Game.Services
+  - Microsoft.Xna.Framework.Game.Content
+  - Microsoft.Xna.Framework.Game.GraphicsDevice
+  - Microsoft.Xna.Framework.Game.Window
+  - Microsoft.Xna.Framework.Game.Activated
+  - Microsoft.Xna.Framework.Game.Deactivated
+  - Microsoft.Xna.Framework.Game.Disposed
+  - Microsoft.Xna.Framework.Game.Exiting
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: milk.Core.Game.Init
+  commentId: F:milk.Core.Game.Init
+  id: Init
+  parent: milk.Core.Game
+  langs:
+  - csharp
+  - vb
+  name: Init
+  nameWithType: Game.Init
+  fullName: milk.Core.Game.Init
+  type: Field
+  source:
+    remote:
+      path: Core/Game.cs
+      branch: main
+      repo: git@github.com:rik-cross/monogame-milk.git
+    id: Init
+    path: Core/Game.cs
+    startLine: 21
+  assemblies:
+  - MonoGameECS
+  namespace: milk.Core
+  syntax:
+    content: public Action Init
+    return:
+      type: System.Action
+    content.vb: Public Init As Action
+- uid: milk.Core.Game.Title
+  commentId: F:milk.Core.Game.Title
+  id: Title
+  parent: milk.Core.Game
+  langs:
+  - csharp
+  - vb
+  name: Title
+  nameWithType: Game.Title
+  fullName: milk.Core.Game.Title
+  type: Field
+  source:
+    remote:
+      path: Core/Game.cs
+      branch: main
+      repo: git@github.com:rik-cross/monogame-milk.git
+    id: Title
+    path: Core/Game.cs
+    startLine: 22
+  assemblies:
+  - MonoGameECS
+  namespace: milk.Core
+  syntax:
+    content: public readonly string Title
+    return:
+      type: System.String
+    content.vb: Public ReadOnly Title As String
+- uid: milk.Core.Game.Size
+  commentId: F:milk.Core.Game.Size
+  id: Size
+  parent: milk.Core.Game
+  langs:
+  - csharp
+  - vb
+  name: Size
+  nameWithType: Game.Size
+  fullName: milk.Core.Game.Size
+  type: Field
+  source:
+    remote:
+      path: Core/Game.cs
+      branch: main
+      repo: git@github.com:rik-cross/monogame-milk.git
+    id: Size
+    path: Core/Game.cs
+    startLine: 23
+  assemblies:
+  - MonoGameECS
+  namespace: milk.Core
+  syntax:
+    content: public readonly Vector2 Size
+    return:
+      type: Microsoft.Xna.Framework.Vector2
+    content.vb: Public ReadOnly Size As Vector2
+- uid: milk.Core.Game.inputManager
+  commentId: F:milk.Core.Game.inputManager
+  id: inputManager
+  parent: milk.Core.Game
+  langs:
+  - csharp
+  - vb
+  name: inputManager
+  nameWithType: Game.inputManager
+  fullName: milk.Core.Game.inputManager
+  type: Field
+  source:
+    remote:
+      path: Core/Game.cs
+      branch: main
+      repo: git@github.com:rik-cross/monogame-milk.git
+    id: inputManager
+    path: Core/Game.cs
+    startLine: 38
+  assemblies:
+  - MonoGameECS
+  namespace: milk.Core
+  syntax:
+    content: public InputManager inputManager
+    return:
+      type: milk.Core.InputManager
+    content.vb: Public inputManager As InputManager
+- uid: milk.Core.Game.Debug
+  commentId: F:milk.Core.Game.Debug
+  id: Debug
+  parent: milk.Core.Game
+  langs:
+  - csharp
+  - vb
+  name: Debug
+  nameWithType: Game.Debug
+  fullName: milk.Core.Game.Debug
+  type: Field
+  source:
+    remote:
+      path: Core/Game.cs
+      branch: main
+      repo: git@github.com:rik-cross/monogame-milk.git
+    id: Debug
+    path: Core/Game.cs
+    startLine: 46
+  assemblies:
+  - MonoGameECS
+  namespace: milk.Core
+  syntax:
+    content: public bool Debug
+    return:
+      type: System.Boolean
+    content.vb: Public Debug As Boolean
+- uid: milk.Core.Game.#ctor(System.String,System.Nullable{Microsoft.Xna.Framework.Vector2},System.Boolean,System.Int32,System.Int32,System.Boolean)
+  commentId: M:milk.Core.Game.#ctor(System.String,System.Nullable{Microsoft.Xna.Framework.Vector2},System.Boolean,System.Int32,System.Int32,System.Boolean)
+  id: '#ctor(System.String,System.Nullable{Microsoft.Xna.Framework.Vector2},System.Boolean,System.Int32,System.Int32,System.Boolean)'
+  parent: milk.Core.Game
+  langs:
+  - csharp
+  - vb
+  name: Game(string?, Vector2?, bool, int, int, bool)
+  nameWithType: Game.Game(string?, Vector2?, bool, int, int, bool)
+  fullName: milk.Core.Game.Game(string?, Microsoft.Xna.Framework.Vector2?, bool, int, int, bool)
+  type: Constructor
+  source:
+    remote:
+      path: Core/Game.cs
+      branch: main
+      repo: git@github.com:rik-cross/monogame-milk.git
+    id: .ctor
+    path: Core/Game.cs
+    startLine: 48
+  assemblies:
+  - MonoGameECS
+  namespace: milk.Core
+  syntax:
+    content: public Game(string? title = null, Vector2? size = null, bool isMouseVisible = true, int maxEntities = 1000, int maxComponents = 128, bool debug = false)
+    parameters:
+    - id: title
+      type: System.String
+    - id: size
+      type: System.Nullable{Microsoft.Xna.Framework.Vector2}
+    - id: isMouseVisible
+      type: System.Boolean
+    - id: maxEntities
+      type: System.Int32
+    - id: maxComponents
+      type: System.Int32
+    - id: debug
+      type: System.Boolean
+    content.vb: Public Sub New(title As String = Nothing, size As Vector2? = Nothing, isMouseVisible As Boolean = True, maxEntities As Integer = 1000, maxComponents As Integer = 128, debug As Boolean = False)
+  overload: milk.Core.Game.#ctor*
+  nameWithType.vb: Game.New(String, Vector2?, Boolean, Integer, Integer, Boolean)
+  fullName.vb: milk.Core.Game.New(String, Microsoft.Xna.Framework.Vector2?, Boolean, Integer, Integer, Boolean)
+  name.vb: New(String, Vector2?, Boolean, Integer, Integer, Boolean)
+- uid: milk.Core.Game.Initialize
+  commentId: M:milk.Core.Game.Initialize
+  id: Initialize
+  parent: milk.Core.Game
+  langs:
+  - csharp
+  - vb
+  name: Initialize()
+  nameWithType: Game.Initialize()
+  fullName: milk.Core.Game.Initialize()
+  type: Method
+  source:
+    remote:
+      path: Core/Game.cs
+      branch: main
+      repo: git@github.com:rik-cross/monogame-milk.git
+    id: Initialize
+    path: Core/Game.cs
+    startLine: 84
+  assemblies:
+  - MonoGameECS
+  namespace: milk.Core
+  summary: >-
+    Override this to initialize the game and load any needed non-graphical resources.
+
+
+    Initializes attached <xref href="Microsoft.Xna.Framework.GameComponent" data-throw-if-not-resolved="false"></xref> instances and calls <xref href="Microsoft.Xna.Framework.Game.LoadContent" data-throw-if-not-resolved="false"></xref>.
+  example: []
+  syntax:
+    content: protected override void Initialize()
+    content.vb: Protected Overrides Sub Initialize()
+  overridden: Microsoft.Xna.Framework.Game.Initialize
+  overload: milk.Core.Game.Initialize*
+- uid: milk.Core.Game.LoadContent
+  commentId: M:milk.Core.Game.LoadContent
+  id: LoadContent
+  parent: milk.Core.Game
+  langs:
+  - csharp
+  - vb
+  name: LoadContent()
+  nameWithType: Game.LoadContent()
+  fullName: milk.Core.Game.LoadContent()
+  type: Method
+  source:
+    remote:
+      path: Core/Game.cs
+      branch: main
+      repo: git@github.com:rik-cross/monogame-milk.git
+    id: LoadContent
+    path: Core/Game.cs
+    startLine: 93
+  assemblies:
+  - MonoGameECS
+  namespace: milk.Core
+  summary: Override this to load graphical resources required by the game.
+  example: []
+  syntax:
+    content: protected override void LoadContent()
+    content.vb: Protected Overrides Sub LoadContent()
+  overridden: Microsoft.Xna.Framework.Game.LoadContent
+  overload: milk.Core.Game.LoadContent*
+- uid: milk.Core.Game.RegisterSystem(milk.Core.System)
+  commentId: M:milk.Core.Game.RegisterSystem(milk.Core.System)
+  id: RegisterSystem(milk.Core.System)
+  parent: milk.Core.Game
+  langs:
+  - csharp
+  - vb
+  name: RegisterSystem(System)
+  nameWithType: Game.RegisterSystem(System)
+  fullName: milk.Core.Game.RegisterSystem(milk.Core.System)
+  type: Method
+  source:
+    remote:
+      path: Core/Game.cs
+      branch: main
+      repo: git@github.com:rik-cross/monogame-milk.git
+    id: RegisterSystem
+    path: Core/Game.cs
+    startLine: 132
+  assemblies:
+  - MonoGameECS
+  namespace: milk.Core
+  syntax:
+    content: public void RegisterSystem(System system)
+    parameters:
+    - id: system
+      type: milk.Core.System
+    content.vb: Public Sub RegisterSystem(system As System)
+  overload: milk.Core.Game.RegisterSystem*
+- uid: milk.Core.Game.SetScene(milk.Core.Scene,milk.Core.Transition,System.Boolean)
+  commentId: M:milk.Core.Game.SetScene(milk.Core.Scene,milk.Core.Transition,System.Boolean)
+  id: SetScene(milk.Core.Scene,milk.Core.Transition,System.Boolean)
+  parent: milk.Core.Game
+  langs:
+  - csharp
+  - vb
+  name: SetScene(Scene, Transition?, bool)
+  nameWithType: Game.SetScene(Scene, Transition?, bool)
+  fullName: milk.Core.Game.SetScene(milk.Core.Scene, milk.Core.Transition?, bool)
+  type: Method
+  source:
+    remote:
+      path: Core/Game.cs
+      branch: main
+      repo: git@github.com:rik-cross/monogame-milk.git
+    id: SetScene
+    path: Core/Game.cs
+    startLine: 141
+  assemblies:
+  - MonoGameECS
+  namespace: milk.Core
+  syntax:
+    content: public void SetScene(Scene scene, Transition? transition = null, bool keepExistingScenes = false)
+    parameters:
+    - id: scene
+      type: milk.Core.Scene
+    - id: transition
+      type: milk.Core.Transition
+    - id: keepExistingScenes
+      type: System.Boolean
+    content.vb: Public Sub SetScene(scene As Scene, transition As Transition = Nothing, keepExistingScenes As Boolean = False)
+  overload: milk.Core.Game.SetScene*
+  nameWithType.vb: Game.SetScene(Scene, Transition, Boolean)
+  fullName.vb: milk.Core.Game.SetScene(milk.Core.Scene, milk.Core.Transition, Boolean)
+  name.vb: SetScene(Scene, Transition, Boolean)
+- uid: milk.Core.Game.SetScene(System.Collections.Generic.List{milk.Core.Scene},milk.Core.Transition,System.Boolean)
+  commentId: M:milk.Core.Game.SetScene(System.Collections.Generic.List{milk.Core.Scene},milk.Core.Transition,System.Boolean)
+  id: SetScene(System.Collections.Generic.List{milk.Core.Scene},milk.Core.Transition,System.Boolean)
+  parent: milk.Core.Game
+  langs:
+  - csharp
+  - vb
+  name: SetScene(List<Scene>, Transition?, bool)
+  nameWithType: Game.SetScene(List<Scene>, Transition?, bool)
+  fullName: milk.Core.Game.SetScene(System.Collections.Generic.List<milk.Core.Scene>, milk.Core.Transition?, bool)
+  type: Method
+  source:
+    remote:
+      path: Core/Game.cs
+      branch: main
+      repo: git@github.com:rik-cross/monogame-milk.git
+    id: SetScene
+    path: Core/Game.cs
+    startLine: 146
+  assemblies:
+  - MonoGameECS
+  namespace: milk.Core
+  syntax:
+    content: public void SetScene(List<Scene> scenes, Transition? transition = null, bool keepExistingScenes = false)
+    parameters:
+    - id: scenes
+      type: System.Collections.Generic.List{milk.Core.Scene}
+    - id: transition
+      type: milk.Core.Transition
+    - id: keepExistingScenes
+      type: System.Boolean
+    content.vb: Public Sub SetScene(scenes As List(Of Scene), transition As Transition = Nothing, keepExistingScenes As Boolean = False)
+  overload: milk.Core.Game.SetScene*
+  nameWithType.vb: Game.SetScene(List(Of Scene), Transition, Boolean)
+  fullName.vb: milk.Core.Game.SetScene(System.Collections.Generic.List(Of milk.Core.Scene), milk.Core.Transition, Boolean)
+  name.vb: SetScene(List(Of Scene), Transition, Boolean)
+- uid: milk.Core.Game.RemoveScene(milk.Core.Transition,System.Int32)
+  commentId: M:milk.Core.Game.RemoveScene(milk.Core.Transition,System.Int32)
+  id: RemoveScene(milk.Core.Transition,System.Int32)
+  parent: milk.Core.Game
+  langs:
+  - csharp
+  - vb
+  name: RemoveScene(Transition?, int)
+  nameWithType: Game.RemoveScene(Transition?, int)
+  fullName: milk.Core.Game.RemoveScene(milk.Core.Transition?, int)
+  type: Method
+  source:
+    remote:
+      path: Core/Game.cs
+      branch: main
+      repo: git@github.com:rik-cross/monogame-milk.git
+    id: RemoveScene
+    path: Core/Game.cs
+    startLine: 151
+  assemblies:
+  - MonoGameECS
+  namespace: milk.Core
+  syntax:
+    content: public void RemoveScene(Transition? transition = null, int numberOfScenesToRemove = 1)
+    parameters:
+    - id: transition
+      type: milk.Core.Transition
+    - id: numberOfScenesToRemove
+      type: System.Int32
+    content.vb: Public Sub RemoveScene(transition As Transition = Nothing, numberOfScenesToRemove As Integer = 1)
+  overload: milk.Core.Game.RemoveScene*
+  nameWithType.vb: Game.RemoveScene(Transition, Integer)
+  fullName.vb: milk.Core.Game.RemoveScene(milk.Core.Transition, Integer)
+  name.vb: RemoveScene(Transition, Integer)
+- uid: milk.Core.Game.ClearScenes
+  commentId: M:milk.Core.Game.ClearScenes
+  id: ClearScenes
+  parent: milk.Core.Game
+  langs:
+  - csharp
+  - vb
+  name: ClearScenes()
+  nameWithType: Game.ClearScenes()
+  fullName: milk.Core.Game.ClearScenes()
+  type: Method
+  source:
+    remote:
+      path: Core/Game.cs
+      branch: main
+      repo: git@github.com:rik-cross/monogame-milk.git
+    id: ClearScenes
+    path: Core/Game.cs
+    startLine: 156
+  assemblies:
+  - MonoGameECS
+  namespace: milk.Core
+  syntax:
+    content: public void ClearScenes()
+    content.vb: Public Sub ClearScenes()
+  overload: milk.Core.Game.ClearScenes*
+- uid: milk.Core.Game.Update(Microsoft.Xna.Framework.GameTime)
+  commentId: M:milk.Core.Game.Update(Microsoft.Xna.Framework.GameTime)
+  id: Update(Microsoft.Xna.Framework.GameTime)
+  parent: milk.Core.Game
+  langs:
+  - csharp
+  - vb
+  name: Update(GameTime)
+  nameWithType: Game.Update(GameTime)
+  fullName: milk.Core.Game.Update(Microsoft.Xna.Framework.GameTime)
+  type: Method
+  source:
+    remote:
+      path: Core/Game.cs
+      branch: main
+      repo: git@github.com:rik-cross/monogame-milk.git
+    id: Update
+    path: Core/Game.cs
+    startLine: 165
+  assemblies:
+  - MonoGameECS
+  namespace: milk.Core
+  summary: >-
+    Called when the game should update.
+
+
+    Updates the <xref href="Microsoft.Xna.Framework.GameComponent" data-throw-if-not-resolved="false"></xref> instances attached to this game.
+
+    Override this to update your game.
+  example: []
+  syntax:
+    content: protected override void Update(GameTime gameTime)
+    parameters:
+    - id: gameTime
+      type: Microsoft.Xna.Framework.GameTime
+      description: The elapsed time since the last call to <xref href="Microsoft.Xna.Framework.Game.Update(Microsoft.Xna.Framework.GameTime)" data-throw-if-not-resolved="false"></xref>.
+    content.vb: Protected Overrides Sub Update(gameTime As GameTime)
+  overridden: Microsoft.Xna.Framework.Game.Update(Microsoft.Xna.Framework.GameTime)
+  overload: milk.Core.Game.Update*
+- uid: milk.Core.Game.Draw(Microsoft.Xna.Framework.GameTime)
+  commentId: M:milk.Core.Game.Draw(Microsoft.Xna.Framework.GameTime)
+  id: Draw(Microsoft.Xna.Framework.GameTime)
+  parent: milk.Core.Game
+  langs:
+  - csharp
+  - vb
+  name: Draw(GameTime)
+  nameWithType: Game.Draw(GameTime)
+  fullName: milk.Core.Game.Draw(Microsoft.Xna.Framework.GameTime)
+  type: Method
+  source:
+    remote:
+      path: Core/Game.cs
+      branch: main
+      repo: git@github.com:rik-cross/monogame-milk.git
+    id: Draw
+    path: Core/Game.cs
+    startLine: 180
+  assemblies:
+  - MonoGameECS
+  namespace: milk.Core
+  summary: >-
+    Called when the game should draw a frame.
+
+
+    Draws the <xref href="Microsoft.Xna.Framework.DrawableGameComponent" data-throw-if-not-resolved="false"></xref> instances attached to this game.
+
+    Override this to render your game.
+  example: []
+  syntax:
+    content: protected override void Draw(GameTime gameTime)
+    parameters:
+    - id: gameTime
+      type: Microsoft.Xna.Framework.GameTime
+      description: A <xref href="Microsoft.Xna.Framework.GameTime" data-throw-if-not-resolved="false"></xref> instance containing the elapsed time since the last call to <xref href="Microsoft.Xna.Framework.Game.Draw(Microsoft.Xna.Framework.GameTime)" data-throw-if-not-resolved="false"></xref> and the total time elapsed since the game started.
+    content.vb: Protected Overrides Sub Draw(gameTime As GameTime)
+  overridden: Microsoft.Xna.Framework.Game.Draw(Microsoft.Xna.Framework.GameTime)
+  overload: milk.Core.Game.Draw*
+- uid: milk.Core.Game.Quit
+  commentId: M:milk.Core.Game.Quit
+  id: Quit
+  parent: milk.Core.Game
+  langs:
+  - csharp
+  - vb
+  name: Quit()
+  nameWithType: Game.Quit()
+  fullName: milk.Core.Game.Quit()
+  type: Method
+  source:
+    remote:
+      path: Core/Game.cs
+      branch: main
+      repo: git@github.com:rik-cross/monogame-milk.git
+    id: Quit
+    path: Core/Game.cs
+    startLine: 196
+  assemblies:
+  - MonoGameECS
+  namespace: milk.Core
+  syntax:
+    content: public void Quit()
+    content.vb: Public Sub Quit()
+  overload: milk.Core.Game.Quit*
+references:
+- uid: milk.Core
+  commentId: N:milk.Core
+  href: milk.html
+  name: milk.Core
+  nameWithType: milk.Core
+  fullName: milk.Core
+  spec.csharp:
+  - uid: milk
+    name: milk
+    href: milk.html
+  - name: .
+  - uid: milk.Core
+    name: Core
+    href: milk.Core.html
+  spec.vb:
+  - uid: milk
+    name: milk
+    href: milk.html
+  - name: .
+  - uid: milk.Core
+    name: Core
+    href: milk.Core.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: Microsoft.Xna.Framework.Game
+  commentId: T:Microsoft.Xna.Framework.Game
+  parent: Microsoft.Xna.Framework
+  isExternal: true
+  name: Game
+  nameWithType: Game
+  fullName: Microsoft.Xna.Framework.Game
+- uid: System.IDisposable
+  commentId: T:System.IDisposable
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.idisposable
+  name: IDisposable
+  nameWithType: IDisposable
+  fullName: System.IDisposable
+- uid: Microsoft.Xna.Framework.Game.Dispose
+  commentId: M:Microsoft.Xna.Framework.Game.Dispose
+  parent: Microsoft.Xna.Framework.Game
+  isExternal: true
+  name: Dispose()
+  nameWithType: Game.Dispose()
+  fullName: Microsoft.Xna.Framework.Game.Dispose()
+  spec.csharp:
+  - uid: Microsoft.Xna.Framework.Game.Dispose
+    name: Dispose
+    isExternal: true
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: Microsoft.Xna.Framework.Game.Dispose
+    name: Dispose
+    isExternal: true
+  - name: (
+  - name: )
+- uid: Microsoft.Xna.Framework.Game.Dispose(System.Boolean)
+  commentId: M:Microsoft.Xna.Framework.Game.Dispose(System.Boolean)
+  parent: Microsoft.Xna.Framework.Game
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: Dispose(bool)
+  nameWithType: Game.Dispose(bool)
+  fullName: Microsoft.Xna.Framework.Game.Dispose(bool)
+  nameWithType.vb: Game.Dispose(Boolean)
+  fullName.vb: Microsoft.Xna.Framework.Game.Dispose(Boolean)
+  name.vb: Dispose(Boolean)
+  spec.csharp:
+  - uid: Microsoft.Xna.Framework.Game.Dispose(System.Boolean)
+    name: Dispose
+    isExternal: true
+  - name: (
+  - uid: System.Boolean
+    name: bool
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: )
+  spec.vb:
+  - uid: Microsoft.Xna.Framework.Game.Dispose(System.Boolean)
+    name: Dispose
+    isExternal: true
+  - name: (
+  - uid: System.Boolean
+    name: Boolean
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: )
+- uid: Microsoft.Xna.Framework.Game.Exit
+  commentId: M:Microsoft.Xna.Framework.Game.Exit
+  parent: Microsoft.Xna.Framework.Game
+  isExternal: true
+  name: Exit()
+  nameWithType: Game.Exit()
+  fullName: Microsoft.Xna.Framework.Game.Exit()
+  spec.csharp:
+  - uid: Microsoft.Xna.Framework.Game.Exit
+    name: Exit
+    isExternal: true
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: Microsoft.Xna.Framework.Game.Exit
+    name: Exit
+    isExternal: true
+  - name: (
+  - name: )
+- uid: Microsoft.Xna.Framework.Game.ResetElapsedTime
+  commentId: M:Microsoft.Xna.Framework.Game.ResetElapsedTime
+  parent: Microsoft.Xna.Framework.Game
+  isExternal: true
+  name: ResetElapsedTime()
+  nameWithType: Game.ResetElapsedTime()
+  fullName: Microsoft.Xna.Framework.Game.ResetElapsedTime()
+  spec.csharp:
+  - uid: Microsoft.Xna.Framework.Game.ResetElapsedTime
+    name: ResetElapsedTime
+    isExternal: true
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: Microsoft.Xna.Framework.Game.ResetElapsedTime
+    name: ResetElapsedTime
+    isExternal: true
+  - name: (
+  - name: )
+- uid: Microsoft.Xna.Framework.Game.SuppressDraw
+  commentId: M:Microsoft.Xna.Framework.Game.SuppressDraw
+  parent: Microsoft.Xna.Framework.Game
+  isExternal: true
+  name: SuppressDraw()
+  nameWithType: Game.SuppressDraw()
+  fullName: Microsoft.Xna.Framework.Game.SuppressDraw()
+  spec.csharp:
+  - uid: Microsoft.Xna.Framework.Game.SuppressDraw
+    name: SuppressDraw
+    isExternal: true
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: Microsoft.Xna.Framework.Game.SuppressDraw
+    name: SuppressDraw
+    isExternal: true
+  - name: (
+  - name: )
+- uid: Microsoft.Xna.Framework.Game.RunOneFrame
+  commentId: M:Microsoft.Xna.Framework.Game.RunOneFrame
+  parent: Microsoft.Xna.Framework.Game
+  isExternal: true
+  name: RunOneFrame()
+  nameWithType: Game.RunOneFrame()
+  fullName: Microsoft.Xna.Framework.Game.RunOneFrame()
+  spec.csharp:
+  - uid: Microsoft.Xna.Framework.Game.RunOneFrame
+    name: RunOneFrame
+    isExternal: true
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: Microsoft.Xna.Framework.Game.RunOneFrame
+    name: RunOneFrame
+    isExternal: true
+  - name: (
+  - name: )
+- uid: Microsoft.Xna.Framework.Game.Run
+  commentId: M:Microsoft.Xna.Framework.Game.Run
+  parent: Microsoft.Xna.Framework.Game
+  isExternal: true
+  name: Run()
+  nameWithType: Game.Run()
+  fullName: Microsoft.Xna.Framework.Game.Run()
+  spec.csharp:
+  - uid: Microsoft.Xna.Framework.Game.Run
+    name: Run
+    isExternal: true
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: Microsoft.Xna.Framework.Game.Run
+    name: Run
+    isExternal: true
+  - name: (
+  - name: )
+- uid: Microsoft.Xna.Framework.Game.Run(Microsoft.Xna.Framework.GameRunBehavior)
+  commentId: M:Microsoft.Xna.Framework.Game.Run(Microsoft.Xna.Framework.GameRunBehavior)
+  parent: Microsoft.Xna.Framework.Game
+  isExternal: true
+  name: Run(GameRunBehavior)
+  nameWithType: Game.Run(GameRunBehavior)
+  fullName: Microsoft.Xna.Framework.Game.Run(Microsoft.Xna.Framework.GameRunBehavior)
+  spec.csharp:
+  - uid: Microsoft.Xna.Framework.Game.Run(Microsoft.Xna.Framework.GameRunBehavior)
+    name: Run
+    isExternal: true
+  - name: (
+  - uid: Microsoft.Xna.Framework.GameRunBehavior
+    name: GameRunBehavior
+    isExternal: true
+  - name: )
+  spec.vb:
+  - uid: Microsoft.Xna.Framework.Game.Run(Microsoft.Xna.Framework.GameRunBehavior)
+    name: Run
+    isExternal: true
+  - name: (
+  - uid: Microsoft.Xna.Framework.GameRunBehavior
+    name: GameRunBehavior
+    isExternal: true
+  - name: )
+- uid: Microsoft.Xna.Framework.Game.Tick
+  commentId: M:Microsoft.Xna.Framework.Game.Tick
+  parent: Microsoft.Xna.Framework.Game
+  isExternal: true
+  name: Tick()
+  nameWithType: Game.Tick()
+  fullName: Microsoft.Xna.Framework.Game.Tick()
+  spec.csharp:
+  - uid: Microsoft.Xna.Framework.Game.Tick
+    name: Tick
+    isExternal: true
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: Microsoft.Xna.Framework.Game.Tick
+    name: Tick
+    isExternal: true
+  - name: (
+  - name: )
+- uid: Microsoft.Xna.Framework.Game.BeginDraw
+  commentId: M:Microsoft.Xna.Framework.Game.BeginDraw
+  parent: Microsoft.Xna.Framework.Game
+  isExternal: true
+  name: BeginDraw()
+  nameWithType: Game.BeginDraw()
+  fullName: Microsoft.Xna.Framework.Game.BeginDraw()
+  spec.csharp:
+  - uid: Microsoft.Xna.Framework.Game.BeginDraw
+    name: BeginDraw
+    isExternal: true
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: Microsoft.Xna.Framework.Game.BeginDraw
+    name: BeginDraw
+    isExternal: true
+  - name: (
+  - name: )
+- uid: Microsoft.Xna.Framework.Game.EndDraw
+  commentId: M:Microsoft.Xna.Framework.Game.EndDraw
+  parent: Microsoft.Xna.Framework.Game
+  isExternal: true
+  name: EndDraw()
+  nameWithType: Game.EndDraw()
+  fullName: Microsoft.Xna.Framework.Game.EndDraw()
+  spec.csharp:
+  - uid: Microsoft.Xna.Framework.Game.EndDraw
+    name: EndDraw
+    isExternal: true
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: Microsoft.Xna.Framework.Game.EndDraw
+    name: EndDraw
+    isExternal: true
+  - name: (
+  - name: )
+- uid: Microsoft.Xna.Framework.Game.BeginRun
+  commentId: M:Microsoft.Xna.Framework.Game.BeginRun
+  parent: Microsoft.Xna.Framework.Game
+  isExternal: true
+  name: BeginRun()
+  nameWithType: Game.BeginRun()
+  fullName: Microsoft.Xna.Framework.Game.BeginRun()
+  spec.csharp:
+  - uid: Microsoft.Xna.Framework.Game.BeginRun
+    name: BeginRun
+    isExternal: true
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: Microsoft.Xna.Framework.Game.BeginRun
+    name: BeginRun
+    isExternal: true
+  - name: (
+  - name: )
+- uid: Microsoft.Xna.Framework.Game.EndRun
+  commentId: M:Microsoft.Xna.Framework.Game.EndRun
+  parent: Microsoft.Xna.Framework.Game
+  isExternal: true
+  name: EndRun()
+  nameWithType: Game.EndRun()
+  fullName: Microsoft.Xna.Framework.Game.EndRun()
+  spec.csharp:
+  - uid: Microsoft.Xna.Framework.Game.EndRun
+    name: EndRun
+    isExternal: true
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: Microsoft.Xna.Framework.Game.EndRun
+    name: EndRun
+    isExternal: true
+  - name: (
+  - name: )
+- uid: Microsoft.Xna.Framework.Game.UnloadContent
+  commentId: M:Microsoft.Xna.Framework.Game.UnloadContent
+  parent: Microsoft.Xna.Framework.Game
+  isExternal: true
+  name: UnloadContent()
+  nameWithType: Game.UnloadContent()
+  fullName: Microsoft.Xna.Framework.Game.UnloadContent()
+  spec.csharp:
+  - uid: Microsoft.Xna.Framework.Game.UnloadContent
+    name: UnloadContent
+    isExternal: true
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: Microsoft.Xna.Framework.Game.UnloadContent
+    name: UnloadContent
+    isExternal: true
+  - name: (
+  - name: )
+- uid: Microsoft.Xna.Framework.Game.OnExiting(System.Object,Microsoft.Xna.Framework.ExitingEventArgs)
+  commentId: M:Microsoft.Xna.Framework.Game.OnExiting(System.Object,Microsoft.Xna.Framework.ExitingEventArgs)
+  parent: Microsoft.Xna.Framework.Game
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: OnExiting(object, ExitingEventArgs)
+  nameWithType: Game.OnExiting(object, ExitingEventArgs)
+  fullName: Microsoft.Xna.Framework.Game.OnExiting(object, Microsoft.Xna.Framework.ExitingEventArgs)
+  nameWithType.vb: Game.OnExiting(Object, ExitingEventArgs)
+  fullName.vb: Microsoft.Xna.Framework.Game.OnExiting(Object, Microsoft.Xna.Framework.ExitingEventArgs)
+  name.vb: OnExiting(Object, ExitingEventArgs)
+  spec.csharp:
+  - uid: Microsoft.Xna.Framework.Game.OnExiting(System.Object,Microsoft.Xna.Framework.ExitingEventArgs)
+    name: OnExiting
+    isExternal: true
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: Microsoft.Xna.Framework.ExitingEventArgs
+    name: ExitingEventArgs
+    isExternal: true
+  - name: )
+  spec.vb:
+  - uid: Microsoft.Xna.Framework.Game.OnExiting(System.Object,Microsoft.Xna.Framework.ExitingEventArgs)
+    name: OnExiting
+    isExternal: true
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: Microsoft.Xna.Framework.ExitingEventArgs
+    name: ExitingEventArgs
+    isExternal: true
+  - name: )
+- uid: Microsoft.Xna.Framework.Game.OnActivated(System.Object,System.EventArgs)
+  commentId: M:Microsoft.Xna.Framework.Game.OnActivated(System.Object,System.EventArgs)
+  parent: Microsoft.Xna.Framework.Game
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: OnActivated(object, EventArgs)
+  nameWithType: Game.OnActivated(object, EventArgs)
+  fullName: Microsoft.Xna.Framework.Game.OnActivated(object, System.EventArgs)
+  nameWithType.vb: Game.OnActivated(Object, EventArgs)
+  fullName.vb: Microsoft.Xna.Framework.Game.OnActivated(Object, System.EventArgs)
+  name.vb: OnActivated(Object, EventArgs)
+  spec.csharp:
+  - uid: Microsoft.Xna.Framework.Game.OnActivated(System.Object,System.EventArgs)
+    name: OnActivated
+    isExternal: true
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.EventArgs
+    name: EventArgs
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.eventargs
+  - name: )
+  spec.vb:
+  - uid: Microsoft.Xna.Framework.Game.OnActivated(System.Object,System.EventArgs)
+    name: OnActivated
+    isExternal: true
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.EventArgs
+    name: EventArgs
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.eventargs
+  - name: )
+- uid: Microsoft.Xna.Framework.Game.OnDeactivated(System.Object,System.EventArgs)
+  commentId: M:Microsoft.Xna.Framework.Game.OnDeactivated(System.Object,System.EventArgs)
+  parent: Microsoft.Xna.Framework.Game
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: OnDeactivated(object, EventArgs)
+  nameWithType: Game.OnDeactivated(object, EventArgs)
+  fullName: Microsoft.Xna.Framework.Game.OnDeactivated(object, System.EventArgs)
+  nameWithType.vb: Game.OnDeactivated(Object, EventArgs)
+  fullName.vb: Microsoft.Xna.Framework.Game.OnDeactivated(Object, System.EventArgs)
+  name.vb: OnDeactivated(Object, EventArgs)
+  spec.csharp:
+  - uid: Microsoft.Xna.Framework.Game.OnDeactivated(System.Object,System.EventArgs)
+    name: OnDeactivated
+    isExternal: true
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.EventArgs
+    name: EventArgs
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.eventargs
+  - name: )
+  spec.vb:
+  - uid: Microsoft.Xna.Framework.Game.OnDeactivated(System.Object,System.EventArgs)
+    name: OnDeactivated
+    isExternal: true
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.EventArgs
+    name: EventArgs
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.eventargs
+  - name: )
+- uid: Microsoft.Xna.Framework.Game.LaunchParameters
+  commentId: P:Microsoft.Xna.Framework.Game.LaunchParameters
+  parent: Microsoft.Xna.Framework.Game
+  isExternal: true
+  name: LaunchParameters
+  nameWithType: Game.LaunchParameters
+  fullName: Microsoft.Xna.Framework.Game.LaunchParameters
+- uid: Microsoft.Xna.Framework.Game.Components
+  commentId: P:Microsoft.Xna.Framework.Game.Components
+  parent: Microsoft.Xna.Framework.Game
+  isExternal: true
+  name: Components
+  nameWithType: Game.Components
+  fullName: Microsoft.Xna.Framework.Game.Components
+- uid: Microsoft.Xna.Framework.Game.InactiveSleepTime
+  commentId: P:Microsoft.Xna.Framework.Game.InactiveSleepTime
+  parent: Microsoft.Xna.Framework.Game
+  isExternal: true
+  name: InactiveSleepTime
+  nameWithType: Game.InactiveSleepTime
+  fullName: Microsoft.Xna.Framework.Game.InactiveSleepTime
+- uid: Microsoft.Xna.Framework.Game.MaxElapsedTime
+  commentId: P:Microsoft.Xna.Framework.Game.MaxElapsedTime
+  parent: Microsoft.Xna.Framework.Game
+  isExternal: true
+  name: MaxElapsedTime
+  nameWithType: Game.MaxElapsedTime
+  fullName: Microsoft.Xna.Framework.Game.MaxElapsedTime
+- uid: Microsoft.Xna.Framework.Game.IsActive
+  commentId: P:Microsoft.Xna.Framework.Game.IsActive
+  parent: Microsoft.Xna.Framework.Game
+  isExternal: true
+  name: IsActive
+  nameWithType: Game.IsActive
+  fullName: Microsoft.Xna.Framework.Game.IsActive
+- uid: Microsoft.Xna.Framework.Game.IsMouseVisible
+  commentId: P:Microsoft.Xna.Framework.Game.IsMouseVisible
+  parent: Microsoft.Xna.Framework.Game
+  isExternal: true
+  name: IsMouseVisible
+  nameWithType: Game.IsMouseVisible
+  fullName: Microsoft.Xna.Framework.Game.IsMouseVisible
+- uid: Microsoft.Xna.Framework.Game.TargetElapsedTime
+  commentId: P:Microsoft.Xna.Framework.Game.TargetElapsedTime
+  parent: Microsoft.Xna.Framework.Game
+  isExternal: true
+  name: TargetElapsedTime
+  nameWithType: Game.TargetElapsedTime
+  fullName: Microsoft.Xna.Framework.Game.TargetElapsedTime
+- uid: Microsoft.Xna.Framework.Game.IsFixedTimeStep
+  commentId: P:Microsoft.Xna.Framework.Game.IsFixedTimeStep
+  parent: Microsoft.Xna.Framework.Game
+  isExternal: true
+  name: IsFixedTimeStep
+  nameWithType: Game.IsFixedTimeStep
+  fullName: Microsoft.Xna.Framework.Game.IsFixedTimeStep
+- uid: Microsoft.Xna.Framework.Game.Services
+  commentId: P:Microsoft.Xna.Framework.Game.Services
+  parent: Microsoft.Xna.Framework.Game
+  isExternal: true
+  name: Services
+  nameWithType: Game.Services
+  fullName: Microsoft.Xna.Framework.Game.Services
+- uid: Microsoft.Xna.Framework.Game.Content
+  commentId: P:Microsoft.Xna.Framework.Game.Content
+  parent: Microsoft.Xna.Framework.Game
+  isExternal: true
+  name: Content
+  nameWithType: Game.Content
+  fullName: Microsoft.Xna.Framework.Game.Content
+- uid: Microsoft.Xna.Framework.Game.GraphicsDevice
+  commentId: P:Microsoft.Xna.Framework.Game.GraphicsDevice
+  parent: Microsoft.Xna.Framework.Game
+  isExternal: true
+  name: GraphicsDevice
+  nameWithType: Game.GraphicsDevice
+  fullName: Microsoft.Xna.Framework.Game.GraphicsDevice
+- uid: Microsoft.Xna.Framework.Game.Window
+  commentId: P:Microsoft.Xna.Framework.Game.Window
+  parent: Microsoft.Xna.Framework.Game
+  isExternal: true
+  name: Window
+  nameWithType: Game.Window
+  fullName: Microsoft.Xna.Framework.Game.Window
+- uid: Microsoft.Xna.Framework.Game.Activated
+  commentId: E:Microsoft.Xna.Framework.Game.Activated
+  parent: Microsoft.Xna.Framework.Game
+  isExternal: true
+  name: Activated
+  nameWithType: Game.Activated
+  fullName: Microsoft.Xna.Framework.Game.Activated
+- uid: Microsoft.Xna.Framework.Game.Deactivated
+  commentId: E:Microsoft.Xna.Framework.Game.Deactivated
+  parent: Microsoft.Xna.Framework.Game
+  isExternal: true
+  name: Deactivated
+  nameWithType: Game.Deactivated
+  fullName: Microsoft.Xna.Framework.Game.Deactivated
+- uid: Microsoft.Xna.Framework.Game.Disposed
+  commentId: E:Microsoft.Xna.Framework.Game.Disposed
+  parent: Microsoft.Xna.Framework.Game
+  isExternal: true
+  name: Disposed
+  nameWithType: Game.Disposed
+  fullName: Microsoft.Xna.Framework.Game.Disposed
+- uid: Microsoft.Xna.Framework.Game.Exiting
+  commentId: E:Microsoft.Xna.Framework.Game.Exiting
+  parent: Microsoft.Xna.Framework.Game
+  isExternal: true
+  name: Exiting
+  nameWithType: Game.Exiting
+  fullName: Microsoft.Xna.Framework.Game.Exiting
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: Microsoft.Xna.Framework
+  commentId: N:Microsoft.Xna.Framework
+  isExternal: true
+  name: Microsoft.Xna.Framework
+  nameWithType: Microsoft.Xna.Framework
+  fullName: Microsoft.Xna.Framework
+  spec.csharp:
+  - uid: Microsoft
+    name: Microsoft
+    isExternal: true
+  - name: .
+  - uid: Microsoft.Xna
+    name: Xna
+    isExternal: true
+  - name: .
+  - uid: Microsoft.Xna.Framework
+    name: Framework
+    isExternal: true
+  spec.vb:
+  - uid: Microsoft
+    name: Microsoft
+    isExternal: true
+  - name: .
+  - uid: Microsoft.Xna
+    name: Xna
+    isExternal: true
+  - name: .
+  - uid: Microsoft.Xna.Framework
+    name: Framework
+    isExternal: true
+- uid: System.Action
+  commentId: T:System.Action
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.action
+  name: Action
+  nameWithType: Action
+  fullName: System.Action
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: Microsoft.Xna.Framework.Vector2
+  commentId: T:Microsoft.Xna.Framework.Vector2
+  parent: Microsoft.Xna.Framework
+  isExternal: true
+  name: Vector2
+  nameWithType: Vector2
+  fullName: Microsoft.Xna.Framework.Vector2
+- uid: milk.Core.InputManager
+  commentId: T:milk.Core.InputManager
+  parent: milk.Core
+  href: milk.Core.InputManager.html
+  name: InputManager
+  nameWithType: InputManager
+  fullName: milk.Core.InputManager
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: bool
+  nameWithType: bool
+  fullName: bool
+  nameWithType.vb: Boolean
+  fullName.vb: Boolean
+  name.vb: Boolean
+- uid: milk.Core.Game.#ctor*
+  commentId: Overload:milk.Core.Game.#ctor
+  href: milk.Core.Game.html#milk_Core_Game__ctor_System_String_System_Nullable_Microsoft_Xna_Framework_Vector2__System_Boolean_System_Int32_System_Int32_System_Boolean_
+  name: Game
+  nameWithType: Game.Game
+  fullName: milk.Core.Game.Game
+  nameWithType.vb: Game.New
+  fullName.vb: milk.Core.Game.New
+  name.vb: New
+- uid: System.Nullable{Microsoft.Xna.Framework.Vector2}
+  commentId: T:System.Nullable{Microsoft.Xna.Framework.Vector2}
+  parent: System
+  definition: System.Nullable`1
+  name: Vector2?
+  nameWithType: Vector2?
+  fullName: Microsoft.Xna.Framework.Vector2?
+  spec.csharp:
+  - uid: Microsoft.Xna.Framework.Vector2
+    name: Vector2
+    isExternal: true
+  - name: '?'
+  spec.vb:
+  - uid: Microsoft.Xna.Framework.Vector2
+    name: Vector2
+    isExternal: true
+  - name: '?'
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer
+- uid: System.Nullable`1
+  commentId: T:System.Nullable`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.nullable-1
+  name: Nullable<T>
+  nameWithType: Nullable<T>
+  fullName: System.Nullable<T>
+  nameWithType.vb: Nullable(Of T)
+  fullName.vb: System.Nullable(Of T)
+  name.vb: Nullable(Of T)
+  spec.csharp:
+  - uid: System.Nullable`1
+    name: Nullable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.nullable-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Nullable`1
+    name: Nullable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.nullable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: Microsoft.Xna.Framework.GameComponent
+  commentId: T:Microsoft.Xna.Framework.GameComponent
+  isExternal: true
+  name: GameComponent
+  nameWithType: GameComponent
+  fullName: Microsoft.Xna.Framework.GameComponent
+- uid: Microsoft.Xna.Framework.Game.LoadContent
+  commentId: M:Microsoft.Xna.Framework.Game.LoadContent
+  parent: Microsoft.Xna.Framework.Game
+  isExternal: true
+  name: LoadContent()
+  nameWithType: Game.LoadContent()
+  fullName: Microsoft.Xna.Framework.Game.LoadContent()
+  spec.csharp:
+  - uid: Microsoft.Xna.Framework.Game.LoadContent
+    name: LoadContent
+    isExternal: true
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: Microsoft.Xna.Framework.Game.LoadContent
+    name: LoadContent
+    isExternal: true
+  - name: (
+  - name: )
+- uid: Microsoft.Xna.Framework.Game.Initialize
+  commentId: M:Microsoft.Xna.Framework.Game.Initialize
+  parent: Microsoft.Xna.Framework.Game
+  isExternal: true
+  name: Initialize()
+  nameWithType: Game.Initialize()
+  fullName: Microsoft.Xna.Framework.Game.Initialize()
+  spec.csharp:
+  - uid: Microsoft.Xna.Framework.Game.Initialize
+    name: Initialize
+    isExternal: true
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: Microsoft.Xna.Framework.Game.Initialize
+    name: Initialize
+    isExternal: true
+  - name: (
+  - name: )
+- uid: milk.Core.Game.Initialize*
+  commentId: Overload:milk.Core.Game.Initialize
+  href: milk.Core.Game.html#milk_Core_Game_Initialize
+  name: Initialize
+  nameWithType: Game.Initialize
+  fullName: milk.Core.Game.Initialize
+- uid: milk.Core.Game.LoadContent*
+  commentId: Overload:milk.Core.Game.LoadContent
+  href: milk.Core.Game.html#milk_Core_Game_LoadContent
+  name: LoadContent
+  nameWithType: Game.LoadContent
+  fullName: milk.Core.Game.LoadContent
+- uid: milk.Core.Game.RegisterSystem*
+  commentId: Overload:milk.Core.Game.RegisterSystem
+  href: milk.Core.Game.html#milk_Core_Game_RegisterSystem_milk_Core_System_
+  name: RegisterSystem
+  nameWithType: Game.RegisterSystem
+  fullName: milk.Core.Game.RegisterSystem
+- uid: milk.Core.System
+  commentId: T:milk.Core.System
+  parent: milk.Core
+  href: milk.Core.System.html
+  name: System
+  nameWithType: System
+  fullName: milk.Core.System
+- uid: milk.Core.Game.SetScene*
+  commentId: Overload:milk.Core.Game.SetScene
+  href: milk.Core.Game.html#milk_Core_Game_SetScene_milk_Core_Scene_milk_Core_Transition_System_Boolean_
+  name: SetScene
+  nameWithType: Game.SetScene
+  fullName: milk.Core.Game.SetScene
+- uid: milk.Core.Scene
+  commentId: T:milk.Core.Scene
+  parent: milk.Core
+  href: milk.Core.Scene.html
+  name: Scene
+  nameWithType: Scene
+  fullName: milk.Core.Scene
+- uid: milk.Core.Transition
+  commentId: T:milk.Core.Transition
+  parent: milk.Core
+  href: milk.Core.Transition.html
+  name: Transition
+  nameWithType: Transition
+  fullName: milk.Core.Transition
+- uid: System.Collections.Generic.List{milk.Core.Scene}
+  commentId: T:System.Collections.Generic.List{milk.Core.Scene}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.List`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  name: List<Scene>
+  nameWithType: List<Scene>
+  fullName: System.Collections.Generic.List<milk.Core.Scene>
+  nameWithType.vb: List(Of Scene)
+  fullName.vb: System.Collections.Generic.List(Of milk.Core.Scene)
+  name.vb: List(Of Scene)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: <
+  - uid: milk.Core.Scene
+    name: Scene
+    href: milk.Core.Scene.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: milk.Core.Scene
+    name: Scene
+    href: milk.Core.Scene.html
+  - name: )
+- uid: System.Collections.Generic.List`1
+  commentId: T:System.Collections.Generic.List`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  name: List<T>
+  nameWithType: List<T>
+  fullName: System.Collections.Generic.List<T>
+  nameWithType.vb: List(Of T)
+  fullName.vb: System.Collections.Generic.List(Of T)
+  name.vb: List(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+- uid: milk.Core.Game.RemoveScene*
+  commentId: Overload:milk.Core.Game.RemoveScene
+  href: milk.Core.Game.html#milk_Core_Game_RemoveScene_milk_Core_Transition_System_Int32_
+  name: RemoveScene
+  nameWithType: Game.RemoveScene
+  fullName: milk.Core.Game.RemoveScene
+- uid: milk.Core.Game.ClearScenes*
+  commentId: Overload:milk.Core.Game.ClearScenes
+  href: milk.Core.Game.html#milk_Core_Game_ClearScenes
+  name: ClearScenes
+  nameWithType: Game.ClearScenes
+  fullName: milk.Core.Game.ClearScenes
+- uid: Microsoft.Xna.Framework.Game.Update(Microsoft.Xna.Framework.GameTime)
+  commentId: M:Microsoft.Xna.Framework.Game.Update(Microsoft.Xna.Framework.GameTime)
+  parent: Microsoft.Xna.Framework.Game
+  isExternal: true
+  name: Update(GameTime)
+  nameWithType: Game.Update(GameTime)
+  fullName: Microsoft.Xna.Framework.Game.Update(Microsoft.Xna.Framework.GameTime)
+  spec.csharp:
+  - uid: Microsoft.Xna.Framework.Game.Update(Microsoft.Xna.Framework.GameTime)
+    name: Update
+    isExternal: true
+  - name: (
+  - uid: Microsoft.Xna.Framework.GameTime
+    name: GameTime
+    isExternal: true
+  - name: )
+  spec.vb:
+  - uid: Microsoft.Xna.Framework.Game.Update(Microsoft.Xna.Framework.GameTime)
+    name: Update
+    isExternal: true
+  - name: (
+  - uid: Microsoft.Xna.Framework.GameTime
+    name: GameTime
+    isExternal: true
+  - name: )
+- uid: milk.Core.Game.Update*
+  commentId: Overload:milk.Core.Game.Update
+  href: milk.Core.Game.html#milk_Core_Game_Update_Microsoft_Xna_Framework_GameTime_
+  name: Update
+  nameWithType: Game.Update
+  fullName: milk.Core.Game.Update
+- uid: Microsoft.Xna.Framework.GameTime
+  commentId: T:Microsoft.Xna.Framework.GameTime
+  parent: Microsoft.Xna.Framework
+  isExternal: true
+  name: GameTime
+  nameWithType: GameTime
+  fullName: Microsoft.Xna.Framework.GameTime
+- uid: Microsoft.Xna.Framework.DrawableGameComponent
+  commentId: T:Microsoft.Xna.Framework.DrawableGameComponent
+  isExternal: true
+  name: DrawableGameComponent
+  nameWithType: DrawableGameComponent
+  fullName: Microsoft.Xna.Framework.DrawableGameComponent
+- uid: Microsoft.Xna.Framework.Game.Draw(Microsoft.Xna.Framework.GameTime)
+  commentId: M:Microsoft.Xna.Framework.Game.Draw(Microsoft.Xna.Framework.GameTime)
+  parent: Microsoft.Xna.Framework.Game
+  isExternal: true
+  name: Draw(GameTime)
+  nameWithType: Game.Draw(GameTime)
+  fullName: Microsoft.Xna.Framework.Game.Draw(Microsoft.Xna.Framework.GameTime)
+  spec.csharp:
+  - uid: Microsoft.Xna.Framework.Game.Draw(Microsoft.Xna.Framework.GameTime)
+    name: Draw
+    isExternal: true
+  - name: (
+  - uid: Microsoft.Xna.Framework.GameTime
+    name: GameTime
+    isExternal: true
+  - name: )
+  spec.vb:
+  - uid: Microsoft.Xna.Framework.Game.Draw(Microsoft.Xna.Framework.GameTime)
+    name: Draw
+    isExternal: true
+  - name: (
+  - uid: Microsoft.Xna.Framework.GameTime
+    name: GameTime
+    isExternal: true
+  - name: )
+- uid: milk.Core.Game.Draw*
+  commentId: Overload:milk.Core.Game.Draw
+  href: milk.Core.Game.html#milk_Core_Game_Draw_Microsoft_Xna_Framework_GameTime_
+  name: Draw
+  nameWithType: Game.Draw
+  fullName: milk.Core.Game.Draw
+- uid: milk.Core.Game.Quit*
+  commentId: Overload:milk.Core.Game.Quit
+  href: milk.Core.Game.html#milk_Core_Game_Quit
+  name: Quit
+  nameWithType: Game.Quit
+  fullName: milk.Core.Game.Quit

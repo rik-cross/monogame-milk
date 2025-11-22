@@ -1,0 +1,597 @@
+### YamlMime:ManagedReference
+items:
+- uid: milk.Utils
+  commentId: T:milk.Utils
+  id: Utils
+  parent: milk
+  children:
+  - milk.Utils.CompareBitArrays(System.Collections.BitArray,System.Collections.BitArray)
+  - milk.Utils.GetCurrentSourceDirectory(System.String)
+  - milk.Utils.PrintBitArray(System.Collections.BitArray)
+  - milk.Utils.PrintList``1(System.Collections.Generic.List{``0},System.String)
+  langs:
+  - csharp
+  - vb
+  name: Utils
+  nameWithType: Utils
+  fullName: milk.Utils
+  type: Class
+  source:
+    remote:
+      path: Core/Utils.cs
+      branch: main
+      repo: git@github.com:rik-cross/monogame-milk.git
+    id: Utils
+    path: Core/Utils.cs
+    startLine: 8
+  assemblies:
+  - MonoGameECS
+  namespace: milk
+  syntax:
+    content: public static class Utils
+    content.vb: Public Module Utils
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: milk.Utils.GetCurrentSourceDirectory(System.String)
+  commentId: M:milk.Utils.GetCurrentSourceDirectory(System.String)
+  id: GetCurrentSourceDirectory(System.String)
+  parent: milk.Utils
+  langs:
+  - csharp
+  - vb
+  name: GetCurrentSourceDirectory(string)
+  nameWithType: Utils.GetCurrentSourceDirectory(string)
+  fullName: milk.Utils.GetCurrentSourceDirectory(string)
+  type: Method
+  source:
+    remote:
+      path: Core/Utils.cs
+      branch: main
+      repo: git@github.com:rik-cross/monogame-milk.git
+    id: GetCurrentSourceDirectory
+    path: Core/Utils.cs
+    startLine: 11
+  assemblies:
+  - MonoGameECS
+  namespace: milk
+  syntax:
+    content: public static string GetCurrentSourceDirectory(string callerFilePath = "")
+    parameters:
+    - id: callerFilePath
+      type: System.String
+    return:
+      type: System.String
+    content.vb: Public Shared Function GetCurrentSourceDirectory(callerFilePath As String = "") As String
+  overload: milk.Utils.GetCurrentSourceDirectory*
+  nameWithType.vb: Utils.GetCurrentSourceDirectory(String)
+  fullName.vb: milk.Utils.GetCurrentSourceDirectory(String)
+  name.vb: GetCurrentSourceDirectory(String)
+- uid: milk.Utils.CompareBitArrays(System.Collections.BitArray,System.Collections.BitArray)
+  commentId: M:milk.Utils.CompareBitArrays(System.Collections.BitArray,System.Collections.BitArray)
+  id: CompareBitArrays(System.Collections.BitArray,System.Collections.BitArray)
+  parent: milk.Utils
+  langs:
+  - csharp
+  - vb
+  name: CompareBitArrays(BitArray, BitArray)
+  nameWithType: Utils.CompareBitArrays(BitArray, BitArray)
+  fullName: milk.Utils.CompareBitArrays(System.Collections.BitArray, System.Collections.BitArray)
+  type: Method
+  source:
+    remote:
+      path: Core/Utils.cs
+      branch: main
+      repo: git@github.com:rik-cross/monogame-milk.git
+    id: CompareBitArrays
+    path: Core/Utils.cs
+    startLine: 17
+  assemblies:
+  - MonoGameECS
+  namespace: milk
+  syntax:
+    content: public static bool CompareBitArrays(BitArray ba1, BitArray ba2)
+    parameters:
+    - id: ba1
+      type: System.Collections.BitArray
+    - id: ba2
+      type: System.Collections.BitArray
+    return:
+      type: System.Boolean
+    content.vb: Public Shared Function CompareBitArrays(ba1 As BitArray, ba2 As BitArray) As Boolean
+  overload: milk.Utils.CompareBitArrays*
+- uid: milk.Utils.PrintList``1(System.Collections.Generic.List{``0},System.String)
+  commentId: M:milk.Utils.PrintList``1(System.Collections.Generic.List{``0},System.String)
+  id: PrintList``1(System.Collections.Generic.List{``0},System.String)
+  parent: milk.Utils
+  langs:
+  - csharp
+  - vb
+  name: PrintList<T>(List<T>, string)
+  nameWithType: Utils.PrintList<T>(List<T>, string)
+  fullName: milk.Utils.PrintList<T>(System.Collections.Generic.List<T>, string)
+  type: Method
+  source:
+    remote:
+      path: Core/Utils.cs
+      branch: main
+      repo: git@github.com:rik-cross/monogame-milk.git
+    id: PrintList
+    path: Core/Utils.cs
+    startLine: 32
+  assemblies:
+  - MonoGameECS
+  namespace: milk
+  syntax:
+    content: public static string PrintList<T>(List<T> list, string separator = "")
+    parameters:
+    - id: list
+      type: System.Collections.Generic.List{{T}}
+    - id: separator
+      type: System.String
+    typeParameters:
+    - id: T
+    return:
+      type: System.String
+    content.vb: Public Shared Function PrintList(Of T)(list As List(Of T), separator As String = "") As String
+  overload: milk.Utils.PrintList*
+  nameWithType.vb: Utils.PrintList(Of T)(List(Of T), String)
+  fullName.vb: milk.Utils.PrintList(Of T)(System.Collections.Generic.List(Of T), String)
+  name.vb: PrintList(Of T)(List(Of T), String)
+- uid: milk.Utils.PrintBitArray(System.Collections.BitArray)
+  commentId: M:milk.Utils.PrintBitArray(System.Collections.BitArray)
+  id: PrintBitArray(System.Collections.BitArray)
+  parent: milk.Utils
+  langs:
+  - csharp
+  - vb
+  name: PrintBitArray(BitArray)
+  nameWithType: Utils.PrintBitArray(BitArray)
+  fullName: milk.Utils.PrintBitArray(System.Collections.BitArray)
+  type: Method
+  source:
+    remote:
+      path: Core/Utils.cs
+      branch: main
+      repo: git@github.com:rik-cross/monogame-milk.git
+    id: PrintBitArray
+    path: Core/Utils.cs
+    startLine: 49
+  assemblies:
+  - MonoGameECS
+  namespace: milk
+  syntax:
+    content: public static string PrintBitArray(BitArray bitArray)
+    parameters:
+    - id: bitArray
+      type: System.Collections.BitArray
+    return:
+      type: System.String
+    content.vb: Public Shared Function PrintBitArray(bitArray As BitArray) As String
+  overload: milk.Utils.PrintBitArray*
+references:
+- uid: milk
+  commentId: N:milk
+  href: milk.html
+  name: milk
+  nameWithType: milk
+  fullName: milk
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: milk.Utils.GetCurrentSourceDirectory*
+  commentId: Overload:milk.Utils.GetCurrentSourceDirectory
+  href: milk.Utils.html#milk_Utils_GetCurrentSourceDirectory_System_String_
+  name: GetCurrentSourceDirectory
+  nameWithType: Utils.GetCurrentSourceDirectory
+  fullName: milk.Utils.GetCurrentSourceDirectory
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: milk.Utils.CompareBitArrays*
+  commentId: Overload:milk.Utils.CompareBitArrays
+  href: milk.Utils.html#milk_Utils_CompareBitArrays_System_Collections_BitArray_System_Collections_BitArray_
+  name: CompareBitArrays
+  nameWithType: Utils.CompareBitArrays
+  fullName: milk.Utils.CompareBitArrays
+- uid: System.Collections.BitArray
+  commentId: T:System.Collections.BitArray
+  parent: System.Collections
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.bitarray
+  name: BitArray
+  nameWithType: BitArray
+  fullName: System.Collections.BitArray
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: bool
+  nameWithType: bool
+  fullName: bool
+  nameWithType.vb: Boolean
+  fullName.vb: Boolean
+  name.vb: Boolean
+- uid: System.Collections
+  commentId: N:System.Collections
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Collections
+  nameWithType: System.Collections
+  fullName: System.Collections
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+- uid: milk.Utils.PrintList*
+  commentId: Overload:milk.Utils.PrintList
+  href: milk.Utils.html#milk_Utils_PrintList__1_System_Collections_Generic_List___0__System_String_
+  name: PrintList
+  nameWithType: Utils.PrintList
+  fullName: milk.Utils.PrintList
+- uid: System.Collections.Generic.List{{T}}
+  commentId: T:System.Collections.Generic.List{``0}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.List`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  name: List<T>
+  nameWithType: List<T>
+  fullName: System.Collections.Generic.List<T>
+  nameWithType.vb: List(Of T)
+  fullName.vb: System.Collections.Generic.List(Of T)
+  name.vb: List(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: System.Collections.Generic.List`1
+  commentId: T:System.Collections.Generic.List`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  name: List<T>
+  nameWithType: List<T>
+  fullName: System.Collections.Generic.List<T>
+  nameWithType.vb: List(Of T)
+  fullName.vb: System.Collections.Generic.List(Of T)
+  name.vb: List(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+- uid: milk.Utils.PrintBitArray*
+  commentId: Overload:milk.Utils.PrintBitArray
+  href: milk.Utils.html#milk_Utils_PrintBitArray_System_Collections_BitArray_
+  name: PrintBitArray
+  nameWithType: Utils.PrintBitArray
+  fullName: milk.Utils.PrintBitArray

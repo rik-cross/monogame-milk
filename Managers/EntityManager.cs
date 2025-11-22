@@ -12,12 +12,13 @@
 //  
 //   An entity manager manages entities and entity IDs.
 
+using System;
+using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
 
-namespace milk;
+namespace milk.Core;
 
-public class EntityManager
+internal class EntityManager
 {
     // Store local references to manager objects
     private ComponentManager _componentManager = EngineGlobals.game.componentManager;
@@ -52,11 +53,24 @@ public class EntityManager
             {
                 if (scene.entities[i].Delete == true)
                 {
-                    Entity e = scene.entities[i];
+                    Entity? e = scene.entities[i];
                     _componentManager.RemoveAllComponentsFromEntity(scene.entities[i]);
                     scene.OnEntityRemoved(e);
                     scene.entities.RemoveAt(i);
-                    e = null;
+
+                    // System.OnEntityRemovedFromScene
+
+                    foreach (System system in scene.systems)
+                    {
+
+                        // only if the entity has the required components for the system
+                        BitArray temp = (BitArray)system.RequiredComponentBitMask.Clone();
+                        temp.And(e.bitMask);
+                        if (Utils.CompareBitArrays(temp, system.RequiredComponentBitMask) == true)
+                            system.OnEntityRemovedFromScene(scene, e);
+
+                    }
+
                 }
             }
         }
@@ -68,10 +82,9 @@ public class EntityManager
             {
                 CheckInID(_allEntities[i].ID);
                 _allEntities.RemoveAt(i);
-                //Entity e = _allEntities[i];
-                //e = null;
             }
         }
+        
     }
 
     public void CheckInID(int ID)
@@ -88,17 +101,17 @@ public class EntityManager
     }
 
     // Get the (only) entity in the list of all entities
-    public Entity GetEntityByName(string name)
+    public Entity? GetEntityByName(string name)
     {
         return GetEntityByNameInList(_allEntities, name);
     }
 
     // Get the (only) entity in a provided list by name
-    public Entity GetEntityByNameInList(List<Entity> entityList, string name)
+    public Entity? GetEntityByNameInList(List<Entity> entityList, string name)
     {
         foreach (Entity entity in entityList)
         {
-            if (entity.Name.ToLower() == name.ToLower())
+            if (entity.Name != null && entity.Name.ToLower() == name.ToLower())
                 return entity;
         }
         return null;
@@ -124,7 +137,7 @@ public class EntityManager
     {
         foreach (Entity entity in entityList)
         {
-            if (entity.Name.ToLower() == name.ToLower())
+            if (entity.Name != null && entity.Name.ToLower() == name.ToLower())
             {
                 // Remove the entity
                 entityList.Remove(entity);

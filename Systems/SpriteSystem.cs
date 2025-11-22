@@ -3,9 +3,12 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using MonoGame.Extended;
 
-namespace milk;
+using milk.Core;
+using milk.Components;
 
-public class SpriteSystem : System
+namespace milk.Systems;
+
+public class SpriteSystem : milk.Core.System
 {
     public override void Init()
     {
@@ -18,6 +21,9 @@ public class SpriteSystem : System
 
         SpriteComponent spriteComponent = entity.GetComponent<SpriteComponent>();
 
+        if (spriteComponent.Play == false)
+            return;
+
         // Update if animated
         
         if (spriteComponent.HasSpriteForState(entity.State))
@@ -26,22 +32,8 @@ public class SpriteSystem : System
             Sprite current = spriteComponent.GetSpriteForState(entity.State);
 
             // reset if new state
-            if (entity.State != entity._previousState)
-            {
+            if (entity.State != entity.PreviousState)
                 current.currentFrame = 0;
-            }
-
-            // if not on last frame
-            // or
-            // on last frame and loop
-            // ...
-
-            //if (
-            //    current.currentFrame < current.textureList.Count - 1
-            //    ||
-            //    (current.currentFrame >= current.textureList.Count - 1 && current.loop == true)
-            //)
-            //{
 
             if (current.textureList.Count > 1) {
                 current.timeOnCurrentFrame += gameTime.ElapsedGameTime.TotalSeconds;
@@ -88,52 +80,46 @@ public class SpriteSystem : System
             w = (int)transformComponent.Width;
             h = (int)transformComponent.Height;
         }
-
         // resize == false
         // means use offset and scale
         else
         {
-            x = (int)(transformComponent.X - currentSprite.offset.X);
-            y = (int)(transformComponent.Y - currentSprite.offset.Y);
+            x = (int)(transformComponent.X + currentSprite.offset.X);
+            y = (int)(transformComponent.Y + currentSprite.offset.Y);
             w = (int)(currentTexture.Width * currentSprite.scale.X);
             h = (int)(currentTexture.Height * currentSprite.scale.Y);
         }
 
-        //Console.WriteLine(w);
+        SpriteEffects flipEffect = SpriteEffects.None;
+        if (spriteComponent.GetSpriteForState(entity.State).flipH)
+            flipEffect = flipEffect | SpriteEffects.FlipHorizontally;
+        if (spriteComponent.GetSpriteForState(entity.State).flipV)
+            flipEffect = flipEffect | SpriteEffects.FlipVertically;
 
         spriteBatch.Draw(
-            spriteComponent.GetSpriteForState(entity.State).GetCurrentTexture(),
-            new Rectangle(
-                // offset * scale
-                (int)x,
-                (int)y,
-                (int)w,
-                (int)h
-            ),
-            Color.White
+            texture: spriteComponent.GetSpriteForState(entity.State).GetCurrentTexture(),
+            destinationRectangle: new Rectangle((int)x, (int)y, (int)w, (int)h),
+            sourceRectangle: null,
+            rotation: 0f,
+            origin: Vector2.Zero,
+            color: currentSprite.hue,
+            effects: flipEffect,
+            layerDepth: 0f
         );
 
-        /*spriteBatch.DrawRectangle(
-            new Rectangle(
-                (int)x,
-                (int)y,
-                (int)w,
-                (int)h
-            ),
-            Color.White,
-            1.0f
-        );*/
-
-        /*spriteBatch.Draw(
-            Scene.whiteRectangle,
-            new Rectangle(
-                (int)transformComponent.X,
-                (int)transformComponent.Y,
-                (int)transformComponent.Width,
-                (int)transformComponent.Height
-            ),
-            Color.White
-        );*/
+        if (scene.game.Debug == true)
+        {
+            spriteBatch.DrawRectangle(
+                new Rectangle(
+                    (int)x,
+                    (int)y,
+                    (int)w,
+                    (int)h
+                ),
+                Color.White,
+                1.0f
+            );
+        }
 
     }
 

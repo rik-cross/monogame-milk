@@ -1,6 +1,6 @@
 using System;
 
-namespace milk;
+namespace milk.Core;
 
 public static class EasingFunctions
 {
