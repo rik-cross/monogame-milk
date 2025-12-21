@@ -158,7 +158,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "milk.Components.SpriteComponent",
-      "Summary": "<p sourcefile=\"api/milk.Components.SpriteComponent.yml\" sourcestartlinenumber=\"1\">Associates one of more textures (in a <code sourcefile=\"api/milk.Components.SpriteComponent.yml\" sourcestartlinenumber=\"1\">Sprite</code>) with a state.</p>\n"
+      "Summary": "<p sourcefile=\"api/milk.Components.SpriteComponent.yml\" sourcestartlinenumber=\"1\">Associates one or more textures (in a <code sourcefile=\"api/milk.Components.SpriteComponent.yml\" sourcestartlinenumber=\"1\">Sprite</code>) with a state.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -214,7 +214,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "milk.Core.Anchor",
-      "Summary": null
+      "Summary": "<p sourcefile=\"api/milk.Core.Anchor.yml\" sourcestartlinenumber=\"1\">The part of a SceneRenderable to set the position against.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -228,7 +228,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "milk.Core.Camera",
-      "Summary": null
+      "Summary": "<p sourcefile=\"api/milk.Core.Camera.yml\" sourcestartlinenumber=\"1\">A camera can be added to a Scene via scene.AddCamera(),\nand draws a scene's world to the screen.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -270,7 +270,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "milk.Core.EasingFunctions",
-      "Summary": null
+      "Summary": "<p sourcefile=\"api/milk.Core.EasingFunctions.yml\" sourcestartlinenumber=\"1\">Describes a set of easing functions to describe\n(SceneRenderable) movement or (scene) transitions.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -312,7 +312,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "milk.Core.EntitySortMethods",
-      "Summary": null
+      "Summary": "<p sourcefile=\"api/milk.Core.EntitySortMethods.yml\" sourcestartlinenumber=\"1\">Methods to control the draw order of entities in a scene.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -326,7 +326,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "milk.Core.Game",
-      "Summary": null
+      "Summary": "<p sourcefile=\"api/milk.Core.Game.yml\" sourcestartlinenumber=\"1\">A game is the top-level class, and is a subclass of\nthe MonoGame Game class.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -340,7 +340,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "milk.Core.Image",
-      "Summary": null
+      "Summary": "<p sourcefile=\"api/milk.Core.Image.yml\" sourcestartlinenumber=\"1\">An image can be displayed within a scene.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -354,7 +354,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "milk.Core.InputManager",
-      "Summary": null
+      "Summary": "<p sourcefile=\"api/milk.Core.InputManager.yml\" sourcestartlinenumber=\"1\">Used to receive and respond to player input.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -382,7 +382,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "milk.Core.SceneRenderable",
-      "Summary": null
+      "Summary": "<p sourcefile=\"api/milk.Core.SceneRenderable.yml\" sourcestartlinenumber=\"1\">Used as a superclass for images, text, etc.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -396,7 +396,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "milk.Core.Sprite",
-      "Summary": null
+      "Summary": "<p sourcefile=\"api/milk.Core.Sprite.yml\" sourcestartlinenumber=\"1\">A sprite is added to a SpriteComponent, and is a collection\nof textures, along with some additional data. A sprite with more\nthan one texture automatically becomes an animated sprite.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -424,7 +424,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "milk.Core.Text",
-      "Summary": null
+      "Summary": "<p sourcefile=\"api/milk.Core.Text.yml\" sourcestartlinenumber=\"1\">Displays text in a scene, in the font specified.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -914,7 +914,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "milk.Systems.TriggerSystem",
-      "Summary": null
+      "Summary": "<p sourcefile=\"api/milk.Systems.TriggerSystem.yml\" sourcestartlinenumber=\"1\">Processes entities with trigger components, and calls the relevant\ncallbacks when 2 entities have overlapping colliders.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -1149,6 +1149,16 @@
         },
         ".html": {
           "relative_path": "api/toc.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/changelog.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/changelog.html"
         }
       },
       "version": ""

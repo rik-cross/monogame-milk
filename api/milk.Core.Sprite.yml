@@ -5,9 +5,8 @@ items:
   id: Sprite
   parent: milk.Core
   children:
-  - milk.Core.Sprite.#ctor(System.Collections.Generic.List{Microsoft.Xna.Framework.Graphics.Texture2D},System.Boolean,System.Double,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,System.Boolean,System.Nullable{Microsoft.Xna.Framework.Color},System.Boolean,System.Boolean)
+  - milk.Core.Sprite.#ctor(System.Collections.Generic.List{Microsoft.Xna.Framework.Graphics.Texture2D},System.Boolean,System.Double,System.Nullable{Microsoft.Xna.Framework.Vector2},System.Nullable{Microsoft.Xna.Framework.Vector2},System.Boolean,System.Nullable{Microsoft.Xna.Framework.Color},System.Boolean,System.Boolean)
   - milk.Core.Sprite.GetCurrentTexture
-  - milk.Core.Sprite.UpdateAnimationInfo
   - milk.Core.Sprite.currentFrame
   - milk.Core.Sprite.duration
   - milk.Core.Sprite.flipH
@@ -35,10 +34,17 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: Sprite
     path: Core/Sprite.cs
-    startLine: 6
+    startLine: 16
   assemblies:
   - MonoGameECS
   namespace: milk.Core
+  summary: >-
+    A sprite is added to a SpriteComponent, and is a collection 
+
+    of textures, along with some additional data. A sprite with more
+
+    than one texture automatically becomes an animated sprite.
+  example: []
   syntax:
     content: public class Sprite
     content.vb: Public Class Sprite
@@ -70,10 +76,12 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: textureList
     path: Core/Sprite.cs
-    startLine: 9
+    startLine: 22
   assemblies:
   - MonoGameECS
   namespace: milk.Core
+  summary: A list of one or more textures to display.
+  example: []
   syntax:
     content: public List<Texture2D> textureList
     return:
@@ -97,10 +105,12 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: hue
     path: Core/Sprite.cs
-    startLine: 10
+    startLine: 27
   assemblies:
   - MonoGameECS
   namespace: milk.Core
+  summary: Sprite hue.
+  example: []
   syntax:
     content: public Color hue
     return:
@@ -124,10 +134,12 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: offset
     path: Core/Sprite.cs
-    startLine: 11
+    startLine: 32
   assemblies:
   - MonoGameECS
   namespace: milk.Core
+  summary: The sprite offset from the entity position.
+  example: []
   syntax:
     content: public Vector2 offset
     return:
@@ -151,10 +163,12 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: flipH
     path: Core/Sprite.cs
-    startLine: 12
+    startLine: 37
   assemblies:
   - MonoGameECS
   namespace: milk.Core
+  summary: Horizontally flip the sprite.
+  example: []
   syntax:
     content: public bool flipH
     return:
@@ -178,10 +192,12 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: flipV
     path: Core/Sprite.cs
-    startLine: 13
+    startLine: 42
   assemblies:
   - MonoGameECS
   namespace: milk.Core
+  summary: Vertically flip the sprite.
+  example: []
   syntax:
     content: public bool flipV
     return:
@@ -205,10 +221,12 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: scale
     path: Core/Sprite.cs
-    startLine: 14
+    startLine: 47
   assemblies:
   - MonoGameECS
   namespace: milk.Core
+  summary: Texture scaling.
+  example: []
   syntax:
     content: public Vector2 scale
     return:
@@ -232,10 +250,12 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: numberOfFrames
     path: Core/Sprite.cs
-    startLine: 17
+    startLine: 54
   assemblies:
   - MonoGameECS
   namespace: milk.Core
+  summary: The number of textures.
+  example: []
   syntax:
     content: public int numberOfFrames
     return:
@@ -259,10 +279,12 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: currentFrame
     path: Core/Sprite.cs
-    startLine: 18
+    startLine: 59
   assemblies:
   - MonoGameECS
   namespace: milk.Core
+  summary: The current texture index.
+  example: []
   syntax:
     content: public int currentFrame
     return:
@@ -286,10 +308,12 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: duration
     path: Core/Sprite.cs
-    startLine: 19
+    startLine: 64
   assemblies:
   - MonoGameECS
   namespace: milk.Core
+  summary: The total time for the animation loop.
+  example: []
   syntax:
     content: public double duration
     return:
@@ -313,10 +337,12 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: timePerFrame
     path: Core/Sprite.cs
-    startLine: 20
+    startLine: 69
   assemblies:
   - MonoGameECS
   namespace: milk.Core
+  summary: The time to display each texture.
+  example: []
   syntax:
     content: public double timePerFrame
     return:
@@ -340,10 +366,12 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: timeOnCurrentFrame
     path: Core/Sprite.cs
-    startLine: 21
+    startLine: 74
   assemblies:
   - MonoGameECS
   namespace: milk.Core
+  summary: The elapsed time since the texture became current.
+  example: []
   syntax:
     content: public double timeOnCurrentFrame
     return:
@@ -367,10 +395,15 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: resizeToEntity
     path: Core/Sprite.cs
-    startLine: 22
+    startLine: 80
   assemblies:
   - MonoGameECS
   namespace: milk.Core
+  summary: >-
+    If true, the size of the sprite is the same as the
+
+    entity size, stored in the TransformComponent.
+  example: []
   syntax:
     content: public bool resizeToEntity
     return:
@@ -394,25 +427,27 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: loop
     path: Core/Sprite.cs
-    startLine: 23
+    startLine: 85
   assemblies:
   - MonoGameECS
   namespace: milk.Core
+  summary: Repeatedly loop the animation.
+  example: []
   syntax:
     content: public bool loop
     return:
       type: System.Boolean
     content.vb: Public [loop] As Boolean
-- uid: milk.Core.Sprite.#ctor(System.Collections.Generic.List{Microsoft.Xna.Framework.Graphics.Texture2D},System.Boolean,System.Double,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,System.Boolean,System.Nullable{Microsoft.Xna.Framework.Color},System.Boolean,System.Boolean)
-  commentId: M:milk.Core.Sprite.#ctor(System.Collections.Generic.List{Microsoft.Xna.Framework.Graphics.Texture2D},System.Boolean,System.Double,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,System.Boolean,System.Nullable{Microsoft.Xna.Framework.Color},System.Boolean,System.Boolean)
-  id: '#ctor(System.Collections.Generic.List{Microsoft.Xna.Framework.Graphics.Texture2D},System.Boolean,System.Double,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,System.Boolean,System.Nullable{Microsoft.Xna.Framework.Color},System.Boolean,System.Boolean)'
+- uid: milk.Core.Sprite.#ctor(System.Collections.Generic.List{Microsoft.Xna.Framework.Graphics.Texture2D},System.Boolean,System.Double,System.Nullable{Microsoft.Xna.Framework.Vector2},System.Nullable{Microsoft.Xna.Framework.Vector2},System.Boolean,System.Nullable{Microsoft.Xna.Framework.Color},System.Boolean,System.Boolean)
+  commentId: M:milk.Core.Sprite.#ctor(System.Collections.Generic.List{Microsoft.Xna.Framework.Graphics.Texture2D},System.Boolean,System.Double,System.Nullable{Microsoft.Xna.Framework.Vector2},System.Nullable{Microsoft.Xna.Framework.Vector2},System.Boolean,System.Nullable{Microsoft.Xna.Framework.Color},System.Boolean,System.Boolean)
+  id: '#ctor(System.Collections.Generic.List{Microsoft.Xna.Framework.Graphics.Texture2D},System.Boolean,System.Double,System.Nullable{Microsoft.Xna.Framework.Vector2},System.Nullable{Microsoft.Xna.Framework.Vector2},System.Boolean,System.Nullable{Microsoft.Xna.Framework.Color},System.Boolean,System.Boolean)'
   parent: milk.Core.Sprite
   langs:
   - csharp
   - vb
-  name: Sprite(List<Texture2D>, bool, double, Vector2, Vector2, bool, Color?, bool, bool)
-  nameWithType: Sprite.Sprite(List<Texture2D>, bool, double, Vector2, Vector2, bool, Color?, bool, bool)
-  fullName: milk.Core.Sprite.Sprite(System.Collections.Generic.List<Microsoft.Xna.Framework.Graphics.Texture2D>, bool, double, Microsoft.Xna.Framework.Vector2, Microsoft.Xna.Framework.Vector2, bool, Microsoft.Xna.Framework.Color?, bool, bool)
+  name: Sprite(List<Texture2D>, bool, double, Vector2?, Vector2?, bool, Color?, bool, bool)
+  nameWithType: Sprite.Sprite(List<Texture2D>, bool, double, Vector2?, Vector2?, bool, Color?, bool, bool)
+  fullName: milk.Core.Sprite.Sprite(System.Collections.Generic.List<Microsoft.Xna.Framework.Graphics.Texture2D>, bool, double, Microsoft.Xna.Framework.Vector2?, Microsoft.Xna.Framework.Vector2?, bool, Microsoft.Xna.Framework.Color?, bool, bool)
   type: Constructor
   source:
     remote:
@@ -421,62 +456,47 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: .ctor
     path: Core/Sprite.cs
-    startLine: 25
+    startLine: 99
   assemblies:
   - MonoGameECS
   namespace: milk.Core
+  summary: Creates a new sprite object.
+  example: []
   syntax:
-    content: public Sprite(List<Texture2D> textureList, bool resizeToEntity = true, double duration = 0, Vector2 offset = default, Vector2 scale = default, bool loop = true, Color? hue = null, bool flipH = false, bool flipV = false)
+    content: public Sprite(List<Texture2D> textureList, bool resizeToEntity = true, double duration = 0, Vector2? offset = null, Vector2? scale = null, bool loop = true, Color? hue = null, bool flipH = false, bool flipV = false)
     parameters:
     - id: textureList
       type: System.Collections.Generic.List{Microsoft.Xna.Framework.Graphics.Texture2D}
+      description: One or more textures to display.
     - id: resizeToEntity
       type: System.Boolean
+      description: Sprite size is set to the entity size (default = true).
     - id: duration
       type: System.Double
+      description: The total time to display the animation sequence (default = 0).
     - id: offset
-      type: Microsoft.Xna.Framework.Vector2
+      type: System.Nullable{Microsoft.Xna.Framework.Vector2}
+      description: The distance between the entity position and the sprite (default = none).
     - id: scale
-      type: Microsoft.Xna.Framework.Vector2
+      type: System.Nullable{Microsoft.Xna.Framework.Vector2}
+      description: The scale factor for the textures (default = 1 - no scale factor).
     - id: loop
       type: System.Boolean
+      description: Loop the textures (default = true).
     - id: hue
       type: System.Nullable{Microsoft.Xna.Framework.Color}
+      description: The hue to recolor the sprite (default = white / no recolor).
     - id: flipH
       type: System.Boolean
+      description: Horizontally flip the textures (default = false).
     - id: flipV
       type: System.Boolean
-    content.vb: Public Sub New(textureList As List(Of Texture2D), resizeToEntity As Boolean = True, duration As Double = 0, offset As Vector2 = Nothing, scale As Vector2 = Nothing, [loop] As Boolean = True, hue As Color? = Nothing, flipH As Boolean = False, flipV As Boolean = False)
+      description: Vertically flip the textures (default = false).
+    content.vb: Public Sub New(textureList As List(Of Texture2D), resizeToEntity As Boolean = True, duration As Double = 0, offset As Vector2? = Nothing, scale As Vector2? = Nothing, [loop] As Boolean = True, hue As Color? = Nothing, flipH As Boolean = False, flipV As Boolean = False)
   overload: milk.Core.Sprite.#ctor*
-  nameWithType.vb: Sprite.New(List(Of Texture2D), Boolean, Double, Vector2, Vector2, Boolean, Color?, Boolean, Boolean)
-  fullName.vb: milk.Core.Sprite.New(System.Collections.Generic.List(Of Microsoft.Xna.Framework.Graphics.Texture2D), Boolean, Double, Microsoft.Xna.Framework.Vector2, Microsoft.Xna.Framework.Vector2, Boolean, Microsoft.Xna.Framework.Color?, Boolean, Boolean)
-  name.vb: New(List(Of Texture2D), Boolean, Double, Vector2, Vector2, Boolean, Color?, Boolean, Boolean)
-- uid: milk.Core.Sprite.UpdateAnimationInfo
-  commentId: M:milk.Core.Sprite.UpdateAnimationInfo
-  id: UpdateAnimationInfo
-  parent: milk.Core.Sprite
-  langs:
-  - csharp
-  - vb
-  name: UpdateAnimationInfo()
-  nameWithType: Sprite.UpdateAnimationInfo()
-  fullName: milk.Core.Sprite.UpdateAnimationInfo()
-  type: Method
-  source:
-    remote:
-      path: Core/Sprite.cs
-      branch: main
-      repo: git@github.com:rik-cross/monogame-milk.git
-    id: UpdateAnimationInfo
-    path: Core/Sprite.cs
-    startLine: 67
-  assemblies:
-  - MonoGameECS
-  namespace: milk.Core
-  syntax:
-    content: public void UpdateAnimationInfo()
-    content.vb: Public Sub UpdateAnimationInfo()
-  overload: milk.Core.Sprite.UpdateAnimationInfo*
+  nameWithType.vb: Sprite.New(List(Of Texture2D), Boolean, Double, Vector2?, Vector2?, Boolean, Color?, Boolean, Boolean)
+  fullName.vb: milk.Core.Sprite.New(System.Collections.Generic.List(Of Microsoft.Xna.Framework.Graphics.Texture2D), Boolean, Double, Microsoft.Xna.Framework.Vector2?, Microsoft.Xna.Framework.Vector2?, Boolean, Microsoft.Xna.Framework.Color?, Boolean, Boolean)
+  name.vb: New(List(Of Texture2D), Boolean, Double, Vector2?, Vector2?, Boolean, Color?, Boolean, Boolean)
 - uid: milk.Core.Sprite.GetCurrentTexture
   commentId: M:milk.Core.Sprite.GetCurrentTexture
   id: GetCurrentTexture
@@ -495,14 +515,17 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: GetCurrentTexture
     path: Core/Sprite.cs
-    startLine: 73
+    startLine: 141
   assemblies:
   - MonoGameECS
   namespace: milk.Core
+  summary: Returns the currently displayed texture.
+  example: []
   syntax:
     content: public Texture2D GetCurrentTexture()
     return:
       type: Microsoft.Xna.Framework.Graphics.Texture2D
+      description: The currently displayed texture.
     content.vb: Public Function GetCurrentTexture() As Texture2D
   overload: milk.Core.Sprite.GetCurrentTexture*
 references:
@@ -942,13 +965,30 @@ references:
   name.vb: Double
 - uid: milk.Core.Sprite.#ctor*
   commentId: Overload:milk.Core.Sprite.#ctor
-  href: milk.Core.Sprite.html#milk_Core_Sprite__ctor_System_Collections_Generic_List_Microsoft_Xna_Framework_Graphics_Texture2D__System_Boolean_System_Double_Microsoft_Xna_Framework_Vector2_Microsoft_Xna_Framework_Vector2_System_Boolean_System_Nullable_Microsoft_Xna_Framework_Color__System_Boolean_System_Boolean_
+  href: milk.Core.Sprite.html#milk_Core_Sprite__ctor_System_Collections_Generic_List_Microsoft_Xna_Framework_Graphics_Texture2D__System_Boolean_System_Double_System_Nullable_Microsoft_Xna_Framework_Vector2__System_Nullable_Microsoft_Xna_Framework_Vector2__System_Boolean_System_Nullable_Microsoft_Xna_Framework_Color__System_Boolean_System_Boolean_
   name: Sprite
   nameWithType: Sprite.Sprite
   fullName: milk.Core.Sprite.Sprite
   nameWithType.vb: Sprite.New
   fullName.vb: milk.Core.Sprite.New
   name.vb: New
+- uid: System.Nullable{Microsoft.Xna.Framework.Vector2}
+  commentId: T:System.Nullable{Microsoft.Xna.Framework.Vector2}
+  parent: System
+  definition: System.Nullable`1
+  name: Vector2?
+  nameWithType: Vector2?
+  fullName: Microsoft.Xna.Framework.Vector2?
+  spec.csharp:
+  - uid: Microsoft.Xna.Framework.Vector2
+    name: Vector2
+    isExternal: true
+  - name: '?'
+  spec.vb:
+  - uid: Microsoft.Xna.Framework.Vector2
+    name: Vector2
+    isExternal: true
+  - name: '?'
 - uid: System.Nullable{Microsoft.Xna.Framework.Color}
   commentId: T:System.Nullable{Microsoft.Xna.Framework.Color}
   parent: System
@@ -994,12 +1034,6 @@ references:
   - name: " "
   - name: T
   - name: )
-- uid: milk.Core.Sprite.UpdateAnimationInfo*
-  commentId: Overload:milk.Core.Sprite.UpdateAnimationInfo
-  href: milk.Core.Sprite.html#milk_Core_Sprite_UpdateAnimationInfo
-  name: UpdateAnimationInfo
-  nameWithType: Sprite.UpdateAnimationInfo
-  fullName: milk.Core.Sprite.UpdateAnimationInfo
 - uid: milk.Core.Sprite.GetCurrentTexture*
   commentId: Overload:milk.Core.Sprite.GetCurrentTexture
   href: milk.Core.Sprite.html#milk_Core_Sprite_GetCurrentTexture

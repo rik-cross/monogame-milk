@@ -1,7 +1,10 @@
-using System.Collections;
-using System.Collections.Generic;
+//   Monogame Intuitive Library Kit (milk)
+//   A MonoGame ECS Engine, By Rik Cross
+//   -- Code: github.com/rik-cross/monogame-milk
+//   -- Docs: rik-cross.github.io/monogame-milk
+//   -- Shared under the MIT licence
 
-using System.IO;
+using System.Collections;
 using System.Runtime.CompilerServices;
 
 namespace milk.Core;

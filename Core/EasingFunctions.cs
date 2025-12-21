@@ -2,6 +2,10 @@ using System;
 
 namespace milk.Core;
 
+/// <summary>
+/// Describes a set of easing functions to describe
+/// (SceneRenderable) movement or (scene) transitions.
+/// </summary>
 public static class EasingFunctions
 {
     /// <summary>

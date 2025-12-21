@@ -5,11 +5,10 @@ items:
   id: Image
   parent: milk.Core
   children:
-  - milk.Core.Image.#ctor(Microsoft.Xna.Framework.Graphics.Texture2D,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,System.Single,milk.Core.Anchor,milk.Core.SceneRenderable,Microsoft.Xna.Framework.Color,System.Int32,Microsoft.Xna.Framework.Color,Microsoft.Xna.Framework.Color)
+  - milk.Core.Image.#ctor(Microsoft.Xna.Framework.Graphics.Texture2D,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,System.Single,milk.Core.Anchor,milk.Core.SceneRenderable,System.Nullable{Microsoft.Xna.Framework.Color},System.Int32,System.Nullable{Microsoft.Xna.Framework.Color},System.Nullable{Microsoft.Xna.Framework.Color})
   - milk.Core.Image.BackgroundColor
   - milk.Core.Image.BorderColor
   - milk.Core.Image.BorderWidth
-  - milk.Core.Image.CalculateSize(Microsoft.Xna.Framework.Graphics.Texture2D,Microsoft.Xna.Framework.Vector2)
   - milk.Core.Image.Draw
   - milk.Core.Image.Hue
   - milk.Core.Image.Texture
@@ -27,10 +26,12 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: Image
     path: Core/Image.cs
-    startLine: 7
+    startLine: 15
   assemblies:
   - MonoGameECS
   namespace: milk.Core
+  summary: An image can be displayed within a scene.
+  example: []
   syntax:
     content: 'public class Image : SceneRenderable'
     content.vb: Public Class Image Inherits SceneRenderable
@@ -70,10 +71,12 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: Texture
     path: Core/Image.cs
-    startLine: 10
+    startLine: 21
   assemblies:
   - MonoGameECS
   namespace: milk.Core
+  summary: The texture to display.
+  example: []
   syntax:
     content: public readonly Texture2D Texture
     return:
@@ -97,10 +100,12 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: BackgroundColor
     path: Core/Image.cs
-    startLine: 11
+    startLine: 26
   assemblies:
   - MonoGameECS
   namespace: milk.Core
+  summary: Background colour.
+  example: []
   syntax:
     content: public Color BackgroundColor
     return:
@@ -124,10 +129,12 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: BorderColor
     path: Core/Image.cs
-    startLine: 12
+    startLine: 31
   assemblies:
   - MonoGameECS
   namespace: milk.Core
+  summary: Border color.
+  example: []
   syntax:
     content: public Color BorderColor
     return:
@@ -151,10 +158,12 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: BorderWidth
     path: Core/Image.cs
-    startLine: 13
+    startLine: 36
   assemblies:
   - MonoGameECS
   namespace: milk.Core
+  summary: Border width.
+  example: []
   syntax:
     content: public int BorderWidth
     return:
@@ -178,25 +187,27 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: Hue
     path: Core/Image.cs
-    startLine: 14
+    startLine: 41
   assemblies:
   - MonoGameECS
   namespace: milk.Core
+  summary: Hue for recoloring image.
+  example: []
   syntax:
     content: public Color Hue
     return:
       type: Microsoft.Xna.Framework.Color
     content.vb: Public Hue As Color
-- uid: milk.Core.Image.#ctor(Microsoft.Xna.Framework.Graphics.Texture2D,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,System.Single,milk.Core.Anchor,milk.Core.SceneRenderable,Microsoft.Xna.Framework.Color,System.Int32,Microsoft.Xna.Framework.Color,Microsoft.Xna.Framework.Color)
-  commentId: M:milk.Core.Image.#ctor(Microsoft.Xna.Framework.Graphics.Texture2D,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,System.Single,milk.Core.Anchor,milk.Core.SceneRenderable,Microsoft.Xna.Framework.Color,System.Int32,Microsoft.Xna.Framework.Color,Microsoft.Xna.Framework.Color)
-  id: '#ctor(Microsoft.Xna.Framework.Graphics.Texture2D,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,System.Single,milk.Core.Anchor,milk.Core.SceneRenderable,Microsoft.Xna.Framework.Color,System.Int32,Microsoft.Xna.Framework.Color,Microsoft.Xna.Framework.Color)'
+- uid: milk.Core.Image.#ctor(Microsoft.Xna.Framework.Graphics.Texture2D,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,System.Single,milk.Core.Anchor,milk.Core.SceneRenderable,System.Nullable{Microsoft.Xna.Framework.Color},System.Int32,System.Nullable{Microsoft.Xna.Framework.Color},System.Nullable{Microsoft.Xna.Framework.Color})
+  commentId: M:milk.Core.Image.#ctor(Microsoft.Xna.Framework.Graphics.Texture2D,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,System.Single,milk.Core.Anchor,milk.Core.SceneRenderable,System.Nullable{Microsoft.Xna.Framework.Color},System.Int32,System.Nullable{Microsoft.Xna.Framework.Color},System.Nullable{Microsoft.Xna.Framework.Color})
+  id: '#ctor(Microsoft.Xna.Framework.Graphics.Texture2D,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,System.Single,milk.Core.Anchor,milk.Core.SceneRenderable,System.Nullable{Microsoft.Xna.Framework.Color},System.Int32,System.Nullable{Microsoft.Xna.Framework.Color},System.Nullable{Microsoft.Xna.Framework.Color})'
   parent: milk.Core.Image
   langs:
   - csharp
   - vb
-  name: Image(Texture2D, Vector2, Vector2, float, Anchor, SceneRenderable?, Color, int, Color, Color)
-  nameWithType: Image.Image(Texture2D, Vector2, Vector2, float, Anchor, SceneRenderable?, Color, int, Color, Color)
-  fullName: milk.Core.Image.Image(Microsoft.Xna.Framework.Graphics.Texture2D, Microsoft.Xna.Framework.Vector2, Microsoft.Xna.Framework.Vector2, float, milk.Core.Anchor, milk.Core.SceneRenderable?, Microsoft.Xna.Framework.Color, int, Microsoft.Xna.Framework.Color, Microsoft.Xna.Framework.Color)
+  name: Image(Texture2D, Vector2, Vector2, float, Anchor, SceneRenderable?, Color?, int, Color?, Color?)
+  nameWithType: Image.Image(Texture2D, Vector2, Vector2, float, Anchor, SceneRenderable?, Color?, int, Color?, Color?)
+  fullName: milk.Core.Image.Image(Microsoft.Xna.Framework.Graphics.Texture2D, Microsoft.Xna.Framework.Vector2, Microsoft.Xna.Framework.Vector2, float, milk.Core.Anchor, milk.Core.SceneRenderable?, Microsoft.Xna.Framework.Color?, int, Microsoft.Xna.Framework.Color?, Microsoft.Xna.Framework.Color?)
   type: Constructor
   source:
     remote:
@@ -205,38 +216,50 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: .ctor
     path: Core/Image.cs
-    startLine: 16
+    startLine: 58
   assemblies:
   - MonoGameECS
   namespace: milk.Core
+  summary: Creates a new image.
+  example: []
   syntax:
-    content: public Image(Texture2D texture, Vector2 size = default, Vector2 position = default, float alpha = 1, Anchor anchor = Anchor.TopLeft, SceneRenderable? parent = null, Color backgroundColor = default, int borderWidth = 0, Color borderColor = default, Color hue = default)
+    content: public Image(Texture2D texture, Vector2 size = default, Vector2 position = default, float alpha = 1, Anchor anchor = Anchor.TopLeft, SceneRenderable? parent = null, Color? backgroundColor = null, int borderWidth = 0, Color? borderColor = null, Color? hue = null)
     parameters:
     - id: texture
       type: Microsoft.Xna.Framework.Graphics.Texture2D
+      description: The texture to display.
     - id: size
       type: Microsoft.Xna.Framework.Vector2
+      description: The (x, y) size of the image (default = null - the texture original size).
     - id: position
       type: Microsoft.Xna.Framework.Vector2
+      description: The (x, y) position (default = null - (0, 0)).
     - id: alpha
       type: System.Single
+      description: The image transparency (default = 1 - no transparency).
     - id: anchor
       type: milk.Core.Anchor
+      description: The position anchor (default = ).
     - id: parent
       type: milk.Core.SceneRenderable
+      description: The parent SceneRenderable, for relative positioning (default = null).
     - id: backgroundColor
-      type: Microsoft.Xna.Framework.Color
+      type: System.Nullable{Microsoft.Xna.Framework.Color}
+      description: The background color (default = null - transparent).
     - id: borderWidth
       type: System.Int32
+      description: The width of the border (default = 0).
     - id: borderColor
-      type: Microsoft.Xna.Framework.Color
+      type: System.Nullable{Microsoft.Xna.Framework.Color}
+      description: The border color (default = null - black).
     - id: hue
-      type: Microsoft.Xna.Framework.Color
-    content.vb: Public Sub New(texture As Texture2D, size As Vector2 = Nothing, position As Vector2 = Nothing, alpha As Single = 1, anchor As Anchor = Anchor.TopLeft, parent As SceneRenderable = Nothing, backgroundColor As Color = Nothing, borderWidth As Integer = 0, borderColor As Color = Nothing, hue As Color = Nothing)
+      type: System.Nullable{Microsoft.Xna.Framework.Color}
+      description: The hue, for image recoloring (default = null - white / no recoloring).
+    content.vb: Public Sub New(texture As Texture2D, size As Vector2 = Nothing, position As Vector2 = Nothing, alpha As Single = 1, anchor As Anchor = Anchor.TopLeft, parent As SceneRenderable = Nothing, backgroundColor As Color? = Nothing, borderWidth As Integer = 0, borderColor As Color? = Nothing, hue As Color? = Nothing)
   overload: milk.Core.Image.#ctor*
-  nameWithType.vb: Image.New(Texture2D, Vector2, Vector2, Single, Anchor, SceneRenderable, Color, Integer, Color, Color)
-  fullName.vb: milk.Core.Image.New(Microsoft.Xna.Framework.Graphics.Texture2D, Microsoft.Xna.Framework.Vector2, Microsoft.Xna.Framework.Vector2, Single, milk.Core.Anchor, milk.Core.SceneRenderable, Microsoft.Xna.Framework.Color, Integer, Microsoft.Xna.Framework.Color, Microsoft.Xna.Framework.Color)
-  name.vb: New(Texture2D, Vector2, Vector2, Single, Anchor, SceneRenderable, Color, Integer, Color, Color)
+  nameWithType.vb: Image.New(Texture2D, Vector2, Vector2, Single, Anchor, SceneRenderable, Color?, Integer, Color?, Color?)
+  fullName.vb: milk.Core.Image.New(Microsoft.Xna.Framework.Graphics.Texture2D, Microsoft.Xna.Framework.Vector2, Microsoft.Xna.Framework.Vector2, Single, milk.Core.Anchor, milk.Core.SceneRenderable, Microsoft.Xna.Framework.Color?, Integer, Microsoft.Xna.Framework.Color?, Microsoft.Xna.Framework.Color?)
+  name.vb: New(Texture2D, Vector2, Vector2, Single, Anchor, SceneRenderable, Color?, Integer, Color?, Color?)
 - uid: milk.Core.Image.Draw
   commentId: M:milk.Core.Image.Draw
   id: Draw
@@ -255,49 +278,17 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: Draw
     path: Core/Image.cs
-    startLine: 47
+    startLine: 81
   assemblies:
   - MonoGameECS
   namespace: milk.Core
+  summary: Draw needs to be called on an image within a scene.
   example: []
   syntax:
     content: public override void Draw()
     content.vb: Public Overrides Sub Draw()
   overridden: milk.Core.SceneRenderable.Draw
   overload: milk.Core.Image.Draw*
-- uid: milk.Core.Image.CalculateSize(Microsoft.Xna.Framework.Graphics.Texture2D,Microsoft.Xna.Framework.Vector2)
-  commentId: M:milk.Core.Image.CalculateSize(Microsoft.Xna.Framework.Graphics.Texture2D,Microsoft.Xna.Framework.Vector2)
-  id: CalculateSize(Microsoft.Xna.Framework.Graphics.Texture2D,Microsoft.Xna.Framework.Vector2)
-  parent: milk.Core.Image
-  langs:
-  - csharp
-  - vb
-  name: CalculateSize(Texture2D, Vector2)
-  nameWithType: Image.CalculateSize(Texture2D, Vector2)
-  fullName: milk.Core.Image.CalculateSize(Microsoft.Xna.Framework.Graphics.Texture2D, Microsoft.Xna.Framework.Vector2)
-  type: Method
-  source:
-    remote:
-      path: Core/Image.cs
-      branch: main
-      repo: git@github.com:rik-cross/monogame-milk.git
-    id: CalculateSize
-    path: Core/Image.cs
-    startLine: 68
-  assemblies:
-  - MonoGameECS
-  namespace: milk.Core
-  syntax:
-    content: public static Vector2 CalculateSize(Texture2D texture, Vector2 size)
-    parameters:
-    - id: texture
-      type: Microsoft.Xna.Framework.Graphics.Texture2D
-    - id: size
-      type: Microsoft.Xna.Framework.Vector2
-    return:
-      type: Microsoft.Xna.Framework.Vector2
-    content.vb: Public Shared Function CalculateSize(texture As Texture2D, size As Vector2) As Vector2
-  overload: milk.Core.Image.CalculateSize*
 references:
 - uid: milk.Core
   commentId: N:milk.Core
@@ -747,7 +738,7 @@ references:
   name.vb: Integer
 - uid: milk.Core.Image.#ctor*
   commentId: Overload:milk.Core.Image.#ctor
-  href: milk.Core.Image.html#milk_Core_Image__ctor_Microsoft_Xna_Framework_Graphics_Texture2D_Microsoft_Xna_Framework_Vector2_Microsoft_Xna_Framework_Vector2_System_Single_milk_Core_Anchor_milk_Core_SceneRenderable_Microsoft_Xna_Framework_Color_System_Int32_Microsoft_Xna_Framework_Color_Microsoft_Xna_Framework_Color_
+  href: milk.Core.Image.html#milk_Core_Image__ctor_Microsoft_Xna_Framework_Graphics_Texture2D_Microsoft_Xna_Framework_Vector2_Microsoft_Xna_Framework_Vector2_System_Single_milk_Core_Anchor_milk_Core_SceneRenderable_System_Nullable_Microsoft_Xna_Framework_Color__System_Int32_System_Nullable_Microsoft_Xna_Framework_Color__System_Nullable_Microsoft_Xna_Framework_Color__
   name: Image
   nameWithType: Image.Image
   fullName: milk.Core.Image.Image
@@ -779,6 +770,51 @@ references:
   name: Anchor
   nameWithType: Anchor
   fullName: milk.Core.Anchor
+- uid: System.Nullable{Microsoft.Xna.Framework.Color}
+  commentId: T:System.Nullable{Microsoft.Xna.Framework.Color}
+  parent: System
+  definition: System.Nullable`1
+  name: Color?
+  nameWithType: Color?
+  fullName: Microsoft.Xna.Framework.Color?
+  spec.csharp:
+  - uid: Microsoft.Xna.Framework.Color
+    name: Color
+    isExternal: true
+  - name: '?'
+  spec.vb:
+  - uid: Microsoft.Xna.Framework.Color
+    name: Color
+    isExternal: true
+  - name: '?'
+- uid: System.Nullable`1
+  commentId: T:System.Nullable`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.nullable-1
+  name: Nullable<T>
+  nameWithType: Nullable<T>
+  fullName: System.Nullable<T>
+  nameWithType.vb: Nullable(Of T)
+  fullName.vb: System.Nullable(Of T)
+  name.vb: Nullable(Of T)
+  spec.csharp:
+  - uid: System.Nullable`1
+    name: Nullable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.nullable-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Nullable`1
+    name: Nullable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.nullable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
 - uid: milk.Core.SceneRenderable.Draw
   commentId: M:milk.Core.SceneRenderable.Draw
   parent: milk.Core.SceneRenderable
@@ -804,9 +840,3 @@ references:
   name: Draw
   nameWithType: Image.Draw
   fullName: milk.Core.Image.Draw
-- uid: milk.Core.Image.CalculateSize*
-  commentId: Overload:milk.Core.Image.CalculateSize
-  href: milk.Core.Image.html#milk_Core_Image_CalculateSize_Microsoft_Xna_Framework_Graphics_Texture2D_Microsoft_Xna_Framework_Vector2_
-  name: CalculateSize
-  nameWithType: Image.CalculateSize
-  fullName: milk.Core.Image.CalculateSize

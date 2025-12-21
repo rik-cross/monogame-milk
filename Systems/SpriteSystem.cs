@@ -1,3 +1,9 @@
+//   Monogame Intuitive Library Kit (milk)
+//   A MonoGame ECS Engine, By Rik Cross
+//   -- Code: github.com/rik-cross/monogame-milk
+//   -- Docs: rik-cross.github.io/monogame-milk
+//   -- Shared under the MIT licence
+
 using System;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
@@ -8,14 +14,26 @@ using milk.Components;
 
 namespace milk.Systems;
 
-public class SpriteSystem : milk.Core.System
+internal class SpriteSystem : milk.Core.System
 {
+
+    /// <summary>
+    /// Initialises the sprite system, which only processes entities
+    /// with a transform component and a sprite component.
+    /// </summary>
     public override void Init()
     {
         AddRequiredComponentType<TransformComponent>();
         AddRequiredComponentType<SpriteComponent>();
     }
 
+    /// <summary>
+    /// Updates each of the entity sprites if animated
+    /// (i.e. if >1 texture is specified for the current state).
+    /// </summary>
+    /// <param name="gameTime">The MonoGame gameTime object for measuring elapsed time.</param>
+    /// <param name="scene">The scene containing the system.</param>
+    /// <param name="entity">The entity to be processed.</param>
     public override void UpdateEntity(GameTime gameTime, Scene scene, Entity entity)
     {
 
@@ -57,6 +75,11 @@ public class SpriteSystem : milk.Core.System
         }
     }
 
+    /// <summary>
+    /// Draws each entity sprite for the correct state and index.
+    /// </summary>
+    /// <param name="scene">The scene containing the system.</param>
+    /// <param name="entity">The entity to be processed.</param>
     public override void DrawEntity(Scene scene, Entity entity)
     {
 

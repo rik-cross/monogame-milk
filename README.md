@@ -1,6 +1,10 @@
-# milk -- MonoGame Intuitive Library Kit
+# MonoGame Intuitive Library Kit (milk)
 
-milk is a simple ECS engine built on MonoGame, with a focus on ease of use.
+![milk](milk.png)
 
-- [Documentation](https://rik-cross.github.io/milk-docs/) <-- In development!
+The MonoGame Intuitive Library Kit (milk) is a simple ECS engine built on MonoGame, with a focus on ease of use.
+
+- [Documentation](https://rik-cross.github.io/monogame-milk/)
 - [LICENSE](LICENSE)
+
+Copyright &copy; 2025 Rik Cross

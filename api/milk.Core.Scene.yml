@@ -64,7 +64,7 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: Scene
     path: Core/Scene.cs
-    startLine: 22
+    startLine: 21
   assemblies:
   - MonoGameECS
   namespace: milk.Core
@@ -106,7 +106,7 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: content
     path: Core/Scene.cs
-    startLine: 34
+    startLine: 33
   assemblies:
   - MonoGameECS
   namespace: milk.Core
@@ -135,7 +135,7 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: game
     path: Core/Scene.cs
-    startLine: 39
+    startLine: 38
   assemblies:
   - MonoGameECS
   namespace: milk.Core
@@ -164,7 +164,7 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: spriteBatch
     path: Core/Scene.cs
-    startLine: 44
+    startLine: 43
   assemblies:
   - MonoGameECS
   namespace: milk.Core
@@ -193,7 +193,7 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: Size
     path: Core/Scene.cs
-    startLine: 49
+    startLine: 48
   assemblies:
   - MonoGameECS
   namespace: milk.Core
@@ -222,7 +222,7 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: Middle
     path: Core/Scene.cs
-    startLine: 54
+    startLine: 53
   assemblies:
   - MonoGameECS
   namespace: milk.Core
@@ -251,7 +251,7 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: elapsedTime
     path: Core/Scene.cs
-    startLine: 55
+    startLine: 54
   assemblies:
   - MonoGameECS
   namespace: milk.Core
@@ -278,7 +278,7 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: BackgroundColor
     path: Core/Scene.cs
-    startLine: 63
+    startLine: 62
   assemblies:
   - MonoGameECS
   namespace: milk.Core
@@ -307,7 +307,7 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: IncludeAlRegisteredSystems
     path: Core/Scene.cs
-    startLine: 70
+    startLine: 69
   assemblies:
   - MonoGameECS
   namespace: milk.Core
@@ -341,7 +341,7 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: cameras
     path: Core/Scene.cs
-    startLine: 71
+    startLine: 70
   assemblies:
   - MonoGameECS
   namespace: milk.Core
@@ -368,7 +368,7 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: UpdateSceneBelow
     path: Core/Scene.cs
-    startLine: 76
+    startLine: 75
   assemblies:
   - MonoGameECS
   namespace: milk.Core
@@ -397,7 +397,7 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: InputSceneBelow
     path: Core/Scene.cs
-    startLine: 81
+    startLine: 80
   assemblies:
   - MonoGameECS
   namespace: milk.Core
@@ -426,7 +426,7 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: DrawSceneBelow
     path: Core/Scene.cs
-    startLine: 86
+    startLine: 85
   assemblies:
   - MonoGameECS
   namespace: milk.Core
@@ -455,7 +455,7 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: EntitySortMethod
     path: Core/Scene.cs
-    startLine: 93
+    startLine: 92
   assemblies:
   - MonoGameECS
   namespace: milk.Core
@@ -484,7 +484,7 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: mapSize
     path: Core/Scene.cs
-    startLine: 99
+    startLine: 98
   assemblies:
   - MonoGameECS
   namespace: milk.Core
@@ -516,7 +516,7 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: Map
     path: Core/Scene.cs
-    startLine: 107
+    startLine: 106
   assemblies:
   - MonoGameECS
   namespace: milk.Core
@@ -547,7 +547,7 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: Velocity
     path: Core/Scene.cs
-    startLine: 132
+    startLine: 131
   assemblies:
   - MonoGameECS
   namespace: milk.Core
@@ -576,7 +576,7 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: Acceleration
     path: Core/Scene.cs
-    startLine: 137
+    startLine: 136
   assemblies:
   - MonoGameECS
   namespace: milk.Core
@@ -605,7 +605,7 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: .ctor
     path: Core/Scene.cs
-    startLine: 145
+    startLine: 144
   assemblies:
   - MonoGameECS
   namespace: milk.Core
@@ -643,7 +643,7 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: AddCamera
     path: Core/Scene.cs
-    startLine: 386
+    startLine: 385
   assemblies:
   - MonoGameECS
   namespace: milk.Core
@@ -654,7 +654,7 @@ items:
     parameters:
     - id: camera
       type: milk.Core.Camera
-      description: ''
+      description: The camera to add to the scene.
     content.vb: Protected Sub AddCamera(camera As Camera)
   overload: milk.Core.Scene.AddCamera*
 - uid: milk.Core.Scene.GetCameraByName(System.String)
@@ -675,7 +675,7 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: GetCameraByName
     path: Core/Scene.cs
-    startLine: 398
+    startLine: 397
   assemblies:
   - MonoGameECS
   namespace: milk.Core
@@ -716,7 +716,7 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: HasEntity
     path: Core/Scene.cs
-    startLine: 417
+    startLine: 416
   assemblies:
   - MonoGameECS
   namespace: milk.Core
@@ -751,7 +751,7 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: AddEntity
     path: Core/Scene.cs
-    startLine: 426
+    startLine: 425
   assemblies:
   - MonoGameECS
   namespace: milk.Core
@@ -783,7 +783,7 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: RemoveEntity
     path: Core/Scene.cs
-    startLine: 460
+    startLine: 459
   assemblies:
   - MonoGameECS
   namespace: milk.Core
@@ -818,7 +818,7 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: RemoveEntityByName
     path: Core/Scene.cs
-    startLine: 478
+    startLine: 477
   assemblies:
   - MonoGameECS
   namespace: milk.Core
@@ -853,7 +853,7 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: RemoveEntitiesByTag
     path: Core/Scene.cs
-    startLine: 491
+    startLine: 490
   assemblies:
   - MonoGameECS
   namespace: milk.Core
@@ -888,7 +888,7 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: RemoveAllEntities
     path: Core/Scene.cs
-    startLine: 503
+    startLine: 502
   assemblies:
   - MonoGameECS
   namespace: milk.Core
@@ -916,7 +916,7 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: GetEntityByName
     path: Core/Scene.cs
-    startLine: 555
+    startLine: 554
   assemblies:
   - MonoGameECS
   namespace: milk.Core
@@ -957,7 +957,7 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: GetEntitiesByTag
     path: Core/Scene.cs
-    startLine: 565
+    startLine: 564
   assemblies:
   - MonoGameECS
   namespace: milk.Core
@@ -995,7 +995,7 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: DeleteEntityByName
     path: Core/Scene.cs
-    startLine: 579
+    startLine: 578
   assemblies:
   - MonoGameECS
   namespace: milk.Core
@@ -1033,7 +1033,7 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: DeleteEntitiesByTag
     path: Core/Scene.cs
-    startLine: 598
+    startLine: 597
   assemblies:
   - MonoGameECS
   namespace: milk.Core
@@ -1071,7 +1071,7 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: AddSystem
     path: Core/Scene.cs
-    startLine: 618
+    startLine: 617
   assemblies:
   - MonoGameECS
   namespace: milk.Core
@@ -1110,7 +1110,7 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: RemoveSystem
     path: Core/Scene.cs
-    startLine: 635
+    startLine: 634
   assemblies:
   - MonoGameECS
   namespace: milk.Core
@@ -1144,7 +1144,7 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: RemoveAllSystems
     path: Core/Scene.cs
-    startLine: 646
+    startLine: 645
   assemblies:
   - MonoGameECS
   namespace: milk.Core
@@ -1172,7 +1172,7 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: HasSystem
     path: Core/Scene.cs
-    startLine: 659
+    startLine: 658
   assemblies:
   - MonoGameECS
   namespace: milk.Core
@@ -1212,7 +1212,7 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: GetSceneBelow
     path: Core/Scene.cs
-    startLine: 670
+    startLine: 669
   assemblies:
   - MonoGameECS
   namespace: milk.Core
@@ -1253,7 +1253,7 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: AddTimedAction
     path: Core/Scene.cs
-    startLine: 708
+    startLine: 707
   assemblies:
   - MonoGameECS
   namespace: milk.Core
@@ -1294,7 +1294,7 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: RemoveTimedActionByName
     path: Core/Scene.cs
-    startLine: 717
+    startLine: 716
   assemblies:
   - MonoGameECS
   namespace: milk.Core
@@ -1329,7 +1329,7 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: Init
     path: Core/Scene.cs
-    startLine: 733
+    startLine: 732
   assemblies:
   - MonoGameECS
   namespace: milk.Core
@@ -1357,7 +1357,7 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: Update
     path: Core/Scene.cs
-    startLine: 739
+    startLine: 738
   assemblies:
   - MonoGameECS
   namespace: milk.Core
@@ -1389,7 +1389,7 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: Input
     path: Core/Scene.cs
-    startLine: 745
+    startLine: 744
   assemblies:
   - MonoGameECS
   namespace: milk.Core
@@ -1421,7 +1421,7 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: Draw
     path: Core/Scene.cs
-    startLine: 750
+    startLine: 749
   assemblies:
   - MonoGameECS
   namespace: milk.Core
@@ -1449,7 +1449,7 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: OnEnter
     path: Core/Scene.cs
-    startLine: 759
+    startLine: 758
   assemblies:
   - MonoGameECS
   namespace: milk.Core
@@ -1477,7 +1477,7 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: OnExit
     path: Core/Scene.cs
-    startLine: 764
+    startLine: 763
   assemblies:
   - MonoGameECS
   namespace: milk.Core
@@ -1505,7 +1505,7 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: OnEntityAdded
     path: Core/Scene.cs
-    startLine: 770
+    startLine: 769
   assemblies:
   - MonoGameECS
   namespace: milk.Core
@@ -1537,7 +1537,7 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: OnEntityRemoved
     path: Core/Scene.cs
-    startLine: 776
+    startLine: 775
   assemblies:
   - MonoGameECS
   namespace: milk.Core

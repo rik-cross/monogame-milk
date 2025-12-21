@@ -1,13 +1,32 @@
+//   Monogame Intuitive Library Kit (milk)
+//   A MonoGame ECS Engine, By Rik Cross
+//   -- Code: github.com/rik-cross/monogame-milk
+//   -- Docs: rik-cross.github.io/monogame-milk
+//   -- Shared under the MIT licence
+
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using milk.Components;
 
 namespace milk.Core;
 
+/// <summary>
+/// A camera can be added to a Scene via scene.AddCamera(),
+/// and draws a scene's world to the screen. 
+/// </summary>
 public class Camera
 {
+
+    /// <summary>
+    /// The parent scene of the camera.
+    /// </summary>
+    public Scene? Scene;
+
     private string? _name;
-    public Scene Scene;
+    /// <summary>
+    /// The name of the camera.
+    /// Useful for getting / removing a specific camera.
+    /// </summary>
     public string? Name
     {
         get
@@ -20,28 +39,50 @@ public class Camera
         }
     }
 
+    /// <summary>
+    /// The (x, y) top-left scene position of the camera.
+    /// </summary>
     public Vector2 ScreenPosition;
-    public Vector2 ScreenSize;
 
-    //
-    // Position
-    //
+    /// <summary>
+    /// The (x, y) size of the camera.
+    /// </summary>
+    public Vector2 ScreenSize;
 
     private bool firstUpdate = true;
 
-    // should have a getter and setter to swap to negative * -1!!!
-    public Vector2 WorldPosition; // target
-    public Vector2 _currentWorldPosition; // current
+    /// <summary>
+    /// The (x, y) target world position that the camera is focused on.
+    /// </summary>
+    public Vector2 WorldPosition;
+    private Vector2 _currentWorldPosition;
 
+    /// <summary>
+    /// If set to true, the camera is locked to the map dimensions,
+    /// and won't show any of the scene outside of the map.
+    /// </summary>
     public bool ClampToMap;
 
-    // Set between 0 and 1 only
-    // private...
-    public float FollowPercentage = 0.1f;
+    /// <summary>
+    /// The amount that the camera moves to its target position
+    /// (0 = no movement, 1 = instant snap to new position).
+    /// Values between 0 and 1 offer a degree of 'lazy follow'.
+    /// </summary>
+    public float FollowPercentage;
 
-
+    /// <summary>
+    /// The background color of the camera.
+    /// </summary>
     public Color BackgroundColor;
+
+    /// <summary>
+    /// The width of the border.
+    /// </summary>
     public int BorderWidth;
+
+    /// <summary>
+    /// The color of the border.
+    /// </summary>
     public Color BorderColor;
 
 
@@ -56,11 +97,41 @@ public class Camera
     private float _targetZoomLog;
     private float _lerpProgress = 1.0f;
     private float _zoomDuration = 0;
+
+    /// <summary>
+    /// The optional entity to track.
+    /// </summary>
     public Entity? TrackedEntity;
 
-    public Camera(Vector2 size, Vector2? screenPosition = null, Vector2? worldPosition = null, float zoom = 1, bool clampToMap = false, Color? backgroundColor = null, int borderWidth = 0, Color? borderColor = null, string? name = null, Entity? trackedEntity = null)
+    /// <summary>
+    /// Creates a new camera object.
+    /// </summary>
+    /// <param name="screenSize">The (x, y) screen size of the camera.</param>
+    /// <param name="screenPosition">The (x, y) screen position (default = (0, 0)).</param>
+    /// <param name="worldPosition">The (x, y) world position (default = (0, 0)).</param>
+    /// <param name="zoom">The initial zoom level (default = 1).</param>
+    /// <param name="clampToMap">Clamp the camera to the map dimensions (default = false).</param>
+    /// <param name="backgroundColor">The background color (default = transparent).</param>
+    /// <param name="borderWidth">The width of the border (default = 0 - no border).</param>
+    /// <param name="borderColor">The color of the border (defaul = black).</param>
+    /// <param name="name">The name of the camera (default = null).</param>
+    /// <param name="trackedEntity">An optional entity to track (default = null).</param>
+    /// <param name="followPercentage">The amount to lazy follow (default = 1 - instant).</param>
+    public Camera(
+        Vector2 screenSize,
+        Vector2? screenPosition = null,
+        Vector2? worldPosition = null,
+        float zoom = 1,
+        bool clampToMap = false,
+        Color? backgroundColor = null,
+        int borderWidth = 0,
+        Color? borderColor = null,
+        string? name = null,
+        Entity? trackedEntity = null,
+        float followPercentage = 1.0f
+    )
     {
-        ScreenSize = size;
+        ScreenSize = screenSize;
         ScreenPosition = screenPosition ?? Vector2.Zero;
         WorldPosition = worldPosition ?? Vector2.Zero;
         _targetZoom = zoom;
@@ -69,14 +140,17 @@ public class Camera
         BorderWidth = borderWidth;
         BorderColor = borderColor ?? Color.Black;
         Name = name;
-        this.TrackedEntity = trackedEntity;
+        TrackedEntity = trackedEntity;
+        FollowPercentage = followPercentage;
 
     }
 
-    public void Update(GameTime gameTime)
+    internal void Update(GameTime gameTime)
     {
 
-        if (TrackedEntity != null && Scene.entities.Contains(TrackedEntity))
+        if (TrackedEntity != null && Scene != null &&
+            Scene.entities.Contains(TrackedEntity) &&
+            TrackedEntity.HasComponent<TransformComponent>())
         {
             TransformComponent transformComponent = TrackedEntity.GetComponent<TransformComponent>();
             WorldPosition = new Vector2(
@@ -107,7 +181,7 @@ public class Camera
 
     private void UpdateClamp()
     {
-        if (ClampToMap == true && Scene.mapSize.HasValue)
+        if (ClampToMap == true && Scene != null && Scene.mapSize.HasValue)
         {
 
             // Set the camera world center to the map center
@@ -169,6 +243,11 @@ public class Camera
         } 
     }
 
+    /// <summary>
+    /// Sets the zoom level of the camera.
+    /// </summary>
+    /// <param name="zoom">The new target zoom level (default = 1).</param>
+    /// <param name="duration">The zoom duration (defaul = 0 - instant).</param>
     public void SetZoom(float zoom = 1, float duration = 0)
     {
 
@@ -202,7 +281,7 @@ public class Camera
 
     }
 
-    public Viewport getViewport()
+    internal Viewport getViewport()
     {
         return new Viewport(
             (int)ScreenPosition.X, (int)ScreenPosition.Y,
@@ -210,7 +289,7 @@ public class Camera
         );
     }
 
-    public Matrix getTransformMatrix()
+    internal Matrix getTransformMatrix()
     {
         Vector2 centrePosition = _currentWorldPosition;
         centrePosition.X = _currentWorldPosition.X + ScreenSize.X / 2 / _currentZoom;
@@ -224,6 +303,11 @@ public class Camera
         );
     }
 
+    /// <summary>
+    /// Sets a new target world position.
+    /// </summary>
+    /// <param name="newPosition">The new (x,y) world position.</param>
+    /// <param name="instant">Sets the new position instantly, ignoring any lazy follow, etc. (default = false).</param>
     public void SetWorldPosition(Vector2 newPosition, bool instant = false)
     {
 
@@ -241,6 +325,10 @@ public class Camera
 
     }
 
+    /// <summary>
+    /// Gets the target world position.
+    /// </summary>
+    /// <returns>The (x, y) camera world target.</returns>
     public Vector2 GetWorldPosition()
     {
         return WorldPosition * -1;

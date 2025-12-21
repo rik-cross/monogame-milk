@@ -13,7 +13,6 @@ items:
   - milk.Core.InputManager.IsKeyPressed(Microsoft.Xna.Framework.Input.Keys)
   - milk.Core.InputManager.IsKeyReleased(Microsoft.Xna.Framework.Input.Keys)
   - milk.Core.InputManager.NumberOfControllersConnected
-  - milk.Core.InputManager.Update
   langs:
   - csharp
   - vb
@@ -28,10 +27,12 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: InputManager
     path: Managers/InputManager.cs
-    startLine: 6
+    startLine: 13
   assemblies:
   - MonoGameECS
   namespace: milk.Core
+  summary: Used to receive and respond to player input.
+  example: []
   syntax:
     content: public class InputManager
     content.vb: Public Class InputManager
@@ -45,32 +46,6 @@ items:
   - System.Object.MemberwiseClone
   - System.Object.ReferenceEquals(System.Object,System.Object)
   - System.Object.ToString
-- uid: milk.Core.InputManager.Update
-  commentId: M:milk.Core.InputManager.Update
-  id: Update
-  parent: milk.Core.InputManager
-  langs:
-  - csharp
-  - vb
-  name: Update()
-  nameWithType: InputManager.Update()
-  fullName: milk.Core.InputManager.Update()
-  type: Method
-  source:
-    remote:
-      path: Managers/InputManager.cs
-      branch: main
-      repo: git@github.com:rik-cross/monogame-milk.git
-    id: Update
-    path: Managers/InputManager.cs
-    startLine: 19
-  assemblies:
-  - MonoGameECS
-  namespace: milk.Core
-  syntax:
-    content: public void Update()
-    content.vb: Public Sub Update()
-  overload: milk.Core.InputManager.Update*
 - uid: milk.Core.InputManager.IsKeyDown(Microsoft.Xna.Framework.Input.Keys)
   commentId: M:milk.Core.InputManager.IsKeyDown(Microsoft.Xna.Framework.Input.Keys)
   id: IsKeyDown(Microsoft.Xna.Framework.Input.Keys)
@@ -89,17 +64,21 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: IsKeyDown
     path: Managers/InputManager.cs
-    startLine: 34
+    startLine: 46
   assemblies:
   - MonoGameECS
   namespace: milk.Core
+  summary: Returns true if the specified key is held down.
+  example: []
   syntax:
     content: public bool IsKeyDown(Keys key)
     parameters:
     - id: key
       type: Microsoft.Xna.Framework.Input.Keys
+      description: The key to check.
     return:
       type: System.Boolean
+      description: True if the specified key is held down.
     content.vb: Public Function IsKeyDown(key As Keys) As Boolean
   overload: milk.Core.InputManager.IsKeyDown*
 - uid: milk.Core.InputManager.IsKeyPressed(Microsoft.Xna.Framework.Input.Keys)
@@ -120,17 +99,24 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: IsKeyPressed
     path: Managers/InputManager.cs
-    startLine: 42
+    startLine: 60
   assemblies:
   - MonoGameECS
   namespace: milk.Core
+  summary: >-
+    Returns true if the specified key has been pressed in the current frame
+
+    (i.e. the key is down, but wasn't in the previous frame).
+  example: []
   syntax:
     content: public bool IsKeyPressed(Keys key)
     parameters:
     - id: key
       type: Microsoft.Xna.Framework.Input.Keys
+      description: The key to chec.k
     return:
       type: System.Boolean
+      description: True if the specified key has been pressed.
     content.vb: Public Function IsKeyPressed(key As Keys) As Boolean
   overload: milk.Core.InputManager.IsKeyPressed*
 - uid: milk.Core.InputManager.IsKeyReleased(Microsoft.Xna.Framework.Input.Keys)
@@ -151,17 +137,24 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: IsKeyReleased
     path: Managers/InputManager.cs
-    startLine: 50
+    startLine: 74
   assemblies:
   - MonoGameECS
   namespace: milk.Core
+  summary: >-
+    Returns true if the specified key is no longer down
+
+    (i.e. is not down, but was in the previous frame).
+  example: []
   syntax:
     content: public bool IsKeyReleased(Keys key)
     parameters:
     - id: key
       type: Microsoft.Xna.Framework.Input.Keys
+      description: The key to check.
     return:
       type: System.Boolean
+      description: True if the specified key has been released.
     content.vb: Public Function IsKeyReleased(key As Keys) As Boolean
   overload: milk.Core.InputManager.IsKeyReleased*
 - uid: milk.Core.InputManager.IsButtonDown(Microsoft.Xna.Framework.Input.Buttons,System.Int32)
@@ -182,19 +175,24 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: IsButtonDown
     path: Managers/InputManager.cs
-    startLine: 62
+    startLine: 92
   assemblies:
   - MonoGameECS
   namespace: milk.Core
+  summary: Returns true if the specified button is down.
+  example: []
   syntax:
     content: public bool IsButtonDown(Buttons button, int controllerNumber = 0)
     parameters:
     - id: button
       type: Microsoft.Xna.Framework.Input.Buttons
+      description: The button to check.
     - id: controllerNumber
       type: System.Int32
+      description: The controller number to check (default = controller 0).
     return:
       type: System.Boolean
+      description: True if the specified button is down.
     content.vb: Public Function IsButtonDown(button As Buttons, controllerNumber As Integer = 0) As Boolean
   overload: milk.Core.InputManager.IsButtonDown*
   nameWithType.vb: InputManager.IsButtonDown(Buttons, Integer)
@@ -218,19 +216,27 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: IsButtonPressed
     path: Managers/InputManager.cs
-    startLine: 70
+    startLine: 107
   assemblies:
   - MonoGameECS
   namespace: milk.Core
+  summary: >-
+    Returns true if the specified button is pressed
+
+    (i.e. is down, but wasn't down in the previous frame).
+  example: []
   syntax:
     content: public bool IsButtonPressed(Buttons button, int controllerNumber = 0)
     parameters:
     - id: button
       type: Microsoft.Xna.Framework.Input.Buttons
+      description: The button to check.
     - id: controllerNumber
       type: System.Int32
+      description: The controller number to check (default = controller 0).
     return:
       type: System.Boolean
+      description: True if the specified button is pressed.
     content.vb: Public Function IsButtonPressed(button As Buttons, controllerNumber As Integer = 0) As Boolean
   overload: milk.Core.InputManager.IsButtonPressed*
   nameWithType.vb: InputManager.IsButtonPressed(Buttons, Integer)
@@ -254,19 +260,27 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: IsButtonReleased
     path: Managers/InputManager.cs
-    startLine: 78
+    startLine: 122
   assemblies:
   - MonoGameECS
   namespace: milk.Core
+  summary: >-
+    Returns true if the specified button is released
+
+    (i.e. is not down, but was down in the previous frame).
+  example: []
   syntax:
     content: public bool IsButtonReleased(Buttons button, int controllerNumber = 0)
     parameters:
     - id: button
       type: Microsoft.Xna.Framework.Input.Buttons
+      description: The button to check.
     - id: controllerNumber
       type: System.Int32
+      description: The controller number to check (default = controller 0).
     return:
       type: System.Boolean
+      description: True if the specified button has been released.
     content.vb: Public Function IsButtonReleased(button As Buttons, controllerNumber As Integer = 0) As Boolean
   overload: milk.Core.InputManager.IsButtonReleased*
   nameWithType.vb: InputManager.IsButtonReleased(Buttons, Integer)
@@ -290,14 +304,17 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: IsControllerConnected
     path: Managers/InputManager.cs
-    startLine: 90
+    startLine: 138
   assemblies:
   - MonoGameECS
   namespace: milk.Core
+  summary: Returns true if at least one controller is connected.
+  example: []
   syntax:
     content: public bool IsControllerConnected()
     return:
       type: System.Boolean
+      description: True if at least one controller is connected.
     content.vb: Public Function IsControllerConnected() As Boolean
   overload: milk.Core.InputManager.IsControllerConnected*
 - uid: milk.Core.InputManager.NumberOfControllersConnected
@@ -318,14 +335,17 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: NumberOfControllersConnected
     path: Managers/InputManager.cs
-    startLine: 94
+    startLine: 146
   assemblies:
   - MonoGameECS
   namespace: milk.Core
+  summary: Returns the number of connected controllers.
+  example: []
   syntax:
     content: public int NumberOfControllersConnected()
     return:
       type: System.Int32
+      description: The number of controllers connected.
     content.vb: Public Function NumberOfControllersConnected() As Integer
   overload: milk.Core.InputManager.NumberOfControllersConnected*
 references:
@@ -588,12 +608,6 @@ references:
   name: System
   nameWithType: System
   fullName: System
-- uid: milk.Core.InputManager.Update*
-  commentId: Overload:milk.Core.InputManager.Update
-  href: milk.Core.InputManager.html#milk_Core_InputManager_Update
-  name: Update
-  nameWithType: InputManager.Update
-  fullName: milk.Core.InputManager.Update
 - uid: milk.Core.InputManager.IsKeyDown*
   commentId: Overload:milk.Core.InputManager.IsKeyDown
   href: milk.Core.InputManager.html#milk_Core_InputManager_IsKeyDown_Microsoft_Xna_Framework_Input_Keys_

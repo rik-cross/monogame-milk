@@ -6,8 +6,8 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <meta name="title" content="Class TriggerSystem | milk ">
       
-      
-      <link rel="icon" href="../favicon.ico">
+      <meta name="description" content="Processes entities with trigger components, and calls the relevant callbacks when 2 entities have overlapping colliders.">
+      <link rel="icon" href="../images/favicon.ico">
       <link rel="stylesheet" href="../public/docfx.min.css">
       <link rel="stylesheet" href="../public/main.css">
       <meta name="docfx:navrel" content="../toc.html">
@@ -44,7 +44,7 @@
       <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
         <div class="container-xxl flex-nowrap">
           <a class="navbar-brand" href="../index.html">
-            <img id="logo" class="svg" src="../logo.svg" alt="milk">
+            <img id="logo" class="svg" src="../images/milk.png" alt="milk">
             milk
           </a>
           <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
@@ -89,7 +89,7 @@
 
 
   <h1 id="milk_Systems_TriggerSystem" data-uid="milk.Systems.TriggerSystem" class="text-break">
-Class TriggerSystem  <a class="header-action link-secondary" title="View source" href="https://github.com/rik-cross/monogame-milk/blob/main/Systems/TriggerSystem.cs/#L12"><i class="bi bi-code-slash"></i></a>
+Class TriggerSystem  <a class="header-action link-secondary" title="View source" href="https://github.com/rik-cross/monogame-milk/blob/main/Systems/TriggerSystem.cs/#L18"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
@@ -97,7 +97,9 @@ Class TriggerSystem  <a class="header-action link-secondary" title="View source"
   <dl><dt>Assembly</dt><dd>MonoGameECS.dll</dd></dl>
   </div>
 
-  <div class="markdown summary"></div>
+  <div class="markdown summary"><p>Processes entities with trigger components, and calls the relevant
+callbacks when 2 entities have overlapping colliders.</p>
+</div>
   <div class="markdown conceptual"></div>
 
   <div class="codewrapper">
@@ -144,6 +146,12 @@ Class TriggerSystem  <a class="header-action link-secondary" title="View source"
     </div>
     <div>
       <a class="xref" href="milk.Core.System.html#milk_Core_System_Draw_milk_Core_Scene_">System.Draw(Scene)</a>
+    </div>
+    <div>
+      <a class="xref" href="milk.Core.System.html#milk_Core_System_OnEnterScene_milk_Core_Scene_">System.OnEnterScene(Scene)</a>
+    </div>
+    <div>
+      <a class="xref" href="milk.Core.System.html#milk_Core_System_OnExitScene_milk_Core_Scene_">System.OnExitScene(Scene)</a>
     </div>
     <div>
       <a class="xref" href="milk.Core.System.html#milk_Core_System_OnEntityAddedToScene_milk_Core_Scene_milk_Core_Entity_">System.OnEntityAddedToScene(Scene, Entity)</a>
@@ -193,8 +201,7 @@ Class TriggerSystem  <a class="header-action link-secondary" title="View source"
   <a class="header-action link-secondary" title="View source" href="https://github.com/rik-cross/monogame-milk/blob/main/Systems/TriggerSystem.cs/#L129"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p>An entity-specific draw method, called once per frame
-for each entity with the required set of components.</p>
+  <div class="markdown level1 summary"><p>Draws each of the entity triggers if in DEBUG mode.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
@@ -205,10 +212,10 @@ for each entity with the required set of components.</p>
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
     <dt><code>scene</code> <a class="xref" href="milk.Core.Scene.html">Scene</a></dt>
-    <dd><p>The scene that the system is in</p>
+    <dd><p>The scene containing the system.</p>
 </dd>
     <dt><code>entity</code> <a class="xref" href="milk.Core.Entity.html">Entity</a></dt>
-    <dd><p>The entity to be acted upon.</p>
+    <dd><p>The entity to be processed.</p>
 </dd>
   </dl>
 
@@ -227,10 +234,11 @@ for each entity with the required set of components.</p>
 
   <h3 id="milk_Systems_TriggerSystem_Init" data-uid="milk.Systems.TriggerSystem.Init">
   Init()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/rik-cross/monogame-milk/blob/main/Systems/TriggerSystem.cs/#L15"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/rik-cross/monogame-milk/blob/main/Systems/TriggerSystem.cs/#L25"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p>Called once when a system is created.</p>
+  <div class="markdown level1 summary"><p>Initialises the trigger system, which only processes entities
+with a transform component and a trigger component.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
@@ -250,47 +258,15 @@ for each entity with the required set of components.</p>
 
 
 
-  <a id="milk_Systems_TriggerSystem_OnEnterScene_" data-uid="milk.Systems.TriggerSystem.OnEnterScene*"></a>
-
-  <h3 id="milk_Systems_TriggerSystem_OnEnterScene_milk_Core_Scene_" data-uid="milk.Systems.TriggerSystem.OnEnterScene(milk.Core.Scene)">
-  OnEnterScene(Scene)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/rik-cross/monogame-milk/blob/main/Systems/TriggerSystem.cs/#L21"><i class="bi bi-code-slash"></i></a>
-  </h3>
-
-  <div class="markdown level1 summary"><p>Called once when the scene becomes active;</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public override void OnEnterScene(Scene scene)</code></pre>
-  </div>
-
-  <h4 class="section">Parameters</h4>
-  <dl class="parameters">
-    <dt><code>scene</code> <a class="xref" href="milk.Core.Scene.html">Scene</a></dt>
-    <dd><p>The scene that the system is in.</p>
-</dd>
-  </dl>
-
-
-
-
-
-
-
-
-
-
-
-
   <a id="milk_Systems_TriggerSystem_OnEntityRemovedFromScene_" data-uid="milk.Systems.TriggerSystem.OnEntityRemovedFromScene*"></a>
 
   <h3 id="milk_Systems_TriggerSystem_OnEntityRemovedFromScene_milk_Core_Scene_milk_Core_Entity_" data-uid="milk.Systems.TriggerSystem.OnEntityRemovedFromScene(milk.Core.Scene,milk.Core.Entity)">
   OnEntityRemovedFromScene(Scene, Entity)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/rik-cross/monogame-milk/blob/main/Systems/TriggerSystem.cs/#L150"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/rik-cross/monogame-milk/blob/main/Systems/TriggerSystem.cs/#L156"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p>Called once when an entity is removed from the scene containing the system.</p>
+  <div class="markdown level1 summary"><p>Removes the entity to be removed from the scene from the list
+of collided entities.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
@@ -301,43 +277,10 @@ for each entity with the required set of components.</p>
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
     <dt><code>scene</code> <a class="xref" href="milk.Core.Scene.html">Scene</a></dt>
-    <dd><p>The scene containing the system that the entity is being removed from.</p>
+    <dd><p>The scene containing the system.</p>
 </dd>
     <dt><code>entity</code> <a class="xref" href="milk.Core.Entity.html">Entity</a></dt>
-    <dd><p>The entity being removed from the scene.</p>
-</dd>
-  </dl>
-
-
-
-
-
-
-
-
-
-
-
-
-  <a id="milk_Systems_TriggerSystem_OnExitScene_" data-uid="milk.Systems.TriggerSystem.OnExitScene*"></a>
-
-  <h3 id="milk_Systems_TriggerSystem_OnExitScene_milk_Core_Scene_" data-uid="milk.Systems.TriggerSystem.OnExitScene(milk.Core.Scene)">
-  OnExitScene(Scene)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/rik-cross/monogame-milk/blob/main/Systems/TriggerSystem.cs/#L26"><i class="bi bi-code-slash"></i></a>
-  </h3>
-
-  <div class="markdown level1 summary"><p>Called once when the scene is no longer active.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public override void OnExitScene(Scene scene)</code></pre>
-  </div>
-
-  <h4 class="section">Parameters</h4>
-  <dl class="parameters">
-    <dt><code>scene</code> <a class="xref" href="milk.Core.Scene.html">Scene</a></dt>
-    <dd><p>The scene that the system is in.</p>
+    <dd><p>The entity to be processed.</p>
 </dd>
   </dl>
 
@@ -356,11 +299,10 @@ for each entity with the required set of components.</p>
 
   <h3 id="milk_Systems_TriggerSystem_UpdateEntity_Microsoft_Xna_Framework_GameTime_milk_Core_Scene_milk_Core_Entity_" data-uid="milk.Systems.TriggerSystem.UpdateEntity(Microsoft.Xna.Framework.GameTime,milk.Core.Scene,milk.Core.Entity)">
   UpdateEntity(GameTime, Scene, Entity)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/rik-cross/monogame-milk/blob/main/Systems/TriggerSystem.cs/#L42"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/rik-cross/monogame-milk/blob/main/Systems/TriggerSystem.cs/#L37"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p>An entity-specific update method, called once per frame
-for each entity with the required set of components.</p>
+  <div class="markdown level1 summary"><p>Updates each of the entities with the required components.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
@@ -371,13 +313,13 @@ for each entity with the required set of components.</p>
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
     <dt><code>gameTime</code> <span class="xref">GameTime</span></dt>
-    <dd><p>The MonoGame gameTime object.</p>
+    <dd><p>The MonoGame gameTime object for measuring elapsed time.</p>
 </dd>
     <dt><code>scene</code> <a class="xref" href="milk.Core.Scene.html">Scene</a></dt>
-    <dd><p>The scene that the system is in</p>
+    <dd><p>The scene containing the system.</p>
 </dd>
     <dt><code>entity</code> <a class="xref" href="milk.Core.Entity.html">Entity</a></dt>
-    <dd><p>The entity to be acted upon.</p>
+    <dd><p>The entity to be processed.</p>
 </dd>
   </dl>
 
@@ -396,7 +338,7 @@ for each entity with the required set of components.</p>
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/rik-cross/monogame-milk/blob/main/Systems/TriggerSystem.cs/#L12" class="edit-link">Edit this page</a>
+          <a href="https://github.com/rik-cross/monogame-milk/blob/main/Systems/TriggerSystem.cs/#L18" class="edit-link">Edit this page</a>
         </div>
 
 

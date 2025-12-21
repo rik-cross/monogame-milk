@@ -6,8 +6,8 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <meta name="title" content="Class Sprite | milk ">
       
-      
-      <link rel="icon" href="../favicon.ico">
+      <meta name="description" content="A sprite is added to a SpriteComponent, and is a collection of textures, along with some additional data. A sprite with more than one texture automatically becomes an animated sprite.">
+      <link rel="icon" href="../images/favicon.ico">
       <link rel="stylesheet" href="../public/docfx.min.css">
       <link rel="stylesheet" href="../public/main.css">
       <meta name="docfx:navrel" content="../toc.html">
@@ -44,7 +44,7 @@
       <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
         <div class="container-xxl flex-nowrap">
           <a class="navbar-brand" href="../index.html">
-            <img id="logo" class="svg" src="../logo.svg" alt="milk">
+            <img id="logo" class="svg" src="../images/milk.png" alt="milk">
             milk
           </a>
           <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
@@ -89,7 +89,7 @@
 
 
   <h1 id="milk_Core_Sprite" data-uid="milk.Core.Sprite" class="text-break">
-Class Sprite  <a class="header-action link-secondary" title="View source" href="https://github.com/rik-cross/monogame-milk/blob/main/Core/Sprite.cs/#L7"><i class="bi bi-code-slash"></i></a>
+Class Sprite  <a class="header-action link-secondary" title="View source" href="https://github.com/rik-cross/monogame-milk/blob/main/Core/Sprite.cs/#L17"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
@@ -97,7 +97,10 @@ Class Sprite  <a class="header-action link-secondary" title="View source" href="
   <dl><dt>Assembly</dt><dd>MonoGameECS.dll</dd></dl>
   </div>
 
-  <div class="markdown summary"></div>
+  <div class="markdown summary"><p>A sprite is added to a SpriteComponent, and is a collection
+of textures, along with some additional data. A sprite with more
+than one texture automatically becomes an animated sprite.</p>
+</div>
   <div class="markdown conceptual"></div>
 
   <div class="codewrapper">
@@ -154,38 +157,48 @@ Class Sprite  <a class="header-action link-secondary" title="View source" href="
 
   <a id="milk_Core_Sprite__ctor_" data-uid="milk.Core.Sprite.#ctor*"></a>
 
-  <h3 id="milk_Core_Sprite__ctor_System_Collections_Generic_List_Microsoft_Xna_Framework_Graphics_Texture2D__System_Boolean_System_Double_Microsoft_Xna_Framework_Vector2_Microsoft_Xna_Framework_Vector2_System_Boolean_System_Nullable_Microsoft_Xna_Framework_Color__System_Boolean_System_Boolean_" data-uid="milk.Core.Sprite.#ctor(System.Collections.Generic.List{Microsoft.Xna.Framework.Graphics.Texture2D},System.Boolean,System.Double,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,System.Boolean,System.Nullable{Microsoft.Xna.Framework.Color},System.Boolean,System.Boolean)">
-  Sprite(List&lt;Texture2D&gt;, bool, double, Vector2, Vector2, bool, Color?, bool, bool)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/rik-cross/monogame-milk/blob/main/Core/Sprite.cs/#L26"><i class="bi bi-code-slash"></i></a>
+  <h3 id="milk_Core_Sprite__ctor_System_Collections_Generic_List_Microsoft_Xna_Framework_Graphics_Texture2D__System_Boolean_System_Double_System_Nullable_Microsoft_Xna_Framework_Vector2__System_Nullable_Microsoft_Xna_Framework_Vector2__System_Boolean_System_Nullable_Microsoft_Xna_Framework_Color__System_Boolean_System_Boolean_" data-uid="milk.Core.Sprite.#ctor(System.Collections.Generic.List{Microsoft.Xna.Framework.Graphics.Texture2D},System.Boolean,System.Double,System.Nullable{Microsoft.Xna.Framework.Vector2},System.Nullable{Microsoft.Xna.Framework.Vector2},System.Boolean,System.Nullable{Microsoft.Xna.Framework.Color},System.Boolean,System.Boolean)">
+  Sprite(List&lt;Texture2D&gt;, bool, double, Vector2?, Vector2?, bool, Color?, bool, bool)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/rik-cross/monogame-milk/blob/main/Core/Sprite.cs/#L100"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Creates a new sprite object.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public Sprite(List&lt;Texture2D&gt; textureList, bool resizeToEntity = true, double duration = 0, Vector2 offset = default, Vector2 scale = default, bool loop = true, Color? hue = null, bool flipH = false, bool flipV = false)</code></pre>
+    <pre><code class="lang-csharp hljs">public Sprite(List&lt;Texture2D&gt; textureList, bool resizeToEntity = true, double duration = 0, Vector2? offset = null, Vector2? scale = null, bool loop = true, Color? hue = null, bool flipH = false, bool flipV = false)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
     <dt><code>textureList</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<span class="xref">Texture2D</span>&gt;</dt>
-    <dd></dd>
+    <dd><p>One or more textures to display.</p>
+</dd>
     <dt><code>resizeToEntity</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
-    <dd></dd>
+    <dd><p>Sprite size is set to the entity size (default = true).</p>
+</dd>
     <dt><code>duration</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
-    <dd></dd>
-    <dt><code>offset</code> <span class="xref">Vector2</span></dt>
-    <dd></dd>
-    <dt><code>scale</code> <span class="xref">Vector2</span></dt>
-    <dd></dd>
+    <dd><p>The total time to display the animation sequence (default = 0).</p>
+</dd>
+    <dt><code>offset</code> <span class="xref">Vector2</span>?</dt>
+    <dd><p>The distance between the entity position and the sprite (default = none).</p>
+</dd>
+    <dt><code>scale</code> <span class="xref">Vector2</span>?</dt>
+    <dd><p>The scale factor for the textures (default = 1 - no scale factor).</p>
+</dd>
     <dt><code>loop</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
-    <dd></dd>
+    <dd><p>Loop the textures (default = true).</p>
+</dd>
     <dt><code>hue</code> <span class="xref">Color</span>?</dt>
-    <dd></dd>
+    <dd><p>The hue to recolor the sprite (default = white / no recolor).</p>
+</dd>
     <dt><code>flipH</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
-    <dd></dd>
+    <dd><p>Horizontally flip the textures (default = false).</p>
+</dd>
     <dt><code>flipV</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
-    <dd></dd>
+    <dd><p>Vertically flip the textures (default = false).</p>
+</dd>
   </dl>
 
 
@@ -206,10 +219,11 @@ Class Sprite  <a class="header-action link-secondary" title="View source" href="
 
   <h3 id="milk_Core_Sprite_currentFrame" data-uid="milk.Core.Sprite.currentFrame">
   currentFrame
-  <a class="header-action link-secondary" title="View source" href="https://github.com/rik-cross/monogame-milk/blob/main/Core/Sprite.cs/#L19"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/rik-cross/monogame-milk/blob/main/Core/Sprite.cs/#L60"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>The current texture index.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
@@ -236,10 +250,11 @@ Class Sprite  <a class="header-action link-secondary" title="View source" href="
 
   <h3 id="milk_Core_Sprite_duration" data-uid="milk.Core.Sprite.duration">
   duration
-  <a class="header-action link-secondary" title="View source" href="https://github.com/rik-cross/monogame-milk/blob/main/Core/Sprite.cs/#L20"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/rik-cross/monogame-milk/blob/main/Core/Sprite.cs/#L65"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>The total time for the animation loop.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
@@ -266,10 +281,11 @@ Class Sprite  <a class="header-action link-secondary" title="View source" href="
 
   <h3 id="milk_Core_Sprite_flipH" data-uid="milk.Core.Sprite.flipH">
   flipH
-  <a class="header-action link-secondary" title="View source" href="https://github.com/rik-cross/monogame-milk/blob/main/Core/Sprite.cs/#L13"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/rik-cross/monogame-milk/blob/main/Core/Sprite.cs/#L38"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Horizontally flip the sprite.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
@@ -296,10 +312,11 @@ Class Sprite  <a class="header-action link-secondary" title="View source" href="
 
   <h3 id="milk_Core_Sprite_flipV" data-uid="milk.Core.Sprite.flipV">
   flipV
-  <a class="header-action link-secondary" title="View source" href="https://github.com/rik-cross/monogame-milk/blob/main/Core/Sprite.cs/#L14"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/rik-cross/monogame-milk/blob/main/Core/Sprite.cs/#L43"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Vertically flip the sprite.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
@@ -326,10 +343,11 @@ Class Sprite  <a class="header-action link-secondary" title="View source" href="
 
   <h3 id="milk_Core_Sprite_hue" data-uid="milk.Core.Sprite.hue">
   hue
-  <a class="header-action link-secondary" title="View source" href="https://github.com/rik-cross/monogame-milk/blob/main/Core/Sprite.cs/#L11"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/rik-cross/monogame-milk/blob/main/Core/Sprite.cs/#L28"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Sprite hue.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
@@ -356,10 +374,11 @@ Class Sprite  <a class="header-action link-secondary" title="View source" href="
 
   <h3 id="milk_Core_Sprite_loop" data-uid="milk.Core.Sprite.loop">
   loop
-  <a class="header-action link-secondary" title="View source" href="https://github.com/rik-cross/monogame-milk/blob/main/Core/Sprite.cs/#L24"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/rik-cross/monogame-milk/blob/main/Core/Sprite.cs/#L86"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Repeatedly loop the animation.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
@@ -386,10 +405,11 @@ Class Sprite  <a class="header-action link-secondary" title="View source" href="
 
   <h3 id="milk_Core_Sprite_numberOfFrames" data-uid="milk.Core.Sprite.numberOfFrames">
   numberOfFrames
-  <a class="header-action link-secondary" title="View source" href="https://github.com/rik-cross/monogame-milk/blob/main/Core/Sprite.cs/#L18"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/rik-cross/monogame-milk/blob/main/Core/Sprite.cs/#L55"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>The number of textures.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
@@ -416,10 +436,11 @@ Class Sprite  <a class="header-action link-secondary" title="View source" href="
 
   <h3 id="milk_Core_Sprite_offset" data-uid="milk.Core.Sprite.offset">
   offset
-  <a class="header-action link-secondary" title="View source" href="https://github.com/rik-cross/monogame-milk/blob/main/Core/Sprite.cs/#L12"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/rik-cross/monogame-milk/blob/main/Core/Sprite.cs/#L33"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>The sprite offset from the entity position.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
@@ -446,10 +467,12 @@ Class Sprite  <a class="header-action link-secondary" title="View source" href="
 
   <h3 id="milk_Core_Sprite_resizeToEntity" data-uid="milk.Core.Sprite.resizeToEntity">
   resizeToEntity
-  <a class="header-action link-secondary" title="View source" href="https://github.com/rik-cross/monogame-milk/blob/main/Core/Sprite.cs/#L23"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/rik-cross/monogame-milk/blob/main/Core/Sprite.cs/#L81"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>If true, the size of the sprite is the same as the
+entity size, stored in the TransformComponent.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
@@ -476,10 +499,11 @@ Class Sprite  <a class="header-action link-secondary" title="View source" href="
 
   <h3 id="milk_Core_Sprite_scale" data-uid="milk.Core.Sprite.scale">
   scale
-  <a class="header-action link-secondary" title="View source" href="https://github.com/rik-cross/monogame-milk/blob/main/Core/Sprite.cs/#L15"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/rik-cross/monogame-milk/blob/main/Core/Sprite.cs/#L48"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Texture scaling.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
@@ -506,10 +530,11 @@ Class Sprite  <a class="header-action link-secondary" title="View source" href="
 
   <h3 id="milk_Core_Sprite_textureList" data-uid="milk.Core.Sprite.textureList">
   textureList
-  <a class="header-action link-secondary" title="View source" href="https://github.com/rik-cross/monogame-milk/blob/main/Core/Sprite.cs/#L10"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/rik-cross/monogame-milk/blob/main/Core/Sprite.cs/#L23"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>A list of one or more textures to display.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
@@ -536,10 +561,11 @@ Class Sprite  <a class="header-action link-secondary" title="View source" href="
 
   <h3 id="milk_Core_Sprite_timeOnCurrentFrame" data-uid="milk.Core.Sprite.timeOnCurrentFrame">
   timeOnCurrentFrame
-  <a class="header-action link-secondary" title="View source" href="https://github.com/rik-cross/monogame-milk/blob/main/Core/Sprite.cs/#L22"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/rik-cross/monogame-milk/blob/main/Core/Sprite.cs/#L75"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>The elapsed time since the texture became current.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
@@ -566,10 +592,11 @@ Class Sprite  <a class="header-action link-secondary" title="View source" href="
 
   <h3 id="milk_Core_Sprite_timePerFrame" data-uid="milk.Core.Sprite.timePerFrame">
   timePerFrame
-  <a class="header-action link-secondary" title="View source" href="https://github.com/rik-cross/monogame-milk/blob/main/Core/Sprite.cs/#L21"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/rik-cross/monogame-milk/blob/main/Core/Sprite.cs/#L70"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>The time to display each texture.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
@@ -601,10 +628,11 @@ Class Sprite  <a class="header-action link-secondary" title="View source" href="
 
   <h3 id="milk_Core_Sprite_GetCurrentTexture" data-uid="milk.Core.Sprite.GetCurrentTexture">
   GetCurrentTexture()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/rik-cross/monogame-milk/blob/main/Core/Sprite.cs/#L74"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/rik-cross/monogame-milk/blob/main/Core/Sprite.cs/#L142"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Returns the currently displayed texture.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
@@ -615,34 +643,9 @@ Class Sprite  <a class="header-action link-secondary" title="View source" href="
   <h4 class="section">Returns</h4>
   <dl class="parameters">
     <dt><span class="xref">Texture2D</span></dt>
-    <dd></dd>
+    <dd><p>The currently displayed texture.</p>
+</dd>
   </dl>
-
-
-
-
-
-
-
-
-
-
-
-  <a id="milk_Core_Sprite_UpdateAnimationInfo_" data-uid="milk.Core.Sprite.UpdateAnimationInfo*"></a>
-
-  <h3 id="milk_Core_Sprite_UpdateAnimationInfo" data-uid="milk.Core.Sprite.UpdateAnimationInfo">
-  UpdateAnimationInfo()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/rik-cross/monogame-milk/blob/main/Core/Sprite.cs/#L68"><i class="bi bi-code-slash"></i></a>
-  </h3>
-
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public void UpdateAnimationInfo()</code></pre>
-  </div>
-
-
 
 
 
@@ -658,7 +661,7 @@ Class Sprite  <a class="header-action link-secondary" title="View source" href="
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/rik-cross/monogame-milk/blob/main/Core/Sprite.cs/#L7" class="edit-link">Edit this page</a>
+          <a href="https://github.com/rik-cross/monogame-milk/blob/main/Core/Sprite.cs/#L17" class="edit-link">Edit this page</a>
         </div>
 
 

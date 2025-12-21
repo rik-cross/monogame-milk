@@ -1,14 +1,13 @@
 //   Monogame Intuitive Library Kit (milk)
 //   A MonoGame ECS Engine, By Rik Cross
 //   -- Code: github.com/rik-cross/monogame-milk
-//   -- Docs: github.com/rik-cross/milk-docs
+//   -- Docs: rik-cross.github.io/monogame-milk
 //   -- Shared under the MIT licence
 
 using System.Collections;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
-
 using MonoGame.Extended;
 using MonoGame.Extended.Tiled;
 using MonoGame.Extended.Tiled.Renderers;
@@ -383,7 +382,7 @@ public abstract class Scene
     /// <summary>
     /// Adds a camera object to a scene.
     /// </summary>
-    /// <param name="camera"></param>
+    /// <param name="camera">The camera to add to the scene.</param>
     protected void AddCamera(Camera camera)
     {
         cameras.Add(camera);

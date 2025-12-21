@@ -1,11 +1,22 @@
+//   Monogame Intuitive Library Kit (milk)
+//   A MonoGame ECS Engine, By Rik Cross
+//   -- Code: github.com/rik-cross/monogame-milk
+//   -- Docs: rik-cross.github.io/monogame-milk
+//   -- Shared under the MIT licence
+
 using Microsoft.Xna.Framework;
 using MonoGame.Extended;
 using milk.Core;
 using milk.Components;
 namespace milk.Systems;
 
-public class PhysicsSystem : milk.Core.System
+internal class PhysicsSystem : milk.Core.System
 {
+
+    /// <summary>
+    /// Initialises the physics system, which only processes entities
+    /// with a transform, physics and collider component.
+    /// </summary>
     public override void Init()
     {
         AddRequiredComponentType<TransformComponent>();
@@ -13,6 +24,13 @@ public class PhysicsSystem : milk.Core.System
         AddRequiredComponentType<ColliderComponent>();
     }
 
+    /// <summary>
+    /// Updates the position of each entity with respect to its velocity and acceleration,
+    /// along with the scene velocity and acceleration.
+    /// </summary>
+    /// <param name="gameTime">The MonoGame gameTime object for measuring elapsed time.</param>
+    /// <param name="scene">The scene containing the system.</param>
+    /// <param name="entity">The entity to be processed.</param>
     public override void UpdateEntity(GameTime gameTime, Scene scene, Entity entity)
     {
         // A constant is often necessary when implementing acceleration to prevent infinite speed growth.
@@ -84,10 +102,11 @@ public class PhysicsSystem : milk.Core.System
         transformComponent.Position.Y += effectiveVelocity.Y * deltaTime;
     }
 
-
-    public override void Draw(Scene scene)
-    {
-    }
+    /// <summary>
+    /// Draws each of the entity transform components if in DEBUG mode.
+    /// </summary>
+    /// <param name="scene">The scene containing the system.</param>
+    /// <param name="entity">The entity to be processed.</param>
     public override void DrawEntity(Scene scene, Entity entity)
     {
         TransformComponent transformComponent = entity.GetComponent<TransformComponent>();

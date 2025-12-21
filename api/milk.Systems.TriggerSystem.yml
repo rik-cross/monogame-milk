@@ -7,9 +7,7 @@ items:
   children:
   - milk.Systems.TriggerSystem.DrawEntity(milk.Core.Scene,milk.Core.Entity)
   - milk.Systems.TriggerSystem.Init
-  - milk.Systems.TriggerSystem.OnEnterScene(milk.Core.Scene)
   - milk.Systems.TriggerSystem.OnEntityRemovedFromScene(milk.Core.Scene,milk.Core.Entity)
-  - milk.Systems.TriggerSystem.OnExitScene(milk.Core.Scene)
   - milk.Systems.TriggerSystem.UpdateEntity(Microsoft.Xna.Framework.GameTime,milk.Core.Scene,milk.Core.Entity)
   langs:
   - csharp
@@ -25,10 +23,15 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: TriggerSystem
     path: Systems/TriggerSystem.cs
-    startLine: 11
+    startLine: 17
   assemblies:
   - MonoGameECS
   namespace: milk.Systems
+  summary: >-
+    Processes entities with trigger components, and calls the relevant
+
+    callbacks when 2 entities have overlapping colliders.
+  example: []
   syntax:
     content: 'public class TriggerSystem : System'
     content.vb: Public Class TriggerSystem Inherits System
@@ -44,6 +47,8 @@ items:
   - milk.Core.System.InputEntity(Microsoft.Xna.Framework.GameTime,milk.Core.Scene,milk.Core.Entity)
   - milk.Core.System.Update(Microsoft.Xna.Framework.GameTime,milk.Core.Scene)
   - milk.Core.System.Draw(milk.Core.Scene)
+  - milk.Core.System.OnEnterScene(milk.Core.Scene)
+  - milk.Core.System.OnExitScene(milk.Core.Scene)
   - milk.Core.System.OnEntityAddedToScene(milk.Core.Scene,milk.Core.Entity)
   - milk.Core.System.OnAddedToScene(milk.Core.Scene)
   - milk.Core.System.OnRemovedFromScene(milk.Core.Scene)
@@ -72,83 +77,20 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: Init
     path: Systems/TriggerSystem.cs
-    startLine: 14
+    startLine: 24
   assemblies:
   - MonoGameECS
   namespace: milk.Systems
-  summary: Called once when a system is created.
+  summary: >-
+    Initialises the trigger system, which only processes entities
+
+    with a transform component and a trigger component.
   example: []
   syntax:
     content: public override void Init()
     content.vb: Public Overrides Sub Init()
   overridden: milk.Core.System.Init
   overload: milk.Systems.TriggerSystem.Init*
-- uid: milk.Systems.TriggerSystem.OnEnterScene(milk.Core.Scene)
-  commentId: M:milk.Systems.TriggerSystem.OnEnterScene(milk.Core.Scene)
-  id: OnEnterScene(milk.Core.Scene)
-  parent: milk.Systems.TriggerSystem
-  langs:
-  - csharp
-  - vb
-  name: OnEnterScene(Scene)
-  nameWithType: TriggerSystem.OnEnterScene(Scene)
-  fullName: milk.Systems.TriggerSystem.OnEnterScene(milk.Core.Scene)
-  type: Method
-  source:
-    remote:
-      path: Systems/TriggerSystem.cs
-      branch: main
-      repo: git@github.com:rik-cross/monogame-milk.git
-    id: OnEnterScene
-    path: Systems/TriggerSystem.cs
-    startLine: 20
-  assemblies:
-  - MonoGameECS
-  namespace: milk.Systems
-  summary: Called once when the scene becomes active;
-  example: []
-  syntax:
-    content: public override void OnEnterScene(Scene scene)
-    parameters:
-    - id: scene
-      type: milk.Core.Scene
-      description: The scene that the system is in.
-    content.vb: Public Overrides Sub OnEnterScene(scene As Scene)
-  overridden: milk.Core.System.OnEnterScene(milk.Core.Scene)
-  overload: milk.Systems.TriggerSystem.OnEnterScene*
-- uid: milk.Systems.TriggerSystem.OnExitScene(milk.Core.Scene)
-  commentId: M:milk.Systems.TriggerSystem.OnExitScene(milk.Core.Scene)
-  id: OnExitScene(milk.Core.Scene)
-  parent: milk.Systems.TriggerSystem
-  langs:
-  - csharp
-  - vb
-  name: OnExitScene(Scene)
-  nameWithType: TriggerSystem.OnExitScene(Scene)
-  fullName: milk.Systems.TriggerSystem.OnExitScene(milk.Core.Scene)
-  type: Method
-  source:
-    remote:
-      path: Systems/TriggerSystem.cs
-      branch: main
-      repo: git@github.com:rik-cross/monogame-milk.git
-    id: OnExitScene
-    path: Systems/TriggerSystem.cs
-    startLine: 25
-  assemblies:
-  - MonoGameECS
-  namespace: milk.Systems
-  summary: Called once when the scene is no longer active.
-  example: []
-  syntax:
-    content: public override void OnExitScene(Scene scene)
-    parameters:
-    - id: scene
-      type: milk.Core.Scene
-      description: The scene that the system is in.
-    content.vb: Public Overrides Sub OnExitScene(scene As Scene)
-  overridden: milk.Core.System.OnExitScene(milk.Core.Scene)
-  overload: milk.Systems.TriggerSystem.OnExitScene*
 - uid: milk.Systems.TriggerSystem.UpdateEntity(Microsoft.Xna.Framework.GameTime,milk.Core.Scene,milk.Core.Entity)
   commentId: M:milk.Systems.TriggerSystem.UpdateEntity(Microsoft.Xna.Framework.GameTime,milk.Core.Scene,milk.Core.Entity)
   id: UpdateEntity(Microsoft.Xna.Framework.GameTime,milk.Core.Scene,milk.Core.Entity)
@@ -167,27 +109,24 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: UpdateEntity
     path: Systems/TriggerSystem.cs
-    startLine: 41
+    startLine: 36
   assemblies:
   - MonoGameECS
   namespace: milk.Systems
-  summary: >-
-    An entity-specific update method, called once per frame
-
-    for each entity with the required set of components.
+  summary: Updates each of the entities with the required components.
   example: []
   syntax:
     content: public override void UpdateEntity(GameTime gameTime, Scene scene, Entity entity)
     parameters:
     - id: gameTime
       type: Microsoft.Xna.Framework.GameTime
-      description: The MonoGame gameTime object.
+      description: The MonoGame gameTime object for measuring elapsed time.
     - id: scene
       type: milk.Core.Scene
-      description: The scene that the system is in
+      description: The scene containing the system.
     - id: entity
       type: milk.Core.Entity
-      description: The entity to be acted upon.
+      description: The entity to be processed.
     content.vb: Public Overrides Sub UpdateEntity(gameTime As GameTime, scene As Scene, entity As Entity)
   overridden: milk.Core.System.UpdateEntity(Microsoft.Xna.Framework.GameTime,milk.Core.Scene,milk.Core.Entity)
   overload: milk.Systems.TriggerSystem.UpdateEntity*
@@ -213,20 +152,17 @@ items:
   assemblies:
   - MonoGameECS
   namespace: milk.Systems
-  summary: >-
-    An entity-specific draw method, called once per frame
-
-    for each entity with the required set of components.
+  summary: Draws each of the entity triggers if in DEBUG mode.
   example: []
   syntax:
     content: public override void DrawEntity(Scene scene, Entity entity)
     parameters:
     - id: scene
       type: milk.Core.Scene
-      description: The scene that the system is in
+      description: The scene containing the system.
     - id: entity
       type: milk.Core.Entity
-      description: The entity to be acted upon.
+      description: The entity to be processed.
     content.vb: Public Overrides Sub DrawEntity(scene As Scene, entity As Entity)
   overridden: milk.Core.System.DrawEntity(milk.Core.Scene,milk.Core.Entity)
   overload: milk.Systems.TriggerSystem.DrawEntity*
@@ -248,21 +184,24 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: OnEntityRemovedFromScene
     path: Systems/TriggerSystem.cs
-    startLine: 149
+    startLine: 155
   assemblies:
   - MonoGameECS
   namespace: milk.Systems
-  summary: Called once when an entity is removed from the scene containing the system.
+  summary: >-
+    Removes the entity to be removed from the scene from the list
+
+    of collided entities.
   example: []
   syntax:
     content: public override void OnEntityRemovedFromScene(Scene scene, Entity entity)
     parameters:
     - id: scene
       type: milk.Core.Scene
-      description: The scene containing the system that the entity is being removed from.
+      description: The scene containing the system.
     - id: entity
       type: milk.Core.Entity
-      description: The entity being removed from the scene.
+      description: The entity to be processed.
     content.vb: Public Overrides Sub OnEntityRemovedFromScene(scene As Scene, entity As Entity)
   overridden: milk.Core.System.OnEntityRemovedFromScene(milk.Core.Scene,milk.Core.Entity)
   overload: milk.Systems.TriggerSystem.OnEntityRemovedFromScene*
@@ -496,6 +435,56 @@ references:
   - uid: milk.Core.System.Draw(milk.Core.Scene)
     name: Draw
     href: milk.Core.System.html#milk_Core_System_Draw_milk_Core_Scene_
+  - name: (
+  - uid: milk.Core.Scene
+    name: Scene
+    href: milk.Core.Scene.html
+  - name: )
+- uid: milk.Core.System.OnEnterScene(milk.Core.Scene)
+  commentId: M:milk.Core.System.OnEnterScene(milk.Core.Scene)
+  parent: milk.Core.System
+  href: milk.Core.System.html#milk_Core_System_OnEnterScene_milk_Core_Scene_
+  name: OnEnterScene(Scene)
+  nameWithType: System.OnEnterScene(Scene)
+  fullName: milk.Core.System.OnEnterScene(milk.Core.Scene)
+  spec.csharp:
+  - uid: milk.Core.System.OnEnterScene(milk.Core.Scene)
+    name: OnEnterScene
+    href: milk.Core.System.html#milk_Core_System_OnEnterScene_milk_Core_Scene_
+  - name: (
+  - uid: milk.Core.Scene
+    name: Scene
+    href: milk.Core.Scene.html
+  - name: )
+  spec.vb:
+  - uid: milk.Core.System.OnEnterScene(milk.Core.Scene)
+    name: OnEnterScene
+    href: milk.Core.System.html#milk_Core_System_OnEnterScene_milk_Core_Scene_
+  - name: (
+  - uid: milk.Core.Scene
+    name: Scene
+    href: milk.Core.Scene.html
+  - name: )
+- uid: milk.Core.System.OnExitScene(milk.Core.Scene)
+  commentId: M:milk.Core.System.OnExitScene(milk.Core.Scene)
+  parent: milk.Core.System
+  href: milk.Core.System.html#milk_Core_System_OnExitScene_milk_Core_Scene_
+  name: OnExitScene(Scene)
+  nameWithType: System.OnExitScene(Scene)
+  fullName: milk.Core.System.OnExitScene(milk.Core.Scene)
+  spec.csharp:
+  - uid: milk.Core.System.OnExitScene(milk.Core.Scene)
+    name: OnExitScene
+    href: milk.Core.System.html#milk_Core_System_OnExitScene_milk_Core_Scene_
+  - name: (
+  - uid: milk.Core.Scene
+    name: Scene
+    href: milk.Core.Scene.html
+  - name: )
+  spec.vb:
+  - uid: milk.Core.System.OnExitScene(milk.Core.Scene)
+    name: OnExitScene
+    href: milk.Core.System.html#milk_Core_System_OnExitScene_milk_Core_Scene_
   - name: (
   - uid: milk.Core.Scene
     name: Scene
@@ -859,75 +848,6 @@ references:
   name: Init
   nameWithType: TriggerSystem.Init
   fullName: milk.Systems.TriggerSystem.Init
-- uid: milk.Core.System.OnEnterScene(milk.Core.Scene)
-  commentId: M:milk.Core.System.OnEnterScene(milk.Core.Scene)
-  parent: milk.Core.System
-  href: milk.Core.System.html#milk_Core_System_OnEnterScene_milk_Core_Scene_
-  name: OnEnterScene(Scene)
-  nameWithType: System.OnEnterScene(Scene)
-  fullName: milk.Core.System.OnEnterScene(milk.Core.Scene)
-  spec.csharp:
-  - uid: milk.Core.System.OnEnterScene(milk.Core.Scene)
-    name: OnEnterScene
-    href: milk.Core.System.html#milk_Core_System_OnEnterScene_milk_Core_Scene_
-  - name: (
-  - uid: milk.Core.Scene
-    name: Scene
-    href: milk.Core.Scene.html
-  - name: )
-  spec.vb:
-  - uid: milk.Core.System.OnEnterScene(milk.Core.Scene)
-    name: OnEnterScene
-    href: milk.Core.System.html#milk_Core_System_OnEnterScene_milk_Core_Scene_
-  - name: (
-  - uid: milk.Core.Scene
-    name: Scene
-    href: milk.Core.Scene.html
-  - name: )
-- uid: milk.Systems.TriggerSystem.OnEnterScene*
-  commentId: Overload:milk.Systems.TriggerSystem.OnEnterScene
-  href: milk.Systems.TriggerSystem.html#milk_Systems_TriggerSystem_OnEnterScene_milk_Core_Scene_
-  name: OnEnterScene
-  nameWithType: TriggerSystem.OnEnterScene
-  fullName: milk.Systems.TriggerSystem.OnEnterScene
-- uid: milk.Core.Scene
-  commentId: T:milk.Core.Scene
-  parent: milk.Core
-  href: milk.Core.Scene.html
-  name: Scene
-  nameWithType: Scene
-  fullName: milk.Core.Scene
-- uid: milk.Core.System.OnExitScene(milk.Core.Scene)
-  commentId: M:milk.Core.System.OnExitScene(milk.Core.Scene)
-  parent: milk.Core.System
-  href: milk.Core.System.html#milk_Core_System_OnExitScene_milk_Core_Scene_
-  name: OnExitScene(Scene)
-  nameWithType: System.OnExitScene(Scene)
-  fullName: milk.Core.System.OnExitScene(milk.Core.Scene)
-  spec.csharp:
-  - uid: milk.Core.System.OnExitScene(milk.Core.Scene)
-    name: OnExitScene
-    href: milk.Core.System.html#milk_Core_System_OnExitScene_milk_Core_Scene_
-  - name: (
-  - uid: milk.Core.Scene
-    name: Scene
-    href: milk.Core.Scene.html
-  - name: )
-  spec.vb:
-  - uid: milk.Core.System.OnExitScene(milk.Core.Scene)
-    name: OnExitScene
-    href: milk.Core.System.html#milk_Core_System_OnExitScene_milk_Core_Scene_
-  - name: (
-  - uid: milk.Core.Scene
-    name: Scene
-    href: milk.Core.Scene.html
-  - name: )
-- uid: milk.Systems.TriggerSystem.OnExitScene*
-  commentId: Overload:milk.Systems.TriggerSystem.OnExitScene
-  href: milk.Systems.TriggerSystem.html#milk_Systems_TriggerSystem_OnExitScene_milk_Core_Scene_
-  name: OnExitScene
-  nameWithType: TriggerSystem.OnExitScene
-  fullName: milk.Systems.TriggerSystem.OnExitScene
 - uid: milk.Core.System.UpdateEntity(Microsoft.Xna.Framework.GameTime,milk.Core.Scene,milk.Core.Entity)
   commentId: M:milk.Core.System.UpdateEntity(Microsoft.Xna.Framework.GameTime,milk.Core.Scene,milk.Core.Entity)
   parent: milk.Core.System
@@ -987,6 +907,13 @@ references:
   name: GameTime
   nameWithType: GameTime
   fullName: Microsoft.Xna.Framework.GameTime
+- uid: milk.Core.Scene
+  commentId: T:milk.Core.Scene
+  parent: milk.Core
+  href: milk.Core.Scene.html
+  name: Scene
+  nameWithType: Scene
+  fullName: milk.Core.Scene
 - uid: milk.Core.Entity
   commentId: T:milk.Core.Entity
   parent: milk.Core

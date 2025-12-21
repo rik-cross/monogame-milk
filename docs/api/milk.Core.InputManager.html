@@ -6,8 +6,8 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <meta name="title" content="Class InputManager | milk ">
       
-      
-      <link rel="icon" href="../favicon.ico">
+      <meta name="description" content="Used to receive and respond to player input.">
+      <link rel="icon" href="../images/favicon.ico">
       <link rel="stylesheet" href="../public/docfx.min.css">
       <link rel="stylesheet" href="../public/main.css">
       <meta name="docfx:navrel" content="../toc.html">
@@ -44,7 +44,7 @@
       <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
         <div class="container-xxl flex-nowrap">
           <a class="navbar-brand" href="../index.html">
-            <img id="logo" class="svg" src="../logo.svg" alt="milk">
+            <img id="logo" class="svg" src="../images/milk.png" alt="milk">
             milk
           </a>
           <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
@@ -89,7 +89,7 @@
 
 
   <h1 id="milk_Core_InputManager" data-uid="milk.Core.InputManager" class="text-break">
-Class InputManager  <a class="header-action link-secondary" title="View source" href="https://github.com/rik-cross/monogame-milk/blob/main/Managers/InputManager.cs/#L7"><i class="bi bi-code-slash"></i></a>
+Class InputManager  <a class="header-action link-secondary" title="View source" href="https://github.com/rik-cross/monogame-milk/blob/main/Managers/InputManager.cs/#L14"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
@@ -97,7 +97,8 @@ Class InputManager  <a class="header-action link-secondary" title="View source" 
   <dl><dt>Assembly</dt><dd>MonoGameECS.dll</dd></dl>
   </div>
 
-  <div class="markdown summary"></div>
+  <div class="markdown summary"><p>Used to receive and respond to player input.</p>
+</div>
   <div class="markdown conceptual"></div>
 
   <div class="codewrapper">
@@ -156,10 +157,11 @@ Class InputManager  <a class="header-action link-secondary" title="View source" 
 
   <h3 id="milk_Core_InputManager_IsButtonDown_Microsoft_Xna_Framework_Input_Buttons_System_Int32_" data-uid="milk.Core.InputManager.IsButtonDown(Microsoft.Xna.Framework.Input.Buttons,System.Int32)">
   IsButtonDown(Buttons, int)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/rik-cross/monogame-milk/blob/main/Managers/InputManager.cs/#L63"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/rik-cross/monogame-milk/blob/main/Managers/InputManager.cs/#L93"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Returns true if the specified button is down.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
@@ -169,15 +171,18 @@ Class InputManager  <a class="header-action link-secondary" title="View source" 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
     <dt><code>button</code> <span class="xref">Buttons</span></dt>
-    <dd></dd>
+    <dd><p>The button to check.</p>
+</dd>
     <dt><code>controllerNumber</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
-    <dd></dd>
+    <dd><p>The controller number to check (default = controller 0).</p>
+</dd>
   </dl>
 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
     <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
-    <dd></dd>
+    <dd><p>True if the specified button is down.</p>
+</dd>
   </dl>
 
 
@@ -194,10 +199,12 @@ Class InputManager  <a class="header-action link-secondary" title="View source" 
 
   <h3 id="milk_Core_InputManager_IsButtonPressed_Microsoft_Xna_Framework_Input_Buttons_System_Int32_" data-uid="milk.Core.InputManager.IsButtonPressed(Microsoft.Xna.Framework.Input.Buttons,System.Int32)">
   IsButtonPressed(Buttons, int)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/rik-cross/monogame-milk/blob/main/Managers/InputManager.cs/#L71"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/rik-cross/monogame-milk/blob/main/Managers/InputManager.cs/#L108"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Returns true if the specified button is pressed
+(i.e. is down, but wasn't down in the previous frame).</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
@@ -207,15 +214,18 @@ Class InputManager  <a class="header-action link-secondary" title="View source" 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
     <dt><code>button</code> <span class="xref">Buttons</span></dt>
-    <dd></dd>
+    <dd><p>The button to check.</p>
+</dd>
     <dt><code>controllerNumber</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
-    <dd></dd>
+    <dd><p>The controller number to check (default = controller 0).</p>
+</dd>
   </dl>
 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
     <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
-    <dd></dd>
+    <dd><p>True if the specified button is pressed.</p>
+</dd>
   </dl>
 
 
@@ -232,10 +242,12 @@ Class InputManager  <a class="header-action link-secondary" title="View source" 
 
   <h3 id="milk_Core_InputManager_IsButtonReleased_Microsoft_Xna_Framework_Input_Buttons_System_Int32_" data-uid="milk.Core.InputManager.IsButtonReleased(Microsoft.Xna.Framework.Input.Buttons,System.Int32)">
   IsButtonReleased(Buttons, int)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/rik-cross/monogame-milk/blob/main/Managers/InputManager.cs/#L79"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/rik-cross/monogame-milk/blob/main/Managers/InputManager.cs/#L123"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Returns true if the specified button is released
+(i.e. is not down, but was down in the previous frame).</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
@@ -245,15 +257,18 @@ Class InputManager  <a class="header-action link-secondary" title="View source" 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
     <dt><code>button</code> <span class="xref">Buttons</span></dt>
-    <dd></dd>
+    <dd><p>The button to check.</p>
+</dd>
     <dt><code>controllerNumber</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
-    <dd></dd>
+    <dd><p>The controller number to check (default = controller 0).</p>
+</dd>
   </dl>
 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
     <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
-    <dd></dd>
+    <dd><p>True if the specified button has been released.</p>
+</dd>
   </dl>
 
 
@@ -270,10 +285,11 @@ Class InputManager  <a class="header-action link-secondary" title="View source" 
 
   <h3 id="milk_Core_InputManager_IsControllerConnected" data-uid="milk.Core.InputManager.IsControllerConnected">
   IsControllerConnected()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/rik-cross/monogame-milk/blob/main/Managers/InputManager.cs/#L91"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/rik-cross/monogame-milk/blob/main/Managers/InputManager.cs/#L139"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Returns true if at least one controller is connected.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
@@ -284,7 +300,8 @@ Class InputManager  <a class="header-action link-secondary" title="View source" 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
     <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
-    <dd></dd>
+    <dd><p>True if at least one controller is connected.</p>
+</dd>
   </dl>
 
 
@@ -301,10 +318,11 @@ Class InputManager  <a class="header-action link-secondary" title="View source" 
 
   <h3 id="milk_Core_InputManager_IsKeyDown_Microsoft_Xna_Framework_Input_Keys_" data-uid="milk.Core.InputManager.IsKeyDown(Microsoft.Xna.Framework.Input.Keys)">
   IsKeyDown(Keys)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/rik-cross/monogame-milk/blob/main/Managers/InputManager.cs/#L35"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/rik-cross/monogame-milk/blob/main/Managers/InputManager.cs/#L47"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Returns true if the specified key is held down.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
@@ -314,13 +332,15 @@ Class InputManager  <a class="header-action link-secondary" title="View source" 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
     <dt><code>key</code> <span class="xref">Keys</span></dt>
-    <dd></dd>
+    <dd><p>The key to check.</p>
+</dd>
   </dl>
 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
     <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
-    <dd></dd>
+    <dd><p>True if the specified key is held down.</p>
+</dd>
   </dl>
 
 
@@ -337,10 +357,12 @@ Class InputManager  <a class="header-action link-secondary" title="View source" 
 
   <h3 id="milk_Core_InputManager_IsKeyPressed_Microsoft_Xna_Framework_Input_Keys_" data-uid="milk.Core.InputManager.IsKeyPressed(Microsoft.Xna.Framework.Input.Keys)">
   IsKeyPressed(Keys)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/rik-cross/monogame-milk/blob/main/Managers/InputManager.cs/#L43"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/rik-cross/monogame-milk/blob/main/Managers/InputManager.cs/#L61"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Returns true if the specified key has been pressed in the current frame
+(i.e. the key is down, but wasn't in the previous frame).</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
@@ -350,13 +372,15 @@ Class InputManager  <a class="header-action link-secondary" title="View source" 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
     <dt><code>key</code> <span class="xref">Keys</span></dt>
-    <dd></dd>
+    <dd><p>The key to chec.k</p>
+</dd>
   </dl>
 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
     <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
-    <dd></dd>
+    <dd><p>True if the specified key has been pressed.</p>
+</dd>
   </dl>
 
 
@@ -373,10 +397,12 @@ Class InputManager  <a class="header-action link-secondary" title="View source" 
 
   <h3 id="milk_Core_InputManager_IsKeyReleased_Microsoft_Xna_Framework_Input_Keys_" data-uid="milk.Core.InputManager.IsKeyReleased(Microsoft.Xna.Framework.Input.Keys)">
   IsKeyReleased(Keys)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/rik-cross/monogame-milk/blob/main/Managers/InputManager.cs/#L51"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/rik-cross/monogame-milk/blob/main/Managers/InputManager.cs/#L75"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Returns true if the specified key is no longer down
+(i.e. is not down, but was in the previous frame).</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
@@ -386,13 +412,15 @@ Class InputManager  <a class="header-action link-secondary" title="View source" 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
     <dt><code>key</code> <span class="xref">Keys</span></dt>
-    <dd></dd>
+    <dd><p>The key to check.</p>
+</dd>
   </dl>
 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
     <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
-    <dd></dd>
+    <dd><p>True if the specified key has been released.</p>
+</dd>
   </dl>
 
 
@@ -409,10 +437,11 @@ Class InputManager  <a class="header-action link-secondary" title="View source" 
 
   <h3 id="milk_Core_InputManager_NumberOfControllersConnected" data-uid="milk.Core.InputManager.NumberOfControllersConnected">
   NumberOfControllersConnected()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/rik-cross/monogame-milk/blob/main/Managers/InputManager.cs/#L95"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/rik-cross/monogame-milk/blob/main/Managers/InputManager.cs/#L147"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Returns the number of connected controllers.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
@@ -423,34 +452,9 @@ Class InputManager  <a class="header-action link-secondary" title="View source" 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
     <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
-    <dd></dd>
+    <dd><p>The number of controllers connected.</p>
+</dd>
   </dl>
-
-
-
-
-
-
-
-
-
-
-
-  <a id="milk_Core_InputManager_Update_" data-uid="milk.Core.InputManager.Update*"></a>
-
-  <h3 id="milk_Core_InputManager_Update" data-uid="milk.Core.InputManager.Update">
-  Update()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/rik-cross/monogame-milk/blob/main/Managers/InputManager.cs/#L20"><i class="bi bi-code-slash"></i></a>
-  </h3>
-
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public void Update()</code></pre>
-  </div>
-
-
 
 
 
@@ -466,7 +470,7 @@ Class InputManager  <a class="header-action link-secondary" title="View source" 
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/rik-cross/monogame-milk/blob/main/Managers/InputManager.cs/#L7" class="edit-link">Edit this page</a>
+          <a href="https://github.com/rik-cross/monogame-milk/blob/main/Managers/InputManager.cs/#L14" class="edit-link">Edit this page</a>
         </div>
 
 

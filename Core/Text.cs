@@ -1,27 +1,25 @@
-//   [ ] Finished
-//   
-//   Monogame ECS Engine
-//   By Rik Cross
-//   -- github.com/rik-cross/monogame-ecs
-//   Shared under the MIT licence
-//
-//   ------------------------------------
-//
-//   MonogameECS.Text
-//   ================
-//  
-//   Text can be rendered onto a Scene.
+//   Monogame Intuitive Library Kit (milk)
+//   A MonoGame ECS Engine, By Rik Cross
+//   -- Code: github.com/rik-cross/monogame-milk
+//   -- Docs: rik-cross.github.io/monogame-milk
+//   -- Shared under the MIT licence
 
-using System;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
 namespace milk.Core;
 
+/// <summary>
+/// Displays text in a scene, in the font specified.
+/// </summary>
 public class Text : SceneRenderable
 {
     private SpriteBatch _spriteBatch = EngineGlobals.game.spriteBatch;
     private SpriteFont _font;
+
+    /// <summary>
+    /// The font to use for the text.
+    /// </summary>
     public SpriteFont Font
     {
         get { return _font; }
@@ -34,6 +32,10 @@ public class Text : SceneRenderable
 
     // Caption
     private string _caption = "";
+
+    /// <summary>
+    /// The text to display.
+    /// </summary>
     public string Caption
     {
         get { return _caption; }
@@ -44,11 +46,15 @@ public class Text : SceneRenderable
         }
     }
 
-    // Colour
+    /// <summary>
+    /// Text color.
+    /// </summary>
     public Color Color { get; set; }
 
-    // Outline
     private int _outlineWidth = 0;
+    /// <summary>
+    /// Text outline width.
+    /// </summary>
     public int OutlineWidth
     {
         get { return _outlineWidth; }
@@ -58,19 +64,35 @@ public class Text : SceneRenderable
             GenerateTextWidth(_caption, _font, _outlineWidth);
         }
     }
+
+    /// <summary>
+    /// Outline color.
+    /// </summary>
     public Color OutlineColor { get; set; }
 
+    /// <summary>
+    /// Create a new next object.
+    /// </summary>
+    /// <param name="caption">The text to display.</param>
+    /// <param name="font">The font to use to render the text.</param>
+    /// <param name="position">The (x, y) text position (default = (0,0)).</param>
+    /// <param name="alpha">The amount of transparency, between 0 and 1 (default = 1 - fully visible).</param>
+    /// <param name="color">The text color.</param>
+    /// <param name="outlineWidth">The width of the text outline.</param>
+    /// <param name="outlineColor">The color of the outline.</param>
+    /// <param name="anchor">The anchor point to set the position against (default = top-left).</param>
+    /// <param name="parent">The parent SceneRenderable, for setting relative position (default = null).</param>
     public Text(
         string caption,
         SpriteFont font,
-        Vector2 position,
+        Vector2? position = null,
         float alpha = 1.0f,
         Color? color = null,
         int outlineWidth = 0,
         Color? outlineColor = null,
         Anchor anchor = Anchor.TopLeft,
         SceneRenderable? parent = null
-        ) : base(GenerateTextWidth(caption, font, outlineWidth), position, alpha, anchor, parent)
+        ) : base(GenerateTextWidth(caption, font, outlineWidth), position ?? Vector2.Zero, alpha, anchor, parent)
     {
 
         Font = font;

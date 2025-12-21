@@ -5,7 +5,7 @@ items:
   id: Camera
   parent: milk.Core
   children:
-  - milk.Core.Camera.#ctor(Microsoft.Xna.Framework.Vector2,System.Nullable{Microsoft.Xna.Framework.Vector2},System.Nullable{Microsoft.Xna.Framework.Vector2},System.Single,System.Boolean,System.Nullable{Microsoft.Xna.Framework.Color},System.Int32,System.Nullable{Microsoft.Xna.Framework.Color},System.String,milk.Core.Entity)
+  - milk.Core.Camera.#ctor(Microsoft.Xna.Framework.Vector2,System.Nullable{Microsoft.Xna.Framework.Vector2},System.Nullable{Microsoft.Xna.Framework.Vector2},System.Single,System.Boolean,System.Nullable{Microsoft.Xna.Framework.Color},System.Int32,System.Nullable{Microsoft.Xna.Framework.Color},System.String,milk.Core.Entity,System.Single)
   - milk.Core.Camera.BackgroundColor
   - milk.Core.Camera.BorderColor
   - milk.Core.Camera.BorderWidth
@@ -19,13 +19,9 @@ items:
   - milk.Core.Camera.SetWorldPosition(Microsoft.Xna.Framework.Vector2,System.Boolean)
   - milk.Core.Camera.SetZoom(System.Single,System.Single)
   - milk.Core.Camera.TrackedEntity
-  - milk.Core.Camera.Update(Microsoft.Xna.Framework.GameTime)
   - milk.Core.Camera.WorldPosition
-  - milk.Core.Camera._currentWorldPosition
   - milk.Core.Camera._currentZoom
   - milk.Core.Camera._startZoom
-  - milk.Core.Camera.getTransformMatrix
-  - milk.Core.Camera.getViewport
   langs:
   - csharp
   - vb
@@ -40,10 +36,15 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: Camera
     path: Core/Camera.cs
-    startLine: 6
+    startLine: 16
   assemblies:
   - MonoGameECS
   namespace: milk.Core
+  summary: >-
+    A camera can be added to a Scene via scene.AddCamera(),
+
+    and draws a scene's world to the screen.
+  example: []
   syntax:
     content: public class Camera
     content.vb: Public Class Camera
@@ -75,12 +76,14 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: Scene
     path: Core/Camera.cs
-    startLine: 9
+    startLine: 22
   assemblies:
   - MonoGameECS
   namespace: milk.Core
+  summary: The parent scene of the camera.
+  example: []
   syntax:
-    content: public Scene Scene
+    content: public Scene? Scene
     return:
       type: milk.Core.Scene
     content.vb: Public Scene As Scene
@@ -102,10 +105,15 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: Name
     path: Core/Camera.cs
-    startLine: 10
+    startLine: 29
   assemblies:
   - MonoGameECS
   namespace: milk.Core
+  summary: >-
+    The name of the camera.
+
+    Useful for getting / removing a specific camera.
+  example: []
   syntax:
     content: public string? Name { get; set; }
     parameters: []
@@ -131,10 +139,12 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: ScreenPosition
     path: Core/Camera.cs
-    startLine: 22
+    startLine: 44
   assemblies:
   - MonoGameECS
   namespace: milk.Core
+  summary: The (x, y) top-left scene position of the camera.
+  example: []
   syntax:
     content: public Vector2 ScreenPosition
     return:
@@ -158,10 +168,12 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: ScreenSize
     path: Core/Camera.cs
-    startLine: 23
+    startLine: 49
   assemblies:
   - MonoGameECS
   namespace: milk.Core
+  summary: The (x, y) size of the camera.
+  example: []
   syntax:
     content: public Vector2 ScreenSize
     return:
@@ -185,42 +197,17 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: WorldPosition
     path: Core/Camera.cs
-    startLine: 32
+    startLine: 56
   assemblies:
   - MonoGameECS
   namespace: milk.Core
+  summary: The (x, y) target world position that the camera is focused on.
+  example: []
   syntax:
     content: public Vector2 WorldPosition
     return:
       type: Microsoft.Xna.Framework.Vector2
     content.vb: Public WorldPosition As Vector2
-- uid: milk.Core.Camera._currentWorldPosition
-  commentId: F:milk.Core.Camera._currentWorldPosition
-  id: _currentWorldPosition
-  parent: milk.Core.Camera
-  langs:
-  - csharp
-  - vb
-  name: _currentWorldPosition
-  nameWithType: Camera._currentWorldPosition
-  fullName: milk.Core.Camera._currentWorldPosition
-  type: Field
-  source:
-    remote:
-      path: Core/Camera.cs
-      branch: main
-      repo: git@github.com:rik-cross/monogame-milk.git
-    id: _currentWorldPosition
-    path: Core/Camera.cs
-    startLine: 33
-  assemblies:
-  - MonoGameECS
-  namespace: milk.Core
-  syntax:
-    content: public Vector2 _currentWorldPosition
-    return:
-      type: Microsoft.Xna.Framework.Vector2
-    content.vb: Public _currentWorldPosition As Vector2
 - uid: milk.Core.Camera.ClampToMap
   commentId: F:milk.Core.Camera.ClampToMap
   id: ClampToMap
@@ -239,10 +226,15 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: ClampToMap
     path: Core/Camera.cs
-    startLine: 35
+    startLine: 63
   assemblies:
   - MonoGameECS
   namespace: milk.Core
+  summary: >-
+    If set to true, the camera is locked to the map dimensions,
+
+    and won't show any of the scene outside of the map.
+  example: []
   syntax:
     content: public bool ClampToMap
     return:
@@ -266,10 +258,17 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: FollowPercentage
     path: Core/Camera.cs
-    startLine: 39
+    startLine: 70
   assemblies:
   - MonoGameECS
   namespace: milk.Core
+  summary: >-
+    The amount that the camera moves to its target position
+
+    (0 = no movement, 1 = instant snap to new position).
+
+    Values between 0 and 1 offer a degree of 'lazy follow'.
+  example: []
   syntax:
     content: public float FollowPercentage
     return:
@@ -293,10 +292,12 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: BackgroundColor
     path: Core/Camera.cs
-    startLine: 42
+    startLine: 75
   assemblies:
   - MonoGameECS
   namespace: milk.Core
+  summary: The background color of the camera.
+  example: []
   syntax:
     content: public Color BackgroundColor
     return:
@@ -320,10 +321,12 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: BorderWidth
     path: Core/Camera.cs
-    startLine: 43
+    startLine: 80
   assemblies:
   - MonoGameECS
   namespace: milk.Core
+  summary: The width of the border.
+  example: []
   syntax:
     content: public int BorderWidth
     return:
@@ -347,10 +350,12 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: BorderColor
     path: Core/Camera.cs
-    startLine: 44
+    startLine: 85
   assemblies:
   - MonoGameECS
   namespace: milk.Core
+  summary: The color of the border.
+  example: []
   syntax:
     content: public Color BorderColor
     return:
@@ -374,7 +379,7 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: _currentZoom
     path: Core/Camera.cs
-    startLine: 51
+    startLine: 92
   assemblies:
   - MonoGameECS
   namespace: milk.Core
@@ -401,7 +406,7 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: _startZoom
     path: Core/Camera.cs
-    startLine: 52
+    startLine: 93
   assemblies:
   - MonoGameECS
   namespace: milk.Core
@@ -428,25 +433,27 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: TrackedEntity
     path: Core/Camera.cs
-    startLine: 58
+    startLine: 103
   assemblies:
   - MonoGameECS
   namespace: milk.Core
+  summary: The optional entity to track.
+  example: []
   syntax:
     content: public Entity? TrackedEntity
     return:
       type: milk.Core.Entity
     content.vb: Public TrackedEntity As Entity
-- uid: milk.Core.Camera.#ctor(Microsoft.Xna.Framework.Vector2,System.Nullable{Microsoft.Xna.Framework.Vector2},System.Nullable{Microsoft.Xna.Framework.Vector2},System.Single,System.Boolean,System.Nullable{Microsoft.Xna.Framework.Color},System.Int32,System.Nullable{Microsoft.Xna.Framework.Color},System.String,milk.Core.Entity)
-  commentId: M:milk.Core.Camera.#ctor(Microsoft.Xna.Framework.Vector2,System.Nullable{Microsoft.Xna.Framework.Vector2},System.Nullable{Microsoft.Xna.Framework.Vector2},System.Single,System.Boolean,System.Nullable{Microsoft.Xna.Framework.Color},System.Int32,System.Nullable{Microsoft.Xna.Framework.Color},System.String,milk.Core.Entity)
-  id: '#ctor(Microsoft.Xna.Framework.Vector2,System.Nullable{Microsoft.Xna.Framework.Vector2},System.Nullable{Microsoft.Xna.Framework.Vector2},System.Single,System.Boolean,System.Nullable{Microsoft.Xna.Framework.Color},System.Int32,System.Nullable{Microsoft.Xna.Framework.Color},System.String,milk.Core.Entity)'
+- uid: milk.Core.Camera.#ctor(Microsoft.Xna.Framework.Vector2,System.Nullable{Microsoft.Xna.Framework.Vector2},System.Nullable{Microsoft.Xna.Framework.Vector2},System.Single,System.Boolean,System.Nullable{Microsoft.Xna.Framework.Color},System.Int32,System.Nullable{Microsoft.Xna.Framework.Color},System.String,milk.Core.Entity,System.Single)
+  commentId: M:milk.Core.Camera.#ctor(Microsoft.Xna.Framework.Vector2,System.Nullable{Microsoft.Xna.Framework.Vector2},System.Nullable{Microsoft.Xna.Framework.Vector2},System.Single,System.Boolean,System.Nullable{Microsoft.Xna.Framework.Color},System.Int32,System.Nullable{Microsoft.Xna.Framework.Color},System.String,milk.Core.Entity,System.Single)
+  id: '#ctor(Microsoft.Xna.Framework.Vector2,System.Nullable{Microsoft.Xna.Framework.Vector2},System.Nullable{Microsoft.Xna.Framework.Vector2},System.Single,System.Boolean,System.Nullable{Microsoft.Xna.Framework.Color},System.Int32,System.Nullable{Microsoft.Xna.Framework.Color},System.String,milk.Core.Entity,System.Single)'
   parent: milk.Core.Camera
   langs:
   - csharp
   - vb
-  name: Camera(Vector2, Vector2?, Vector2?, float, bool, Color?, int, Color?, string?, Entity?)
-  nameWithType: Camera.Camera(Vector2, Vector2?, Vector2?, float, bool, Color?, int, Color?, string?, Entity?)
-  fullName: milk.Core.Camera.Camera(Microsoft.Xna.Framework.Vector2, Microsoft.Xna.Framework.Vector2?, Microsoft.Xna.Framework.Vector2?, float, bool, Microsoft.Xna.Framework.Color?, int, Microsoft.Xna.Framework.Color?, string?, milk.Core.Entity?)
+  name: Camera(Vector2, Vector2?, Vector2?, float, bool, Color?, int, Color?, string?, Entity?, float)
+  nameWithType: Camera.Camera(Vector2, Vector2?, Vector2?, float, bool, Color?, int, Color?, string?, Entity?, float)
+  fullName: milk.Core.Camera.Camera(Microsoft.Xna.Framework.Vector2, Microsoft.Xna.Framework.Vector2?, Microsoft.Xna.Framework.Vector2?, float, bool, Microsoft.Xna.Framework.Color?, int, Microsoft.Xna.Framework.Color?, string?, milk.Core.Entity?, float)
   type: Constructor
   source:
     remote:
@@ -455,67 +462,53 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: .ctor
     path: Core/Camera.cs
-    startLine: 60
+    startLine: 119
   assemblies:
   - MonoGameECS
   namespace: milk.Core
+  summary: Creates a new camera object.
+  example: []
   syntax:
-    content: public Camera(Vector2 size, Vector2? screenPosition = null, Vector2? worldPosition = null, float zoom = 1, bool clampToMap = false, Color? backgroundColor = null, int borderWidth = 0, Color? borderColor = null, string? name = null, Entity? trackedEntity = null)
+    content: public Camera(Vector2 screenSize, Vector2? screenPosition = null, Vector2? worldPosition = null, float zoom = 1, bool clampToMap = false, Color? backgroundColor = null, int borderWidth = 0, Color? borderColor = null, string? name = null, Entity? trackedEntity = null, float followPercentage = 1)
     parameters:
-    - id: size
+    - id: screenSize
       type: Microsoft.Xna.Framework.Vector2
+      description: The (x, y) screen size of the camera.
     - id: screenPosition
       type: System.Nullable{Microsoft.Xna.Framework.Vector2}
+      description: The (x, y) screen position (default = (0, 0)).
     - id: worldPosition
       type: System.Nullable{Microsoft.Xna.Framework.Vector2}
+      description: The (x, y) world position (default = (0, 0)).
     - id: zoom
       type: System.Single
+      description: The initial zoom level (default = 1).
     - id: clampToMap
       type: System.Boolean
+      description: Clamp the camera to the map dimensions (default = false).
     - id: backgroundColor
       type: System.Nullable{Microsoft.Xna.Framework.Color}
+      description: The background color (default = transparent).
     - id: borderWidth
       type: System.Int32
+      description: The width of the border (default = 0 - no border).
     - id: borderColor
       type: System.Nullable{Microsoft.Xna.Framework.Color}
+      description: The color of the border (defaul = black).
     - id: name
       type: System.String
+      description: The name of the camera (default = null).
     - id: trackedEntity
       type: milk.Core.Entity
-    content.vb: Public Sub New(size As Vector2, screenPosition As Vector2? = Nothing, worldPosition As Vector2? = Nothing, zoom As Single = 1, clampToMap As Boolean = False, backgroundColor As Color? = Nothing, borderWidth As Integer = 0, borderColor As Color? = Nothing, name As String = Nothing, trackedEntity As Entity = Nothing)
+      description: An optional entity to track (default = null).
+    - id: followPercentage
+      type: System.Single
+      description: The amount to lazy follow (default = 1 - instant).
+    content.vb: Public Sub New(screenSize As Vector2, screenPosition As Vector2? = Nothing, worldPosition As Vector2? = Nothing, zoom As Single = 1, clampToMap As Boolean = False, backgroundColor As Color? = Nothing, borderWidth As Integer = 0, borderColor As Color? = Nothing, name As String = Nothing, trackedEntity As Entity = Nothing, followPercentage As Single = 1)
   overload: milk.Core.Camera.#ctor*
-  nameWithType.vb: Camera.New(Vector2, Vector2?, Vector2?, Single, Boolean, Color?, Integer, Color?, String, Entity)
-  fullName.vb: milk.Core.Camera.New(Microsoft.Xna.Framework.Vector2, Microsoft.Xna.Framework.Vector2?, Microsoft.Xna.Framework.Vector2?, Single, Boolean, Microsoft.Xna.Framework.Color?, Integer, Microsoft.Xna.Framework.Color?, String, milk.Core.Entity)
-  name.vb: New(Vector2, Vector2?, Vector2?, Single, Boolean, Color?, Integer, Color?, String, Entity)
-- uid: milk.Core.Camera.Update(Microsoft.Xna.Framework.GameTime)
-  commentId: M:milk.Core.Camera.Update(Microsoft.Xna.Framework.GameTime)
-  id: Update(Microsoft.Xna.Framework.GameTime)
-  parent: milk.Core.Camera
-  langs:
-  - csharp
-  - vb
-  name: Update(GameTime)
-  nameWithType: Camera.Update(GameTime)
-  fullName: milk.Core.Camera.Update(Microsoft.Xna.Framework.GameTime)
-  type: Method
-  source:
-    remote:
-      path: Core/Camera.cs
-      branch: main
-      repo: git@github.com:rik-cross/monogame-milk.git
-    id: Update
-    path: Core/Camera.cs
-    startLine: 75
-  assemblies:
-  - MonoGameECS
-  namespace: milk.Core
-  syntax:
-    content: public void Update(GameTime gameTime)
-    parameters:
-    - id: gameTime
-      type: Microsoft.Xna.Framework.GameTime
-    content.vb: Public Sub Update(gameTime As GameTime)
-  overload: milk.Core.Camera.Update*
+  nameWithType.vb: Camera.New(Vector2, Vector2?, Vector2?, Single, Boolean, Color?, Integer, Color?, String, Entity, Single)
+  fullName.vb: milk.Core.Camera.New(Microsoft.Xna.Framework.Vector2, Microsoft.Xna.Framework.Vector2?, Microsoft.Xna.Framework.Vector2?, Single, Boolean, Microsoft.Xna.Framework.Color?, Integer, Microsoft.Xna.Framework.Color?, String, milk.Core.Entity, Single)
+  name.vb: New(Vector2, Vector2?, Vector2?, Single, Boolean, Color?, Integer, Color?, String, Entity, Single)
 - uid: milk.Core.Camera.SetZoom(System.Single,System.Single)
   commentId: M:milk.Core.Camera.SetZoom(System.Single,System.Single)
   id: SetZoom(System.Single,System.Single)
@@ -534,78 +527,26 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: SetZoom
     path: Core/Camera.cs
-    startLine: 171
+    startLine: 250
   assemblies:
   - MonoGameECS
   namespace: milk.Core
+  summary: Sets the zoom level of the camera.
+  example: []
   syntax:
     content: public void SetZoom(float zoom = 1, float duration = 0)
     parameters:
     - id: zoom
       type: System.Single
+      description: The new target zoom level (default = 1).
     - id: duration
       type: System.Single
+      description: The zoom duration (defaul = 0 - instant).
     content.vb: Public Sub SetZoom(zoom As Single = 1, duration As Single = 0)
   overload: milk.Core.Camera.SetZoom*
   nameWithType.vb: Camera.SetZoom(Single, Single)
   fullName.vb: milk.Core.Camera.SetZoom(Single, Single)
   name.vb: SetZoom(Single, Single)
-- uid: milk.Core.Camera.getViewport
-  commentId: M:milk.Core.Camera.getViewport
-  id: getViewport
-  parent: milk.Core.Camera
-  langs:
-  - csharp
-  - vb
-  name: getViewport()
-  nameWithType: Camera.getViewport()
-  fullName: milk.Core.Camera.getViewport()
-  type: Method
-  source:
-    remote:
-      path: Core/Camera.cs
-      branch: main
-      repo: git@github.com:rik-cross/monogame-milk.git
-    id: getViewport
-    path: Core/Camera.cs
-    startLine: 204
-  assemblies:
-  - MonoGameECS
-  namespace: milk.Core
-  syntax:
-    content: public Viewport getViewport()
-    return:
-      type: Microsoft.Xna.Framework.Graphics.Viewport
-    content.vb: Public Function getViewport() As Viewport
-  overload: milk.Core.Camera.getViewport*
-- uid: milk.Core.Camera.getTransformMatrix
-  commentId: M:milk.Core.Camera.getTransformMatrix
-  id: getTransformMatrix
-  parent: milk.Core.Camera
-  langs:
-  - csharp
-  - vb
-  name: getTransformMatrix()
-  nameWithType: Camera.getTransformMatrix()
-  fullName: milk.Core.Camera.getTransformMatrix()
-  type: Method
-  source:
-    remote:
-      path: Core/Camera.cs
-      branch: main
-      repo: git@github.com:rik-cross/monogame-milk.git
-    id: getTransformMatrix
-    path: Core/Camera.cs
-    startLine: 212
-  assemblies:
-  - MonoGameECS
-  namespace: milk.Core
-  syntax:
-    content: public Matrix getTransformMatrix()
-    return:
-      type: Microsoft.Xna.Framework.Matrix
-    content.vb: Public Function getTransformMatrix() As Matrix
-  overload: milk.Core.Camera.getTransformMatrix*
 - uid: milk.Core.Camera.SetWorldPosition(Microsoft.Xna.Framework.Vector2,System.Boolean)
   commentId: M:milk.Core.Camera.SetWorldPosition(Microsoft.Xna.Framework.Vector2,System.Boolean)
   id: SetWorldPosition(Microsoft.Xna.Framework.Vector2,System.Boolean)
@@ -624,17 +565,21 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: SetWorldPosition
     path: Core/Camera.cs
-    startLine: 226
+    startLine: 310
   assemblies:
   - MonoGameECS
   namespace: milk.Core
+  summary: Sets a new target world position.
+  example: []
   syntax:
     content: public void SetWorldPosition(Vector2 newPosition, bool instant = false)
     parameters:
     - id: newPosition
       type: Microsoft.Xna.Framework.Vector2
+      description: The new (x,y) world position.
     - id: instant
       type: System.Boolean
+      description: Sets the new position instantly, ignoring any lazy follow, etc. (default = false).
     content.vb: Public Sub SetWorldPosition(newPosition As Vector2, instant As Boolean = False)
   overload: milk.Core.Camera.SetWorldPosition*
   nameWithType.vb: Camera.SetWorldPosition(Vector2, Boolean)
@@ -658,14 +603,17 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: GetWorldPosition
     path: Core/Camera.cs
-    startLine: 243
+    startLine: 331
   assemblies:
   - MonoGameECS
   namespace: milk.Core
+  summary: Gets the target world position.
+  example: []
   syntax:
     content: public Vector2 GetWorldPosition()
     return:
       type: Microsoft.Xna.Framework.Vector2
+      description: The (x, y) camera world target.
     content.vb: Public Function GetWorldPosition() As Vector2
   overload: milk.Core.Camera.GetWorldPosition*
 references:
@@ -1038,7 +986,7 @@ references:
   fullName: milk.Core.Entity
 - uid: milk.Core.Camera.#ctor*
   commentId: Overload:milk.Core.Camera.#ctor
-  href: milk.Core.Camera.html#milk_Core_Camera__ctor_Microsoft_Xna_Framework_Vector2_System_Nullable_Microsoft_Xna_Framework_Vector2__System_Nullable_Microsoft_Xna_Framework_Vector2__System_Single_System_Boolean_System_Nullable_Microsoft_Xna_Framework_Color__System_Int32_System_Nullable_Microsoft_Xna_Framework_Color__System_String_milk_Core_Entity_
+  href: milk.Core.Camera.html#milk_Core_Camera__ctor_Microsoft_Xna_Framework_Vector2_System_Nullable_Microsoft_Xna_Framework_Vector2__System_Nullable_Microsoft_Xna_Framework_Vector2__System_Single_System_Boolean_System_Nullable_Microsoft_Xna_Framework_Color__System_Int32_System_Nullable_Microsoft_Xna_Framework_Color__System_String_milk_Core_Entity_System_Single_
   name: Camera
   nameWithType: Camera.Camera
   fullName: milk.Core.Camera.Camera
@@ -1107,89 +1055,12 @@ references:
   - name: " "
   - name: T
   - name: )
-- uid: milk.Core.Camera.Update*
-  commentId: Overload:milk.Core.Camera.Update
-  href: milk.Core.Camera.html#milk_Core_Camera_Update_Microsoft_Xna_Framework_GameTime_
-  name: Update
-  nameWithType: Camera.Update
-  fullName: milk.Core.Camera.Update
-- uid: Microsoft.Xna.Framework.GameTime
-  commentId: T:Microsoft.Xna.Framework.GameTime
-  parent: Microsoft.Xna.Framework
-  isExternal: true
-  name: GameTime
-  nameWithType: GameTime
-  fullName: Microsoft.Xna.Framework.GameTime
 - uid: milk.Core.Camera.SetZoom*
   commentId: Overload:milk.Core.Camera.SetZoom
   href: milk.Core.Camera.html#milk_Core_Camera_SetZoom_System_Single_System_Single_
   name: SetZoom
   nameWithType: Camera.SetZoom
   fullName: milk.Core.Camera.SetZoom
-- uid: milk.Core.Camera.getViewport*
-  commentId: Overload:milk.Core.Camera.getViewport
-  href: milk.Core.Camera.html#milk_Core_Camera_getViewport
-  name: getViewport
-  nameWithType: Camera.getViewport
-  fullName: milk.Core.Camera.getViewport
-- uid: Microsoft.Xna.Framework.Graphics.Viewport
-  commentId: T:Microsoft.Xna.Framework.Graphics.Viewport
-  parent: Microsoft.Xna.Framework.Graphics
-  isExternal: true
-  name: Viewport
-  nameWithType: Viewport
-  fullName: Microsoft.Xna.Framework.Graphics.Viewport
-- uid: Microsoft.Xna.Framework.Graphics
-  commentId: N:Microsoft.Xna.Framework.Graphics
-  isExternal: true
-  name: Microsoft.Xna.Framework.Graphics
-  nameWithType: Microsoft.Xna.Framework.Graphics
-  fullName: Microsoft.Xna.Framework.Graphics
-  spec.csharp:
-  - uid: Microsoft
-    name: Microsoft
-    isExternal: true
-  - name: .
-  - uid: Microsoft.Xna
-    name: Xna
-    isExternal: true
-  - name: .
-  - uid: Microsoft.Xna.Framework
-    name: Framework
-    isExternal: true
-  - name: .
-  - uid: Microsoft.Xna.Framework.Graphics
-    name: Graphics
-    isExternal: true
-  spec.vb:
-  - uid: Microsoft
-    name: Microsoft
-    isExternal: true
-  - name: .
-  - uid: Microsoft.Xna
-    name: Xna
-    isExternal: true
-  - name: .
-  - uid: Microsoft.Xna.Framework
-    name: Framework
-    isExternal: true
-  - name: .
-  - uid: Microsoft.Xna.Framework.Graphics
-    name: Graphics
-    isExternal: true
-- uid: milk.Core.Camera.getTransformMatrix*
-  commentId: Overload:milk.Core.Camera.getTransformMatrix
-  href: milk.Core.Camera.html#milk_Core_Camera_getTransformMatrix
-  name: getTransformMatrix
-  nameWithType: Camera.getTransformMatrix
-  fullName: milk.Core.Camera.getTransformMatrix
-- uid: Microsoft.Xna.Framework.Matrix
-  commentId: T:Microsoft.Xna.Framework.Matrix
-  parent: Microsoft.Xna.Framework
-  isExternal: true
-  name: Matrix
-  nameWithType: Matrix
-  fullName: Microsoft.Xna.Framework.Matrix
 - uid: milk.Core.Camera.SetWorldPosition*
   commentId: Overload:milk.Core.Camera.SetWorldPosition
   href: milk.Core.Camera.html#milk_Core_Camera_SetWorldPosition_Microsoft_Xna_Framework_Vector2_System_Boolean_

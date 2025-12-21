@@ -40,7 +40,9 @@
       "_appName": "milk",
       "_appTitle": "milk",
       "_enableSearch": true,
-      "pdf": false
+      "pdf": false,
+      "_appLogoPath": "images/milk.png",
+      "_appFaviconPath": "images/favicon.ico"
     }
   }
 }

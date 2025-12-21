@@ -213,6 +213,107 @@
             <param name="onCollide">Called for every frame that 2 colliders intersect.</param>
             <param name="onCollisionExit">Called once when 2 colliders no longer intersect.</param>
         </member>
+        <member name="T:milk.Core.Camera">
+            <summary>
+            A camera can be added to a Scene via scene.AddCamera(),
+            and draws a scene's world to the screen. 
+            </summary>
+        </member>
+        <member name="F:milk.Core.Camera.Scene">
+            <summary>
+            The parent scene of the camera.
+            </summary>
+        </member>
+        <member name="P:milk.Core.Camera.Name">
+            <summary>
+            The name of the camera.
+            Useful for getting / removing a specific camera.
+            </summary>
+        </member>
+        <member name="F:milk.Core.Camera.ScreenPosition">
+            <summary>
+            The (x, y) top-left scene position of the camera.
+            </summary>
+        </member>
+        <member name="F:milk.Core.Camera.ScreenSize">
+            <summary>
+            The (x, y) size of the camera.
+            </summary>
+        </member>
+        <member name="F:milk.Core.Camera.WorldPosition">
+            <summary>
+            The (x, y) target world position that the camera is focused on.
+            </summary>
+        </member>
+        <member name="F:milk.Core.Camera.ClampToMap">
+            <summary>
+            If set to true, the camera is locked to the map dimensions,
+            and won't show any of the scene outside of the map.
+            </summary>
+        </member>
+        <member name="F:milk.Core.Camera.FollowPercentage">
+            <summary>
+            The amount that the camera moves to its target position
+            (0 = no movement, 1 = instant snap to new position).
+            Values between 0 and 1 offer a degree of 'lazy follow'.
+            </summary>
+        </member>
+        <member name="F:milk.Core.Camera.BackgroundColor">
+            <summary>
+            The background color of the camera.
+            </summary>
+        </member>
+        <member name="F:milk.Core.Camera.BorderWidth">
+            <summary>
+            The width of the border.
+            </summary>
+        </member>
+        <member name="F:milk.Core.Camera.BorderColor">
+            <summary>
+            The color of the border.
+            </summary>
+        </member>
+        <member name="F:milk.Core.Camera.TrackedEntity">
+            <summary>
+            The optional entity to track.
+            </summary>
+        </member>
+        <member name="M:milk.Core.Camera.#ctor(Microsoft.Xna.Framework.Vector2,System.Nullable{Microsoft.Xna.Framework.Vector2},System.Nullable{Microsoft.Xna.Framework.Vector2},System.Single,System.Boolean,System.Nullable{Microsoft.Xna.Framework.Color},System.Int32,System.Nullable{Microsoft.Xna.Framework.Color},System.String,milk.Core.Entity,System.Single)">
+            <summary>
+            Creates a new camera object.
+            </summary>
+            <param name="screenSize">The (x, y) screen size of the camera.</param>
+            <param name="screenPosition">The (x, y) screen position (default = (0, 0)).</param>
+            <param name="worldPosition">The (x, y) world position (default = (0, 0)).</param>
+            <param name="zoom">The initial zoom level (default = 1).</param>
+            <param name="clampToMap">Clamp the camera to the map dimensions (default = false).</param>
+            <param name="backgroundColor">The background color (default = transparent).</param>
+            <param name="borderWidth">The width of the border (default = 0 - no border).</param>
+            <param name="borderColor">The color of the border (defaul = black).</param>
+            <param name="name">The name of the camera (default = null).</param>
+            <param name="trackedEntity">An optional entity to track (default = null).</param>
+            <param name="followPercentage">The amount to lazy follow (default = 1 - instant).</param>
+        </member>
+        <member name="M:milk.Core.Camera.SetZoom(System.Single,System.Single)">
+            <summary>
+            Sets the zoom level of the camera.
+            </summary>
+            <param name="zoom">The new target zoom level (default = 1).</param>
+            <param name="duration">The zoom duration (defaul = 0 - instant).</param>
+        </member>
+        <member name="M:milk.Core.Camera.SetWorldPosition(Microsoft.Xna.Framework.Vector2,System.Boolean)">
+            <summary>
+            Sets a new target world position.
+            </summary>
+            <param name="newPosition">The new (x,y) world position.</param>
+            <param name="instant">Sets the new position instantly, ignoring any lazy follow, etc. (default = false).</param>
+        </member>
+        <member name="M:milk.Core.Camera.GetWorldPosition">
+            <summary>
+            Gets the target world position.
+            </summary>
+            <returns>The (x, y) camera world target.</returns>
+        </member>
         <member name="T:milk.Core.Component">
             <summary>
             A component stores data for systems to use,
@@ -236,6 +337,12 @@
             Debug entity string print method.
             </summary>
             <returns>A string output representing the entity.</returns>
+        </member>
+        <member name="T:milk.Core.EasingFunctions">
+            <summary>
+            Describes a set of easing functions to describe
+            (SceneRenderable) movement or (scene) transitions.
+            </summary>
         </member>
         <member name="T:milk.Core.EasingFunctions.EasingDelegate">
             <summary>
@@ -522,6 +629,122 @@
             </summary>
             <returns>A string output representing the entity.</returns>
         </member>
+        <member name="T:milk.Core.EntitySortMethods">
+            <summary>
+            Methods to control the draw order of entities in a scene.
+            </summary>
+        </member>
+        <member name="P:milk.Core.EntitySortMethods.SortBottom">
+            <summary>
+            Sorts entities in a scene by their bottom position
+            (i.e. y position + transformComponent.height).
+            </summary>
+        </member>
+        <member name="T:milk.Core.Game">
+            <summary>
+            A game is the top-level class, and is a subclass of
+            the MonoGame Game class.
+            </summary>
+        </member>
+        <member name="F:milk.Core.Game.Title">
+            <summary>
+            The game title, displayed on the game window.
+            </summary>
+        </member>
+        <member name="F:milk.Core.Game.Size">
+            <summary>
+            The (x, y) size of the game window.
+            </summary>
+        </member>
+        <member name="F:milk.Core.Game.Init">
+            <summary>
+            A callback funtion, called just before the game loop runs.
+            </summary>
+        </member>
+        <member name="F:milk.Core.Game.inputManager">
+            <summary>
+            The game's input manager, used to query game input.
+            </summary>
+        </member>
+        <member name="F:milk.Core.Game.Debug">
+            <summary>
+            Setting debug mode to true displays various game, scene and entity information.
+            </summary>
+        </member>
+        <member name="M:milk.Core.Game.#ctor(System.String,System.Nullable{Microsoft.Xna.Framework.Vector2},System.Boolean,System.Int32,System.Int32,System.Boolean)">
+            <summary>
+            Creates a new game.
+            </summary>
+            <param name="title">Game window title (default = "milk").</param>
+            <param name="size">Window size (default = (800, 480)).</param>
+            <param name="isMouseVisible">Sets mouse visibility (default = true).</param>
+            <param name="maxEntities">The maximum number of game entities (default = 1024).</param>
+            <param name="maxComponents">The maximum number of game components (default = 128).</param>
+            <param name="debug">Sets debug mode (default = false).</param>
+        </member>
+        <member name="M:milk.Core.Game.Initialize">
+            <summary>
+            Do not call this.
+            </summary>
+        </member>
+        <member name="M:milk.Core.Game.LoadContent">
+            <summary>
+            Do not call this.
+            </summary>
+        </member>
+        <member name="M:milk.Core.Game.RegisterSystem(milk.Core.System)">
+            <summary>
+            Registers a new game system.
+            All systems must be registered before use.
+            </summary>
+            <param name="system">The system to register.</param>
+        </member>
+        <member name="M:milk.Core.Game.SetScene(milk.Core.Scene,milk.Core.Transition,System.Boolean)">
+            <summary>
+            Sets the current active game scene.
+            </summary>
+            <param name="scene">The scene to set as the active scene.</param>
+            <param name="transition">Specifies a transition between any current scenes and the newly-active scene (default = null).</param>
+            <param name="keepExistingScenes">Indicates whether to keep existing scenes on the scene stack, or remove them (default = false - remove all other scenes).</param>
+        </member>
+        <member name="M:milk.Core.Game.SetScene(System.Collections.Generic.List{milk.Core.Scene},milk.Core.Transition,System.Boolean)">
+            <summary>
+            Adds multiple scenes to the active scene stack.
+            </summary>
+            <param name="scenes">A list of scenes to add to the scene stack.</param>
+            <param name="transition">Specifies a transition between any current scenes and the newly-active scene (default = null).</param>
+            <param name="keepExistingScenes">Indicates whether to keep existing scenes on the scene stack, or remove them (default = false - remove all other scenes).</param>
+        </member>
+        <member name="M:milk.Core.Game.RemoveScene(milk.Core.Transition,System.Int32)">
+            <summary>
+            Removes the top, active scene from the scene stack.
+            </summary>
+            <param name="transition">Specifies a transition between any current scenes and the newly-active scene (default = null).</param>
+            <param name="numberOfScenesToRemove">The number of scenes to remove from the scene stack (default = 1).</param>
+        </member>
+        <member name="M:milk.Core.Game.ClearScenes">
+            <summary>
+            Removes all scenes from the scene stack
+            (note: this will end the game loop).
+            </summary>
+        </member>
+        <member name="M:milk.Core.Game.Update(Microsoft.Xna.Framework.GameTime)">
+            <summary>
+            Do not call this.
+            </summary>
+            <param name="gameTime"></param>
+        </member>
+        <member name="M:milk.Core.Game.Draw(Microsoft.Xna.Framework.GameTime)">
+            <summary>
+            Do not call this.
+            </summary>
+            <param name="gameTime"></param>
+        </member>
+        <member name="M:milk.Core.Game.Quit">
+            <summary>
+            Ends the game.
+            </summary>
+        </member>
         <member name="M:milk.Core.Game.PrintSystems">
             <summary>
             Returns a string showing the order of execution of systems.
@@ -536,6 +759,56 @@
             </summary>
             <typeparam name="T">The type of system to move.</typeparam>
             <param name="position">The new position of the system.</param>
+        </member>
+        <member name="T:milk.Core.Image">
+            <summary>
+            An image can be displayed within a scene.
+            </summary>
+        </member>
+        <member name="F:milk.Core.Image.Texture">
+            <summary>
+            The texture to display.
+            </summary>
+        </member>
+        <member name="F:milk.Core.Image.BackgroundColor">
+            <summary>
+            Background colour.
+            </summary>
+        </member>
+        <member name="F:milk.Core.Image.BorderColor">
+            <summary>
+            Border color.
+            </summary>
+        </member>
+        <member name="F:milk.Core.Image.BorderWidth">
+            <summary>
+            Border width.
+            </summary>
+        </member>
+        <member name="F:milk.Core.Image.Hue">
+            <summary>
+            Hue for recoloring image.
+            </summary>
+        </member>
+        <member name="M:milk.Core.Image.#ctor(Microsoft.Xna.Framework.Graphics.Texture2D,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,System.Single,milk.Core.Anchor,milk.Core.SceneRenderable,System.Nullable{Microsoft.Xna.Framework.Color},System.Int32,System.Nullable{Microsoft.Xna.Framework.Color},System.Nullable{Microsoft.Xna.Framework.Color})">
+            <summary>
+            Creates a new image.
+            </summary>
+            <param name="texture">The texture to display.</param>
+            <param name="size">The (x, y) size of the image (default = null - the texture original size).</param>
+            <param name="position">The (x, y) position (default = null - (0, 0)).</param>
+            <param name="alpha">The image transparency (default = 1 - no transparency).</param>
+            <param name="anchor">The position anchor (default = ).</param>
+            <param name="parent">The parent SceneRenderable, for relative positioning (default = null).</param>
+            <param name="backgroundColor">The background color (default = null - transparent).</param>
+            <param name="borderWidth">The width of the border (default = 0).</param>
+            <param name="borderColor">The border color (default = null - black).</param>
+            <param name="hue">The hue, for image recoloring (default = null - white / no recoloring).</param>
+        </member>
+        <member name="M:milk.Core.Image.Draw">
+            <summary>
+            Draw needs to be called on an image within a scene.
+            </summary>
         </member>
         <member name="T:milk.Core.Scene">
             <summary>
@@ -634,7 +907,7 @@
             <summary>
             Adds a camera object to a scene.
             </summary>
-            <param name="camera"></param>
+            <param name="camera">The camera to add to the scene.</param>
         </member>
         <member name="M:milk.Core.Scene.GetCameraByName(System.String)">
             <summary>
@@ -803,6 +1076,109 @@
             </summary>
             <param name="entity">The entity that is being removed.</param>
         </member>
+        <member name="T:milk.Core.Anchor">
+            <summary>
+            The part of a SceneRenderable to set the position against.
+            </summary>
+        </member>
+        <member name="T:milk.Core.SceneRenderable">
+            <summary>
+            Used as a superclass for images, text, etc.
+            </summary>
+        </member>
+        <member name="T:milk.Core.Sprite">
+            <summary>
+            A sprite is added to a SpriteComponent, and is a collection 
+            of textures, along with some additional data. A sprite with more
+            than one texture automatically becomes an animated sprite.
+            </summary>
+        </member>
+        <member name="F:milk.Core.Sprite.textureList">
+            <summary>
+            A list of one or more textures to display.
+            </summary>
+        </member>
+        <member name="F:milk.Core.Sprite.hue">
+            <summary>
+            Sprite hue.
+            </summary>
+        </member>
+        <member name="F:milk.Core.Sprite.offset">
+            <summary>
+            The sprite offset from the entity position.
+            </summary>
+        </member>
+        <member name="F:milk.Core.Sprite.flipH">
+            <summary>
+            Horizontally flip the sprite.
+            </summary>
+        </member>
+        <member name="F:milk.Core.Sprite.flipV">
+            <summary>
+            Vertically flip the sprite.
+            </summary>
+        </member>
+        <member name="F:milk.Core.Sprite.scale">
+            <summary>
+            Texture scaling.
+            </summary>
+        </member>
+        <member name="F:milk.Core.Sprite.numberOfFrames">
+            <summary>
+            The number of textures.
+            </summary>
+        </member>
+        <member name="F:milk.Core.Sprite.currentFrame">
+            <summary>
+            The current texture index.
+            </summary>
+        </member>
+        <member name="F:milk.Core.Sprite.duration">
+            <summary>
+            The total time for the animation loop.
+            </summary>
+        </member>
+        <member name="F:milk.Core.Sprite.timePerFrame">
+            <summary>
+            The time to display each texture.
+            </summary>
+        </member>
+        <member name="F:milk.Core.Sprite.timeOnCurrentFrame">
+            <summary>
+            The elapsed time since the texture became current.
+            </summary>
+        </member>
+        <member name="F:milk.Core.Sprite.resizeToEntity">
+            <summary>
+            If true, the size of the sprite is the same as the
+            entity size, stored in the TransformComponent.
+            </summary>
+        </member>
+        <member name="F:milk.Core.Sprite.loop">
+            <summary>
+            Repeatedly loop the animation.
+            </summary>
+        </member>
+        <member name="M:milk.Core.Sprite.#ctor(System.Collections.Generic.List{Microsoft.Xna.Framework.Graphics.Texture2D},System.Boolean,System.Double,System.Nullable{Microsoft.Xna.Framework.Vector2},System.Nullable{Microsoft.Xna.Framework.Vector2},System.Boolean,System.Nullable{Microsoft.Xna.Framework.Color},System.Boolean,System.Boolean)">
+            <summary>
+            Creates a new sprite object.
+            </summary>
+            <param name="textureList">One or more textures to display.</param>
+            <param name="resizeToEntity">Sprite size is set to the entity size (default = true).</param>
+            <param name="duration">The total time to display the animation sequence (default = 0).</param>
+            <param name="offset">The distance between the entity position and the sprite (default = none).</param>
+            <param name="scale">The scale factor for the textures (default = 1 - no scale factor).</param>
+            <param name="loop">Loop the textures (default = true).</param>
+            <param name="hue">The hue to recolor the sprite (default = white / no recolor).</param>
+            <param name="flipH">Horizontally flip the textures (default = false).</param>
+            <param name="flipV">Vertically flip the textures (default = false).</param>
+        </member>
+        <member name="M:milk.Core.Sprite.GetCurrentTexture">
+            <summary>
+            Returns the currently displayed texture.
+            </summary>
+            <returns>The currently displayed texture.</returns>
+        </member>
         <member name="T:milk.Core.System">
             <summary>
             A system within a scene runs on entities with the reqiured set of components.
@@ -925,6 +1301,237 @@
             Called once when a system is removed from a scene.
             </summary>
             <param name="scene">The scene the system is being removed from.</param>
+        </member>
+        <member name="T:milk.Core.Text">
+            <summary>
+            Displays text in a scene, in the font specified.
+            </summary>
+        </member>
+        <member name="P:milk.Core.Text.Font">
+            <summary>
+            The font to use for the text.
+            </summary>
+        </member>
+        <member name="P:milk.Core.Text.Caption">
+            <summary>
+            The text to display.
+            </summary>
+        </member>
+        <member name="P:milk.Core.Text.Color">
+            <summary>
+            Text color.
+            </summary>
+        </member>
+        <member name="P:milk.Core.Text.OutlineWidth">
+            <summary>
+            Text outline width.
+            </summary>
+        </member>
+        <member name="P:milk.Core.Text.OutlineColor">
+            <summary>
+            Outline color.
+            </summary>
+        </member>
+        <member name="M:milk.Core.Text.#ctor(System.String,Microsoft.Xna.Framework.Graphics.SpriteFont,System.Nullable{Microsoft.Xna.Framework.Vector2},System.Single,System.Nullable{Microsoft.Xna.Framework.Color},System.Int32,System.Nullable{Microsoft.Xna.Framework.Color},milk.Core.Anchor,milk.Core.SceneRenderable)">
+            <summary>
+            Create a new next object.
+            </summary>
+            <param name="caption">The text to display.</param>
+            <param name="font">The font to use to render the text.</param>
+            <param name="position">The (x, y) text position (default = (0,0)).</param>
+            <param name="alpha">The amount of transparency, between 0 and 1 (default = 1 - fully visible).</param>
+            <param name="color">The text color.</param>
+            <param name="outlineWidth">The width of the text outline.</param>
+            <param name="outlineColor">The color of the outline.</param>
+            <param name="anchor">The anchor point to set the position against (default = top-left).</param>
+            <param name="parent">The parent SceneRenderable, for setting relative position (default = null).</param>
+        </member>
+        <member name="T:milk.Core.TimedAction">
+            <summary>
+            Runs the specified action after an amount of elapsed scene time.
+            </summary>
+        </member>
+        <member name="F:milk.Core.TimedAction.ElapsedTime">
+            <summary>
+            Amount of elapsed scene time before executing action.
+            </summary>
+        </member>
+        <member name="F:milk.Core.TimedAction.Action">
+            <summary>
+            The action to execute after the elapsed time.
+            </summary>
+        </member>
+        <member name="F:milk.Core.TimedAction.Name">
+            <summary>
+            The name of the action, for finding and deleting later.
+            </summary>
+        </member>
+        <member name="M:milk.Core.TimedAction.#ctor(System.Single,System.Action,System.String)">
+            <summary>
+            Create a new timed action.
+            </summary>
+            <param name="elapsedTime">The amount of elapsed time (default = 0 - instant).</param>
+            <param name="action">The action callback to execute (default = null).</param>
+            <param name="name">The name of the timed action, to allow finding and deleting later (default = null).</param>
+        </member>
+        <member name="T:milk.Core.InputManager">
+            <summary>
+            Used to receive and respond to player input.
+            </summary>
+        </member>
+        <member name="M:milk.Core.InputManager.IsKeyDown(Microsoft.Xna.Framework.Input.Keys)">
+            <summary>
+            Returns true if the specified key is held down.
+            </summary>
+            <param name="key">The key to check.</param>
+            <returns>True if the specified key is held down.</returns>
+        </member>
+        <member name="M:milk.Core.InputManager.IsKeyPressed(Microsoft.Xna.Framework.Input.Keys)">
+            <summary>
+            Returns true if the specified key has been pressed in the current frame
+            (i.e. the key is down, but wasn't in the previous frame).
+            </summary>
+            <param name="key">The key to chec.k</param>
+            <returns>True if the specified key has been pressed.</returns>
+        </member>
+        <member name="M:milk.Core.InputManager.IsKeyReleased(Microsoft.Xna.Framework.Input.Keys)">
+            <summary>
+            Returns true if the specified key is no longer down
+            (i.e. is not down, but was in the previous frame).
+            </summary>
+            <param name="key">The key to check.</param>
+            <returns>True if the specified key has been released.</returns>
+        </member>
+        <member name="M:milk.Core.InputManager.IsButtonDown(Microsoft.Xna.Framework.Input.Buttons,System.Int32)">
+            <summary>
+            Returns true if the specified button is down.
+            </summary>
+            <param name="button">The button to check.</param>
+            <param name="controllerNumber">The controller number to check (default = controller 0).</param>
+            <returns>True if the specified button is down.</returns>
+        </member>
+        <member name="M:milk.Core.InputManager.IsButtonPressed(Microsoft.Xna.Framework.Input.Buttons,System.Int32)">
+            <summary>
+            Returns true if the specified button is pressed
+            (i.e. is down, but wasn't down in the previous frame).
+            </summary>
+            <param name="button">The button to check.</param>
+            <param name="controllerNumber">The controller number to check (default = controller 0).</param>
+            <returns>True if the specified button is pressed.</returns>
+        </member>
+        <member name="M:milk.Core.InputManager.IsButtonReleased(Microsoft.Xna.Framework.Input.Buttons,System.Int32)">
+            <summary>
+            Returns true if the specified button is released
+            (i.e. is not down, but was down in the previous frame).
+            </summary>
+            <param name="button">The button to check.</param>
+            <param name="controllerNumber">The controller number to check (default = controller 0).</param>
+            <returns>True if the specified button has been released.</returns>
+        </member>
+        <member name="M:milk.Core.InputManager.IsControllerConnected">
+            <summary>
+            Returns true if at least one controller is connected.
+            </summary>
+            <returns>True if at least one controller is connected.</returns>
+        </member>
+        <member name="M:milk.Core.InputManager.NumberOfControllersConnected">
+            <summary>
+            Returns the number of connected controllers.
+            </summary>
+            <returns>The number of controllers connected.</returns>
+        </member>
+        <member name="M:milk.Systems.InputSystem.Init">
+            <summary>
+            Initialises the input system, which only processes entities
+            with an input component.
+            </summary>
+        </member>
+        <member name="M:milk.Systems.InputSystem.InputEntity(Microsoft.Xna.Framework.GameTime,milk.Core.Scene,milk.Core.Entity)">
+            <summary>
+            Processes the input of each entity with an input component.
+            </summary>
+            <param name="gameTime">The MonoGame gameTime object for measuring elapsed time.</param>
+            <param name="scene">The scene containing the system.</param>
+            <param name="entity">The entity to be processed.</param>
+        </member>
+        <member name="M:milk.Systems.PhysicsSystem.Init">
+            <summary>
+            Initialises the physics system, which only processes entities
+            with a transform, physics and collider component.
+            </summary>
+        </member>
+        <member name="M:milk.Systems.PhysicsSystem.UpdateEntity(Microsoft.Xna.Framework.GameTime,milk.Core.Scene,milk.Core.Entity)">
+            <summary>
+            Updates the position of each entity with respect to its velocity and acceleration,
+            along with the scene velocity and acceleration.
+            </summary>
+            <param name="gameTime">The MonoGame gameTime object for measuring elapsed time.</param>
+            <param name="scene">The scene containing the system.</param>
+            <param name="entity">The entity to be processed.</param>
+        </member>
+        <member name="M:milk.Systems.PhysicsSystem.DrawEntity(milk.Core.Scene,milk.Core.Entity)">
+            <summary>
+            Draws each of the entity transform components if in DEBUG mode.
+            </summary>
+            <param name="scene">The scene containing the system.</param>
+            <param name="entity">The entity to be processed.</param>
+        </member>
+        <member name="M:milk.Systems.SpriteSystem.Init">
+            <summary>
+            Initialises the sprite system, which only processes entities
+            with a transform component and a sprite component.
+            </summary>
+        </member>
+        <member name="M:milk.Systems.SpriteSystem.UpdateEntity(Microsoft.Xna.Framework.GameTime,milk.Core.Scene,milk.Core.Entity)">
+            <summary>
+            Updates each of the entity sprites if animated
+            (i.e. if >1 texture is specified for the current state).
+            </summary>
+            <param name="gameTime">The MonoGame gameTime object for measuring elapsed time.</param>
+            <param name="scene">The scene containing the system.</param>
+            <param name="entity">The entity to be processed.</param>
+        </member>
+        <member name="M:milk.Systems.SpriteSystem.DrawEntity(milk.Core.Scene,milk.Core.Entity)">
+            <summary>
+            Draws each entity sprite for the correct state and index.
+            </summary>
+            <param name="scene">The scene containing the system.</param>
+            <param name="entity">The entity to be processed.</param>
+        </member>
+        <member name="T:milk.Systems.TriggerSystem">
+            <summary>
+            Processes entities with trigger components, and calls the relevant
+            callbacks when 2 entities have overlapping colliders.
+            </summary>
+        </member>
+        <member name="M:milk.Systems.TriggerSystem.Init">
+            <summary>
+            Initialises the trigger system, which only processes entities
+            with a transform component and a trigger component.
+            </summary>
+        </member>
+        <member name="M:milk.Systems.TriggerSystem.UpdateEntity(Microsoft.Xna.Framework.GameTime,milk.Core.Scene,milk.Core.Entity)">
+            <summary>
+            Updates each of the entities with the required components.
+            </summary>
+            <param name="gameTime">The MonoGame gameTime object for measuring elapsed time.</param>
+            <param name="scene">The scene containing the system.</param>
+            <param name="entity">The entity to be processed.</param>
+        </member>
+        <member name="M:milk.Systems.TriggerSystem.DrawEntity(milk.Core.Scene,milk.Core.Entity)">
+            <summary>
+            Draws each of the entity triggers if in DEBUG mode.
+            </summary>
+            <param name="scene">The scene containing the system.</param>
+            <param name="entity">The entity to be processed.</param>
+        </member>
+        <member name="M:milk.Systems.TriggerSystem.OnEntityRemovedFromScene(milk.Core.Scene,milk.Core.Entity)">
+            <summary>
+            Removes the entity to be removed from the scene from the list
+            of collided entities.
+            </summary>
+            <param name="scene">The scene containing the system.</param>
+            <param name="entity">The entity to be processed.</param>
         </member>
     </members>
 </doc>

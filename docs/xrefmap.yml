@@ -1059,15 +1059,15 @@ references:
   commentId: T:milk.Core.Camera
   fullName: milk.Core.Camera
   nameWithType: Camera
-- uid: milk.Core.Camera.#ctor(Microsoft.Xna.Framework.Vector2,System.Nullable{Microsoft.Xna.Framework.Vector2},System.Nullable{Microsoft.Xna.Framework.Vector2},System.Single,System.Boolean,System.Nullable{Microsoft.Xna.Framework.Color},System.Int32,System.Nullable{Microsoft.Xna.Framework.Color},System.String,milk.Core.Entity)
-  name: Camera(Vector2, Vector2?, Vector2?, float, bool, Color?, int, Color?, string?, Entity?)
-  href: api/milk.Core.Camera.html#milk_Core_Camera__ctor_Microsoft_Xna_Framework_Vector2_System_Nullable_Microsoft_Xna_Framework_Vector2__System_Nullable_Microsoft_Xna_Framework_Vector2__System_Single_System_Boolean_System_Nullable_Microsoft_Xna_Framework_Color__System_Int32_System_Nullable_Microsoft_Xna_Framework_Color__System_String_milk_Core_Entity_
-  commentId: M:milk.Core.Camera.#ctor(Microsoft.Xna.Framework.Vector2,System.Nullable{Microsoft.Xna.Framework.Vector2},System.Nullable{Microsoft.Xna.Framework.Vector2},System.Single,System.Boolean,System.Nullable{Microsoft.Xna.Framework.Color},System.Int32,System.Nullable{Microsoft.Xna.Framework.Color},System.String,milk.Core.Entity)
-  name.vb: New(Vector2, Vector2?, Vector2?, Single, Boolean, Color?, Integer, Color?, String, Entity)
-  fullName: milk.Core.Camera.Camera(Microsoft.Xna.Framework.Vector2, Microsoft.Xna.Framework.Vector2?, Microsoft.Xna.Framework.Vector2?, float, bool, Microsoft.Xna.Framework.Color?, int, Microsoft.Xna.Framework.Color?, string?, milk.Core.Entity?)
-  fullName.vb: milk.Core.Camera.New(Microsoft.Xna.Framework.Vector2, Microsoft.Xna.Framework.Vector2?, Microsoft.Xna.Framework.Vector2?, Single, Boolean, Microsoft.Xna.Framework.Color?, Integer, Microsoft.Xna.Framework.Color?, String, milk.Core.Entity)
-  nameWithType: Camera.Camera(Vector2, Vector2?, Vector2?, float, bool, Color?, int, Color?, string?, Entity?)
-  nameWithType.vb: Camera.New(Vector2, Vector2?, Vector2?, Single, Boolean, Color?, Integer, Color?, String, Entity)
+- uid: milk.Core.Camera.#ctor(Microsoft.Xna.Framework.Vector2,System.Nullable{Microsoft.Xna.Framework.Vector2},System.Nullable{Microsoft.Xna.Framework.Vector2},System.Single,System.Boolean,System.Nullable{Microsoft.Xna.Framework.Color},System.Int32,System.Nullable{Microsoft.Xna.Framework.Color},System.String,milk.Core.Entity,System.Single)
+  name: Camera(Vector2, Vector2?, Vector2?, float, bool, Color?, int, Color?, string?, Entity?, float)
+  href: api/milk.Core.Camera.html#milk_Core_Camera__ctor_Microsoft_Xna_Framework_Vector2_System_Nullable_Microsoft_Xna_Framework_Vector2__System_Nullable_Microsoft_Xna_Framework_Vector2__System_Single_System_Boolean_System_Nullable_Microsoft_Xna_Framework_Color__System_Int32_System_Nullable_Microsoft_Xna_Framework_Color__System_String_milk_Core_Entity_System_Single_
+  commentId: M:milk.Core.Camera.#ctor(Microsoft.Xna.Framework.Vector2,System.Nullable{Microsoft.Xna.Framework.Vector2},System.Nullable{Microsoft.Xna.Framework.Vector2},System.Single,System.Boolean,System.Nullable{Microsoft.Xna.Framework.Color},System.Int32,System.Nullable{Microsoft.Xna.Framework.Color},System.String,milk.Core.Entity,System.Single)
+  name.vb: New(Vector2, Vector2?, Vector2?, Single, Boolean, Color?, Integer, Color?, String, Entity, Single)
+  fullName: milk.Core.Camera.Camera(Microsoft.Xna.Framework.Vector2, Microsoft.Xna.Framework.Vector2?, Microsoft.Xna.Framework.Vector2?, float, bool, Microsoft.Xna.Framework.Color?, int, Microsoft.Xna.Framework.Color?, string?, milk.Core.Entity?, float)
+  fullName.vb: milk.Core.Camera.New(Microsoft.Xna.Framework.Vector2, Microsoft.Xna.Framework.Vector2?, Microsoft.Xna.Framework.Vector2?, Single, Boolean, Microsoft.Xna.Framework.Color?, Integer, Microsoft.Xna.Framework.Color?, String, milk.Core.Entity, Single)
+  nameWithType: Camera.Camera(Vector2, Vector2?, Vector2?, float, bool, Color?, int, Color?, string?, Entity?, float)
+  nameWithType.vb: Camera.New(Vector2, Vector2?, Vector2?, Single, Boolean, Color?, Integer, Color?, String, Entity, Single)
 - uid: milk.Core.Camera.#ctor*
   name: Camera
   href: api/milk.Core.Camera.html#milk_Core_Camera__ctor_
@@ -1190,31 +1190,12 @@ references:
   commentId: F:milk.Core.Camera.TrackedEntity
   fullName: milk.Core.Camera.TrackedEntity
   nameWithType: Camera.TrackedEntity
-- uid: milk.Core.Camera.Update(Microsoft.Xna.Framework.GameTime)
-  name: Update(GameTime)
-  href: api/milk.Core.Camera.html#milk_Core_Camera_Update_Microsoft_Xna_Framework_GameTime_
-  commentId: M:milk.Core.Camera.Update(Microsoft.Xna.Framework.GameTime)
-  fullName: milk.Core.Camera.Update(Microsoft.Xna.Framework.GameTime)
-  nameWithType: Camera.Update(GameTime)
-- uid: milk.Core.Camera.Update*
-  name: Update
-  href: api/milk.Core.Camera.html#milk_Core_Camera_Update_
-  commentId: Overload:milk.Core.Camera.Update
-  isSpec: "True"
-  fullName: milk.Core.Camera.Update
-  nameWithType: Camera.Update
 - uid: milk.Core.Camera.WorldPosition
   name: WorldPosition
   href: api/milk.Core.Camera.html#milk_Core_Camera_WorldPosition
   commentId: F:milk.Core.Camera.WorldPosition
   fullName: milk.Core.Camera.WorldPosition
   nameWithType: Camera.WorldPosition
-- uid: milk.Core.Camera._currentWorldPosition
-  name: _currentWorldPosition
-  href: api/milk.Core.Camera.html#milk_Core_Camera__currentWorldPosition
-  commentId: F:milk.Core.Camera._currentWorldPosition
-  fullName: milk.Core.Camera._currentWorldPosition
-  nameWithType: Camera._currentWorldPosition
 - uid: milk.Core.Camera._currentZoom
   name: _currentZoom
   href: api/milk.Core.Camera.html#milk_Core_Camera__currentZoom
@@ -1227,32 +1208,6 @@ references:
   commentId: F:milk.Core.Camera._startZoom
   fullName: milk.Core.Camera._startZoom
   nameWithType: Camera._startZoom
-- uid: milk.Core.Camera.getTransformMatrix
-  name: getTransformMatrix()
-  href: api/milk.Core.Camera.html#milk_Core_Camera_getTransformMatrix
-  commentId: M:milk.Core.Camera.getTransformMatrix
-  fullName: milk.Core.Camera.getTransformMatrix()
-  nameWithType: Camera.getTransformMatrix()
-- uid: milk.Core.Camera.getTransformMatrix*
-  name: getTransformMatrix
-  href: api/milk.Core.Camera.html#milk_Core_Camera_getTransformMatrix_
-  commentId: Overload:milk.Core.Camera.getTransformMatrix
-  isSpec: "True"
-  fullName: milk.Core.Camera.getTransformMatrix
-  nameWithType: Camera.getTransformMatrix
-- uid: milk.Core.Camera.getViewport
-  name: getViewport()
-  href: api/milk.Core.Camera.html#milk_Core_Camera_getViewport
-  commentId: M:milk.Core.Camera.getViewport
-  fullName: milk.Core.Camera.getViewport()
-  nameWithType: Camera.getViewport()
-- uid: milk.Core.Camera.getViewport*
-  name: getViewport
-  href: api/milk.Core.Camera.html#milk_Core_Camera_getViewport_
-  commentId: Overload:milk.Core.Camera.getViewport
-  isSpec: "True"
-  fullName: milk.Core.Camera.getViewport
-  nameWithType: Camera.getViewport
 - uid: milk.Core.Component
   name: Component
   href: api/milk.Core.Component.html
@@ -2078,19 +2033,19 @@ references:
   commentId: T:milk.Core.EntitySortMethods
   fullName: milk.Core.EntitySortMethods
   nameWithType: EntitySortMethods
-- uid: milk.Core.EntitySortMethods.CompareBottom(milk.Core.Entity,milk.Core.Entity)
-  name: CompareBottom(Entity, Entity)
-  href: api/milk.Core.EntitySortMethods.html#milk_Core_EntitySortMethods_CompareBottom_milk_Core_Entity_milk_Core_Entity_
-  commentId: M:milk.Core.EntitySortMethods.CompareBottom(milk.Core.Entity,milk.Core.Entity)
-  fullName: milk.Core.EntitySortMethods.CompareBottom(milk.Core.Entity, milk.Core.Entity)
-  nameWithType: EntitySortMethods.CompareBottom(Entity, Entity)
-- uid: milk.Core.EntitySortMethods.CompareBottom*
-  name: CompareBottom
-  href: api/milk.Core.EntitySortMethods.html#milk_Core_EntitySortMethods_CompareBottom_
-  commentId: Overload:milk.Core.EntitySortMethods.CompareBottom
+- uid: milk.Core.EntitySortMethods.SortBottom
+  name: SortBottom
+  href: api/milk.Core.EntitySortMethods.html#milk_Core_EntitySortMethods_SortBottom
+  commentId: P:milk.Core.EntitySortMethods.SortBottom
+  fullName: milk.Core.EntitySortMethods.SortBottom
+  nameWithType: EntitySortMethods.SortBottom
+- uid: milk.Core.EntitySortMethods.SortBottom*
+  name: SortBottom
+  href: api/milk.Core.EntitySortMethods.html#milk_Core_EntitySortMethods_SortBottom_
+  commentId: Overload:milk.Core.EntitySortMethods.SortBottom
   isSpec: "True"
-  fullName: milk.Core.EntitySortMethods.CompareBottom
-  nameWithType: EntitySortMethods.CompareBottom
+  fullName: milk.Core.EntitySortMethods.SortBottom
+  nameWithType: EntitySortMethods.SortBottom
 - uid: milk.Core.Game
   name: Game
   href: api/milk.Core.Game.html
@@ -2180,6 +2135,35 @@ references:
   isSpec: "True"
   fullName: milk.Core.Game.LoadContent
   nameWithType: Game.LoadContent
+- uid: milk.Core.Game.PositionSystemType*
+  name: PositionSystemType
+  href: api/milk.Core.Game.html#milk_Core_Game_PositionSystemType_
+  commentId: Overload:milk.Core.Game.PositionSystemType
+  isSpec: "True"
+  fullName: milk.Core.Game.PositionSystemType
+  nameWithType: Game.PositionSystemType
+- uid: milk.Core.Game.PositionSystemType``1(System.Int32)
+  name: PositionSystemType<T>(int)
+  href: api/milk.Core.Game.html#milk_Core_Game_PositionSystemType__1_System_Int32_
+  commentId: M:milk.Core.Game.PositionSystemType``1(System.Int32)
+  name.vb: PositionSystemType(Of T)(Integer)
+  fullName: milk.Core.Game.PositionSystemType<T>(int)
+  fullName.vb: milk.Core.Game.PositionSystemType(Of T)(Integer)
+  nameWithType: Game.PositionSystemType<T>(int)
+  nameWithType.vb: Game.PositionSystemType(Of T)(Integer)
+- uid: milk.Core.Game.PrintSystems
+  name: PrintSystems()
+  href: api/milk.Core.Game.html#milk_Core_Game_PrintSystems
+  commentId: M:milk.Core.Game.PrintSystems
+  fullName: milk.Core.Game.PrintSystems()
+  nameWithType: Game.PrintSystems()
+- uid: milk.Core.Game.PrintSystems*
+  name: PrintSystems
+  href: api/milk.Core.Game.html#milk_Core_Game_PrintSystems_
+  commentId: Overload:milk.Core.Game.PrintSystems
+  isSpec: "True"
+  fullName: milk.Core.Game.PrintSystems
+  nameWithType: Game.PrintSystems
 - uid: milk.Core.Game.Quit
   name: Quit()
   href: api/milk.Core.Game.html#milk_Core_Game_Quit
@@ -2284,15 +2268,15 @@ references:
   commentId: T:milk.Core.Image
   fullName: milk.Core.Image
   nameWithType: Image
-- uid: milk.Core.Image.#ctor(Microsoft.Xna.Framework.Graphics.Texture2D,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,System.Single,milk.Core.Anchor,milk.Core.SceneRenderable,Microsoft.Xna.Framework.Color,System.Int32,Microsoft.Xna.Framework.Color,Microsoft.Xna.Framework.Color)
-  name: Image(Texture2D, Vector2, Vector2, float, Anchor, SceneRenderable?, Color, int, Color, Color)
-  href: api/milk.Core.Image.html#milk_Core_Image__ctor_Microsoft_Xna_Framework_Graphics_Texture2D_Microsoft_Xna_Framework_Vector2_Microsoft_Xna_Framework_Vector2_System_Single_milk_Core_Anchor_milk_Core_SceneRenderable_Microsoft_Xna_Framework_Color_System_Int32_Microsoft_Xna_Framework_Color_Microsoft_Xna_Framework_Color_
-  commentId: M:milk.Core.Image.#ctor(Microsoft.Xna.Framework.Graphics.Texture2D,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,System.Single,milk.Core.Anchor,milk.Core.SceneRenderable,Microsoft.Xna.Framework.Color,System.Int32,Microsoft.Xna.Framework.Color,Microsoft.Xna.Framework.Color)
-  name.vb: New(Texture2D, Vector2, Vector2, Single, Anchor, SceneRenderable, Color, Integer, Color, Color)
-  fullName: milk.Core.Image.Image(Microsoft.Xna.Framework.Graphics.Texture2D, Microsoft.Xna.Framework.Vector2, Microsoft.Xna.Framework.Vector2, float, milk.Core.Anchor, milk.Core.SceneRenderable?, Microsoft.Xna.Framework.Color, int, Microsoft.Xna.Framework.Color, Microsoft.Xna.Framework.Color)
-  fullName.vb: milk.Core.Image.New(Microsoft.Xna.Framework.Graphics.Texture2D, Microsoft.Xna.Framework.Vector2, Microsoft.Xna.Framework.Vector2, Single, milk.Core.Anchor, milk.Core.SceneRenderable, Microsoft.Xna.Framework.Color, Integer, Microsoft.Xna.Framework.Color, Microsoft.Xna.Framework.Color)
-  nameWithType: Image.Image(Texture2D, Vector2, Vector2, float, Anchor, SceneRenderable?, Color, int, Color, Color)
-  nameWithType.vb: Image.New(Texture2D, Vector2, Vector2, Single, Anchor, SceneRenderable, Color, Integer, Color, Color)
+- uid: milk.Core.Image.#ctor(Microsoft.Xna.Framework.Graphics.Texture2D,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,System.Single,milk.Core.Anchor,milk.Core.SceneRenderable,System.Nullable{Microsoft.Xna.Framework.Color},System.Int32,System.Nullable{Microsoft.Xna.Framework.Color},System.Nullable{Microsoft.Xna.Framework.Color})
+  name: Image(Texture2D, Vector2, Vector2, float, Anchor, SceneRenderable?, Color?, int, Color?, Color?)
+  href: api/milk.Core.Image.html#milk_Core_Image__ctor_Microsoft_Xna_Framework_Graphics_Texture2D_Microsoft_Xna_Framework_Vector2_Microsoft_Xna_Framework_Vector2_System_Single_milk_Core_Anchor_milk_Core_SceneRenderable_System_Nullable_Microsoft_Xna_Framework_Color__System_Int32_System_Nullable_Microsoft_Xna_Framework_Color__System_Nullable_Microsoft_Xna_Framework_Color__
+  commentId: M:milk.Core.Image.#ctor(Microsoft.Xna.Framework.Graphics.Texture2D,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,System.Single,milk.Core.Anchor,milk.Core.SceneRenderable,System.Nullable{Microsoft.Xna.Framework.Color},System.Int32,System.Nullable{Microsoft.Xna.Framework.Color},System.Nullable{Microsoft.Xna.Framework.Color})
+  name.vb: New(Texture2D, Vector2, Vector2, Single, Anchor, SceneRenderable, Color?, Integer, Color?, Color?)
+  fullName: milk.Core.Image.Image(Microsoft.Xna.Framework.Graphics.Texture2D, Microsoft.Xna.Framework.Vector2, Microsoft.Xna.Framework.Vector2, float, milk.Core.Anchor, milk.Core.SceneRenderable?, Microsoft.Xna.Framework.Color?, int, Microsoft.Xna.Framework.Color?, Microsoft.Xna.Framework.Color?)
+  fullName.vb: milk.Core.Image.New(Microsoft.Xna.Framework.Graphics.Texture2D, Microsoft.Xna.Framework.Vector2, Microsoft.Xna.Framework.Vector2, Single, milk.Core.Anchor, milk.Core.SceneRenderable, Microsoft.Xna.Framework.Color?, Integer, Microsoft.Xna.Framework.Color?, Microsoft.Xna.Framework.Color?)
+  nameWithType: Image.Image(Texture2D, Vector2, Vector2, float, Anchor, SceneRenderable?, Color?, int, Color?, Color?)
+  nameWithType.vb: Image.New(Texture2D, Vector2, Vector2, Single, Anchor, SceneRenderable, Color?, Integer, Color?, Color?)
 - uid: milk.Core.Image.#ctor*
   name: Image
   href: api/milk.Core.Image.html#milk_Core_Image__ctor_
@@ -2321,19 +2305,6 @@ references:
   commentId: F:milk.Core.Image.BorderWidth
   fullName: milk.Core.Image.BorderWidth
   nameWithType: Image.BorderWidth
-- uid: milk.Core.Image.CalculateSize(Microsoft.Xna.Framework.Graphics.Texture2D,Microsoft.Xna.Framework.Vector2)
-  name: CalculateSize(Texture2D, Vector2)
-  href: api/milk.Core.Image.html#milk_Core_Image_CalculateSize_Microsoft_Xna_Framework_Graphics_Texture2D_Microsoft_Xna_Framework_Vector2_
-  commentId: M:milk.Core.Image.CalculateSize(Microsoft.Xna.Framework.Graphics.Texture2D,Microsoft.Xna.Framework.Vector2)
-  fullName: milk.Core.Image.CalculateSize(Microsoft.Xna.Framework.Graphics.Texture2D, Microsoft.Xna.Framework.Vector2)
-  nameWithType: Image.CalculateSize(Texture2D, Vector2)
-- uid: milk.Core.Image.CalculateSize*
-  name: CalculateSize
-  href: api/milk.Core.Image.html#milk_Core_Image_CalculateSize_
-  commentId: Overload:milk.Core.Image.CalculateSize
-  isSpec: "True"
-  fullName: milk.Core.Image.CalculateSize
-  nameWithType: Image.CalculateSize
 - uid: milk.Core.Image.Draw
   name: Draw()
   href: api/milk.Core.Image.html#milk_Core_Image_Draw
@@ -2478,19 +2449,6 @@ references:
   isSpec: "True"
   fullName: milk.Core.InputManager.NumberOfControllersConnected
   nameWithType: InputManager.NumberOfControllersConnected
-- uid: milk.Core.InputManager.Update
-  name: Update()
-  href: api/milk.Core.InputManager.html#milk_Core_InputManager_Update
-  commentId: M:milk.Core.InputManager.Update
-  fullName: milk.Core.InputManager.Update()
-  nameWithType: InputManager.Update()
-- uid: milk.Core.InputManager.Update*
-  name: Update
-  href: api/milk.Core.InputManager.html#milk_Core_InputManager_Update_
-  commentId: Overload:milk.Core.InputManager.Update
-  isSpec: "True"
-  fullName: milk.Core.InputManager.Update
-  nameWithType: InputManager.Update
 - uid: milk.Core.Scene
   name: Scene
   href: api/milk.Core.Scene.html
@@ -3021,25 +2979,6 @@ references:
   commentId: T:milk.Core.SceneRenderable
   fullName: milk.Core.SceneRenderable
   nameWithType: SceneRenderable
-- uid: milk.Core.SceneRenderable.#ctor(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,System.Single,milk.Core.Anchor,milk.Core.SceneRenderable)
-  name: SceneRenderable(Vector2, Vector2, float, Anchor, SceneRenderable?)
-  href: api/milk.Core.SceneRenderable.html#milk_Core_SceneRenderable__ctor_Microsoft_Xna_Framework_Vector2_Microsoft_Xna_Framework_Vector2_System_Single_milk_Core_Anchor_milk_Core_SceneRenderable_
-  commentId: M:milk.Core.SceneRenderable.#ctor(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,System.Single,milk.Core.Anchor,milk.Core.SceneRenderable)
-  name.vb: New(Vector2, Vector2, Single, Anchor, SceneRenderable)
-  fullName: milk.Core.SceneRenderable.SceneRenderable(Microsoft.Xna.Framework.Vector2, Microsoft.Xna.Framework.Vector2, float, milk.Core.Anchor, milk.Core.SceneRenderable?)
-  fullName.vb: milk.Core.SceneRenderable.New(Microsoft.Xna.Framework.Vector2, Microsoft.Xna.Framework.Vector2, Single, milk.Core.Anchor, milk.Core.SceneRenderable)
-  nameWithType: SceneRenderable.SceneRenderable(Vector2, Vector2, float, Anchor, SceneRenderable?)
-  nameWithType.vb: SceneRenderable.New(Vector2, Vector2, Single, Anchor, SceneRenderable)
-- uid: milk.Core.SceneRenderable.#ctor*
-  name: SceneRenderable
-  href: api/milk.Core.SceneRenderable.html#milk_Core_SceneRenderable__ctor_
-  commentId: Overload:milk.Core.SceneRenderable.#ctor
-  isSpec: "True"
-  name.vb: New
-  fullName: milk.Core.SceneRenderable.SceneRenderable
-  fullName.vb: milk.Core.SceneRenderable.New
-  nameWithType: SceneRenderable.SceneRenderable
-  nameWithType.vb: SceneRenderable.New
 - uid: milk.Core.SceneRenderable.Alpha
   name: Alpha
   href: api/milk.Core.SceneRenderable.html#milk_Core_SceneRenderable_Alpha
@@ -3136,15 +3075,15 @@ references:
   commentId: T:milk.Core.Sprite
   fullName: milk.Core.Sprite
   nameWithType: Sprite
-- uid: milk.Core.Sprite.#ctor(System.Collections.Generic.List{Microsoft.Xna.Framework.Graphics.Texture2D},System.Boolean,System.Double,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,System.Boolean,System.Nullable{Microsoft.Xna.Framework.Color},System.Boolean,System.Boolean)
-  name: Sprite(List<Texture2D>, bool, double, Vector2, Vector2, bool, Color?, bool, bool)
-  href: api/milk.Core.Sprite.html#milk_Core_Sprite__ctor_System_Collections_Generic_List_Microsoft_Xna_Framework_Graphics_Texture2D__System_Boolean_System_Double_Microsoft_Xna_Framework_Vector2_Microsoft_Xna_Framework_Vector2_System_Boolean_System_Nullable_Microsoft_Xna_Framework_Color__System_Boolean_System_Boolean_
-  commentId: M:milk.Core.Sprite.#ctor(System.Collections.Generic.List{Microsoft.Xna.Framework.Graphics.Texture2D},System.Boolean,System.Double,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,System.Boolean,System.Nullable{Microsoft.Xna.Framework.Color},System.Boolean,System.Boolean)
-  name.vb: New(List(Of Texture2D), Boolean, Double, Vector2, Vector2, Boolean, Color?, Boolean, Boolean)
-  fullName: milk.Core.Sprite.Sprite(System.Collections.Generic.List<Microsoft.Xna.Framework.Graphics.Texture2D>, bool, double, Microsoft.Xna.Framework.Vector2, Microsoft.Xna.Framework.Vector2, bool, Microsoft.Xna.Framework.Color?, bool, bool)
-  fullName.vb: milk.Core.Sprite.New(System.Collections.Generic.List(Of Microsoft.Xna.Framework.Graphics.Texture2D), Boolean, Double, Microsoft.Xna.Framework.Vector2, Microsoft.Xna.Framework.Vector2, Boolean, Microsoft.Xna.Framework.Color?, Boolean, Boolean)
-  nameWithType: Sprite.Sprite(List<Texture2D>, bool, double, Vector2, Vector2, bool, Color?, bool, bool)
-  nameWithType.vb: Sprite.New(List(Of Texture2D), Boolean, Double, Vector2, Vector2, Boolean, Color?, Boolean, Boolean)
+- uid: milk.Core.Sprite.#ctor(System.Collections.Generic.List{Microsoft.Xna.Framework.Graphics.Texture2D},System.Boolean,System.Double,System.Nullable{Microsoft.Xna.Framework.Vector2},System.Nullable{Microsoft.Xna.Framework.Vector2},System.Boolean,System.Nullable{Microsoft.Xna.Framework.Color},System.Boolean,System.Boolean)
+  name: Sprite(List<Texture2D>, bool, double, Vector2?, Vector2?, bool, Color?, bool, bool)
+  href: api/milk.Core.Sprite.html#milk_Core_Sprite__ctor_System_Collections_Generic_List_Microsoft_Xna_Framework_Graphics_Texture2D__System_Boolean_System_Double_System_Nullable_Microsoft_Xna_Framework_Vector2__System_Nullable_Microsoft_Xna_Framework_Vector2__System_Boolean_System_Nullable_Microsoft_Xna_Framework_Color__System_Boolean_System_Boolean_
+  commentId: M:milk.Core.Sprite.#ctor(System.Collections.Generic.List{Microsoft.Xna.Framework.Graphics.Texture2D},System.Boolean,System.Double,System.Nullable{Microsoft.Xna.Framework.Vector2},System.Nullable{Microsoft.Xna.Framework.Vector2},System.Boolean,System.Nullable{Microsoft.Xna.Framework.Color},System.Boolean,System.Boolean)
+  name.vb: New(List(Of Texture2D), Boolean, Double, Vector2?, Vector2?, Boolean, Color?, Boolean, Boolean)
+  fullName: milk.Core.Sprite.Sprite(System.Collections.Generic.List<Microsoft.Xna.Framework.Graphics.Texture2D>, bool, double, Microsoft.Xna.Framework.Vector2?, Microsoft.Xna.Framework.Vector2?, bool, Microsoft.Xna.Framework.Color?, bool, bool)
+  fullName.vb: milk.Core.Sprite.New(System.Collections.Generic.List(Of Microsoft.Xna.Framework.Graphics.Texture2D), Boolean, Double, Microsoft.Xna.Framework.Vector2?, Microsoft.Xna.Framework.Vector2?, Boolean, Microsoft.Xna.Framework.Color?, Boolean, Boolean)
+  nameWithType: Sprite.Sprite(List<Texture2D>, bool, double, Vector2?, Vector2?, bool, Color?, bool, bool)
+  nameWithType.vb: Sprite.New(List(Of Texture2D), Boolean, Double, Vector2?, Vector2?, Boolean, Color?, Boolean, Boolean)
 - uid: milk.Core.Sprite.#ctor*
   name: Sprite
   href: api/milk.Core.Sprite.html#milk_Core_Sprite__ctor_
@@ -3168,19 +3107,6 @@ references:
   isSpec: "True"
   fullName: milk.Core.Sprite.GetCurrentTexture
   nameWithType: Sprite.GetCurrentTexture
-- uid: milk.Core.Sprite.UpdateAnimationInfo
-  name: UpdateAnimationInfo()
-  href: api/milk.Core.Sprite.html#milk_Core_Sprite_UpdateAnimationInfo
-  commentId: M:milk.Core.Sprite.UpdateAnimationInfo
-  fullName: milk.Core.Sprite.UpdateAnimationInfo()
-  nameWithType: Sprite.UpdateAnimationInfo()
-- uid: milk.Core.Sprite.UpdateAnimationInfo*
-  name: UpdateAnimationInfo
-  href: api/milk.Core.Sprite.html#milk_Core_Sprite_UpdateAnimationInfo_
-  commentId: Overload:milk.Core.Sprite.UpdateAnimationInfo
-  isSpec: "True"
-  fullName: milk.Core.Sprite.UpdateAnimationInfo
-  nameWithType: Sprite.UpdateAnimationInfo
 - uid: milk.Core.Sprite.currentFrame
   name: currentFrame
   href: api/milk.Core.Sprite.html#milk_Core_Sprite_currentFrame
@@ -3507,15 +3433,15 @@ references:
   commentId: T:milk.Core.Text
   fullName: milk.Core.Text
   nameWithType: Text
-- uid: milk.Core.Text.#ctor(System.String,Microsoft.Xna.Framework.Graphics.SpriteFont,Microsoft.Xna.Framework.Vector2,System.Single,System.Nullable{Microsoft.Xna.Framework.Color},System.Int32,System.Nullable{Microsoft.Xna.Framework.Color},milk.Core.Anchor,milk.Core.SceneRenderable)
-  name: Text(string, SpriteFont, Vector2, float, Color?, int, Color?, Anchor, SceneRenderable?)
-  href: api/milk.Core.Text.html#milk_Core_Text__ctor_System_String_Microsoft_Xna_Framework_Graphics_SpriteFont_Microsoft_Xna_Framework_Vector2_System_Single_System_Nullable_Microsoft_Xna_Framework_Color__System_Int32_System_Nullable_Microsoft_Xna_Framework_Color__milk_Core_Anchor_milk_Core_SceneRenderable_
-  commentId: M:milk.Core.Text.#ctor(System.String,Microsoft.Xna.Framework.Graphics.SpriteFont,Microsoft.Xna.Framework.Vector2,System.Single,System.Nullable{Microsoft.Xna.Framework.Color},System.Int32,System.Nullable{Microsoft.Xna.Framework.Color},milk.Core.Anchor,milk.Core.SceneRenderable)
-  name.vb: New(String, SpriteFont, Vector2, Single, Color?, Integer, Color?, Anchor, SceneRenderable)
-  fullName: milk.Core.Text.Text(string, Microsoft.Xna.Framework.Graphics.SpriteFont, Microsoft.Xna.Framework.Vector2, float, Microsoft.Xna.Framework.Color?, int, Microsoft.Xna.Framework.Color?, milk.Core.Anchor, milk.Core.SceneRenderable?)
-  fullName.vb: milk.Core.Text.New(String, Microsoft.Xna.Framework.Graphics.SpriteFont, Microsoft.Xna.Framework.Vector2, Single, Microsoft.Xna.Framework.Color?, Integer, Microsoft.Xna.Framework.Color?, milk.Core.Anchor, milk.Core.SceneRenderable)
-  nameWithType: Text.Text(string, SpriteFont, Vector2, float, Color?, int, Color?, Anchor, SceneRenderable?)
-  nameWithType.vb: Text.New(String, SpriteFont, Vector2, Single, Color?, Integer, Color?, Anchor, SceneRenderable)
+- uid: milk.Core.Text.#ctor(System.String,Microsoft.Xna.Framework.Graphics.SpriteFont,System.Nullable{Microsoft.Xna.Framework.Vector2},System.Single,System.Nullable{Microsoft.Xna.Framework.Color},System.Int32,System.Nullable{Microsoft.Xna.Framework.Color},milk.Core.Anchor,milk.Core.SceneRenderable)
+  name: Text(string, SpriteFont, Vector2?, float, Color?, int, Color?, Anchor, SceneRenderable?)
+  href: api/milk.Core.Text.html#milk_Core_Text__ctor_System_String_Microsoft_Xna_Framework_Graphics_SpriteFont_System_Nullable_Microsoft_Xna_Framework_Vector2__System_Single_System_Nullable_Microsoft_Xna_Framework_Color__System_Int32_System_Nullable_Microsoft_Xna_Framework_Color__milk_Core_Anchor_milk_Core_SceneRenderable_
+  commentId: M:milk.Core.Text.#ctor(System.String,Microsoft.Xna.Framework.Graphics.SpriteFont,System.Nullable{Microsoft.Xna.Framework.Vector2},System.Single,System.Nullable{Microsoft.Xna.Framework.Color},System.Int32,System.Nullable{Microsoft.Xna.Framework.Color},milk.Core.Anchor,milk.Core.SceneRenderable)
+  name.vb: New(String, SpriteFont, Vector2?, Single, Color?, Integer, Color?, Anchor, SceneRenderable)
+  fullName: milk.Core.Text.Text(string, Microsoft.Xna.Framework.Graphics.SpriteFont, Microsoft.Xna.Framework.Vector2?, float, Microsoft.Xna.Framework.Color?, int, Microsoft.Xna.Framework.Color?, milk.Core.Anchor, milk.Core.SceneRenderable?)
+  fullName.vb: milk.Core.Text.New(String, Microsoft.Xna.Framework.Graphics.SpriteFont, Microsoft.Xna.Framework.Vector2?, Single, Microsoft.Xna.Framework.Color?, Integer, Microsoft.Xna.Framework.Color?, milk.Core.Anchor, milk.Core.SceneRenderable)
+  nameWithType: Text.Text(string, SpriteFont, Vector2?, float, Color?, int, Color?, Anchor, SceneRenderable?)
+  nameWithType.vb: Text.New(String, SpriteFont, Vector2?, Single, Color?, Integer, Color?, Anchor, SceneRenderable)
 - uid: milk.Core.Text.#ctor*
   name: Text
   href: api/milk.Core.Text.html#milk_Core_Text__ctor_
@@ -7270,19 +7196,6 @@ references:
   isSpec: "True"
   fullName: milk.Systems.TriggerSystem.Init
   nameWithType: TriggerSystem.Init
-- uid: milk.Systems.TriggerSystem.OnEnterScene(milk.Core.Scene)
-  name: OnEnterScene(Scene)
-  href: api/milk.Systems.TriggerSystem.html#milk_Systems_TriggerSystem_OnEnterScene_milk_Core_Scene_
-  commentId: M:milk.Systems.TriggerSystem.OnEnterScene(milk.Core.Scene)
-  fullName: milk.Systems.TriggerSystem.OnEnterScene(milk.Core.Scene)
-  nameWithType: TriggerSystem.OnEnterScene(Scene)
-- uid: milk.Systems.TriggerSystem.OnEnterScene*
-  name: OnEnterScene
-  href: api/milk.Systems.TriggerSystem.html#milk_Systems_TriggerSystem_OnEnterScene_
-  commentId: Overload:milk.Systems.TriggerSystem.OnEnterScene
-  isSpec: "True"
-  fullName: milk.Systems.TriggerSystem.OnEnterScene
-  nameWithType: TriggerSystem.OnEnterScene
 - uid: milk.Systems.TriggerSystem.OnEntityRemovedFromScene(milk.Core.Scene,milk.Core.Entity)
   name: OnEntityRemovedFromScene(Scene, Entity)
   href: api/milk.Systems.TriggerSystem.html#milk_Systems_TriggerSystem_OnEntityRemovedFromScene_milk_Core_Scene_milk_Core_Entity_
@@ -7296,19 +7209,6 @@ references:
   isSpec: "True"
   fullName: milk.Systems.TriggerSystem.OnEntityRemovedFromScene
   nameWithType: TriggerSystem.OnEntityRemovedFromScene
-- uid: milk.Systems.TriggerSystem.OnExitScene(milk.Core.Scene)
-  name: OnExitScene(Scene)
-  href: api/milk.Systems.TriggerSystem.html#milk_Systems_TriggerSystem_OnExitScene_milk_Core_Scene_
-  commentId: M:milk.Systems.TriggerSystem.OnExitScene(milk.Core.Scene)
-  fullName: milk.Systems.TriggerSystem.OnExitScene(milk.Core.Scene)
-  nameWithType: TriggerSystem.OnExitScene(Scene)
-- uid: milk.Systems.TriggerSystem.OnExitScene*
-  name: OnExitScene
-  href: api/milk.Systems.TriggerSystem.html#milk_Systems_TriggerSystem_OnExitScene_
-  commentId: Overload:milk.Systems.TriggerSystem.OnExitScene
-  isSpec: "True"
-  fullName: milk.Systems.TriggerSystem.OnExitScene
-  nameWithType: TriggerSystem.OnExitScene
 - uid: milk.Systems.TriggerSystem.UpdateEntity(Microsoft.Xna.Framework.GameTime,milk.Core.Scene,milk.Core.Entity)
   name: UpdateEntity(GameTime, Scene, Entity)
   href: api/milk.Systems.TriggerSystem.html#milk_Systems_TriggerSystem_UpdateEntity_Microsoft_Xna_Framework_GameTime_milk_Core_Scene_milk_Core_Entity_

@@ -5,7 +5,7 @@ items:
   id: EntitySortMethods
   parent: milk.Core
   children:
-  - milk.Core.EntitySortMethods.CompareBottom(milk.Core.Entity,milk.Core.Entity)
+  - milk.Core.EntitySortMethods.SortBottom
   langs:
   - csharp
   - vb
@@ -20,10 +20,12 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: EntitySortMethods
     path: Core/EntitySortMethods.cs
-    startLine: 4
+    startLine: 13
   assemblies:
   - MonoGameECS
   namespace: milk.Core
+  summary: Methods to control the draw order of entities in a scene.
+  example: []
   syntax:
     content: public static class EntitySortMethods
     content.vb: Public Module EntitySortMethods
@@ -37,39 +39,40 @@ items:
   - System.Object.MemberwiseClone
   - System.Object.ReferenceEquals(System.Object,System.Object)
   - System.Object.ToString
-- uid: milk.Core.EntitySortMethods.CompareBottom(milk.Core.Entity,milk.Core.Entity)
-  commentId: M:milk.Core.EntitySortMethods.CompareBottom(milk.Core.Entity,milk.Core.Entity)
-  id: CompareBottom(milk.Core.Entity,milk.Core.Entity)
+- uid: milk.Core.EntitySortMethods.SortBottom
+  commentId: P:milk.Core.EntitySortMethods.SortBottom
+  id: SortBottom
   parent: milk.Core.EntitySortMethods
   langs:
   - csharp
   - vb
-  name: CompareBottom(Entity, Entity)
-  nameWithType: EntitySortMethods.CompareBottom(Entity, Entity)
-  fullName: milk.Core.EntitySortMethods.CompareBottom(milk.Core.Entity, milk.Core.Entity)
-  type: Method
+  name: SortBottom
+  nameWithType: EntitySortMethods.SortBottom
+  fullName: milk.Core.EntitySortMethods.SortBottom
+  type: Property
   source:
     remote:
       path: Core/EntitySortMethods.cs
       branch: main
       repo: git@github.com:rik-cross/monogame-milk.git
-    id: CompareBottom
+    id: SortBottom
     path: Core/EntitySortMethods.cs
-    startLine: 7
+    startLine: 20
   assemblies:
   - MonoGameECS
   namespace: milk.Core
+  summary: >-
+    Sorts entities in a scene by their bottom position
+
+    (i.e. y position + transformComponent.height).
+  example: []
   syntax:
-    content: public static int CompareBottom(Entity x, Entity y)
-    parameters:
-    - id: x
-      type: milk.Core.Entity
-    - id: y
-      type: milk.Core.Entity
+    content: public static Comparison<Entity> SortBottom { get; }
+    parameters: []
     return:
-      type: System.Int32
-    content.vb: Public Shared Function CompareBottom(x As Entity, y As Entity) As Integer
-  overload: milk.Core.EntitySortMethods.CompareBottom*
+      type: System.Comparison{milk.Core.Entity}
+    content.vb: Public Shared ReadOnly Property SortBottom As Comparison(Of Entity)
+  overload: milk.Core.EntitySortMethods.SortBottom*
 references:
 - uid: milk.Core
   commentId: N:milk.Core
@@ -330,27 +333,70 @@ references:
   name: System
   nameWithType: System
   fullName: System
-- uid: milk.Core.EntitySortMethods.CompareBottom*
-  commentId: Overload:milk.Core.EntitySortMethods.CompareBottom
-  href: milk.Core.EntitySortMethods.html#milk_Core_EntitySortMethods_CompareBottom_milk_Core_Entity_milk_Core_Entity_
-  name: CompareBottom
-  nameWithType: EntitySortMethods.CompareBottom
-  fullName: milk.Core.EntitySortMethods.CompareBottom
-- uid: milk.Core.Entity
-  commentId: T:milk.Core.Entity
-  parent: milk.Core
-  href: milk.Core.Entity.html
-  name: Entity
-  nameWithType: Entity
-  fullName: milk.Core.Entity
-- uid: System.Int32
-  commentId: T:System.Int32
+- uid: milk.Core.EntitySortMethods.SortBottom*
+  commentId: Overload:milk.Core.EntitySortMethods.SortBottom
+  href: milk.Core.EntitySortMethods.html#milk_Core_EntitySortMethods_SortBottom
+  name: SortBottom
+  nameWithType: EntitySortMethods.SortBottom
+  fullName: milk.Core.EntitySortMethods.SortBottom
+- uid: System.Comparison{milk.Core.Entity}
+  commentId: T:System.Comparison{milk.Core.Entity}
   parent: System
+  definition: System.Comparison`1
+  href: https://learn.microsoft.com/dotnet/api/system.comparison-1
+  name: Comparison<Entity>
+  nameWithType: Comparison<Entity>
+  fullName: System.Comparison<milk.Core.Entity>
+  nameWithType.vb: Comparison(Of Entity)
+  fullName.vb: System.Comparison(Of milk.Core.Entity)
+  name.vb: Comparison(Of Entity)
+  spec.csharp:
+  - uid: System.Comparison`1
+    name: Comparison
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.comparison-1
+  - name: <
+  - uid: milk.Core.Entity
+    name: Entity
+    href: milk.Core.Entity.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Comparison`1
+    name: Comparison
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.comparison-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: milk.Core.Entity
+    name: Entity
+    href: milk.Core.Entity.html
+  - name: )
+- uid: System.Comparison`1
+  commentId: T:System.Comparison`1
   isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.int32
-  name: int
-  nameWithType: int
-  fullName: int
-  nameWithType.vb: Integer
-  fullName.vb: Integer
-  name.vb: Integer
+  href: https://learn.microsoft.com/dotnet/api/system.comparison-1
+  name: Comparison<T>
+  nameWithType: Comparison<T>
+  fullName: System.Comparison<T>
+  nameWithType.vb: Comparison(Of T)
+  fullName.vb: System.Comparison(Of T)
+  name.vb: Comparison(Of T)
+  spec.csharp:
+  - uid: System.Comparison`1
+    name: Comparison
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.comparison-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Comparison`1
+    name: Comparison
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.comparison-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )

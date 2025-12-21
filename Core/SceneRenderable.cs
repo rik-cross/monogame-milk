@@ -1,24 +1,16 @@
-/*   
-   [ ] Finished
-   
-   Monogame ECS Engine
-   By Rik Cross
-   -- github.com/rik-cross/monogame-ecs
-   Shared under the MIT licence
+//   Monogame Intuitive Library Kit (milk)
+//   A MonoGame ECS Engine, By Rik Cross
+//   -- Code: github.com/rik-cross/monogame-milk
+//   -- Docs: rik-cross.github.io/monogame-milk
+//   -- Shared under the MIT licence
 
-   ------------------------------------
-
-   MonogameECS.SceneRenderable
-   ===========================
-
-   ...
-*/
-
-using System;
 using Microsoft.Xna.Framework;
 
 namespace milk.Core;
 
+/// <summary>
+/// The part of a SceneRenderable to set the position against.
+/// </summary>
 public enum Anchor
 {
     TopLeft, TopCenter, TopRight,
@@ -26,7 +18,10 @@ public enum Anchor
     BottomLeft, BottomCenter, BottomRight
 }
 
-public class SceneRenderable
+/// <summary>
+/// Used as a superclass for images, text, etc.
+/// </summary>
+public abstract class SceneRenderable
 {
     public Vector2 Position { get; set; }
     public Vector2 Size { get; set;}
@@ -34,25 +29,19 @@ public class SceneRenderable
     public Anchor Anchor { get; set; }
     protected readonly SceneRenderable? Parent;
 
-    public SceneRenderable(
+    internal SceneRenderable(
         Vector2 size,
-        Vector2 position = default,
+        Vector2? position = null,
         float alpha = 1.0f,
         Anchor anchor = Anchor.TopLeft,
         SceneRenderable? parent = null)
     {
 
         Size = size;
-
-        if (position == default)
-            Position = Vector2.Zero;
-        else
-            Position = position;
-
+        Position = position ?? Vector2.Zero;
         Alpha = alpha;
         Anchor = anchor;
-        Parent = parent;
-        //Console.WriteLine(Position);    
+        Parent = parent;  
 
     }
 

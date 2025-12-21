@@ -86,22 +86,6 @@ items:
   - uid: milk.Core.Utils
     name: Utils
     type: Class
-- uid: milk.Systems
-  name: milk.Systems
-  type: Namespace
-  items:
-  - uid: milk.Systems.InputSystem
-    name: InputSystem
-    type: Class
-  - uid: milk.Systems.PhysicsSystem
-    name: PhysicsSystem
-    type: Class
-  - uid: milk.Systems.SpriteSystem
-    name: SpriteSystem
-    type: Class
-  - uid: milk.Systems.TriggerSystem
-    name: TriggerSystem
-    type: Class
 - uid: milk.Transitions
   name: milk.Transitions
   type: Namespace

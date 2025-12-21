@@ -6,8 +6,8 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <meta name="title" content="Class Camera | milk ">
       
-      
-      <link rel="icon" href="../favicon.ico">
+      <meta name="description" content="A camera can be added to a Scene via scene.AddCamera(), and draws a scene&#39;s world to the screen.">
+      <link rel="icon" href="../images/favicon.ico">
       <link rel="stylesheet" href="../public/docfx.min.css">
       <link rel="stylesheet" href="../public/main.css">
       <meta name="docfx:navrel" content="../toc.html">
@@ -44,7 +44,7 @@
       <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
         <div class="container-xxl flex-nowrap">
           <a class="navbar-brand" href="../index.html">
-            <img id="logo" class="svg" src="../logo.svg" alt="milk">
+            <img id="logo" class="svg" src="../images/milk.png" alt="milk">
             milk
           </a>
           <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
@@ -89,7 +89,7 @@
 
 
   <h1 id="milk_Core_Camera" data-uid="milk.Core.Camera" class="text-break">
-Class Camera  <a class="header-action link-secondary" title="View source" href="https://github.com/rik-cross/monogame-milk/blob/main/Core/Camera.cs/#L7"><i class="bi bi-code-slash"></i></a>
+Class Camera  <a class="header-action link-secondary" title="View source" href="https://github.com/rik-cross/monogame-milk/blob/main/Core/Camera.cs/#L17"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
@@ -97,7 +97,9 @@ Class Camera  <a class="header-action link-secondary" title="View source" href="
   <dl><dt>Assembly</dt><dd>MonoGameECS.dll</dd></dl>
   </div>
 
-  <div class="markdown summary"></div>
+  <div class="markdown summary"><p>A camera can be added to a Scene via scene.AddCamera(),
+and draws a scene's world to the screen.</p>
+</div>
   <div class="markdown conceptual"></div>
 
   <div class="codewrapper">
@@ -154,40 +156,54 @@ Class Camera  <a class="header-action link-secondary" title="View source" href="
 
   <a id="milk_Core_Camera__ctor_" data-uid="milk.Core.Camera.#ctor*"></a>
 
-  <h3 id="milk_Core_Camera__ctor_Microsoft_Xna_Framework_Vector2_System_Nullable_Microsoft_Xna_Framework_Vector2__System_Nullable_Microsoft_Xna_Framework_Vector2__System_Single_System_Boolean_System_Nullable_Microsoft_Xna_Framework_Color__System_Int32_System_Nullable_Microsoft_Xna_Framework_Color__System_String_milk_Core_Entity_" data-uid="milk.Core.Camera.#ctor(Microsoft.Xna.Framework.Vector2,System.Nullable{Microsoft.Xna.Framework.Vector2},System.Nullable{Microsoft.Xna.Framework.Vector2},System.Single,System.Boolean,System.Nullable{Microsoft.Xna.Framework.Color},System.Int32,System.Nullable{Microsoft.Xna.Framework.Color},System.String,milk.Core.Entity)">
-  Camera(Vector2, Vector2?, Vector2?, float, bool, Color?, int, Color?, string?, Entity?)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/rik-cross/monogame-milk/blob/main/Core/Camera.cs/#L61"><i class="bi bi-code-slash"></i></a>
+  <h3 id="milk_Core_Camera__ctor_Microsoft_Xna_Framework_Vector2_System_Nullable_Microsoft_Xna_Framework_Vector2__System_Nullable_Microsoft_Xna_Framework_Vector2__System_Single_System_Boolean_System_Nullable_Microsoft_Xna_Framework_Color__System_Int32_System_Nullable_Microsoft_Xna_Framework_Color__System_String_milk_Core_Entity_System_Single_" data-uid="milk.Core.Camera.#ctor(Microsoft.Xna.Framework.Vector2,System.Nullable{Microsoft.Xna.Framework.Vector2},System.Nullable{Microsoft.Xna.Framework.Vector2},System.Single,System.Boolean,System.Nullable{Microsoft.Xna.Framework.Color},System.Int32,System.Nullable{Microsoft.Xna.Framework.Color},System.String,milk.Core.Entity,System.Single)">
+  Camera(Vector2, Vector2?, Vector2?, float, bool, Color?, int, Color?, string?, Entity?, float)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/rik-cross/monogame-milk/blob/main/Core/Camera.cs/#L120"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Creates a new camera object.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public Camera(Vector2 size, Vector2? screenPosition = null, Vector2? worldPosition = null, float zoom = 1, bool clampToMap = false, Color? backgroundColor = null, int borderWidth = 0, Color? borderColor = null, string? name = null, Entity? trackedEntity = null)</code></pre>
+    <pre><code class="lang-csharp hljs">public Camera(Vector2 screenSize, Vector2? screenPosition = null, Vector2? worldPosition = null, float zoom = 1, bool clampToMap = false, Color? backgroundColor = null, int borderWidth = 0, Color? borderColor = null, string? name = null, Entity? trackedEntity = null, float followPercentage = 1)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
-    <dt><code>size</code> <span class="xref">Vector2</span></dt>
-    <dd></dd>
+    <dt><code>screenSize</code> <span class="xref">Vector2</span></dt>
+    <dd><p>The (x, y) screen size of the camera.</p>
+</dd>
     <dt><code>screenPosition</code> <span class="xref">Vector2</span>?</dt>
-    <dd></dd>
+    <dd><p>The (x, y) screen position (default = (0, 0)).</p>
+</dd>
     <dt><code>worldPosition</code> <span class="xref">Vector2</span>?</dt>
-    <dd></dd>
+    <dd><p>The (x, y) world position (default = (0, 0)).</p>
+</dd>
     <dt><code>zoom</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
-    <dd></dd>
+    <dd><p>The initial zoom level (default = 1).</p>
+</dd>
     <dt><code>clampToMap</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
-    <dd></dd>
+    <dd><p>Clamp the camera to the map dimensions (default = false).</p>
+</dd>
     <dt><code>backgroundColor</code> <span class="xref">Color</span>?</dt>
-    <dd></dd>
+    <dd><p>The background color (default = transparent).</p>
+</dd>
     <dt><code>borderWidth</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
-    <dd></dd>
+    <dd><p>The width of the border (default = 0 - no border).</p>
+</dd>
     <dt><code>borderColor</code> <span class="xref">Color</span>?</dt>
-    <dd></dd>
+    <dd><p>The color of the border (defaul = black).</p>
+</dd>
     <dt><code>name</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
-    <dd></dd>
+    <dd><p>The name of the camera (default = null).</p>
+</dd>
     <dt><code>trackedEntity</code> <a class="xref" href="milk.Core.Entity.html">Entity</a></dt>
-    <dd></dd>
+    <dd><p>An optional entity to track (default = null).</p>
+</dd>
+    <dt><code>followPercentage</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd><p>The amount to lazy follow (default = 1 - instant).</p>
+</dd>
   </dl>
 
 
@@ -208,10 +224,11 @@ Class Camera  <a class="header-action link-secondary" title="View source" href="
 
   <h3 id="milk_Core_Camera_BackgroundColor" data-uid="milk.Core.Camera.BackgroundColor">
   BackgroundColor
-  <a class="header-action link-secondary" title="View source" href="https://github.com/rik-cross/monogame-milk/blob/main/Core/Camera.cs/#L43"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/rik-cross/monogame-milk/blob/main/Core/Camera.cs/#L76"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>The background color of the camera.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
@@ -238,10 +255,11 @@ Class Camera  <a class="header-action link-secondary" title="View source" href="
 
   <h3 id="milk_Core_Camera_BorderColor" data-uid="milk.Core.Camera.BorderColor">
   BorderColor
-  <a class="header-action link-secondary" title="View source" href="https://github.com/rik-cross/monogame-milk/blob/main/Core/Camera.cs/#L45"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/rik-cross/monogame-milk/blob/main/Core/Camera.cs/#L86"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>The color of the border.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
@@ -268,10 +286,11 @@ Class Camera  <a class="header-action link-secondary" title="View source" href="
 
   <h3 id="milk_Core_Camera_BorderWidth" data-uid="milk.Core.Camera.BorderWidth">
   BorderWidth
-  <a class="header-action link-secondary" title="View source" href="https://github.com/rik-cross/monogame-milk/blob/main/Core/Camera.cs/#L44"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/rik-cross/monogame-milk/blob/main/Core/Camera.cs/#L81"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>The width of the border.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
@@ -298,10 +317,12 @@ Class Camera  <a class="header-action link-secondary" title="View source" href="
 
   <h3 id="milk_Core_Camera_ClampToMap" data-uid="milk.Core.Camera.ClampToMap">
   ClampToMap
-  <a class="header-action link-secondary" title="View source" href="https://github.com/rik-cross/monogame-milk/blob/main/Core/Camera.cs/#L36"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/rik-cross/monogame-milk/blob/main/Core/Camera.cs/#L64"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>If set to true, the camera is locked to the map dimensions,
+and won't show any of the scene outside of the map.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
@@ -328,10 +349,13 @@ Class Camera  <a class="header-action link-secondary" title="View source" href="
 
   <h3 id="milk_Core_Camera_FollowPercentage" data-uid="milk.Core.Camera.FollowPercentage">
   FollowPercentage
-  <a class="header-action link-secondary" title="View source" href="https://github.com/rik-cross/monogame-milk/blob/main/Core/Camera.cs/#L40"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/rik-cross/monogame-milk/blob/main/Core/Camera.cs/#L71"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>The amount that the camera moves to its target position
+(0 = no movement, 1 = instant snap to new position).
+Values between 0 and 1 offer a degree of 'lazy follow'.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
@@ -358,14 +382,15 @@ Class Camera  <a class="header-action link-secondary" title="View source" href="
 
   <h3 id="milk_Core_Camera_Scene" data-uid="milk.Core.Camera.Scene">
   Scene
-  <a class="header-action link-secondary" title="View source" href="https://github.com/rik-cross/monogame-milk/blob/main/Core/Camera.cs/#L10"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/rik-cross/monogame-milk/blob/main/Core/Camera.cs/#L23"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>The parent scene of the camera.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public Scene Scene</code></pre>
+    <pre><code class="lang-csharp hljs">public Scene? Scene</code></pre>
   </div>
 
 
@@ -388,10 +413,11 @@ Class Camera  <a class="header-action link-secondary" title="View source" href="
 
   <h3 id="milk_Core_Camera_ScreenPosition" data-uid="milk.Core.Camera.ScreenPosition">
   ScreenPosition
-  <a class="header-action link-secondary" title="View source" href="https://github.com/rik-cross/monogame-milk/blob/main/Core/Camera.cs/#L23"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/rik-cross/monogame-milk/blob/main/Core/Camera.cs/#L45"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>The (x, y) top-left scene position of the camera.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
@@ -418,10 +444,11 @@ Class Camera  <a class="header-action link-secondary" title="View source" href="
 
   <h3 id="milk_Core_Camera_ScreenSize" data-uid="milk.Core.Camera.ScreenSize">
   ScreenSize
-  <a class="header-action link-secondary" title="View source" href="https://github.com/rik-cross/monogame-milk/blob/main/Core/Camera.cs/#L24"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/rik-cross/monogame-milk/blob/main/Core/Camera.cs/#L50"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>The (x, y) size of the camera.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
@@ -448,10 +475,11 @@ Class Camera  <a class="header-action link-secondary" title="View source" href="
 
   <h3 id="milk_Core_Camera_TrackedEntity" data-uid="milk.Core.Camera.TrackedEntity">
   TrackedEntity
-  <a class="header-action link-secondary" title="View source" href="https://github.com/rik-cross/monogame-milk/blob/main/Core/Camera.cs/#L59"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/rik-cross/monogame-milk/blob/main/Core/Camera.cs/#L104"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>The optional entity to track.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
@@ -478,10 +506,11 @@ Class Camera  <a class="header-action link-secondary" title="View source" href="
 
   <h3 id="milk_Core_Camera_WorldPosition" data-uid="milk.Core.Camera.WorldPosition">
   WorldPosition
-  <a class="header-action link-secondary" title="View source" href="https://github.com/rik-cross/monogame-milk/blob/main/Core/Camera.cs/#L33"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/rik-cross/monogame-milk/blob/main/Core/Camera.cs/#L57"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>The (x, y) target world position that the camera is focused on.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
@@ -506,39 +535,9 @@ Class Camera  <a class="header-action link-secondary" title="View source" href="
 
 
 
-  <h3 id="milk_Core_Camera__currentWorldPosition" data-uid="milk.Core.Camera._currentWorldPosition">
-  _currentWorldPosition
-  <a class="header-action link-secondary" title="View source" href="https://github.com/rik-cross/monogame-milk/blob/main/Core/Camera.cs/#L34"><i class="bi bi-code-slash"></i></a>
-  </h3>
-
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public Vector2 _currentWorldPosition</code></pre>
-  </div>
-
-
-
-
-  <h4 class="section">Field Value</h4>
-  <dl class="parameters">
-    <dt><span class="xref">Vector2</span></dt>
-    <dd></dd>
-  </dl>
-
-
-
-
-
-
-
-
-
-
   <h3 id="milk_Core_Camera__currentZoom" data-uid="milk.Core.Camera._currentZoom">
   _currentZoom
-  <a class="header-action link-secondary" title="View source" href="https://github.com/rik-cross/monogame-milk/blob/main/Core/Camera.cs/#L52"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/rik-cross/monogame-milk/blob/main/Core/Camera.cs/#L93"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -568,7 +567,7 @@ Class Camera  <a class="header-action link-secondary" title="View source" href="
 
   <h3 id="milk_Core_Camera__startZoom" data-uid="milk.Core.Camera._startZoom">
   _startZoom
-  <a class="header-action link-secondary" title="View source" href="https://github.com/rik-cross/monogame-milk/blob/main/Core/Camera.cs/#L53"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/rik-cross/monogame-milk/blob/main/Core/Camera.cs/#L94"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -603,10 +602,12 @@ Class Camera  <a class="header-action link-secondary" title="View source" href="
 
   <h3 id="milk_Core_Camera_Name" data-uid="milk.Core.Camera.Name">
   Name
-  <a class="header-action link-secondary" title="View source" href="https://github.com/rik-cross/monogame-milk/blob/main/Core/Camera.cs/#L11"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/rik-cross/monogame-milk/blob/main/Core/Camera.cs/#L30"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>The name of the camera.
+Useful for getting / removing a specific camera.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
@@ -638,10 +639,11 @@ Class Camera  <a class="header-action link-secondary" title="View source" href="
 
   <h3 id="milk_Core_Camera_GetWorldPosition" data-uid="milk.Core.Camera.GetWorldPosition">
   GetWorldPosition()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/rik-cross/monogame-milk/blob/main/Core/Camera.cs/#L244"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/rik-cross/monogame-milk/blob/main/Core/Camera.cs/#L332"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Gets the target world position.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
@@ -652,7 +654,8 @@ Class Camera  <a class="header-action link-secondary" title="View source" href="
   <h4 class="section">Returns</h4>
   <dl class="parameters">
     <dt><span class="xref">Vector2</span></dt>
-    <dd></dd>
+    <dd><p>The (x, y) camera world target.</p>
+</dd>
   </dl>
 
 
@@ -669,10 +672,11 @@ Class Camera  <a class="header-action link-secondary" title="View source" href="
 
   <h3 id="milk_Core_Camera_SetWorldPosition_Microsoft_Xna_Framework_Vector2_System_Boolean_" data-uid="milk.Core.Camera.SetWorldPosition(Microsoft.Xna.Framework.Vector2,System.Boolean)">
   SetWorldPosition(Vector2, bool)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/rik-cross/monogame-milk/blob/main/Core/Camera.cs/#L227"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/rik-cross/monogame-milk/blob/main/Core/Camera.cs/#L311"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Sets a new target world position.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
@@ -682,9 +686,11 @@ Class Camera  <a class="header-action link-secondary" title="View source" href="
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
     <dt><code>newPosition</code> <span class="xref">Vector2</span></dt>
-    <dd></dd>
+    <dd><p>The new (x,y) world position.</p>
+</dd>
     <dt><code>instant</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
-    <dd></dd>
+    <dd><p>Sets the new position instantly, ignoring any lazy follow, etc. (default = false).</p>
+</dd>
   </dl>
 
 
@@ -702,10 +708,11 @@ Class Camera  <a class="header-action link-secondary" title="View source" href="
 
   <h3 id="milk_Core_Camera_SetZoom_System_Single_System_Single_" data-uid="milk.Core.Camera.SetZoom(System.Single,System.Single)">
   SetZoom(float, float)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/rik-cross/monogame-milk/blob/main/Core/Camera.cs/#L172"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/rik-cross/monogame-milk/blob/main/Core/Camera.cs/#L251"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Sets the zoom level of the camera.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
@@ -715,104 +722,13 @@ Class Camera  <a class="header-action link-secondary" title="View source" href="
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
     <dt><code>zoom</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
-    <dd></dd>
+    <dd><p>The new target zoom level (default = 1).</p>
+</dd>
     <dt><code>duration</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
-    <dd></dd>
+    <dd><p>The zoom duration (defaul = 0 - instant).</p>
+</dd>
   </dl>
 
-
-
-
-
-
-
-
-
-
-
-
-  <a id="milk_Core_Camera_Update_" data-uid="milk.Core.Camera.Update*"></a>
-
-  <h3 id="milk_Core_Camera_Update_Microsoft_Xna_Framework_GameTime_" data-uid="milk.Core.Camera.Update(Microsoft.Xna.Framework.GameTime)">
-  Update(GameTime)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/rik-cross/monogame-milk/blob/main/Core/Camera.cs/#L76"><i class="bi bi-code-slash"></i></a>
-  </h3>
-
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public void Update(GameTime gameTime)</code></pre>
-  </div>
-
-  <h4 class="section">Parameters</h4>
-  <dl class="parameters">
-    <dt><code>gameTime</code> <span class="xref">GameTime</span></dt>
-    <dd></dd>
-  </dl>
-
-
-
-
-
-
-
-
-
-
-
-
-  <a id="milk_Core_Camera_getTransformMatrix_" data-uid="milk.Core.Camera.getTransformMatrix*"></a>
-
-  <h3 id="milk_Core_Camera_getTransformMatrix" data-uid="milk.Core.Camera.getTransformMatrix">
-  getTransformMatrix()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/rik-cross/monogame-milk/blob/main/Core/Camera.cs/#L213"><i class="bi bi-code-slash"></i></a>
-  </h3>
-
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public Matrix getTransformMatrix()</code></pre>
-  </div>
-
-
-  <h4 class="section">Returns</h4>
-  <dl class="parameters">
-    <dt><span class="xref">Matrix</span></dt>
-    <dd></dd>
-  </dl>
-
-
-
-
-
-
-
-
-
-
-
-  <a id="milk_Core_Camera_getViewport_" data-uid="milk.Core.Camera.getViewport*"></a>
-
-  <h3 id="milk_Core_Camera_getViewport" data-uid="milk.Core.Camera.getViewport">
-  getViewport()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/rik-cross/monogame-milk/blob/main/Core/Camera.cs/#L205"><i class="bi bi-code-slash"></i></a>
-  </h3>
-
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public Viewport getViewport()</code></pre>
-  </div>
-
-
-  <h4 class="section">Returns</h4>
-  <dl class="parameters">
-    <dt><span class="xref">Viewport</span></dt>
-    <dd></dd>
-  </dl>
 
 
 
@@ -828,7 +744,7 @@ Class Camera  <a class="header-action link-secondary" title="View source" href="
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/rik-cross/monogame-milk/blob/main/Core/Camera.cs/#L7" class="edit-link">Edit this page</a>
+          <a href="https://github.com/rik-cross/monogame-milk/blob/main/Core/Camera.cs/#L17" class="edit-link">Edit this page</a>
         </div>
 
 

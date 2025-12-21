@@ -7,7 +7,7 @@
       <meta name="title" content="Getting Started | milk ">
       
       
-      <link rel="icon" href="../favicon.ico">
+      <link rel="icon" href="../images/favicon.ico">
       <link rel="stylesheet" href="../public/docfx.min.css">
       <link rel="stylesheet" href="../public/main.css">
       <meta name="docfx:navrel" content="../toc.html">
@@ -44,7 +44,7 @@
       <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
         <div class="container-xxl flex-nowrap">
           <a class="navbar-brand" href="../index.html">
-            <img id="logo" class="svg" src="../logo.svg" alt="milk">
+            <img id="logo" class="svg" src="../images/milk.png" alt="milk">
             milk
           </a>
           <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
@@ -87,6 +87,35 @@
         <article data-uid="">
 <h1 id="getting-started">Getting Started</h1>
 
+<h3 id="simplest-use">Simplest use</h3>
+<p>The code below is the simplest code that will create a new game. It will just show the default, placeholder scene, but is useful for testing that everything is installed and working:</p>
+<pre><code>using milk.Core;
+
+using var game = new Game();
+game.Run();
+</code></pre>
+<h3 id="basic-usage">Basic usage</h3>
+<p>To create a basic single-scene game, firstly create a new scene subclass:</p>
+<pre><code>using Microsoft.Xna.Framework;
+using milk.Core;
+
+public class MyScene : Scene
+{
+    public override void Init()
+    {
+        BackgroundColor = Color.CornflowerBlue;
+    }
+}
+</code></pre>
+<p>You can then create a new game with this class using the following code:</p>
+<pre><code>using milk.Core;
+
+using var game = new Game();
+game.Init = () =&gt; { game.SetScene(new MyScene()); };
+game.Run();
+</code></pre>
+<h3 id="tiny-town-example">'Tiny Town' Example</h3>
+<p>See the <a href="https://github.com/rik-cross/tiny-town">Tiny Town</a> GitHub repo for an in-development RPG made with milk.</p>
 
 </article>
 

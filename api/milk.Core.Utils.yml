@@ -23,7 +23,7 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: Utils
     path: Core/Utils.cs
-    startLine: 8
+    startLine: 11
   assemblies:
   - MonoGameECS
   namespace: milk.Core
@@ -58,7 +58,7 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: GetCurrentSourceDirectory
     path: Core/Utils.cs
-    startLine: 11
+    startLine: 14
   assemblies:
   - MonoGameECS
   namespace: milk.Core
@@ -92,7 +92,7 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: CompareBitArrays
     path: Core/Utils.cs
-    startLine: 17
+    startLine: 20
   assemblies:
   - MonoGameECS
   namespace: milk.Core
@@ -125,7 +125,7 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: PrintList
     path: Core/Utils.cs
-    startLine: 32
+    startLine: 35
   assemblies:
   - MonoGameECS
   namespace: milk.Core
@@ -163,7 +163,7 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: PrintBitArray
     path: Core/Utils.cs
-    startLine: 49
+    startLine: 52
   assemblies:
   - MonoGameECS
   namespace: milk.Core

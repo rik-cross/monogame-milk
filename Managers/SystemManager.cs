@@ -1,18 +1,8 @@
-//   [ ] Finished
-//   
-//   Monogame ECS Engine
-//   By Rik Cross
-//   -- github.com/rik-cross/monogame-ecs
-//   Shared under the MIT licence
-//
-//   ------------------------------------
-//
-//   MonogameECS.SystemManager
-//   ============================
-//  
-//   A system manager stores all systems.
-
-using System.Collections.Generic;
+//   Monogame Intuitive Library Kit (milk)
+//   A MonoGame ECS Engine, By Rik Cross
+//   -- Code: github.com/rik-cross/monogame-milk
+//   -- Docs: rik-cross.github.io/monogame-milk
+//   -- Shared under the MIT licence
 
 namespace milk.Core;
 

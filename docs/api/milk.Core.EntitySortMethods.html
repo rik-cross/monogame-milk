@@ -6,8 +6,8 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <meta name="title" content="Class EntitySortMethods | milk ">
       
-      
-      <link rel="icon" href="../favicon.ico">
+      <meta name="description" content="Methods to control the draw order of entities in a scene.">
+      <link rel="icon" href="../images/favicon.ico">
       <link rel="stylesheet" href="../public/docfx.min.css">
       <link rel="stylesheet" href="../public/main.css">
       <meta name="docfx:navrel" content="../toc.html">
@@ -44,7 +44,7 @@
       <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
         <div class="container-xxl flex-nowrap">
           <a class="navbar-brand" href="../index.html">
-            <img id="logo" class="svg" src="../logo.svg" alt="milk">
+            <img id="logo" class="svg" src="../images/milk.png" alt="milk">
             milk
           </a>
           <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
@@ -89,7 +89,7 @@
 
 
   <h1 id="milk_Core_EntitySortMethods" data-uid="milk.Core.EntitySortMethods" class="text-break">
-Class EntitySortMethods  <a class="header-action link-secondary" title="View source" href="https://github.com/rik-cross/monogame-milk/blob/main/Core/EntitySortMethods.cs/#L5"><i class="bi bi-code-slash"></i></a>
+Class EntitySortMethods  <a class="header-action link-secondary" title="View source" href="https://github.com/rik-cross/monogame-milk/blob/main/Core/EntitySortMethods.cs/#L14"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
@@ -97,7 +97,8 @@ Class EntitySortMethods  <a class="header-action link-secondary" title="View sou
   <dl><dt>Assembly</dt><dd>MonoGameECS.dll</dd></dl>
   </div>
 
-  <div class="markdown summary"></div>
+  <div class="markdown summary"><p>Methods to control the draw order of entities in a scene.</p>
+</div>
   <div class="markdown conceptual"></div>
 
   <div class="codewrapper">
@@ -148,40 +149,35 @@ Class EntitySortMethods  <a class="header-action link-secondary" title="View sou
 
 
 
-  <h2 class="section" id="methods">Methods
+  <h2 class="section" id="properties">Properties
 </h2>
 
 
-  <a id="milk_Core_EntitySortMethods_CompareBottom_" data-uid="milk.Core.EntitySortMethods.CompareBottom*"></a>
+  <a id="milk_Core_EntitySortMethods_SortBottom_" data-uid="milk.Core.EntitySortMethods.SortBottom*"></a>
 
-  <h3 id="milk_Core_EntitySortMethods_CompareBottom_milk_Core_Entity_milk_Core_Entity_" data-uid="milk.Core.EntitySortMethods.CompareBottom(milk.Core.Entity,milk.Core.Entity)">
-  CompareBottom(Entity, Entity)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/rik-cross/monogame-milk/blob/main/Core/EntitySortMethods.cs/#L8"><i class="bi bi-code-slash"></i></a>
+  <h3 id="milk_Core_EntitySortMethods_SortBottom" data-uid="milk.Core.EntitySortMethods.SortBottom">
+  SortBottom
+  <a class="header-action link-secondary" title="View source" href="https://github.com/rik-cross/monogame-milk/blob/main/Core/EntitySortMethods.cs/#L21"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Sorts entities in a scene by their bottom position
+(i.e. y position + transformComponent.height).</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static int CompareBottom(Entity x, Entity y)</code></pre>
+    <pre><code class="lang-csharp hljs">public static Comparison&lt;Entity&gt; SortBottom { get; }</code></pre>
   </div>
 
-  <h4 class="section">Parameters</h4>
+
+
+
+
+  <h4 class="section">Property Value</h4>
   <dl class="parameters">
-    <dt><code>x</code> <a class="xref" href="milk.Core.Entity.html">Entity</a></dt>
-    <dd></dd>
-    <dt><code>y</code> <a class="xref" href="milk.Core.Entity.html">Entity</a></dt>
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.comparison-1">Comparison</a>&lt;<a class="xref" href="milk.Core.Entity.html">Entity</a>&gt;</dt>
     <dd></dd>
   </dl>
-
-  <h4 class="section">Returns</h4>
-  <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
-    <dd></dd>
-  </dl>
-
-
-
 
 
 
@@ -194,7 +190,7 @@ Class EntitySortMethods  <a class="header-action link-secondary" title="View sou
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/rik-cross/monogame-milk/blob/main/Core/EntitySortMethods.cs/#L5" class="edit-link">Edit this page</a>
+          <a href="https://github.com/rik-cross/monogame-milk/blob/main/Core/EntitySortMethods.cs/#L14" class="edit-link">Edit this page</a>
         </div>
 
 

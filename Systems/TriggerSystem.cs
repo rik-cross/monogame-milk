@@ -1,44 +1,39 @@
-using System;
-using System.Reflection.Metadata;
-using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Graphics;
-using MonoGame.Extended;
+//   Monogame Intuitive Library Kit (milk)
+//   A MonoGame ECS Engine, By Rik Cross
+//   -- Code: github.com/rik-cross/monogame-milk
+//   -- Docs: rik-cross.github.io/monogame-milk
+//   -- Shared under the MIT licence
 
+using Microsoft.Xna.Framework;
+using MonoGame.Extended;
 using milk.Core;
 using milk.Components;
 
 namespace milk.Systems;
 
-public class TriggerSystem : milk.Core.System
+/// <summary>
+/// Processes entities with trigger components, and calls the relevant
+/// callbacks when 2 entities have overlapping colliders.
+/// </summary>
+internal class TriggerSystem : milk.Core.System
 {
 
+    /// <summary>
+    /// Initialises the trigger system, which only processes entities
+    /// with a transform component and a trigger component.
+    /// </summary>
     public override void Init()
     {
         AddRequiredComponentType<TransformComponent>();
         AddRequiredComponentType<TriggerComponent>();
     }
 
-    public override void OnEnterScene(Scene scene)
-    {
-        //Console.WriteLine("onEnterScene");
-    }
-
-    public override void OnExitScene(Scene scene)
-    {
-
-        // TODO
-        // when to clear, as this causes issues when adding a new scene.
-
-        //Console.WriteLine("onExitScene");
-        /*foreach (Entity entity in scene.entities)
-        {
-            if (entity.HasComponent<TriggerComponent>())
-            {
-                entity.GetComponent<TriggerComponent>().collidedEntities.Clear();
-            }
-        }*/
-    }
-
+    /// <summary>
+    /// Updates each of the entities with the required components.
+    /// </summary>
+    /// <param name="gameTime">The MonoGame gameTime object for measuring elapsed time.</param>
+    /// <param name="scene">The scene containing the system.</param>
+    /// <param name="entity">The entity to be processed.</param>
     public override void UpdateEntity(GameTime gameTime, Scene scene, Entity entity)
     {
         TransformComponent transformComponent = entity.GetComponent<TransformComponent>();
@@ -126,6 +121,11 @@ public class TriggerSystem : milk.Core.System
 
     }
 
+    /// <summary>
+    /// Draws each of the entity triggers if in DEBUG mode.
+    /// </summary>
+    /// <param name="scene">The scene containing the system.</param>
+    /// <param name="entity">The entity to be processed.</param>
     public override void DrawEntity(Scene scene, Entity entity)
     {
         TransformComponent transformComponent = entity.GetComponent<TransformComponent>();
@@ -147,6 +147,12 @@ public class TriggerSystem : milk.Core.System
 
     }
 
+    /// <summary>
+    /// Removes the entity to be removed from the scene from the list
+    /// of collided entities.
+    /// </summary>
+    /// <param name="scene">The scene containing the system.</param>
+    /// <param name="entity">The entity to be processed.</param>
     public override void OnEntityRemovedFromScene(Scene scene, Entity entity)
     {
         // Clear entity trigger's collided components

@@ -6,8 +6,8 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <meta name="title" content="Class Text | milk ">
       
-      
-      <link rel="icon" href="../favicon.ico">
+      <meta name="description" content="Displays text in a scene, in the font specified.">
+      <link rel="icon" href="../images/favicon.ico">
       <link rel="stylesheet" href="../public/docfx.min.css">
       <link rel="stylesheet" href="../public/main.css">
       <meta name="docfx:navrel" content="../toc.html">
@@ -44,7 +44,7 @@
       <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
         <div class="container-xxl flex-nowrap">
           <a class="navbar-brand" href="../index.html">
-            <img id="logo" class="svg" src="../logo.svg" alt="milk">
+            <img id="logo" class="svg" src="../images/milk.png" alt="milk">
             milk
           </a>
           <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
@@ -89,7 +89,7 @@
 
 
   <h1 id="milk_Core_Text" data-uid="milk.Core.Text" class="text-break">
-Class Text  <a class="header-action link-secondary" title="View source" href="https://github.com/rik-cross/monogame-milk/blob/main/Core/Text.cs/#L21"><i class="bi bi-code-slash"></i></a>
+Class Text  <a class="header-action link-secondary" title="View source" href="https://github.com/rik-cross/monogame-milk/blob/main/Core/Text.cs/#L15"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
@@ -97,7 +97,8 @@ Class Text  <a class="header-action link-secondary" title="View source" href="ht
   <dl><dt>Assembly</dt><dd>MonoGameECS.dll</dd></dl>
   </div>
 
-  <div class="markdown summary"></div>
+  <div class="markdown summary"><p>Displays text in a scene, in the font specified.</p>
+</div>
   <div class="markdown conceptual"></div>
 
   <div class="codewrapper">
@@ -176,38 +177,48 @@ Class Text  <a class="header-action link-secondary" title="View source" href="ht
 
   <a id="milk_Core_Text__ctor_" data-uid="milk.Core.Text.#ctor*"></a>
 
-  <h3 id="milk_Core_Text__ctor_System_String_Microsoft_Xna_Framework_Graphics_SpriteFont_Microsoft_Xna_Framework_Vector2_System_Single_System_Nullable_Microsoft_Xna_Framework_Color__System_Int32_System_Nullable_Microsoft_Xna_Framework_Color__milk_Core_Anchor_milk_Core_SceneRenderable_" data-uid="milk.Core.Text.#ctor(System.String,Microsoft.Xna.Framework.Graphics.SpriteFont,Microsoft.Xna.Framework.Vector2,System.Single,System.Nullable{Microsoft.Xna.Framework.Color},System.Int32,System.Nullable{Microsoft.Xna.Framework.Color},milk.Core.Anchor,milk.Core.SceneRenderable)">
-  Text(string, SpriteFont, Vector2, float, Color?, int, Color?, Anchor, SceneRenderable?)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/rik-cross/monogame-milk/blob/main/Core/Text.cs/#L63"><i class="bi bi-code-slash"></i></a>
+  <h3 id="milk_Core_Text__ctor_System_String_Microsoft_Xna_Framework_Graphics_SpriteFont_System_Nullable_Microsoft_Xna_Framework_Vector2__System_Single_System_Nullable_Microsoft_Xna_Framework_Color__System_Int32_System_Nullable_Microsoft_Xna_Framework_Color__milk_Core_Anchor_milk_Core_SceneRenderable_" data-uid="milk.Core.Text.#ctor(System.String,Microsoft.Xna.Framework.Graphics.SpriteFont,System.Nullable{Microsoft.Xna.Framework.Vector2},System.Single,System.Nullable{Microsoft.Xna.Framework.Color},System.Int32,System.Nullable{Microsoft.Xna.Framework.Color},milk.Core.Anchor,milk.Core.SceneRenderable)">
+  Text(string, SpriteFont, Vector2?, float, Color?, int, Color?, Anchor, SceneRenderable?)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/rik-cross/monogame-milk/blob/main/Core/Text.cs/#L85"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Create a new next object.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public Text(string caption, SpriteFont font, Vector2 position, float alpha = 1, Color? color = null, int outlineWidth = 0, Color? outlineColor = null, Anchor anchor = Anchor.TopLeft, SceneRenderable? parent = null)</code></pre>
+    <pre><code class="lang-csharp hljs">public Text(string caption, SpriteFont font, Vector2? position = null, float alpha = 1, Color? color = null, int outlineWidth = 0, Color? outlineColor = null, Anchor anchor = Anchor.TopLeft, SceneRenderable? parent = null)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
     <dt><code>caption</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
-    <dd></dd>
+    <dd><p>The text to display.</p>
+</dd>
     <dt><code>font</code> <span class="xref">SpriteFont</span></dt>
-    <dd></dd>
-    <dt><code>position</code> <span class="xref">Vector2</span></dt>
-    <dd></dd>
+    <dd><p>The font to use to render the text.</p>
+</dd>
+    <dt><code>position</code> <span class="xref">Vector2</span>?</dt>
+    <dd><p>The (x, y) text position (default = (0,0)).</p>
+</dd>
     <dt><code>alpha</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
-    <dd></dd>
+    <dd><p>The amount of transparency, between 0 and 1 (default = 1 - fully visible).</p>
+</dd>
     <dt><code>color</code> <span class="xref">Color</span>?</dt>
-    <dd></dd>
+    <dd><p>The text color.</p>
+</dd>
     <dt><code>outlineWidth</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
-    <dd></dd>
+    <dd><p>The width of the text outline.</p>
+</dd>
     <dt><code>outlineColor</code> <span class="xref">Color</span>?</dt>
-    <dd></dd>
+    <dd><p>The color of the outline.</p>
+</dd>
     <dt><code>anchor</code> <a class="xref" href="milk.Core.Anchor.html">Anchor</a></dt>
-    <dd></dd>
+    <dd><p>The anchor point to set the position against (default = top-left).</p>
+</dd>
     <dt><code>parent</code> <a class="xref" href="milk.Core.SceneRenderable.html">SceneRenderable</a></dt>
-    <dd></dd>
+    <dd><p>The parent SceneRenderable, for setting relative position (default = null).</p>
+</dd>
   </dl>
 
 
@@ -229,10 +240,11 @@ Class Text  <a class="header-action link-secondary" title="View source" href="ht
 
   <h3 id="milk_Core_Text_Caption" data-uid="milk.Core.Text.Caption">
   Caption
-  <a class="header-action link-secondary" title="View source" href="https://github.com/rik-cross/monogame-milk/blob/main/Core/Text.cs/#L37"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/rik-cross/monogame-milk/blob/main/Core/Text.cs/#L39"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>The text to display.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
@@ -260,10 +272,11 @@ Class Text  <a class="header-action link-secondary" title="View source" href="ht
 
   <h3 id="milk_Core_Text_Color" data-uid="milk.Core.Text.Color">
   Color
-  <a class="header-action link-secondary" title="View source" href="https://github.com/rik-cross/monogame-milk/blob/main/Core/Text.cs/#L48"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/rik-cross/monogame-milk/blob/main/Core/Text.cs/#L52"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Text color.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
@@ -291,10 +304,11 @@ Class Text  <a class="header-action link-secondary" title="View source" href="ht
 
   <h3 id="milk_Core_Text_Font" data-uid="milk.Core.Text.Font">
   Font
-  <a class="header-action link-secondary" title="View source" href="https://github.com/rik-cross/monogame-milk/blob/main/Core/Text.cs/#L25"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/rik-cross/monogame-milk/blob/main/Core/Text.cs/#L23"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>The font to use for the text.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
@@ -322,10 +336,11 @@ Class Text  <a class="header-action link-secondary" title="View source" href="ht
 
   <h3 id="milk_Core_Text_OutlineColor" data-uid="milk.Core.Text.OutlineColor">
   OutlineColor
-  <a class="header-action link-secondary" title="View source" href="https://github.com/rik-cross/monogame-milk/blob/main/Core/Text.cs/#L61"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/rik-cross/monogame-milk/blob/main/Core/Text.cs/#L71"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Outline color.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
@@ -353,10 +368,11 @@ Class Text  <a class="header-action link-secondary" title="View source" href="ht
 
   <h3 id="milk_Core_Text_OutlineWidth" data-uid="milk.Core.Text.OutlineWidth">
   OutlineWidth
-  <a class="header-action link-secondary" title="View source" href="https://github.com/rik-cross/monogame-milk/blob/main/Core/Text.cs/#L52"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/rik-cross/monogame-milk/blob/main/Core/Text.cs/#L58"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Text outline width.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
@@ -388,7 +404,7 @@ Class Text  <a class="header-action link-secondary" title="View source" href="ht
 
   <h3 id="milk_Core_Text_Draw" data-uid="milk.Core.Text.Draw">
   Draw()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/rik-cross/monogame-milk/blob/main/Core/Text.cs/#L92"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/rik-cross/monogame-milk/blob/main/Core/Text.cs/#L114"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -414,7 +430,7 @@ Class Text  <a class="header-action link-secondary" title="View source" href="ht
 
   <h3 id="milk_Core_Text_GenerateTextWidth_System_String_Microsoft_Xna_Framework_Graphics_SpriteFont_System_Int32_" data-uid="milk.Core.Text.GenerateTextWidth(System.String,Microsoft.Xna.Framework.Graphics.SpriteFont,System.Int32)">
   GenerateTextWidth(string, SpriteFont, int)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/rik-cross/monogame-milk/blob/main/Core/Text.cs/#L84"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/rik-cross/monogame-milk/blob/main/Core/Text.cs/#L106"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -454,7 +470,7 @@ Class Text  <a class="header-action link-secondary" title="View source" href="ht
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/rik-cross/monogame-milk/blob/main/Core/Text.cs/#L21" class="edit-link">Edit this page</a>
+          <a href="https://github.com/rik-cross/monogame-milk/blob/main/Core/Text.cs/#L15" class="edit-link">Edit this page</a>
         </div>
 
 

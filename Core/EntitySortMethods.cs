@@ -1,16 +1,31 @@
+//   Monogame Intuitive Library Kit (milk)
+//   A MonoGame ECS Engine, By Rik Cross
+//   -- Code: github.com/rik-cross/monogame-milk
+//   -- Docs: rik-cross.github.io/monogame-milk
+//   -- Shared under the MIT licence
+
 using milk.Components;
+
 namespace milk.Core;
 
+/// <summary>
+/// Methods to control the draw order of entities in a scene.
+/// </summary>
 public static class EntitySortMethods
 {
 
-    public static int CompareBottom(Entity x, Entity y)
+    /// <summary>
+    /// Sorts entities in a scene by their bottom position
+    /// (i.e. y position + transformComponent.height).
+    /// </summary>
+    public static Comparison<Entity> SortBottom => CompareBottom;
+
+    private static int CompareBottom(Entity x, Entity y)
     {
 
         // Deal with null components
-        if (x.HasComponent<TransformComponent>() == false &&
-            y.HasComponent<TransformComponent>() == false)
-                return 0;
+        if (x.HasComponent<TransformComponent>() == false && y.HasComponent<TransformComponent>() == false)
+            return 0;
         else if (x.HasComponent<TransformComponent>() == false) return -1;
         else if (y.HasComponent<TransformComponent>() == false) return 1;
 

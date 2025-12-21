@@ -5,7 +5,7 @@ items:
   id: Text
   parent: milk.Core
   children:
-  - milk.Core.Text.#ctor(System.String,Microsoft.Xna.Framework.Graphics.SpriteFont,Microsoft.Xna.Framework.Vector2,System.Single,System.Nullable{Microsoft.Xna.Framework.Color},System.Int32,System.Nullable{Microsoft.Xna.Framework.Color},milk.Core.Anchor,milk.Core.SceneRenderable)
+  - milk.Core.Text.#ctor(System.String,Microsoft.Xna.Framework.Graphics.SpriteFont,System.Nullable{Microsoft.Xna.Framework.Vector2},System.Single,System.Nullable{Microsoft.Xna.Framework.Color},System.Int32,System.Nullable{Microsoft.Xna.Framework.Color},milk.Core.Anchor,milk.Core.SceneRenderable)
   - milk.Core.Text.Caption
   - milk.Core.Text.Color
   - milk.Core.Text.Draw
@@ -27,10 +27,12 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: Text
     path: Core/Text.cs
-    startLine: 20
+    startLine: 14
   assemblies:
   - MonoGameECS
   namespace: milk.Core
+  summary: Displays text in a scene, in the font specified.
+  example: []
   syntax:
     content: 'public class Text : SceneRenderable'
     content.vb: Public Class Text Inherits SceneRenderable
@@ -70,10 +72,12 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: Font
     path: Core/Text.cs
-    startLine: 24
+    startLine: 22
   assemblies:
   - MonoGameECS
   namespace: milk.Core
+  summary: The font to use for the text.
+  example: []
   syntax:
     content: public SpriteFont Font { get; set; }
     parameters: []
@@ -99,10 +103,12 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: Caption
     path: Core/Text.cs
-    startLine: 36
+    startLine: 38
   assemblies:
   - MonoGameECS
   namespace: milk.Core
+  summary: The text to display.
+  example: []
   syntax:
     content: public string Caption { get; set; }
     parameters: []
@@ -128,10 +134,12 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: Color
     path: Core/Text.cs
-    startLine: 47
+    startLine: 51
   assemblies:
   - MonoGameECS
   namespace: milk.Core
+  summary: Text color.
+  example: []
   syntax:
     content: public Color Color { get; set; }
     parameters: []
@@ -157,10 +165,12 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: OutlineWidth
     path: Core/Text.cs
-    startLine: 51
+    startLine: 57
   assemblies:
   - MonoGameECS
   namespace: milk.Core
+  summary: Text outline width.
+  example: []
   syntax:
     content: public int OutlineWidth { get; set; }
     parameters: []
@@ -186,10 +196,12 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: OutlineColor
     path: Core/Text.cs
-    startLine: 60
+    startLine: 70
   assemblies:
   - MonoGameECS
   namespace: milk.Core
+  summary: Outline color.
+  example: []
   syntax:
     content: public Color OutlineColor { get; set; }
     parameters: []
@@ -197,16 +209,16 @@ items:
       type: Microsoft.Xna.Framework.Color
     content.vb: Public Property OutlineColor As Color
   overload: milk.Core.Text.OutlineColor*
-- uid: milk.Core.Text.#ctor(System.String,Microsoft.Xna.Framework.Graphics.SpriteFont,Microsoft.Xna.Framework.Vector2,System.Single,System.Nullable{Microsoft.Xna.Framework.Color},System.Int32,System.Nullable{Microsoft.Xna.Framework.Color},milk.Core.Anchor,milk.Core.SceneRenderable)
-  commentId: M:milk.Core.Text.#ctor(System.String,Microsoft.Xna.Framework.Graphics.SpriteFont,Microsoft.Xna.Framework.Vector2,System.Single,System.Nullable{Microsoft.Xna.Framework.Color},System.Int32,System.Nullable{Microsoft.Xna.Framework.Color},milk.Core.Anchor,milk.Core.SceneRenderable)
-  id: '#ctor(System.String,Microsoft.Xna.Framework.Graphics.SpriteFont,Microsoft.Xna.Framework.Vector2,System.Single,System.Nullable{Microsoft.Xna.Framework.Color},System.Int32,System.Nullable{Microsoft.Xna.Framework.Color},milk.Core.Anchor,milk.Core.SceneRenderable)'
+- uid: milk.Core.Text.#ctor(System.String,Microsoft.Xna.Framework.Graphics.SpriteFont,System.Nullable{Microsoft.Xna.Framework.Vector2},System.Single,System.Nullable{Microsoft.Xna.Framework.Color},System.Int32,System.Nullable{Microsoft.Xna.Framework.Color},milk.Core.Anchor,milk.Core.SceneRenderable)
+  commentId: M:milk.Core.Text.#ctor(System.String,Microsoft.Xna.Framework.Graphics.SpriteFont,System.Nullable{Microsoft.Xna.Framework.Vector2},System.Single,System.Nullable{Microsoft.Xna.Framework.Color},System.Int32,System.Nullable{Microsoft.Xna.Framework.Color},milk.Core.Anchor,milk.Core.SceneRenderable)
+  id: '#ctor(System.String,Microsoft.Xna.Framework.Graphics.SpriteFont,System.Nullable{Microsoft.Xna.Framework.Vector2},System.Single,System.Nullable{Microsoft.Xna.Framework.Color},System.Int32,System.Nullable{Microsoft.Xna.Framework.Color},milk.Core.Anchor,milk.Core.SceneRenderable)'
   parent: milk.Core.Text
   langs:
   - csharp
   - vb
-  name: Text(string, SpriteFont, Vector2, float, Color?, int, Color?, Anchor, SceneRenderable?)
-  nameWithType: Text.Text(string, SpriteFont, Vector2, float, Color?, int, Color?, Anchor, SceneRenderable?)
-  fullName: milk.Core.Text.Text(string, Microsoft.Xna.Framework.Graphics.SpriteFont, Microsoft.Xna.Framework.Vector2, float, Microsoft.Xna.Framework.Color?, int, Microsoft.Xna.Framework.Color?, milk.Core.Anchor, milk.Core.SceneRenderable?)
+  name: Text(string, SpriteFont, Vector2?, float, Color?, int, Color?, Anchor, SceneRenderable?)
+  nameWithType: Text.Text(string, SpriteFont, Vector2?, float, Color?, int, Color?, Anchor, SceneRenderable?)
+  fullName: milk.Core.Text.Text(string, Microsoft.Xna.Framework.Graphics.SpriteFont, Microsoft.Xna.Framework.Vector2?, float, Microsoft.Xna.Framework.Color?, int, Microsoft.Xna.Framework.Color?, milk.Core.Anchor, milk.Core.SceneRenderable?)
   type: Constructor
   source:
     remote:
@@ -215,36 +227,47 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: .ctor
     path: Core/Text.cs
-    startLine: 62
+    startLine: 84
   assemblies:
   - MonoGameECS
   namespace: milk.Core
+  summary: Create a new next object.
+  example: []
   syntax:
-    content: public Text(string caption, SpriteFont font, Vector2 position, float alpha = 1, Color? color = null, int outlineWidth = 0, Color? outlineColor = null, Anchor anchor = Anchor.TopLeft, SceneRenderable? parent = null)
+    content: public Text(string caption, SpriteFont font, Vector2? position = null, float alpha = 1, Color? color = null, int outlineWidth = 0, Color? outlineColor = null, Anchor anchor = Anchor.TopLeft, SceneRenderable? parent = null)
     parameters:
     - id: caption
       type: System.String
+      description: The text to display.
     - id: font
       type: Microsoft.Xna.Framework.Graphics.SpriteFont
+      description: The font to use to render the text.
     - id: position
-      type: Microsoft.Xna.Framework.Vector2
+      type: System.Nullable{Microsoft.Xna.Framework.Vector2}
+      description: The (x, y) text position (default = (0,0)).
     - id: alpha
       type: System.Single
+      description: The amount of transparency, between 0 and 1 (default = 1 - fully visible).
     - id: color
       type: System.Nullable{Microsoft.Xna.Framework.Color}
+      description: The text color.
     - id: outlineWidth
       type: System.Int32
+      description: The width of the text outline.
     - id: outlineColor
       type: System.Nullable{Microsoft.Xna.Framework.Color}
+      description: The color of the outline.
     - id: anchor
       type: milk.Core.Anchor
+      description: The anchor point to set the position against (default = top-left).
     - id: parent
       type: milk.Core.SceneRenderable
-    content.vb: Public Sub New(caption As String, font As SpriteFont, position As Vector2, alpha As Single = 1, color As Color? = Nothing, outlineWidth As Integer = 0, outlineColor As Color? = Nothing, anchor As Anchor = Anchor.TopLeft, parent As SceneRenderable = Nothing)
+      description: The parent SceneRenderable, for setting relative position (default = null).
+    content.vb: Public Sub New(caption As String, font As SpriteFont, position As Vector2? = Nothing, alpha As Single = 1, color As Color? = Nothing, outlineWidth As Integer = 0, outlineColor As Color? = Nothing, anchor As Anchor = Anchor.TopLeft, parent As SceneRenderable = Nothing)
   overload: milk.Core.Text.#ctor*
-  nameWithType.vb: Text.New(String, SpriteFont, Vector2, Single, Color?, Integer, Color?, Anchor, SceneRenderable)
-  fullName.vb: milk.Core.Text.New(String, Microsoft.Xna.Framework.Graphics.SpriteFont, Microsoft.Xna.Framework.Vector2, Single, Microsoft.Xna.Framework.Color?, Integer, Microsoft.Xna.Framework.Color?, milk.Core.Anchor, milk.Core.SceneRenderable)
-  name.vb: New(String, SpriteFont, Vector2, Single, Color?, Integer, Color?, Anchor, SceneRenderable)
+  nameWithType.vb: Text.New(String, SpriteFont, Vector2?, Single, Color?, Integer, Color?, Anchor, SceneRenderable)
+  fullName.vb: milk.Core.Text.New(String, Microsoft.Xna.Framework.Graphics.SpriteFont, Microsoft.Xna.Framework.Vector2?, Single, Microsoft.Xna.Framework.Color?, Integer, Microsoft.Xna.Framework.Color?, milk.Core.Anchor, milk.Core.SceneRenderable)
+  name.vb: New(String, SpriteFont, Vector2?, Single, Color?, Integer, Color?, Anchor, SceneRenderable)
 - uid: milk.Core.Text.GenerateTextWidth(System.String,Microsoft.Xna.Framework.Graphics.SpriteFont,System.Int32)
   commentId: M:milk.Core.Text.GenerateTextWidth(System.String,Microsoft.Xna.Framework.Graphics.SpriteFont,System.Int32)
   id: GenerateTextWidth(System.String,Microsoft.Xna.Framework.Graphics.SpriteFont,System.Int32)
@@ -263,7 +286,7 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: GenerateTextWidth
     path: Core/Text.cs
-    startLine: 83
+    startLine: 105
   assemblies:
   - MonoGameECS
   namespace: milk.Core
@@ -301,7 +324,7 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: Draw
     path: Core/Text.cs
-    startLine: 91
+    startLine: 113
   assemblies:
   - MonoGameECS
   namespace: milk.Core
@@ -801,20 +824,30 @@ references:
   fullName: milk.Core.Text.OutlineColor
 - uid: milk.Core.Text.#ctor*
   commentId: Overload:milk.Core.Text.#ctor
-  href: milk.Core.Text.html#milk_Core_Text__ctor_System_String_Microsoft_Xna_Framework_Graphics_SpriteFont_Microsoft_Xna_Framework_Vector2_System_Single_System_Nullable_Microsoft_Xna_Framework_Color__System_Int32_System_Nullable_Microsoft_Xna_Framework_Color__milk_Core_Anchor_milk_Core_SceneRenderable_
+  href: milk.Core.Text.html#milk_Core_Text__ctor_System_String_Microsoft_Xna_Framework_Graphics_SpriteFont_System_Nullable_Microsoft_Xna_Framework_Vector2__System_Single_System_Nullable_Microsoft_Xna_Framework_Color__System_Int32_System_Nullable_Microsoft_Xna_Framework_Color__milk_Core_Anchor_milk_Core_SceneRenderable_
   name: Text
   nameWithType: Text.Text
   fullName: milk.Core.Text.Text
   nameWithType.vb: Text.New
   fullName.vb: milk.Core.Text.New
   name.vb: New
-- uid: Microsoft.Xna.Framework.Vector2
-  commentId: T:Microsoft.Xna.Framework.Vector2
-  parent: Microsoft.Xna.Framework
-  isExternal: true
-  name: Vector2
-  nameWithType: Vector2
-  fullName: Microsoft.Xna.Framework.Vector2
+- uid: System.Nullable{Microsoft.Xna.Framework.Vector2}
+  commentId: T:System.Nullable{Microsoft.Xna.Framework.Vector2}
+  parent: System
+  definition: System.Nullable`1
+  name: Vector2?
+  nameWithType: Vector2?
+  fullName: Microsoft.Xna.Framework.Vector2?
+  spec.csharp:
+  - uid: Microsoft.Xna.Framework.Vector2
+    name: Vector2
+    isExternal: true
+  - name: '?'
+  spec.vb:
+  - uid: Microsoft.Xna.Framework.Vector2
+    name: Vector2
+    isExternal: true
+  - name: '?'
 - uid: System.Single
   commentId: T:System.Single
   parent: System
@@ -884,6 +917,13 @@ references:
   name: GenerateTextWidth
   nameWithType: Text.GenerateTextWidth
   fullName: milk.Core.Text.GenerateTextWidth
+- uid: Microsoft.Xna.Framework.Vector2
+  commentId: T:Microsoft.Xna.Framework.Vector2
+  parent: Microsoft.Xna.Framework
+  isExternal: true
+  name: Vector2
+  nameWithType: Vector2
+  fullName: Microsoft.Xna.Framework.Vector2
 - uid: milk.Core.SceneRenderable.Draw
   commentId: M:milk.Core.SceneRenderable.Draw
   parent: milk.Core.SceneRenderable

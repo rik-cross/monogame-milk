@@ -50,10 +50,15 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: EasingFunctions
     path: Core/EasingFunctions.cs
-    startLine: 4
+    startLine: 8
   assemblies:
   - MonoGameECS
   namespace: milk.Core
+  summary: >-
+    Describes a set of easing functions to describe
+
+    (SceneRenderable) movement or (scene) transitions.
+  example: []
   syntax:
     content: public static class EasingFunctions
     content.vb: Public Module EasingFunctions
@@ -85,7 +90,7 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: Linear
     path: Core/EasingFunctions.cs
-    startLine: 16
+    startLine: 20
   assemblies:
   - MonoGameECS
   namespace: milk.Core
@@ -121,7 +126,7 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: SineEaseIn
     path: Core/EasingFunctions.cs
-    startLine: 24
+    startLine: 28
   assemblies:
   - MonoGameECS
   namespace: milk.Core
@@ -157,7 +162,7 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: SineEaseOut
     path: Core/EasingFunctions.cs
-    startLine: 32
+    startLine: 36
   assemblies:
   - MonoGameECS
   namespace: milk.Core
@@ -193,7 +198,7 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: SineEaseInOut
     path: Core/EasingFunctions.cs
-    startLine: 40
+    startLine: 44
   assemblies:
   - MonoGameECS
   namespace: milk.Core
@@ -229,7 +234,7 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: QuadEaseIn
     path: Core/EasingFunctions.cs
-    startLine: 48
+    startLine: 52
   assemblies:
   - MonoGameECS
   namespace: milk.Core
@@ -265,7 +270,7 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: QuadEaseOut
     path: Core/EasingFunctions.cs
-    startLine: 56
+    startLine: 60
   assemblies:
   - MonoGameECS
   namespace: milk.Core
@@ -301,7 +306,7 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: QuadEaseInOut
     path: Core/EasingFunctions.cs
-    startLine: 64
+    startLine: 68
   assemblies:
   - MonoGameECS
   namespace: milk.Core
@@ -337,7 +342,7 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: CubicEaseIn
     path: Core/EasingFunctions.cs
-    startLine: 75
+    startLine: 79
   assemblies:
   - MonoGameECS
   namespace: milk.Core
@@ -373,7 +378,7 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: CubicEaseOut
     path: Core/EasingFunctions.cs
-    startLine: 83
+    startLine: 87
   assemblies:
   - MonoGameECS
   namespace: milk.Core
@@ -409,7 +414,7 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: CubicEaseInOut
     path: Core/EasingFunctions.cs
-    startLine: 92
+    startLine: 96
   assemblies:
   - MonoGameECS
   namespace: milk.Core
@@ -445,7 +450,7 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: QuartEaseIn
     path: Core/EasingFunctions.cs
-    startLine: 103
+    startLine: 107
   assemblies:
   - MonoGameECS
   namespace: milk.Core
@@ -481,7 +486,7 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: QuartEaseOut
     path: Core/EasingFunctions.cs
-    startLine: 111
+    startLine: 115
   assemblies:
   - MonoGameECS
   namespace: milk.Core
@@ -517,7 +522,7 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: QuartEaseInOut
     path: Core/EasingFunctions.cs
-    startLine: 120
+    startLine: 124
   assemblies:
   - MonoGameECS
   namespace: milk.Core
@@ -553,7 +558,7 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: QuintEaseIn
     path: Core/EasingFunctions.cs
-    startLine: 131
+    startLine: 135
   assemblies:
   - MonoGameECS
   namespace: milk.Core
@@ -589,7 +594,7 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: QuintEaseOut
     path: Core/EasingFunctions.cs
-    startLine: 139
+    startLine: 143
   assemblies:
   - MonoGameECS
   namespace: milk.Core
@@ -625,7 +630,7 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: QuintEaseInOut
     path: Core/EasingFunctions.cs
-    startLine: 148
+    startLine: 152
   assemblies:
   - MonoGameECS
   namespace: milk.Core
@@ -661,7 +666,7 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: ExpoEaseIn
     path: Core/EasingFunctions.cs
-    startLine: 159
+    startLine: 163
   assemblies:
   - MonoGameECS
   namespace: milk.Core
@@ -697,7 +702,7 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: ExpoEaseOut
     path: Core/EasingFunctions.cs
-    startLine: 167
+    startLine: 171
   assemblies:
   - MonoGameECS
   namespace: milk.Core
@@ -733,7 +738,7 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: ExpoEaseInOut
     path: Core/EasingFunctions.cs
-    startLine: 175
+    startLine: 179
   assemblies:
   - MonoGameECS
   namespace: milk.Core
@@ -769,7 +774,7 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: CircEaseIn
     path: Core/EasingFunctions.cs
-    startLine: 188
+    startLine: 192
   assemblies:
   - MonoGameECS
   namespace: milk.Core
@@ -805,7 +810,7 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: CircEaseOut
     path: Core/EasingFunctions.cs
-    startLine: 196
+    startLine: 200
   assemblies:
   - MonoGameECS
   namespace: milk.Core
@@ -841,7 +846,7 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: CircEaseInOut
     path: Core/EasingFunctions.cs
-    startLine: 205
+    startLine: 209
   assemblies:
   - MonoGameECS
   namespace: milk.Core
@@ -877,7 +882,7 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: BackEaseIn
     path: Core/EasingFunctions.cs
-    startLine: 216
+    startLine: 220
   assemblies:
   - MonoGameECS
   namespace: milk.Core
@@ -913,7 +918,7 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: BackEaseOut
     path: Core/EasingFunctions.cs
-    startLine: 225
+    startLine: 229
   assemblies:
   - MonoGameECS
   namespace: milk.Core
@@ -949,7 +954,7 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: BackEaseInOut
     path: Core/EasingFunctions.cs
-    startLine: 235
+    startLine: 239
   assemblies:
   - MonoGameECS
   namespace: milk.Core
@@ -985,7 +990,7 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: ElasticEaseIn
     path: Core/EasingFunctions.cs
-    startLine: 247
+    startLine: 251
   assemblies:
   - MonoGameECS
   namespace: milk.Core
@@ -1021,7 +1026,7 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: ElasticEaseOut
     path: Core/EasingFunctions.cs
-    startLine: 259
+    startLine: 263
   assemblies:
   - MonoGameECS
   namespace: milk.Core
@@ -1057,7 +1062,7 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: ElasticEaseInOut
     path: Core/EasingFunctions.cs
-    startLine: 270
+    startLine: 274
   assemblies:
   - MonoGameECS
   namespace: milk.Core
@@ -1093,7 +1098,7 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: BounceEaseIn
     path: Core/EasingFunctions.cs
-    startLine: 293
+    startLine: 297
   assemblies:
   - MonoGameECS
   namespace: milk.Core
@@ -1129,7 +1134,7 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: BounceEaseOut
     path: Core/EasingFunctions.cs
-    startLine: 301
+    startLine: 305
   assemblies:
   - MonoGameECS
   namespace: milk.Core
@@ -1165,7 +1170,7 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: BounceEaseInOut
     path: Core/EasingFunctions.cs
-    startLine: 327
+    startLine: 331
   assemblies:
   - MonoGameECS
   namespace: milk.Core

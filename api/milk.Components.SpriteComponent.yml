@@ -28,7 +28,7 @@ items:
   assemblies:
   - MonoGameECS
   namespace: milk.Components
-  summary: Associates one of more textures (in a `Sprite`) with a state.
+  summary: Associates one or more textures (in a `Sprite`) with a state.
   example: []
   syntax:
     content: 'public class SpriteComponent : Component'

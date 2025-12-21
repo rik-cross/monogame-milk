@@ -28,10 +28,12 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: Anchor
     path: Core/SceneRenderable.cs
-    startLine: 21
+    startLine: 13
   assemblies:
   - MonoGameECS
   namespace: milk.Core
+  summary: The part of a SceneRenderable to set the position against.
+  example: []
   syntax:
     content: public enum Anchor
     content.vb: Public Enum Anchor
@@ -53,7 +55,7 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: TopLeft
     path: Core/SceneRenderable.cs
-    startLine: 23
+    startLine: 15
   assemblies:
   - MonoGameECS
   namespace: milk.Core
@@ -79,7 +81,7 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: TopCenter
     path: Core/SceneRenderable.cs
-    startLine: 23
+    startLine: 15
   assemblies:
   - MonoGameECS
   namespace: milk.Core
@@ -105,7 +107,7 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: TopRight
     path: Core/SceneRenderable.cs
-    startLine: 23
+    startLine: 15
   assemblies:
   - MonoGameECS
   namespace: milk.Core
@@ -131,7 +133,7 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: MiddleLeft
     path: Core/SceneRenderable.cs
-    startLine: 24
+    startLine: 16
   assemblies:
   - MonoGameECS
   namespace: milk.Core
@@ -157,7 +159,7 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: MiddleCenter
     path: Core/SceneRenderable.cs
-    startLine: 24
+    startLine: 16
   assemblies:
   - MonoGameECS
   namespace: milk.Core
@@ -183,7 +185,7 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: MiddleRight
     path: Core/SceneRenderable.cs
-    startLine: 24
+    startLine: 16
   assemblies:
   - MonoGameECS
   namespace: milk.Core
@@ -209,7 +211,7 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: BottomLeft
     path: Core/SceneRenderable.cs
-    startLine: 25
+    startLine: 17
   assemblies:
   - MonoGameECS
   namespace: milk.Core
@@ -235,7 +237,7 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: BottomCenter
     path: Core/SceneRenderable.cs
-    startLine: 25
+    startLine: 17
   assemblies:
   - MonoGameECS
   namespace: milk.Core
@@ -261,7 +263,7 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: BottomRight
     path: Core/SceneRenderable.cs
-    startLine: 25
+    startLine: 17
   assemblies:
   - MonoGameECS
   namespace: milk.Core

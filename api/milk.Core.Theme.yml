@@ -23,7 +23,7 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: Theme
     path: Core/Theme.cs
-    startLine: 2
+    startLine: 8
   assemblies:
   - MonoGameECS
   namespace: milk.Core
@@ -58,7 +58,7 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: consoleOutputLength
     path: Core/Theme.cs
-    startLine: 3
+    startLine: 9
   assemblies:
   - MonoGameECS
   namespace: milk.Core
@@ -85,7 +85,7 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: valuePosition
     path: Core/Theme.cs
-    startLine: 4
+    startLine: 10
   assemblies:
   - MonoGameECS
   namespace: milk.Core
@@ -112,7 +112,7 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: CreateConsoleTitle
     path: Core/Theme.cs
-    startLine: 5
+    startLine: 11
   assemblies:
   - MonoGameECS
   namespace: milk.Core
@@ -146,7 +146,7 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: PrintConsoleVar
     path: Core/Theme.cs
-    startLine: 12
+    startLine: 18
   assemblies:
   - MonoGameECS
   namespace: milk.Core
