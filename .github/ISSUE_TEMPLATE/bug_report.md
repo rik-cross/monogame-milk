@@ -1,6 +1,6 @@
 ---
 name: Bug report
-about: Create a report to help us improve
+about: Report a bug to help us improve
 title: ''
 labels: bug
 assignees: ''
@@ -8,14 +8,11 @@ assignees: ''
 ---
 
 ---
-name: Bug Report
-about: Report a bug to help improve milk.
-title: "[BUG] "
-labels: bug
+[title]
 ---
 
 ### Environment Details
-**Milk Version:** **Operating System:** ---
+**milk Version:** **Operating System:** ---
 
 ### Bug Description
 A clear and concise description of what the bug is.
