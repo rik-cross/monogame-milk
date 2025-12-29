@@ -44,6 +44,9 @@ items:
   - uid: milk.Core.EngineGlobals
     name: EngineGlobals
     type: Class
+  - uid: milk.Core.EngineResourceManager
+    name: EngineResourceManager
+    type: Class
   - uid: milk.Core.Entity
     name: Entity
     type: Class
@@ -98,5 +101,25 @@ items:
     type: Class
   - uid: milk.Transitions.TransitionFadeToBlack
     name: TransitionFadeToBlack
+    type: Class
+- uid: milk.UI
+  name: milk.UI
+  type: Namespace
+  items:
+  - uid: milk.UI.Button
+    name: Button
+    type: Class
+  - uid: milk.UI.Tween
+    name: Tween
+    type: Class
+  - uid: milk.UI.UIElement
+    name: UIElement
+    type: Class
+- uid: mill.Core
+  name: mill.Core
+  type: Namespace
+  items:
+  - uid: mill.Core.Animator
+    name: Animator
     type: Class
 memberLayout: SamePage

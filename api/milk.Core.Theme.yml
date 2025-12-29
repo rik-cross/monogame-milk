@@ -25,7 +25,7 @@ items:
     path: Core/Theme.cs
     startLine: 8
   assemblies:
-  - MonoGameECS
+  - milk
   namespace: milk.Core
   syntax:
     content: public static class Theme
@@ -60,7 +60,7 @@ items:
     path: Core/Theme.cs
     startLine: 9
   assemblies:
-  - MonoGameECS
+  - milk
   namespace: milk.Core
   syntax:
     content: public static int consoleOutputLength
@@ -87,7 +87,7 @@ items:
     path: Core/Theme.cs
     startLine: 10
   assemblies:
-  - MonoGameECS
+  - milk
   namespace: milk.Core
   syntax:
     content: public static int valuePosition
@@ -114,7 +114,7 @@ items:
     path: Core/Theme.cs
     startLine: 11
   assemblies:
-  - MonoGameECS
+  - milk
   namespace: milk.Core
   syntax:
     content: public static string CreateConsoleTitle(string title)
@@ -148,7 +148,7 @@ items:
     path: Core/Theme.cs
     startLine: 18
   assemblies:
-  - MonoGameECS
+  - milk
   namespace: milk.Core
   syntax:
     content: public static string PrintConsoleVar(string name, string value)

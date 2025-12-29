@@ -30,7 +30,7 @@ items:
     path: Core/SceneRenderable.cs
     startLine: 13
   assemblies:
-  - MonoGameECS
+  - milk
   namespace: milk.Core
   summary: The part of a SceneRenderable to set the position against.
   example: []
@@ -57,7 +57,7 @@ items:
     path: Core/SceneRenderable.cs
     startLine: 15
   assemblies:
-  - MonoGameECS
+  - milk
   namespace: milk.Core
   syntax:
     content: TopLeft = 0
@@ -83,7 +83,7 @@ items:
     path: Core/SceneRenderable.cs
     startLine: 15
   assemblies:
-  - MonoGameECS
+  - milk
   namespace: milk.Core
   syntax:
     content: TopCenter = 1
@@ -109,7 +109,7 @@ items:
     path: Core/SceneRenderable.cs
     startLine: 15
   assemblies:
-  - MonoGameECS
+  - milk
   namespace: milk.Core
   syntax:
     content: TopRight = 2
@@ -135,7 +135,7 @@ items:
     path: Core/SceneRenderable.cs
     startLine: 16
   assemblies:
-  - MonoGameECS
+  - milk
   namespace: milk.Core
   syntax:
     content: MiddleLeft = 3
@@ -161,7 +161,7 @@ items:
     path: Core/SceneRenderable.cs
     startLine: 16
   assemblies:
-  - MonoGameECS
+  - milk
   namespace: milk.Core
   syntax:
     content: MiddleCenter = 4
@@ -187,7 +187,7 @@ items:
     path: Core/SceneRenderable.cs
     startLine: 16
   assemblies:
-  - MonoGameECS
+  - milk
   namespace: milk.Core
   syntax:
     content: MiddleRight = 5
@@ -213,7 +213,7 @@ items:
     path: Core/SceneRenderable.cs
     startLine: 17
   assemblies:
-  - MonoGameECS
+  - milk
   namespace: milk.Core
   syntax:
     content: BottomLeft = 6
@@ -239,7 +239,7 @@ items:
     path: Core/SceneRenderable.cs
     startLine: 17
   assemblies:
-  - MonoGameECS
+  - milk
   namespace: milk.Core
   syntax:
     content: BottomCenter = 7
@@ -265,7 +265,7 @@ items:
     path: Core/SceneRenderable.cs
     startLine: 17
   assemblies:
-  - MonoGameECS
+  - milk
   namespace: milk.Core
   syntax:
     content: BottomRight = 8

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "ZMxI+NX6W6ZMzToI2rjXNcVJ6jCYbrun8GEE2Nfy8EebKUiYgOGusBX4xgB1h5DeBvtWEVRaMmQj6uThoWJRzQ==",
+  "dgSpecHash": "+j1bwQ2J0lQHYwZX/wd/UxqCZGdIBDACbAocMk3HYVO4l/mBzXMtoai9cDy51yHk4cJhoWthznXwa6nPOqcTfw==",
   "success": true,
-  "projectFilePath": "/home/rik/Documents/MonoGameEngineSolution/MonoGameECS/MonoGameECS.csproj",
+  "projectFilePath": "/home/rik/Documents/MonoGameEngineSolution/milk/milk.csproj",
   "expectedPackageFiles": [
     "/home/rik/.nuget/packages/autofac/5.2.0/autofac.5.2.0.nupkg.sha512",
     "/home/rik/.nuget/packages/monogame.extended/4.0.3/monogame.extended.4.0.3.nupkg.sha512",

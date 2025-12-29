@@ -22,7 +22,7 @@ items:
     path: Core/EngineGlobals.cs
     startLine: 6
   assemblies:
-  - MonoGameECS
+  - milk
   namespace: milk.Core
   syntax:
     content: public static class EngineGlobals
@@ -57,7 +57,7 @@ items:
     path: Core/EngineGlobals.cs
     startLine: 8
   assemblies:
-  - MonoGameECS
+  - milk
   namespace: milk.Core
   syntax:
     content: public static Game game

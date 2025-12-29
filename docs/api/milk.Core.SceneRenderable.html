@@ -6,7 +6,7 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <meta name="title" content="Class SceneRenderable | milk ">
       
-      <meta name="description" content="Used as a superclass for images, text, etc.">
+      <meta name="description" content="Used as a superclass for images, text, UI, etc.">
       <link rel="icon" href="../images/favicon.ico">
       <link rel="stylesheet" href="../public/docfx.min.css">
       <link rel="stylesheet" href="../public/main.css">
@@ -94,10 +94,10 @@ Class SceneRenderable  <a class="header-action link-secondary" title="View sourc
 
   <div class="facts text-secondary">
     <dl><dt>Namespace</dt><dd><a class="xref" href="milk.html">milk</a>.<a class="xref" href="milk.Core.html">Core</a></dd></dl>
-  <dl><dt>Assembly</dt><dd>MonoGameECS.dll</dd></dl>
+  <dl><dt>Assembly</dt><dd>milk.dll</dd></dl>
   </div>
 
-  <div class="markdown summary"><p>Used as a superclass for images, text, etc.</p>
+  <div class="markdown summary"><p>Used as a superclass for images, text, UI, etc.</p>
 </div>
   <div class="markdown conceptual"></div>
 
@@ -122,6 +122,7 @@ Class SceneRenderable  <a class="header-action link-secondary" title="View sourc
     <dd>
       <div><a class="xref" href="milk.Core.Image.html">Image</a></div>
       <div><a class="xref" href="milk.Core.Text.html">Text</a></div>
+      <div><a class="xref" href="milk.UI.UIElement.html">UIElement</a></div>
     </dd>
   </dl>
 
@@ -255,6 +256,166 @@ Class SceneRenderable  <a class="header-action link-secondary" title="View sourc
 
 
 
+  <a id="milk_Core_SceneRenderable_Bottom_" data-uid="milk.Core.SceneRenderable.Bottom*"></a>
+
+  <h3 id="milk_Core_SceneRenderable_Bottom" data-uid="milk.Core.SceneRenderable.Bottom">
+  Bottom
+  <a class="header-action link-secondary" title="View source" href="https://github.com/rik-cross/monogame-milk/blob/main/Core/SceneRenderable.cs/#L140"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>The bottom (y + height).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float Bottom { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="milk_Core_SceneRenderable_Center_" data-uid="milk.Core.SceneRenderable.Center*"></a>
+
+  <h3 id="milk_Core_SceneRenderable_Center" data-uid="milk.Core.SceneRenderable.Center">
+  Center
+  <a class="header-action link-secondary" title="View source" href="https://github.com/rik-cross/monogame-milk/blob/main/Core/SceneRenderable.cs/#L158"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>The center (x + 1/2 width).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float Center { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="milk_Core_SceneRenderable_Height_" data-uid="milk.Core.SceneRenderable.Height*"></a>
+
+  <h3 id="milk_Core_SceneRenderable_Height" data-uid="milk.Core.SceneRenderable.Height">
+  Height
+  <a class="header-action link-secondary" title="View source" href="https://github.com/rik-cross/monogame-milk/blob/main/Core/SceneRenderable.cs/#L95"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>The height.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float Height { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="milk_Core_SceneRenderable_Left_" data-uid="milk.Core.SceneRenderable.Left*"></a>
+
+  <h3 id="milk_Core_SceneRenderable_Left" data-uid="milk.Core.SceneRenderable.Left">
+  Left
+  <a class="header-action link-secondary" title="View source" href="https://github.com/rik-cross/monogame-milk/blob/main/Core/SceneRenderable.cs/#L149"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>The left (x) position.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float Left { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="milk_Core_SceneRenderable_Middle_" data-uid="milk.Core.SceneRenderable.Middle*"></a>
+
+  <h3 id="milk_Core_SceneRenderable_Middle" data-uid="milk.Core.SceneRenderable.Middle">
+  Middle
+  <a class="header-action link-secondary" title="View source" href="https://github.com/rik-cross/monogame-milk/blob/main/Core/SceneRenderable.cs/#L131"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>The middle (y + 1/2 height).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float Middle { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="milk_Core_SceneRenderable_Position_" data-uid="milk.Core.SceneRenderable.Position*"></a>
 
   <h3 id="milk_Core_SceneRenderable_Position" data-uid="milk.Core.SceneRenderable.Position">
@@ -276,6 +437,38 @@ Class SceneRenderable  <a class="header-action link-secondary" title="View sourc
   <h4 class="section">Property Value</h4>
   <dl class="parameters">
     <dt><span class="xref">Vector2</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="milk_Core_SceneRenderable_Right_" data-uid="milk.Core.SceneRenderable.Right*"></a>
+
+  <h3 id="milk_Core_SceneRenderable_Right" data-uid="milk.Core.SceneRenderable.Right">
+  Right
+  <a class="header-action link-secondary" title="View source" href="https://github.com/rik-cross/monogame-milk/blob/main/Core/SceneRenderable.cs/#L167"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>The right (x + width).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float Right { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
     <dd></dd>
   </dl>
 
@@ -317,6 +510,165 @@ Class SceneRenderable  <a class="header-action link-secondary" title="View sourc
 
 
 
+  <a id="milk_Core_SceneRenderable_Top_" data-uid="milk.Core.SceneRenderable.Top*"></a>
+
+  <h3 id="milk_Core_SceneRenderable_Top" data-uid="milk.Core.SceneRenderable.Top">
+  Top
+  <a class="header-action link-secondary" title="View source" href="https://github.com/rik-cross/monogame-milk/blob/main/Core/SceneRenderable.cs/#L122"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>The top (y) position.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float Top { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="milk_Core_SceneRenderable_Visible_" data-uid="milk.Core.SceneRenderable.Visible*"></a>
+
+  <h3 id="milk_Core_SceneRenderable_Visible" data-uid="milk.Core.SceneRenderable.Visible">
+  Visible
+  <a class="header-action link-secondary" title="View source" href="https://github.com/rik-cross/monogame-milk/blob/main/Core/SceneRenderable.cs/#L31"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool Visible { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="milk_Core_SceneRenderable_Width_" data-uid="milk.Core.SceneRenderable.Width*"></a>
+
+  <h3 id="milk_Core_SceneRenderable_Width" data-uid="milk.Core.SceneRenderable.Width">
+  Width
+  <a class="header-action link-secondary" title="View source" href="https://github.com/rik-cross/monogame-milk/blob/main/Core/SceneRenderable.cs/#L86"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>The width.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float Width { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="milk_Core_SceneRenderable_X_" data-uid="milk.Core.SceneRenderable.X*"></a>
+
+  <h3 id="milk_Core_SceneRenderable_X" data-uid="milk.Core.SceneRenderable.X">
+  X
+  <a class="header-action link-secondary" title="View source" href="https://github.com/rik-cross/monogame-milk/blob/main/Core/SceneRenderable.cs/#L104"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>The x position.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float X { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="milk_Core_SceneRenderable_Y_" data-uid="milk.Core.SceneRenderable.Y*"></a>
+
+  <h3 id="milk_Core_SceneRenderable_Y" data-uid="milk.Core.SceneRenderable.Y">
+  Y
+  <a class="header-action link-secondary" title="View source" href="https://github.com/rik-cross/monogame-milk/blob/main/Core/SceneRenderable.cs/#L113"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>The y position.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float Y { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <h2 class="section" id="methods">Methods
 </h2>
 
@@ -325,14 +677,14 @@ Class SceneRenderable  <a class="header-action link-secondary" title="View sourc
 
   <h3 id="milk_Core_SceneRenderable_CalculateTopLeftPositionFromAnchor_Microsoft_Xna_Framework_Vector2_" data-uid="milk.Core.SceneRenderable.CalculateTopLeftPositionFromAnchor(Microsoft.Xna.Framework.Vector2)">
   CalculateTopLeftPositionFromAnchor(Vector2)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/rik-cross/monogame-milk/blob/main/Core/SceneRenderable.cs/#L48"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/rik-cross/monogame-milk/blob/main/Core/SceneRenderable.cs/#L52"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">protected Vector2 CalculateTopLeftPositionFromAnchor(Vector2 position)</code></pre>
+    <pre><code class="lang-csharp hljs">public Vector2 CalculateTopLeftPositionFromAnchor(Vector2 position)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
@@ -361,7 +713,7 @@ Class SceneRenderable  <a class="header-action link-secondary" title="View sourc
 
   <h3 id="milk_Core_SceneRenderable_Draw" data-uid="milk.Core.SceneRenderable.Draw">
   Draw()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/rik-cross/monogame-milk/blob/main/Core/SceneRenderable.cs/#L73"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/rik-cross/monogame-milk/blob/main/Core/SceneRenderable.cs/#L77"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -387,14 +739,14 @@ Class SceneRenderable  <a class="header-action link-secondary" title="View sourc
 
   <h3 id="milk_Core_SceneRenderable_GetPositionIncludingParent_Microsoft_Xna_Framework_Vector2_" data-uid="milk.Core.SceneRenderable.GetPositionIncludingParent(Microsoft.Xna.Framework.Vector2)">
   GetPositionIncludingParent(Vector2)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/rik-cross/monogame-milk/blob/main/Core/SceneRenderable.cs/#L65"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/rik-cross/monogame-milk/blob/main/Core/SceneRenderable.cs/#L69"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">protected Vector2 GetPositionIncludingParent(Vector2 position)</code></pre>
+    <pre><code class="lang-csharp hljs">public Vector2 GetPositionIncludingParent(Vector2 position)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>

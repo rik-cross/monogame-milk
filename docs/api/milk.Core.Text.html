@@ -94,7 +94,7 @@ Class Text  <a class="header-action link-secondary" title="View source" href="ht
 
   <div class="facts text-secondary">
     <dl><dt>Namespace</dt><dd><a class="xref" href="milk.html">milk</a>.<a class="xref" href="milk.Core.html">Core</a></dd></dl>
-  <dl><dt>Assembly</dt><dd>MonoGameECS.dll</dd></dl>
+  <dl><dt>Assembly</dt><dd>milk.dll</dd></dl>
   </div>
 
   <div class="markdown summary"><p>Displays text in a scene, in the font specified.</p>
@@ -138,10 +138,43 @@ Class Text  <a class="header-action link-secondary" title="View source" href="ht
       <a class="xref" href="milk.Core.SceneRenderable.html#milk_Core_SceneRenderable_Parent">SceneRenderable.Parent</a>
     </div>
     <div>
+      <a class="xref" href="milk.Core.SceneRenderable.html#milk_Core_SceneRenderable_Visible">SceneRenderable.Visible</a>
+    </div>
+    <div>
       <a class="xref" href="milk.Core.SceneRenderable.html#milk_Core_SceneRenderable_CalculateTopLeftPositionFromAnchor_Microsoft_Xna_Framework_Vector2_">SceneRenderable.CalculateTopLeftPositionFromAnchor(Vector2)</a>
     </div>
     <div>
       <a class="xref" href="milk.Core.SceneRenderable.html#milk_Core_SceneRenderable_GetPositionIncludingParent_Microsoft_Xna_Framework_Vector2_">SceneRenderable.GetPositionIncludingParent(Vector2)</a>
+    </div>
+    <div>
+      <a class="xref" href="milk.Core.SceneRenderable.html#milk_Core_SceneRenderable_Width">SceneRenderable.Width</a>
+    </div>
+    <div>
+      <a class="xref" href="milk.Core.SceneRenderable.html#milk_Core_SceneRenderable_Height">SceneRenderable.Height</a>
+    </div>
+    <div>
+      <a class="xref" href="milk.Core.SceneRenderable.html#milk_Core_SceneRenderable_X">SceneRenderable.X</a>
+    </div>
+    <div>
+      <a class="xref" href="milk.Core.SceneRenderable.html#milk_Core_SceneRenderable_Y">SceneRenderable.Y</a>
+    </div>
+    <div>
+      <a class="xref" href="milk.Core.SceneRenderable.html#milk_Core_SceneRenderable_Top">SceneRenderable.Top</a>
+    </div>
+    <div>
+      <a class="xref" href="milk.Core.SceneRenderable.html#milk_Core_SceneRenderable_Middle">SceneRenderable.Middle</a>
+    </div>
+    <div>
+      <a class="xref" href="milk.Core.SceneRenderable.html#milk_Core_SceneRenderable_Bottom">SceneRenderable.Bottom</a>
+    </div>
+    <div>
+      <a class="xref" href="milk.Core.SceneRenderable.html#milk_Core_SceneRenderable_Left">SceneRenderable.Left</a>
+    </div>
+    <div>
+      <a class="xref" href="milk.Core.SceneRenderable.html#milk_Core_SceneRenderable_Center">SceneRenderable.Center</a>
+    </div>
+    <div>
+      <a class="xref" href="milk.Core.SceneRenderable.html#milk_Core_SceneRenderable_Right">SceneRenderable.Right</a>
     </div>
     <div>
       <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
@@ -178,7 +211,7 @@ Class Text  <a class="header-action link-secondary" title="View source" href="ht
   <a id="milk_Core_Text__ctor_" data-uid="milk.Core.Text.#ctor*"></a>
 
   <h3 id="milk_Core_Text__ctor_System_String_Microsoft_Xna_Framework_Graphics_SpriteFont_System_Nullable_Microsoft_Xna_Framework_Vector2__System_Single_System_Nullable_Microsoft_Xna_Framework_Color__System_Int32_System_Nullable_Microsoft_Xna_Framework_Color__milk_Core_Anchor_milk_Core_SceneRenderable_" data-uid="milk.Core.Text.#ctor(System.String,Microsoft.Xna.Framework.Graphics.SpriteFont,System.Nullable{Microsoft.Xna.Framework.Vector2},System.Single,System.Nullable{Microsoft.Xna.Framework.Color},System.Int32,System.Nullable{Microsoft.Xna.Framework.Color},milk.Core.Anchor,milk.Core.SceneRenderable)">
-  Text(string, SpriteFont, Vector2?, float, Color?, int, Color?, Anchor, SceneRenderable?)
+  Text(string, SpriteFont?, Vector2?, float, Color?, int, Color?, Anchor, SceneRenderable?)
   <a class="header-action link-secondary" title="View source" href="https://github.com/rik-cross/monogame-milk/blob/main/Core/Text.cs/#L85"><i class="bi bi-code-slash"></i></a>
   </h3>
 
@@ -187,7 +220,7 @@ Class Text  <a class="header-action link-secondary" title="View source" href="ht
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public Text(string caption, SpriteFont font, Vector2? position = null, float alpha = 1, Color? color = null, int outlineWidth = 0, Color? outlineColor = null, Anchor anchor = Anchor.TopLeft, SceneRenderable? parent = null)</code></pre>
+    <pre><code class="lang-csharp hljs">public Text(string caption, SpriteFont? font = null, Vector2? position = null, float alpha = 1, Color? color = null, int outlineWidth = 0, Color? outlineColor = null, Anchor anchor = Anchor.TopLeft, SceneRenderable? parent = null)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
@@ -196,7 +229,7 @@ Class Text  <a class="header-action link-secondary" title="View source" href="ht
     <dd><p>The text to display.</p>
 </dd>
     <dt><code>font</code> <span class="xref">SpriteFont</span></dt>
-    <dd><p>The font to use to render the text.</p>
+    <dd><p>The font to use to render the text (default = null - FontSmall).</p>
 </dd>
     <dt><code>position</code> <span class="xref">Vector2</span>?</dt>
     <dd><p>The (x, y) text position (default = (0,0)).</p>

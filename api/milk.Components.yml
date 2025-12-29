@@ -18,7 +18,7 @@ items:
   fullName: milk.Components
   type: Namespace
   assemblies:
-  - MonoGameECS
+  - milk
 references:
 - uid: milk.Components.ColliderComponent
   commentId: T:milk.Components.ColliderComponent

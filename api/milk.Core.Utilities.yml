@@ -23,7 +23,7 @@ items:
     path: Utilities/Utilities.cs
     startLine: 6
   assemblies:
-  - MonoGameECS
+  - milk
   namespace: milk.Core
   syntax:
     content: public static class Utilities
@@ -58,7 +58,7 @@ items:
     path: Utilities/Utilities.cs
     startLine: 8
   assemblies:
-  - MonoGameECS
+  - milk
   namespace: milk.Core
   syntax:
     content: public static List<List<Texture2D>> SplitTexture(Texture2D originalTexture, Vector2 subTextureSize, Rectangle subTextureClippingRect = default)
@@ -93,7 +93,7 @@ items:
     path: Utilities/Utilities.cs
     startLine: 42
   assemblies:
-  - MonoGameECS
+  - milk
   namespace: milk.Core
   syntax:
     content: public static Texture2D GetSubTexture(Texture2D texture, int x, int y, int width, int height)

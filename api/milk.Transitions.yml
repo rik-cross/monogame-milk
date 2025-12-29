@@ -15,7 +15,7 @@ items:
   fullName: milk.Transitions
   type: Namespace
   assemblies:
-  - MonoGameECS
+  - milk
 references:
 - uid: milk.Transitions.TransitionFadeBetween
   commentId: T:milk.Transitions.TransitionFadeBetween

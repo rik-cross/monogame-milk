@@ -10,6 +10,7 @@ items:
   - milk.Core.EasingFunctions
   - milk.Core.EasingFunctions.EasingDelegate
   - milk.Core.EngineGlobals
+  - milk.Core.EngineResourceManager
   - milk.Core.Entity
   - milk.Core.EntitySortMethods
   - milk.Core.Game
@@ -32,7 +33,7 @@ items:
   fullName: milk.Core
   type: Namespace
   assemblies:
-  - MonoGameECS
+  - milk
 references:
 - uid: milk.Core.Camera
   commentId: T:milk.Core.Camera
@@ -83,6 +84,13 @@ references:
   name: EngineGlobals
   nameWithType: EngineGlobals
   fullName: milk.Core.EngineGlobals
+- uid: milk.Core.EngineResourceManager
+  commentId: T:milk.Core.EngineResourceManager
+  parent: milk.Core
+  href: milk.Core.EngineResourceManager.html
+  name: EngineResourceManager
+  nameWithType: EngineResourceManager
+  fullName: milk.Core.EngineResourceManager
 - uid: milk.Core.Entity
   commentId: T:milk.Core.Entity
   parent: milk.Core

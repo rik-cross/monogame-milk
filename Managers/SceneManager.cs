@@ -105,6 +105,13 @@ internal class SceneManager
 
     }
 
+    internal Scene? GetCurrentScene()
+    {
+        if (_currentSceneList.Count == 0)
+            return null;
+        return _currentSceneList[0];
+    }
+
     internal void SetScene(
         List<Scene> sceneList,
         Transition? transition = null,
@@ -126,7 +133,6 @@ internal class SceneManager
                     system.OnExitScene(_currentSceneList[0]);
                 }
 
-                //Console.WriteLine("Exit");
                 if (calledFromTransition == false)
                     _currentSceneList[0].OnExit();
             }
@@ -142,22 +148,20 @@ internal class SceneManager
                 system.OnEnterScene(_currentSceneList[0]);
             }
 
-            //if (calledFromTransition == false)
-            //{
-                //Console.WriteLine("Enter -- without transition");
-                _currentSceneList[0].OnEnter();
-            //}
+            _currentSceneList[0].OnEnter();
+
         }
         else
         {
             currentTransition = transition;
 
-            _currentSceneList[0].OnExit();
-            //sceneList[0].OnEnter();
+            if (_currentSceneList.Count > 0)
+                _currentSceneList[0].OnExit();
             
             _newSceneList = sceneList;
             unload = !keepExistingScenes;
             numberOfScenesToRemove = 1;
+
         }
 
         

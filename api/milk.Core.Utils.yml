@@ -25,7 +25,7 @@ items:
     path: Core/Utils.cs
     startLine: 11
   assemblies:
-  - MonoGameECS
+  - milk
   namespace: milk.Core
   syntax:
     content: public static class Utils
@@ -60,7 +60,7 @@ items:
     path: Core/Utils.cs
     startLine: 14
   assemblies:
-  - MonoGameECS
+  - milk
   namespace: milk.Core
   syntax:
     content: public static string GetCurrentSourceDirectory(string callerFilePath = "")
@@ -94,7 +94,7 @@ items:
     path: Core/Utils.cs
     startLine: 20
   assemblies:
-  - MonoGameECS
+  - milk
   namespace: milk.Core
   syntax:
     content: public static bool CompareBitArrays(BitArray ba1, BitArray ba2)
@@ -127,7 +127,7 @@ items:
     path: Core/Utils.cs
     startLine: 35
   assemblies:
-  - MonoGameECS
+  - milk
   namespace: milk.Core
   syntax:
     content: public static string PrintList<T>(List<T> list, string separator = "")
@@ -165,7 +165,7 @@ items:
     path: Core/Utils.cs
     startLine: 52
   assemblies:
-  - MonoGameECS
+  - milk
   namespace: milk.Core
   syntax:
     content: public static string PrintBitArray(BitArray bitArray)

@@ -21,9 +21,9 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: TransitionFadeToBlack
     path: Transitions/TransitionFadeToBlack.cs
-    startLine: 6
+    startLine: 7
   assemblies:
-  - MonoGameECS
+  - milk
   namespace: milk.Transitions
   syntax:
     content: 'public class TransitionFadeToBlack : Transition'
@@ -67,9 +67,9 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: .ctor
     path: Transitions/TransitionFadeToBlack.cs
-    startLine: 9
+    startLine: 10
   assemblies:
-  - MonoGameECS
+  - milk
   namespace: milk.Transitions
   syntax:
     content: public TransitionFadeToBlack(float duration = 1000, EasingFunctions.EasingDelegate? easingFunction = null)
@@ -101,9 +101,9 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: Draw
     path: Transitions/TransitionFadeToBlack.cs
-    startLine: 17
+    startLine: 18
   assemblies:
-  - MonoGameECS
+  - milk
   namespace: milk.Transitions
   example: []
   syntax:

@@ -91,9 +91,8 @@ public class Image : SceneRenderable
         _spriteBatch.DrawRectangle(new RectangleF(dp.X, dp.Y, drawSize.X, drawSize.Y), BackgroundColor, Math.Max(Size.X / 2, Size.Y / 2));
 
         // Draw the texture, at the correct size
-        // TODO: alpha
         if (Texture != null)
-            _spriteBatch.Draw(Texture, new Rectangle((int)dp.X, (int)dp.Y, (int)drawSize.X, (int)drawSize.Y), Hue);
+            _spriteBatch.Draw(Texture, new Rectangle((int)dp.X, (int)dp.Y, (int)drawSize.X, (int)drawSize.Y), Hue * Alpha);
 
         // Draw the border
         _spriteBatch.DrawRectangle(new RectangleF(dp.X, dp.Y, drawSize.X, drawSize.Y), BorderColor, BorderWidth);

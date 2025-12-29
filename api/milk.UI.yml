@@ -1,0 +1,61 @@
+### YamlMime:ManagedReference
+items:
+- uid: milk.UI
+  commentId: N:milk.UI
+  id: milk.UI
+  children:
+  - milk.UI.Button
+  - milk.UI.Tween
+  - milk.UI.UIElement
+  langs:
+  - csharp
+  - vb
+  name: milk.UI
+  nameWithType: milk.UI
+  fullName: milk.UI
+  type: Namespace
+  assemblies:
+  - milk
+references:
+- uid: milk.UI.Button
+  commentId: T:milk.UI.Button
+  href: milk.UI.Button.html
+  name: Button
+  nameWithType: Button
+  fullName: milk.UI.Button
+- uid: milk.UI.Tween
+  commentId: T:milk.UI.Tween
+  parent: milk.UI
+  href: milk.UI.Tween.html
+  name: Tween
+  nameWithType: Tween
+  fullName: milk.UI.Tween
+- uid: milk.UI.UIElement
+  commentId: T:milk.UI.UIElement
+  parent: milk.UI
+  href: milk.UI.UIElement.html
+  name: UIElement
+  nameWithType: UIElement
+  fullName: milk.UI.UIElement
+- uid: milk.UI
+  commentId: N:milk.UI
+  href: milk.html
+  name: milk.UI
+  nameWithType: milk.UI
+  fullName: milk.UI
+  spec.csharp:
+  - uid: milk
+    name: milk
+    href: milk.html
+  - name: .
+  - uid: milk.UI
+    name: UI
+    href: milk.UI.html
+  spec.vb:
+  - uid: milk
+    name: milk
+    href: milk.html
+  - name: .
+  - uid: milk.UI
+    name: UI
+    href: milk.UI.html

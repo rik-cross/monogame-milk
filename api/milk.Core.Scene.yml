@@ -11,6 +11,7 @@ items:
   - milk.Core.Scene.AddEntity(milk.Core.Entity)
   - milk.Core.Scene.AddSystem``1
   - milk.Core.Scene.AddTimedAction(System.Single,System.Action,System.String)
+  - milk.Core.Scene.AddUIElement(milk.UI.UIElement)
   - milk.Core.Scene.BackgroundColor
   - milk.Core.Scene.DeleteEntitiesByTag(System.String[])
   - milk.Core.Scene.DeleteEntityByName(System.String)
@@ -44,6 +45,7 @@ items:
   - milk.Core.Scene.Update(Microsoft.Xna.Framework.GameTime)
   - milk.Core.Scene.UpdateSceneBelow
   - milk.Core.Scene.Velocity
+  - milk.Core.Scene.animator
   - milk.Core.Scene.cameras
   - milk.Core.Scene.content
   - milk.Core.Scene.elapsedTime
@@ -64,9 +66,9 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: Scene
     path: Core/Scene.cs
-    startLine: 21
+    startLine: 23
   assemblies:
-  - MonoGameECS
+  - milk
   namespace: milk.Core
   summary: >-
     A scene is a collection of entities and systems, and can be thought
@@ -106,9 +108,9 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: content
     path: Core/Scene.cs
-    startLine: 33
+    startLine: 35
   assemblies:
-  - MonoGameECS
+  - milk
   namespace: milk.Core
   summary: MonoGame content object for working with game assets.
   example: []
@@ -135,9 +137,9 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: game
     path: Core/Scene.cs
-    startLine: 38
+    startLine: 40
   assemblies:
-  - MonoGameECS
+  - milk
   namespace: milk.Core
   summary: The parent game object.
   example: []
@@ -164,9 +166,9 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: spriteBatch
     path: Core/Scene.cs
-    startLine: 43
+    startLine: 45
   assemblies:
-  - MonoGameECS
+  - milk
   namespace: milk.Core
   summary: The spriteBatch object.
   example: []
@@ -193,9 +195,9 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: Size
     path: Core/Scene.cs
-    startLine: 48
+    startLine: 50
   assemblies:
-  - MonoGameECS
+  - milk
   namespace: milk.Core
   summary: The (x,y) scene dimensions.
   example: []
@@ -222,9 +224,9 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: Middle
     path: Core/Scene.cs
-    startLine: 53
+    startLine: 55
   assemblies:
-  - MonoGameECS
+  - milk
   namespace: milk.Core
   summary: The (x,y) center point of the scene.
   example: []
@@ -251,15 +253,42 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: elapsedTime
     path: Core/Scene.cs
-    startLine: 54
+    startLine: 56
   assemblies:
-  - MonoGameECS
+  - milk
   namespace: milk.Core
   syntax:
     content: public float elapsedTime
     return:
       type: System.Single
     content.vb: Public elapsedTime As Single
+- uid: milk.Core.Scene.animator
+  commentId: F:milk.Core.Scene.animator
+  id: animator
+  parent: milk.Core.Scene
+  langs:
+  - csharp
+  - vb
+  name: animator
+  nameWithType: Scene.animator
+  fullName: milk.Core.Scene.animator
+  type: Field
+  source:
+    remote:
+      path: Core/Scene.cs
+      branch: main
+      repo: git@github.com:rik-cross/monogame-milk.git
+    id: animator
+    path: Core/Scene.cs
+    startLine: 60
+  assemblies:
+  - milk
+  namespace: milk.Core
+  syntax:
+    content: public Animator animator
+    return:
+      type: mill.Core.Animator
+    content.vb: Public animator As Animator
 - uid: milk.Core.Scene.BackgroundColor
   commentId: F:milk.Core.Scene.BackgroundColor
   id: BackgroundColor
@@ -278,9 +307,9 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: BackgroundColor
     path: Core/Scene.cs
-    startLine: 62
+    startLine: 65
   assemblies:
-  - MonoGameECS
+  - milk
   namespace: milk.Core
   summary: Background color.
   example: []
@@ -307,9 +336,9 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: IncludeAlRegisteredSystems
     path: Core/Scene.cs
-    startLine: 69
+    startLine: 72
   assemblies:
-  - MonoGameECS
+  - milk
   namespace: milk.Core
   summary: >-
     By default all systems are present in all scenes.
@@ -341,9 +370,9 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: cameras
     path: Core/Scene.cs
-    startLine: 70
+    startLine: 73
   assemblies:
-  - MonoGameECS
+  - milk
   namespace: milk.Core
   syntax:
     content: protected List<Camera> cameras
@@ -368,9 +397,9 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: UpdateSceneBelow
     path: Core/Scene.cs
-    startLine: 75
+    startLine: 78
   assemblies:
-  - MonoGameECS
+  - milk
   namespace: milk.Core
   summary: Specifies whether to update the scene below this one in the scene stack.
   example: []
@@ -397,9 +426,9 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: InputSceneBelow
     path: Core/Scene.cs
-    startLine: 80
+    startLine: 83
   assemblies:
-  - MonoGameECS
+  - milk
   namespace: milk.Core
   summary: Specifies whether to process input in the scene below this one in the scene stack.
   example: []
@@ -426,9 +455,9 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: DrawSceneBelow
     path: Core/Scene.cs
-    startLine: 85
+    startLine: 88
   assemblies:
-  - MonoGameECS
+  - milk
   namespace: milk.Core
   summary: Specifies whether to draw the scene below this one in the scene stack.
   example: []
@@ -455,9 +484,9 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: EntitySortMethod
     path: Core/Scene.cs
-    startLine: 92
+    startLine: 95
   assemblies:
-  - MonoGameECS
+  - milk
   namespace: milk.Core
   summary: Set a method for sorting entities.
   example: []
@@ -484,9 +513,9 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: mapSize
     path: Core/Scene.cs
-    startLine: 98
+    startLine: 101
   assemblies:
-  - MonoGameECS
+  - milk
   namespace: milk.Core
   summary: >-
     Set the size of the map. The size is set automatically if
@@ -516,9 +545,9 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: Map
     path: Core/Scene.cs
-    startLine: 106
+    startLine: 109
   assemblies:
-  - MonoGameECS
+  - milk
   namespace: milk.Core
   summary: A Tiled map.
   example: []
@@ -547,9 +576,9 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: Velocity
     path: Core/Scene.cs
-    startLine: 131
+    startLine: 134
   assemblies:
-  - MonoGameECS
+  - milk
   namespace: milk.Core
   summary: The scene's velocity, which is applied to all entities.
   example: []
@@ -576,9 +605,9 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: Acceleration
     path: Core/Scene.cs
-    startLine: 136
+    startLine: 139
   assemblies:
-  - MonoGameECS
+  - milk
   namespace: milk.Core
   summary: The scene's acceleration, which is applied to all entities.
   example: []
@@ -605,9 +634,9 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: .ctor
     path: Core/Scene.cs
-    startLine: 144
+    startLine: 147
   assemblies:
-  - MonoGameECS
+  - milk
   namespace: milk.Core
   summary: >-
     A scene is a bit like a game 'screen' and holds
@@ -643,9 +672,9 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: AddCamera
     path: Core/Scene.cs
-    startLine: 385
+    startLine: 399
   assemblies:
-  - MonoGameECS
+  - milk
   namespace: milk.Core
   summary: Adds a camera object to a scene.
   example: []
@@ -675,9 +704,9 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: GetCameraByName
     path: Core/Scene.cs
-    startLine: 397
+    startLine: 411
   assemblies:
-  - MonoGameECS
+  - milk
   namespace: milk.Core
   summary: >-
     Returns a camera with the specified (unique) name.
@@ -716,9 +745,9 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: HasEntity
     path: Core/Scene.cs
-    startLine: 416
+    startLine: 430
   assemblies:
-  - MonoGameECS
+  - milk
   namespace: milk.Core
   summary: Returns `true` is the entity provided exists in the scene.
   example: []
@@ -751,9 +780,9 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: AddEntity
     path: Core/Scene.cs
-    startLine: 425
+    startLine: 439
   assemblies:
-  - MonoGameECS
+  - milk
   namespace: milk.Core
   summary: Adds an entity object to the scene.
   example: []
@@ -783,9 +812,9 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: RemoveEntity
     path: Core/Scene.cs
-    startLine: 459
+    startLine: 473
   assemblies:
-  - MonoGameECS
+  - milk
   namespace: milk.Core
   summary: >-
     Removes the specified entity from the scene.
@@ -818,9 +847,9 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: RemoveEntityByName
     path: Core/Scene.cs
-    startLine: 477
+    startLine: 491
   assemblies:
-  - MonoGameECS
+  - milk
   namespace: milk.Core
   summary: Removes the entity with the specified name from the scene.
   example: []
@@ -853,9 +882,9 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: RemoveEntitiesByTag
     path: Core/Scene.cs
-    startLine: 490
+    startLine: 504
   assemblies:
-  - MonoGameECS
+  - milk
   namespace: milk.Core
   summary: Removes the entities with the specified tags from the scene.
   example: []
@@ -888,9 +917,9 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: RemoveAllEntities
     path: Core/Scene.cs
-    startLine: 502
+    startLine: 516
   assemblies:
-  - MonoGameECS
+  - milk
   namespace: milk.Core
   summary: Removes all entities from the scene.
   example: []
@@ -916,9 +945,9 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: GetEntityByName
     path: Core/Scene.cs
-    startLine: 554
+    startLine: 568
   assemblies:
-  - MonoGameECS
+  - milk
   namespace: milk.Core
   summary: >-
     Gets the entity with the provided (unique) name.
@@ -957,9 +986,9 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: GetEntitiesByTag
     path: Core/Scene.cs
-    startLine: 564
+    startLine: 578
   assemblies:
-  - MonoGameECS
+  - milk
   namespace: milk.Core
   summary: Gets all entities that include all supplied tags.
   example: []
@@ -995,9 +1024,9 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: DeleteEntityByName
     path: Core/Scene.cs
-    startLine: 578
+    startLine: 592
   assemblies:
-  - MonoGameECS
+  - milk
   namespace: milk.Core
   summary: >-
     Deletes the entity in the scene with the specified name.
@@ -1033,9 +1062,9 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: DeleteEntitiesByTag
     path: Core/Scene.cs
-    startLine: 597
+    startLine: 611
   assemblies:
-  - MonoGameECS
+  - milk
   namespace: milk.Core
   summary: >-
     Deletes all entities containing the specified tags.
@@ -1071,9 +1100,9 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: AddSystem
     path: Core/Scene.cs
-    startLine: 617
+    startLine: 631
   assemblies:
-  - MonoGameECS
+  - milk
   namespace: milk.Core
   summary: >-
     Add a (registered) system type to a scene (calling this
@@ -1110,9 +1139,9 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: RemoveSystem
     path: Core/Scene.cs
-    startLine: 634
+    startLine: 648
   assemblies:
-  - MonoGameECS
+  - milk
   namespace: milk.Core
   summary: Removes the sysytem of the specified type from the scene.
   example: []
@@ -1144,9 +1173,9 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: RemoveAllSystems
     path: Core/Scene.cs
-    startLine: 645
+    startLine: 659
   assemblies:
-  - MonoGameECS
+  - milk
   namespace: milk.Core
   summary: Removes all systems from the scene
   example: []
@@ -1172,9 +1201,9 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: HasSystem
     path: Core/Scene.cs
-    startLine: 658
+    startLine: 672
   assemblies:
-  - MonoGameECS
+  - milk
   namespace: milk.Core
   summary: >-
     Returns true if a system of the specified type
@@ -1201,9 +1230,9 @@ items:
   langs:
   - csharp
   - vb
-  name: GetSceneBelow(List<Scene>)
-  nameWithType: Scene.GetSceneBelow(List<Scene>)
-  fullName: milk.Core.Scene.GetSceneBelow(System.Collections.Generic.List<milk.Core.Scene>)
+  name: GetSceneBelow(List<Scene>?)
+  nameWithType: Scene.GetSceneBelow(List<Scene>?)
+  fullName: milk.Core.Scene.GetSceneBelow(System.Collections.Generic.List<milk.Core.Scene>?)
   type: Method
   source:
     remote:
@@ -1212,9 +1241,9 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: GetSceneBelow
     path: Core/Scene.cs
-    startLine: 669
+    startLine: 683
   assemblies:
-  - MonoGameECS
+  - milk
   namespace: milk.Core
   summary: >-
     Gets the scene below this scene in the scene list
@@ -1222,7 +1251,7 @@ items:
     (or null if there isn't one).
   example: []
   syntax:
-    content: public Scene? GetSceneBelow(List<Scene> scenes)
+    content: public Scene? GetSceneBelow(List<Scene>? scenes = null)
     parameters:
     - id: scenes
       type: System.Collections.Generic.List{milk.Core.Scene}
@@ -1230,7 +1259,7 @@ items:
     return:
       type: milk.Core.Scene
       description: A scene, or null if no scene exists.
-    content.vb: Public Function GetSceneBelow(scenes As List(Of Scene)) As Scene
+    content.vb: Public Function GetSceneBelow(scenes As List(Of Scene) = Nothing) As Scene
   overload: milk.Core.Scene.GetSceneBelow*
   nameWithType.vb: Scene.GetSceneBelow(List(Of Scene))
   fullName.vb: milk.Core.Scene.GetSceneBelow(System.Collections.Generic.List(Of milk.Core.Scene))
@@ -1253,9 +1282,9 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: AddTimedAction
     path: Core/Scene.cs
-    startLine: 707
+    startLine: 725
   assemblies:
-  - MonoGameECS
+  - milk
   namespace: milk.Core
   summary: Adds an action to execute after a set time.
   example: []
@@ -1294,9 +1323,9 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: RemoveTimedActionByName
     path: Core/Scene.cs
-    startLine: 716
+    startLine: 734
   assemblies:
-  - MonoGameECS
+  - milk
   namespace: milk.Core
   summary: Remove a timed action by name, if one has been set.
   example: []
@@ -1311,6 +1340,38 @@ items:
   nameWithType.vb: Scene.RemoveTimedActionByName(String)
   fullName.vb: milk.Core.Scene.RemoveTimedActionByName(String)
   name.vb: RemoveTimedActionByName(String)
+- uid: milk.Core.Scene.AddUIElement(milk.UI.UIElement)
+  commentId: M:milk.Core.Scene.AddUIElement(milk.UI.UIElement)
+  id: AddUIElement(milk.UI.UIElement)
+  parent: milk.Core.Scene
+  langs:
+  - csharp
+  - vb
+  name: AddUIElement(UIElement)
+  nameWithType: Scene.AddUIElement(UIElement)
+  fullName: milk.Core.Scene.AddUIElement(milk.UI.UIElement)
+  type: Method
+  source:
+    remote:
+      path: Core/Scene.cs
+      branch: main
+      repo: git@github.com:rik-cross/monogame-milk.git
+    id: AddUIElement
+    path: Core/Scene.cs
+    startLine: 751
+  assemblies:
+  - milk
+  namespace: milk.Core
+  summary: Add a UI element to the scene.
+  example: []
+  syntax:
+    content: public void AddUIElement(UIElement element)
+    parameters:
+    - id: element
+      type: milk.UI.UIElement
+      description: The element to add.
+    content.vb: Public Sub AddUIElement(element As UIElement)
+  overload: milk.Core.Scene.AddUIElement*
 - uid: milk.Core.Scene.Init
   commentId: M:milk.Core.Scene.Init
   id: Init
@@ -1329,9 +1390,9 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: Init
     path: Core/Scene.cs
-    startLine: 732
+    startLine: 764
   assemblies:
-  - MonoGameECS
+  - milk
   namespace: milk.Core
   summary: Called once when a scene is created.
   example: []
@@ -1357,9 +1418,9 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: Update
     path: Core/Scene.cs
-    startLine: 738
+    startLine: 770
   assemblies:
-  - MonoGameECS
+  - milk
   namespace: milk.Core
   summary: Called once per frame of the game loop, and handles scene-level updating.
   example: []
@@ -1389,9 +1450,9 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: Input
     path: Core/Scene.cs
-    startLine: 744
+    startLine: 776
   assemblies:
-  - MonoGameECS
+  - milk
   namespace: milk.Core
   summary: Called once per frame of the game loop, and handles scene-level input.
   example: []
@@ -1421,9 +1482,9 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: Draw
     path: Core/Scene.cs
-    startLine: 749
+    startLine: 781
   assemblies:
-  - MonoGameECS
+  - milk
   namespace: milk.Core
   summary: Called once per frame of the game loop, and handles scene-level drawing.
   example: []
@@ -1449,9 +1510,9 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: OnEnter
     path: Core/Scene.cs
-    startLine: 758
+    startLine: 790
   assemblies:
-  - MonoGameECS
+  - milk
   namespace: milk.Core
   summary: Called once when the scene becomes the active scene.
   example: []
@@ -1477,9 +1538,9 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: OnExit
     path: Core/Scene.cs
-    startLine: 763
+    startLine: 795
   assemblies:
-  - MonoGameECS
+  - milk
   namespace: milk.Core
   summary: Called once when the scene is no longer the active scene.
   example: []
@@ -1505,9 +1566,9 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: OnEntityAdded
     path: Core/Scene.cs
-    startLine: 769
+    startLine: 801
   assemblies:
-  - MonoGameECS
+  - milk
   namespace: milk.Core
   summary: Called once whenever an entity is added to the scene.
   example: []
@@ -1537,9 +1598,9 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: OnEntityRemoved
     path: Core/Scene.cs
-    startLine: 775
+    startLine: 807
   assemblies:
-  - MonoGameECS
+  - milk
   namespace: milk.Core
   summary: Called once whenever an entity is removed from the scene.
   example: []
@@ -1956,6 +2017,35 @@ references:
   nameWithType.vb: Single
   fullName.vb: Single
   name.vb: Single
+- uid: mill.Core.Animator
+  commentId: T:mill.Core.Animator
+  parent: mill.Core
+  href: mill.Core.Animator.html
+  name: Animator
+  nameWithType: Animator
+  fullName: mill.Core.Animator
+- uid: mill.Core
+  commentId: N:mill.Core
+  href: mill.html
+  name: mill.Core
+  nameWithType: mill.Core
+  fullName: mill.Core
+  spec.csharp:
+  - uid: mill
+    name: mill
+    href: mill.html
+  - name: .
+  - uid: mill.Core
+    name: Core
+    href: mill.Core.html
+  spec.vb:
+  - uid: mill
+    name: mill
+    href: mill.html
+  - name: .
+  - uid: mill.Core
+    name: Core
+    href: mill.Core.html
 - uid: Microsoft.Xna.Framework.Color
   commentId: T:Microsoft.Xna.Framework.Color
   parent: Microsoft.Xna.Framework
@@ -2473,6 +2563,41 @@ references:
   name: RemoveTimedActionByName
   nameWithType: Scene.RemoveTimedActionByName
   fullName: milk.Core.Scene.RemoveTimedActionByName
+- uid: milk.Core.Scene.AddUIElement*
+  commentId: Overload:milk.Core.Scene.AddUIElement
+  href: milk.Core.Scene.html#milk_Core_Scene_AddUIElement_milk_UI_UIElement_
+  name: AddUIElement
+  nameWithType: Scene.AddUIElement
+  fullName: milk.Core.Scene.AddUIElement
+- uid: milk.UI.UIElement
+  commentId: T:milk.UI.UIElement
+  parent: milk.UI
+  href: milk.UI.UIElement.html
+  name: UIElement
+  nameWithType: UIElement
+  fullName: milk.UI.UIElement
+- uid: milk.UI
+  commentId: N:milk.UI
+  href: milk.html
+  name: milk.UI
+  nameWithType: milk.UI
+  fullName: milk.UI
+  spec.csharp:
+  - uid: milk
+    name: milk
+    href: milk.html
+  - name: .
+  - uid: milk.UI
+    name: UI
+    href: milk.UI.html
+  spec.vb:
+  - uid: milk
+    name: milk
+    href: milk.html
+  - name: .
+  - uid: milk.UI
+    name: UI
+    href: milk.UI.html
 - uid: milk.Core.Scene.Init*
   commentId: Overload:milk.Core.Scene.Init
   href: milk.Core.Scene.html#milk_Core_Scene_Init

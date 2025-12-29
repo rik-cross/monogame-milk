@@ -7,4 +7,5 @@ namespace milk.Core;
 public static class EngineGlobals
 {
     public static Game game;
+    
 }

@@ -24,7 +24,7 @@ items:
     path: Components/PhysicsComponent.cs
     startLine: 14
   assemblies:
-  - MonoGameECS
+  - milk
   namespace: milk.Components
   summary: Allows an entity to move within a scene.
   example: []
@@ -64,7 +64,7 @@ items:
     path: Components/PhysicsComponent.cs
     startLine: 20
   assemblies:
-  - MonoGameECS
+  - milk
   namespace: milk.Components
   summary: The (x,y) velocity.
   example: []
@@ -93,7 +93,7 @@ items:
     path: Components/PhysicsComponent.cs
     startLine: 25
   assemblies:
-  - MonoGameECS
+  - milk
   namespace: milk.Components
   summary: The (x,y) acceleration.
   example: []
@@ -122,7 +122,7 @@ items:
     path: Components/PhysicsComponent.cs
     startLine: 32
   assemblies:
-  - MonoGameECS
+  - milk
   namespace: milk.Components
   summary: Creates a new physics component.
   example: []

@@ -21,7 +21,7 @@ items:
     path: Core/EasingFunctions.cs
     startLine: 15
   assemblies:
-  - MonoGameECS
+  - milk
   namespace: milk.Core
   summary: >-
     Represents a delegate for an easing function.

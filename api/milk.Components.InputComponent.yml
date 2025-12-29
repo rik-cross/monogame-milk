@@ -23,7 +23,7 @@ items:
     path: Components/InputComponent.cs
     startLine: 13
   assemblies:
-  - MonoGameECS
+  - milk
   namespace: milk.Components
   summary: Supports entity input through an input controller.
   example: []
@@ -63,7 +63,7 @@ items:
     path: Components/InputComponent.cs
     startLine: 19
   assemblies:
-  - MonoGameECS
+  - milk
   namespace: milk.Components
   summary: A function that describes entity input behaviour.
   example: []
@@ -92,7 +92,7 @@ items:
     path: Components/InputComponent.cs
     startLine: 25
   assemblies:
-  - MonoGameECS
+  - milk
   namespace: milk.Components
   summary: Creates a new input component.
   example: []

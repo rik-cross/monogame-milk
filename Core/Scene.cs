@@ -11,6 +11,8 @@ using Microsoft.Xna.Framework.Graphics;
 using MonoGame.Extended;
 using MonoGame.Extended.Tiled;
 using MonoGame.Extended.Tiled.Renderers;
+using milk.UI;
+using mill.Core;
 
 namespace milk.Core;
 
@@ -55,7 +57,8 @@ public abstract class Scene
     public float elapsedTime;
     internal List<Entity> entities;
     internal List<System> systems;
-    internal static Texture2D whiteRectangle;
+    private UIMenu UIMenu;
+    public Animator animator;
     
     /// <summary>
     /// Background color.
@@ -152,11 +155,11 @@ public abstract class Scene
         systems = new List<System>();
         _sceneManager.allScenes.Add(this);
 
-        whiteRectangle = new Texture2D(_graphicsDevice, 1, 1);
-        whiteRectangle.SetData(new[] { Microsoft.Xna.Framework.Color.White });
-
         if (IncludeAlRegisteredSystems == true)
             _systemManager.AddAllRegisteredSystemsToScene(this);
+
+        UIMenu = new UIMenu(this);
+        animator = new Animator();
 
         Init();
 
@@ -220,6 +223,9 @@ public abstract class Scene
         // Sort entities
         if (EntitySortMethod != null)
             entities.Sort(EntitySortMethod);
+        
+        UIMenu.Update(gameTime, this);
+        animator.Update(gameTime);
 
     }
 
@@ -252,6 +258,8 @@ public abstract class Scene
         // Call the user-defined Input method
         Input(gameTime);
 
+        UIMenu.Input(gameTime, this);
+
     }
 
     internal void _Draw(RenderTarget2D renderTarget, List<Scene> scenes, bool drawSceneBelow = true)
@@ -271,8 +279,12 @@ public abstract class Scene
 
         // Draw scene background
         spriteBatch.Begin(samplerState: SamplerState.PointClamp);
-        spriteBatch.Draw(whiteRectangle, new Rectangle(0, 0, (int)Size.X, (int)Size.Y), BackgroundColor);
         
+        spriteBatch.FillRectangle(
+            new Rectangle(0, 0, (int)Size.X, (int)Size.Y),
+            BackgroundColor
+        );
+
         spriteBatch.End();
 
         // Iterate over each camera in the scene
@@ -284,7 +296,7 @@ public abstract class Scene
 
             // Draw camera background
             spriteBatch.Begin(samplerState: SamplerState.PointClamp);
-            spriteBatch.Draw(whiteRectangle, new Rectangle(0, 0, (int)Size.X, (int)Size.Y), camera.BackgroundColor);
+            spriteBatch.FillRectangle(new Rectangle(0, 0, (int)Size.X, (int)Size.Y), camera.BackgroundColor);
             spriteBatch.End();
 
             spriteBatch.Begin(samplerState: SamplerState.PointClamp, transformMatrix: camera.getTransformMatrix());
@@ -354,9 +366,10 @@ public abstract class Scene
                 );
 
             spriteBatch.End();
+
         }
 
-        // Reset the viewpoer to the whole scene
+        // Reset the viewport to the whole scene
         _graphicsDevice.Viewport = new Viewport(0, 0, (int)Size.X, (int)Size.Y);
 
         // no shader here
@@ -370,6 +383,7 @@ public abstract class Scene
         }
 
         Draw();
+        UIMenu.Draw();
 
         spriteBatch.End();
 
@@ -667,8 +681,12 @@ public abstract class Scene
     /// </summary>
     /// <param name="scenes">The scene list to check against.</param>
     /// <returns>A scene, or null if no scene exists.</returns>
-    public Scene? GetSceneBelow(List<Scene> scenes)
+    public Scene? GetSceneBelow(List<Scene>? scenes = null)
     {
+
+        if (scenes == null)
+            scenes = game.sceneManager._currentSceneList;
+
         for (int i = 0; i < scenes.Count - 1; i++)
         {
             if (scenes[i] == this)
@@ -721,6 +739,20 @@ public abstract class Scene
             if (timedActions[i].Name.ToLower() == name.ToLower())
                 timedActions.RemoveAt(i);
         }
+    }
+
+    //
+    // UI
+    //
+
+    /// <summary>
+    /// Add a UI element to the scene.
+    /// </summary>
+    /// <param name="element">The element to add.</param>
+    public void AddUIElement(UIElement element)
+    {
+        UIMenu.AddElement(element);
+        element.parentScene = this;
     }
 
     //

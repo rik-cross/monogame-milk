@@ -1,0 +1,46 @@
+### YamlMime:ManagedReference
+items:
+- uid: mill.Core
+  commentId: N:mill.Core
+  id: mill.Core
+  children:
+  - mill.Core.Animator
+  langs:
+  - csharp
+  - vb
+  name: mill.Core
+  nameWithType: mill.Core
+  fullName: mill.Core
+  type: Namespace
+  assemblies:
+  - milk
+references:
+- uid: mill.Core.Animator
+  commentId: T:mill.Core.Animator
+  parent: mill.Core
+  href: mill.Core.Animator.html
+  name: Animator
+  nameWithType: Animator
+  fullName: mill.Core.Animator
+- uid: mill.Core
+  commentId: N:mill.Core
+  href: mill.html
+  name: mill.Core
+  nameWithType: mill.Core
+  fullName: mill.Core
+  spec.csharp:
+  - uid: mill
+    name: mill
+    href: mill.html
+  - name: .
+  - uid: mill.Core
+    name: Core
+    href: mill.Core.html
+  spec.vb:
+  - uid: mill
+    name: mill
+    href: mill.html
+  - name: .
+  - uid: mill.Core
+    name: Core
+    href: mill.Core.html

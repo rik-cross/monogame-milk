@@ -374,13 +374,13 @@
     "/home/rik/.nuget/packages/": {}
   },
   "project": {
-    "version": "1.0.0",
+    "version": "0.1.3",
     "restore": {
-      "projectUniqueName": "/home/rik/Documents/MonoGameEngineSolution/MonoGameECS/MonoGameECS.csproj",
-      "projectName": "MonoGameECS",
-      "projectPath": "/home/rik/Documents/MonoGameEngineSolution/MonoGameECS/MonoGameECS.csproj",
+      "projectUniqueName": "/home/rik/Documents/MonoGameEngineSolution/milk/milk.csproj",
+      "projectName": "monogame-milk",
+      "projectPath": "/home/rik/Documents/MonoGameEngineSolution/milk/milk.csproj",
       "packagesPath": "/home/rik/.nuget/packages/",
-      "outputPath": "/home/rik/Documents/MonoGameEngineSolution/MonoGameECS/obj/",
+      "outputPath": "/home/rik/Documents/MonoGameEngineSolution/milk/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/home/rik/.nuget/NuGet/NuGet.Config"
@@ -389,6 +389,7 @@
         "net8.0"
       ],
       "sources": {
+        "/home/rik/nuget-local": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {

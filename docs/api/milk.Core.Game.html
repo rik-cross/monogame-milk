@@ -94,7 +94,7 @@ Class Game  <a class="header-action link-secondary" title="View source" href="ht
 
   <div class="facts text-secondary">
     <dl><dt>Namespace</dt><dd><a class="xref" href="milk.html">milk</a>.<a class="xref" href="milk.Core.html">Core</a></dd></dl>
-  <dl><dt>Assembly</dt><dd>MonoGameECS.dll</dd></dl>
+  <dl><dt>Assembly</dt><dd>milk.dll</dd></dl>
   </div>
 
   <div class="markdown summary"><p>A game is the top-level class, and is a subclass of
@@ -262,9 +262,9 @@ the MonoGame Game class.</p>
 
   <a id="milk_Core_Game__ctor_" data-uid="milk.Core.Game.#ctor*"></a>
 
-  <h3 id="milk_Core_Game__ctor_System_String_System_Nullable_Microsoft_Xna_Framework_Vector2__System_Boolean_System_Int32_System_Int32_System_Boolean_" data-uid="milk.Core.Game.#ctor(System.String,System.Nullable{Microsoft.Xna.Framework.Vector2},System.Boolean,System.Int32,System.Int32,System.Boolean)">
-  Game(string?, Vector2?, bool, int, int, bool)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/rik-cross/monogame-milk/blob/main/Core/Game.cs/#L75"><i class="bi bi-code-slash"></i></a>
+  <h3 id="milk_Core_Game__ctor_System_String_System_Nullable_Microsoft_Xna_Framework_Vector2__System_Boolean_System_Int32_System_Int32_System_Boolean_System_Boolean_" data-uid="milk.Core.Game.#ctor(System.String,System.Nullable{Microsoft.Xna.Framework.Vector2},System.Boolean,System.Int32,System.Int32,System.Boolean,System.Boolean)">
+  Game(string?, Vector2?, bool, int, int, bool, bool)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/rik-cross/monogame-milk/blob/main/Core/Game.cs/#L78"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Creates a new game.</p>
@@ -272,7 +272,7 @@ the MonoGame Game class.</p>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public Game(string? title = null, Vector2? size = null, bool isMouseVisible = true, int maxEntities = 1024, int maxComponents = 128, bool debug = false)</code></pre>
+    <pre><code class="lang-csharp hljs">public Game(string? title = null, Vector2? size = null, bool isMouseVisible = true, int maxEntities = 1024, int maxComponents = 128, bool showSplash = true, bool debug = false)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
@@ -291,6 +291,9 @@ the MonoGame Game class.</p>
 </dd>
     <dt><code>maxComponents</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
     <dd><p>The maximum number of game components (default = 128).</p>
+</dd>
+    <dt><code>showSplash</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p>Choose to show the milk splash scene (default = true).</p>
 </dd>
     <dt><code>debug</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
     <dd><p>Sets debug mode (default = false).</p>
@@ -315,7 +318,7 @@ the MonoGame Game class.</p>
 
   <h3 id="milk_Core_Game_Debug" data-uid="milk.Core.Game.Debug">
   Debug
-  <a class="header-action link-secondary" title="View source" href="https://github.com/rik-cross/monogame-milk/blob/main/Core/Game.cs/#L64"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/rik-cross/monogame-milk/blob/main/Core/Game.cs/#L66"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Setting debug mode to true displays various game, scene and entity information.</p>
@@ -437,9 +440,39 @@ the MonoGame Game class.</p>
 
 
 
+  <h3 id="milk_Core_Game__engineResources" data-uid="milk.Core.Game._engineResources">
+  _engineResources
+  <a class="header-action link-secondary" title="View source" href="https://github.com/rik-cross/monogame-milk/blob/main/Core/Game.cs/#L45"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public EngineResourceManager _engineResources</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="milk.Core.EngineResourceManager.html">EngineResourceManager</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
   <h3 id="milk_Core_Game_inputManager" data-uid="milk.Core.Game.inputManager">
   inputManager
-  <a class="header-action link-secondary" title="View source" href="https://github.com/rik-cross/monogame-milk/blob/main/Core/Game.cs/#L54"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/rik-cross/monogame-milk/blob/main/Core/Game.cs/#L56"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>The game's input manager, used to query game input.</p>
@@ -467,6 +500,36 @@ the MonoGame Game class.</p>
 
 
 
+
+  <h3 id="milk_Core_Game_spriteBatch" data-uid="milk.Core.Game.spriteBatch">
+  spriteBatch
+  <a class="header-action link-secondary" title="View source" href="https://github.com/rik-cross/monogame-milk/blob/main/Core/Game.cs/#L44"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public SpriteBatch spriteBatch</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">SpriteBatch</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
   <h2 class="section" id="methods">Methods
 </h2>
 
@@ -475,7 +538,7 @@ the MonoGame Game class.</p>
 
   <h3 id="milk_Core_Game_ClearScenes" data-uid="milk.Core.Game.ClearScenes">
   ClearScenes()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/rik-cross/monogame-milk/blob/main/Core/Game.cs/#L215"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/rik-cross/monogame-milk/blob/main/Core/Game.cs/#L264"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Removes all scenes from the scene stack
@@ -503,7 +566,7 @@ the MonoGame Game class.</p>
 
   <h3 id="milk_Core_Game_Draw_Microsoft_Xna_Framework_GameTime_" data-uid="milk.Core.Game.Draw(Microsoft.Xna.Framework.GameTime)">
   Draw(GameTime)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/rik-cross/monogame-milk/blob/main/Core/Game.cs/#L247"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/rik-cross/monogame-milk/blob/main/Core/Game.cs/#L296"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Do not call this.</p>
@@ -531,11 +594,44 @@ the MonoGame Game class.</p>
 
 
 
+  <a id="milk_Core_Game_GetCurrentScene_" data-uid="milk.Core.Game.GetCurrentScene*"></a>
+
+  <h3 id="milk_Core_Game_GetCurrentScene" data-uid="milk.Core.Game.GetCurrentScene">
+  GetCurrentScene()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/rik-cross/monogame-milk/blob/main/Core/Game.cs/#L223"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Returns the current top scene in the scene stack.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Scene? GetCurrentScene()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="milk.Core.Scene.html">Scene</a></dt>
+    <dd><p>The current top scene in the scene stack.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
   <a id="milk_Core_Game_Initialize_" data-uid="milk.Core.Game.Initialize*"></a>
 
   <h3 id="milk_Core_Game_Initialize" data-uid="milk.Core.Game.Initialize">
   Initialize()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/rik-cross/monogame-milk/blob/main/Core/Game.cs/#L114"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/rik-cross/monogame-milk/blob/main/Core/Game.cs/#L131"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Do not call this.</p>
@@ -562,7 +658,7 @@ the MonoGame Game class.</p>
 
   <h3 id="milk_Core_Game_LoadContent" data-uid="milk.Core.Game.LoadContent">
   LoadContent()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/rik-cross/monogame-milk/blob/main/Core/Game.cs/#L126"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/rik-cross/monogame-milk/blob/main/Core/Game.cs/#L143"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Do not call this.</p>
@@ -589,7 +685,7 @@ the MonoGame Game class.</p>
 
   <h3 id="milk_Core_Game_PositionSystemType__1_System_Int32_" data-uid="milk.Core.Game.PositionSystemType``1(System.Int32)">
   PositionSystemType&lt;T&gt;(int)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/rik-cross/monogame-milk/blob/main/Core/Game.cs/#L292"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/rik-cross/monogame-milk/blob/main/Core/Game.cs/#L341"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Positions the system of the specified type at the requested position.
@@ -630,7 +726,7 @@ This is useful for setting the order in which systems execute.
 
   <h3 id="milk_Core_Game_PrintSystems" data-uid="milk.Core.Game.PrintSystems">
   PrintSystems()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/rik-cross/monogame-milk/blob/main/Core/Game.cs/#L280"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/rik-cross/monogame-milk/blob/main/Core/Game.cs/#L329"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Returns a string showing the order of execution of systems.</p>
@@ -662,7 +758,7 @@ This is useful for setting the order in which systems execute.
 
   <h3 id="milk_Core_Game_Quit" data-uid="milk.Core.Game.Quit">
   Quit()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/rik-cross/monogame-milk/blob/main/Core/Game.cs/#L266"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/rik-cross/monogame-milk/blob/main/Core/Game.cs/#L315"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Ends the game.</p>
@@ -689,7 +785,7 @@ This is useful for setting the order in which systems execute.
 
   <h3 id="milk_Core_Game_RegisterSystem_milk_Core_System_" data-uid="milk.Core.Game.RegisterSystem(milk.Core.System)">
   RegisterSystem(System)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/rik-cross/monogame-milk/blob/main/Core/Game.cs/#L170"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/rik-cross/monogame-milk/blob/main/Core/Game.cs/#L210"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Registers a new game system.
@@ -723,7 +819,7 @@ All systems must be registered before use.</p>
 
   <h3 id="milk_Core_Game_RemoveScene_milk_Core_Transition_System_Int32_" data-uid="milk.Core.Game.RemoveScene(milk.Core.Transition,System.Int32)">
   RemoveScene(Transition?, int)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/rik-cross/monogame-milk/blob/main/Core/Game.cs/#L206"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/rik-cross/monogame-milk/blob/main/Core/Game.cs/#L255"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Removes the top, active scene from the scene stack.</p>
@@ -759,7 +855,7 @@ All systems must be registered before use.</p>
 
   <h3 id="milk_Core_Game_SetScene_System_Collections_Generic_List_milk_Core_Scene__milk_Core_Transition_System_Boolean_" data-uid="milk.Core.Game.SetScene(System.Collections.Generic.List{milk.Core.Scene},milk.Core.Transition,System.Boolean)">
   SetScene(List&lt;Scene&gt;, Transition?, bool)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/rik-cross/monogame-milk/blob/main/Core/Game.cs/#L196"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/rik-cross/monogame-milk/blob/main/Core/Game.cs/#L245"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Adds multiple scenes to the active scene stack.</p>
@@ -798,7 +894,7 @@ All systems must be registered before use.</p>
 
   <h3 id="milk_Core_Game_SetScene_milk_Core_Scene_milk_Core_Transition_System_Boolean_" data-uid="milk.Core.Game.SetScene(milk.Core.Scene,milk.Core.Transition,System.Boolean)">
   SetScene(Scene, Transition?, bool)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/rik-cross/monogame-milk/blob/main/Core/Game.cs/#L185"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/rik-cross/monogame-milk/blob/main/Core/Game.cs/#L234"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Sets the current active game scene.</p>
@@ -837,7 +933,7 @@ All systems must be registered before use.</p>
 
   <h3 id="milk_Core_Game_Update_Microsoft_Xna_Framework_GameTime_" data-uid="milk.Core.Game.Update(Microsoft.Xna.Framework.GameTime)">
   Update(GameTime)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/rik-cross/monogame-milk/blob/main/Core/Game.cs/#L228"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/rik-cross/monogame-milk/blob/main/Core/Game.cs/#L277"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Do not call this.</p>

@@ -39,7 +39,7 @@ items:
     path: Core/System.cs
     startLine: 15
   assemblies:
-  - MonoGameECS
+  - milk
   namespace: milk.Core
   summary: A system within a scene runs on entities with the reqiured set of components.
   example: []
@@ -76,7 +76,7 @@ items:
     path: Core/System.cs
     startLine: 22
   assemblies:
-  - MonoGameECS
+  - milk
   namespace: milk.Core
   summary: MonoGame spriteBatch used for drawing.
   example: []
@@ -105,7 +105,7 @@ items:
     path: Core/System.cs
     startLine: 34
   assemblies:
-  - MonoGameECS
+  - milk
   namespace: milk.Core
   summary: >-
     Decides whether the system Draw method is called before
@@ -139,7 +139,7 @@ items:
     path: Core/System.cs
     startLine: 54
   assemblies:
-  - MonoGameECS
+  - milk
   namespace: milk.Core
   summary: >-
     Decides whether the system Draw method is called before
@@ -173,7 +173,7 @@ items:
     path: Core/System.cs
     startLine: 73
   assemblies:
-  - MonoGameECS
+  - milk
   namespace: milk.Core
   summary: System constructor.
   example: []
@@ -204,7 +204,7 @@ items:
     path: Core/System.cs
     startLine: 83
   assemblies:
-  - MonoGameECS
+  - milk
   namespace: milk.Core
   summary: >-
     Adds a component type that is required by an entity 
@@ -241,7 +241,7 @@ items:
     path: Core/System.cs
     startLine: 101
   assemblies:
-  - MonoGameECS
+  - milk
   namespace: milk.Core
   summary: Called once when a system is created.
   example: []
@@ -269,7 +269,7 @@ items:
     path: Core/System.cs
     startLine: 108
   assemblies:
-  - MonoGameECS
+  - milk
   namespace: milk.Core
   summary: A top-level input method, called once per frame.
   example: []
@@ -304,7 +304,7 @@ items:
     path: Core/System.cs
     startLine: 117
   assemblies:
-  - MonoGameECS
+  - milk
   namespace: milk.Core
   summary: >-
     An entity-specific input method, called once per frame
@@ -345,7 +345,7 @@ items:
     path: Core/System.cs
     startLine: 124
   assemblies:
-  - MonoGameECS
+  - milk
   namespace: milk.Core
   summary: A top-level update method, called once per frame.
   example: []
@@ -380,7 +380,7 @@ items:
     path: Core/System.cs
     startLine: 133
   assemblies:
-  - MonoGameECS
+  - milk
   namespace: milk.Core
   summary: >-
     An entity-specific update method, called once per frame
@@ -421,7 +421,7 @@ items:
     path: Core/System.cs
     startLine: 139
   assemblies:
-  - MonoGameECS
+  - milk
   namespace: milk.Core
   summary: A top-level draw method, called once per frame.
   example: []
@@ -453,7 +453,7 @@ items:
     path: Core/System.cs
     startLine: 147
   assemblies:
-  - MonoGameECS
+  - milk
   namespace: milk.Core
   summary: >-
     An entity-specific draw method, called once per frame
@@ -491,7 +491,7 @@ items:
     path: Core/System.cs
     startLine: 157
   assemblies:
-  - MonoGameECS
+  - milk
   namespace: milk.Core
   summary: Called once when the scene becomes active;
   example: []
@@ -523,7 +523,7 @@ items:
     path: Core/System.cs
     startLine: 163
   assemblies:
-  - MonoGameECS
+  - milk
   namespace: milk.Core
   summary: Called once when the scene is no longer active.
   example: []
@@ -555,7 +555,7 @@ items:
     path: Core/System.cs
     startLine: 170
   assemblies:
-  - MonoGameECS
+  - milk
   namespace: milk.Core
   summary: Called once when an entity is added to the scene containing the system.
   example: []
@@ -590,7 +590,7 @@ items:
     path: Core/System.cs
     startLine: 177
   assemblies:
-  - MonoGameECS
+  - milk
   namespace: milk.Core
   summary: Called once when an entity is removed from the scene containing the system.
   example: []
@@ -625,7 +625,7 @@ items:
     path: Core/System.cs
     startLine: 183
   assemblies:
-  - MonoGameECS
+  - milk
   namespace: milk.Core
   summary: Called once when a system is added to a scene.
   example: []
@@ -657,7 +657,7 @@ items:
     path: Core/System.cs
     startLine: 189
   assemblies:
-  - MonoGameECS
+  - milk
   namespace: milk.Core
   summary: Called once when a system is removed from a scene.
   example: []

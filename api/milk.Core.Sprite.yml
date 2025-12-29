@@ -36,7 +36,7 @@ items:
     path: Core/Sprite.cs
     startLine: 16
   assemblies:
-  - MonoGameECS
+  - milk
   namespace: milk.Core
   summary: >-
     A sprite is added to a SpriteComponent, and is a collection 
@@ -78,7 +78,7 @@ items:
     path: Core/Sprite.cs
     startLine: 22
   assemblies:
-  - MonoGameECS
+  - milk
   namespace: milk.Core
   summary: A list of one or more textures to display.
   example: []
@@ -107,7 +107,7 @@ items:
     path: Core/Sprite.cs
     startLine: 27
   assemblies:
-  - MonoGameECS
+  - milk
   namespace: milk.Core
   summary: Sprite hue.
   example: []
@@ -136,7 +136,7 @@ items:
     path: Core/Sprite.cs
     startLine: 32
   assemblies:
-  - MonoGameECS
+  - milk
   namespace: milk.Core
   summary: The sprite offset from the entity position.
   example: []
@@ -165,7 +165,7 @@ items:
     path: Core/Sprite.cs
     startLine: 37
   assemblies:
-  - MonoGameECS
+  - milk
   namespace: milk.Core
   summary: Horizontally flip the sprite.
   example: []
@@ -194,7 +194,7 @@ items:
     path: Core/Sprite.cs
     startLine: 42
   assemblies:
-  - MonoGameECS
+  - milk
   namespace: milk.Core
   summary: Vertically flip the sprite.
   example: []
@@ -223,7 +223,7 @@ items:
     path: Core/Sprite.cs
     startLine: 47
   assemblies:
-  - MonoGameECS
+  - milk
   namespace: milk.Core
   summary: Texture scaling.
   example: []
@@ -252,7 +252,7 @@ items:
     path: Core/Sprite.cs
     startLine: 54
   assemblies:
-  - MonoGameECS
+  - milk
   namespace: milk.Core
   summary: The number of textures.
   example: []
@@ -281,7 +281,7 @@ items:
     path: Core/Sprite.cs
     startLine: 59
   assemblies:
-  - MonoGameECS
+  - milk
   namespace: milk.Core
   summary: The current texture index.
   example: []
@@ -310,7 +310,7 @@ items:
     path: Core/Sprite.cs
     startLine: 64
   assemblies:
-  - MonoGameECS
+  - milk
   namespace: milk.Core
   summary: The total time for the animation loop.
   example: []
@@ -339,7 +339,7 @@ items:
     path: Core/Sprite.cs
     startLine: 69
   assemblies:
-  - MonoGameECS
+  - milk
   namespace: milk.Core
   summary: The time to display each texture.
   example: []
@@ -368,7 +368,7 @@ items:
     path: Core/Sprite.cs
     startLine: 74
   assemblies:
-  - MonoGameECS
+  - milk
   namespace: milk.Core
   summary: The elapsed time since the texture became current.
   example: []
@@ -397,7 +397,7 @@ items:
     path: Core/Sprite.cs
     startLine: 80
   assemblies:
-  - MonoGameECS
+  - milk
   namespace: milk.Core
   summary: >-
     If true, the size of the sprite is the same as the
@@ -429,7 +429,7 @@ items:
     path: Core/Sprite.cs
     startLine: 85
   assemblies:
-  - MonoGameECS
+  - milk
   namespace: milk.Core
   summary: Repeatedly loop the animation.
   example: []
@@ -458,7 +458,7 @@ items:
     path: Core/Sprite.cs
     startLine: 99
   assemblies:
-  - MonoGameECS
+  - milk
   namespace: milk.Core
   summary: Creates a new sprite object.
   example: []
@@ -517,7 +517,7 @@ items:
     path: Core/Sprite.cs
     startLine: 141
   assemblies:
-  - MonoGameECS
+  - milk
   namespace: milk.Core
   summary: Returns the currently displayed texture.
   example: []

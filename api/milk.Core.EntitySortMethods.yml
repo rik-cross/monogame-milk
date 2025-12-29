@@ -22,7 +22,7 @@ items:
     path: Core/EntitySortMethods.cs
     startLine: 13
   assemblies:
-  - MonoGameECS
+  - milk
   namespace: milk.Core
   summary: Methods to control the draw order of entities in a scene.
   example: []
@@ -59,7 +59,7 @@ items:
     path: Core/EntitySortMethods.cs
     startLine: 20
   assemblies:
-  - MonoGameECS
+  - milk
   namespace: milk.Core
   summary: >-
     Sorts entities in a scene by their bottom position

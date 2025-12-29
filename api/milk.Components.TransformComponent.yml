@@ -34,7 +34,7 @@ items:
     path: Components/TransformComponent.cs
     startLine: 14
   assemblies:
-  - MonoGameECS
+  - milk
   namespace: milk.Components
   summary: Allows an entity to take up space in a scene.
   example: []
@@ -74,7 +74,7 @@ items:
     path: Components/TransformComponent.cs
     startLine: 20
   assemblies:
-  - MonoGameECS
+  - milk
   namespace: milk.Components
   summary: The (x,y) top-left entity position.
   example: []
@@ -103,7 +103,7 @@ items:
     path: Components/TransformComponent.cs
     startLine: 25
   assemblies:
-  - MonoGameECS
+  - milk
   namespace: milk.Components
   summary: The (x,y) size of the entity in pixels.
   example: []
@@ -132,7 +132,7 @@ items:
     path: Components/TransformComponent.cs
     startLine: 32
   assemblies:
-  - MonoGameECS
+  - milk
   namespace: milk.Components
   summary: Create a new transform component.
   example: []
@@ -170,7 +170,7 @@ items:
     path: Components/TransformComponent.cs
     startLine: 41
   assemblies:
-  - MonoGameECS
+  - milk
   namespace: milk.Components
   summary: The width.
   example: []
@@ -201,7 +201,7 @@ items:
     path: Components/TransformComponent.cs
     startLine: 50
   assemblies:
-  - MonoGameECS
+  - milk
   namespace: milk.Components
   summary: The height.
   example: []
@@ -232,7 +232,7 @@ items:
     path: Components/TransformComponent.cs
     startLine: 59
   assemblies:
-  - MonoGameECS
+  - milk
   namespace: milk.Components
   summary: The x position.
   example: []
@@ -263,7 +263,7 @@ items:
     path: Components/TransformComponent.cs
     startLine: 68
   assemblies:
-  - MonoGameECS
+  - milk
   namespace: milk.Components
   summary: The y position.
   example: []
@@ -294,7 +294,7 @@ items:
     path: Components/TransformComponent.cs
     startLine: 77
   assemblies:
-  - MonoGameECS
+  - milk
   namespace: milk.Components
   summary: The top (y) position.
   example: []
@@ -325,7 +325,7 @@ items:
     path: Components/TransformComponent.cs
     startLine: 86
   assemblies:
-  - MonoGameECS
+  - milk
   namespace: milk.Components
   summary: The middle (y + 1/2 height).
   example: []
@@ -356,7 +356,7 @@ items:
     path: Components/TransformComponent.cs
     startLine: 95
   assemblies:
-  - MonoGameECS
+  - milk
   namespace: milk.Components
   summary: The bottom (y + height).
   example: []
@@ -387,7 +387,7 @@ items:
     path: Components/TransformComponent.cs
     startLine: 104
   assemblies:
-  - MonoGameECS
+  - milk
   namespace: milk.Components
   summary: The left (x) position.
   example: []
@@ -418,7 +418,7 @@ items:
     path: Components/TransformComponent.cs
     startLine: 113
   assemblies:
-  - MonoGameECS
+  - milk
   namespace: milk.Components
   summary: The center (x + 1/2 width).
   example: []
@@ -449,7 +449,7 @@ items:
     path: Components/TransformComponent.cs
     startLine: 122
   assemblies:
-  - MonoGameECS
+  - milk
   namespace: milk.Components
   summary: The right (x + width).
   example: []

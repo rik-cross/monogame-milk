@@ -1,5 +1,5 @@
 {
-  "source_base_path": "/home/rik/Documents/MonoGameEngineSolution/MonoGameECS",
+  "source_base_path": "/home/rik/Documents/MonoGameEngineSolution/milk",
   "xrefmap": "xrefmap.yml",
   "files": [
     {
@@ -288,6 +288,20 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/milk.Core.EngineResourceManager.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/milk.Core.EngineResourceManager.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "milk.Core.EngineResourceManager",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/milk.Core.Entity.yml",
       "output": {
         ".html": {
@@ -382,7 +396,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "milk.Core.SceneRenderable",
-      "Summary": "<p sourcefile=\"api/milk.Core.SceneRenderable.yml\" sourcestartlinenumber=\"1\">Used as a superclass for images, text, etc.</p>\n"
+      "Summary": "<p sourcefile=\"api/milk.Core.SceneRenderable.yml\" sourcestartlinenumber=\"1\">Used as a superclass for images, text, UI, etc.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -1100,6 +1114,62 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/milk.UI.Button.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/milk.UI.Button.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "milk.UI.Button",
+      "Summary": "<p sourcefile=\"api/milk.UI.Button.yml\" sourcestartlinenumber=\"1\">A button ties an area of the screen with callbacks.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/milk.UI.Tween.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/milk.UI.Tween.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "milk.UI.Tween",
+      "Summary": "<p sourcefile=\"api/milk.UI.Tween.yml\" sourcestartlinenumber=\"1\">A tween is added to a scene's animator, and links an action to a duration.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/milk.UI.UIElement.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/milk.UI.UIElement.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "milk.UI.UIElement",
+      "Summary": "<p sourcefile=\"api/milk.UI.UIElement.yml\" sourcestartlinenumber=\"1\">A UI element is the base class for all UI items.\nThis class shouldn't be used directly.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/milk.UI.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/milk.UI.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "milk.UI",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/milk.Utilities.yml",
       "output": {
         ".html": {
@@ -1138,6 +1208,34 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "milk",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/mill.Core.Animator.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/mill.Core.Animator.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "mill.Core.Animator",
+      "Summary": "<p sourcefile=\"api/mill.Core.Animator.yml\" sourcestartlinenumber=\"1\">Each scene has an animator, which is responsible for processing tweens.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/mill.Core.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/mill.Core.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "mill.Core",
       "Summary": null
     },
     {
@@ -1202,6 +1300,16 @@
       "output": {
         ".html": {
           "relative_path": "index.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "nuget_readme.md",
+      "output": {
+        ".html": {
+          "relative_path": "nuget_readme.html"
         }
       },
       "version": ""

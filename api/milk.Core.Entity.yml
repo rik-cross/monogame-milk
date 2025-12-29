@@ -38,7 +38,7 @@ items:
     path: Core/Entity.cs
     startLine: 14
   assemblies:
-  - MonoGameECS
+  - milk
   namespace: milk.Core
   summary: >-
     An Entity is a logical container for components.
@@ -77,7 +77,7 @@ items:
     path: Core/Entity.cs
     startLine: 24
   assemblies:
-  - MonoGameECS
+  - milk
   namespace: milk.Core
   summary: The unique ID of the entity.
   example: []
@@ -108,7 +108,7 @@ items:
     path: Core/Entity.cs
     startLine: 36
   assemblies:
-  - MonoGameECS
+  - milk
   namespace: milk.Core
   summary: >-
     The unique (not case-sensitive) name of the entity.
@@ -142,7 +142,7 @@ items:
     path: Core/Entity.cs
     startLine: 59
   assemblies:
-  - MonoGameECS
+  - milk
   namespace: milk.Core
   summary: The state of the entity in the previous frame.
   example: []
@@ -173,7 +173,7 @@ items:
     path: Core/Entity.cs
     startLine: 64
   assemblies:
-  - MonoGameECS
+  - milk
   namespace: milk.Core
   summary: The current state of the entity.
   example: []
@@ -204,7 +204,7 @@ items:
     path: Core/Entity.cs
     startLine: 84
   assemblies:
-  - MonoGameECS
+  - milk
   namespace: milk.Core
   summary: >-
     The owner Entity.
@@ -238,7 +238,7 @@ items:
     path: Core/Entity.cs
     startLine: 94
   assemblies:
-  - MonoGameECS
+  - milk
   namespace: milk.Core
   summary: >-
     Setting Delete = true marks an entity for deletion.
@@ -272,7 +272,7 @@ items:
     path: Core/Entity.cs
     startLine: 120
   assemblies:
-  - MonoGameECS
+  - milk
   namespace: milk.Core
   summary: >-
     A list of string tags, used to categorise and/or identify an entity.
@@ -312,7 +312,7 @@ items:
     path: Core/Entity.cs
     startLine: 138
   assemblies:
-  - MonoGameECS
+  - milk
   namespace: milk.Core
   summary: Sets the visibility of an entity.
   example: []
@@ -343,7 +343,7 @@ items:
     path: Core/Entity.cs
     startLine: 149
   assemblies:
-  - MonoGameECS
+  - milk
   namespace: milk.Core
   summary: Create a new entity.
   example: []
@@ -393,7 +393,7 @@ items:
     path: Core/Entity.cs
     startLine: 187
   assemblies:
-  - MonoGameECS
+  - milk
   namespace: milk.Core
   summary: Checks whether the entity has a component of the specified type.
   example: []
@@ -430,7 +430,7 @@ items:
     path: Core/Entity.cs
     startLine: 197
   assemblies:
-  - MonoGameECS
+  - milk
   namespace: milk.Core
   summary: >-
     Adds one or more components to the entity,
@@ -468,7 +468,7 @@ items:
     path: Core/Entity.cs
     startLine: 208
   assemblies:
-  - MonoGameECS
+  - milk
   namespace: milk.Core
   summary: Returns the component of the specified type.
   example: []
@@ -505,7 +505,7 @@ items:
     path: Core/Entity.cs
     startLine: 217
   assemblies:
-  - MonoGameECS
+  - milk
   namespace: milk.Core
   summary: Removes the component of the specified type (if one exists).
   example: []
@@ -539,7 +539,7 @@ items:
     path: Core/Entity.cs
     startLine: 230
   assemblies:
-  - MonoGameECS
+  - milk
   namespace: milk.Core
   summary: Adds one or more tags, stored in lower-case with duplicates removed.
   example: []
@@ -574,7 +574,7 @@ items:
     path: Core/Entity.cs
     startLine: 246
   assemblies:
-  - MonoGameECS
+  - milk
   namespace: milk.Core
   summary: >-
     Checks whether the entity has all of the tags specified.
@@ -615,7 +615,7 @@ items:
     path: Core/Entity.cs
     startLine: 261
   assemblies:
-  - MonoGameECS
+  - milk
   namespace: milk.Core
   summary: Removes the specified tags (if they exist).
   example: []
@@ -650,7 +650,7 @@ items:
     path: Core/Entity.cs
     startLine: 279
   assemblies:
-  - MonoGameECS
+  - milk
   namespace: milk.Core
   summary: Debug entity string print method.
   example: []

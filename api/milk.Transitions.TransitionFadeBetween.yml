@@ -23,7 +23,7 @@ items:
     path: Transitions/TransitionFadeBetween.cs
     startLine: 6
   assemblies:
-  - MonoGameECS
+  - milk
   namespace: milk.Transitions
   syntax:
     content: 'public class TransitionFadeBetween : Transition'
@@ -69,7 +69,7 @@ items:
     path: Transitions/TransitionFadeBetween.cs
     startLine: 9
   assemblies:
-  - MonoGameECS
+  - milk
   namespace: milk.Transitions
   syntax:
     content: public TransitionFadeBetween(float duration = 1000, EasingFunctions.EasingDelegate? easingFunction = null)
@@ -103,7 +103,7 @@ items:
     path: Transitions/TransitionFadeBetween.cs
     startLine: 14
   assemblies:
-  - MonoGameECS
+  - milk
   namespace: milk.Transitions
   example: []
   syntax:

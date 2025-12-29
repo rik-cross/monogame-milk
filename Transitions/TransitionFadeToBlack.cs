@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using milk.Core;
+using MonoGame.Extended;
 namespace milk.Transitions;
 
 public class TransitionFadeToBlack : Transition
@@ -30,7 +31,7 @@ public class TransitionFadeToBlack : Transition
             spriteBatch.Draw(newScenesRenderTarget, Vector2.Zero, Color.White);
 
         double alpha = 1 - Math.Abs(p * 2 - 1);
-        spriteBatch.Draw(Scene.whiteRectangle, new Rectangle(0, 0, (int)EngineGlobals.game.Size.X, (int)EngineGlobals.game.Size.Y), Color.Black * (float)alpha);
+        spriteBatch.FillRectangle(new Rectangle(0, 0, (int)EngineGlobals.game.Size.X, (int)EngineGlobals.game.Size.Y), Color.Black * (float)alpha);
 
     }
 }

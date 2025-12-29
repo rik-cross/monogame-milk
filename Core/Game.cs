@@ -35,12 +35,14 @@ public class Game : Microsoft.Xna.Framework.Game
     
     private readonly int _maxEntities;
     private readonly int _maxComponents;
+    private readonly bool _showSplash;
 
     // MonoGame graphics helper instances 
     internal ContentManager content;
     internal GraphicsDeviceManager graphics;
     internal GraphicsDevice graphicsDevice;
-    internal SpriteBatch spriteBatch;
+    public SpriteBatch spriteBatch;
+    public EngineResourceManager _engineResources;
 
     // Manager instances
     internal EntityManager entityManager;
@@ -71,6 +73,7 @@ public class Game : Microsoft.Xna.Framework.Game
     /// <param name="isMouseVisible">Sets mouse visibility (default = true).</param>
     /// <param name="maxEntities">The maximum number of game entities (default = 1024).</param>
     /// <param name="maxComponents">The maximum number of game components (default = 128).</param>
+    /// <param name="showSplash">Choose to show the milk splash scene (default = true).</param>
     /// <param name="debug">Sets debug mode (default = false).</param>
     public Game(
         string? title = null,
@@ -78,10 +81,23 @@ public class Game : Microsoft.Xna.Framework.Game
         bool isMouseVisible = true,
         int maxEntities = 1024,
         int maxComponents = 128,
+        bool showSplash = true,
         bool debug = false
     )
     {
 
+
+        /* Diagnostic code: List all resources the engine can actually see
+        var assembly = typeof(milk.Core.Text).Assembly;
+        string[] resources = assembly.GetManifestResourceNames();
+
+        Console.WriteLine("--- AVAILABLE RESOURCES ---");
+        foreach (var resource in resources)
+        {
+            Console.WriteLine(resource);
+        }
+        Console.WriteLine("---------------------------");
+        */
         // TODO
         // I'm not sure of the best place to store and pass the main game object
         // An alternative might be to pass this around to other objects, but that feels clunky
@@ -100,6 +116,7 @@ public class Game : Microsoft.Xna.Framework.Game
 
         //bool firstFrame = true;
 
+        _showSplash = showSplash;
         Debug = debug;
 
     }
@@ -132,6 +149,11 @@ public class Game : Microsoft.Xna.Framework.Game
         graphicsDevice = GraphicsDevice;
         spriteBatch = new SpriteBatch(GraphicsDevice);
 
+        // Initialize the manager with Services
+        _engineResources = new EngineResourceManager(this.Services);
+        // Load the internal assets
+        _engineResources.LoadEngineContent();
+
         // Ensure that render targets aren't cleared when swapping between them
         GraphicsDevice.PresentationParameters.RenderTargetUsage = RenderTargetUsage.PreserveContents;
 
@@ -148,13 +170,31 @@ public class Game : Microsoft.Xna.Framework.Game
         RegisterSystem(new TriggerSystem());
         RegisterSystem(new PhysicsSystem());
 
-        // Run the Init callback if one has been specified
-        if (Init != null)
-            Init();
+        if (_showSplash == true)
+        {
 
-        // Set a default scene if the scene stack is empty
-        if (sceneManager._currentSceneList.Count == 0)
-            SetScene(new DefaultScene());
+            // Run the Init callback if one has been specified
+            if (Init != null)
+                Init();
+
+            // Set a default scene if the scene stack only contains the splash scene
+            if (sceneManager._currentSceneList.Count == 0 && sceneManager.currentTransition == null)
+                SetScene(new DefaultScene());
+
+            // Add the splash scene
+            SetScene(new MilkSplashScene(), keepExistingScenes: true);
+
+        }
+        else
+        {
+            // Run the Init callback if one has been specified
+            if (Init != null)
+                Init();    
+
+            // Set a default scene if the scene stack is empty
+            if (sceneManager._currentSceneList.Count == 0 && sceneManager.currentTransition == null)
+                SetScene(new DefaultScene());
+        }
 
     }
 
@@ -175,6 +215,15 @@ public class Game : Microsoft.Xna.Framework.Game
     //
     // Scene methods
     //
+
+    /// <summary>
+    /// Returns the current top scene in the scene stack.
+    /// </summary>
+    /// <returns>The current top scene in the scene stack.</returns>
+    public Scene? GetCurrentScene()
+    {
+        return EngineGlobals.game.sceneManager.GetCurrentScene();
+    }
 
     /// <summary>
     /// Sets the current active game scene.

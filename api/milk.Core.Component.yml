@@ -24,7 +24,7 @@ items:
     path: Core/Component.cs
     startLine: 12
   assemblies:
-  - MonoGameECS
+  - milk
   namespace: milk.Core
   summary: >-
     A component stores data for systems to use,
@@ -70,7 +70,7 @@ items:
     path: Core/Component.cs
     startLine: 23
   assemblies:
-  - MonoGameECS
+  - milk
   namespace: milk.Core
   summary: This method is called automatically whenever a component is added to an entity.
   example: []
@@ -102,7 +102,7 @@ items:
     path: Core/Component.cs
     startLine: 29
   assemblies:
-  - MonoGameECS
+  - milk
   namespace: milk.Core
   summary: This method is called automatically whenever a component is removed from an entity.
   example: []
@@ -134,7 +134,7 @@ items:
     path: Core/Component.cs
     startLine: 35
   assemblies:
-  - MonoGameECS
+  - milk
   namespace: milk.Core
   summary: Debug entity string print method.
   example: []

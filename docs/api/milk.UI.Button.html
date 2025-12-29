@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Class Button | milk </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Class Button | milk ">
+      
+      <meta name="description" content="A button ties an area of the screen with callbacks.">
+      <link rel="icon" href="../images/favicon.ico">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/rik-cross/monogame-milk/new/main/apiSpec/new?filename=milk_UI_Button.md&amp;value=---%0Auid%3A%20milk.UI.Button%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../images/milk.png" alt="milk">
+            milk
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="milk.UI.Button">
+
+
+
+  <h1 id="milk_UI_Button" data-uid="milk.UI.Button" class="text-break">
+Class Button  <a class="header-action link-secondary" title="View source" href="https://github.com/rik-cross/monogame-milk/blob/main/UI/Button.cs/#L17"><i class="bi bi-code-slash"></i></a>
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><a class="xref" href="milk.html">milk</a>.<a class="xref" href="milk.UI.html">UI</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>milk.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"><p>A button ties an area of the screen with callbacks.</p>
+</div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class Button : UIElement</code></pre>
+  </div>
+
+
+
+
+  <dl class="typelist inheritance">
+    <dt>Inheritance</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+      <div><a class="xref" href="milk.Core.SceneRenderable.html">SceneRenderable</a></div>
+      <div><a class="xref" href="milk.UI.UIElement.html">UIElement</a></div>
+      <div><span class="xref">Button</span></div>
+    </dd>
+  </dl>
+
+
+
+  <dl class="typelist inheritedMembers">
+    <dt>Inherited Members</dt>
+    <dd>
+    <div>
+      <a class="xref" href="milk.UI.UIElement.html#milk_UI_UIElement_parentScene">UIElement.parentScene</a>
+    </div>
+    <div>
+      <a class="xref" href="milk.UI.UIElement.html#milk_UI_UIElement_Caption">UIElement.Caption</a>
+    </div>
+    <div>
+      <a class="xref" href="milk.UI.UIElement.html#milk_UI_UIElement_Font">UIElement.Font</a>
+    </div>
+    <div>
+      <a class="xref" href="milk.UI.UIElement.html#milk_UI_UIElement_ForegroundColor">UIElement.ForegroundColor</a>
+    </div>
+    <div>
+      <a class="xref" href="milk.UI.UIElement.html#milk_UI_UIElement_BackgroundColor">UIElement.BackgroundColor</a>
+    </div>
+    <div>
+      <a class="xref" href="milk.UI.UIElement.html#milk_UI_UIElement_BorderColor">UIElement.BorderColor</a>
+    </div>
+    <div>
+      <a class="xref" href="milk.UI.UIElement.html#milk_UI_UIElement_SelectedForegroundColor">UIElement.SelectedForegroundColor</a>
+    </div>
+    <div>
+      <a class="xref" href="milk.UI.UIElement.html#milk_UI_UIElement_SelectedBackgroundColor">UIElement.SelectedBackgroundColor</a>
+    </div>
+    <div>
+      <a class="xref" href="milk.UI.UIElement.html#milk_UI_UIElement_SelectedBorderColor">UIElement.SelectedBorderColor</a>
+    </div>
+    <div>
+      <a class="xref" href="milk.UI.UIElement.html#milk_UI_UIElement_BorderWidth">UIElement.BorderWidth</a>
+    </div>
+    <div>
+      <a class="xref" href="milk.UI.UIElement.html#milk_UI_UIElement_ElementAbove">UIElement.ElementAbove</a>
+    </div>
+    <div>
+      <a class="xref" href="milk.UI.UIElement.html#milk_UI_UIElement_ElementBelow">UIElement.ElementBelow</a>
+    </div>
+    <div>
+      <a class="xref" href="milk.UI.UIElement.html#milk_UI_UIElement_ElementLeft">UIElement.ElementLeft</a>
+    </div>
+    <div>
+      <a class="xref" href="milk.UI.UIElement.html#milk_UI_UIElement_ElementRight">UIElement.ElementRight</a>
+    </div>
+    <div>
+      <a class="xref" href="milk.UI.UIElement.html#milk_UI_UIElement_OnSelected">UIElement.OnSelected</a>
+    </div>
+    <div>
+      <a class="xref" href="milk.UI.UIElement.html#milk_UI_UIElement_CustomDrawMethod">UIElement.CustomDrawMethod</a>
+    </div>
+    <div>
+      <a class="xref" href="milk.UI.UIElement.html#milk_UI_UIElement_Active">UIElement.Active</a>
+    </div>
+    <div>
+      <a class="xref" href="milk.UI.UIElement.html#milk_UI_UIElement_Enabled">UIElement.Enabled</a>
+    </div>
+    <div>
+      <a class="xref" href="milk.UI.UIElement.html#milk_UI_UIElement_Update_Microsoft_Xna_Framework_GameTime_System_Boolean_">UIElement.Update(GameTime, bool)</a>
+    </div>
+    <div>
+      <a class="xref" href="milk.UI.UIElement.html#milk_UI_UIElement_Input_System_Boolean_">UIElement.Input(bool)</a>
+    </div>
+    <div>
+      <a class="xref" href="milk.Core.SceneRenderable.html#milk_Core_SceneRenderable_Position">SceneRenderable.Position</a>
+    </div>
+    <div>
+      <a class="xref" href="milk.Core.SceneRenderable.html#milk_Core_SceneRenderable_Size">SceneRenderable.Size</a>
+    </div>
+    <div>
+      <a class="xref" href="milk.Core.SceneRenderable.html#milk_Core_SceneRenderable_Alpha">SceneRenderable.Alpha</a>
+    </div>
+    <div>
+      <a class="xref" href="milk.Core.SceneRenderable.html#milk_Core_SceneRenderable_Anchor">SceneRenderable.Anchor</a>
+    </div>
+    <div>
+      <a class="xref" href="milk.Core.SceneRenderable.html#milk_Core_SceneRenderable_Parent">SceneRenderable.Parent</a>
+    </div>
+    <div>
+      <a class="xref" href="milk.Core.SceneRenderable.html#milk_Core_SceneRenderable_Visible">SceneRenderable.Visible</a>
+    </div>
+    <div>
+      <a class="xref" href="milk.Core.SceneRenderable.html#milk_Core_SceneRenderable_CalculateTopLeftPositionFromAnchor_Microsoft_Xna_Framework_Vector2_">SceneRenderable.CalculateTopLeftPositionFromAnchor(Vector2)</a>
+    </div>
+    <div>
+      <a class="xref" href="milk.Core.SceneRenderable.html#milk_Core_SceneRenderable_GetPositionIncludingParent_Microsoft_Xna_Framework_Vector2_">SceneRenderable.GetPositionIncludingParent(Vector2)</a>
+    </div>
+    <div>
+      <a class="xref" href="milk.Core.SceneRenderable.html#milk_Core_SceneRenderable_Draw">SceneRenderable.Draw()</a>
+    </div>
+    <div>
+      <a class="xref" href="milk.Core.SceneRenderable.html#milk_Core_SceneRenderable_Width">SceneRenderable.Width</a>
+    </div>
+    <div>
+      <a class="xref" href="milk.Core.SceneRenderable.html#milk_Core_SceneRenderable_Height">SceneRenderable.Height</a>
+    </div>
+    <div>
+      <a class="xref" href="milk.Core.SceneRenderable.html#milk_Core_SceneRenderable_X">SceneRenderable.X</a>
+    </div>
+    <div>
+      <a class="xref" href="milk.Core.SceneRenderable.html#milk_Core_SceneRenderable_Y">SceneRenderable.Y</a>
+    </div>
+    <div>
+      <a class="xref" href="milk.Core.SceneRenderable.html#milk_Core_SceneRenderable_Top">SceneRenderable.Top</a>
+    </div>
+    <div>
+      <a class="xref" href="milk.Core.SceneRenderable.html#milk_Core_SceneRenderable_Middle">SceneRenderable.Middle</a>
+    </div>
+    <div>
+      <a class="xref" href="milk.Core.SceneRenderable.html#milk_Core_SceneRenderable_Bottom">SceneRenderable.Bottom</a>
+    </div>
+    <div>
+      <a class="xref" href="milk.Core.SceneRenderable.html#milk_Core_SceneRenderable_Left">SceneRenderable.Left</a>
+    </div>
+    <div>
+      <a class="xref" href="milk.Core.SceneRenderable.html#milk_Core_SceneRenderable_Center">SceneRenderable.Center</a>
+    </div>
+    <div>
+      <a class="xref" href="milk.Core.SceneRenderable.html#milk_Core_SceneRenderable_Right">SceneRenderable.Right</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
+    </div>
+  </dd></dl>
+
+
+
+
+
+
+  <h2 class="section" id="constructors">Constructors
+</h2>
+
+
+  <a id="milk_UI_Button__ctor_" data-uid="milk.UI.Button.#ctor*"></a>
+
+  <h3 id="milk_UI_Button__ctor_System_String_Microsoft_Xna_Framework_Graphics_SpriteFont_System_Nullable_Microsoft_Xna_Framework_Vector2__System_Nullable_Microsoft_Xna_Framework_Vector2__milk_Core_Anchor_milk_UI_UIElement_System_Nullable_Microsoft_Xna_Framework_Color__System_Nullable_Microsoft_Xna_Framework_Color__System_Nullable_Microsoft_Xna_Framework_Color__System_Nullable_Microsoft_Xna_Framework_Color__System_Nullable_Microsoft_Xna_Framework_Color__System_Nullable_Microsoft_Xna_Framework_Color__System_Int32_System_Action_milk_UI_UIElement_milk_Core_Scene__System_Action_milk_UI_UIElement_System_Boolean__System_Single_System_Boolean_System_Boolean_" data-uid="milk.UI.Button.#ctor(System.String,Microsoft.Xna.Framework.Graphics.SpriteFont,System.Nullable{Microsoft.Xna.Framework.Vector2},System.Nullable{Microsoft.Xna.Framework.Vector2},milk.Core.Anchor,milk.UI.UIElement,System.Nullable{Microsoft.Xna.Framework.Color},System.Nullable{Microsoft.Xna.Framework.Color},System.Nullable{Microsoft.Xna.Framework.Color},System.Nullable{Microsoft.Xna.Framework.Color},System.Nullable{Microsoft.Xna.Framework.Color},System.Nullable{Microsoft.Xna.Framework.Color},System.Int32,System.Action{milk.UI.UIElement,milk.Core.Scene},System.Action{milk.UI.UIElement,System.Boolean},System.Single,System.Boolean,System.Boolean)">
+  Button(string?, SpriteFont?, Vector2?, Vector2?, Anchor, UIElement?, Color?, Color?, Color?, Color?, Color?, Color?, int, Action&lt;UIElement, Scene&gt;?, Action&lt;UIElement, bool&gt;?, float, bool, bool)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/rik-cross/monogame-milk/blob/main/UI/Button.cs/#L41"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Creates a new button object.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Button(string? caption = null, SpriteFont? font = null, Vector2? position = null, Vector2? size = null, Anchor anchor = Anchor.TopLeft, UIElement? parent = null, Color? foregroundColor = null, Color? backgroundColor = null, Color? borderColor = null, Color? selectedForegroundColor = null, Color? selectedBackgroundColor = null, Color? selectedBorderColor = null, int borderWidth = 1, Action&lt;UIElement, Scene&gt;? onSelected = null, Action&lt;UIElement, bool&gt;? customDrawMethod = null, float alpha = 1, bool visible = true, bool active = true)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>caption</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>The text to display (default = null - no caption).</p>
+</dd>
+    <dt><code>font</code> <span class="xref">SpriteFont</span></dt>
+    <dd><p>The text font (default = null - FontSmall).</p>
+</dd>
+    <dt><code>position</code> <span class="xref">Vector2</span>?</dt>
+    <dd><p>The (x, y) button position.</p>
+</dd>
+    <dt><code>size</code> <span class="xref">Vector2</span>?</dt>
+    <dd><p>The (w, h) size of the button.</p>
+</dd>
+    <dt><code>anchor</code> <a class="xref" href="milk.Core.Anchor.html">Anchor</a></dt>
+    <dd><p>The part of the button to link to the position.</p>
+</dd>
+    <dt><code>parent</code> <a class="xref" href="milk.UI.UIElement.html">UIElement</a></dt>
+    <dd><p>The UIElement parent, for relative positioning.</p>
+</dd>
+    <dt><code>foregroundColor</code> <span class="xref">Color</span>?</dt>
+    <dd><p>The foreground color.</p>
+</dd>
+    <dt><code>backgroundColor</code> <span class="xref">Color</span>?</dt>
+    <dd><p>The background color.</p>
+</dd>
+    <dt><code>borderColor</code> <span class="xref">Color</span>?</dt>
+    <dd><p>The border color.</p>
+</dd>
+    <dt><code>selectedForegroundColor</code> <span class="xref">Color</span>?</dt>
+    <dd><p>The foreground color when the element is selected (default = null - no change).</p>
+</dd>
+    <dt><code>selectedBackgroundColor</code> <span class="xref">Color</span>?</dt>
+    <dd><p>The background color when the element is selected (default = null - no change).</p>
+</dd>
+    <dt><code>selectedBorderColor</code> <span class="xref">Color</span>?</dt>
+    <dd><p>The border color when the element is selected (default = null - no change).</p>
+</dd>
+    <dt><code>borderWidth</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>The width of the border (default = 1).</p>
+</dd>
+    <dt><code>onSelected</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.action-2">Action</a>&lt;<a class="xref" href="milk.UI.UIElement.html">UIElement</a>, <a class="xref" href="milk.Core.Scene.html">Scene</a>&gt;</dt>
+    <dd><p>The button callback when selected.</p>
+</dd>
+    <dt><code>customDrawMethod</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.action-2">Action</a>&lt;<a class="xref" href="milk.UI.UIElement.html">UIElement</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>&gt;</dt>
+    <dd><p>Optionally specified a custom draw method (default = null).</p>
+</dd>
+    <dt><code>alpha</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd><p>Button's opacity (between 0 and 1, default = 1 - no opacity).</p>
+</dd>
+    <dt><code>visible</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p>Button visibility (default = true).</p>
+</dd>
+    <dt><code>active</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p>Button in use (default = true).</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="methods">Methods
+</h2>
+
+
+  <a id="milk_UI_Button_DrawBackground_" data-uid="milk.UI.Button.DrawBackground*"></a>
+
+  <h3 id="milk_UI_Button_DrawBackground" data-uid="milk.UI.Button.DrawBackground">
+  DrawBackground()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/rik-cross/monogame-milk/blob/main/UI/Button.cs/#L145"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void DrawBackground()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="milk_UI_Button_DrawBorder_" data-uid="milk.UI.Button.DrawBorder*"></a>
+
+  <h3 id="milk_UI_Button_DrawBorder" data-uid="milk.UI.Button.DrawBorder">
+  DrawBorder()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/rik-cross/monogame-milk/blob/main/UI/Button.cs/#L147"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void DrawBorder()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="milk_UI_Button_DrawText_" data-uid="milk.UI.Button.DrawText*"></a>
+
+  <h3 id="milk_UI_Button_DrawText" data-uid="milk.UI.Button.DrawText">
+  DrawText()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/rik-cross/monogame-milk/blob/main/UI/Button.cs/#L146"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void DrawText()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/rik-cross/monogame-milk/blob/main/UI/Button.cs/#L17" class="edit-link">Edit this page</a>
+        </div>
+
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

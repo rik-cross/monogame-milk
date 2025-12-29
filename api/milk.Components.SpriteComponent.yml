@@ -26,7 +26,7 @@ items:
     path: Components/SpriteComponent.cs
     startLine: 14
   assemblies:
-  - MonoGameECS
+  - milk
   namespace: milk.Components
   summary: Associates one or more textures (in a `Sprite`) with a state.
   example: []
@@ -66,7 +66,7 @@ items:
     path: Components/SpriteComponent.cs
     startLine: 22
   assemblies:
-  - MonoGameECS
+  - milk
   namespace: milk.Components
   summary: Plays / pauses the sprite's animation.
   example: []
@@ -97,7 +97,7 @@ items:
     path: Components/SpriteComponent.cs
     startLine: 28
   assemblies:
-  - MonoGameECS
+  - milk
   namespace: milk.Components
   summary: Simple creation of a sprite component with a single image.
   example: []
@@ -134,7 +134,7 @@ items:
     path: Components/SpriteComponent.cs
     startLine: 45
   assemblies:
-  - MonoGameECS
+  - milk
   namespace: milk.Components
   summary: Add a sprite (1 or more textures) to the component.
   example: []
@@ -172,7 +172,7 @@ items:
     path: Components/SpriteComponent.cs
     startLine: 55
   assemblies:
-  - MonoGameECS
+  - milk
   namespace: milk.Components
   summary: Returns 'true' if a sprite exists for the specified state.
   example: []
@@ -210,7 +210,7 @@ items:
     path: Components/SpriteComponent.cs
     startLine: 65
   assemblies:
-  - MonoGameECS
+  - milk
   namespace: milk.Components
   summary: Returns the sprite object for the specified state.
   example: []

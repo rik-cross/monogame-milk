@@ -38,7 +38,7 @@ items:
     path: Core/Camera.cs
     startLine: 16
   assemblies:
-  - MonoGameECS
+  - milk
   namespace: milk.Core
   summary: >-
     A camera can be added to a Scene via scene.AddCamera(),
@@ -78,7 +78,7 @@ items:
     path: Core/Camera.cs
     startLine: 22
   assemblies:
-  - MonoGameECS
+  - milk
   namespace: milk.Core
   summary: The parent scene of the camera.
   example: []
@@ -107,7 +107,7 @@ items:
     path: Core/Camera.cs
     startLine: 29
   assemblies:
-  - MonoGameECS
+  - milk
   namespace: milk.Core
   summary: >-
     The name of the camera.
@@ -141,7 +141,7 @@ items:
     path: Core/Camera.cs
     startLine: 44
   assemblies:
-  - MonoGameECS
+  - milk
   namespace: milk.Core
   summary: The (x, y) top-left scene position of the camera.
   example: []
@@ -170,7 +170,7 @@ items:
     path: Core/Camera.cs
     startLine: 49
   assemblies:
-  - MonoGameECS
+  - milk
   namespace: milk.Core
   summary: The (x, y) size of the camera.
   example: []
@@ -199,7 +199,7 @@ items:
     path: Core/Camera.cs
     startLine: 56
   assemblies:
-  - MonoGameECS
+  - milk
   namespace: milk.Core
   summary: The (x, y) target world position that the camera is focused on.
   example: []
@@ -228,7 +228,7 @@ items:
     path: Core/Camera.cs
     startLine: 63
   assemblies:
-  - MonoGameECS
+  - milk
   namespace: milk.Core
   summary: >-
     If set to true, the camera is locked to the map dimensions,
@@ -260,7 +260,7 @@ items:
     path: Core/Camera.cs
     startLine: 70
   assemblies:
-  - MonoGameECS
+  - milk
   namespace: milk.Core
   summary: >-
     The amount that the camera moves to its target position
@@ -294,7 +294,7 @@ items:
     path: Core/Camera.cs
     startLine: 75
   assemblies:
-  - MonoGameECS
+  - milk
   namespace: milk.Core
   summary: The background color of the camera.
   example: []
@@ -323,7 +323,7 @@ items:
     path: Core/Camera.cs
     startLine: 80
   assemblies:
-  - MonoGameECS
+  - milk
   namespace: milk.Core
   summary: The width of the border.
   example: []
@@ -352,7 +352,7 @@ items:
     path: Core/Camera.cs
     startLine: 85
   assemblies:
-  - MonoGameECS
+  - milk
   namespace: milk.Core
   summary: The color of the border.
   example: []
@@ -381,7 +381,7 @@ items:
     path: Core/Camera.cs
     startLine: 92
   assemblies:
-  - MonoGameECS
+  - milk
   namespace: milk.Core
   syntax:
     content: public float _currentZoom
@@ -408,7 +408,7 @@ items:
     path: Core/Camera.cs
     startLine: 93
   assemblies:
-  - MonoGameECS
+  - milk
   namespace: milk.Core
   syntax:
     content: public float _startZoom
@@ -435,7 +435,7 @@ items:
     path: Core/Camera.cs
     startLine: 103
   assemblies:
-  - MonoGameECS
+  - milk
   namespace: milk.Core
   summary: The optional entity to track.
   example: []
@@ -464,7 +464,7 @@ items:
     path: Core/Camera.cs
     startLine: 119
   assemblies:
-  - MonoGameECS
+  - milk
   namespace: milk.Core
   summary: Creates a new camera object.
   example: []
@@ -529,7 +529,7 @@ items:
     path: Core/Camera.cs
     startLine: 250
   assemblies:
-  - MonoGameECS
+  - milk
   namespace: milk.Core
   summary: Sets the zoom level of the camera.
   example: []
@@ -567,7 +567,7 @@ items:
     path: Core/Camera.cs
     startLine: 310
   assemblies:
-  - MonoGameECS
+  - milk
   namespace: milk.Core
   summary: Sets a new target world position.
   example: []
@@ -605,7 +605,7 @@ items:
     path: Core/Camera.cs
     startLine: 331
   assemblies:
-  - MonoGameECS
+  - milk
   namespace: milk.Core
   summary: Gets the target world position.
   example: []

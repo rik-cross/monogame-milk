@@ -28,7 +28,7 @@ items:
     path: Core/Image.cs
     startLine: 15
   assemblies:
-  - MonoGameECS
+  - milk
   namespace: milk.Core
   summary: An image can be displayed within a scene.
   example: []
@@ -44,8 +44,19 @@ items:
   - milk.Core.SceneRenderable.Alpha
   - milk.Core.SceneRenderable.Anchor
   - milk.Core.SceneRenderable.Parent
+  - milk.Core.SceneRenderable.Visible
   - milk.Core.SceneRenderable.CalculateTopLeftPositionFromAnchor(Microsoft.Xna.Framework.Vector2)
   - milk.Core.SceneRenderable.GetPositionIncludingParent(Microsoft.Xna.Framework.Vector2)
+  - milk.Core.SceneRenderable.Width
+  - milk.Core.SceneRenderable.Height
+  - milk.Core.SceneRenderable.X
+  - milk.Core.SceneRenderable.Y
+  - milk.Core.SceneRenderable.Top
+  - milk.Core.SceneRenderable.Middle
+  - milk.Core.SceneRenderable.Bottom
+  - milk.Core.SceneRenderable.Left
+  - milk.Core.SceneRenderable.Center
+  - milk.Core.SceneRenderable.Right
   - System.Object.Equals(System.Object)
   - System.Object.Equals(System.Object,System.Object)
   - System.Object.GetHashCode
@@ -73,7 +84,7 @@ items:
     path: Core/Image.cs
     startLine: 21
   assemblies:
-  - MonoGameECS
+  - milk
   namespace: milk.Core
   summary: The texture to display.
   example: []
@@ -102,7 +113,7 @@ items:
     path: Core/Image.cs
     startLine: 26
   assemblies:
-  - MonoGameECS
+  - milk
   namespace: milk.Core
   summary: Background colour.
   example: []
@@ -131,7 +142,7 @@ items:
     path: Core/Image.cs
     startLine: 31
   assemblies:
-  - MonoGameECS
+  - milk
   namespace: milk.Core
   summary: Border color.
   example: []
@@ -160,7 +171,7 @@ items:
     path: Core/Image.cs
     startLine: 36
   assemblies:
-  - MonoGameECS
+  - milk
   namespace: milk.Core
   summary: Border width.
   example: []
@@ -189,7 +200,7 @@ items:
     path: Core/Image.cs
     startLine: 41
   assemblies:
-  - MonoGameECS
+  - milk
   namespace: milk.Core
   summary: Hue for recoloring image.
   example: []
@@ -218,7 +229,7 @@ items:
     path: Core/Image.cs
     startLine: 58
   assemblies:
-  - MonoGameECS
+  - milk
   namespace: milk.Core
   summary: Creates a new image.
   example: []
@@ -280,7 +291,7 @@ items:
     path: Core/Image.cs
     startLine: 81
   assemblies:
-  - MonoGameECS
+  - milk
   namespace: milk.Core
   summary: Draw needs to be called on an image within a scene.
   example: []
@@ -365,6 +376,13 @@ references:
   name: Parent
   nameWithType: SceneRenderable.Parent
   fullName: milk.Core.SceneRenderable.Parent
+- uid: milk.Core.SceneRenderable.Visible
+  commentId: P:milk.Core.SceneRenderable.Visible
+  parent: milk.Core.SceneRenderable
+  href: milk.Core.SceneRenderable.html#milk_Core_SceneRenderable_Visible
+  name: Visible
+  nameWithType: SceneRenderable.Visible
+  fullName: milk.Core.SceneRenderable.Visible
 - uid: milk.Core.SceneRenderable.CalculateTopLeftPositionFromAnchor(Microsoft.Xna.Framework.Vector2)
   commentId: M:milk.Core.SceneRenderable.CalculateTopLeftPositionFromAnchor(Microsoft.Xna.Framework.Vector2)
   parent: milk.Core.SceneRenderable
@@ -417,6 +435,76 @@ references:
     name: Vector2
     isExternal: true
   - name: )
+- uid: milk.Core.SceneRenderable.Width
+  commentId: P:milk.Core.SceneRenderable.Width
+  parent: milk.Core.SceneRenderable
+  href: milk.Core.SceneRenderable.html#milk_Core_SceneRenderable_Width
+  name: Width
+  nameWithType: SceneRenderable.Width
+  fullName: milk.Core.SceneRenderable.Width
+- uid: milk.Core.SceneRenderable.Height
+  commentId: P:milk.Core.SceneRenderable.Height
+  parent: milk.Core.SceneRenderable
+  href: milk.Core.SceneRenderable.html#milk_Core_SceneRenderable_Height
+  name: Height
+  nameWithType: SceneRenderable.Height
+  fullName: milk.Core.SceneRenderable.Height
+- uid: milk.Core.SceneRenderable.X
+  commentId: P:milk.Core.SceneRenderable.X
+  parent: milk.Core.SceneRenderable
+  href: milk.Core.SceneRenderable.html#milk_Core_SceneRenderable_X
+  name: X
+  nameWithType: SceneRenderable.X
+  fullName: milk.Core.SceneRenderable.X
+- uid: milk.Core.SceneRenderable.Y
+  commentId: P:milk.Core.SceneRenderable.Y
+  parent: milk.Core.SceneRenderable
+  href: milk.Core.SceneRenderable.html#milk_Core_SceneRenderable_Y
+  name: Y
+  nameWithType: SceneRenderable.Y
+  fullName: milk.Core.SceneRenderable.Y
+- uid: milk.Core.SceneRenderable.Top
+  commentId: P:milk.Core.SceneRenderable.Top
+  parent: milk.Core.SceneRenderable
+  href: milk.Core.SceneRenderable.html#milk_Core_SceneRenderable_Top
+  name: Top
+  nameWithType: SceneRenderable.Top
+  fullName: milk.Core.SceneRenderable.Top
+- uid: milk.Core.SceneRenderable.Middle
+  commentId: P:milk.Core.SceneRenderable.Middle
+  parent: milk.Core.SceneRenderable
+  href: milk.Core.SceneRenderable.html#milk_Core_SceneRenderable_Middle
+  name: Middle
+  nameWithType: SceneRenderable.Middle
+  fullName: milk.Core.SceneRenderable.Middle
+- uid: milk.Core.SceneRenderable.Bottom
+  commentId: P:milk.Core.SceneRenderable.Bottom
+  parent: milk.Core.SceneRenderable
+  href: milk.Core.SceneRenderable.html#milk_Core_SceneRenderable_Bottom
+  name: Bottom
+  nameWithType: SceneRenderable.Bottom
+  fullName: milk.Core.SceneRenderable.Bottom
+- uid: milk.Core.SceneRenderable.Left
+  commentId: P:milk.Core.SceneRenderable.Left
+  parent: milk.Core.SceneRenderable
+  href: milk.Core.SceneRenderable.html#milk_Core_SceneRenderable_Left
+  name: Left
+  nameWithType: SceneRenderable.Left
+  fullName: milk.Core.SceneRenderable.Left
+- uid: milk.Core.SceneRenderable.Center
+  commentId: P:milk.Core.SceneRenderable.Center
+  parent: milk.Core.SceneRenderable
+  href: milk.Core.SceneRenderable.html#milk_Core_SceneRenderable_Center
+  name: Center
+  nameWithType: SceneRenderable.Center
+  fullName: milk.Core.SceneRenderable.Center
+- uid: milk.Core.SceneRenderable.Right
+  commentId: P:milk.Core.SceneRenderable.Right
+  parent: milk.Core.SceneRenderable
+  href: milk.Core.SceneRenderable.html#milk_Core_SceneRenderable_Right
+  name: Right
+  nameWithType: SceneRenderable.Right
+  fullName: milk.Core.SceneRenderable.Right
 - uid: System.Object.Equals(System.Object)
   commentId: M:System.Object.Equals(System.Object)
   parent: System.Object

@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
+  <metadata>
+    <id>monogame-milk</id>
+    <version>0.1.1</version>
+    <authors>Rik Cross</authors>
+    <description>Package Description</description>
+    <repository type="git" commit="42f72a8b0d2798256a103bd4079d9d8130660dd0" />
+    <dependencies>
+      <group targetFramework="net8.0">
+        <dependency id="MonoGame.Extended" version="4.0.3" exclude="Build,Analyzers" />
+        <dependency id="MonoGame.Extended.Content.Pipeline" version="4.0.0" exclude="Build,Analyzers" />
+        <dependency id="MonoGame.Framework.DesktopGL" version="3.8.4" exclude="Build,Analyzers" />
+      </group>
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="/home/rik/Documents/MonoGameEngineSolution/milk/bin/Debug/net8.0/milk.dll" target="lib/net8.0/milk.dll" />
+    <file src="/home/rik/Documents/MonoGameEngineSolution/milk/bin/Debug/net8.0/milk.xml" target="lib/net8.0/milk.xml" />
+  </files>
+</package>

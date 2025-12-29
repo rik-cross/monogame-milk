@@ -52,7 +52,7 @@ items:
     path: Core/EasingFunctions.cs
     startLine: 8
   assemblies:
-  - MonoGameECS
+  - milk
   namespace: milk.Core
   summary: >-
     Describes a set of easing functions to describe
@@ -92,7 +92,7 @@ items:
     path: Core/EasingFunctions.cs
     startLine: 20
   assemblies:
-  - MonoGameECS
+  - milk
   namespace: milk.Core
   summary: No easing, no acceleration.
   example: []
@@ -128,7 +128,7 @@ items:
     path: Core/EasingFunctions.cs
     startLine: 28
   assemblies:
-  - MonoGameECS
+  - milk
   namespace: milk.Core
   summary: Easing in (accelerating from zero velocity).
   example: []
@@ -164,7 +164,7 @@ items:
     path: Core/EasingFunctions.cs
     startLine: 36
   assemblies:
-  - MonoGameECS
+  - milk
   namespace: milk.Core
   summary: Easing out (decelerating to zero velocity).
   example: []
@@ -200,7 +200,7 @@ items:
     path: Core/EasingFunctions.cs
     startLine: 44
   assemblies:
-  - MonoGameECS
+  - milk
   namespace: milk.Core
   summary: Easing in and out (accelerating until halfway, then decelerating).
   example: []
@@ -236,7 +236,7 @@ items:
     path: Core/EasingFunctions.cs
     startLine: 52
   assemblies:
-  - MonoGameECS
+  - milk
   namespace: milk.Core
   summary: Easing in (accelerating from zero velocity).
   example: []
@@ -272,7 +272,7 @@ items:
     path: Core/EasingFunctions.cs
     startLine: 60
   assemblies:
-  - MonoGameECS
+  - milk
   namespace: milk.Core
   summary: Easing out (decelerating to zero velocity).
   example: []
@@ -308,7 +308,7 @@ items:
     path: Core/EasingFunctions.cs
     startLine: 68
   assemblies:
-  - MonoGameECS
+  - milk
   namespace: milk.Core
   summary: Easing in and out (accelerating until halfway, then decelerating).
   example: []
@@ -344,7 +344,7 @@ items:
     path: Core/EasingFunctions.cs
     startLine: 79
   assemblies:
-  - MonoGameECS
+  - milk
   namespace: milk.Core
   summary: Easing in (accelerating from zero velocity).
   example: []
@@ -380,7 +380,7 @@ items:
     path: Core/EasingFunctions.cs
     startLine: 87
   assemblies:
-  - MonoGameECS
+  - milk
   namespace: milk.Core
   summary: Easing out (decelerating to zero velocity).
   example: []
@@ -416,7 +416,7 @@ items:
     path: Core/EasingFunctions.cs
     startLine: 96
   assemblies:
-  - MonoGameECS
+  - milk
   namespace: milk.Core
   summary: Easing in and out (accelerating until halfway, then decelerating).
   example: []
@@ -452,7 +452,7 @@ items:
     path: Core/EasingFunctions.cs
     startLine: 107
   assemblies:
-  - MonoGameECS
+  - milk
   namespace: milk.Core
   summary: Easing in (accelerating from zero velocity).
   example: []
@@ -488,7 +488,7 @@ items:
     path: Core/EasingFunctions.cs
     startLine: 115
   assemblies:
-  - MonoGameECS
+  - milk
   namespace: milk.Core
   summary: Easing out (decelerating to zero velocity).
   example: []
@@ -524,7 +524,7 @@ items:
     path: Core/EasingFunctions.cs
     startLine: 124
   assemblies:
-  - MonoGameECS
+  - milk
   namespace: milk.Core
   summary: Easing in and out (accelerating until halfway, then decelerating).
   example: []
@@ -560,7 +560,7 @@ items:
     path: Core/EasingFunctions.cs
     startLine: 135
   assemblies:
-  - MonoGameECS
+  - milk
   namespace: milk.Core
   summary: Easing in (accelerating from zero velocity).
   example: []
@@ -596,7 +596,7 @@ items:
     path: Core/EasingFunctions.cs
     startLine: 143
   assemblies:
-  - MonoGameECS
+  - milk
   namespace: milk.Core
   summary: Easing out (decelerating to zero velocity).
   example: []
@@ -632,7 +632,7 @@ items:
     path: Core/EasingFunctions.cs
     startLine: 152
   assemblies:
-  - MonoGameECS
+  - milk
   namespace: milk.Core
   summary: Easing in and out (accelerating until halfway, then decelerating).
   example: []
@@ -668,7 +668,7 @@ items:
     path: Core/EasingFunctions.cs
     startLine: 163
   assemblies:
-  - MonoGameECS
+  - milk
   namespace: milk.Core
   summary: Easing in (accelerating from zero velocity).
   example: []
@@ -704,7 +704,7 @@ items:
     path: Core/EasingFunctions.cs
     startLine: 171
   assemblies:
-  - MonoGameECS
+  - milk
   namespace: milk.Core
   summary: Easing out (decelerating to zero velocity).
   example: []
@@ -740,7 +740,7 @@ items:
     path: Core/EasingFunctions.cs
     startLine: 179
   assemblies:
-  - MonoGameECS
+  - milk
   namespace: milk.Core
   summary: Easing in and out (accelerating until halfway, then decelerating).
   example: []
@@ -776,7 +776,7 @@ items:
     path: Core/EasingFunctions.cs
     startLine: 192
   assemblies:
-  - MonoGameECS
+  - milk
   namespace: milk.Core
   summary: Easing in (accelerating from zero velocity).
   example: []
@@ -812,7 +812,7 @@ items:
     path: Core/EasingFunctions.cs
     startLine: 200
   assemblies:
-  - MonoGameECS
+  - milk
   namespace: milk.Core
   summary: Easing out (decelerating to zero velocity).
   example: []
@@ -848,7 +848,7 @@ items:
     path: Core/EasingFunctions.cs
     startLine: 209
   assemblies:
-  - MonoGameECS
+  - milk
   namespace: milk.Core
   summary: Easing in and out (accelerating until halfway, then decelerating).
   example: []
@@ -884,7 +884,7 @@ items:
     path: Core/EasingFunctions.cs
     startLine: 220
   assemblies:
-  - MonoGameECS
+  - milk
   namespace: milk.Core
   summary: Easing in (pulls back slightly before accelerating).
   example: []
@@ -920,7 +920,7 @@ items:
     path: Core/EasingFunctions.cs
     startLine: 229
   assemblies:
-  - MonoGameECS
+  - milk
   namespace: milk.Core
   summary: Easing out (overshoots the target slightly before settling).
   example: []
@@ -956,7 +956,7 @@ items:
     path: Core/EasingFunctions.cs
     startLine: 239
   assemblies:
-  - MonoGameECS
+  - milk
   namespace: milk.Core
   summary: Easing in and out (pulls back at start, overshoots at end).
   example: []
@@ -992,7 +992,7 @@ items:
     path: Core/EasingFunctions.cs
     startLine: 251
   assemblies:
-  - MonoGameECS
+  - milk
   namespace: milk.Core
   summary: Easing in (bounces in towards the target).
   example: []
@@ -1028,7 +1028,7 @@ items:
     path: Core/EasingFunctions.cs
     startLine: 263
   assemblies:
-  - MonoGameECS
+  - milk
   namespace: milk.Core
   summary: Easing out (bounces out from the target).
   example: []
@@ -1064,7 +1064,7 @@ items:
     path: Core/EasingFunctions.cs
     startLine: 274
   assemblies:
-  - MonoGameECS
+  - milk
   namespace: milk.Core
   summary: Easing in and out (bounces in then out).
   example: []
@@ -1100,7 +1100,7 @@ items:
     path: Core/EasingFunctions.cs
     startLine: 297
   assemblies:
-  - MonoGameECS
+  - milk
   namespace: milk.Core
   summary: Easing in (bounces as it approaches the start).
   example: []
@@ -1136,7 +1136,7 @@ items:
     path: Core/EasingFunctions.cs
     startLine: 305
   assemblies:
-  - MonoGameECS
+  - milk
   namespace: milk.Core
   summary: Easing out (bounces as it reaches the end).
   example: []
@@ -1172,7 +1172,7 @@ items:
     path: Core/EasingFunctions.cs
     startLine: 331
   assemblies:
-  - MonoGameECS
+  - milk
   namespace: milk.Core
   summary: Easing in and out (bounces at start and end).
   example: []

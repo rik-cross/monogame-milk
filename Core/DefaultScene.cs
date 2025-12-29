@@ -10,7 +10,6 @@ namespace milk.Core;
 
 internal class DefaultScene : Scene
 {
-
     private Image milkImage;
     private Text infoText1;
     private Text infoText2;
@@ -20,27 +19,21 @@ internal class DefaultScene : Scene
         BackgroundColor = Color.CornflowerBlue;
 
         milkImage = new Image(
-            texture: content.Load<Texture2D>("images/milk"),
-            size: new Vector2(40, 60),
+            texture: game._engineResources.ImgMilk,
+            size: new Vector2(205 / 4, 265 / 4),
             position: new Vector2(20, 20),
             anchor: Anchor.TopLeft
         );
 
         infoText1 = new Text(
             caption: "milk v0.1",
-            font: content.Load<SpriteFont>("Fonts/Medium"),
-            position: new Vector2(75, 30),
-            anchor: Anchor.TopLeft,
-            color: Color.White,
+            position: new Vector2(85, 35),
             outlineWidth: 3
         );
 
         infoText2 = new Text(
             caption: "rik-cross.github.io/milk-docs",
-            font: content.Load<SpriteFont>("Fonts/Medium"),
-            position: new Vector2(75, 50),
-            anchor: Anchor.TopLeft,
-            color: Color.White,
+            position: new Vector2(85, 55),
             outlineWidth: 3
         );
 

@@ -24,7 +24,7 @@ items:
     path: Components/ColliderComponent.cs
     startLine: 14
   assemblies:
-  - MonoGameECS
+  - milk
   namespace: milk.Components
   summary: Sets a collision bounding box for an entity.
   example: []
@@ -64,7 +64,7 @@ items:
     path: Components/ColliderComponent.cs
     startLine: 20
   assemblies:
-  - MonoGameECS
+  - milk
   namespace: milk.Components
   summary: The (x,y) size of the collider.
   example: []
@@ -93,7 +93,7 @@ items:
     path: Components/ColliderComponent.cs
     startLine: 25
   assemblies:
-  - MonoGameECS
+  - milk
   namespace: milk.Components
   summary: The (x,y) distance from the entity position.
   example: []
@@ -122,7 +122,7 @@ items:
     path: Components/ColliderComponent.cs
     startLine: 32
   assemblies:
-  - MonoGameECS
+  - milk
   namespace: milk.Components
   summary: Creates a new collider component.
   example: []

@@ -29,7 +29,7 @@ items:
     path: Managers/InputManager.cs
     startLine: 13
   assemblies:
-  - MonoGameECS
+  - milk
   namespace: milk.Core
   summary: Used to receive and respond to player input.
   example: []
@@ -66,7 +66,7 @@ items:
     path: Managers/InputManager.cs
     startLine: 46
   assemblies:
-  - MonoGameECS
+  - milk
   namespace: milk.Core
   summary: Returns true if the specified key is held down.
   example: []
@@ -101,7 +101,7 @@ items:
     path: Managers/InputManager.cs
     startLine: 60
   assemblies:
-  - MonoGameECS
+  - milk
   namespace: milk.Core
   summary: >-
     Returns true if the specified key has been pressed in the current frame
@@ -139,7 +139,7 @@ items:
     path: Managers/InputManager.cs
     startLine: 74
   assemblies:
-  - MonoGameECS
+  - milk
   namespace: milk.Core
   summary: >-
     Returns true if the specified key is no longer down
@@ -177,7 +177,7 @@ items:
     path: Managers/InputManager.cs
     startLine: 92
   assemblies:
-  - MonoGameECS
+  - milk
   namespace: milk.Core
   summary: Returns true if the specified button is down.
   example: []
@@ -218,7 +218,7 @@ items:
     path: Managers/InputManager.cs
     startLine: 107
   assemblies:
-  - MonoGameECS
+  - milk
   namespace: milk.Core
   summary: >-
     Returns true if the specified button is pressed
@@ -262,7 +262,7 @@ items:
     path: Managers/InputManager.cs
     startLine: 122
   assemblies:
-  - MonoGameECS
+  - milk
   namespace: milk.Core
   summary: >-
     Returns true if the specified button is released
@@ -306,7 +306,7 @@ items:
     path: Managers/InputManager.cs
     startLine: 138
   assemblies:
-  - MonoGameECS
+  - milk
   namespace: milk.Core
   summary: Returns true if at least one controller is connected.
   example: []
@@ -337,7 +337,7 @@ items:
     path: Managers/InputManager.cs
     startLine: 146
   assemblies:
-  - MonoGameECS
+  - milk
   namespace: milk.Core
   summary: Returns the number of connected controllers.
   example: []

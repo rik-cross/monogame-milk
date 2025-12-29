@@ -27,7 +27,7 @@ items:
     path: Components/TriggerComponent.cs
     startLine: 14
   assemblies:
-  - MonoGameECS
+  - milk
   namespace: milk.Components
   summary: Executes the specified callbacks when 2 triggers collide.
   example: []
@@ -67,7 +67,7 @@ items:
     path: Components/TriggerComponent.cs
     startLine: 20
   assemblies:
-  - MonoGameECS
+  - milk
   namespace: milk.Components
   summary: The (x,y) size of the trigger.
   example: []
@@ -96,7 +96,7 @@ items:
     path: Components/TriggerComponent.cs
     startLine: 25
   assemblies:
-  - MonoGameECS
+  - milk
   namespace: milk.Components
   summary: The (x,y) offset from the entity top-left position.
   example: []
@@ -125,7 +125,7 @@ items:
     path: Components/TriggerComponent.cs
     startLine: 30
   assemblies:
-  - MonoGameECS
+  - milk
   namespace: milk.Components
   summary: Called once when 2 colliders first intersect.
   example: []
@@ -154,7 +154,7 @@ items:
     path: Components/TriggerComponent.cs
     startLine: 35
   assemblies:
-  - MonoGameECS
+  - milk
   namespace: milk.Components
   summary: Called for every frame that 2 colliders intersect.
   example: []
@@ -183,7 +183,7 @@ items:
     path: Components/TriggerComponent.cs
     startLine: 40
   assemblies:
-  - MonoGameECS
+  - milk
   namespace: milk.Components
   summary: Called once when 2 colliders no longer intersect.
   example: []
@@ -212,7 +212,7 @@ items:
     path: Components/TriggerComponent.cs
     startLine: 52
   assemblies:
-  - MonoGameECS
+  - milk
   namespace: milk.Components
   summary: Creates a new trigger component.
   example: []

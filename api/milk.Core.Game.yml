@@ -5,10 +5,11 @@ items:
   id: Game
   parent: milk.Core
   children:
-  - milk.Core.Game.#ctor(System.String,System.Nullable{Microsoft.Xna.Framework.Vector2},System.Boolean,System.Int32,System.Int32,System.Boolean)
+  - milk.Core.Game.#ctor(System.String,System.Nullable{Microsoft.Xna.Framework.Vector2},System.Boolean,System.Int32,System.Int32,System.Boolean,System.Boolean)
   - milk.Core.Game.ClearScenes
   - milk.Core.Game.Debug
   - milk.Core.Game.Draw(Microsoft.Xna.Framework.GameTime)
+  - milk.Core.Game.GetCurrentScene
   - milk.Core.Game.Init
   - milk.Core.Game.Initialize
   - milk.Core.Game.LoadContent
@@ -22,7 +23,9 @@ items:
   - milk.Core.Game.Size
   - milk.Core.Game.Title
   - milk.Core.Game.Update(Microsoft.Xna.Framework.GameTime)
+  - milk.Core.Game._engineResources
   - milk.Core.Game.inputManager
+  - milk.Core.Game.spriteBatch
   langs:
   - csharp
   - vb
@@ -39,7 +42,7 @@ items:
     path: Core/Game.cs
     startLine: 17
   assemblies:
-  - MonoGameECS
+  - milk
   namespace: milk.Core
   summary: >-
     A game is the top-level class, and is a subclass of
@@ -115,7 +118,7 @@ items:
     path: Core/Game.cs
     startLine: 23
   assemblies:
-  - MonoGameECS
+  - milk
   namespace: milk.Core
   summary: The game title, displayed on the game window.
   example: []
@@ -144,7 +147,7 @@ items:
     path: Core/Game.cs
     startLine: 28
   assemblies:
-  - MonoGameECS
+  - milk
   namespace: milk.Core
   summary: The (x, y) size of the game window.
   example: []
@@ -173,7 +176,7 @@ items:
     path: Core/Game.cs
     startLine: 33
   assemblies:
-  - MonoGameECS
+  - milk
   namespace: milk.Core
   summary: A callback funtion, called just before the game loop runs.
   example: []
@@ -182,6 +185,60 @@ items:
     return:
       type: System.Action
     content.vb: Public Init As Action
+- uid: milk.Core.Game.spriteBatch
+  commentId: F:milk.Core.Game.spriteBatch
+  id: spriteBatch
+  parent: milk.Core.Game
+  langs:
+  - csharp
+  - vb
+  name: spriteBatch
+  nameWithType: Game.spriteBatch
+  fullName: milk.Core.Game.spriteBatch
+  type: Field
+  source:
+    remote:
+      path: Core/Game.cs
+      branch: main
+      repo: git@github.com:rik-cross/monogame-milk.git
+    id: spriteBatch
+    path: Core/Game.cs
+    startLine: 43
+  assemblies:
+  - milk
+  namespace: milk.Core
+  syntax:
+    content: public SpriteBatch spriteBatch
+    return:
+      type: Microsoft.Xna.Framework.Graphics.SpriteBatch
+    content.vb: Public spriteBatch As SpriteBatch
+- uid: milk.Core.Game._engineResources
+  commentId: F:milk.Core.Game._engineResources
+  id: _engineResources
+  parent: milk.Core.Game
+  langs:
+  - csharp
+  - vb
+  name: _engineResources
+  nameWithType: Game._engineResources
+  fullName: milk.Core.Game._engineResources
+  type: Field
+  source:
+    remote:
+      path: Core/Game.cs
+      branch: main
+      repo: git@github.com:rik-cross/monogame-milk.git
+    id: _engineResources
+    path: Core/Game.cs
+    startLine: 44
+  assemblies:
+  - milk
+  namespace: milk.Core
+  syntax:
+    content: public EngineResourceManager _engineResources
+    return:
+      type: milk.Core.EngineResourceManager
+    content.vb: Public _engineResources As EngineResourceManager
 - uid: milk.Core.Game.inputManager
   commentId: F:milk.Core.Game.inputManager
   id: inputManager
@@ -200,9 +257,9 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: inputManager
     path: Core/Game.cs
-    startLine: 53
+    startLine: 55
   assemblies:
-  - MonoGameECS
+  - milk
   namespace: milk.Core
   summary: The game's input manager, used to query game input.
   example: []
@@ -229,9 +286,9 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: Debug
     path: Core/Game.cs
-    startLine: 63
+    startLine: 65
   assemblies:
-  - MonoGameECS
+  - milk
   namespace: milk.Core
   summary: Setting debug mode to true displays various game, scene and entity information.
   example: []
@@ -240,16 +297,16 @@ items:
     return:
       type: System.Boolean
     content.vb: Public Debug As Boolean
-- uid: milk.Core.Game.#ctor(System.String,System.Nullable{Microsoft.Xna.Framework.Vector2},System.Boolean,System.Int32,System.Int32,System.Boolean)
-  commentId: M:milk.Core.Game.#ctor(System.String,System.Nullable{Microsoft.Xna.Framework.Vector2},System.Boolean,System.Int32,System.Int32,System.Boolean)
-  id: '#ctor(System.String,System.Nullable{Microsoft.Xna.Framework.Vector2},System.Boolean,System.Int32,System.Int32,System.Boolean)'
+- uid: milk.Core.Game.#ctor(System.String,System.Nullable{Microsoft.Xna.Framework.Vector2},System.Boolean,System.Int32,System.Int32,System.Boolean,System.Boolean)
+  commentId: M:milk.Core.Game.#ctor(System.String,System.Nullable{Microsoft.Xna.Framework.Vector2},System.Boolean,System.Int32,System.Int32,System.Boolean,System.Boolean)
+  id: '#ctor(System.String,System.Nullable{Microsoft.Xna.Framework.Vector2},System.Boolean,System.Int32,System.Int32,System.Boolean,System.Boolean)'
   parent: milk.Core.Game
   langs:
   - csharp
   - vb
-  name: Game(string?, Vector2?, bool, int, int, bool)
-  nameWithType: Game.Game(string?, Vector2?, bool, int, int, bool)
-  fullName: milk.Core.Game.Game(string?, Microsoft.Xna.Framework.Vector2?, bool, int, int, bool)
+  name: Game(string?, Vector2?, bool, int, int, bool, bool)
+  nameWithType: Game.Game(string?, Vector2?, bool, int, int, bool, bool)
+  fullName: milk.Core.Game.Game(string?, Microsoft.Xna.Framework.Vector2?, bool, int, int, bool, bool)
   type: Constructor
   source:
     remote:
@@ -258,14 +315,14 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: .ctor
     path: Core/Game.cs
-    startLine: 74
+    startLine: 77
   assemblies:
-  - MonoGameECS
+  - milk
   namespace: milk.Core
   summary: Creates a new game.
   example: []
   syntax:
-    content: public Game(string? title = null, Vector2? size = null, bool isMouseVisible = true, int maxEntities = 1024, int maxComponents = 128, bool debug = false)
+    content: public Game(string? title = null, Vector2? size = null, bool isMouseVisible = true, int maxEntities = 1024, int maxComponents = 128, bool showSplash = true, bool debug = false)
     parameters:
     - id: title
       type: System.String
@@ -282,14 +339,17 @@ items:
     - id: maxComponents
       type: System.Int32
       description: The maximum number of game components (default = 128).
+    - id: showSplash
+      type: System.Boolean
+      description: Choose to show the milk splash scene (default = true).
     - id: debug
       type: System.Boolean
       description: Sets debug mode (default = false).
-    content.vb: Public Sub New(title As String = Nothing, size As Vector2? = Nothing, isMouseVisible As Boolean = True, maxEntities As Integer = 1024, maxComponents As Integer = 128, debug As Boolean = False)
+    content.vb: Public Sub New(title As String = Nothing, size As Vector2? = Nothing, isMouseVisible As Boolean = True, maxEntities As Integer = 1024, maxComponents As Integer = 128, showSplash As Boolean = True, debug As Boolean = False)
   overload: milk.Core.Game.#ctor*
-  nameWithType.vb: Game.New(String, Vector2?, Boolean, Integer, Integer, Boolean)
-  fullName.vb: milk.Core.Game.New(String, Microsoft.Xna.Framework.Vector2?, Boolean, Integer, Integer, Boolean)
-  name.vb: New(String, Vector2?, Boolean, Integer, Integer, Boolean)
+  nameWithType.vb: Game.New(String, Vector2?, Boolean, Integer, Integer, Boolean, Boolean)
+  fullName.vb: milk.Core.Game.New(String, Microsoft.Xna.Framework.Vector2?, Boolean, Integer, Integer, Boolean, Boolean)
+  name.vb: New(String, Vector2?, Boolean, Integer, Integer, Boolean, Boolean)
 - uid: milk.Core.Game.Initialize
   commentId: M:milk.Core.Game.Initialize
   id: Initialize
@@ -308,9 +368,9 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: Initialize
     path: Core/Game.cs
-    startLine: 113
+    startLine: 130
   assemblies:
-  - MonoGameECS
+  - milk
   namespace: milk.Core
   summary: Do not call this.
   example: []
@@ -337,9 +397,9 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: LoadContent
     path: Core/Game.cs
-    startLine: 125
+    startLine: 142
   assemblies:
-  - MonoGameECS
+  - milk
   namespace: milk.Core
   summary: Do not call this.
   example: []
@@ -366,9 +426,9 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: RegisterSystem
     path: Core/Game.cs
-    startLine: 169
+    startLine: 209
   assemblies:
-  - MonoGameECS
+  - milk
   namespace: milk.Core
   summary: >-
     Registers a new game system.
@@ -383,6 +443,37 @@ items:
       description: The system to register.
     content.vb: Public Sub RegisterSystem(system As System)
   overload: milk.Core.Game.RegisterSystem*
+- uid: milk.Core.Game.GetCurrentScene
+  commentId: M:milk.Core.Game.GetCurrentScene
+  id: GetCurrentScene
+  parent: milk.Core.Game
+  langs:
+  - csharp
+  - vb
+  name: GetCurrentScene()
+  nameWithType: Game.GetCurrentScene()
+  fullName: milk.Core.Game.GetCurrentScene()
+  type: Method
+  source:
+    remote:
+      path: Core/Game.cs
+      branch: main
+      repo: git@github.com:rik-cross/monogame-milk.git
+    id: GetCurrentScene
+    path: Core/Game.cs
+    startLine: 222
+  assemblies:
+  - milk
+  namespace: milk.Core
+  summary: Returns the current top scene in the scene stack.
+  example: []
+  syntax:
+    content: public Scene? GetCurrentScene()
+    return:
+      type: milk.Core.Scene
+      description: The current top scene in the scene stack.
+    content.vb: Public Function GetCurrentScene() As Scene
+  overload: milk.Core.Game.GetCurrentScene*
 - uid: milk.Core.Game.SetScene(milk.Core.Scene,milk.Core.Transition,System.Boolean)
   commentId: M:milk.Core.Game.SetScene(milk.Core.Scene,milk.Core.Transition,System.Boolean)
   id: SetScene(milk.Core.Scene,milk.Core.Transition,System.Boolean)
@@ -401,9 +492,9 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: SetScene
     path: Core/Game.cs
-    startLine: 184
+    startLine: 233
   assemblies:
-  - MonoGameECS
+  - milk
   namespace: milk.Core
   summary: Sets the current active game scene.
   example: []
@@ -442,9 +533,9 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: SetScene
     path: Core/Game.cs
-    startLine: 195
+    startLine: 244
   assemblies:
-  - MonoGameECS
+  - milk
   namespace: milk.Core
   summary: Adds multiple scenes to the active scene stack.
   example: []
@@ -483,9 +574,9 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: RemoveScene
     path: Core/Game.cs
-    startLine: 205
+    startLine: 254
   assemblies:
-  - MonoGameECS
+  - milk
   namespace: milk.Core
   summary: Removes the top, active scene from the scene stack.
   example: []
@@ -521,9 +612,9 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: ClearScenes
     path: Core/Game.cs
-    startLine: 214
+    startLine: 263
   assemblies:
-  - MonoGameECS
+  - milk
   namespace: milk.Core
   summary: >-
     Removes all scenes from the scene stack
@@ -552,9 +643,9 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: Update
     path: Core/Game.cs
-    startLine: 227
+    startLine: 276
   assemblies:
-  - MonoGameECS
+  - milk
   namespace: milk.Core
   summary: Do not call this.
   example: []
@@ -585,9 +676,9 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: Draw
     path: Core/Game.cs
-    startLine: 246
+    startLine: 295
   assemblies:
-  - MonoGameECS
+  - milk
   namespace: milk.Core
   summary: Do not call this.
   example: []
@@ -618,9 +709,9 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: Quit
     path: Core/Game.cs
-    startLine: 265
+    startLine: 314
   assemblies:
-  - MonoGameECS
+  - milk
   namespace: milk.Core
   summary: Ends the game.
   example: []
@@ -646,9 +737,9 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: PrintSystems
     path: Core/Game.cs
-    startLine: 279
+    startLine: 328
   assemblies:
-  - MonoGameECS
+  - milk
   namespace: milk.Core
   summary: Returns a string showing the order of execution of systems.
   example: []
@@ -677,9 +768,9 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: PositionSystemType
     path: Core/Game.cs
-    startLine: 291
+    startLine: 340
   assemblies:
-  - MonoGameECS
+  - milk
   namespace: milk.Core
   summary: >-
     Positions the system of the specified type at the requested position.
@@ -1556,6 +1647,58 @@ references:
   name: Action
   nameWithType: Action
   fullName: System.Action
+- uid: Microsoft.Xna.Framework.Graphics.SpriteBatch
+  commentId: T:Microsoft.Xna.Framework.Graphics.SpriteBatch
+  parent: Microsoft.Xna.Framework.Graphics
+  isExternal: true
+  name: SpriteBatch
+  nameWithType: SpriteBatch
+  fullName: Microsoft.Xna.Framework.Graphics.SpriteBatch
+- uid: Microsoft.Xna.Framework.Graphics
+  commentId: N:Microsoft.Xna.Framework.Graphics
+  isExternal: true
+  name: Microsoft.Xna.Framework.Graphics
+  nameWithType: Microsoft.Xna.Framework.Graphics
+  fullName: Microsoft.Xna.Framework.Graphics
+  spec.csharp:
+  - uid: Microsoft
+    name: Microsoft
+    isExternal: true
+  - name: .
+  - uid: Microsoft.Xna
+    name: Xna
+    isExternal: true
+  - name: .
+  - uid: Microsoft.Xna.Framework
+    name: Framework
+    isExternal: true
+  - name: .
+  - uid: Microsoft.Xna.Framework.Graphics
+    name: Graphics
+    isExternal: true
+  spec.vb:
+  - uid: Microsoft
+    name: Microsoft
+    isExternal: true
+  - name: .
+  - uid: Microsoft.Xna
+    name: Xna
+    isExternal: true
+  - name: .
+  - uid: Microsoft.Xna.Framework
+    name: Framework
+    isExternal: true
+  - name: .
+  - uid: Microsoft.Xna.Framework.Graphics
+    name: Graphics
+    isExternal: true
+- uid: milk.Core.EngineResourceManager
+  commentId: T:milk.Core.EngineResourceManager
+  parent: milk.Core
+  href: milk.Core.EngineResourceManager.html
+  name: EngineResourceManager
+  nameWithType: EngineResourceManager
+  fullName: milk.Core.EngineResourceManager
 - uid: milk.Core.InputManager
   commentId: T:milk.Core.InputManager
   parent: milk.Core
@@ -1576,7 +1719,7 @@ references:
   name.vb: Boolean
 - uid: milk.Core.Game.#ctor*
   commentId: Overload:milk.Core.Game.#ctor
-  href: milk.Core.Game.html#milk_Core_Game__ctor_System_String_System_Nullable_Microsoft_Xna_Framework_Vector2__System_Boolean_System_Int32_System_Int32_System_Boolean_
+  href: milk.Core.Game.html#milk_Core_Game__ctor_System_String_System_Nullable_Microsoft_Xna_Framework_Vector2__System_Boolean_System_Int32_System_Int32_System_Boolean_System_Boolean_
   name: Game
   nameWithType: Game.Game
   fullName: milk.Core.Game.Game
@@ -1702,12 +1845,12 @@ references:
   name: System
   nameWithType: System
   fullName: milk.Core.System
-- uid: milk.Core.Game.SetScene*
-  commentId: Overload:milk.Core.Game.SetScene
-  href: milk.Core.Game.html#milk_Core_Game_SetScene_milk_Core_Scene_milk_Core_Transition_System_Boolean_
-  name: SetScene
-  nameWithType: Game.SetScene
-  fullName: milk.Core.Game.SetScene
+- uid: milk.Core.Game.GetCurrentScene*
+  commentId: Overload:milk.Core.Game.GetCurrentScene
+  href: milk.Core.Game.html#milk_Core_Game_GetCurrentScene
+  name: GetCurrentScene
+  nameWithType: Game.GetCurrentScene
+  fullName: milk.Core.Game.GetCurrentScene
 - uid: milk.Core.Scene
   commentId: T:milk.Core.Scene
   parent: milk.Core
@@ -1715,6 +1858,12 @@ references:
   name: Scene
   nameWithType: Scene
   fullName: milk.Core.Scene
+- uid: milk.Core.Game.SetScene*
+  commentId: Overload:milk.Core.Game.SetScene
+  href: milk.Core.Game.html#milk_Core_Game_SetScene_milk_Core_Scene_milk_Core_Transition_System_Boolean_
+  name: SetScene
+  nameWithType: Game.SetScene
+  fullName: milk.Core.Game.SetScene
 - uid: milk.Core.Transition
   commentId: T:milk.Core.Transition
   parent: milk.Core

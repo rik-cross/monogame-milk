@@ -74,7 +74,7 @@ public class Text : SceneRenderable
     /// Create a new next object.
     /// </summary>
     /// <param name="caption">The text to display.</param>
-    /// <param name="font">The font to use to render the text.</param>
+    /// <param name="font">The font to use to render the text (default = null - FontSmall).</param>
     /// <param name="position">The (x, y) text position (default = (0,0)).</param>
     /// <param name="alpha">The amount of transparency, between 0 and 1 (default = 1 - fully visible).</param>
     /// <param name="color">The text color.</param>
@@ -84,7 +84,7 @@ public class Text : SceneRenderable
     /// <param name="parent">The parent SceneRenderable, for setting relative position (default = null).</param>
     public Text(
         string caption,
-        SpriteFont font,
+        SpriteFont? font = null,
         Vector2? position = null,
         float alpha = 1.0f,
         Color? color = null,
@@ -92,10 +92,10 @@ public class Text : SceneRenderable
         Color? outlineColor = null,
         Anchor anchor = Anchor.TopLeft,
         SceneRenderable? parent = null
-        ) : base(GenerateTextWidth(caption, font, outlineWidth), position ?? Vector2.Zero, alpha, anchor, parent)
+        ) : base(GenerateTextWidth(caption, font == null ? EngineGlobals.game._engineResources.FontSmall : font, outlineWidth), position ?? Vector2.Zero, alpha, anchor, parent)
     {
 
-        Font = font;
+        Font = font ?? EngineGlobals.game._engineResources.FontSmall;
         Color = color ?? Color.White;
         OutlineWidth = outlineWidth;
         OutlineColor = outlineColor ?? Color.Black;
@@ -122,18 +122,18 @@ public class Text : SceneRenderable
         {
             for (int i = 1; i < OutlineWidth - 1; i++)
             {
-                _spriteBatch.DrawString(Font, Caption, new Vector2(dp.X - i, dp.Y - i), OutlineColor * 1);
-                _spriteBatch.DrawString(Font, Caption, new Vector2(dp.X + i, dp.Y - i), OutlineColor * 1);
-                _spriteBatch.DrawString(Font, Caption, new Vector2(dp.X - i, dp.Y + i), OutlineColor * 1);
-                _spriteBatch.DrawString(Font, Caption, new Vector2(dp.X + i, dp.Y + i), OutlineColor * 1);
-                _spriteBatch.DrawString(Font, Caption, new Vector2(dp.X - i, dp.Y), OutlineColor * 1);
-                _spriteBatch.DrawString(Font, Caption, new Vector2(dp.X + i, dp.Y), OutlineColor * 1);
-                _spriteBatch.DrawString(Font, Caption, new Vector2(dp.X, dp.Y - i), OutlineColor * 1);
-                _spriteBatch.DrawString(Font, Caption, new Vector2(dp.X, dp.Y + i), OutlineColor * 1);
+                _spriteBatch.DrawString(Font, Caption, new Vector2(dp.X - i, dp.Y - i), OutlineColor * Alpha);
+                _spriteBatch.DrawString(Font, Caption, new Vector2(dp.X + i, dp.Y - i), OutlineColor * Alpha);
+                _spriteBatch.DrawString(Font, Caption, new Vector2(dp.X - i, dp.Y + i), OutlineColor * Alpha);
+                _spriteBatch.DrawString(Font, Caption, new Vector2(dp.X + i, dp.Y + i), OutlineColor * Alpha);
+                _spriteBatch.DrawString(Font, Caption, new Vector2(dp.X - i, dp.Y), OutlineColor * Alpha);
+                _spriteBatch.DrawString(Font, Caption, new Vector2(dp.X + i, dp.Y), OutlineColor * Alpha);
+                _spriteBatch.DrawString(Font, Caption, new Vector2(dp.X, dp.Y - i), OutlineColor * Alpha);
+                _spriteBatch.DrawString(Font, Caption, new Vector2(dp.X, dp.Y + i), OutlineColor * Alpha);
             }
         }
 
-        _spriteBatch.DrawString(Font, Caption, dp, Color.White); // Color);
+        _spriteBatch.DrawString(Font, Caption, dp, Color * Alpha);
 
     }
 

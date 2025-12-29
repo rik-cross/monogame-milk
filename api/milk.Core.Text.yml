@@ -29,7 +29,7 @@ items:
     path: Core/Text.cs
     startLine: 14
   assemblies:
-  - MonoGameECS
+  - milk
   namespace: milk.Core
   summary: Displays text in a scene, in the font specified.
   example: []
@@ -45,8 +45,19 @@ items:
   - milk.Core.SceneRenderable.Alpha
   - milk.Core.SceneRenderable.Anchor
   - milk.Core.SceneRenderable.Parent
+  - milk.Core.SceneRenderable.Visible
   - milk.Core.SceneRenderable.CalculateTopLeftPositionFromAnchor(Microsoft.Xna.Framework.Vector2)
   - milk.Core.SceneRenderable.GetPositionIncludingParent(Microsoft.Xna.Framework.Vector2)
+  - milk.Core.SceneRenderable.Width
+  - milk.Core.SceneRenderable.Height
+  - milk.Core.SceneRenderable.X
+  - milk.Core.SceneRenderable.Y
+  - milk.Core.SceneRenderable.Top
+  - milk.Core.SceneRenderable.Middle
+  - milk.Core.SceneRenderable.Bottom
+  - milk.Core.SceneRenderable.Left
+  - milk.Core.SceneRenderable.Center
+  - milk.Core.SceneRenderable.Right
   - System.Object.Equals(System.Object)
   - System.Object.Equals(System.Object,System.Object)
   - System.Object.GetHashCode
@@ -74,7 +85,7 @@ items:
     path: Core/Text.cs
     startLine: 22
   assemblies:
-  - MonoGameECS
+  - milk
   namespace: milk.Core
   summary: The font to use for the text.
   example: []
@@ -105,7 +116,7 @@ items:
     path: Core/Text.cs
     startLine: 38
   assemblies:
-  - MonoGameECS
+  - milk
   namespace: milk.Core
   summary: The text to display.
   example: []
@@ -136,7 +147,7 @@ items:
     path: Core/Text.cs
     startLine: 51
   assemblies:
-  - MonoGameECS
+  - milk
   namespace: milk.Core
   summary: Text color.
   example: []
@@ -167,7 +178,7 @@ items:
     path: Core/Text.cs
     startLine: 57
   assemblies:
-  - MonoGameECS
+  - milk
   namespace: milk.Core
   summary: Text outline width.
   example: []
@@ -198,7 +209,7 @@ items:
     path: Core/Text.cs
     startLine: 70
   assemblies:
-  - MonoGameECS
+  - milk
   namespace: milk.Core
   summary: Outline color.
   example: []
@@ -216,9 +227,9 @@ items:
   langs:
   - csharp
   - vb
-  name: Text(string, SpriteFont, Vector2?, float, Color?, int, Color?, Anchor, SceneRenderable?)
-  nameWithType: Text.Text(string, SpriteFont, Vector2?, float, Color?, int, Color?, Anchor, SceneRenderable?)
-  fullName: milk.Core.Text.Text(string, Microsoft.Xna.Framework.Graphics.SpriteFont, Microsoft.Xna.Framework.Vector2?, float, Microsoft.Xna.Framework.Color?, int, Microsoft.Xna.Framework.Color?, milk.Core.Anchor, milk.Core.SceneRenderable?)
+  name: Text(string, SpriteFont?, Vector2?, float, Color?, int, Color?, Anchor, SceneRenderable?)
+  nameWithType: Text.Text(string, SpriteFont?, Vector2?, float, Color?, int, Color?, Anchor, SceneRenderable?)
+  fullName: milk.Core.Text.Text(string, Microsoft.Xna.Framework.Graphics.SpriteFont?, Microsoft.Xna.Framework.Vector2?, float, Microsoft.Xna.Framework.Color?, int, Microsoft.Xna.Framework.Color?, milk.Core.Anchor, milk.Core.SceneRenderable?)
   type: Constructor
   source:
     remote:
@@ -229,19 +240,19 @@ items:
     path: Core/Text.cs
     startLine: 84
   assemblies:
-  - MonoGameECS
+  - milk
   namespace: milk.Core
   summary: Create a new next object.
   example: []
   syntax:
-    content: public Text(string caption, SpriteFont font, Vector2? position = null, float alpha = 1, Color? color = null, int outlineWidth = 0, Color? outlineColor = null, Anchor anchor = Anchor.TopLeft, SceneRenderable? parent = null)
+    content: public Text(string caption, SpriteFont? font = null, Vector2? position = null, float alpha = 1, Color? color = null, int outlineWidth = 0, Color? outlineColor = null, Anchor anchor = Anchor.TopLeft, SceneRenderable? parent = null)
     parameters:
     - id: caption
       type: System.String
       description: The text to display.
     - id: font
       type: Microsoft.Xna.Framework.Graphics.SpriteFont
-      description: The font to use to render the text.
+      description: The font to use to render the text (default = null - FontSmall).
     - id: position
       type: System.Nullable{Microsoft.Xna.Framework.Vector2}
       description: The (x, y) text position (default = (0,0)).
@@ -263,7 +274,7 @@ items:
     - id: parent
       type: milk.Core.SceneRenderable
       description: The parent SceneRenderable, for setting relative position (default = null).
-    content.vb: Public Sub New(caption As String, font As SpriteFont, position As Vector2? = Nothing, alpha As Single = 1, color As Color? = Nothing, outlineWidth As Integer = 0, outlineColor As Color? = Nothing, anchor As Anchor = Anchor.TopLeft, parent As SceneRenderable = Nothing)
+    content.vb: Public Sub New(caption As String, font As SpriteFont = Nothing, position As Vector2? = Nothing, alpha As Single = 1, color As Color? = Nothing, outlineWidth As Integer = 0, outlineColor As Color? = Nothing, anchor As Anchor = Anchor.TopLeft, parent As SceneRenderable = Nothing)
   overload: milk.Core.Text.#ctor*
   nameWithType.vb: Text.New(String, SpriteFont, Vector2?, Single, Color?, Integer, Color?, Anchor, SceneRenderable)
   fullName.vb: milk.Core.Text.New(String, Microsoft.Xna.Framework.Graphics.SpriteFont, Microsoft.Xna.Framework.Vector2?, Single, Microsoft.Xna.Framework.Color?, Integer, Microsoft.Xna.Framework.Color?, milk.Core.Anchor, milk.Core.SceneRenderable)
@@ -288,7 +299,7 @@ items:
     path: Core/Text.cs
     startLine: 105
   assemblies:
-  - MonoGameECS
+  - milk
   namespace: milk.Core
   syntax:
     content: public static Vector2 GenerateTextWidth(string s, SpriteFont sf, int ow)
@@ -326,7 +337,7 @@ items:
     path: Core/Text.cs
     startLine: 113
   assemblies:
-  - MonoGameECS
+  - milk
   namespace: milk.Core
   example: []
   syntax:
@@ -410,6 +421,13 @@ references:
   name: Parent
   nameWithType: SceneRenderable.Parent
   fullName: milk.Core.SceneRenderable.Parent
+- uid: milk.Core.SceneRenderable.Visible
+  commentId: P:milk.Core.SceneRenderable.Visible
+  parent: milk.Core.SceneRenderable
+  href: milk.Core.SceneRenderable.html#milk_Core_SceneRenderable_Visible
+  name: Visible
+  nameWithType: SceneRenderable.Visible
+  fullName: milk.Core.SceneRenderable.Visible
 - uid: milk.Core.SceneRenderable.CalculateTopLeftPositionFromAnchor(Microsoft.Xna.Framework.Vector2)
   commentId: M:milk.Core.SceneRenderable.CalculateTopLeftPositionFromAnchor(Microsoft.Xna.Framework.Vector2)
   parent: milk.Core.SceneRenderable
@@ -462,6 +480,76 @@ references:
     name: Vector2
     isExternal: true
   - name: )
+- uid: milk.Core.SceneRenderable.Width
+  commentId: P:milk.Core.SceneRenderable.Width
+  parent: milk.Core.SceneRenderable
+  href: milk.Core.SceneRenderable.html#milk_Core_SceneRenderable_Width
+  name: Width
+  nameWithType: SceneRenderable.Width
+  fullName: milk.Core.SceneRenderable.Width
+- uid: milk.Core.SceneRenderable.Height
+  commentId: P:milk.Core.SceneRenderable.Height
+  parent: milk.Core.SceneRenderable
+  href: milk.Core.SceneRenderable.html#milk_Core_SceneRenderable_Height
+  name: Height
+  nameWithType: SceneRenderable.Height
+  fullName: milk.Core.SceneRenderable.Height
+- uid: milk.Core.SceneRenderable.X
+  commentId: P:milk.Core.SceneRenderable.X
+  parent: milk.Core.SceneRenderable
+  href: milk.Core.SceneRenderable.html#milk_Core_SceneRenderable_X
+  name: X
+  nameWithType: SceneRenderable.X
+  fullName: milk.Core.SceneRenderable.X
+- uid: milk.Core.SceneRenderable.Y
+  commentId: P:milk.Core.SceneRenderable.Y
+  parent: milk.Core.SceneRenderable
+  href: milk.Core.SceneRenderable.html#milk_Core_SceneRenderable_Y
+  name: Y
+  nameWithType: SceneRenderable.Y
+  fullName: milk.Core.SceneRenderable.Y
+- uid: milk.Core.SceneRenderable.Top
+  commentId: P:milk.Core.SceneRenderable.Top
+  parent: milk.Core.SceneRenderable
+  href: milk.Core.SceneRenderable.html#milk_Core_SceneRenderable_Top
+  name: Top
+  nameWithType: SceneRenderable.Top
+  fullName: milk.Core.SceneRenderable.Top
+- uid: milk.Core.SceneRenderable.Middle
+  commentId: P:milk.Core.SceneRenderable.Middle
+  parent: milk.Core.SceneRenderable
+  href: milk.Core.SceneRenderable.html#milk_Core_SceneRenderable_Middle
+  name: Middle
+  nameWithType: SceneRenderable.Middle
+  fullName: milk.Core.SceneRenderable.Middle
+- uid: milk.Core.SceneRenderable.Bottom
+  commentId: P:milk.Core.SceneRenderable.Bottom
+  parent: milk.Core.SceneRenderable
+  href: milk.Core.SceneRenderable.html#milk_Core_SceneRenderable_Bottom
+  name: Bottom
+  nameWithType: SceneRenderable.Bottom
+  fullName: milk.Core.SceneRenderable.Bottom
+- uid: milk.Core.SceneRenderable.Left
+  commentId: P:milk.Core.SceneRenderable.Left
+  parent: milk.Core.SceneRenderable
+  href: milk.Core.SceneRenderable.html#milk_Core_SceneRenderable_Left
+  name: Left
+  nameWithType: SceneRenderable.Left
+  fullName: milk.Core.SceneRenderable.Left
+- uid: milk.Core.SceneRenderable.Center
+  commentId: P:milk.Core.SceneRenderable.Center
+  parent: milk.Core.SceneRenderable
+  href: milk.Core.SceneRenderable.html#milk_Core_SceneRenderable_Center
+  name: Center
+  nameWithType: SceneRenderable.Center
+  fullName: milk.Core.SceneRenderable.Center
+- uid: milk.Core.SceneRenderable.Right
+  commentId: P:milk.Core.SceneRenderable.Right
+  parent: milk.Core.SceneRenderable
+  href: milk.Core.SceneRenderable.html#milk_Core_SceneRenderable_Right
+  name: Right
+  nameWithType: SceneRenderable.Right
+  fullName: milk.Core.SceneRenderable.Right
 - uid: System.Object.Equals(System.Object)
   commentId: M:System.Object.Equals(System.Object)
   parent: System.Object
