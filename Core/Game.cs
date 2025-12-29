@@ -182,7 +182,7 @@ public class Game : Microsoft.Xna.Framework.Game
                 SetScene(new DefaultScene());
 
             // Add the splash scene
-            SetScene(new MilkSplashScene(), keepExistingScenes: true);
+            SetScene(new SplashScene(), keepExistingScenes: true);
 
         }
         else
