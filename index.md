@@ -11,4 +11,10 @@ MonoGame Intuitive Library Kit (milk) is a simple ECS engine built on MonoGame, 
 - [API](./api/milk.Components.html)
 - [Changelog](./docs/changelog.html)
 
+Other useful links:
+
+- [Code on GitHub](https://github.com/rik-cross/monogame-milk)
+- [Bugs / feedback / suggestions](https://github.com/rik-cross/monogame-milk/issues)
+- ['Tiny Town' RPG example game](https://github.com/rik-cross/tiny-town)
+
 Copyright &copy; 2025 Rik Cross

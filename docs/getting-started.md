@@ -2,6 +2,12 @@
 
 ### Simplest use
 
+Create a new MonoGame project, ensuring that you are using at least version 3.8.4. Add the milk library to your project:
+
+```
+dotnet add package monogame-milk
+```
+
 The code below is the simplest code that will create a new game. It will just show the default, placeholder scene, but is useful for testing that everything is installed and working:
 
 ```
