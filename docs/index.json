@@ -2,7 +2,7 @@
   "README.html": {
     "href": "README.html",
     "title": "MonoGame Intuitive Library Kit (milk) | milk",
-    "summary": "MonoGame Intuitive Library Kit (milk) The MonoGame Intuitive Library Kit (milk) is a simple ECS engine built on MonoGame, with a focus on ease of use. Documentation LICENSE Copyright © 2025 Rik Cross"
+    "summary": "MonoGame Intuitive Library Kit (milk) The MonoGame Intuitive Library Kit (milk) is a simple ECS engine built on MonoGame, with a focus on ease of use. Documentation LICENSE Copyright © 2026 Rik Cross"
   },
   "api/milk.Anchor.html": {
     "href": "api/milk.Anchor.html",
@@ -482,7 +482,7 @@
   "docs/changelog.html": {
     "href": "docs/changelog.html",
     "title": "Changelog | milk",
-    "summary": "Changelog v0.1 - Regular milk Top-level game class, with 'manager' classes Basic ECS architecture Scenes and scene transitions Scene renderables -- Image and Text Scene cameras Scene animators which process Tween objects Transform, collision and physics components Sprite component and a sprite system, including animated sprites Triggers that execute a callback function on collision enter, collide and exit Buttons, with an option to provide a custom draw method"
+    "summary": "Changelog v0.1 - Regular milk Top-level game class, with 'manager' classes Basic ECS architecture Scenes and scene transitions Scene renderables -- Image and Text Scene cameras Scene animators which process 'lerp' functions Transform, collision and (simple) physics components Sprite component and a sprite system, including animated sprites Triggers that execute a callback function on collision enter, collide and exit Buttons, with an option to provide a custom draw method"
   },
   "docs/getting-started.html": {
     "href": "docs/getting-started.html",
@@ -497,11 +497,11 @@
   "index.html": {
     "href": "index.html",
     "title": "MonoGame Intuitive Library Kit (milk) | milk",
-    "summary": "MonoGame Intuitive Library Kit (milk) MonoGame Intuitive Library Kit (milk) is a simple ECS engine built on MonoGame, with a focus on ease of use. Introduction Getting Started API Changelog Other useful links: Code on GitHub Bugs / feedback / suggestions 'Tiny Town' RPG example game Copyright © 2025 Rik Cross"
+    "summary": "MonoGame Intuitive Library Kit (milk) MonoGame Intuitive Library Kit (milk) is a simple ECS engine built on MonoGame, with a focus on ease of use. Introduction Getting Started API Changelog Other useful links: Code on GitHub Bugs / feedback / suggestions 'Tiny Town' RPG example game Copyright © 2026 Rik Cross"
   },
   "nuget_readme.html": {
     "href": "nuget_readme.html",
     "title": "MonoGame Intuitive Library Kit (milk) | milk",
-    "summary": "MonoGame Intuitive Library Kit (milk) The MonoGame Intuitive Library Kit (milk) is a simple ECS engine built on MonoGame, with a focus on ease of use. Documentation Copyright © 2025 Rik Cross"
+    "summary": "MonoGame Intuitive Library Kit (milk) The MonoGame Intuitive Library Kit (milk) is a simple ECS engine built on MonoGame, with a focus on ease of use. Documentation Copyright © 2026 Rik Cross"
   }
 }
