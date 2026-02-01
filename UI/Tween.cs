@@ -1,3 +1,9 @@
+//   Monogame Intuitive Library Kit (milk)
+//   A MonoGame ECS Engine, By Rik Cross
+//   -- Code: github.com/rik-cross/monogame-milk
+//   -- Docs: rik-cross.github.io/monogame-milk
+//   -- Shared under the MIT licence
+
 using Microsoft.Xna.Framework;
 using milk.Core;
 
@@ -6,7 +12,7 @@ namespace milk.UI;
 /// <summary>
 /// A tween is added to a scene's animator, and links an action to a duration.
 /// </summary>
-public class Tween
+internal class Tween
 {
     
     // TODO: OnComplete
@@ -14,25 +20,24 @@ public class Tween
     /// <summary>
     /// The animation duration, in seconds.
     /// </summary>
-    public readonly float Duration;
+    internal readonly float Duration;
 
     /// <summary>
     /// An animation action.
     /// </summary>
-    public Action<float> Action;
+    internal Action<float> Action;
 
     /// <summary>
     /// An easing function for the animation.
     /// </summary>
-    public readonly EasingFunctions.EasingDelegate EasingFunction;
+    internal readonly EasingFunctions.EasingDelegate EasingFunction;
     
     /// <summary>
     /// Is set to true once the animation has finished.
     /// </summary>
-    public bool Finished;
+    internal bool Finished;
 
     private float elapsedTime = 0;
-
 
     /// <summary>
     /// Creates a new tween object.
@@ -40,7 +45,10 @@ public class Tween
     /// <param name="action">The animation action.</param>
     /// <param name="duration">The length of the animation, in seconds.</param>
     /// <param name="easingFunction">The animation easing (default = null - linear).</param>
-    public Tween(Action<float> action, float duration, EasingFunctions.EasingDelegate? easingFunction = null)
+    internal Tween(
+        Action<float> action,
+        float duration,
+        EasingFunctions.EasingDelegate? easingFunction = null)
     {
         Action = action;
         Duration = duration;

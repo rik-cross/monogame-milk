@@ -6,20 +6,12 @@ items:
   parent: milk.Core
   children:
   - milk.Core.Game.#ctor(System.String,System.Nullable{Microsoft.Xna.Framework.Vector2},System.Boolean,System.Int32,System.Int32,System.Boolean,System.Boolean)
-  - milk.Core.Game.ClearScenes
   - milk.Core.Game.Debug
   - milk.Core.Game.Draw(Microsoft.Xna.Framework.GameTime)
-  - milk.Core.Game.GetCurrentScene
   - milk.Core.Game.Init
   - milk.Core.Game.Initialize
   - milk.Core.Game.LoadContent
-  - milk.Core.Game.PositionSystemType``1(System.Int32)
-  - milk.Core.Game.PrintSystems
   - milk.Core.Game.Quit
-  - milk.Core.Game.RegisterSystem(milk.Core.System)
-  - milk.Core.Game.RemoveScene(milk.Core.Transition,System.Int32)
-  - milk.Core.Game.SetScene(System.Collections.Generic.List{milk.Core.Scene},milk.Core.Transition,System.Boolean)
-  - milk.Core.Game.SetScene(milk.Core.Scene,milk.Core.Transition,System.Boolean)
   - milk.Core.Game.Size
   - milk.Core.Game.Title
   - milk.Core.Game.Update(Microsoft.Xna.Framework.GameTime)
@@ -286,7 +278,7 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: Debug
     path: Core/Game.cs
-    startLine: 65
+    startLine: 64
   assemblies:
   - milk
   namespace: milk.Core
@@ -315,7 +307,7 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: .ctor
     path: Core/Game.cs
-    startLine: 77
+    startLine: 76
   assemblies:
   - milk
   namespace: milk.Core
@@ -368,7 +360,7 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: Initialize
     path: Core/Game.cs
-    startLine: 130
+    startLine: 112
   assemblies:
   - milk
   namespace: milk.Core
@@ -397,7 +389,7 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: LoadContent
     path: Core/Game.cs
-    startLine: 142
+    startLine: 124
   assemblies:
   - milk
   namespace: milk.Core
@@ -408,223 +400,6 @@ items:
     content.vb: Protected Overrides Sub LoadContent()
   overridden: Microsoft.Xna.Framework.Game.LoadContent
   overload: milk.Core.Game.LoadContent*
-- uid: milk.Core.Game.RegisterSystem(milk.Core.System)
-  commentId: M:milk.Core.Game.RegisterSystem(milk.Core.System)
-  id: RegisterSystem(milk.Core.System)
-  parent: milk.Core.Game
-  langs:
-  - csharp
-  - vb
-  name: RegisterSystem(System)
-  nameWithType: Game.RegisterSystem(System)
-  fullName: milk.Core.Game.RegisterSystem(milk.Core.System)
-  type: Method
-  source:
-    remote:
-      path: Core/Game.cs
-      branch: main
-      repo: git@github.com:rik-cross/monogame-milk.git
-    id: RegisterSystem
-    path: Core/Game.cs
-    startLine: 209
-  assemblies:
-  - milk
-  namespace: milk.Core
-  summary: >-
-    Registers a new game system.
-
-    All systems must be registered before use.
-  example: []
-  syntax:
-    content: public void RegisterSystem(System system)
-    parameters:
-    - id: system
-      type: milk.Core.System
-      description: The system to register.
-    content.vb: Public Sub RegisterSystem(system As System)
-  overload: milk.Core.Game.RegisterSystem*
-- uid: milk.Core.Game.GetCurrentScene
-  commentId: M:milk.Core.Game.GetCurrentScene
-  id: GetCurrentScene
-  parent: milk.Core.Game
-  langs:
-  - csharp
-  - vb
-  name: GetCurrentScene()
-  nameWithType: Game.GetCurrentScene()
-  fullName: milk.Core.Game.GetCurrentScene()
-  type: Method
-  source:
-    remote:
-      path: Core/Game.cs
-      branch: main
-      repo: git@github.com:rik-cross/monogame-milk.git
-    id: GetCurrentScene
-    path: Core/Game.cs
-    startLine: 222
-  assemblies:
-  - milk
-  namespace: milk.Core
-  summary: Returns the current top scene in the scene stack.
-  example: []
-  syntax:
-    content: public Scene? GetCurrentScene()
-    return:
-      type: milk.Core.Scene
-      description: The current top scene in the scene stack.
-    content.vb: Public Function GetCurrentScene() As Scene
-  overload: milk.Core.Game.GetCurrentScene*
-- uid: milk.Core.Game.SetScene(milk.Core.Scene,milk.Core.Transition,System.Boolean)
-  commentId: M:milk.Core.Game.SetScene(milk.Core.Scene,milk.Core.Transition,System.Boolean)
-  id: SetScene(milk.Core.Scene,milk.Core.Transition,System.Boolean)
-  parent: milk.Core.Game
-  langs:
-  - csharp
-  - vb
-  name: SetScene(Scene, Transition?, bool)
-  nameWithType: Game.SetScene(Scene, Transition?, bool)
-  fullName: milk.Core.Game.SetScene(milk.Core.Scene, milk.Core.Transition?, bool)
-  type: Method
-  source:
-    remote:
-      path: Core/Game.cs
-      branch: main
-      repo: git@github.com:rik-cross/monogame-milk.git
-    id: SetScene
-    path: Core/Game.cs
-    startLine: 233
-  assemblies:
-  - milk
-  namespace: milk.Core
-  summary: Sets the current active game scene.
-  example: []
-  syntax:
-    content: public void SetScene(Scene scene, Transition? transition = null, bool keepExistingScenes = false)
-    parameters:
-    - id: scene
-      type: milk.Core.Scene
-      description: The scene to set as the active scene.
-    - id: transition
-      type: milk.Core.Transition
-      description: Specifies a transition between any current scenes and the newly-active scene (default = null).
-    - id: keepExistingScenes
-      type: System.Boolean
-      description: Indicates whether to keep existing scenes on the scene stack, or remove them (default = false - remove all other scenes).
-    content.vb: Public Sub SetScene(scene As Scene, transition As Transition = Nothing, keepExistingScenes As Boolean = False)
-  overload: milk.Core.Game.SetScene*
-  nameWithType.vb: Game.SetScene(Scene, Transition, Boolean)
-  fullName.vb: milk.Core.Game.SetScene(milk.Core.Scene, milk.Core.Transition, Boolean)
-  name.vb: SetScene(Scene, Transition, Boolean)
-- uid: milk.Core.Game.SetScene(System.Collections.Generic.List{milk.Core.Scene},milk.Core.Transition,System.Boolean)
-  commentId: M:milk.Core.Game.SetScene(System.Collections.Generic.List{milk.Core.Scene},milk.Core.Transition,System.Boolean)
-  id: SetScene(System.Collections.Generic.List{milk.Core.Scene},milk.Core.Transition,System.Boolean)
-  parent: milk.Core.Game
-  langs:
-  - csharp
-  - vb
-  name: SetScene(List<Scene>, Transition?, bool)
-  nameWithType: Game.SetScene(List<Scene>, Transition?, bool)
-  fullName: milk.Core.Game.SetScene(System.Collections.Generic.List<milk.Core.Scene>, milk.Core.Transition?, bool)
-  type: Method
-  source:
-    remote:
-      path: Core/Game.cs
-      branch: main
-      repo: git@github.com:rik-cross/monogame-milk.git
-    id: SetScene
-    path: Core/Game.cs
-    startLine: 244
-  assemblies:
-  - milk
-  namespace: milk.Core
-  summary: Adds multiple scenes to the active scene stack.
-  example: []
-  syntax:
-    content: public void SetScene(List<Scene> scenes, Transition? transition = null, bool keepExistingScenes = false)
-    parameters:
-    - id: scenes
-      type: System.Collections.Generic.List{milk.Core.Scene}
-      description: A list of scenes to add to the scene stack.
-    - id: transition
-      type: milk.Core.Transition
-      description: Specifies a transition between any current scenes and the newly-active scene (default = null).
-    - id: keepExistingScenes
-      type: System.Boolean
-      description: Indicates whether to keep existing scenes on the scene stack, or remove them (default = false - remove all other scenes).
-    content.vb: Public Sub SetScene(scenes As List(Of Scene), transition As Transition = Nothing, keepExistingScenes As Boolean = False)
-  overload: milk.Core.Game.SetScene*
-  nameWithType.vb: Game.SetScene(List(Of Scene), Transition, Boolean)
-  fullName.vb: milk.Core.Game.SetScene(System.Collections.Generic.List(Of milk.Core.Scene), milk.Core.Transition, Boolean)
-  name.vb: SetScene(List(Of Scene), Transition, Boolean)
-- uid: milk.Core.Game.RemoveScene(milk.Core.Transition,System.Int32)
-  commentId: M:milk.Core.Game.RemoveScene(milk.Core.Transition,System.Int32)
-  id: RemoveScene(milk.Core.Transition,System.Int32)
-  parent: milk.Core.Game
-  langs:
-  - csharp
-  - vb
-  name: RemoveScene(Transition?, int)
-  nameWithType: Game.RemoveScene(Transition?, int)
-  fullName: milk.Core.Game.RemoveScene(milk.Core.Transition?, int)
-  type: Method
-  source:
-    remote:
-      path: Core/Game.cs
-      branch: main
-      repo: git@github.com:rik-cross/monogame-milk.git
-    id: RemoveScene
-    path: Core/Game.cs
-    startLine: 254
-  assemblies:
-  - milk
-  namespace: milk.Core
-  summary: Removes the top, active scene from the scene stack.
-  example: []
-  syntax:
-    content: public void RemoveScene(Transition? transition = null, int numberOfScenesToRemove = 1)
-    parameters:
-    - id: transition
-      type: milk.Core.Transition
-      description: Specifies a transition between any current scenes and the newly-active scene (default = null).
-    - id: numberOfScenesToRemove
-      type: System.Int32
-      description: The number of scenes to remove from the scene stack (default = 1).
-    content.vb: Public Sub RemoveScene(transition As Transition = Nothing, numberOfScenesToRemove As Integer = 1)
-  overload: milk.Core.Game.RemoveScene*
-  nameWithType.vb: Game.RemoveScene(Transition, Integer)
-  fullName.vb: milk.Core.Game.RemoveScene(milk.Core.Transition, Integer)
-  name.vb: RemoveScene(Transition, Integer)
-- uid: milk.Core.Game.ClearScenes
-  commentId: M:milk.Core.Game.ClearScenes
-  id: ClearScenes
-  parent: milk.Core.Game
-  langs:
-  - csharp
-  - vb
-  name: ClearScenes()
-  nameWithType: Game.ClearScenes()
-  fullName: milk.Core.Game.ClearScenes()
-  type: Method
-  source:
-    remote:
-      path: Core/Game.cs
-      branch: main
-      repo: git@github.com:rik-cross/monogame-milk.git
-    id: ClearScenes
-    path: Core/Game.cs
-    startLine: 263
-  assemblies:
-  - milk
-  namespace: milk.Core
-  summary: >-
-    Removes all scenes from the scene stack
-
-    (note: this will end the game loop).
-  example: []
-  syntax:
-    content: public void ClearScenes()
-    content.vb: Public Sub ClearScenes()
-  overload: milk.Core.Game.ClearScenes*
 - uid: milk.Core.Game.Update(Microsoft.Xna.Framework.GameTime)
   commentId: M:milk.Core.Game.Update(Microsoft.Xna.Framework.GameTime)
   id: Update(Microsoft.Xna.Framework.GameTime)
@@ -643,7 +418,7 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: Update
     path: Core/Game.cs
-    startLine: 276
+    startLine: 190
   assemblies:
   - milk
   namespace: milk.Core
@@ -676,7 +451,7 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: Draw
     path: Core/Game.cs
-    startLine: 295
+    startLine: 209
   assemblies:
   - milk
   namespace: milk.Core
@@ -709,7 +484,7 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: Quit
     path: Core/Game.cs
-    startLine: 314
+    startLine: 227
   assemblies:
   - milk
   namespace: milk.Core
@@ -719,80 +494,6 @@ items:
     content: public void Quit()
     content.vb: Public Sub Quit()
   overload: milk.Core.Game.Quit*
-- uid: milk.Core.Game.PrintSystems
-  commentId: M:milk.Core.Game.PrintSystems
-  id: PrintSystems
-  parent: milk.Core.Game
-  langs:
-  - csharp
-  - vb
-  name: PrintSystems()
-  nameWithType: Game.PrintSystems()
-  fullName: milk.Core.Game.PrintSystems()
-  type: Method
-  source:
-    remote:
-      path: Core/Game.cs
-      branch: main
-      repo: git@github.com:rik-cross/monogame-milk.git
-    id: PrintSystems
-    path: Core/Game.cs
-    startLine: 328
-  assemblies:
-  - milk
-  namespace: milk.Core
-  summary: Returns a string showing the order of execution of systems.
-  example: []
-  syntax:
-    content: public string PrintSystems()
-    return:
-      type: System.String
-      description: ''
-    content.vb: Public Function PrintSystems() As String
-  overload: milk.Core.Game.PrintSystems*
-- uid: milk.Core.Game.PositionSystemType``1(System.Int32)
-  commentId: M:milk.Core.Game.PositionSystemType``1(System.Int32)
-  id: PositionSystemType``1(System.Int32)
-  parent: milk.Core.Game
-  langs:
-  - csharp
-  - vb
-  name: PositionSystemType<T>(int)
-  nameWithType: Game.PositionSystemType<T>(int)
-  fullName: milk.Core.Game.PositionSystemType<T>(int)
-  type: Method
-  source:
-    remote:
-      path: Core/Game.cs
-      branch: main
-      repo: git@github.com:rik-cross/monogame-milk.git
-    id: PositionSystemType
-    path: Core/Game.cs
-    startLine: 340
-  assemblies:
-  - milk
-  namespace: milk.Core
-  summary: >-
-    Positions the system of the specified type at the requested position.
-
-    This is useful for setting the order in which systems execute.
-
-    (Use `PrintSystems()` to see the order of systems.)
-  example: []
-  syntax:
-    content: public void PositionSystemType<T>(int position)
-    parameters:
-    - id: position
-      type: System.Int32
-      description: The new position of the system.
-    typeParameters:
-    - id: T
-      description: The type of system to move.
-    content.vb: Public Sub PositionSystemType(Of T)(position As Integer)
-  overload: milk.Core.Game.PositionSystemType*
-  nameWithType.vb: Game.PositionSystemType(Of T)(Integer)
-  fullName.vb: milk.Core.Game.PositionSystemType(Of T)(Integer)
-  name.vb: PositionSystemType(Of T)(Integer)
 references:
 - uid: milk.Core
   commentId: N:milk.Core
@@ -1832,155 +1533,6 @@ references:
   name: LoadContent
   nameWithType: Game.LoadContent
   fullName: milk.Core.Game.LoadContent
-- uid: milk.Core.Game.RegisterSystem*
-  commentId: Overload:milk.Core.Game.RegisterSystem
-  href: milk.Core.Game.html#milk_Core_Game_RegisterSystem_milk_Core_System_
-  name: RegisterSystem
-  nameWithType: Game.RegisterSystem
-  fullName: milk.Core.Game.RegisterSystem
-- uid: milk.Core.System
-  commentId: T:milk.Core.System
-  parent: milk.Core
-  href: milk.Core.System.html
-  name: System
-  nameWithType: System
-  fullName: milk.Core.System
-- uid: milk.Core.Game.GetCurrentScene*
-  commentId: Overload:milk.Core.Game.GetCurrentScene
-  href: milk.Core.Game.html#milk_Core_Game_GetCurrentScene
-  name: GetCurrentScene
-  nameWithType: Game.GetCurrentScene
-  fullName: milk.Core.Game.GetCurrentScene
-- uid: milk.Core.Scene
-  commentId: T:milk.Core.Scene
-  parent: milk.Core
-  href: milk.Core.Scene.html
-  name: Scene
-  nameWithType: Scene
-  fullName: milk.Core.Scene
-- uid: milk.Core.Game.SetScene*
-  commentId: Overload:milk.Core.Game.SetScene
-  href: milk.Core.Game.html#milk_Core_Game_SetScene_milk_Core_Scene_milk_Core_Transition_System_Boolean_
-  name: SetScene
-  nameWithType: Game.SetScene
-  fullName: milk.Core.Game.SetScene
-- uid: milk.Core.Transition
-  commentId: T:milk.Core.Transition
-  parent: milk.Core
-  href: milk.Core.Transition.html
-  name: Transition
-  nameWithType: Transition
-  fullName: milk.Core.Transition
-- uid: System.Collections.Generic.List{milk.Core.Scene}
-  commentId: T:System.Collections.Generic.List{milk.Core.Scene}
-  parent: System.Collections.Generic
-  definition: System.Collections.Generic.List`1
-  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
-  name: List<Scene>
-  nameWithType: List<Scene>
-  fullName: System.Collections.Generic.List<milk.Core.Scene>
-  nameWithType.vb: List(Of Scene)
-  fullName.vb: System.Collections.Generic.List(Of milk.Core.Scene)
-  name.vb: List(Of Scene)
-  spec.csharp:
-  - uid: System.Collections.Generic.List`1
-    name: List
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
-  - name: <
-  - uid: milk.Core.Scene
-    name: Scene
-    href: milk.Core.Scene.html
-  - name: '>'
-  spec.vb:
-  - uid: System.Collections.Generic.List`1
-    name: List
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
-  - name: (
-  - name: Of
-  - name: " "
-  - uid: milk.Core.Scene
-    name: Scene
-    href: milk.Core.Scene.html
-  - name: )
-- uid: System.Collections.Generic.List`1
-  commentId: T:System.Collections.Generic.List`1
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
-  name: List<T>
-  nameWithType: List<T>
-  fullName: System.Collections.Generic.List<T>
-  nameWithType.vb: List(Of T)
-  fullName.vb: System.Collections.Generic.List(Of T)
-  name.vb: List(Of T)
-  spec.csharp:
-  - uid: System.Collections.Generic.List`1
-    name: List
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
-  - name: <
-  - name: T
-  - name: '>'
-  spec.vb:
-  - uid: System.Collections.Generic.List`1
-    name: List
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
-  - name: (
-  - name: Of
-  - name: " "
-  - name: T
-  - name: )
-- uid: System.Collections.Generic
-  commentId: N:System.Collections.Generic
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system
-  name: System.Collections.Generic
-  nameWithType: System.Collections.Generic
-  fullName: System.Collections.Generic
-  spec.csharp:
-  - uid: System
-    name: System
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system
-  - name: .
-  - uid: System.Collections
-    name: Collections
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections
-  - name: .
-  - uid: System.Collections.Generic
-    name: Generic
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
-  spec.vb:
-  - uid: System
-    name: System
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system
-  - name: .
-  - uid: System.Collections
-    name: Collections
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections
-  - name: .
-  - uid: System.Collections.Generic
-    name: Generic
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
-- uid: milk.Core.Game.RemoveScene*
-  commentId: Overload:milk.Core.Game.RemoveScene
-  href: milk.Core.Game.html#milk_Core_Game_RemoveScene_milk_Core_Transition_System_Int32_
-  name: RemoveScene
-  nameWithType: Game.RemoveScene
-  fullName: milk.Core.Game.RemoveScene
-- uid: milk.Core.Game.ClearScenes*
-  commentId: Overload:milk.Core.Game.ClearScenes
-  href: milk.Core.Game.html#milk_Core_Game_ClearScenes
-  name: ClearScenes
-  nameWithType: Game.ClearScenes
-  fullName: milk.Core.Game.ClearScenes
 - uid: Microsoft.Xna.Framework.Game.Update(Microsoft.Xna.Framework.GameTime)
   commentId: M:Microsoft.Xna.Framework.Game.Update(Microsoft.Xna.Framework.GameTime)
   parent: Microsoft.Xna.Framework.Game
@@ -2056,15 +1608,3 @@ references:
   name: Quit
   nameWithType: Game.Quit
   fullName: milk.Core.Game.Quit
-- uid: milk.Core.Game.PrintSystems*
-  commentId: Overload:milk.Core.Game.PrintSystems
-  href: milk.Core.Game.html#milk_Core_Game_PrintSystems
-  name: PrintSystems
-  nameWithType: Game.PrintSystems
-  fullName: milk.Core.Game.PrintSystems
-- uid: milk.Core.Game.PositionSystemType*
-  commentId: Overload:milk.Core.Game.PositionSystemType
-  href: milk.Core.Game.html#milk_Core_Game_PositionSystemType__1_System_Int32_
-  name: PositionSystemType
-  nameWithType: Game.PositionSystemType
-  fullName: milk.Core.Game.PositionSystemType

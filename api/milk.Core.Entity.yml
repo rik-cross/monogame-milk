@@ -20,7 +20,6 @@ items:
   - milk.Core.Entity.RemoveTag(System.String[])
   - milk.Core.Entity.State
   - milk.Core.Entity.Tags
-  - milk.Core.Entity.ToString
   - milk.Core.Entity.Visible
   langs:
   - csharp
@@ -57,6 +56,7 @@ items:
   - System.Object.GetType
   - System.Object.MemberwiseClone
   - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
 - uid: milk.Core.Entity.ID
   commentId: P:milk.Core.Entity.ID
   id: ID
@@ -630,38 +630,6 @@ items:
   nameWithType.vb: Entity.RemoveTag(ParamArray String())
   fullName.vb: milk.Core.Entity.RemoveTag(ParamArray String())
   name.vb: RemoveTag(ParamArray String())
-- uid: milk.Core.Entity.ToString
-  commentId: M:milk.Core.Entity.ToString
-  id: ToString
-  parent: milk.Core.Entity
-  langs:
-  - csharp
-  - vb
-  name: ToString()
-  nameWithType: Entity.ToString()
-  fullName: milk.Core.Entity.ToString()
-  type: Method
-  source:
-    remote:
-      path: Core/Entity.cs
-      branch: main
-      repo: git@github.com:rik-cross/monogame-milk.git
-    id: ToString
-    path: Core/Entity.cs
-    startLine: 279
-  assemblies:
-  - milk
-  namespace: milk.Core
-  summary: Debug entity string print method.
-  example: []
-  syntax:
-    content: public override string ToString()
-    return:
-      type: System.String
-      description: A string output representing the entity.
-    content.vb: Public Overrides Function ToString() As String
-  overridden: System.Object.ToString
-  overload: milk.Core.Entity.ToString*
 references:
 - uid: milk.Core
   commentId: N:milk.Core
@@ -890,6 +858,30 @@ references:
     name: Object
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
   - name: )
 - uid: System
   commentId: N:System
@@ -1141,7 +1133,6 @@ references:
   nameWithType: T
   fullName: T
 - uid: T
-  commentId: '!:T'
   name: T
   nameWithType: T
   fullName: T
@@ -1192,33 +1183,3 @@ references:
   name: RemoveTag
   nameWithType: Entity.RemoveTag
   fullName: milk.Core.Entity.RemoveTag
-- uid: System.Object.ToString
-  commentId: M:System.Object.ToString
-  parent: System.Object
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
-  name: ToString()
-  nameWithType: object.ToString()
-  fullName: object.ToString()
-  nameWithType.vb: Object.ToString()
-  fullName.vb: Object.ToString()
-  spec.csharp:
-  - uid: System.Object.ToString
-    name: ToString
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
-  - name: (
-  - name: )
-  spec.vb:
-  - uid: System.Object.ToString
-    name: ToString
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
-  - name: (
-  - name: )
-- uid: milk.Core.Entity.ToString*
-  commentId: Overload:milk.Core.Entity.ToString
-  href: milk.Core.Entity.html#milk_Core_Entity_ToString
-  name: ToString
-  nameWithType: Entity.ToString
-  fullName: milk.Core.Entity.ToString

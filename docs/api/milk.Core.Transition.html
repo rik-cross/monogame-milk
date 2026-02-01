@@ -6,7 +6,7 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <meta name="title" content="Class Transition | milk ">
       
-      
+      <meta name="description" content="Transition base class. Not to be instantiated directly, but new transitions should subclass this base class.">
       <link rel="icon" href="../images/favicon.ico">
       <link rel="stylesheet" href="../public/docfx.min.css">
       <link rel="stylesheet" href="../public/main.css">
@@ -89,7 +89,7 @@
 
 
   <h1 id="milk_Core_Transition" data-uid="milk.Core.Transition" class="text-break">
-Class Transition  <a class="header-action link-secondary" title="View source" href="https://github.com/rik-cross/monogame-milk/blob/main/Core/Transition.cs/#L12"><i class="bi bi-code-slash"></i></a>
+Class Transition  <a class="header-action link-secondary" title="View source" href="https://github.com/rik-cross/monogame-milk/blob/main/Core/Transition.cs/#L16"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
@@ -97,7 +97,9 @@ Class Transition  <a class="header-action link-secondary" title="View source" hr
   <dl><dt>Assembly</dt><dd>milk.dll</dd></dl>
   </div>
 
-  <div class="markdown summary"></div>
+  <div class="markdown summary"><p>Transition base class. Not to be instantiated directly,
+but new transitions should subclass this base class.</p>
+</div>
   <div class="markdown conceptual"></div>
 
   <div class="codewrapper">
@@ -164,14 +166,14 @@ Class Transition  <a class="header-action link-secondary" title="View source" hr
 
   <h3 id="milk_Core_Transition__ctor_System_Single_milk_Core_EasingFunctions_EasingDelegate_" data-uid="milk.Core.Transition.#ctor(System.Single,milk.Core.EasingFunctions.EasingDelegate)">
   Transition(float, EasingDelegate?)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/rik-cross/monogame-milk/blob/main/Core/Transition.cs/#L21"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/rik-cross/monogame-milk/blob/main/Core/Transition.cs/#L24"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public Transition(float duration = 1000, EasingFunctions.EasingDelegate? easing = null)</code></pre>
+    <pre><code class="lang-csharp hljs">protected Transition(float duration = 1, EasingFunctions.EasingDelegate? easing = null)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
@@ -200,7 +202,7 @@ Class Transition  <a class="header-action link-secondary" title="View source" hr
 
   <h3 id="milk_Core_Transition_easedPercentage" data-uid="milk.Core.Transition.easedPercentage">
   easedPercentage
-  <a class="header-action link-secondary" title="View source" href="https://github.com/rik-cross/monogame-milk/blob/main/Core/Transition.cs/#L16"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/rik-cross/monogame-milk/blob/main/Core/Transition.cs/#L20"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -230,7 +232,7 @@ Class Transition  <a class="header-action link-secondary" title="View source" hr
 
   <h3 id="milk_Core_Transition_easing" data-uid="milk.Core.Transition.easing">
   easing
-  <a class="header-action link-secondary" title="View source" href="https://github.com/rik-cross/monogame-milk/blob/main/Core/Transition.cs/#L18"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/rik-cross/monogame-milk/blob/main/Core/Transition.cs/#L22"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -260,7 +262,7 @@ Class Transition  <a class="header-action link-secondary" title="View source" hr
 
   <h3 id="milk_Core_Transition_elapsedDuration" data-uid="milk.Core.Transition.elapsedDuration">
   elapsedDuration
-  <a class="header-action link-secondary" title="View source" href="https://github.com/rik-cross/monogame-milk/blob/main/Core/Transition.cs/#L13"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/rik-cross/monogame-milk/blob/main/Core/Transition.cs/#L17"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -290,7 +292,7 @@ Class Transition  <a class="header-action link-secondary" title="View source" hr
 
   <h3 id="milk_Core_Transition_finished" data-uid="milk.Core.Transition.finished">
   finished
-  <a class="header-action link-secondary" title="View source" href="https://github.com/rik-cross/monogame-milk/blob/main/Core/Transition.cs/#L17"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/rik-cross/monogame-milk/blob/main/Core/Transition.cs/#L21"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -318,39 +320,9 @@ Class Transition  <a class="header-action link-secondary" title="View source" hr
 
 
 
-  <h3 id="milk_Core_Transition_graphicsDevice" data-uid="milk.Core.Transition.graphicsDevice">
-  graphicsDevice
-  <a class="header-action link-secondary" title="View source" href="https://github.com/rik-cross/monogame-milk/blob/main/Core/Transition.cs/#L20"><i class="bi bi-code-slash"></i></a>
-  </h3>
-
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public GraphicsDevice graphicsDevice</code></pre>
-  </div>
-
-
-
-
-  <h4 class="section">Field Value</h4>
-  <dl class="parameters">
-    <dt><span class="xref">GraphicsDevice</span></dt>
-    <dd></dd>
-  </dl>
-
-
-
-
-
-
-
-
-
-
   <h3 id="milk_Core_Transition_percentageComplete" data-uid="milk.Core.Transition.percentageComplete">
   percentageComplete
-  <a class="header-action link-secondary" title="View source" href="https://github.com/rik-cross/monogame-milk/blob/main/Core/Transition.cs/#L15"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/rik-cross/monogame-milk/blob/main/Core/Transition.cs/#L19"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -378,39 +350,9 @@ Class Transition  <a class="header-action link-secondary" title="View source" hr
 
 
 
-  <h3 id="milk_Core_Transition_spriteBatch" data-uid="milk.Core.Transition.spriteBatch">
-  spriteBatch
-  <a class="header-action link-secondary" title="View source" href="https://github.com/rik-cross/monogame-milk/blob/main/Core/Transition.cs/#L19"><i class="bi bi-code-slash"></i></a>
-  </h3>
-
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public SpriteBatch spriteBatch</code></pre>
-  </div>
-
-
-
-
-  <h4 class="section">Field Value</h4>
-  <dl class="parameters">
-    <dt><span class="xref">SpriteBatch</span></dt>
-    <dd></dd>
-  </dl>
-
-
-
-
-
-
-
-
-
-
   <h3 id="milk_Core_Transition_totalDuration" data-uid="milk.Core.Transition.totalDuration">
   totalDuration
-  <a class="header-action link-secondary" title="View source" href="https://github.com/rik-cross/monogame-milk/blob/main/Core/Transition.cs/#L14"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/rik-cross/monogame-milk/blob/main/Core/Transition.cs/#L18"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -445,14 +387,14 @@ Class Transition  <a class="header-action link-secondary" title="View source" hr
 
   <h3 id="milk_Core_Transition_Draw_Microsoft_Xna_Framework_Graphics_RenderTarget2D_Microsoft_Xna_Framework_Graphics_RenderTarget2D_" data-uid="milk.Core.Transition.Draw(Microsoft.Xna.Framework.Graphics.RenderTarget2D,Microsoft.Xna.Framework.Graphics.RenderTarget2D)">
   Draw(RenderTarget2D, RenderTarget2D)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/rik-cross/monogame-milk/blob/main/Core/Transition.cs/#L78"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/rik-cross/monogame-milk/blob/main/Core/Transition.cs/#L86"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public abstract void Draw(RenderTarget2D existingScenesRenderTarget, RenderTarget2D newScenesRenderTarget)</code></pre>
+    <pre><code class="lang-csharp hljs">protected abstract void Draw(RenderTarget2D existingScenesRenderTarget, RenderTarget2D newScenesRenderTarget)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
@@ -460,78 +402,6 @@ Class Transition  <a class="header-action link-secondary" title="View source" hr
     <dt><code>existingScenesRenderTarget</code> <span class="xref">RenderTarget2D</span></dt>
     <dd></dd>
     <dt><code>newScenesRenderTarget</code> <span class="xref">RenderTarget2D</span></dt>
-    <dd></dd>
-  </dl>
-
-
-
-
-
-
-
-
-
-
-
-
-  <a id="milk_Core_Transition__Draw_" data-uid="milk.Core.Transition._Draw*"></a>
-
-  <h3 id="milk_Core_Transition__Draw_Microsoft_Xna_Framework_Graphics_RenderTarget2D_Microsoft_Xna_Framework_Graphics_RenderTarget2D_System_Collections_Generic_List_milk_Core_Scene__System_Collections_Generic_List_milk_Core_Scene__" data-uid="milk.Core.Transition._Draw(Microsoft.Xna.Framework.Graphics.RenderTarget2D,Microsoft.Xna.Framework.Graphics.RenderTarget2D,System.Collections.Generic.List{milk.Core.Scene},System.Collections.Generic.List{milk.Core.Scene})">
-  _Draw(RenderTarget2D, RenderTarget2D, List&lt;Scene&gt;, List&lt;Scene&gt;)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/rik-cross/monogame-milk/blob/main/Core/Transition.cs/#L36"><i class="bi bi-code-slash"></i></a>
-  </h3>
-
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public void _Draw(RenderTarget2D existingScenesRenderTarget, RenderTarget2D newScenesRenderTarget, List&lt;Scene&gt; currentScenes, List&lt;Scene&gt; toScenes)</code></pre>
-  </div>
-
-  <h4 class="section">Parameters</h4>
-  <dl class="parameters">
-    <dt><code>existingScenesRenderTarget</code> <span class="xref">RenderTarget2D</span></dt>
-    <dd></dd>
-    <dt><code>newScenesRenderTarget</code> <span class="xref">RenderTarget2D</span></dt>
-    <dd></dd>
-    <dt><code>currentScenes</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="milk.Core.Scene.html">Scene</a>&gt;</dt>
-    <dd></dd>
-    <dt><code>toScenes</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="milk.Core.Scene.html">Scene</a>&gt;</dt>
-    <dd></dd>
-  </dl>
-
-
-
-
-
-
-
-
-
-
-
-
-  <a id="milk_Core_Transition__Update_" data-uid="milk.Core.Transition._Update*"></a>
-
-  <h3 id="milk_Core_Transition__Update_Microsoft_Xna_Framework_GameTime_System_Collections_Generic_List_milk_Core_Scene__System_Boolean_" data-uid="milk.Core.Transition._Update(Microsoft.Xna.Framework.GameTime,System.Collections.Generic.List{milk.Core.Scene},System.Boolean)">
-  _Update(GameTime, List&lt;Scene&gt;, bool)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/rik-cross/monogame-milk/blob/main/Core/Transition.cs/#L61"><i class="bi bi-code-slash"></i></a>
-  </h3>
-
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public void _Update(GameTime gameTime, List&lt;Scene&gt; toScenes, bool unload)</code></pre>
-  </div>
-
-  <h4 class="section">Parameters</h4>
-  <dl class="parameters">
-    <dt><code>gameTime</code> <span class="xref">GameTime</span></dt>
-    <dd></dd>
-    <dt><code>toScenes</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="milk.Core.Scene.html">Scene</a>&gt;</dt>
-    <dd></dd>
-    <dt><code>unload</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
     <dd></dd>
   </dl>
 
@@ -550,7 +420,7 @@ Class Transition  <a class="header-action link-secondary" title="View source" hr
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/rik-cross/monogame-milk/blob/main/Core/Transition.cs/#L12" class="edit-link">Edit this page</a>
+          <a href="https://github.com/rik-cross/monogame-milk/blob/main/Core/Transition.cs/#L16" class="edit-link">Edit this page</a>
         </div>
 
 

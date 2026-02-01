@@ -4,27 +4,23 @@ items:
   commentId: N:milk.Core
   id: milk.Core
   children:
-  - milk.Core.Anchor
   - milk.Core.Camera
   - milk.Core.Component
   - milk.Core.EasingFunctions
   - milk.Core.EasingFunctions.EasingDelegate
-  - milk.Core.EngineGlobals
   - milk.Core.EngineResourceManager
   - milk.Core.Entity
   - milk.Core.EntitySortMethods
   - milk.Core.Game
-  - milk.Core.Image
   - milk.Core.InputManager
+  - milk.Core.Milk
+  - milk.Core.MilkMethods
   - milk.Core.Scene
-  - milk.Core.SceneRenderable
-  - milk.Core.Sprite
+  - milk.Core.SceneManager
   - milk.Core.System
-  - milk.Core.Text
-  - milk.Core.Theme
+  - milk.Core.SystemManager
   - milk.Core.Transition
   - milk.Core.Utilities
-  - milk.Core.Utils
   langs:
   - csharp
   - vb
@@ -78,12 +74,6 @@ references:
   - uid: milk.Core.EasingFunctions.EasingDelegate
     name: EasingDelegate
     href: milk.Core.EasingFunctions.EasingDelegate.html
-- uid: milk.Core.EngineGlobals
-  commentId: T:milk.Core.EngineGlobals
-  href: milk.Core.EngineGlobals.html
-  name: EngineGlobals
-  nameWithType: EngineGlobals
-  fullName: milk.Core.EngineGlobals
 - uid: milk.Core.EngineResourceManager
   commentId: T:milk.Core.EngineResourceManager
   parent: milk.Core
@@ -111,12 +101,19 @@ references:
   name: Game
   nameWithType: Game
   fullName: milk.Core.Game
-- uid: milk.Core.Image
-  commentId: T:milk.Core.Image
-  href: milk.Core.Image.html
-  name: Image
-  nameWithType: Image
-  fullName: milk.Core.Image
+- uid: milk.Core.Milk
+  commentId: T:milk.Core.Milk
+  href: milk.Core.Milk.html
+  name: Milk
+  nameWithType: Milk
+  fullName: milk.Core.Milk
+- uid: milk.Core.MilkMethods
+  commentId: T:milk.Core.MilkMethods
+  parent: milk.Core
+  href: milk.Core.MilkMethods.html
+  name: MilkMethods
+  nameWithType: MilkMethods
+  fullName: milk.Core.MilkMethods
 - uid: milk.Core.Scene
   commentId: T:milk.Core.Scene
   parent: milk.Core
@@ -124,27 +121,6 @@ references:
   name: Scene
   nameWithType: Scene
   fullName: milk.Core.Scene
-- uid: milk.Core.Anchor
-  commentId: T:milk.Core.Anchor
-  parent: milk.Core
-  href: milk.Core.Anchor.html
-  name: Anchor
-  nameWithType: Anchor
-  fullName: milk.Core.Anchor
-- uid: milk.Core.SceneRenderable
-  commentId: T:milk.Core.SceneRenderable
-  parent: milk.Core
-  href: milk.Core.SceneRenderable.html
-  name: SceneRenderable
-  nameWithType: SceneRenderable
-  fullName: milk.Core.SceneRenderable
-- uid: milk.Core.Sprite
-  commentId: T:milk.Core.Sprite
-  parent: milk.Core
-  href: milk.Core.Sprite.html
-  name: Sprite
-  nameWithType: Sprite
-  fullName: milk.Core.Sprite
 - uid: milk.Core.System
   commentId: T:milk.Core.System
   parent: milk.Core
@@ -152,18 +128,6 @@ references:
   name: System
   nameWithType: System
   fullName: milk.Core.System
-- uid: milk.Core.Text
-  commentId: T:milk.Core.Text
-  href: milk.Core.Text.html
-  name: Text
-  nameWithType: Text
-  fullName: milk.Core.Text
-- uid: milk.Core.Theme
-  commentId: T:milk.Core.Theme
-  href: milk.Core.Theme.html
-  name: Theme
-  nameWithType: Theme
-  fullName: milk.Core.Theme
 - uid: milk.Core.Transition
   commentId: T:milk.Core.Transition
   parent: milk.Core
@@ -171,12 +135,12 @@ references:
   name: Transition
   nameWithType: Transition
   fullName: milk.Core.Transition
-- uid: milk.Core.Utils
-  commentId: T:milk.Core.Utils
-  href: milk.Core.Utils.html
-  name: Utils
-  nameWithType: Utils
-  fullName: milk.Core.Utils
+- uid: milk.Core.Utilities
+  commentId: T:milk.Core.Utilities
+  href: milk.Core.Utilities.html
+  name: Utilities
+  nameWithType: Utilities
+  fullName: milk.Core.Utilities
 - uid: milk.Core.InputManager
   commentId: T:milk.Core.InputManager
   parent: milk.Core
@@ -184,12 +148,20 @@ references:
   name: InputManager
   nameWithType: InputManager
   fullName: milk.Core.InputManager
-- uid: milk.Core.Utilities
-  commentId: T:milk.Core.Utilities
-  href: milk.Core.Utilities.html
-  name: Utilities
-  nameWithType: Utilities
-  fullName: milk.Core.Utilities
+- uid: milk.Core.SceneManager
+  commentId: T:milk.Core.SceneManager
+  parent: milk.Core
+  href: milk.Core.SceneManager.html
+  name: SceneManager
+  nameWithType: SceneManager
+  fullName: milk.Core.SceneManager
+- uid: milk.Core.SystemManager
+  commentId: T:milk.Core.SystemManager
+  parent: milk.Core
+  href: milk.Core.SystemManager.html
+  name: SystemManager
+  nameWithType: SystemManager
+  fullName: milk.Core.SystemManager
 - uid: milk.Core
   commentId: N:milk.Core
   href: milk.html

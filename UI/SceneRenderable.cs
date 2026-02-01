@@ -5,22 +5,10 @@
 //   -- Shared under the MIT licence
 
 using Microsoft.Xna.Framework;
+using milk.Core;
 
-namespace milk.Core;
+namespace milk.UI;
 
-/// <summary>
-/// The part of a SceneRenderable to set the position against.
-/// </summary>
-public enum Anchor
-{
-    TopLeft, TopCenter, TopRight,
-    MiddleLeft, MiddleCenter, MiddleRight,
-    BottomLeft, BottomCenter, BottomRight
-}
-
-/// <summary>
-/// Used as a superclass for images, text, UI, etc.
-/// </summary>
 public abstract class SceneRenderable
 {
     public Vector2 Position { get; set; }

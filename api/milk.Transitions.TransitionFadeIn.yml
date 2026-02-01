@@ -21,10 +21,12 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: TransitionFadeIn
     path: Transitions/TransitionFadeIn.cs
-    startLine: 6
+    startLine: 14
   assemblies:
   - milk
   namespace: milk.Transitions
+  summary: Fades a new scene into the current scene.
+  example: []
   syntax:
     content: 'public class TransitionFadeIn : Transition'
     content.vb: Public Class TransitionFadeIn Inherits Transition
@@ -38,10 +40,6 @@ items:
   - milk.Core.Transition.easedPercentage
   - milk.Core.Transition.finished
   - milk.Core.Transition.easing
-  - milk.Core.Transition.spriteBatch
-  - milk.Core.Transition.graphicsDevice
-  - milk.Core.Transition._Draw(Microsoft.Xna.Framework.Graphics.RenderTarget2D,Microsoft.Xna.Framework.Graphics.RenderTarget2D,System.Collections.Generic.List{milk.Core.Scene},System.Collections.Generic.List{milk.Core.Scene})
-  - milk.Core.Transition._Update(Microsoft.Xna.Framework.GameTime,System.Collections.Generic.List{milk.Core.Scene},System.Boolean)
   - System.Object.Equals(System.Object)
   - System.Object.Equals(System.Object,System.Object)
   - System.Object.GetHashCode
@@ -67,18 +65,22 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: .ctor
     path: Transitions/TransitionFadeIn.cs
-    startLine: 9
+    startLine: 22
   assemblies:
   - milk
   namespace: milk.Transitions
+  summary: Creates a new transition to fade between scenes.
+  example: []
   syntax:
-    content: public TransitionFadeIn(float duration = 1000, EasingFunctions.EasingDelegate? easingFunction = null)
+    content: public TransitionFadeIn(float duration = 1, EasingFunctions.EasingDelegate? easingFunction = null)
     parameters:
     - id: duration
       type: System.Single
+      description: The duration of the transition, in seconds (default = 1s).
     - id: easingFunction
       type: milk.Core.EasingFunctions.EasingDelegate
-    content.vb: Public Sub New(duration As Single = 1000, easingFunction As EasingFunctions.EasingDelegate = Nothing)
+      description: The easing function for the transition (default = null - linear)
+    content.vb: Public Sub New(duration As Single = 1, easingFunction As EasingFunctions.EasingDelegate = Nothing)
   overload: milk.Transitions.TransitionFadeIn.#ctor*
   nameWithType.vb: TransitionFadeIn.New(Single, EasingFunctions.EasingDelegate)
   fullName.vb: milk.Transitions.TransitionFadeIn.New(Single, milk.Core.EasingFunctions.EasingDelegate)
@@ -101,19 +103,19 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: Draw
     path: Transitions/TransitionFadeIn.cs
-    startLine: 17
+    startLine: 27
   assemblies:
   - milk
   namespace: milk.Transitions
   example: []
   syntax:
-    content: public override void Draw(RenderTarget2D existingScenesRenderTarget, RenderTarget2D newScenesRenderTarget)
+    content: protected override void Draw(RenderTarget2D existingScenesRenderTarget, RenderTarget2D newScenesRenderTarget)
     parameters:
     - id: existingScenesRenderTarget
       type: Microsoft.Xna.Framework.Graphics.RenderTarget2D
     - id: newScenesRenderTarget
       type: Microsoft.Xna.Framework.Graphics.RenderTarget2D
-    content.vb: Public Overrides Sub Draw(existingScenesRenderTarget As RenderTarget2D, newScenesRenderTarget As RenderTarget2D)
+    content.vb: Protected Overrides Sub Draw(existingScenesRenderTarget As RenderTarget2D, newScenesRenderTarget As RenderTarget2D)
   overridden: milk.Core.Transition.Draw(Microsoft.Xna.Framework.Graphics.RenderTarget2D,Microsoft.Xna.Framework.Graphics.RenderTarget2D)
   overload: milk.Transitions.TransitionFadeIn.Draw*
 references:
@@ -199,172 +201,6 @@ references:
   name: easing
   nameWithType: Transition.easing
   fullName: milk.Core.Transition.easing
-- uid: milk.Core.Transition.spriteBatch
-  commentId: F:milk.Core.Transition.spriteBatch
-  parent: milk.Core.Transition
-  href: milk.Core.Transition.html#milk_Core_Transition_spriteBatch
-  name: spriteBatch
-  nameWithType: Transition.spriteBatch
-  fullName: milk.Core.Transition.spriteBatch
-- uid: milk.Core.Transition.graphicsDevice
-  commentId: F:milk.Core.Transition.graphicsDevice
-  parent: milk.Core.Transition
-  href: milk.Core.Transition.html#milk_Core_Transition_graphicsDevice
-  name: graphicsDevice
-  nameWithType: Transition.graphicsDevice
-  fullName: milk.Core.Transition.graphicsDevice
-- uid: milk.Core.Transition._Draw(Microsoft.Xna.Framework.Graphics.RenderTarget2D,Microsoft.Xna.Framework.Graphics.RenderTarget2D,System.Collections.Generic.List{milk.Core.Scene},System.Collections.Generic.List{milk.Core.Scene})
-  commentId: M:milk.Core.Transition._Draw(Microsoft.Xna.Framework.Graphics.RenderTarget2D,Microsoft.Xna.Framework.Graphics.RenderTarget2D,System.Collections.Generic.List{milk.Core.Scene},System.Collections.Generic.List{milk.Core.Scene})
-  parent: milk.Core.Transition
-  isExternal: true
-  href: milk.Core.Transition.html#milk_Core_Transition__Draw_Microsoft_Xna_Framework_Graphics_RenderTarget2D_Microsoft_Xna_Framework_Graphics_RenderTarget2D_System_Collections_Generic_List_milk_Core_Scene__System_Collections_Generic_List_milk_Core_Scene__
-  name: _Draw(RenderTarget2D, RenderTarget2D, List<Scene>, List<Scene>)
-  nameWithType: Transition._Draw(RenderTarget2D, RenderTarget2D, List<Scene>, List<Scene>)
-  fullName: milk.Core.Transition._Draw(Microsoft.Xna.Framework.Graphics.RenderTarget2D, Microsoft.Xna.Framework.Graphics.RenderTarget2D, System.Collections.Generic.List<milk.Core.Scene>, System.Collections.Generic.List<milk.Core.Scene>)
-  nameWithType.vb: Transition._Draw(RenderTarget2D, RenderTarget2D, List(Of Scene), List(Of Scene))
-  fullName.vb: milk.Core.Transition._Draw(Microsoft.Xna.Framework.Graphics.RenderTarget2D, Microsoft.Xna.Framework.Graphics.RenderTarget2D, System.Collections.Generic.List(Of milk.Core.Scene), System.Collections.Generic.List(Of milk.Core.Scene))
-  name.vb: _Draw(RenderTarget2D, RenderTarget2D, List(Of Scene), List(Of Scene))
-  spec.csharp:
-  - uid: milk.Core.Transition._Draw(Microsoft.Xna.Framework.Graphics.RenderTarget2D,Microsoft.Xna.Framework.Graphics.RenderTarget2D,System.Collections.Generic.List{milk.Core.Scene},System.Collections.Generic.List{milk.Core.Scene})
-    name: _Draw
-    href: milk.Core.Transition.html#milk_Core_Transition__Draw_Microsoft_Xna_Framework_Graphics_RenderTarget2D_Microsoft_Xna_Framework_Graphics_RenderTarget2D_System_Collections_Generic_List_milk_Core_Scene__System_Collections_Generic_List_milk_Core_Scene__
-  - name: (
-  - uid: Microsoft.Xna.Framework.Graphics.RenderTarget2D
-    name: RenderTarget2D
-    isExternal: true
-  - name: ','
-  - name: " "
-  - uid: Microsoft.Xna.Framework.Graphics.RenderTarget2D
-    name: RenderTarget2D
-    isExternal: true
-  - name: ','
-  - name: " "
-  - uid: System.Collections.Generic.List`1
-    name: List
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
-  - name: <
-  - uid: milk.Core.Scene
-    name: Scene
-    href: milk.Core.Scene.html
-  - name: '>'
-  - name: ','
-  - name: " "
-  - uid: System.Collections.Generic.List`1
-    name: List
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
-  - name: <
-  - uid: milk.Core.Scene
-    name: Scene
-    href: milk.Core.Scene.html
-  - name: '>'
-  - name: )
-  spec.vb:
-  - uid: milk.Core.Transition._Draw(Microsoft.Xna.Framework.Graphics.RenderTarget2D,Microsoft.Xna.Framework.Graphics.RenderTarget2D,System.Collections.Generic.List{milk.Core.Scene},System.Collections.Generic.List{milk.Core.Scene})
-    name: _Draw
-    href: milk.Core.Transition.html#milk_Core_Transition__Draw_Microsoft_Xna_Framework_Graphics_RenderTarget2D_Microsoft_Xna_Framework_Graphics_RenderTarget2D_System_Collections_Generic_List_milk_Core_Scene__System_Collections_Generic_List_milk_Core_Scene__
-  - name: (
-  - uid: Microsoft.Xna.Framework.Graphics.RenderTarget2D
-    name: RenderTarget2D
-    isExternal: true
-  - name: ','
-  - name: " "
-  - uid: Microsoft.Xna.Framework.Graphics.RenderTarget2D
-    name: RenderTarget2D
-    isExternal: true
-  - name: ','
-  - name: " "
-  - uid: System.Collections.Generic.List`1
-    name: List
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
-  - name: (
-  - name: Of
-  - name: " "
-  - uid: milk.Core.Scene
-    name: Scene
-    href: milk.Core.Scene.html
-  - name: )
-  - name: ','
-  - name: " "
-  - uid: System.Collections.Generic.List`1
-    name: List
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
-  - name: (
-  - name: Of
-  - name: " "
-  - uid: milk.Core.Scene
-    name: Scene
-    href: milk.Core.Scene.html
-  - name: )
-  - name: )
-- uid: milk.Core.Transition._Update(Microsoft.Xna.Framework.GameTime,System.Collections.Generic.List{milk.Core.Scene},System.Boolean)
-  commentId: M:milk.Core.Transition._Update(Microsoft.Xna.Framework.GameTime,System.Collections.Generic.List{milk.Core.Scene},System.Boolean)
-  parent: milk.Core.Transition
-  isExternal: true
-  href: milk.Core.Transition.html#milk_Core_Transition__Update_Microsoft_Xna_Framework_GameTime_System_Collections_Generic_List_milk_Core_Scene__System_Boolean_
-  name: _Update(GameTime, List<Scene>, bool)
-  nameWithType: Transition._Update(GameTime, List<Scene>, bool)
-  fullName: milk.Core.Transition._Update(Microsoft.Xna.Framework.GameTime, System.Collections.Generic.List<milk.Core.Scene>, bool)
-  nameWithType.vb: Transition._Update(GameTime, List(Of Scene), Boolean)
-  fullName.vb: milk.Core.Transition._Update(Microsoft.Xna.Framework.GameTime, System.Collections.Generic.List(Of milk.Core.Scene), Boolean)
-  name.vb: _Update(GameTime, List(Of Scene), Boolean)
-  spec.csharp:
-  - uid: milk.Core.Transition._Update(Microsoft.Xna.Framework.GameTime,System.Collections.Generic.List{milk.Core.Scene},System.Boolean)
-    name: _Update
-    href: milk.Core.Transition.html#milk_Core_Transition__Update_Microsoft_Xna_Framework_GameTime_System_Collections_Generic_List_milk_Core_Scene__System_Boolean_
-  - name: (
-  - uid: Microsoft.Xna.Framework.GameTime
-    name: GameTime
-    isExternal: true
-  - name: ','
-  - name: " "
-  - uid: System.Collections.Generic.List`1
-    name: List
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
-  - name: <
-  - uid: milk.Core.Scene
-    name: Scene
-    href: milk.Core.Scene.html
-  - name: '>'
-  - name: ','
-  - name: " "
-  - uid: System.Boolean
-    name: bool
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.boolean
-  - name: )
-  spec.vb:
-  - uid: milk.Core.Transition._Update(Microsoft.Xna.Framework.GameTime,System.Collections.Generic.List{milk.Core.Scene},System.Boolean)
-    name: _Update
-    href: milk.Core.Transition.html#milk_Core_Transition__Update_Microsoft_Xna_Framework_GameTime_System_Collections_Generic_List_milk_Core_Scene__System_Boolean_
-  - name: (
-  - uid: Microsoft.Xna.Framework.GameTime
-    name: GameTime
-    isExternal: true
-  - name: ','
-  - name: " "
-  - uid: System.Collections.Generic.List`1
-    name: List
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
-  - name: (
-  - name: Of
-  - name: " "
-  - uid: milk.Core.Scene
-    name: Scene
-    href: milk.Core.Scene.html
-  - name: )
-  - name: ','
-  - name: " "
-  - uid: System.Boolean
-    name: Boolean
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.boolean
-  - name: )
 - uid: System.Object.Equals(System.Object)
   commentId: M:System.Object.Equals(System.Object)
   parent: System.Object

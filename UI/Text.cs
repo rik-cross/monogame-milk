@@ -6,15 +6,15 @@
 
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using milk.Core;
 
-namespace milk.Core;
+namespace milk.UI;
 
 /// <summary>
 /// Displays text in a scene, in the font specified.
 /// </summary>
 public class Text : SceneRenderable
 {
-    private SpriteBatch _spriteBatch = EngineGlobals.game.spriteBatch;
     private SpriteFont _font;
 
     /// <summary>
@@ -122,18 +122,18 @@ public class Text : SceneRenderable
         {
             for (int i = 1; i < OutlineWidth - 1; i++)
             {
-                _spriteBatch.DrawString(Font, Caption, new Vector2(dp.X - i, dp.Y - i), OutlineColor * Alpha);
-                _spriteBatch.DrawString(Font, Caption, new Vector2(dp.X + i, dp.Y - i), OutlineColor * Alpha);
-                _spriteBatch.DrawString(Font, Caption, new Vector2(dp.X - i, dp.Y + i), OutlineColor * Alpha);
-                _spriteBatch.DrawString(Font, Caption, new Vector2(dp.X + i, dp.Y + i), OutlineColor * Alpha);
-                _spriteBatch.DrawString(Font, Caption, new Vector2(dp.X - i, dp.Y), OutlineColor * Alpha);
-                _spriteBatch.DrawString(Font, Caption, new Vector2(dp.X + i, dp.Y), OutlineColor * Alpha);
-                _spriteBatch.DrawString(Font, Caption, new Vector2(dp.X, dp.Y - i), OutlineColor * Alpha);
-                _spriteBatch.DrawString(Font, Caption, new Vector2(dp.X, dp.Y + i), OutlineColor * Alpha);
+                milk.Core.Milk.Graphics.DrawString(Font, Caption, new Vector2(dp.X - i, dp.Y - i), OutlineColor * Alpha);
+                milk.Core.Milk.Graphics.DrawString(Font, Caption, new Vector2(dp.X + i, dp.Y - i), OutlineColor * Alpha);
+                milk.Core.Milk.Graphics.DrawString(Font, Caption, new Vector2(dp.X - i, dp.Y + i), OutlineColor * Alpha);
+                milk.Core.Milk.Graphics.DrawString(Font, Caption, new Vector2(dp.X + i, dp.Y + i), OutlineColor * Alpha);
+                milk.Core.Milk.Graphics.DrawString(Font, Caption, new Vector2(dp.X - i, dp.Y), OutlineColor * Alpha);
+                milk.Core.Milk.Graphics.DrawString(Font, Caption, new Vector2(dp.X + i, dp.Y), OutlineColor * Alpha);
+                milk.Core.Milk.Graphics.DrawString(Font, Caption, new Vector2(dp.X, dp.Y - i), OutlineColor * Alpha);
+                milk.Core.Milk.Graphics.DrawString(Font, Caption, new Vector2(dp.X, dp.Y + i), OutlineColor * Alpha);
             }
         }
 
-        _spriteBatch.DrawString(Font, Caption, dp, Color * Alpha);
+        milk.Core.Milk.Graphics.DrawString(Font, Caption, dp, Color * Alpha);
 
     }
 

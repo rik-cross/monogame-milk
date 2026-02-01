@@ -30,9 +30,9 @@ public class TransformComponent : Component
     /// </summary>
     /// <param name="position">The (x,y) top-left entity position.</param>
     /// <param name="size">The (x,y) size of the entity in pixels.</param>
-    public TransformComponent(Vector2 position, Vector2? size = null)
+    public TransformComponent(Vector2? position = null, Vector2? size = null)
     {
-        Position = position;
+        Position = position ?? Vector2.Zero;
         Size = size ?? Vector2.Zero;
     }
 

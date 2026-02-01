@@ -19,7 +19,7 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: EasingDelegate
     path: Core/EasingFunctions.cs
-    startLine: 15
+    startLine: 19
   assemblies:
   - milk
   namespace: milk.Core

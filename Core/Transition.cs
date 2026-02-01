@@ -9,6 +9,10 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace milk.Core;
 
+/// <summary>
+/// Transition base class. Not to be instantiated directly,
+/// but new transitions should subclass this base class.
+/// </summary>
 public abstract class Transition {
     public float elapsedDuration;
     public float totalDuration;
@@ -16,10 +20,9 @@ public abstract class Transition {
     public float easedPercentage;
     public bool finished = false;
     public EasingFunctions.EasingDelegate? easing;
-    public SpriteBatch spriteBatch = EngineGlobals.game.spriteBatch;
-    public GraphicsDevice graphicsDevice = EngineGlobals.game.graphicsDevice;
-    public Transition(
-        float duration = 1000,
+
+    protected internal Transition(
+        float duration = 1.0f,
         EasingFunctions.EasingDelegate? easing = null)
     {
         totalDuration = duration;
@@ -33,7 +36,13 @@ public abstract class Transition {
             this.easing = easing;
     }
 
-    public void _Draw(RenderTarget2D existingScenesRenderTarget, RenderTarget2D newScenesRenderTarget, List<Scene> currentScenes, List<Scene> toScenes)
+    internal void _Draw(
+        GraphicsDevice graphicsDevice,
+        RenderTarget2D existingScenesRenderTarget,
+        RenderTarget2D newScenesRenderTarget,
+        List<Scene> currentScenes,
+        List<Scene> toScenes
+    )
     {
 
         graphicsDevice.SetRenderTarget(newScenesRenderTarget);
@@ -47,33 +56,33 @@ public abstract class Transition {
         if (toScenes.Count == 0)
         {
             graphicsDevice.Clear(Color.CornflowerBlue);
-            if (EngineGlobals.game.sceneManager._currentSceneList.Count > EngineGlobals.game.sceneManager.numberOfScenesToRemove)
-                EngineGlobals.game.sceneManager._currentSceneList[EngineGlobals.game.sceneManager.numberOfScenesToRemove]._Draw(newScenesRenderTarget, currentScenes);
+            if (Milk.Scenes._currentSceneList.Count > Milk.Scenes.numberOfScenesToRemove)
+                Milk.Scenes._currentSceneList[Milk.Scenes.numberOfScenesToRemove]._Draw(newScenesRenderTarget, currentScenes);
         }
 
         graphicsDevice.SetRenderTarget(null);
         
-        spriteBatch.Begin();
+        Milk.Graphics.Begin();
         Draw(existingScenesRenderTarget, newScenesRenderTarget);
-        spriteBatch.End();
+        Milk.Graphics.End();
 
     }
-    public void _Update(GameTime gameTime, List<Scene> toScenes, bool unload)
+
+    internal void _Update(GameTime gameTime, List<Scene> toScenes, bool unload)
     {
         percentageComplete = elapsedDuration / totalDuration;
         easedPercentage = easing(percentageComplete);
-        elapsedDuration += gameTime.ElapsedGameTime.Milliseconds;
-        //Console.WriteLine(percentageComplete);
+        elapsedDuration += (float)gameTime.ElapsedGameTime.TotalSeconds;
         if (percentageComplete >= 1)
         {
             finished = true;
             if (toScenes.Count > 0)
-                EngineGlobals.game.sceneManager.SetScene(toScenes, null, !unload, true);
+                Milk.Scenes.SetScene(toScenes, null, !unload, true);
             else
-                EngineGlobals.game.sceneManager.RemoveScene(null, EngineGlobals.game.sceneManager.numberOfScenesToRemove, true);
+                Milk.Scenes.RemoveScene(null, Milk.Scenes.numberOfScenesToRemove, true);
         }
-        //Update(gameTime);
     }
-    //public abstract void Update(GameTime gameTime);
-    public abstract void Draw(RenderTarget2D existingScenesRenderTarget, RenderTarget2D newScenesRenderTarget);
+
+    protected internal abstract void Draw(RenderTarget2D existingScenesRenderTarget, RenderTarget2D newScenesRenderTarget);
+
 }

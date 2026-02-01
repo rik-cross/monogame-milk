@@ -17,4 +17,4 @@ Other useful links:
 - [Bugs / feedback / suggestions](https://github.com/rik-cross/monogame-milk/issues)
 - ['Tiny Town' RPG example game](https://github.com/rik-cross/tiny-town)
 
-Copyright &copy; 2025 Rik Cross
+Copyright &copy; 2026 Rik Cross

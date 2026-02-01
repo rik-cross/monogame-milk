@@ -29,17 +29,4 @@ public abstract class Component
     /// <param name="entity">The entity that the component has been added to.</param>
     public virtual void OnRemovedFromEntity(Entity entity) { }
 
-    /// <summary>
-    /// Debug entity string print method.
-    /// </summary>
-    /// <returns>A string output representing the entity.</returns>
-    public override string ToString()
-    {
-        string output = "";
-        output += Theme.CreateConsoleTitle("Component");
-        output += Theme.PrintConsoleVar("ID", EngineGlobals.game.componentManager.GetComponentTypeID(this.GetType()).ToString());
-        output = output.Remove(output.Length - 1);
-        return output;
-    }
-
 }

@@ -10,8 +10,8 @@
 - Scenes and scene transitions
 - Scene renderables -- Image and Text
 - Scene cameras
-- Scene animators which process Tween objects
-- Transform, collision and physics components
+- Scene animators which process 'lerp' functions
+- Transform, collision and (simple) physics components
 - Sprite component and a sprite system, including animated sprites
 - Triggers that execute a callback function on collision enter, collide and exit
 - Buttons, with an option to provide a custom draw method

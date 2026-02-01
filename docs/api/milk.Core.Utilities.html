@@ -6,7 +6,7 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <meta name="title" content="Class Utilities | milk ">
       
-      
+      <meta name="description" content="A suite of useful additional utilities.">
       <link rel="icon" href="../images/favicon.ico">
       <link rel="stylesheet" href="../public/docfx.min.css">
       <link rel="stylesheet" href="../public/main.css">
@@ -89,7 +89,7 @@
 
 
   <h1 id="milk_Core_Utilities" data-uid="milk.Core.Utilities" class="text-break">
-Class Utilities  <a class="header-action link-secondary" title="View source" href="https://github.com/rik-cross/monogame-milk/blob/main/Utilities/Utilities.cs/#L7"><i class="bi bi-code-slash"></i></a>
+Class Utilities  <a class="header-action link-secondary" title="View source" href="https://github.com/rik-cross/monogame-milk/blob/main/Core/Utilities.cs/#L17"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
@@ -97,7 +97,8 @@ Class Utilities  <a class="header-action link-secondary" title="View source" hre
   <dl><dt>Assembly</dt><dd>milk.dll</dd></dl>
   </div>
 
-  <div class="markdown summary"></div>
+  <div class="markdown summary"><p>A suite of useful additional utilities.</p>
+</div>
   <div class="markdown conceptual"></div>
 
   <div class="codewrapper">
@@ -156,10 +157,11 @@ Class Utilities  <a class="header-action link-secondary" title="View source" hre
 
   <h3 id="milk_Core_Utilities_GetSubTexture_Microsoft_Xna_Framework_Graphics_Texture2D_System_Int32_System_Int32_System_Int32_System_Int32_" data-uid="milk.Core.Utilities.GetSubTexture(Microsoft.Xna.Framework.Graphics.Texture2D,System.Int32,System.Int32,System.Int32,System.Int32)">
   GetSubTexture(Texture2D, int, int, int, int)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/rik-cross/monogame-milk/blob/main/Utilities/Utilities.cs/#L43"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/rik-cross/monogame-milk/blob/main/Core/Utilities.cs/#L78"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Returns a sub-region of the specified texture.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
@@ -169,21 +171,27 @@ Class Utilities  <a class="header-action link-secondary" title="View source" hre
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
     <dt><code>texture</code> <span class="xref">Texture2D</span></dt>
-    <dd></dd>
+    <dd><p>The texture to crop.</p>
+</dd>
     <dt><code>x</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
-    <dd></dd>
+    <dd><p>The starting x position.</p>
+</dd>
     <dt><code>y</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
-    <dd></dd>
+    <dd><p>The starting y position.</p>
+</dd>
     <dt><code>width</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
-    <dd></dd>
+    <dd><p>The width to crop to.</p>
+</dd>
     <dt><code>height</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
-    <dd></dd>
+    <dd><p>The height to crop to.</p>
+</dd>
   </dl>
 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
     <dt><span class="xref">Texture2D</span></dt>
-    <dd></dd>
+    <dd><p>A cropped texture.</p>
+</dd>
   </dl>
 
 
@@ -200,10 +208,12 @@ Class Utilities  <a class="header-action link-secondary" title="View source" hre
 
   <h3 id="milk_Core_Utilities_SplitTexture_Microsoft_Xna_Framework_Graphics_Texture2D_Microsoft_Xna_Framework_Vector2_Microsoft_Xna_Framework_Rectangle_" data-uid="milk.Core.Utilities.SplitTexture(Microsoft.Xna.Framework.Graphics.Texture2D,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Rectangle)">
   SplitTexture(Texture2D, Vector2, Rectangle)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/rik-cross/monogame-milk/blob/main/Utilities/Utilities.cs/#L9"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/rik-cross/monogame-milk/blob/main/Core/Utilities.cs/#L28"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Splits an original source texture into a 2D list of sub-textures,
+using the size and clipping rectangle provided.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
@@ -213,17 +223,21 @@ Class Utilities  <a class="header-action link-secondary" title="View source" hre
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
     <dt><code>originalTexture</code> <span class="xref">Texture2D</span></dt>
-    <dd></dd>
+    <dd><p>The texture to split.</p>
+</dd>
     <dt><code>subTextureSize</code> <span class="xref">Vector2</span></dt>
-    <dd></dd>
+    <dd><p>The (w, h) size to split the original texture into.</p>
+</dd>
     <dt><code>subTextureClippingRect</code> <span class="xref">Rectangle</span></dt>
-    <dd></dd>
+    <dd><p>Specifies a sub-region of the sub-textures to split.</p>
+</dd>
   </dl>
 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
     <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<span class="xref">Texture2D</span>&gt;&gt;</dt>
-    <dd></dd>
+    <dd><p>A 2D list of textures, mapped to the position of the sub-textures in the original texture.</p>
+</dd>
   </dl>
 
 
@@ -240,7 +254,7 @@ Class Utilities  <a class="header-action link-secondary" title="View source" hre
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/rik-cross/monogame-milk/blob/main/Utilities/Utilities.cs/#L7" class="edit-link">Edit this page</a>
+          <a href="https://github.com/rik-cross/monogame-milk/blob/main/Core/Utilities.cs/#L17" class="edit-link">Edit this page</a>
         </div>
 
 

@@ -31,10 +31,12 @@ internal class InputSystem : milk.Core.System
     public override void InputEntity(GameTime gameTime, Scene scene, Entity entity)
     {
         InputComponent inputComponent = entity.GetComponent<InputComponent>();
-        if (inputComponent.inputController != null)
-        {
-            inputComponent.inputController(scene, entity);
-        }
+        
+        // Don't process input if there's an active transition
+        bool isSuspended = Milk.Scenes.currentTransition != null;
+        
+        inputComponent.inputController(scene, entity, isSuspended);
+
     }
 
 }

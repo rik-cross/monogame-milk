@@ -5,7 +5,7 @@ items:
   id: Button
   parent: milk.UI
   children:
-  - milk.UI.Button.#ctor(System.String,Microsoft.Xna.Framework.Graphics.SpriteFont,System.Nullable{Microsoft.Xna.Framework.Vector2},System.Nullable{Microsoft.Xna.Framework.Vector2},milk.Core.Anchor,milk.UI.UIElement,System.Nullable{Microsoft.Xna.Framework.Color},System.Nullable{Microsoft.Xna.Framework.Color},System.Nullable{Microsoft.Xna.Framework.Color},System.Nullable{Microsoft.Xna.Framework.Color},System.Nullable{Microsoft.Xna.Framework.Color},System.Nullable{Microsoft.Xna.Framework.Color},System.Int32,System.Action{milk.UI.UIElement,milk.Core.Scene},System.Action{milk.UI.UIElement,System.Boolean},System.Single,System.Boolean,System.Boolean)
+  - milk.UI.Button.#ctor(System.String,Microsoft.Xna.Framework.Graphics.SpriteFont,System.Nullable{Microsoft.Xna.Framework.Vector2},System.Nullable{Microsoft.Xna.Framework.Vector2},milk.UI.Anchor,milk.UI.UIElement,System.Nullable{Microsoft.Xna.Framework.Color},System.Nullable{Microsoft.Xna.Framework.Color},System.Nullable{Microsoft.Xna.Framework.Color},System.Nullable{Microsoft.Xna.Framework.Color},System.Nullable{Microsoft.Xna.Framework.Color},System.Nullable{Microsoft.Xna.Framework.Color},System.Int32,System.Action{milk.UI.UIElement,milk.Core.Scene},System.Action{milk.UI.UIElement,System.Boolean},System.Single,System.Boolean,System.Boolean)
   - milk.UI.Button.DrawBackground
   - milk.UI.Button.DrawBorder
   - milk.UI.Button.DrawText
@@ -34,7 +34,7 @@ items:
     content.vb: Public Class Button Inherits UIElement
   inheritance:
   - System.Object
-  - milk.Core.SceneRenderable
+  - milk.UI.SceneRenderable
   - milk.UI.UIElement
   inheritedMembers:
   - milk.UI.UIElement.parentScene
@@ -57,25 +57,25 @@ items:
   - milk.UI.UIElement.Enabled
   - milk.UI.UIElement.Update(Microsoft.Xna.Framework.GameTime,System.Boolean)
   - milk.UI.UIElement.Input(System.Boolean)
-  - milk.Core.SceneRenderable.Position
-  - milk.Core.SceneRenderable.Size
-  - milk.Core.SceneRenderable.Alpha
-  - milk.Core.SceneRenderable.Anchor
-  - milk.Core.SceneRenderable.Parent
-  - milk.Core.SceneRenderable.Visible
-  - milk.Core.SceneRenderable.CalculateTopLeftPositionFromAnchor(Microsoft.Xna.Framework.Vector2)
-  - milk.Core.SceneRenderable.GetPositionIncludingParent(Microsoft.Xna.Framework.Vector2)
-  - milk.Core.SceneRenderable.Draw
-  - milk.Core.SceneRenderable.Width
-  - milk.Core.SceneRenderable.Height
-  - milk.Core.SceneRenderable.X
-  - milk.Core.SceneRenderable.Y
-  - milk.Core.SceneRenderable.Top
-  - milk.Core.SceneRenderable.Middle
-  - milk.Core.SceneRenderable.Bottom
-  - milk.Core.SceneRenderable.Left
-  - milk.Core.SceneRenderable.Center
-  - milk.Core.SceneRenderable.Right
+  - milk.UI.SceneRenderable.Position
+  - milk.UI.SceneRenderable.Size
+  - milk.UI.SceneRenderable.Alpha
+  - milk.UI.SceneRenderable.Anchor
+  - milk.UI.SceneRenderable.Parent
+  - milk.UI.SceneRenderable.Visible
+  - milk.UI.SceneRenderable.CalculateTopLeftPositionFromAnchor(Microsoft.Xna.Framework.Vector2)
+  - milk.UI.SceneRenderable.GetPositionIncludingParent(Microsoft.Xna.Framework.Vector2)
+  - milk.UI.SceneRenderable.Draw
+  - milk.UI.SceneRenderable.Width
+  - milk.UI.SceneRenderable.Height
+  - milk.UI.SceneRenderable.X
+  - milk.UI.SceneRenderable.Y
+  - milk.UI.SceneRenderable.Top
+  - milk.UI.SceneRenderable.Middle
+  - milk.UI.SceneRenderable.Bottom
+  - milk.UI.SceneRenderable.Left
+  - milk.UI.SceneRenderable.Center
+  - milk.UI.SceneRenderable.Right
   - System.Object.Equals(System.Object)
   - System.Object.Equals(System.Object,System.Object)
   - System.Object.GetHashCode
@@ -83,16 +83,16 @@ items:
   - System.Object.MemberwiseClone
   - System.Object.ReferenceEquals(System.Object,System.Object)
   - System.Object.ToString
-- uid: milk.UI.Button.#ctor(System.String,Microsoft.Xna.Framework.Graphics.SpriteFont,System.Nullable{Microsoft.Xna.Framework.Vector2},System.Nullable{Microsoft.Xna.Framework.Vector2},milk.Core.Anchor,milk.UI.UIElement,System.Nullable{Microsoft.Xna.Framework.Color},System.Nullable{Microsoft.Xna.Framework.Color},System.Nullable{Microsoft.Xna.Framework.Color},System.Nullable{Microsoft.Xna.Framework.Color},System.Nullable{Microsoft.Xna.Framework.Color},System.Nullable{Microsoft.Xna.Framework.Color},System.Int32,System.Action{milk.UI.UIElement,milk.Core.Scene},System.Action{milk.UI.UIElement,System.Boolean},System.Single,System.Boolean,System.Boolean)
-  commentId: M:milk.UI.Button.#ctor(System.String,Microsoft.Xna.Framework.Graphics.SpriteFont,System.Nullable{Microsoft.Xna.Framework.Vector2},System.Nullable{Microsoft.Xna.Framework.Vector2},milk.Core.Anchor,milk.UI.UIElement,System.Nullable{Microsoft.Xna.Framework.Color},System.Nullable{Microsoft.Xna.Framework.Color},System.Nullable{Microsoft.Xna.Framework.Color},System.Nullable{Microsoft.Xna.Framework.Color},System.Nullable{Microsoft.Xna.Framework.Color},System.Nullable{Microsoft.Xna.Framework.Color},System.Int32,System.Action{milk.UI.UIElement,milk.Core.Scene},System.Action{milk.UI.UIElement,System.Boolean},System.Single,System.Boolean,System.Boolean)
-  id: '#ctor(System.String,Microsoft.Xna.Framework.Graphics.SpriteFont,System.Nullable{Microsoft.Xna.Framework.Vector2},System.Nullable{Microsoft.Xna.Framework.Vector2},milk.Core.Anchor,milk.UI.UIElement,System.Nullable{Microsoft.Xna.Framework.Color},System.Nullable{Microsoft.Xna.Framework.Color},System.Nullable{Microsoft.Xna.Framework.Color},System.Nullable{Microsoft.Xna.Framework.Color},System.Nullable{Microsoft.Xna.Framework.Color},System.Nullable{Microsoft.Xna.Framework.Color},System.Int32,System.Action{milk.UI.UIElement,milk.Core.Scene},System.Action{milk.UI.UIElement,System.Boolean},System.Single,System.Boolean,System.Boolean)'
+- uid: milk.UI.Button.#ctor(System.String,Microsoft.Xna.Framework.Graphics.SpriteFont,System.Nullable{Microsoft.Xna.Framework.Vector2},System.Nullable{Microsoft.Xna.Framework.Vector2},milk.UI.Anchor,milk.UI.UIElement,System.Nullable{Microsoft.Xna.Framework.Color},System.Nullable{Microsoft.Xna.Framework.Color},System.Nullable{Microsoft.Xna.Framework.Color},System.Nullable{Microsoft.Xna.Framework.Color},System.Nullable{Microsoft.Xna.Framework.Color},System.Nullable{Microsoft.Xna.Framework.Color},System.Int32,System.Action{milk.UI.UIElement,milk.Core.Scene},System.Action{milk.UI.UIElement,System.Boolean},System.Single,System.Boolean,System.Boolean)
+  commentId: M:milk.UI.Button.#ctor(System.String,Microsoft.Xna.Framework.Graphics.SpriteFont,System.Nullable{Microsoft.Xna.Framework.Vector2},System.Nullable{Microsoft.Xna.Framework.Vector2},milk.UI.Anchor,milk.UI.UIElement,System.Nullable{Microsoft.Xna.Framework.Color},System.Nullable{Microsoft.Xna.Framework.Color},System.Nullable{Microsoft.Xna.Framework.Color},System.Nullable{Microsoft.Xna.Framework.Color},System.Nullable{Microsoft.Xna.Framework.Color},System.Nullable{Microsoft.Xna.Framework.Color},System.Int32,System.Action{milk.UI.UIElement,milk.Core.Scene},System.Action{milk.UI.UIElement,System.Boolean},System.Single,System.Boolean,System.Boolean)
+  id: '#ctor(System.String,Microsoft.Xna.Framework.Graphics.SpriteFont,System.Nullable{Microsoft.Xna.Framework.Vector2},System.Nullable{Microsoft.Xna.Framework.Vector2},milk.UI.Anchor,milk.UI.UIElement,System.Nullable{Microsoft.Xna.Framework.Color},System.Nullable{Microsoft.Xna.Framework.Color},System.Nullable{Microsoft.Xna.Framework.Color},System.Nullable{Microsoft.Xna.Framework.Color},System.Nullable{Microsoft.Xna.Framework.Color},System.Nullable{Microsoft.Xna.Framework.Color},System.Int32,System.Action{milk.UI.UIElement,milk.Core.Scene},System.Action{milk.UI.UIElement,System.Boolean},System.Single,System.Boolean,System.Boolean)'
   parent: milk.UI.Button
   langs:
   - csharp
   - vb
   name: Button(string?, SpriteFont?, Vector2?, Vector2?, Anchor, UIElement?, Color?, Color?, Color?, Color?, Color?, Color?, int, Action<UIElement, Scene>?, Action<UIElement, bool>?, float, bool, bool)
   nameWithType: Button.Button(string?, SpriteFont?, Vector2?, Vector2?, Anchor, UIElement?, Color?, Color?, Color?, Color?, Color?, Color?, int, Action<UIElement, Scene>?, Action<UIElement, bool>?, float, bool, bool)
-  fullName: milk.UI.Button.Button(string?, Microsoft.Xna.Framework.Graphics.SpriteFont?, Microsoft.Xna.Framework.Vector2?, Microsoft.Xna.Framework.Vector2?, milk.Core.Anchor, milk.UI.UIElement?, Microsoft.Xna.Framework.Color?, Microsoft.Xna.Framework.Color?, Microsoft.Xna.Framework.Color?, Microsoft.Xna.Framework.Color?, Microsoft.Xna.Framework.Color?, Microsoft.Xna.Framework.Color?, int, System.Action<milk.UI.UIElement, milk.Core.Scene>?, System.Action<milk.UI.UIElement, bool>?, float, bool, bool)
+  fullName: milk.UI.Button.Button(string?, Microsoft.Xna.Framework.Graphics.SpriteFont?, Microsoft.Xna.Framework.Vector2?, Microsoft.Xna.Framework.Vector2?, milk.UI.Anchor, milk.UI.UIElement?, Microsoft.Xna.Framework.Color?, Microsoft.Xna.Framework.Color?, Microsoft.Xna.Framework.Color?, Microsoft.Xna.Framework.Color?, Microsoft.Xna.Framework.Color?, Microsoft.Xna.Framework.Color?, int, System.Action<milk.UI.UIElement, milk.Core.Scene>?, System.Action<milk.UI.UIElement, bool>?, float, bool, bool)
   type: Constructor
   source:
     remote:
@@ -123,7 +123,7 @@ items:
       type: System.Nullable{Microsoft.Xna.Framework.Vector2}
       description: The (w, h) size of the button.
     - id: anchor
-      type: milk.Core.Anchor
+      type: milk.UI.Anchor
       description: The part of the button to link to the position.
     - id: parent
       type: milk.UI.UIElement
@@ -167,7 +167,7 @@ items:
     content.vb: Public Sub New(caption As String = Nothing, font As SpriteFont = Nothing, position As Vector2? = Nothing, size As Vector2? = Nothing, anchor As Anchor = Anchor.TopLeft, parent As UIElement = Nothing, foregroundColor As Color? = Nothing, backgroundColor As Color? = Nothing, borderColor As Color? = Nothing, selectedForegroundColor As Color? = Nothing, selectedBackgroundColor As Color? = Nothing, selectedBorderColor As Color? = Nothing, borderWidth As Integer = 1, onSelected As Action(Of UIElement, Scene) = Nothing, customDrawMethod As Action(Of UIElement, Boolean) = Nothing, alpha As Single = 1, visible As Boolean = True, active As Boolean = True)
   overload: milk.UI.Button.#ctor*
   nameWithType.vb: Button.New(String, SpriteFont, Vector2?, Vector2?, Anchor, UIElement, Color?, Color?, Color?, Color?, Color?, Color?, Integer, Action(Of UIElement, Scene), Action(Of UIElement, Boolean), Single, Boolean, Boolean)
-  fullName.vb: milk.UI.Button.New(String, Microsoft.Xna.Framework.Graphics.SpriteFont, Microsoft.Xna.Framework.Vector2?, Microsoft.Xna.Framework.Vector2?, milk.Core.Anchor, milk.UI.UIElement, Microsoft.Xna.Framework.Color?, Microsoft.Xna.Framework.Color?, Microsoft.Xna.Framework.Color?, Microsoft.Xna.Framework.Color?, Microsoft.Xna.Framework.Color?, Microsoft.Xna.Framework.Color?, Integer, System.Action(Of milk.UI.UIElement, milk.Core.Scene), System.Action(Of milk.UI.UIElement, Boolean), Single, Boolean, Boolean)
+  fullName.vb: milk.UI.Button.New(String, Microsoft.Xna.Framework.Graphics.SpriteFont, Microsoft.Xna.Framework.Vector2?, Microsoft.Xna.Framework.Vector2?, milk.UI.Anchor, milk.UI.UIElement, Microsoft.Xna.Framework.Color?, Microsoft.Xna.Framework.Color?, Microsoft.Xna.Framework.Color?, Microsoft.Xna.Framework.Color?, Microsoft.Xna.Framework.Color?, Microsoft.Xna.Framework.Color?, Integer, System.Action(Of milk.UI.UIElement, milk.Core.Scene), System.Action(Of milk.UI.UIElement, Boolean), Single, Boolean, Boolean)
   name.vb: New(String, SpriteFont, Vector2?, Vector2?, Anchor, UIElement, Color?, Color?, Color?, Color?, Color?, Color?, Integer, Action(Of UIElement, Scene), Action(Of UIElement, Boolean), Single, Boolean, Boolean)
 - uid: milk.UI.Button.DrawBackground
   commentId: M:milk.UI.Button.DrawBackground
@@ -281,13 +281,13 @@ references:
   nameWithType.vb: Object
   fullName.vb: Object
   name.vb: Object
-- uid: milk.Core.SceneRenderable
-  commentId: T:milk.Core.SceneRenderable
-  parent: milk.Core
-  href: milk.Core.SceneRenderable.html
+- uid: milk.UI.SceneRenderable
+  commentId: T:milk.UI.SceneRenderable
+  parent: milk.UI
+  href: milk.UI.SceneRenderable.html
   name: SceneRenderable
   nameWithType: SceneRenderable
-  fullName: milk.Core.SceneRenderable
+  fullName: milk.UI.SceneRenderable
 - uid: milk.UI.UIElement
   commentId: T:milk.UI.UIElement
   parent: milk.UI
@@ -493,189 +493,189 @@ references:
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.boolean
   - name: )
-- uid: milk.Core.SceneRenderable.Position
-  commentId: P:milk.Core.SceneRenderable.Position
-  parent: milk.Core.SceneRenderable
-  href: milk.Core.SceneRenderable.html#milk_Core_SceneRenderable_Position
+- uid: milk.UI.SceneRenderable.Position
+  commentId: P:milk.UI.SceneRenderable.Position
+  parent: milk.UI.SceneRenderable
+  href: milk.UI.SceneRenderable.html#milk_UI_SceneRenderable_Position
   name: Position
   nameWithType: SceneRenderable.Position
-  fullName: milk.Core.SceneRenderable.Position
-- uid: milk.Core.SceneRenderable.Size
-  commentId: P:milk.Core.SceneRenderable.Size
-  parent: milk.Core.SceneRenderable
-  href: milk.Core.SceneRenderable.html#milk_Core_SceneRenderable_Size
+  fullName: milk.UI.SceneRenderable.Position
+- uid: milk.UI.SceneRenderable.Size
+  commentId: P:milk.UI.SceneRenderable.Size
+  parent: milk.UI.SceneRenderable
+  href: milk.UI.SceneRenderable.html#milk_UI_SceneRenderable_Size
   name: Size
   nameWithType: SceneRenderable.Size
-  fullName: milk.Core.SceneRenderable.Size
-- uid: milk.Core.SceneRenderable.Alpha
-  commentId: F:milk.Core.SceneRenderable.Alpha
-  parent: milk.Core.SceneRenderable
-  href: milk.Core.SceneRenderable.html#milk_Core_SceneRenderable_Alpha
+  fullName: milk.UI.SceneRenderable.Size
+- uid: milk.UI.SceneRenderable.Alpha
+  commentId: F:milk.UI.SceneRenderable.Alpha
+  parent: milk.UI.SceneRenderable
+  href: milk.UI.SceneRenderable.html#milk_UI_SceneRenderable_Alpha
   name: Alpha
   nameWithType: SceneRenderable.Alpha
-  fullName: milk.Core.SceneRenderable.Alpha
-- uid: milk.Core.SceneRenderable.Anchor
-  commentId: P:milk.Core.SceneRenderable.Anchor
-  parent: milk.Core.SceneRenderable
-  href: milk.Core.SceneRenderable.html#milk_Core_SceneRenderable_Anchor
+  fullName: milk.UI.SceneRenderable.Alpha
+- uid: milk.UI.SceneRenderable.Anchor
+  commentId: P:milk.UI.SceneRenderable.Anchor
+  parent: milk.UI.SceneRenderable
+  href: milk.UI.SceneRenderable.html#milk_UI_SceneRenderable_Anchor
   name: Anchor
   nameWithType: SceneRenderable.Anchor
-  fullName: milk.Core.SceneRenderable.Anchor
-- uid: milk.Core.SceneRenderable.Parent
-  commentId: F:milk.Core.SceneRenderable.Parent
-  parent: milk.Core.SceneRenderable
-  href: milk.Core.SceneRenderable.html#milk_Core_SceneRenderable_Parent
+  fullName: milk.UI.SceneRenderable.Anchor
+- uid: milk.UI.SceneRenderable.Parent
+  commentId: F:milk.UI.SceneRenderable.Parent
+  parent: milk.UI.SceneRenderable
+  href: milk.UI.SceneRenderable.html#milk_UI_SceneRenderable_Parent
   name: Parent
   nameWithType: SceneRenderable.Parent
-  fullName: milk.Core.SceneRenderable.Parent
-- uid: milk.Core.SceneRenderable.Visible
-  commentId: P:milk.Core.SceneRenderable.Visible
-  parent: milk.Core.SceneRenderable
-  href: milk.Core.SceneRenderable.html#milk_Core_SceneRenderable_Visible
+  fullName: milk.UI.SceneRenderable.Parent
+- uid: milk.UI.SceneRenderable.Visible
+  commentId: P:milk.UI.SceneRenderable.Visible
+  parent: milk.UI.SceneRenderable
+  href: milk.UI.SceneRenderable.html#milk_UI_SceneRenderable_Visible
   name: Visible
   nameWithType: SceneRenderable.Visible
-  fullName: milk.Core.SceneRenderable.Visible
-- uid: milk.Core.SceneRenderable.CalculateTopLeftPositionFromAnchor(Microsoft.Xna.Framework.Vector2)
-  commentId: M:milk.Core.SceneRenderable.CalculateTopLeftPositionFromAnchor(Microsoft.Xna.Framework.Vector2)
-  parent: milk.Core.SceneRenderable
+  fullName: milk.UI.SceneRenderable.Visible
+- uid: milk.UI.SceneRenderable.CalculateTopLeftPositionFromAnchor(Microsoft.Xna.Framework.Vector2)
+  commentId: M:milk.UI.SceneRenderable.CalculateTopLeftPositionFromAnchor(Microsoft.Xna.Framework.Vector2)
+  parent: milk.UI.SceneRenderable
   isExternal: true
-  href: milk.Core.SceneRenderable.html#milk_Core_SceneRenderable_CalculateTopLeftPositionFromAnchor_Microsoft_Xna_Framework_Vector2_
+  href: milk.UI.SceneRenderable.html#milk_UI_SceneRenderable_CalculateTopLeftPositionFromAnchor_Microsoft_Xna_Framework_Vector2_
   name: CalculateTopLeftPositionFromAnchor(Vector2)
   nameWithType: SceneRenderable.CalculateTopLeftPositionFromAnchor(Vector2)
-  fullName: milk.Core.SceneRenderable.CalculateTopLeftPositionFromAnchor(Microsoft.Xna.Framework.Vector2)
+  fullName: milk.UI.SceneRenderable.CalculateTopLeftPositionFromAnchor(Microsoft.Xna.Framework.Vector2)
   spec.csharp:
-  - uid: milk.Core.SceneRenderable.CalculateTopLeftPositionFromAnchor(Microsoft.Xna.Framework.Vector2)
+  - uid: milk.UI.SceneRenderable.CalculateTopLeftPositionFromAnchor(Microsoft.Xna.Framework.Vector2)
     name: CalculateTopLeftPositionFromAnchor
-    href: milk.Core.SceneRenderable.html#milk_Core_SceneRenderable_CalculateTopLeftPositionFromAnchor_Microsoft_Xna_Framework_Vector2_
+    href: milk.UI.SceneRenderable.html#milk_UI_SceneRenderable_CalculateTopLeftPositionFromAnchor_Microsoft_Xna_Framework_Vector2_
   - name: (
   - uid: Microsoft.Xna.Framework.Vector2
     name: Vector2
     isExternal: true
   - name: )
   spec.vb:
-  - uid: milk.Core.SceneRenderable.CalculateTopLeftPositionFromAnchor(Microsoft.Xna.Framework.Vector2)
+  - uid: milk.UI.SceneRenderable.CalculateTopLeftPositionFromAnchor(Microsoft.Xna.Framework.Vector2)
     name: CalculateTopLeftPositionFromAnchor
-    href: milk.Core.SceneRenderable.html#milk_Core_SceneRenderable_CalculateTopLeftPositionFromAnchor_Microsoft_Xna_Framework_Vector2_
+    href: milk.UI.SceneRenderable.html#milk_UI_SceneRenderable_CalculateTopLeftPositionFromAnchor_Microsoft_Xna_Framework_Vector2_
   - name: (
   - uid: Microsoft.Xna.Framework.Vector2
     name: Vector2
     isExternal: true
   - name: )
-- uid: milk.Core.SceneRenderable.GetPositionIncludingParent(Microsoft.Xna.Framework.Vector2)
-  commentId: M:milk.Core.SceneRenderable.GetPositionIncludingParent(Microsoft.Xna.Framework.Vector2)
-  parent: milk.Core.SceneRenderable
+- uid: milk.UI.SceneRenderable.GetPositionIncludingParent(Microsoft.Xna.Framework.Vector2)
+  commentId: M:milk.UI.SceneRenderable.GetPositionIncludingParent(Microsoft.Xna.Framework.Vector2)
+  parent: milk.UI.SceneRenderable
   isExternal: true
-  href: milk.Core.SceneRenderable.html#milk_Core_SceneRenderable_GetPositionIncludingParent_Microsoft_Xna_Framework_Vector2_
+  href: milk.UI.SceneRenderable.html#milk_UI_SceneRenderable_GetPositionIncludingParent_Microsoft_Xna_Framework_Vector2_
   name: GetPositionIncludingParent(Vector2)
   nameWithType: SceneRenderable.GetPositionIncludingParent(Vector2)
-  fullName: milk.Core.SceneRenderable.GetPositionIncludingParent(Microsoft.Xna.Framework.Vector2)
+  fullName: milk.UI.SceneRenderable.GetPositionIncludingParent(Microsoft.Xna.Framework.Vector2)
   spec.csharp:
-  - uid: milk.Core.SceneRenderable.GetPositionIncludingParent(Microsoft.Xna.Framework.Vector2)
+  - uid: milk.UI.SceneRenderable.GetPositionIncludingParent(Microsoft.Xna.Framework.Vector2)
     name: GetPositionIncludingParent
-    href: milk.Core.SceneRenderable.html#milk_Core_SceneRenderable_GetPositionIncludingParent_Microsoft_Xna_Framework_Vector2_
+    href: milk.UI.SceneRenderable.html#milk_UI_SceneRenderable_GetPositionIncludingParent_Microsoft_Xna_Framework_Vector2_
   - name: (
   - uid: Microsoft.Xna.Framework.Vector2
     name: Vector2
     isExternal: true
   - name: )
   spec.vb:
-  - uid: milk.Core.SceneRenderable.GetPositionIncludingParent(Microsoft.Xna.Framework.Vector2)
+  - uid: milk.UI.SceneRenderable.GetPositionIncludingParent(Microsoft.Xna.Framework.Vector2)
     name: GetPositionIncludingParent
-    href: milk.Core.SceneRenderable.html#milk_Core_SceneRenderable_GetPositionIncludingParent_Microsoft_Xna_Framework_Vector2_
+    href: milk.UI.SceneRenderable.html#milk_UI_SceneRenderable_GetPositionIncludingParent_Microsoft_Xna_Framework_Vector2_
   - name: (
   - uid: Microsoft.Xna.Framework.Vector2
     name: Vector2
     isExternal: true
   - name: )
-- uid: milk.Core.SceneRenderable.Draw
-  commentId: M:milk.Core.SceneRenderable.Draw
-  parent: milk.Core.SceneRenderable
-  href: milk.Core.SceneRenderable.html#milk_Core_SceneRenderable_Draw
+- uid: milk.UI.SceneRenderable.Draw
+  commentId: M:milk.UI.SceneRenderable.Draw
+  parent: milk.UI.SceneRenderable
+  href: milk.UI.SceneRenderable.html#milk_UI_SceneRenderable_Draw
   name: Draw()
   nameWithType: SceneRenderable.Draw()
-  fullName: milk.Core.SceneRenderable.Draw()
+  fullName: milk.UI.SceneRenderable.Draw()
   spec.csharp:
-  - uid: milk.Core.SceneRenderable.Draw
+  - uid: milk.UI.SceneRenderable.Draw
     name: Draw
-    href: milk.Core.SceneRenderable.html#milk_Core_SceneRenderable_Draw
+    href: milk.UI.SceneRenderable.html#milk_UI_SceneRenderable_Draw
   - name: (
   - name: )
   spec.vb:
-  - uid: milk.Core.SceneRenderable.Draw
+  - uid: milk.UI.SceneRenderable.Draw
     name: Draw
-    href: milk.Core.SceneRenderable.html#milk_Core_SceneRenderable_Draw
+    href: milk.UI.SceneRenderable.html#milk_UI_SceneRenderable_Draw
   - name: (
   - name: )
-- uid: milk.Core.SceneRenderable.Width
-  commentId: P:milk.Core.SceneRenderable.Width
-  parent: milk.Core.SceneRenderable
-  href: milk.Core.SceneRenderable.html#milk_Core_SceneRenderable_Width
+- uid: milk.UI.SceneRenderable.Width
+  commentId: P:milk.UI.SceneRenderable.Width
+  parent: milk.UI.SceneRenderable
+  href: milk.UI.SceneRenderable.html#milk_UI_SceneRenderable_Width
   name: Width
   nameWithType: SceneRenderable.Width
-  fullName: milk.Core.SceneRenderable.Width
-- uid: milk.Core.SceneRenderable.Height
-  commentId: P:milk.Core.SceneRenderable.Height
-  parent: milk.Core.SceneRenderable
-  href: milk.Core.SceneRenderable.html#milk_Core_SceneRenderable_Height
+  fullName: milk.UI.SceneRenderable.Width
+- uid: milk.UI.SceneRenderable.Height
+  commentId: P:milk.UI.SceneRenderable.Height
+  parent: milk.UI.SceneRenderable
+  href: milk.UI.SceneRenderable.html#milk_UI_SceneRenderable_Height
   name: Height
   nameWithType: SceneRenderable.Height
-  fullName: milk.Core.SceneRenderable.Height
-- uid: milk.Core.SceneRenderable.X
-  commentId: P:milk.Core.SceneRenderable.X
-  parent: milk.Core.SceneRenderable
-  href: milk.Core.SceneRenderable.html#milk_Core_SceneRenderable_X
+  fullName: milk.UI.SceneRenderable.Height
+- uid: milk.UI.SceneRenderable.X
+  commentId: P:milk.UI.SceneRenderable.X
+  parent: milk.UI.SceneRenderable
+  href: milk.UI.SceneRenderable.html#milk_UI_SceneRenderable_X
   name: X
   nameWithType: SceneRenderable.X
-  fullName: milk.Core.SceneRenderable.X
-- uid: milk.Core.SceneRenderable.Y
-  commentId: P:milk.Core.SceneRenderable.Y
-  parent: milk.Core.SceneRenderable
-  href: milk.Core.SceneRenderable.html#milk_Core_SceneRenderable_Y
+  fullName: milk.UI.SceneRenderable.X
+- uid: milk.UI.SceneRenderable.Y
+  commentId: P:milk.UI.SceneRenderable.Y
+  parent: milk.UI.SceneRenderable
+  href: milk.UI.SceneRenderable.html#milk_UI_SceneRenderable_Y
   name: Y
   nameWithType: SceneRenderable.Y
-  fullName: milk.Core.SceneRenderable.Y
-- uid: milk.Core.SceneRenderable.Top
-  commentId: P:milk.Core.SceneRenderable.Top
-  parent: milk.Core.SceneRenderable
-  href: milk.Core.SceneRenderable.html#milk_Core_SceneRenderable_Top
+  fullName: milk.UI.SceneRenderable.Y
+- uid: milk.UI.SceneRenderable.Top
+  commentId: P:milk.UI.SceneRenderable.Top
+  parent: milk.UI.SceneRenderable
+  href: milk.UI.SceneRenderable.html#milk_UI_SceneRenderable_Top
   name: Top
   nameWithType: SceneRenderable.Top
-  fullName: milk.Core.SceneRenderable.Top
-- uid: milk.Core.SceneRenderable.Middle
-  commentId: P:milk.Core.SceneRenderable.Middle
-  parent: milk.Core.SceneRenderable
-  href: milk.Core.SceneRenderable.html#milk_Core_SceneRenderable_Middle
+  fullName: milk.UI.SceneRenderable.Top
+- uid: milk.UI.SceneRenderable.Middle
+  commentId: P:milk.UI.SceneRenderable.Middle
+  parent: milk.UI.SceneRenderable
+  href: milk.UI.SceneRenderable.html#milk_UI_SceneRenderable_Middle
   name: Middle
   nameWithType: SceneRenderable.Middle
-  fullName: milk.Core.SceneRenderable.Middle
-- uid: milk.Core.SceneRenderable.Bottom
-  commentId: P:milk.Core.SceneRenderable.Bottom
-  parent: milk.Core.SceneRenderable
-  href: milk.Core.SceneRenderable.html#milk_Core_SceneRenderable_Bottom
+  fullName: milk.UI.SceneRenderable.Middle
+- uid: milk.UI.SceneRenderable.Bottom
+  commentId: P:milk.UI.SceneRenderable.Bottom
+  parent: milk.UI.SceneRenderable
+  href: milk.UI.SceneRenderable.html#milk_UI_SceneRenderable_Bottom
   name: Bottom
   nameWithType: SceneRenderable.Bottom
-  fullName: milk.Core.SceneRenderable.Bottom
-- uid: milk.Core.SceneRenderable.Left
-  commentId: P:milk.Core.SceneRenderable.Left
-  parent: milk.Core.SceneRenderable
-  href: milk.Core.SceneRenderable.html#milk_Core_SceneRenderable_Left
+  fullName: milk.UI.SceneRenderable.Bottom
+- uid: milk.UI.SceneRenderable.Left
+  commentId: P:milk.UI.SceneRenderable.Left
+  parent: milk.UI.SceneRenderable
+  href: milk.UI.SceneRenderable.html#milk_UI_SceneRenderable_Left
   name: Left
   nameWithType: SceneRenderable.Left
-  fullName: milk.Core.SceneRenderable.Left
-- uid: milk.Core.SceneRenderable.Center
-  commentId: P:milk.Core.SceneRenderable.Center
-  parent: milk.Core.SceneRenderable
-  href: milk.Core.SceneRenderable.html#milk_Core_SceneRenderable_Center
+  fullName: milk.UI.SceneRenderable.Left
+- uid: milk.UI.SceneRenderable.Center
+  commentId: P:milk.UI.SceneRenderable.Center
+  parent: milk.UI.SceneRenderable
+  href: milk.UI.SceneRenderable.html#milk_UI_SceneRenderable_Center
   name: Center
   nameWithType: SceneRenderable.Center
-  fullName: milk.Core.SceneRenderable.Center
-- uid: milk.Core.SceneRenderable.Right
-  commentId: P:milk.Core.SceneRenderable.Right
-  parent: milk.Core.SceneRenderable
-  href: milk.Core.SceneRenderable.html#milk_Core_SceneRenderable_Right
+  fullName: milk.UI.SceneRenderable.Center
+- uid: milk.UI.SceneRenderable.Right
+  commentId: P:milk.UI.SceneRenderable.Right
+  parent: milk.UI.SceneRenderable
+  href: milk.UI.SceneRenderable.html#milk_UI_SceneRenderable_Right
   name: Right
   nameWithType: SceneRenderable.Right
-  fullName: milk.Core.SceneRenderable.Right
+  fullName: milk.UI.SceneRenderable.Right
 - uid: System.Object.Equals(System.Object)
   commentId: M:System.Object.Equals(System.Object)
   parent: System.Object
@@ -902,31 +902,9 @@ references:
   name: System
   nameWithType: System
   fullName: System
-- uid: milk.Core
-  commentId: N:milk.Core
-  href: milk.html
-  name: milk.Core
-  nameWithType: milk.Core
-  fullName: milk.Core
-  spec.csharp:
-  - uid: milk
-    name: milk
-    href: milk.html
-  - name: .
-  - uid: milk.Core
-    name: Core
-    href: milk.Core.html
-  spec.vb:
-  - uid: milk
-    name: milk
-    href: milk.html
-  - name: .
-  - uid: milk.Core
-    name: Core
-    href: milk.Core.html
 - uid: milk.UI.Button.#ctor*
   commentId: Overload:milk.UI.Button.#ctor
-  href: milk.UI.Button.html#milk_UI_Button__ctor_System_String_Microsoft_Xna_Framework_Graphics_SpriteFont_System_Nullable_Microsoft_Xna_Framework_Vector2__System_Nullable_Microsoft_Xna_Framework_Vector2__milk_Core_Anchor_milk_UI_UIElement_System_Nullable_Microsoft_Xna_Framework_Color__System_Nullable_Microsoft_Xna_Framework_Color__System_Nullable_Microsoft_Xna_Framework_Color__System_Nullable_Microsoft_Xna_Framework_Color__System_Nullable_Microsoft_Xna_Framework_Color__System_Nullable_Microsoft_Xna_Framework_Color__System_Int32_System_Action_milk_UI_UIElement_milk_Core_Scene__System_Action_milk_UI_UIElement_System_Boolean__System_Single_System_Boolean_System_Boolean_
+  href: milk.UI.Button.html#milk_UI_Button__ctor_System_String_Microsoft_Xna_Framework_Graphics_SpriteFont_System_Nullable_Microsoft_Xna_Framework_Vector2__System_Nullable_Microsoft_Xna_Framework_Vector2__milk_UI_Anchor_milk_UI_UIElement_System_Nullable_Microsoft_Xna_Framework_Color__System_Nullable_Microsoft_Xna_Framework_Color__System_Nullable_Microsoft_Xna_Framework_Color__System_Nullable_Microsoft_Xna_Framework_Color__System_Nullable_Microsoft_Xna_Framework_Color__System_Nullable_Microsoft_Xna_Framework_Color__System_Int32_System_Action_milk_UI_UIElement_milk_Core_Scene__System_Action_milk_UI_UIElement_System_Boolean__System_Single_System_Boolean_System_Boolean_
   name: Button
   nameWithType: Button.Button
   fullName: milk.UI.Button.Button
@@ -968,13 +946,13 @@ references:
     name: Vector2
     isExternal: true
   - name: '?'
-- uid: milk.Core.Anchor
-  commentId: T:milk.Core.Anchor
-  parent: milk.Core
-  href: milk.Core.Anchor.html
+- uid: milk.UI.Anchor
+  commentId: T:milk.UI.Anchor
+  parent: milk.UI
+  href: milk.UI.Anchor.html
   name: Anchor
   nameWithType: Anchor
-  fullName: milk.Core.Anchor
+  fullName: milk.UI.Anchor
 - uid: System.Nullable{Microsoft.Xna.Framework.Color}
   commentId: T:System.Nullable{Microsoft.Xna.Framework.Color}
   parent: System

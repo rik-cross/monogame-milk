@@ -41,10 +41,10 @@ internal class TriggerSystem : milk.Core.System
 
         // this rect
         Rectangle triggerRect = new Rectangle(
-            (int)(transformComponent.X + (int)triggerComponent.offset.X),
-            (int)(transformComponent.Y + (int)triggerComponent.offset.Y),
-            (int)(triggerComponent.size.X),
-            (int)(triggerComponent.size.Y)
+            (int)(transformComponent.X + (int)triggerComponent.Offset.X),
+            (int)(transformComponent.Y + (int)triggerComponent.Offset.Y),
+            (int)(triggerComponent.Size.X),
+            (int)(triggerComponent.Size.Y)
         );
 
         // check against others
@@ -62,17 +62,17 @@ internal class TriggerSystem : milk.Core.System
 
                 // other entity rect
                 Rectangle otherTriggerRect = new Rectangle(
-                    (int)(otherTransformComponent.X + (int)otherTriggerComponent.offset.X),
-                    (int)(otherTransformComponent.Y + (int)otherTriggerComponent.offset.Y),
-                    (int)(otherTriggerComponent.size.X),
-                    (int)(otherTriggerComponent.size.Y)
+                    (int)(otherTransformComponent.X + (int)otherTriggerComponent.Offset.X),
+                    (int)(otherTransformComponent.Y + (int)otherTriggerComponent.Offset.Y),
+                    (int)(otherTriggerComponent.Size.X),
+                    (int)(otherTriggerComponent.Size.Y)
                 );
                 
                 // calculate distance
-                float thisXMiddle = transformComponent.X + triggerComponent.offset.X + (triggerComponent.size.X / 2);
-                float otherXMiddle = otherTransformComponent.X + otherTriggerComponent.offset.X + (otherTriggerComponent.size.X / 2);
-                float thisYMiddle = transformComponent.Y + triggerComponent.offset.Y + (triggerComponent.size.Y / 2);
-                float otherYMiddle = otherTransformComponent.Y + otherTriggerComponent.offset.Y + (otherTriggerComponent.size.Y / 2);
+                float thisXMiddle = transformComponent.X + triggerComponent.Offset.X + (triggerComponent.Size.X / 2);
+                float otherXMiddle = otherTransformComponent.X + otherTriggerComponent.Offset.X + (otherTriggerComponent.Size.X / 2);
+                float thisYMiddle = transformComponent.Y + triggerComponent.Offset.Y + (triggerComponent.Size.Y / 2);
+                float otherYMiddle = otherTransformComponent.Y + otherTriggerComponent.Offset.Y + (otherTriggerComponent.Size.Y / 2);
                 float xDiff = Math.Abs(thisXMiddle - otherXMiddle);
                 float yDiff = Math.Abs(thisYMiddle - otherYMiddle);
                 float distance = (float)Math.Sqrt((xDiff * xDiff) + (yDiff * yDiff));
@@ -84,19 +84,15 @@ internal class TriggerSystem : milk.Core.System
                     // onCollisionEnter
                     if (!triggerComponent.collidedEntities.Contains(otherEntity))
                     {
-                        if (triggerComponent.onCollisionEnter != null)
-                        {
-                            triggerComponent.onCollisionEnter(entity, otherEntity, distance);
-                        }
+                        if (triggerComponent.OnCollisionEnter != null)
+                            triggerComponent.OnCollisionEnter(entity, otherEntity, distance);
                         triggerComponent.collidedEntities.Add(otherEntity);
                     } else
 
                     // onCollide
                     {
-                        if (triggerComponent.onCollide != null)
-                        {
-                            triggerComponent.onCollide(entity, otherEntity, distance);
-                        }
+                        if (triggerComponent.OnCollide != null)
+                            triggerComponent.OnCollide(entity, otherEntity, distance);
                     }
 
                 }
@@ -107,10 +103,8 @@ internal class TriggerSystem : milk.Core.System
 
                     if (triggerComponent.collidedEntities.Contains(otherEntity))
                     {
-                        if (triggerComponent.onCollisionExit != null)
-                        {
-                            triggerComponent.onCollisionExit(entity, otherEntity, distance);
-                        }
+                        if (triggerComponent.OnCollisionExit != null)
+                            triggerComponent.OnCollisionExit(entity, otherEntity, distance);
                         triggerComponent.collidedEntities.Remove(otherEntity);
                     }
 
@@ -135,10 +129,10 @@ internal class TriggerSystem : milk.Core.System
         {
             spriteBatch.DrawRectangle(
                 new Rectangle(
-                    (int)transformComponent.X + (int)triggerComponent.offset.X,
-                    (int)transformComponent.Y + (int)triggerComponent.offset.Y,
-                    (int)triggerComponent.size.X,
-                    (int)triggerComponent.size.Y
+                    (int)transformComponent.X + (int)triggerComponent.Offset.X,
+                    (int)transformComponent.Y + (int)triggerComponent.Offset.Y,
+                    (int)triggerComponent.Size.X,
+                    (int)triggerComponent.Size.Y
                 ),
                 Color.Red,
                 1.0f

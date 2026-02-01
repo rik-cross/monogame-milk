@@ -1,6 +1,11 @@
+//   Monogame Intuitive Library Kit (milk)
+//   A MonoGame ECS Engine, By Rik Cross
+//   -- Code: github.com/rik-cross/monogame-milk
+//   -- Docs: rik-cross.github.io/monogame-milk
+//   -- Shared under the MIT licence
+
 using Microsoft.Xna.Framework.Content;
 using System.Reflection;
-using System.IO;
 
 namespace milk.Core;
 
@@ -13,12 +18,11 @@ internal class EmbeddedContentManager : ContentManager
         : base(serviceProvider)
     {
         _assembly = Assembly.GetExecutingAssembly();
-        _resourcePrefix = resourcePrefix; // e.g., "MyEngine.Resources"
+        _resourcePrefix = resourcePrefix;
     }
 
     protected override Stream OpenStream(string assetName)
     {
-        // Convert "Fonts/MainFont" to "MyEngine.Resources.Fonts.MainFont.xnb"
         string resourcePath = $"{_resourcePrefix}.{assetName.Replace('/', '.')}.xnb";
         var stream = _assembly.GetManifestResourceStream(resourcePath);
 

@@ -20,8 +20,6 @@ items:
   - milk.Core.Camera.SetZoom(System.Single,System.Single)
   - milk.Core.Camera.TrackedEntity
   - milk.Core.Camera.WorldPosition
-  - milk.Core.Camera._currentZoom
-  - milk.Core.Camera._startZoom
   langs:
   - csharp
   - vb
@@ -361,60 +359,6 @@ items:
     return:
       type: Microsoft.Xna.Framework.Color
     content.vb: Public BorderColor As Color
-- uid: milk.Core.Camera._currentZoom
-  commentId: F:milk.Core.Camera._currentZoom
-  id: _currentZoom
-  parent: milk.Core.Camera
-  langs:
-  - csharp
-  - vb
-  name: _currentZoom
-  nameWithType: Camera._currentZoom
-  fullName: milk.Core.Camera._currentZoom
-  type: Field
-  source:
-    remote:
-      path: Core/Camera.cs
-      branch: main
-      repo: git@github.com:rik-cross/monogame-milk.git
-    id: _currentZoom
-    path: Core/Camera.cs
-    startLine: 92
-  assemblies:
-  - milk
-  namespace: milk.Core
-  syntax:
-    content: public float _currentZoom
-    return:
-      type: System.Single
-    content.vb: Public _currentZoom As Single
-- uid: milk.Core.Camera._startZoom
-  commentId: F:milk.Core.Camera._startZoom
-  id: _startZoom
-  parent: milk.Core.Camera
-  langs:
-  - csharp
-  - vb
-  name: _startZoom
-  nameWithType: Camera._startZoom
-  fullName: milk.Core.Camera._startZoom
-  type: Field
-  source:
-    remote:
-      path: Core/Camera.cs
-      branch: main
-      repo: git@github.com:rik-cross/monogame-milk.git
-    id: _startZoom
-    path: Core/Camera.cs
-    startLine: 93
-  assemblies:
-  - milk
-  namespace: milk.Core
-  syntax:
-    content: public float _startZoom
-    return:
-      type: System.Single
-    content.vb: Public _startZoom As Single
 - uid: milk.Core.Camera.TrackedEntity
   commentId: F:milk.Core.Camera.TrackedEntity
   id: TrackedEntity
@@ -433,7 +377,7 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: TrackedEntity
     path: Core/Camera.cs
-    startLine: 103
+    startLine: 102
   assemblies:
   - milk
   namespace: milk.Core
@@ -462,7 +406,7 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: .ctor
     path: Core/Camera.cs
-    startLine: 119
+    startLine: 118
   assemblies:
   - milk
   namespace: milk.Core
@@ -527,7 +471,7 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: SetZoom
     path: Core/Camera.cs
-    startLine: 250
+    startLine: 247
   assemblies:
   - milk
   namespace: milk.Core
@@ -565,7 +509,7 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: SetWorldPosition
     path: Core/Camera.cs
-    startLine: 310
+    startLine: 307
   assemblies:
   - milk
   namespace: milk.Core
@@ -603,7 +547,7 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: GetWorldPosition
     path: Core/Camera.cs
-    startLine: 331
+    startLine: 328
   assemblies:
   - milk
   namespace: milk.Core

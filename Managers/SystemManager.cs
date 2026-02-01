@@ -6,13 +6,13 @@
 
 namespace milk.Core;
 
-internal class SystemManager
+public class SystemManager
 {
 
     private SceneManager _sceneManager = EngineGlobals.game.sceneManager;
 
     // There can only be one instance of each system registered
-    public List<System> registeredSystems = new List<System>();
+    internal List<System> registeredSystems = new List<System>();
 
     //
     // Registered systems
@@ -20,14 +20,19 @@ internal class SystemManager
 
     public string PrintSystems()
     {
+        return PrintSystemsInList(registeredSystems);
+    }
+
+    internal string PrintSystemsInList(List<System>? systemsList)
+    {
         string returnString = "";
 
-        foreach (System system in registeredSystems)
+        foreach (System system in systemsList)
         {
             returnString += system.ToString() + " ";
         }
 
-        return returnString;
+        return returnString;        
     }
 
     public void RegisterSystem(System system)
@@ -46,7 +51,7 @@ internal class SystemManager
         // Add to scenes that should contain all systems
         foreach (Scene scene in _sceneManager.allScenes)
         {
-            if (scene.IncludeAlRegisteredSystems == true && scene.systems.Contains(system))
+            if (scene.IncludeAlRegisteredSystems == true && scene.systems.Contains(system) == false)
                 AddSystemToScene(system, scene);
         }
 
@@ -78,7 +83,7 @@ internal class SystemManager
     //
 
     // Adds a system instance to the scene provided
-    private void AddSystemToScene(System system, Scene scene)
+    internal void AddSystemToScene(System system, Scene scene)
     {
         // Only add registered systems
         if (registeredSystems.Contains(system) == false)
@@ -93,14 +98,10 @@ internal class SystemManager
     }
 
     // Adds all registered systems to a specified scene
-    public void AddAllRegisteredSystemsToScene(Scene scene)
+    internal void AddAllRegisteredSystemsToScene(Scene scene)
     {
         foreach (System system in registeredSystems)
-        {
             AddSystemToScene(system, scene);
-            // Callback
-            system.OnAddedToScene(scene);
-        }
     }
 
     //
@@ -109,7 +110,7 @@ internal class SystemManager
 
     // Returns true if a system of the specified type
     // exists in the list of systems 
-    public bool HasSystemOfTypeInList<T>(List<System> systems)
+    internal bool HasSystemOfTypeInList<T>(List<System> systems)
     {
         foreach (System system in systems)
         {
@@ -121,7 +122,7 @@ internal class SystemManager
 
     // Returns the (only) instance of a system of the specified type
     // from the specified list.
-    public T GetSystemOfTypeFromList<T>(List<System> systems) where T : System
+    internal T GetSystemOfTypeFromList<T>(List<System> systems) where T : System
     {
         // Iterate over all systems in list
         foreach (System s in systems)
@@ -137,7 +138,7 @@ internal class SystemManager
     // provided system list
     // TODO: add to scene instead, and use this method in Scene()
     // to add a system
-    public void AddSystemOfTypeToList<T>(List<System> systemsList)
+    internal void AddSystemOfTypeToList<T>(List<System> systemsList)
     {
 
         // Add registered systems only
@@ -158,7 +159,7 @@ internal class SystemManager
 
     // Removes the (only) specified system type from the
     // provided list of systems
-    public void RemoveSystemOfTypeFromList<T>(List<System> systemsList)
+    internal void RemoveSystemOfTypeFromList<T>(List<System> systemsList)
     {
         // Iterate backwards through specified systems list
         // to ensure all systems are iterated over
@@ -173,5 +174,44 @@ internal class SystemManager
             }
         }
     }
+
+    /// <summary>
+    /// Positions the system of the specified type at the requested position.
+    /// This is useful for setting the order in which systems execute.
+    /// (Use `PrintSystems()` to see the order of systems.)
+    /// </summary>
+    /// <typeparam name="T">The type of system to move.</typeparam>
+    /// <param name="position">The new position of the system.</param>
+    public void PositionSystem<T>(int position)
+    {
+        PositionSystemTypeInList<T>(position, registeredSystems);
+    }
+
+    internal void PositionSystemTypeInList<T>(int position, List<System> systemList)
+    {
+        if (IsRegistered<T>() && position >= 0 && position <= systemList.Count)
+        {
+            Type targetType = typeof(T);
+            object systemToMove = null;
+            for (int i = 0; i < systemList.Count; i++)
+            {
+                // Check the type of the current system in the list.
+                if (systemList[i].GetType() == targetType)
+                {
+                    systemToMove = systemList[i];
+                    break;
+                }
+            }
+            if (systemToMove != null)
+            {
+                // 4. Remove the system from its current position.
+                // This prevents duplication and ensures it's only in one place.
+                systemList.Remove((System)systemToMove);
+                // 6. Insert the system at the new position.
+                systemList.Insert(position, (System)systemToMove);
+            }
+        }
+    }
+
 
 }

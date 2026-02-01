@@ -4,4 +4,4 @@ The MonoGame Intuitive Library Kit (milk) is a simple ECS engine built on MonoGa
 
 [Documentation](https://rik-cross.github.io/monogame-milk/)
 
-Copyright &copy; 2025 Rik Cross
+Copyright &copy; 2026 Rik Cross

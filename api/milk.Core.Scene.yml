@@ -7,6 +7,7 @@ items:
   children:
   - milk.Core.Scene.#ctor
   - milk.Core.Scene.Acceleration
+  - milk.Core.Scene.AddAnimation(System.Action{System.Single},System.Single,milk.Core.EasingFunctions.EasingDelegate)
   - milk.Core.Scene.AddCamera(milk.Core.Camera)
   - milk.Core.Scene.AddEntity(milk.Core.Entity)
   - milk.Core.Scene.AddSystem``1
@@ -34,6 +35,8 @@ items:
   - milk.Core.Scene.OnEntityAdded(milk.Core.Entity)
   - milk.Core.Scene.OnEntityRemoved(milk.Core.Entity)
   - milk.Core.Scene.OnExit
+  - milk.Core.Scene.PositionSystem``1(System.Int32)
+  - milk.Core.Scene.PrintSystems
   - milk.Core.Scene.RemoveAllEntities
   - milk.Core.Scene.RemoveAllSystems
   - milk.Core.Scene.RemoveEntitiesByTag(System.String[])
@@ -45,13 +48,10 @@ items:
   - milk.Core.Scene.Update(Microsoft.Xna.Framework.GameTime)
   - milk.Core.Scene.UpdateSceneBelow
   - milk.Core.Scene.Velocity
-  - milk.Core.Scene.animator
   - milk.Core.Scene.cameras
-  - milk.Core.Scene.content
   - milk.Core.Scene.elapsedTime
   - milk.Core.Scene.game
   - milk.Core.Scene.mapSize
-  - milk.Core.Scene.spriteBatch
   langs:
   - csharp
   - vb
@@ -66,7 +66,7 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: Scene
     path: Core/Scene.cs
-    startLine: 23
+    startLine: 22
   assemblies:
   - milk
   namespace: milk.Core
@@ -78,11 +78,18 @@ items:
     the scene with the required set of components.
   example: []
   syntax:
-    content: public abstract class Scene
-    content.vb: Public MustInherit Class Scene
+    content: 'public abstract class Scene : MilkMethods'
+    content.vb: Public MustInherit Class Scene Inherits MilkMethods
   inheritance:
   - System.Object
+  - milk.Core.MilkMethods
   inheritedMembers:
+  - milk.Core.MilkMethods.Scenes
+  - milk.Core.MilkMethods.Systems
+  - milk.Core.MilkMethods.Controls
+  - milk.Core.MilkMethods.Graphics
+  - milk.Core.MilkMethods.Content
+  - milk.Core.MilkMethods.Quit
   - System.Object.Equals(System.Object)
   - System.Object.Equals(System.Object,System.Object)
   - System.Object.GetHashCode
@@ -90,35 +97,6 @@ items:
   - System.Object.MemberwiseClone
   - System.Object.ReferenceEquals(System.Object,System.Object)
   - System.Object.ToString
-- uid: milk.Core.Scene.content
-  commentId: F:milk.Core.Scene.content
-  id: content
-  parent: milk.Core.Scene
-  langs:
-  - csharp
-  - vb
-  name: content
-  nameWithType: Scene.content
-  fullName: milk.Core.Scene.content
-  type: Field
-  source:
-    remote:
-      path: Core/Scene.cs
-      branch: main
-      repo: git@github.com:rik-cross/monogame-milk.git
-    id: content
-    path: Core/Scene.cs
-    startLine: 35
-  assemblies:
-  - milk
-  namespace: milk.Core
-  summary: MonoGame content object for working with game assets.
-  example: []
-  syntax:
-    content: protected ContentManager content
-    return:
-      type: Microsoft.Xna.Framework.Content.ContentManager
-    content.vb: Protected content As ContentManager
 - uid: milk.Core.Scene.game
   commentId: F:milk.Core.Scene.game
   id: game
@@ -137,7 +115,7 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: game
     path: Core/Scene.cs
-    startLine: 40
+    startLine: 32
   assemblies:
   - milk
   namespace: milk.Core
@@ -148,35 +126,6 @@ items:
     return:
       type: milk.Core.Game
     content.vb: Public game As Game
-- uid: milk.Core.Scene.spriteBatch
-  commentId: F:milk.Core.Scene.spriteBatch
-  id: spriteBatch
-  parent: milk.Core.Scene
-  langs:
-  - csharp
-  - vb
-  name: spriteBatch
-  nameWithType: Scene.spriteBatch
-  fullName: milk.Core.Scene.spriteBatch
-  type: Field
-  source:
-    remote:
-      path: Core/Scene.cs
-      branch: main
-      repo: git@github.com:rik-cross/monogame-milk.git
-    id: spriteBatch
-    path: Core/Scene.cs
-    startLine: 45
-  assemblies:
-  - milk
-  namespace: milk.Core
-  summary: The spriteBatch object.
-  example: []
-  syntax:
-    content: protected SpriteBatch spriteBatch
-    return:
-      type: Microsoft.Xna.Framework.Graphics.SpriteBatch
-    content.vb: Protected spriteBatch As SpriteBatch
 - uid: milk.Core.Scene.Size
   commentId: F:milk.Core.Scene.Size
   id: Size
@@ -195,7 +144,7 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: Size
     path: Core/Scene.cs
-    startLine: 50
+    startLine: 37
   assemblies:
   - milk
   namespace: milk.Core
@@ -224,7 +173,7 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: Middle
     path: Core/Scene.cs
-    startLine: 55
+    startLine: 42
   assemblies:
   - milk
   namespace: milk.Core
@@ -253,7 +202,7 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: elapsedTime
     path: Core/Scene.cs
-    startLine: 56
+    startLine: 43
   assemblies:
   - milk
   namespace: milk.Core
@@ -262,33 +211,6 @@ items:
     return:
       type: System.Single
     content.vb: Public elapsedTime As Single
-- uid: milk.Core.Scene.animator
-  commentId: F:milk.Core.Scene.animator
-  id: animator
-  parent: milk.Core.Scene
-  langs:
-  - csharp
-  - vb
-  name: animator
-  nameWithType: Scene.animator
-  fullName: milk.Core.Scene.animator
-  type: Field
-  source:
-    remote:
-      path: Core/Scene.cs
-      branch: main
-      repo: git@github.com:rik-cross/monogame-milk.git
-    id: animator
-    path: Core/Scene.cs
-    startLine: 60
-  assemblies:
-  - milk
-  namespace: milk.Core
-  syntax:
-    content: public Animator animator
-    return:
-      type: mill.Core.Animator
-    content.vb: Public animator As Animator
 - uid: milk.Core.Scene.BackgroundColor
   commentId: F:milk.Core.Scene.BackgroundColor
   id: BackgroundColor
@@ -307,7 +229,7 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: BackgroundColor
     path: Core/Scene.cs
-    startLine: 65
+    startLine: 52
   assemblies:
   - milk
   namespace: milk.Core
@@ -336,7 +258,7 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: IncludeAlRegisteredSystems
     path: Core/Scene.cs
-    startLine: 72
+    startLine: 59
   assemblies:
   - milk
   namespace: milk.Core
@@ -370,7 +292,7 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: cameras
     path: Core/Scene.cs
-    startLine: 73
+    startLine: 60
   assemblies:
   - milk
   namespace: milk.Core
@@ -397,7 +319,7 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: UpdateSceneBelow
     path: Core/Scene.cs
-    startLine: 78
+    startLine: 65
   assemblies:
   - milk
   namespace: milk.Core
@@ -426,7 +348,7 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: InputSceneBelow
     path: Core/Scene.cs
-    startLine: 83
+    startLine: 70
   assemblies:
   - milk
   namespace: milk.Core
@@ -455,7 +377,7 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: DrawSceneBelow
     path: Core/Scene.cs
-    startLine: 88
+    startLine: 75
   assemblies:
   - milk
   namespace: milk.Core
@@ -484,7 +406,7 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: EntitySortMethod
     path: Core/Scene.cs
-    startLine: 95
+    startLine: 82
   assemblies:
   - milk
   namespace: milk.Core
@@ -513,7 +435,7 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: mapSize
     path: Core/Scene.cs
-    startLine: 101
+    startLine: 88
   assemblies:
   - milk
   namespace: milk.Core
@@ -545,7 +467,7 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: Map
     path: Core/Scene.cs
-    startLine: 109
+    startLine: 96
   assemblies:
   - milk
   namespace: milk.Core
@@ -576,7 +498,7 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: Velocity
     path: Core/Scene.cs
-    startLine: 134
+    startLine: 121
   assemblies:
   - milk
   namespace: milk.Core
@@ -605,7 +527,7 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: Acceleration
     path: Core/Scene.cs
-    startLine: 139
+    startLine: 126
   assemblies:
   - milk
   namespace: milk.Core
@@ -634,7 +556,7 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: .ctor
     path: Core/Scene.cs
-    startLine: 147
+    startLine: 134
   assemblies:
   - milk
   namespace: milk.Core
@@ -672,7 +594,7 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: AddCamera
     path: Core/Scene.cs
-    startLine: 399
+    startLine: 386
   assemblies:
   - milk
   namespace: milk.Core
@@ -704,7 +626,7 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: GetCameraByName
     path: Core/Scene.cs
-    startLine: 411
+    startLine: 398
   assemblies:
   - milk
   namespace: milk.Core
@@ -745,7 +667,7 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: HasEntity
     path: Core/Scene.cs
-    startLine: 430
+    startLine: 417
   assemblies:
   - milk
   namespace: milk.Core
@@ -780,7 +702,7 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: AddEntity
     path: Core/Scene.cs
-    startLine: 439
+    startLine: 426
   assemblies:
   - milk
   namespace: milk.Core
@@ -812,7 +734,7 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: RemoveEntity
     path: Core/Scene.cs
-    startLine: 473
+    startLine: 460
   assemblies:
   - milk
   namespace: milk.Core
@@ -847,7 +769,7 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: RemoveEntityByName
     path: Core/Scene.cs
-    startLine: 491
+    startLine: 478
   assemblies:
   - milk
   namespace: milk.Core
@@ -882,7 +804,7 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: RemoveEntitiesByTag
     path: Core/Scene.cs
-    startLine: 504
+    startLine: 491
   assemblies:
   - milk
   namespace: milk.Core
@@ -917,7 +839,7 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: RemoveAllEntities
     path: Core/Scene.cs
-    startLine: 516
+    startLine: 503
   assemblies:
   - milk
   namespace: milk.Core
@@ -945,7 +867,7 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: GetEntityByName
     path: Core/Scene.cs
-    startLine: 568
+    startLine: 555
   assemblies:
   - milk
   namespace: milk.Core
@@ -986,7 +908,7 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: GetEntitiesByTag
     path: Core/Scene.cs
-    startLine: 578
+    startLine: 565
   assemblies:
   - milk
   namespace: milk.Core
@@ -1024,12 +946,12 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: DeleteEntityByName
     path: Core/Scene.cs
-    startLine: 592
+    startLine: 579
   assemblies:
   - milk
   namespace: milk.Core
   summary: >-
-    Deletes the entity in the scene with the specified name.
+    Marks entity in the scene with the specified name for deletion.
 
     The name supplied is checked in lower-case.
   example: []
@@ -1062,12 +984,12 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: DeleteEntitiesByTag
     path: Core/Scene.cs
-    startLine: 611
+    startLine: 597
   assemblies:
   - milk
   namespace: milk.Core
   summary: >-
-    Deletes all entities containing the specified tags.
+    Marks all entities containing the specified tags for deletion.
 
     Tags are checked in lower-case.
   example: []
@@ -1100,7 +1022,7 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: AddSystem
     path: Core/Scene.cs
-    startLine: 631
+    startLine: 616
   assemblies:
   - milk
   namespace: milk.Core
@@ -1139,7 +1061,7 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: RemoveSystem
     path: Core/Scene.cs
-    startLine: 648
+    startLine: 633
   assemblies:
   - milk
   namespace: milk.Core
@@ -1173,7 +1095,7 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: RemoveAllSystems
     path: Core/Scene.cs
-    startLine: 659
+    startLine: 644
   assemblies:
   - milk
   namespace: milk.Core
@@ -1201,7 +1123,7 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: HasSystem
     path: Core/Scene.cs
-    startLine: 672
+    startLine: 657
   assemblies:
   - milk
   namespace: milk.Core
@@ -1223,6 +1145,68 @@ items:
   nameWithType.vb: Scene.HasSystem(Of T)()
   fullName.vb: milk.Core.Scene.HasSystem(Of T)()
   name.vb: HasSystem(Of T)()
+- uid: milk.Core.Scene.PrintSystems
+  commentId: M:milk.Core.Scene.PrintSystems
+  id: PrintSystems
+  parent: milk.Core.Scene
+  langs:
+  - csharp
+  - vb
+  name: PrintSystems()
+  nameWithType: Scene.PrintSystems()
+  fullName: milk.Core.Scene.PrintSystems()
+  type: Method
+  source:
+    remote:
+      path: Core/Scene.cs
+      branch: main
+      repo: git@github.com:rik-cross/monogame-milk.git
+    id: PrintSystems
+    path: Core/Scene.cs
+    startLine: 662
+  assemblies:
+  - milk
+  namespace: milk.Core
+  syntax:
+    content: public string PrintSystems()
+    return:
+      type: System.String
+    content.vb: Public Function PrintSystems() As String
+  overload: milk.Core.Scene.PrintSystems*
+- uid: milk.Core.Scene.PositionSystem``1(System.Int32)
+  commentId: M:milk.Core.Scene.PositionSystem``1(System.Int32)
+  id: PositionSystem``1(System.Int32)
+  parent: milk.Core.Scene
+  langs:
+  - csharp
+  - vb
+  name: PositionSystem<T>(int)
+  nameWithType: Scene.PositionSystem<T>(int)
+  fullName: milk.Core.Scene.PositionSystem<T>(int)
+  type: Method
+  source:
+    remote:
+      path: Core/Scene.cs
+      branch: main
+      repo: git@github.com:rik-cross/monogame-milk.git
+    id: PositionSystem
+    path: Core/Scene.cs
+    startLine: 667
+  assemblies:
+  - milk
+  namespace: milk.Core
+  syntax:
+    content: public void PositionSystem<T>(int position)
+    parameters:
+    - id: position
+      type: System.Int32
+    typeParameters:
+    - id: T
+    content.vb: Public Sub PositionSystem(Of T)(position As Integer)
+  overload: milk.Core.Scene.PositionSystem*
+  nameWithType.vb: Scene.PositionSystem(Of T)(Integer)
+  fullName.vb: milk.Core.Scene.PositionSystem(Of T)(Integer)
+  name.vb: PositionSystem(Of T)(Integer)
 - uid: milk.Core.Scene.GetSceneBelow(System.Collections.Generic.List{milk.Core.Scene})
   commentId: M:milk.Core.Scene.GetSceneBelow(System.Collections.Generic.List{milk.Core.Scene})
   id: GetSceneBelow(System.Collections.Generic.List{milk.Core.Scene})
@@ -1241,7 +1225,7 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: GetSceneBelow
     path: Core/Scene.cs
-    startLine: 683
+    startLine: 682
   assemblies:
   - milk
   namespace: milk.Core
@@ -1282,7 +1266,7 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: AddTimedAction
     path: Core/Scene.cs
-    startLine: 725
+    startLine: 724
   assemblies:
   - milk
   namespace: milk.Core
@@ -1323,7 +1307,7 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: RemoveTimedActionByName
     path: Core/Scene.cs
-    startLine: 734
+    startLine: 733
   assemblies:
   - milk
   namespace: milk.Core
@@ -1340,6 +1324,47 @@ items:
   nameWithType.vb: Scene.RemoveTimedActionByName(String)
   fullName.vb: milk.Core.Scene.RemoveTimedActionByName(String)
   name.vb: RemoveTimedActionByName(String)
+- uid: milk.Core.Scene.AddAnimation(System.Action{System.Single},System.Single,milk.Core.EasingFunctions.EasingDelegate)
+  commentId: M:milk.Core.Scene.AddAnimation(System.Action{System.Single},System.Single,milk.Core.EasingFunctions.EasingDelegate)
+  id: AddAnimation(System.Action{System.Single},System.Single,milk.Core.EasingFunctions.EasingDelegate)
+  parent: milk.Core.Scene
+  langs:
+  - csharp
+  - vb
+  name: AddAnimation(Action<float>, float, EasingDelegate?)
+  nameWithType: Scene.AddAnimation(Action<float>, float, EasingFunctions.EasingDelegate?)
+  fullName: milk.Core.Scene.AddAnimation(System.Action<float>, float, milk.Core.EasingFunctions.EasingDelegate?)
+  type: Method
+  source:
+    remote:
+      path: Core/Scene.cs
+      branch: main
+      repo: git@github.com:rik-cross/monogame-milk.git
+    id: AddAnimation
+    path: Core/Scene.cs
+    startLine: 752
+  assemblies:
+  - milk
+  namespace: milk.Core
+  summary: Adds a new animation to by specifying a 'lerp' function.
+  example: []
+  syntax:
+    content: public void AddAnimation(Action<float> action, float duration, EasingFunctions.EasingDelegate? easingFunction = null)
+    parameters:
+    - id: action
+      type: System.Action{System.Single}
+      description: The 'lerp' function that controls the changing value(s).
+    - id: duration
+      type: System.Single
+      description: The length of the lerp or animation.
+    - id: easingFunction
+      type: milk.Core.EasingFunctions.EasingDelegate
+      description: The easing function (default = null - linear easing).
+    content.vb: Public Sub AddAnimation(action As Action(Of Single), duration As Single, easingFunction As EasingFunctions.EasingDelegate = Nothing)
+  overload: milk.Core.Scene.AddAnimation*
+  nameWithType.vb: Scene.AddAnimation(Action(Of Single), Single, EasingFunctions.EasingDelegate)
+  fullName.vb: milk.Core.Scene.AddAnimation(System.Action(Of Single), Single, milk.Core.EasingFunctions.EasingDelegate)
+  name.vb: AddAnimation(Action(Of Single), Single, EasingDelegate)
 - uid: milk.Core.Scene.AddUIElement(milk.UI.UIElement)
   commentId: M:milk.Core.Scene.AddUIElement(milk.UI.UIElement)
   id: AddUIElement(milk.UI.UIElement)
@@ -1358,7 +1383,7 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: AddUIElement
     path: Core/Scene.cs
-    startLine: 751
+    startLine: 770
   assemblies:
   - milk
   namespace: milk.Core
@@ -1390,7 +1415,7 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: Init
     path: Core/Scene.cs
-    startLine: 764
+    startLine: 783
   assemblies:
   - milk
   namespace: milk.Core
@@ -1418,7 +1443,7 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: Update
     path: Core/Scene.cs
-    startLine: 770
+    startLine: 789
   assemblies:
   - milk
   namespace: milk.Core
@@ -1450,7 +1475,7 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: Input
     path: Core/Scene.cs
-    startLine: 776
+    startLine: 795
   assemblies:
   - milk
   namespace: milk.Core
@@ -1482,7 +1507,7 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: Draw
     path: Core/Scene.cs
-    startLine: 781
+    startLine: 800
   assemblies:
   - milk
   namespace: milk.Core
@@ -1510,7 +1535,7 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: OnEnter
     path: Core/Scene.cs
-    startLine: 790
+    startLine: 809
   assemblies:
   - milk
   namespace: milk.Core
@@ -1538,7 +1563,7 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: OnExit
     path: Core/Scene.cs
-    startLine: 795
+    startLine: 814
   assemblies:
   - milk
   namespace: milk.Core
@@ -1566,7 +1591,7 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: OnEntityAdded
     path: Core/Scene.cs
-    startLine: 801
+    startLine: 820
   assemblies:
   - milk
   namespace: milk.Core
@@ -1598,7 +1623,7 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: OnEntityRemoved
     path: Core/Scene.cs
-    startLine: 807
+    startLine: 826
   assemblies:
   - milk
   namespace: milk.Core
@@ -1646,6 +1671,67 @@ references:
   nameWithType.vb: Object
   fullName.vb: Object
   name.vb: Object
+- uid: milk.Core.MilkMethods
+  commentId: T:milk.Core.MilkMethods
+  parent: milk.Core
+  href: milk.Core.MilkMethods.html
+  name: MilkMethods
+  nameWithType: MilkMethods
+  fullName: milk.Core.MilkMethods
+- uid: milk.Core.MilkMethods.Scenes
+  commentId: P:milk.Core.MilkMethods.Scenes
+  parent: milk.Core.MilkMethods
+  href: milk.Core.MilkMethods.html#milk_Core_MilkMethods_Scenes
+  name: Scenes
+  nameWithType: MilkMethods.Scenes
+  fullName: milk.Core.MilkMethods.Scenes
+- uid: milk.Core.MilkMethods.Systems
+  commentId: P:milk.Core.MilkMethods.Systems
+  parent: milk.Core.MilkMethods
+  href: milk.Core.MilkMethods.html#milk_Core_MilkMethods_Systems
+  name: Systems
+  nameWithType: MilkMethods.Systems
+  fullName: milk.Core.MilkMethods.Systems
+- uid: milk.Core.MilkMethods.Controls
+  commentId: P:milk.Core.MilkMethods.Controls
+  parent: milk.Core.MilkMethods
+  href: milk.Core.MilkMethods.html#milk_Core_MilkMethods_Controls
+  name: Controls
+  nameWithType: MilkMethods.Controls
+  fullName: milk.Core.MilkMethods.Controls
+- uid: milk.Core.MilkMethods.Graphics
+  commentId: P:milk.Core.MilkMethods.Graphics
+  parent: milk.Core.MilkMethods
+  href: milk.Core.MilkMethods.html#milk_Core_MilkMethods_Graphics
+  name: Graphics
+  nameWithType: MilkMethods.Graphics
+  fullName: milk.Core.MilkMethods.Graphics
+- uid: milk.Core.MilkMethods.Content
+  commentId: P:milk.Core.MilkMethods.Content
+  parent: milk.Core.MilkMethods
+  href: milk.Core.MilkMethods.html#milk_Core_MilkMethods_Content
+  name: Content
+  nameWithType: MilkMethods.Content
+  fullName: milk.Core.MilkMethods.Content
+- uid: milk.Core.MilkMethods.Quit
+  commentId: M:milk.Core.MilkMethods.Quit
+  parent: milk.Core.MilkMethods
+  href: milk.Core.MilkMethods.html#milk_Core_MilkMethods_Quit
+  name: Quit()
+  nameWithType: MilkMethods.Quit()
+  fullName: milk.Core.MilkMethods.Quit()
+  spec.csharp:
+  - uid: milk.Core.MilkMethods.Quit
+    name: Quit
+    href: milk.Core.MilkMethods.html#milk_Core_MilkMethods_Quit
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: milk.Core.MilkMethods.Quit
+    name: Quit
+    href: milk.Core.MilkMethods.html#milk_Core_MilkMethods_Quit
+  - name: (
+  - name: )
 - uid: System.Object.Equals(System.Object)
   commentId: M:System.Object.Equals(System.Object)
   parent: System.Object
@@ -1872,51 +1958,6 @@ references:
   name: System
   nameWithType: System
   fullName: System
-- uid: Microsoft.Xna.Framework.Content.ContentManager
-  commentId: T:Microsoft.Xna.Framework.Content.ContentManager
-  parent: Microsoft.Xna.Framework.Content
-  isExternal: true
-  name: ContentManager
-  nameWithType: ContentManager
-  fullName: Microsoft.Xna.Framework.Content.ContentManager
-- uid: Microsoft.Xna.Framework.Content
-  commentId: N:Microsoft.Xna.Framework.Content
-  isExternal: true
-  name: Microsoft.Xna.Framework.Content
-  nameWithType: Microsoft.Xna.Framework.Content
-  fullName: Microsoft.Xna.Framework.Content
-  spec.csharp:
-  - uid: Microsoft
-    name: Microsoft
-    isExternal: true
-  - name: .
-  - uid: Microsoft.Xna
-    name: Xna
-    isExternal: true
-  - name: .
-  - uid: Microsoft.Xna.Framework
-    name: Framework
-    isExternal: true
-  - name: .
-  - uid: Microsoft.Xna.Framework.Content
-    name: Content
-    isExternal: true
-  spec.vb:
-  - uid: Microsoft
-    name: Microsoft
-    isExternal: true
-  - name: .
-  - uid: Microsoft.Xna
-    name: Xna
-    isExternal: true
-  - name: .
-  - uid: Microsoft.Xna.Framework
-    name: Framework
-    isExternal: true
-  - name: .
-  - uid: Microsoft.Xna.Framework.Content
-    name: Content
-    isExternal: true
 - uid: milk.Core.Game
   commentId: T:milk.Core.Game
   parent: milk.Core
@@ -1924,51 +1965,6 @@ references:
   name: Game
   nameWithType: Game
   fullName: milk.Core.Game
-- uid: Microsoft.Xna.Framework.Graphics.SpriteBatch
-  commentId: T:Microsoft.Xna.Framework.Graphics.SpriteBatch
-  parent: Microsoft.Xna.Framework.Graphics
-  isExternal: true
-  name: SpriteBatch
-  nameWithType: SpriteBatch
-  fullName: Microsoft.Xna.Framework.Graphics.SpriteBatch
-- uid: Microsoft.Xna.Framework.Graphics
-  commentId: N:Microsoft.Xna.Framework.Graphics
-  isExternal: true
-  name: Microsoft.Xna.Framework.Graphics
-  nameWithType: Microsoft.Xna.Framework.Graphics
-  fullName: Microsoft.Xna.Framework.Graphics
-  spec.csharp:
-  - uid: Microsoft
-    name: Microsoft
-    isExternal: true
-  - name: .
-  - uid: Microsoft.Xna
-    name: Xna
-    isExternal: true
-  - name: .
-  - uid: Microsoft.Xna.Framework
-    name: Framework
-    isExternal: true
-  - name: .
-  - uid: Microsoft.Xna.Framework.Graphics
-    name: Graphics
-    isExternal: true
-  spec.vb:
-  - uid: Microsoft
-    name: Microsoft
-    isExternal: true
-  - name: .
-  - uid: Microsoft.Xna
-    name: Xna
-    isExternal: true
-  - name: .
-  - uid: Microsoft.Xna.Framework
-    name: Framework
-    isExternal: true
-  - name: .
-  - uid: Microsoft.Xna.Framework.Graphics
-    name: Graphics
-    isExternal: true
 - uid: Microsoft.Xna.Framework.Vector2
   commentId: T:Microsoft.Xna.Framework.Vector2
   parent: Microsoft.Xna.Framework
@@ -2017,35 +2013,6 @@ references:
   nameWithType.vb: Single
   fullName.vb: Single
   name.vb: Single
-- uid: mill.Core.Animator
-  commentId: T:mill.Core.Animator
-  parent: mill.Core
-  href: mill.Core.Animator.html
-  name: Animator
-  nameWithType: Animator
-  fullName: mill.Core.Animator
-- uid: mill.Core
-  commentId: N:mill.Core
-  href: mill.html
-  name: mill.Core
-  nameWithType: mill.Core
-  fullName: mill.Core
-  spec.csharp:
-  - uid: mill
-    name: mill
-    href: mill.html
-  - name: .
-  - uid: mill.Core
-    name: Core
-    href: mill.Core.html
-  spec.vb:
-  - uid: mill
-    name: mill
-    href: mill.html
-  - name: .
-  - uid: mill.Core
-    name: Core
-    href: mill.Core.html
 - uid: Microsoft.Xna.Framework.Color
   commentId: T:Microsoft.Xna.Framework.Color
   parent: Microsoft.Xna.Framework
@@ -2497,6 +2464,29 @@ references:
   name: HasSystem
   nameWithType: Scene.HasSystem
   fullName: milk.Core.Scene.HasSystem
+- uid: milk.Core.Scene.PrintSystems*
+  commentId: Overload:milk.Core.Scene.PrintSystems
+  href: milk.Core.Scene.html#milk_Core_Scene_PrintSystems
+  name: PrintSystems
+  nameWithType: Scene.PrintSystems
+  fullName: milk.Core.Scene.PrintSystems
+- uid: milk.Core.Scene.PositionSystem*
+  commentId: Overload:milk.Core.Scene.PositionSystem
+  href: milk.Core.Scene.html#milk_Core_Scene_PositionSystem__1_System_Int32_
+  name: PositionSystem
+  nameWithType: Scene.PositionSystem
+  fullName: milk.Core.Scene.PositionSystem
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer
 - uid: milk.Core.Scene.GetSceneBelow*
   commentId: Overload:milk.Core.Scene.GetSceneBelow
   href: milk.Core.Scene.html#milk_Core_Scene_GetSceneBelow_System_Collections_Generic_List_milk_Core_Scene__
@@ -2563,6 +2553,98 @@ references:
   name: RemoveTimedActionByName
   nameWithType: Scene.RemoveTimedActionByName
   fullName: milk.Core.Scene.RemoveTimedActionByName
+- uid: milk.Core.Scene.AddAnimation*
+  commentId: Overload:milk.Core.Scene.AddAnimation
+  href: milk.Core.Scene.html#milk_Core_Scene_AddAnimation_System_Action_System_Single__System_Single_milk_Core_EasingFunctions_EasingDelegate_
+  name: AddAnimation
+  nameWithType: Scene.AddAnimation
+  fullName: milk.Core.Scene.AddAnimation
+- uid: System.Action{System.Single}
+  commentId: T:System.Action{System.Single}
+  parent: System
+  definition: System.Action`1
+  href: https://learn.microsoft.com/dotnet/api/system.action-1
+  name: Action<float>
+  nameWithType: Action<float>
+  fullName: System.Action<float>
+  nameWithType.vb: Action(Of Single)
+  fullName.vb: System.Action(Of Single)
+  name.vb: Action(Of Single)
+  spec.csharp:
+  - uid: System.Action`1
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-1
+  - name: <
+  - uid: System.Single
+    name: float
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.single
+  - name: '>'
+  spec.vb:
+  - uid: System.Action`1
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Single
+    name: Single
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.single
+  - name: )
+- uid: milk.Core.EasingFunctions.EasingDelegate
+  commentId: T:milk.Core.EasingFunctions.EasingDelegate
+  parent: milk.Core
+  href: milk.Core.EasingFunctions.html
+  name: EasingFunctions.EasingDelegate
+  nameWithType: EasingFunctions.EasingDelegate
+  fullName: milk.Core.EasingFunctions.EasingDelegate
+  spec.csharp:
+  - uid: milk.Core.EasingFunctions
+    name: EasingFunctions
+    href: milk.Core.EasingFunctions.html
+  - name: .
+  - uid: milk.Core.EasingFunctions.EasingDelegate
+    name: EasingDelegate
+    href: milk.Core.EasingFunctions.EasingDelegate.html
+  spec.vb:
+  - uid: milk.Core.EasingFunctions
+    name: EasingFunctions
+    href: milk.Core.EasingFunctions.html
+  - name: .
+  - uid: milk.Core.EasingFunctions.EasingDelegate
+    name: EasingDelegate
+    href: milk.Core.EasingFunctions.EasingDelegate.html
+- uid: System.Action`1
+  commentId: T:System.Action`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.action-1
+  name: Action<T>
+  nameWithType: Action<T>
+  fullName: System.Action<T>
+  nameWithType.vb: Action(Of T)
+  fullName.vb: System.Action(Of T)
+  name.vb: Action(Of T)
+  spec.csharp:
+  - uid: System.Action`1
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Action`1
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
 - uid: milk.Core.Scene.AddUIElement*
   commentId: Overload:milk.Core.Scene.AddUIElement
   href: milk.Core.Scene.html#milk_Core_Scene_AddUIElement_milk_UI_UIElement_

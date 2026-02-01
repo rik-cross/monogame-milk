@@ -26,9 +26,6 @@ items:
   name: milk.Core
   type: Namespace
   items:
-  - uid: milk.Core.Anchor
-    name: Anchor
-    type: Enum
   - uid: milk.Core.Camera
     name: Camera
     type: Class
@@ -41,9 +38,6 @@ items:
   - uid: milk.Core.EasingFunctions.EasingDelegate
     name: EasingFunctions.EasingDelegate
     type: Delegate
-  - uid: milk.Core.EngineGlobals
-    name: EngineGlobals
-    type: Class
   - uid: milk.Core.EngineResourceManager
     name: EngineResourceManager
     type: Class
@@ -56,38 +50,32 @@ items:
   - uid: milk.Core.Game
     name: Game
     type: Class
-  - uid: milk.Core.Image
-    name: Image
-    type: Class
   - uid: milk.Core.InputManager
     name: InputManager
+    type: Class
+  - uid: milk.Core.Milk
+    name: Milk
+    type: Class
+  - uid: milk.Core.MilkMethods
+    name: MilkMethods
     type: Class
   - uid: milk.Core.Scene
     name: Scene
     type: Class
-  - uid: milk.Core.SceneRenderable
-    name: SceneRenderable
-    type: Class
-  - uid: milk.Core.Sprite
-    name: Sprite
+  - uid: milk.Core.SceneManager
+    name: SceneManager
     type: Class
   - uid: milk.Core.System
     name: System
     type: Class
-  - uid: milk.Core.Text
-    name: Text
-    type: Class
-  - uid: milk.Core.Theme
-    name: Theme
+  - uid: milk.Core.SystemManager
+    name: SystemManager
     type: Class
   - uid: milk.Core.Transition
     name: Transition
     type: Class
   - uid: milk.Core.Utilities
     name: Utilities
-    type: Class
-  - uid: milk.Core.Utils
-    name: Utils
     type: Class
 - uid: milk.Transitions
   name: milk.Transitions
@@ -106,20 +94,22 @@ items:
   name: milk.UI
   type: Namespace
   items:
+  - uid: milk.UI.Anchor
+    name: Anchor
+    type: Enum
   - uid: milk.UI.Button
     name: Button
     type: Class
-  - uid: milk.UI.Tween
-    name: Tween
+  - uid: milk.UI.Image
+    name: Image
+    type: Class
+  - uid: milk.UI.SceneRenderable
+    name: SceneRenderable
+    type: Class
+  - uid: milk.UI.Text
+    name: Text
     type: Class
   - uid: milk.UI.UIElement
     name: UIElement
-    type: Class
-- uid: mill.Core
-  name: mill.Core
-  type: Namespace
-  items:
-  - uid: mill.Core.Animator
-    name: Animator
     type: Class
 memberLayout: SamePage

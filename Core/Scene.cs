@@ -12,7 +12,6 @@ using MonoGame.Extended;
 using MonoGame.Extended.Tiled;
 using MonoGame.Extended.Tiled.Renderers;
 using milk.UI;
-using mill.Core;
 
 namespace milk.Core;
 
@@ -21,29 +20,17 @@ namespace milk.Core;
 /// of as game 'screens'. Each system in a scene acts on all entities in
 /// the scene with the required set of components.
 /// </summary>
-public abstract class Scene
+public abstract class Scene : MilkMethods
 {
 
     private EntityManager _entityManager = EngineGlobals.game.entityManager;
-    private SystemManager _systemManager = EngineGlobals.game.systemManager;
-    private SceneManager _sceneManager = EngineGlobals.game.sceneManager;
     private GraphicsDevice _graphicsDevice = EngineGlobals.game.graphicsDevice;
     private List<Entity> entitiesToRemoveFromScene = new List<Entity>();
-
-    /// <summary>
-    /// MonoGame content object for working with game assets.
-    /// </summary>
-    protected ContentManager content = EngineGlobals.game.content;
 
     /// <summary>
     /// The parent game object.
     /// </summary>
     public Game game = EngineGlobals.game;
-
-    /// <summary>
-    /// The spriteBatch object.
-    /// </summary>
-    protected SpriteBatch spriteBatch = EngineGlobals.game.spriteBatch;
     
     /// <summary>
     /// The (x,y) scene dimensions.
@@ -58,7 +45,7 @@ public abstract class Scene
     internal List<Entity> entities;
     internal List<System> systems;
     private UIMenu UIMenu;
-    public Animator animator;
+    internal Animator animator;
     
     /// <summary>
     /// Background color.
@@ -148,15 +135,15 @@ public abstract class Scene
     public Scene()
     {
 
-        Size = EngineGlobals.game.Size;
+        Size = game.Size;
         Middle = new Vector2(Size.X / 2, Size.Y / 2);
         elapsedTime = 0f;
         entities = new List<Entity>();
         systems = new List<System>();
-        _sceneManager.allScenes.Add(this);
+        milk.Core.Milk.Scenes.allScenes.Add(this);
 
         if (IncludeAlRegisteredSystems == true)
-            _systemManager.AddAllRegisteredSystemsToScene(this);
+            milk.Core.Milk.Systems.AddAllRegisteredSystemsToScene(this);
 
         UIMenu = new UIMenu(this);
         animator = new Animator();
@@ -173,7 +160,7 @@ public abstract class Scene
         if (sceneBelow!= null && UpdateSceneBelow == true)
             sceneBelow._Update(gameTime, scenes);
 
-        elapsedTime += gameTime.ElapsedGameTime.Milliseconds;
+        elapsedTime += (float)gameTime.ElapsedGameTime.TotalSeconds;
 
         // Update entity State here??
         foreach (Entity e in entities)
@@ -204,7 +191,7 @@ public abstract class Scene
             {
                 BitArray temp = (BitArray)system.RequiredComponentBitMask.Clone();
                 temp.And(entity.bitMask);
-                if (Utils.CompareBitArrays(temp, system.RequiredComponentBitMask) == true)
+                if (Utilities.CompareBitArrays(temp, system.RequiredComponentBitMask) == true)
                     system.UpdateEntity(gameTime, this, entity);
             }
         }
@@ -218,13 +205,13 @@ public abstract class Scene
         RemoveEntitiesFromSceneAtEndOfUpdate();
 
         // delete all entities
-        EngineGlobals.game.entityManager.DeleteEntities();
+        _entityManager.DeleteEntities();
 
         // Sort entities
         if (EntitySortMethod != null)
             entities.Sort(EntitySortMethod);
         
-        UIMenu.Update(gameTime, this);
+        //UIMenu.Update(gameTime, this);
         animator.Update(gameTime);
 
     }
@@ -250,7 +237,7 @@ public abstract class Scene
             {
                 BitArray temp = (BitArray)system.RequiredComponentBitMask.Clone();
                 temp.And(entity.bitMask);
-                if (Utils.CompareBitArrays(temp, system.RequiredComponentBitMask) == true)
+                if (Utilities.CompareBitArrays(temp, system.RequiredComponentBitMask) == true)
                     system.InputEntity(gameTime, this, entity);
             }
         }
@@ -274,18 +261,18 @@ public abstract class Scene
 
         // TODO
         // Add lighting shader here
-        //spriteBatch.Begin(blendState: BlendState.AlphaBlend, effect: lightingShader);
-        //spriteBatch.Begin(SpriteSortMode.Deferred, BlendState.AlphaBlend, SamplerState.LinearClamp, DepthStencilState.None, RasterizerState.CullCounterClockwise, lightingShader);
+        //milk.Core.Milk.Graphics.Begin(blendState: BlendState.AlphaBlend, effect: lightingShader);
+        //milk.Core.Milk.Graphics.Begin(SpriteSortMode.Deferred, BlendState.AlphaBlend, SamplerState.LinearClamp, DepthStencilState.None, RasterizerState.CullCounterClockwise, lightingShader);
 
         // Draw scene background
-        spriteBatch.Begin(samplerState: SamplerState.PointClamp);
+        milk.Core.Milk.Graphics.Begin(samplerState: SamplerState.PointClamp);
         
-        spriteBatch.FillRectangle(
+        milk.Core.Milk.Graphics.FillRectangle(
             new Rectangle(0, 0, (int)Size.X, (int)Size.Y),
             BackgroundColor
         );
 
-        spriteBatch.End();
+        milk.Core.Milk.Graphics.End();
 
         // Iterate over each camera in the scene
         foreach (Camera camera in cameras)
@@ -295,11 +282,11 @@ public abstract class Scene
             _graphicsDevice.Viewport = camera.getViewport();
 
             // Draw camera background
-            spriteBatch.Begin(samplerState: SamplerState.PointClamp);
-            spriteBatch.FillRectangle(new Rectangle(0, 0, (int)Size.X, (int)Size.Y), camera.BackgroundColor);
-            spriteBatch.End();
+            milk.Core.Milk.Graphics.Begin(samplerState: SamplerState.PointClamp);
+            milk.Core.Milk.Graphics.FillRectangle(new Rectangle(0, 0, (int)Size.X, (int)Size.Y), camera.BackgroundColor);
+            milk.Core.Milk.Graphics.End();
 
-            spriteBatch.Begin(samplerState: SamplerState.PointClamp, transformMatrix: camera.getTransformMatrix());
+            milk.Core.Milk.Graphics.Begin(samplerState: SamplerState.PointClamp, transformMatrix: camera.getTransformMatrix());
 
             // Draw the map layers marked as 'belowEntities: true'
             DrawMap(camera, "belowEntities", "true");
@@ -318,43 +305,43 @@ public abstract class Scene
                 {
                     BitArray temp = (BitArray)system.RequiredComponentBitMask.Clone();
                     temp.And(entity.bitMask);
-                    if (Utils.CompareBitArrays(temp, system.RequiredComponentBitMask) == true)
+                    if (Utilities.CompareBitArrays(temp, system.RequiredComponentBitMask) == true)
                         system.DrawEntity(this, entity);
                 }
             }
 
-            spriteBatch.End();
+            milk.Core.Milk.Graphics.End();
 
             // High-level System.Draw() -- below map
-            spriteBatch.Begin(samplerState: SamplerState.PointClamp, transformMatrix: camera.getTransformMatrix());
+            milk.Core.Milk.Graphics.Begin(samplerState: SamplerState.PointClamp, transformMatrix: camera.getTransformMatrix());
             foreach (System system in systems)
             {
                 if (system.DrawAboveMap == false)
                     system.Draw(this);
             }
-            spriteBatch.End();
+            milk.Core.Milk.Graphics.End();
 
             // Draw the map layers marked as 'belowEntities: true'
-            spriteBatch.Begin(samplerState: SamplerState.PointClamp, transformMatrix: camera.getTransformMatrix());
+            milk.Core.Milk.Graphics.Begin(samplerState: SamplerState.PointClamp, transformMatrix: camera.getTransformMatrix());
             DrawMap(camera, "belowEntities", "false");
-            spriteBatch.End();
+            milk.Core.Milk.Graphics.End();
 
             // High-level System.Draw() -- above all
-            spriteBatch.Begin(samplerState: SamplerState.PointClamp, transformMatrix: camera.getTransformMatrix());
+            milk.Core.Milk.Graphics.Begin(samplerState: SamplerState.PointClamp, transformMatrix: camera.getTransformMatrix());
             foreach (System system in systems)
             {
                 if (system.DrawAboveEntities == true && system.DrawAboveMap == true)
                     system.Draw(this);
             }
-            spriteBatch.End();
+            milk.Core.Milk.Graphics.End();
 
             _graphicsDevice.Viewport = new Viewport(0, 0, (int)Size.X, (int)Size.Y);
 
-            spriteBatch.Begin(samplerState: SamplerState.PointClamp);
+            milk.Core.Milk.Graphics.Begin(samplerState: SamplerState.PointClamp);
 
             // Camera border
             if (camera.BorderWidth > 0)
-                spriteBatch.DrawRectangle(
+                milk.Core.Milk.Graphics.DrawRectangle(
                     new RectangleF(
                         camera.ScreenPosition.X - camera.BorderWidth,
                         camera.ScreenPosition.Y - camera.BorderWidth,
@@ -365,7 +352,7 @@ public abstract class Scene
                     thickness: camera.BorderWidth
                 );
 
-            spriteBatch.End();
+            milk.Core.Milk.Graphics.End();
 
         }
 
@@ -373,7 +360,7 @@ public abstract class Scene
         _graphicsDevice.Viewport = new Viewport(0, 0, (int)Size.X, (int)Size.Y);
 
         // no shader here
-        spriteBatch.Begin(samplerState: SamplerState.PointClamp);
+        milk.Core.Milk.Graphics.Begin(samplerState: SamplerState.PointClamp);
 
         // high-level draw for those above entities
         foreach (System system in systems)
@@ -385,7 +372,7 @@ public abstract class Scene
         Draw();
         UIMenu.Draw();
 
-        spriteBatch.End();
+        milk.Core.Milk.Graphics.End();
 
     }
 
@@ -453,7 +440,7 @@ public abstract class Scene
                 // only if the entity has the required components for the system
                 BitArray temp = (BitArray)system.RequiredComponentBitMask.Clone();
                 temp.And(entity.bitMask);
-                if (Utils.CompareBitArrays(temp, system.RequiredComponentBitMask) == true)
+                if (Utilities.CompareBitArrays(temp, system.RequiredComponentBitMask) == true)
                     system.OnEntityAddedToScene(this, entity);
 
             }
@@ -477,7 +464,7 @@ public abstract class Scene
         if (entitiesToRemoveFromScene.Contains(entity) == false)
             entitiesToRemoveFromScene.Add(entity);
         
-        // TODO: can this be removed?
+        // Unset tracked entity
         foreach (Camera camera in cameras)
         {
             if (camera.TrackedEntity == entity)
@@ -541,7 +528,7 @@ public abstract class Scene
 
                     BitArray temp = (BitArray)system.RequiredComponentBitMask.Clone();
                     temp.And(entity.bitMask);
-                    if (Utils.CompareBitArrays(temp, system.RequiredComponentBitMask) == true)
+                    if (Utilities.CompareBitArrays(temp, system.RequiredComponentBitMask) == true)
                         system.OnEntityRemovedFromScene(this, entity);
 
                 }
@@ -586,13 +573,12 @@ public abstract class Scene
     //
 
     /// <summary>
-    /// Deletes the entity in the scene with the specified name.
+    /// Marks entity in the scene with the specified name for deletion.
     /// The name supplied is checked in lower-case.
     /// </summary>
     /// <param name="name">The name of the entity to delete.</param>
     public void DeleteEntityByName(string name)
     {
-        //_entityManager.RemoveEntityByNameInList(entities, name);
         foreach (Entity entity in entities)
         {
             if (entity.Name != null && entity.Name.ToLower() == name.ToLower())
@@ -605,13 +591,12 @@ public abstract class Scene
     }
 
     /// <summary>
-    /// Deletes all entities containing the specified tags.
+    /// Marks all entities containing the specified tags for deletion.
     /// Tags are checked in lower-case.
     /// </summary>
     /// <param name="tags">One or more tags to</param>
     public void DeleteEntitiesByTag(params string[] tags)
     {
-        //_entityManager.RemoveEntitiesByTagInList(entities, tags);
         foreach (Entity entity in entities)
         {
             if (entity.HasTag(tags))
@@ -632,14 +617,14 @@ public abstract class Scene
     public void AddSystem<T>() where T : System
     {
         // Can only add registered systems to a scene
-        if (_systemManager.IsRegistered<T>() == false)
+        if (milk.Core.Milk.Systems.IsRegistered<T>() == false)
             return;
 
         // Add the instance of the specified type
-        systems.Add(_systemManager.GetSystem<T>());
+        systems.Add(milk.Core.Milk.Systems.GetSystem<T>());
 
         // OnAddedToScene callback
-        _systemManager.GetSystem<T>().OnAddedToScene(this);
+        milk.Core.Milk.Systems.GetSystem<T>().OnAddedToScene(this);
     }
 
     /// <summary>
@@ -648,10 +633,10 @@ public abstract class Scene
     /// <typeparam name="T">The type of system to remove.</typeparam>
     public void RemoveSystem<T>() where T : System
     {
-        _systemManager.RemoveSystemOfTypeFromList<T>(systems);
+        milk.Core.Milk.Systems.RemoveSystemOfTypeFromList<T>(systems);
         
         // OnRemovedFromScene callback
-        _systemManager.GetSystem<T>().OnRemovedFromScene(this);
+        milk.Core.Milk.Systems.GetSystem<T>().OnRemovedFromScene(this);
     }
 
     /// <summary>
@@ -672,8 +657,22 @@ public abstract class Scene
     /// <returns>Bool, true if a system of the specified type exists.</returns>
     public bool HasSystem<T>() where T : System
     {
-        return _systemManager.HasSystemOfTypeInList<T>(systems);
+        return milk.Core.Milk.Systems.HasSystemOfTypeInList<T>(systems);
     }
+
+    public string PrintSystems()
+    {
+        return milk.Core.Milk.Systems.PrintSystemsInList(systems);
+    }
+
+    public void PositionSystem<T>(int position)
+    {
+        milk.Core.Milk.Systems.PositionSystemTypeInList<T>(position, systems);
+    }
+
+    //
+    // Scene
+    //
 
     /// <summary>
     /// Gets the scene below this scene in the scene list
@@ -685,7 +684,7 @@ public abstract class Scene
     {
 
         if (scenes == null)
-            scenes = game.sceneManager._currentSceneList;
+            scenes = milk.Core.Milk.Scenes._currentSceneList;
 
         for (int i = 0; i < scenes.Count - 1; i++)
         {
@@ -739,6 +738,26 @@ public abstract class Scene
             if (timedActions[i].Name.ToLower() == name.ToLower())
                 timedActions.RemoveAt(i);
         }
+    }
+
+    //
+    // Animations / Tweens
+    //
+
+    /// <summary>
+    /// Adds a new animation to by specifying a 'lerp' function.
+    /// </summary>
+    /// <param name="action">The 'lerp' function that controls the changing value(s).</param>
+    /// <param name="duration">The length of the lerp or animation.</param>
+    /// <param name="easingFunction">The easing function (default = null - linear easing).</param>
+    public void AddAnimation(
+        Action<float> action,
+        float duration,
+        EasingFunctions.EasingDelegate? easingFunction = null)
+    {
+        animator.AddTween(
+            new Tween(action, duration, easingFunction)
+        );
     }
 
     //

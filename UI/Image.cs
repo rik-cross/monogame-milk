@@ -7,8 +7,9 @@
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using MonoGame.Extended;
+using milk.Core;
 
-namespace milk.Core;
+namespace milk.UI;
 
 /// <summary>
 /// An image can be displayed within a scene.
@@ -40,8 +41,6 @@ public class Image : SceneRenderable
     /// Hue for recoloring image.
     /// </summary>
     public Color Hue;
-
-    private SpriteBatch _spriteBatch = EngineGlobals.game.spriteBatch;
 
     /// <summary>
     /// Creates a new image.
@@ -88,14 +87,14 @@ public class Image : SceneRenderable
         Vector2 dp = CalculateTopLeftPositionFromAnchor(pip);
 
         // Draw background
-        _spriteBatch.DrawRectangle(new RectangleF(dp.X, dp.Y, drawSize.X, drawSize.Y), BackgroundColor, Math.Max(Size.X / 2, Size.Y / 2));
+        milk.Core.Milk.Graphics.DrawRectangle(new RectangleF(dp.X, dp.Y, drawSize.X, drawSize.Y), BackgroundColor, Math.Max(Size.X / 2, Size.Y / 2));
 
         // Draw the texture, at the correct size
         if (Texture != null)
-            _spriteBatch.Draw(Texture, new Rectangle((int)dp.X, (int)dp.Y, (int)drawSize.X, (int)drawSize.Y), Hue * Alpha);
+            milk.Core.Milk.Graphics.Draw(Texture, new Rectangle((int)dp.X, (int)dp.Y, (int)drawSize.X, (int)drawSize.Y), Hue * Alpha);
 
         // Draw the border
-        _spriteBatch.DrawRectangle(new RectangleF(dp.X, dp.Y, drawSize.X, drawSize.Y), BorderColor, BorderWidth);
+        milk.Core.Milk.Graphics.DrawRectangle(new RectangleF(dp.X, dp.Y, drawSize.X, drawSize.Y), BorderColor, BorderWidth);
 
     }
 

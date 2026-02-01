@@ -4,11 +4,9 @@
 //   -- Docs: rik-cross.github.io/monogame-milk
 //   -- Shared under the MIT licence
 
-using System;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using MonoGame.Extended;
-
 using milk.Core;
 using milk.Components;
 
@@ -36,43 +34,47 @@ internal class SpriteSystem : milk.Core.System
     /// <param name="entity">The entity to be processed.</param>
     public override void UpdateEntity(GameTime gameTime, Scene scene, Entity entity)
     {
-
+        
         SpriteComponent spriteComponent = entity.GetComponent<SpriteComponent>();
 
         if (spriteComponent.Play == false)
             return;
 
-        // Update if animated
+        if (spriteComponent.GetSpriteForState(entity.State) == null)
+            return;
+
+        Sprite current = spriteComponent.GetSpriteForState(entity.State);
+
+        // reset if new state
+        if (entity.State != entity.PreviousState)
+            current.currentFrame = 0;
+
+        if (current.duration == 0)
+            return;
+
+        // TODO: store an 'animated' property that gets updated
+        // Should be false if no layer has more than 1 texture
+        if (current.numberOfFrames < 2)
+            return;
         
-        if (spriteComponent.HasSpriteForState(entity.State))
+        current.timeOnCurrentFrame += gameTime.ElapsedGameTime.TotalSeconds;
+
+        while (current.timeOnCurrentFrame >= current.timePerFrame)
         {
-
-            Sprite current = spriteComponent.GetSpriteForState(entity.State);
-
-            // reset if new state
-            if (entity.State != entity.PreviousState)
-                current.currentFrame = 0;
-
-            if (current.textureList.Count > 1) {
-                current.timeOnCurrentFrame += gameTime.ElapsedGameTime.TotalSeconds;
-                //Console.WriteLine(current.timeOnCurrentFrame);
-                while (current.timeOnCurrentFrame >= current.timePerFrame)
+            current.timeOnCurrentFrame -= current.timePerFrame;
+            
+            if (
+                current.currentFrame < current.numberOfFrames - 1 || 
+                current.currentFrame >= current.numberOfFrames - 1 && current.Loop == true
+            ) {
+                current.currentFrame += 1;
+                if (current.currentFrame > current.numberOfFrames - 1)
                 {
-                    current.timeOnCurrentFrame -= current.timePerFrame;
-                // advance
-                    if (
-                        current.currentFrame < current.textureList.Count - 1 || 
-                        current.currentFrame >= current.textureList.Count - 1 && current.loop == true
-                    ) {
-                        current.currentFrame += 1;
-                        if (current.currentFrame > current.numberOfFrames - 1)
-                        {
-                            current.currentFrame = 0;
-                        }
-                    }
+                    current.currentFrame = 0;
                 }
-            }
+            }     
         }
+
     }
 
     /// <summary>
@@ -83,65 +85,89 @@ internal class SpriteSystem : milk.Core.System
     public override void DrawEntity(Scene scene, Entity entity)
     {
 
+        // Get the required components
         TransformComponent transformComponent = entity.GetComponent<TransformComponent>();
         SpriteComponent spriteComponent = entity.GetComponent<SpriteComponent>();
 
-        if (spriteComponent.HasSpriteForState(entity.State) == false)
+        // Return if no sprite
+        if (spriteComponent.GetSpriteForState(entity.State) == null)
             return;
 
+        // Get the sprite
         Sprite currentSprite = spriteComponent.GetSpriteForState(entity.State);
-        Texture2D currentTexture = currentSprite.GetCurrentTexture();
 
-        int x, y, w, h;
+        // Return if no texture in sprite
+        if (currentSprite.spriteTextureList == null || currentSprite.spriteTextureList.Count == 0)
+            return;
 
-        // resize == true
-        // means ignore offset and scale
-        if (currentSprite.resizeToEntity == true)
+        // Iterate over each of the texture lists in the sprite
+        foreach (SpriteTextureList textureList in currentSprite.spriteTextureList)
         {
-            x = (int)transformComponent.X;
-            y = (int)transformComponent.Y;
-            w = (int)transformComponent.Width;
-            h = (int)transformComponent.Height;
-        }
-        // resize == false
-        // means use offset and scale
-        else
-        {
-            x = (int)(transformComponent.X + currentSprite.offset.X);
-            y = (int)(transformComponent.Y + currentSprite.offset.Y);
-            w = (int)(currentTexture.Width * currentSprite.scale.X);
-            h = (int)(currentTexture.Height * currentSprite.scale.Y);
-        }
 
-        SpriteEffects flipEffect = SpriteEffects.None;
-        if (spriteComponent.GetSpriteForState(entity.State).flipH)
-            flipEffect = flipEffect | SpriteEffects.FlipHorizontally;
-        if (spriteComponent.GetSpriteForState(entity.State).flipV)
-            flipEffect = flipEffect | SpriteEffects.FlipVertically;
+            // Ignore if there are fewer textures in this list than in other texture lists
+            if (currentSprite.currentFrame >= textureList.textureList.Count)
+                continue;
+            
+            // Get the current texture
+            Texture2D currentTexture = textureList.textureList[currentSprite.currentFrame];
 
-        spriteBatch.Draw(
-            texture: spriteComponent.GetSpriteForState(entity.State).GetCurrentTexture(),
-            destinationRectangle: new Rectangle((int)x, (int)y, (int)w, (int)h),
-            sourceRectangle: null,
-            rotation: 0f,
-            origin: Vector2.Zero,
-            color: currentSprite.hue,
-            effects: flipEffect,
-            layerDepth: 0f
-        );
+            // Store the texture dimensions,
+            // these will change depending on the parameters chosen
+            int x, y, w, h;
 
-        if (scene.game.Debug == true)
-        {
-            spriteBatch.DrawRectangle(
-                new Rectangle(
-                    (int)x,
-                    (int)y,
-                    (int)w,
-                    (int)h
-                ),
-                Color.White,
-                1.0f
+            // If 'resizeToEntity' is true, then set the texture
+            // size to the entity's TransformComponent dimensions
+            if (currentSprite.resizeToEntity == true)
+            {
+                x = (int)transformComponent.X;
+                y = (int)transformComponent.Y;
+                w = (int)transformComponent.Width;
+                h = (int)transformComponent.Height;
+            }
+            // If 'resizeToEntity' is false, then
+            // use the offset and scale values instead
+            else
+            {
+                x = (int)(transformComponent.X + textureList.offset.X * -1);
+                y = (int)(transformComponent.Y + textureList.offset.Y * -1);
+                w = (int)(currentTexture.Width * textureList.scale.X);
+                h = (int)(currentTexture.Height * textureList.scale.Y);
+            }
+
+            // Set the texture horizontal and vertical flip
+            SpriteEffects flipEffect = SpriteEffects.None;
+            if (textureList.flipH)
+                flipEffect = flipEffect | SpriteEffects.FlipHorizontally;
+            if (textureList.flipV)
+                flipEffect = flipEffect | SpriteEffects.FlipVertically;
+
+            // Draw the texture
+            spriteBatch.Draw(
+                texture: currentTexture,
+                destinationRectangle: new Rectangle((int)x, (int)y, (int)w, (int)h),
+                sourceRectangle: null,
+                rotation: 0f,
+                origin: Vector2.Zero,
+                color: textureList.hue * textureList.Alpha,
+                effects: flipEffect,
+                layerDepth: 0f
             );
+
+            // Debug draw the texture outline
+            if (scene.game.Debug == true)
+            {
+                spriteBatch.DrawRectangle(
+                    new Rectangle(
+                        (int)x,
+                        (int)y,
+                        (int)w,
+                        (int)h
+                    ),
+                    Color.White,
+                    1.0f
+                );
+            }
+
         }
 
     }

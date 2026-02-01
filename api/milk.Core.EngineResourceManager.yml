@@ -24,7 +24,7 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: EngineResourceManager
     path: Core/EngineResourceManager.cs
-    startLine: 8
+    startLine: 12
   assemblies:
   - milk
   namespace: milk.Core
@@ -75,7 +75,7 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: ImgMilk
     path: Core/EngineResourceManager.cs
-    startLine: 10
+    startLine: 14
   assemblies:
   - milk
   namespace: milk.Core
@@ -104,7 +104,7 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: FontSmall
     path: Core/EngineResourceManager.cs
-    startLine: 11
+    startLine: 15
   assemblies:
   - milk
   namespace: milk.Core
@@ -133,7 +133,7 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: FontMedium
     path: Core/EngineResourceManager.cs
-    startLine: 12
+    startLine: 16
   assemblies:
   - milk
   namespace: milk.Core
@@ -162,7 +162,7 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: FontLarge
     path: Core/EngineResourceManager.cs
-    startLine: 13
+    startLine: 17
   assemblies:
   - milk
   namespace: milk.Core
@@ -191,7 +191,7 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: OpenStream
     path: Core/EngineResourceManager.cs
-    startLine: 26
+    startLine: 27
   assemblies:
   - milk
   namespace: milk.Core

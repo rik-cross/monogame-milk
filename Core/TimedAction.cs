@@ -6,8 +6,6 @@
 
 namespace milk.Core;
 
-// TODO: OnComplete
-
 /// <summary>
 /// Runs the specified action after an amount of elapsed scene time.
 /// </summary>
@@ -32,10 +30,13 @@ internal class TimedAction
     /// <summary>
     /// Create a new timed action.
     /// </summary>
-    /// <param name="elapsedTime">The amount of elapsed time (default = 0 - instant).</param>
+    /// <param name="elapsedTime">The amount of elapsed time in seconds (default = 0 - instant).</param>
     /// <param name="action">The action callback to execute (default = null).</param>
     /// <param name="name">The name of the timed action, to allow finding and deleting later (default = null).</param>
-    internal TimedAction(float elapsedTime = 0f, Action? action = null, string? name = null)
+   internal TimedAction(
+        float elapsedTime = 0f,
+        Action? action = null,
+        string? name = null)
     {
         ElapsedTime = elapsedTime;
         Action = action;

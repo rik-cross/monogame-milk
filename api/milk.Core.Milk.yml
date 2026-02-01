@@ -1,0 +1,695 @@
+### YamlMime:ManagedReference
+items:
+- uid: milk.Core.Milk
+  commentId: T:milk.Core.Milk
+  id: Milk
+  parent: milk.Core
+  children:
+  - milk.Core.Milk.Content
+  - milk.Core.Milk.Controls
+  - milk.Core.Milk.Graphics
+  - milk.Core.Milk.Quit
+  - milk.Core.Milk.Scenes
+  - milk.Core.Milk.Size
+  - milk.Core.Milk.Systems
+  langs:
+  - csharp
+  - vb
+  name: Milk
+  nameWithType: Milk
+  fullName: milk.Core.Milk
+  type: Class
+  source:
+    remote:
+      path: Core/Milk.cs
+      branch: main
+      repo: git@github.com:rik-cross/monogame-milk.git
+    id: Milk
+    path: Core/Milk.cs
+    startLine: 20
+  assemblies:
+  - milk
+  namespace: milk.Core
+  syntax:
+    content: public static class Milk
+    content.vb: Public Module Milk
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: milk.Core.Milk.Scenes
+  commentId: P:milk.Core.Milk.Scenes
+  id: Scenes
+  parent: milk.Core.Milk
+  langs:
+  - csharp
+  - vb
+  name: Scenes
+  nameWithType: Milk.Scenes
+  fullName: milk.Core.Milk.Scenes
+  type: Property
+  source:
+    remote:
+      path: Core/Milk.cs
+      branch: main
+      repo: git@github.com:rik-cross/monogame-milk.git
+    id: Scenes
+    path: Core/Milk.cs
+    startLine: 23
+  assemblies:
+  - milk
+  namespace: milk.Core
+  syntax:
+    content: public static SceneManager Scenes { get; }
+    parameters: []
+    return:
+      type: milk.Core.SceneManager
+    content.vb: Public Shared ReadOnly Property Scenes As SceneManager
+  overload: milk.Core.Milk.Scenes*
+- uid: milk.Core.Milk.Systems
+  commentId: P:milk.Core.Milk.Systems
+  id: Systems
+  parent: milk.Core.Milk
+  langs:
+  - csharp
+  - vb
+  name: Systems
+  nameWithType: Milk.Systems
+  fullName: milk.Core.Milk.Systems
+  type: Property
+  source:
+    remote:
+      path: Core/Milk.cs
+      branch: main
+      repo: git@github.com:rik-cross/monogame-milk.git
+    id: Systems
+    path: Core/Milk.cs
+    startLine: 24
+  assemblies:
+  - milk
+  namespace: milk.Core
+  syntax:
+    content: public static SystemManager Systems { get; }
+    parameters: []
+    return:
+      type: milk.Core.SystemManager
+    content.vb: Public Shared ReadOnly Property Systems As SystemManager
+  overload: milk.Core.Milk.Systems*
+- uid: milk.Core.Milk.Controls
+  commentId: P:milk.Core.Milk.Controls
+  id: Controls
+  parent: milk.Core.Milk
+  langs:
+  - csharp
+  - vb
+  name: Controls
+  nameWithType: Milk.Controls
+  fullName: milk.Core.Milk.Controls
+  type: Property
+  source:
+    remote:
+      path: Core/Milk.cs
+      branch: main
+      repo: git@github.com:rik-cross/monogame-milk.git
+    id: Controls
+    path: Core/Milk.cs
+    startLine: 25
+  assemblies:
+  - milk
+  namespace: milk.Core
+  syntax:
+    content: public static InputManager Controls { get; }
+    parameters: []
+    return:
+      type: milk.Core.InputManager
+    content.vb: Public Shared ReadOnly Property Controls As InputManager
+  overload: milk.Core.Milk.Controls*
+- uid: milk.Core.Milk.Graphics
+  commentId: P:milk.Core.Milk.Graphics
+  id: Graphics
+  parent: milk.Core.Milk
+  langs:
+  - csharp
+  - vb
+  name: Graphics
+  nameWithType: Milk.Graphics
+  fullName: milk.Core.Milk.Graphics
+  type: Property
+  source:
+    remote:
+      path: Core/Milk.cs
+      branch: main
+      repo: git@github.com:rik-cross/monogame-milk.git
+    id: Graphics
+    path: Core/Milk.cs
+    startLine: 26
+  assemblies:
+  - milk
+  namespace: milk.Core
+  syntax:
+    content: public static SpriteBatch Graphics { get; }
+    parameters: []
+    return:
+      type: Microsoft.Xna.Framework.Graphics.SpriteBatch
+    content.vb: Public Shared ReadOnly Property Graphics As SpriteBatch
+  overload: milk.Core.Milk.Graphics*
+- uid: milk.Core.Milk.Content
+  commentId: P:milk.Core.Milk.Content
+  id: Content
+  parent: milk.Core.Milk
+  langs:
+  - csharp
+  - vb
+  name: Content
+  nameWithType: Milk.Content
+  fullName: milk.Core.Milk.Content
+  type: Property
+  source:
+    remote:
+      path: Core/Milk.cs
+      branch: main
+      repo: git@github.com:rik-cross/monogame-milk.git
+    id: Content
+    path: Core/Milk.cs
+    startLine: 27
+  assemblies:
+  - milk
+  namespace: milk.Core
+  syntax:
+    content: public static ContentManager Content { get; }
+    parameters: []
+    return:
+      type: Microsoft.Xna.Framework.Content.ContentManager
+    content.vb: Public Shared ReadOnly Property Content As ContentManager
+  overload: milk.Core.Milk.Content*
+- uid: milk.Core.Milk.Size
+  commentId: P:milk.Core.Milk.Size
+  id: Size
+  parent: milk.Core.Milk
+  langs:
+  - csharp
+  - vb
+  name: Size
+  nameWithType: Milk.Size
+  fullName: milk.Core.Milk.Size
+  type: Property
+  source:
+    remote:
+      path: Core/Milk.cs
+      branch: main
+      repo: git@github.com:rik-cross/monogame-milk.git
+    id: Size
+    path: Core/Milk.cs
+    startLine: 28
+  assemblies:
+  - milk
+  namespace: milk.Core
+  syntax:
+    content: public static Vector2 Size { get; }
+    parameters: []
+    return:
+      type: Microsoft.Xna.Framework.Vector2
+    content.vb: Public Shared ReadOnly Property Size As Vector2
+  overload: milk.Core.Milk.Size*
+- uid: milk.Core.Milk.Quit
+  commentId: M:milk.Core.Milk.Quit
+  id: Quit
+  parent: milk.Core.Milk
+  langs:
+  - csharp
+  - vb
+  name: Quit()
+  nameWithType: Milk.Quit()
+  fullName: milk.Core.Milk.Quit()
+  type: Method
+  source:
+    remote:
+      path: Core/Milk.cs
+      branch: main
+      repo: git@github.com:rik-cross/monogame-milk.git
+    id: Quit
+    path: Core/Milk.cs
+    startLine: 29
+  assemblies:
+  - milk
+  namespace: milk.Core
+  syntax:
+    content: public static void Quit()
+    content.vb: Public Shared Sub Quit()
+  overload: milk.Core.Milk.Quit*
+references:
+- uid: milk.Core
+  commentId: N:milk.Core
+  href: milk.html
+  name: milk.Core
+  nameWithType: milk.Core
+  fullName: milk.Core
+  spec.csharp:
+  - uid: milk
+    name: milk
+    href: milk.html
+  - name: .
+  - uid: milk.Core
+    name: Core
+    href: milk.Core.html
+  spec.vb:
+  - uid: milk
+    name: milk
+    href: milk.html
+  - name: .
+  - uid: milk.Core
+    name: Core
+    href: milk.Core.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: milk.Core.Milk.Scenes*
+  commentId: Overload:milk.Core.Milk.Scenes
+  href: milk.Core.Milk.html#milk_Core_Milk_Scenes
+  name: Scenes
+  nameWithType: Milk.Scenes
+  fullName: milk.Core.Milk.Scenes
+- uid: milk.Core.SceneManager
+  commentId: T:milk.Core.SceneManager
+  parent: milk.Core
+  href: milk.Core.SceneManager.html
+  name: SceneManager
+  nameWithType: SceneManager
+  fullName: milk.Core.SceneManager
+- uid: milk.Core.Milk.Systems*
+  commentId: Overload:milk.Core.Milk.Systems
+  href: milk.Core.Milk.html#milk_Core_Milk_Systems
+  name: Systems
+  nameWithType: Milk.Systems
+  fullName: milk.Core.Milk.Systems
+- uid: milk.Core.SystemManager
+  commentId: T:milk.Core.SystemManager
+  parent: milk.Core
+  href: milk.Core.SystemManager.html
+  name: SystemManager
+  nameWithType: SystemManager
+  fullName: milk.Core.SystemManager
+- uid: milk.Core.Milk.Controls*
+  commentId: Overload:milk.Core.Milk.Controls
+  href: milk.Core.Milk.html#milk_Core_Milk_Controls
+  name: Controls
+  nameWithType: Milk.Controls
+  fullName: milk.Core.Milk.Controls
+- uid: milk.Core.InputManager
+  commentId: T:milk.Core.InputManager
+  parent: milk.Core
+  href: milk.Core.InputManager.html
+  name: InputManager
+  nameWithType: InputManager
+  fullName: milk.Core.InputManager
+- uid: milk.Core.Milk.Graphics*
+  commentId: Overload:milk.Core.Milk.Graphics
+  href: milk.Core.Milk.html#milk_Core_Milk_Graphics
+  name: Graphics
+  nameWithType: Milk.Graphics
+  fullName: milk.Core.Milk.Graphics
+- uid: Microsoft.Xna.Framework.Graphics.SpriteBatch
+  commentId: T:Microsoft.Xna.Framework.Graphics.SpriteBatch
+  parent: Microsoft.Xna.Framework.Graphics
+  isExternal: true
+  name: SpriteBatch
+  nameWithType: SpriteBatch
+  fullName: Microsoft.Xna.Framework.Graphics.SpriteBatch
+- uid: Microsoft.Xna.Framework.Graphics
+  commentId: N:Microsoft.Xna.Framework.Graphics
+  isExternal: true
+  name: Microsoft.Xna.Framework.Graphics
+  nameWithType: Microsoft.Xna.Framework.Graphics
+  fullName: Microsoft.Xna.Framework.Graphics
+  spec.csharp:
+  - uid: Microsoft
+    name: Microsoft
+    isExternal: true
+  - name: .
+  - uid: Microsoft.Xna
+    name: Xna
+    isExternal: true
+  - name: .
+  - uid: Microsoft.Xna.Framework
+    name: Framework
+    isExternal: true
+  - name: .
+  - uid: Microsoft.Xna.Framework.Graphics
+    name: Graphics
+    isExternal: true
+  spec.vb:
+  - uid: Microsoft
+    name: Microsoft
+    isExternal: true
+  - name: .
+  - uid: Microsoft.Xna
+    name: Xna
+    isExternal: true
+  - name: .
+  - uid: Microsoft.Xna.Framework
+    name: Framework
+    isExternal: true
+  - name: .
+  - uid: Microsoft.Xna.Framework.Graphics
+    name: Graphics
+    isExternal: true
+- uid: milk.Core.Milk.Content*
+  commentId: Overload:milk.Core.Milk.Content
+  href: milk.Core.Milk.html#milk_Core_Milk_Content
+  name: Content
+  nameWithType: Milk.Content
+  fullName: milk.Core.Milk.Content
+- uid: Microsoft.Xna.Framework.Content.ContentManager
+  commentId: T:Microsoft.Xna.Framework.Content.ContentManager
+  parent: Microsoft.Xna.Framework.Content
+  isExternal: true
+  name: ContentManager
+  nameWithType: ContentManager
+  fullName: Microsoft.Xna.Framework.Content.ContentManager
+- uid: Microsoft.Xna.Framework.Content
+  commentId: N:Microsoft.Xna.Framework.Content
+  isExternal: true
+  name: Microsoft.Xna.Framework.Content
+  nameWithType: Microsoft.Xna.Framework.Content
+  fullName: Microsoft.Xna.Framework.Content
+  spec.csharp:
+  - uid: Microsoft
+    name: Microsoft
+    isExternal: true
+  - name: .
+  - uid: Microsoft.Xna
+    name: Xna
+    isExternal: true
+  - name: .
+  - uid: Microsoft.Xna.Framework
+    name: Framework
+    isExternal: true
+  - name: .
+  - uid: Microsoft.Xna.Framework.Content
+    name: Content
+    isExternal: true
+  spec.vb:
+  - uid: Microsoft
+    name: Microsoft
+    isExternal: true
+  - name: .
+  - uid: Microsoft.Xna
+    name: Xna
+    isExternal: true
+  - name: .
+  - uid: Microsoft.Xna.Framework
+    name: Framework
+    isExternal: true
+  - name: .
+  - uid: Microsoft.Xna.Framework.Content
+    name: Content
+    isExternal: true
+- uid: milk.Core.Milk.Size*
+  commentId: Overload:milk.Core.Milk.Size
+  href: milk.Core.Milk.html#milk_Core_Milk_Size
+  name: Size
+  nameWithType: Milk.Size
+  fullName: milk.Core.Milk.Size
+- uid: Microsoft.Xna.Framework.Vector2
+  commentId: T:Microsoft.Xna.Framework.Vector2
+  parent: Microsoft.Xna.Framework
+  isExternal: true
+  name: Vector2
+  nameWithType: Vector2
+  fullName: Microsoft.Xna.Framework.Vector2
+- uid: Microsoft.Xna.Framework
+  commentId: N:Microsoft.Xna.Framework
+  isExternal: true
+  name: Microsoft.Xna.Framework
+  nameWithType: Microsoft.Xna.Framework
+  fullName: Microsoft.Xna.Framework
+  spec.csharp:
+  - uid: Microsoft
+    name: Microsoft
+    isExternal: true
+  - name: .
+  - uid: Microsoft.Xna
+    name: Xna
+    isExternal: true
+  - name: .
+  - uid: Microsoft.Xna.Framework
+    name: Framework
+    isExternal: true
+  spec.vb:
+  - uid: Microsoft
+    name: Microsoft
+    isExternal: true
+  - name: .
+  - uid: Microsoft.Xna
+    name: Xna
+    isExternal: true
+  - name: .
+  - uid: Microsoft.Xna.Framework
+    name: Framework
+    isExternal: true
+- uid: milk.Core.Milk.Quit*
+  commentId: Overload:milk.Core.Milk.Quit
+  href: milk.Core.Milk.html#milk_Core_Milk_Quit
+  name: Quit
+  nameWithType: Milk.Quit
+  fullName: milk.Core.Milk.Quit

@@ -9,18 +9,18 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace milk.Core;
 
-internal class SceneManager
+public class SceneManager
 {
     // should this store one of each type of scene?
     // and then use LoadScene<>() etc...
-    public List<Scene> allScenes = new List<Scene>();
-    public List<Scene> _currentSceneList = new List<Scene>();
-    public List<Scene> _newSceneList = new List<Scene>();
-    public int numberOfScenesToRemove = 1;
-    public bool unload = true;
+    internal List<Scene> allScenes = new List<Scene>();
+    internal List<Scene> _currentSceneList = new List<Scene>();
+    internal List<Scene> _newSceneList = new List<Scene>();
+    internal int numberOfScenesToRemove = 1;
+    internal bool unload = true;
 
 
-    public Transition? currentTransition = null;
+    internal Transition? currentTransition = null;
     private RenderTarget2D existingScenesRenderTarget = new RenderTarget2D(
         EngineGlobals.game.graphicsDevice,
         EngineGlobals.game.graphicsDevice.PresentationParameters.BackBufferWidth,
@@ -47,7 +47,7 @@ internal class SceneManager
             scene.RemoveEntity(entity);
     }
 
-    public void Update(GameTime gameTime)
+    internal void Update(GameTime gameTime)
     {
 
         if (_currentSceneList.Count > 0)
@@ -68,14 +68,18 @@ internal class SceneManager
 
     }
 
-    public void Input(GameTime gameTime)
+    internal void Input(GameTime gameTime)
     {
-        // Cann the Input method for the top scene on the stack
+
+        //if (currentTransition != null)
+        //    return;
+
+        // Call the Input method for the top scene on the stack
         if (_currentSceneList.Count > 0)
             _currentSceneList[0]._Input(gameTime, _currentSceneList);
     }
 
-    public void Draw()
+    internal void Draw()
     {
 
         // Clear the main (null) render target
@@ -101,18 +105,31 @@ internal class SceneManager
         }
         // If there's an active transition, defer drawing to the transition
         else
-            currentTransition._Draw(existingScenesRenderTarget, newScenesRenderTarget, _currentSceneList, _newSceneList);
+            currentTransition._Draw(
+                graphicsDevice,
+                existingScenesRenderTarget,
+                newScenesRenderTarget,
+                _currentSceneList,
+                _newSceneList
+            );
 
     }
 
-    internal Scene? GetCurrentScene()
+    public Scene? GetCurrentScene()
     {
         if (_currentSceneList.Count == 0)
             return null;
         return _currentSceneList[0];
     }
 
-    internal void SetScene(
+    public void SetScene(
+        Scene scene,
+        Transition? transition = null,
+        bool keepExistingScenes = false,
+        bool calledFromTransition = false
+    ) => SetScene([scene], transition, keepExistingScenes, calledFromTransition);
+
+    public void SetScene(
         List<Scene> sceneList,
         Transition? transition = null,
         bool keepExistingScenes = false,
@@ -234,19 +251,6 @@ internal class SceneManager
             _currentSceneList[0].OnExit();
             _currentSceneList.RemoveAt(0);
         }
-    }
-
-    public override string ToString()
-    {
-        string output = Theme.CreateConsoleTitle("SceneManager");
-        output += Theme.PrintConsoleVar("Active scenes", _currentSceneList.Count.ToString());
-        string transition = "False";
-        if (currentTransition != null)
-        {
-            transition = "True";
-        }
-        output += Theme.PrintConsoleVar("Transition", transition);
-        return output;
     }
 
 }

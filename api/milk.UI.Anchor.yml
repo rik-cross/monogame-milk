@@ -1,0 +1,303 @@
+### YamlMime:ManagedReference
+items:
+- uid: milk.UI.Anchor
+  commentId: T:milk.UI.Anchor
+  id: Anchor
+  parent: milk.UI
+  children:
+  - milk.UI.Anchor.BottomCenter
+  - milk.UI.Anchor.BottomLeft
+  - milk.UI.Anchor.BottomRight
+  - milk.UI.Anchor.MiddleCenter
+  - milk.UI.Anchor.MiddleLeft
+  - milk.UI.Anchor.MiddleRight
+  - milk.UI.Anchor.TopCenter
+  - milk.UI.Anchor.TopLeft
+  - milk.UI.Anchor.TopRight
+  langs:
+  - csharp
+  - vb
+  name: Anchor
+  nameWithType: Anchor
+  fullName: milk.UI.Anchor
+  type: Enum
+  source:
+    remote:
+      path: UI/Anchor.cs
+      branch: main
+      repo: git@github.com:rik-cross/monogame-milk.git
+    id: Anchor
+    path: UI/Anchor.cs
+    startLine: 11
+  assemblies:
+  - milk
+  namespace: milk.UI
+  summary: The part of a SceneRenderable to set the position against.
+  example: []
+  syntax:
+    content: public enum Anchor
+    content.vb: Public Enum Anchor
+- uid: milk.UI.Anchor.TopLeft
+  commentId: F:milk.UI.Anchor.TopLeft
+  id: TopLeft
+  parent: milk.UI.Anchor
+  langs:
+  - csharp
+  - vb
+  name: TopLeft
+  nameWithType: Anchor.TopLeft
+  fullName: milk.UI.Anchor.TopLeft
+  type: Field
+  source:
+    remote:
+      path: UI/Anchor.cs
+      branch: main
+      repo: git@github.com:rik-cross/monogame-milk.git
+    id: TopLeft
+    path: UI/Anchor.cs
+    startLine: 13
+  assemblies:
+  - milk
+  namespace: milk.UI
+  syntax:
+    content: TopLeft = 0
+    return:
+      type: milk.UI.Anchor
+- uid: milk.UI.Anchor.TopCenter
+  commentId: F:milk.UI.Anchor.TopCenter
+  id: TopCenter
+  parent: milk.UI.Anchor
+  langs:
+  - csharp
+  - vb
+  name: TopCenter
+  nameWithType: Anchor.TopCenter
+  fullName: milk.UI.Anchor.TopCenter
+  type: Field
+  source:
+    remote:
+      path: UI/Anchor.cs
+      branch: main
+      repo: git@github.com:rik-cross/monogame-milk.git
+    id: TopCenter
+    path: UI/Anchor.cs
+    startLine: 13
+  assemblies:
+  - milk
+  namespace: milk.UI
+  syntax:
+    content: TopCenter = 1
+    return:
+      type: milk.UI.Anchor
+- uid: milk.UI.Anchor.TopRight
+  commentId: F:milk.UI.Anchor.TopRight
+  id: TopRight
+  parent: milk.UI.Anchor
+  langs:
+  - csharp
+  - vb
+  name: TopRight
+  nameWithType: Anchor.TopRight
+  fullName: milk.UI.Anchor.TopRight
+  type: Field
+  source:
+    remote:
+      path: UI/Anchor.cs
+      branch: main
+      repo: git@github.com:rik-cross/monogame-milk.git
+    id: TopRight
+    path: UI/Anchor.cs
+    startLine: 13
+  assemblies:
+  - milk
+  namespace: milk.UI
+  syntax:
+    content: TopRight = 2
+    return:
+      type: milk.UI.Anchor
+- uid: milk.UI.Anchor.MiddleLeft
+  commentId: F:milk.UI.Anchor.MiddleLeft
+  id: MiddleLeft
+  parent: milk.UI.Anchor
+  langs:
+  - csharp
+  - vb
+  name: MiddleLeft
+  nameWithType: Anchor.MiddleLeft
+  fullName: milk.UI.Anchor.MiddleLeft
+  type: Field
+  source:
+    remote:
+      path: UI/Anchor.cs
+      branch: main
+      repo: git@github.com:rik-cross/monogame-milk.git
+    id: MiddleLeft
+    path: UI/Anchor.cs
+    startLine: 14
+  assemblies:
+  - milk
+  namespace: milk.UI
+  syntax:
+    content: MiddleLeft = 3
+    return:
+      type: milk.UI.Anchor
+- uid: milk.UI.Anchor.MiddleCenter
+  commentId: F:milk.UI.Anchor.MiddleCenter
+  id: MiddleCenter
+  parent: milk.UI.Anchor
+  langs:
+  - csharp
+  - vb
+  name: MiddleCenter
+  nameWithType: Anchor.MiddleCenter
+  fullName: milk.UI.Anchor.MiddleCenter
+  type: Field
+  source:
+    remote:
+      path: UI/Anchor.cs
+      branch: main
+      repo: git@github.com:rik-cross/monogame-milk.git
+    id: MiddleCenter
+    path: UI/Anchor.cs
+    startLine: 14
+  assemblies:
+  - milk
+  namespace: milk.UI
+  syntax:
+    content: MiddleCenter = 4
+    return:
+      type: milk.UI.Anchor
+- uid: milk.UI.Anchor.MiddleRight
+  commentId: F:milk.UI.Anchor.MiddleRight
+  id: MiddleRight
+  parent: milk.UI.Anchor
+  langs:
+  - csharp
+  - vb
+  name: MiddleRight
+  nameWithType: Anchor.MiddleRight
+  fullName: milk.UI.Anchor.MiddleRight
+  type: Field
+  source:
+    remote:
+      path: UI/Anchor.cs
+      branch: main
+      repo: git@github.com:rik-cross/monogame-milk.git
+    id: MiddleRight
+    path: UI/Anchor.cs
+    startLine: 14
+  assemblies:
+  - milk
+  namespace: milk.UI
+  syntax:
+    content: MiddleRight = 5
+    return:
+      type: milk.UI.Anchor
+- uid: milk.UI.Anchor.BottomLeft
+  commentId: F:milk.UI.Anchor.BottomLeft
+  id: BottomLeft
+  parent: milk.UI.Anchor
+  langs:
+  - csharp
+  - vb
+  name: BottomLeft
+  nameWithType: Anchor.BottomLeft
+  fullName: milk.UI.Anchor.BottomLeft
+  type: Field
+  source:
+    remote:
+      path: UI/Anchor.cs
+      branch: main
+      repo: git@github.com:rik-cross/monogame-milk.git
+    id: BottomLeft
+    path: UI/Anchor.cs
+    startLine: 15
+  assemblies:
+  - milk
+  namespace: milk.UI
+  syntax:
+    content: BottomLeft = 6
+    return:
+      type: milk.UI.Anchor
+- uid: milk.UI.Anchor.BottomCenter
+  commentId: F:milk.UI.Anchor.BottomCenter
+  id: BottomCenter
+  parent: milk.UI.Anchor
+  langs:
+  - csharp
+  - vb
+  name: BottomCenter
+  nameWithType: Anchor.BottomCenter
+  fullName: milk.UI.Anchor.BottomCenter
+  type: Field
+  source:
+    remote:
+      path: UI/Anchor.cs
+      branch: main
+      repo: git@github.com:rik-cross/monogame-milk.git
+    id: BottomCenter
+    path: UI/Anchor.cs
+    startLine: 15
+  assemblies:
+  - milk
+  namespace: milk.UI
+  syntax:
+    content: BottomCenter = 7
+    return:
+      type: milk.UI.Anchor
+- uid: milk.UI.Anchor.BottomRight
+  commentId: F:milk.UI.Anchor.BottomRight
+  id: BottomRight
+  parent: milk.UI.Anchor
+  langs:
+  - csharp
+  - vb
+  name: BottomRight
+  nameWithType: Anchor.BottomRight
+  fullName: milk.UI.Anchor.BottomRight
+  type: Field
+  source:
+    remote:
+      path: UI/Anchor.cs
+      branch: main
+      repo: git@github.com:rik-cross/monogame-milk.git
+    id: BottomRight
+    path: UI/Anchor.cs
+    startLine: 15
+  assemblies:
+  - milk
+  namespace: milk.UI
+  syntax:
+    content: BottomRight = 8
+    return:
+      type: milk.UI.Anchor
+references:
+- uid: milk.UI
+  commentId: N:milk.UI
+  href: milk.html
+  name: milk.UI
+  nameWithType: milk.UI
+  fullName: milk.UI
+  spec.csharp:
+  - uid: milk
+    name: milk
+    href: milk.html
+  - name: .
+  - uid: milk.UI
+    name: UI
+    href: milk.UI.html
+  spec.vb:
+  - uid: milk
+    name: milk
+    href: milk.html
+  - name: .
+  - uid: milk.UI
+    name: UI
+    href: milk.UI.html
+- uid: milk.UI.Anchor
+  commentId: T:milk.UI.Anchor
+  parent: milk.UI
+  href: milk.UI.Anchor.html
+  name: Anchor
+  nameWithType: Anchor
+  fullName: milk.UI.Anchor

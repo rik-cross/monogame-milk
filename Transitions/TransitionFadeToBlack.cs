@@ -1,37 +1,48 @@
-using System.Collections.Generic;
+//   Monogame Intuitive Library Kit (milk)
+//   A MonoGame ECS Engine, By Rik Cross
+//   -- Code: github.com/rik-cross/monogame-milk
+//   -- Docs: rik-cross.github.io/monogame-milk
+//   -- Shared under the MIT licence
+
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using milk.Core;
 using MonoGame.Extended;
 namespace milk.Transitions;
 
+/// <summary>
+/// Fades to black between scenes.
+/// </summary>
 public class TransitionFadeToBlack : Transition
 {
-    
+
+    /// <summary>
+    /// Creates a new transition to fade between scenes.
+    /// </summary>
+    /// <param name="duration">The duration of the transition, in seconds (default = 1s).</param>
+    /// <param name="easingFunction">The easing function for the transition (default = null - linear)</param>    
     public TransitionFadeToBlack(
-        float duration = 1000,
+        float duration = 1.0f,
         EasingFunctions.EasingDelegate? easingFunction = null
     ) : base(duration, easingFunction) { }
 
-
-    //public override void Update(GameTime gameTime) { }
-
-    public override void Draw(RenderTarget2D existingScenesRenderTarget, RenderTarget2D newScenesRenderTarget)
+    protected internal override void Draw(RenderTarget2D existingScenesRenderTarget, RenderTarget2D newScenesRenderTarget)
     {
-
-        // this should be in the update
-        int w = (int)EngineGlobals.game.Size.X;// graphicsDevice.PresentationParameters.BackBufferWidth;
-        int h = (int)EngineGlobals.game.Size.Y;// graphicsDevice.PresentationParameters.BackBufferHeight;
-        float p = easedPercentage; // not percentage
-
-        if (p < 0.5f)
-            spriteBatch.Draw(existingScenesRenderTarget, Vector2.Zero, Color.White);
+        if (easedPercentage < 0.5f)
+            Milk.Graphics.Draw(existingScenesRenderTarget, Vector2.Zero, Color.White);
         else
-            // should be newSceneSSS
-            spriteBatch.Draw(newScenesRenderTarget, Vector2.Zero, Color.White);
+            Milk.Graphics.Draw(newScenesRenderTarget, Vector2.Zero, Color.White);
 
-        double alpha = 1 - Math.Abs(p * 2 - 1);
-        spriteBatch.FillRectangle(new Rectangle(0, 0, (int)EngineGlobals.game.Size.X, (int)EngineGlobals.game.Size.Y), Color.Black * (float)alpha);
-
+        double alpha = 1 - Math.Abs(easedPercentage * 2 - 1);
+        Milk.Graphics.FillRectangle(
+            new Rectangle(
+                0,
+                0,
+                // TODO: where is the game size stored?
+                (int)Milk.Size.X,
+                (int)Milk.Size.Y
+            ),
+            Color.Black * (float)alpha
+        );
     }
 }

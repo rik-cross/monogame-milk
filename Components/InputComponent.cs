@@ -17,13 +17,13 @@ public class InputComponent : Component
     /// <summary>
     /// A function that describes entity input behaviour.
     /// </summary>
-    public Action<Scene, Entity>? inputController;
+    public Action<Scene, Entity, bool>? inputController;
 
     /// <summary>
     /// Creates a new input component.
     /// </summary>
     /// <param name="inputController">The input function to be called.</param>
-    public InputComponent(Action<Scene, Entity>? inputController = null)
+    public InputComponent(Action<Scene, Entity, bool>? inputController = null)
     {
         this.inputController = inputController;
     }

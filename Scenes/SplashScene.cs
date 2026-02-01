@@ -45,7 +45,7 @@ internal class SplashScene : Scene
         // Fade in the image and text after 0.5 seconds,
         // by setting their alpha values to 1
         AddTimedAction(
-            elapsedTime: 500,
+            elapsedTime: 0.5f,
             action: () =>
             {
                 animator.AddTween(
@@ -63,7 +63,7 @@ internal class SplashScene : Scene
         // Fade out the image and text after 2 seconds,
         // by setting their alpha values to 0
         AddTimedAction(
-            elapsedTime: 2000,
+            elapsedTime: 2.0f,
             action: () =>
             {
                 animator.AddTween(
@@ -78,13 +78,13 @@ internal class SplashScene : Scene
             }
         );
 
-        // Remove this splash scene after 2.5 seconds
+        // Remove this splash scene after 3 seconds
         AddTimedAction(
-            elapsedTime: 2500,
+            elapsedTime: 3f,
             action: () =>
             {
-                EngineGlobals.game.RemoveScene(
-                    transition: new TransitionFadeToBlack(duration: 1000)
+                Scenes.RemoveScene(
+                    transition: new TransitionFadeToBlack(duration: 0.75f)
                 );
             }
         );

@@ -269,37 +269,4 @@ public class Entity
         }
     }
 
-    //
-    // ToString override 
-    //
-
-    /// <summary>
-    /// Debug entity string print method.
-    /// </summary>
-    /// <returns>A string output representing the entity.</returns>
-    public override string ToString()
-    {
-        string output = Theme.CreateConsoleTitle("Entity");
-        output += Theme.PrintConsoleVar("ID", ID.ToString());
-        string n = "[none]";
-        if (Name != null)
-            n = Name;
-        output += Theme.PrintConsoleVar("Name", n);
-        string tagListOutput = Utils.PrintList(Tags, separator: ", ");
-        output += Theme.PrintConsoleVar("Tags", tagListOutput);
-        output += Theme.PrintConsoleVar("State", State);
-        output += Theme.PrintConsoleVar("Prev. State", PreviousState);
-        string ownerString = Owner.ID.ToString();
-        if (ID == Owner.ID)
-        {
-            ownerString += " (self)";
-        }
-        output += Theme.PrintConsoleVar("Owner ID", ownerString);
-        string bitMaskOutput = Utils.PrintBitArray(bitMask);
-        output += Theme.PrintConsoleVar("BitMask", bitMaskOutput);
-        output += Theme.PrintConsoleVar("To Delete", Delete.ToString());
-        output += "\n";
-        return output;
-    }
-
 }

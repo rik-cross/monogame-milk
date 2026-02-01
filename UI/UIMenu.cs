@@ -20,12 +20,43 @@ internal class UIMenu
     private List<UIElement> menuItems;
     private UIElement? selectedElement;
 
-    public List<Keys> Up;
-    public List<Keys> Down;
-    public List<Keys> Left;
-    public List<Keys> Right;
-    public List<Keys> Select;
+    /// <summary>
+    /// The key(s) pressed to move 'up' the menu
+    /// (i.e. to select the `ElementAbove` for the current `UIElement`,
+    /// default = `keys.W`.)
+    /// </summary>
+    public List<Keys> Up {get; set; }
 
+    /// <summary>
+    /// The key(s) pressed to move 'down' the menu
+    /// (i.e. to select the `ElementBelow` for the current `UIElement`,
+    /// default = `keys.S`.)
+    /// </summary>
+    public List<Keys> Down {get; set; }
+
+    /// <summary>
+    /// The key(s) pressed to move 'left' in the menu
+    /// (i.e. to select the `ElementLeft` for the current `UIElement`,
+    /// default = `keys.A`.)
+    /// </summary>
+    public List<Keys> Left {get; set; }
+
+    /// <summary>
+    /// The key(s) pressed to move 'right' in the menu
+    /// (i.e. to select the `ElementRight` for the current `UIElement`, 
+    /// default = `keys.D`.)
+    /// </summary>
+    public List<Keys> Right {get; set; }
+
+    /// <summary>
+    /// The key(s) pressed to 'select' the current `UIElement`.
+    /// (`keys.Enter` by default.)
+    /// </summary>
+    public List<Keys> Select {get; set; }
+
+    /// <summary>
+    /// Setting a menu visibility to 'false' hides the menu and all of its UIElements.
+    /// </summary>
     public bool Visible { get; set; }
 
     internal UIMenu(Scene parentScene)
@@ -46,15 +77,6 @@ internal class UIMenu
         menuItems.Add(element);
         if (menuItems.Count == 1)
             selectedElement = element;
-    }
-
-    internal void Update(GameTime gameTime, Scene scene)
-    {
-        // TODO: Is this required at the element level?
-        //foreach (UIElement uiElement in menuItems)
-        //{
-        //    uiElement.Update(gameTime, selected: selectedElement == uiElement);
-        //}
     }
 
     internal void Input(GameTime gameTime, Scene scene)
@@ -79,7 +101,7 @@ internal class UIMenu
         UIElement? resultRight = GetNextElement(Right, e => e.ElementRight);
         if (resultRight != null) selectedElement = resultRight;
 
-        // Select
+        // To select
         foreach (Keys key in Select)
         {
             if (EngineGlobals.game.inputManager.IsKeyPressed(key))
@@ -117,9 +139,11 @@ internal class UIMenu
     internal void Draw()
     {
 
+        // Don't draw any of the menu's elements if visible = false.
         if (Visible == false)
             return;
-
+        
+        // Otherwise, draw each element.
         foreach (UIElement uiElement in menuItems)
         {
             uiElement.Draw(selected: selectedElement == uiElement);

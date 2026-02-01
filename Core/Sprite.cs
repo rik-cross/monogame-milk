@@ -1,147 +1,83 @@
-//   Monogame Intuitive Library Kit (milk)
-//   A MonoGame ECS Engine, By Rik Cross
-//   -- Code: github.com/rik-cross/monogame-milk
-//   -- Docs: rik-cross.github.io/monogame-milk
-//   -- Shared under the MIT licence
 
-using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Graphics;
 
 namespace milk.Core;
 
-/// <summary>
-/// A sprite is added to a SpriteComponent, and is a collection 
-/// of textures, along with some additional data. A sprite with more
-/// than one texture automatically becomes an animated sprite.
-/// </summary>
-public class Sprite
+internal class Sprite
 {
-
-    /// <summary>
-    /// A list of one or more textures to display.
-    /// </summary>
-    public List<Texture2D> textureList;
-
-    /// <summary>
-    /// Sprite hue.
-    /// </summary>
-    public Color hue;
-
-    /// <summary>
-    /// The sprite offset from the entity position.
-    /// </summary>
-    public Vector2 offset;
-
-    /// <summary>
-    /// Horizontally flip the sprite.
-    /// </summary>
-    public bool flipH;
-
-    /// <summary>
-    /// Vertically flip the sprite.
-    /// </summary>
-    public bool flipV;
-
-    /// <summary>
-    /// Texture scaling.
-    /// </summary>
-    public Vector2 scale;
-
-    // animated stuff
-
-    /// <summary>
-    /// The number of textures.
-    /// </summary>
-    public int numberOfFrames;
+    
+    internal List<SpriteTextureList> spriteTextureList;
 
     /// <summary>
     /// The current texture index.
     /// </summary>
-    public int currentFrame;
+    internal int currentFrame;
+
+    /// <summary>
+    /// Maximum number of textures to display.
+    /// </summary>
+    internal int numberOfFrames;
 
     /// <summary>
     /// The total time for the animation loop.
     /// </summary>
-    public double duration;
+    internal double duration;
 
     /// <summary>
     /// The time to display each texture.
     /// </summary>
-    public double timePerFrame;
+    internal double timePerFrame;
 
     /// <summary>
     /// The elapsed time since the texture became current.
     /// </summary>
-    public double timeOnCurrentFrame;
+    internal double timeOnCurrentFrame;
 
     /// <summary>
     /// If true, the size of the sprite is the same as the
     /// entity size, stored in the TransformComponent.
     /// </summary>
-    public bool resizeToEntity;
+    internal bool resizeToEntity;
 
     /// <summary>
     /// Repeatedly loop the animation.
     /// </summary>
-    public bool loop;
-    
-    /// <summary>
-    /// Creates a new sprite object.
-    /// </summary>
-    /// <param name="textureList">One or more textures to display.</param>
-    /// <param name="resizeToEntity">Sprite size is set to the entity size (default = true).</param>
-    /// <param name="duration">The total time to display the animation sequence (default = 0).</param>
-    /// <param name="offset">The distance between the entity position and the sprite (default = none).</param>
-    /// <param name="scale">The scale factor for the textures (default = 1 - no scale factor).</param>
-    /// <param name="loop">Loop the textures (default = true).</param>
-    /// <param name="hue">The hue to recolor the sprite (default = white / no recolor).</param>
-    /// <param name="flipH">Horizontally flip the textures (default = false).</param>
-    /// <param name="flipV">Vertically flip the textures (default = false).</param>
-    public Sprite(
-        List<Texture2D> textureList,
-        bool resizeToEntity = true,
+    internal bool Loop { get; set; }
+
+    internal Sprite(
+        List<SpriteTextureList> spriteTextureList,
         double duration = 0,
-        Vector2? offset = null,
-        Vector2? scale = null,
         bool loop = true,
-        Color? hue = null,
-        bool flipH = false,
-        bool flipV = false
+        bool resizeToEntity = false
     )
     {
-
-        this.textureList = textureList;
-        this.resizeToEntity = resizeToEntity;
+        this.spriteTextureList = spriteTextureList;
         this.duration = duration;
-
-        this.offset = offset ?? Vector2.Zero;
-        this.scale = scale ?? Vector2.One;
-
-        this.loop = loop;
-        
-        this.hue = hue ?? Color.White;
-
-        this.flipH = flipH;
-        this.flipV = flipV;
-
-        currentFrame = 0;
-
-        UpdateAnimationInfo();
+        this.Loop = loop;
+        this.resizeToEntity = resizeToEntity;
+        CalculateFrames();
     }
 
-    private void UpdateAnimationInfo()
+    internal void CalculateFrames()
     {
-        numberOfFrames = textureList.Count;
-        timePerFrame = duration / numberOfFrames;
-    }
+        if (spriteTextureList == null || spriteTextureList.Count == 0)
+            return;
 
-    /// <summary>
-    /// Returns the currently displayed texture.
-    /// </summary>
-    /// <returns>The currently displayed texture.</returns>
-    public Texture2D GetCurrentTexture()
-    {
-        return textureList[currentFrame];
+        // Calculate longest sprite list
+        int highestTextureListLength = 0;
+        foreach(SpriteTextureList stl in spriteTextureList)
+        {
+            if (stl.textureList.Count > highestTextureListLength)
+            {
+                highestTextureListLength = stl.textureList.Count;
+            }
+        }
+
+        // Set the time per frame accordingly
+        timePerFrame = duration / highestTextureListLength;
+
+        // Set the maximum number of frames
+        numberOfFrames = highestTextureListLength;
+
     }
 
 }

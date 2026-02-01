@@ -10,11 +10,7 @@ using milk.Core;
 
 namespace milk.UI;
 
-/// <summary>
-/// A UI element is the base class for all UI items.
-/// This class shouldn't be used directly.
-/// </summary>
-public class UIElement : SceneRenderable
+public abstract class UIElement : SceneRenderable
 {
 
     public Scene parentScene = null;

@@ -18,27 +18,27 @@ public class TriggerComponent : Component
     /// <summary>
     /// The (x,y) size of the trigger.
     /// </summary>
-    public Vector2 size;
+    public Vector2 Size;
 
     /// <summary>
     /// The (x,y) offset from the entity top-left position.
     /// </summary>
-    public Vector2 offset;
+    public Vector2 Offset;
 
     /// <summary>
     /// Called once when 2 colliders first intersect.
     /// </summary>
-    public Action<Entity, Entity, float>? onCollisionEnter;
+    public Action<Entity, Entity, float>? OnCollisionEnter;
 
     /// <summary>
     /// Called for every frame that 2 colliders intersect.
     /// </summary>
-    public Action<Entity, Entity, float>? onCollide;
+    public Action<Entity, Entity, float>? OnCollide;
 
     /// <summary>
     /// Called once when 2 colliders no longer intersect.
     /// </summary>
-    public Action<Entity, Entity, float>? onCollisionExit;
+    public Action<Entity, Entity, float>? OnCollisionExit;
 
     internal List<Entity> collidedEntities;
 
@@ -55,12 +55,12 @@ public class TriggerComponent : Component
         Action<Entity, Entity, float>? onCollide = null,
         Action<Entity, Entity, float>? onCollisionExit = null)
     {
-        this.size = size;
-        this.offset = offset ?? Vector2.Zero;
-
-        this.onCollisionEnter = onCollisionEnter;
-        this.onCollide = onCollide;
-        this.onCollisionExit = onCollisionExit;
+        Size = size;
+        Offset = offset ?? Vector2.Zero;
+        
+        OnCollisionEnter = onCollisionEnter;
+        OnCollide = onCollide;
+        OnCollisionExit = onCollisionExit;
 
         collidedEntities = new List<Entity>();
     }

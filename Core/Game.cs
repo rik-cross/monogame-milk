@@ -55,15 +55,14 @@ public class Game : Microsoft.Xna.Framework.Game
     /// </summary>
     public InputManager inputManager;
 
-    // TODO
     // This is set to 'true' initially, and then set to 'false' after the first frame
     // It prevents the window looking 'glitchy' on the first game frame 
-    private bool firstFrame;
+    private bool firstFrame = true;
 
     /// <summary>
     /// Setting debug mode to true displays various game, scene and entity information.
     /// </summary>
-    public bool Debug = false;
+    public bool Debug;
 
     /// <summary>
     /// Creates a new game.
@@ -86,21 +85,6 @@ public class Game : Microsoft.Xna.Framework.Game
     )
     {
 
-
-        /* Diagnostic code: List all resources the engine can actually see
-        var assembly = typeof(milk.Core.Text).Assembly;
-        string[] resources = assembly.GetManifestResourceNames();
-
-        Console.WriteLine("--- AVAILABLE RESOURCES ---");
-        foreach (var resource in resources)
-        {
-            Console.WriteLine(resource);
-        }
-        Console.WriteLine("---------------------------");
-        */
-        // TODO
-        // I'm not sure of the best place to store and pass the main game object
-        // An alternative might be to pass this around to other objects, but that feels clunky
         EngineGlobals.game = this;
 
         graphics = new GraphicsDeviceManager(this);
@@ -113,8 +97,6 @@ public class Game : Microsoft.Xna.Framework.Game
         IsMouseVisible = isMouseVisible;
         _maxEntities = maxEntities;
         _maxComponents = maxComponents;
-
-        //bool firstFrame = true;
 
         _showSplash = showSplash;
         Debug = debug;
@@ -165,10 +147,10 @@ public class Game : Microsoft.Xna.Framework.Game
         inputManager = new InputManager();
 
         // Register all provided systems
-        RegisterSystem(new InputSystem());
-        RegisterSystem(new SpriteSystem());
-        RegisterSystem(new TriggerSystem());
-        RegisterSystem(new PhysicsSystem());
+        systemManager.RegisterSystem(new InputSystem());
+        systemManager.RegisterSystem(new SpriteSystem());
+        systemManager.RegisterSystem(new TriggerSystem());
+        systemManager.RegisterSystem(new PhysicsSystem());
 
         if (_showSplash == true)
         {
@@ -179,10 +161,10 @@ public class Game : Microsoft.Xna.Framework.Game
 
             // Set a default scene if the scene stack only contains the splash scene
             if (sceneManager._currentSceneList.Count == 0 && sceneManager.currentTransition == null)
-                SetScene(new DefaultScene());
+                sceneManager.SetScene(new DefaultScene());
 
             // Add the splash scene
-            SetScene(new SplashScene(), keepExistingScenes: true);
+            sceneManager.SetScene(new SplashScene(), keepExistingScenes: true);
 
         }
         else
@@ -193,77 +175,9 @@ public class Game : Microsoft.Xna.Framework.Game
 
             // Set a default scene if the scene stack is empty
             if (sceneManager._currentSceneList.Count == 0 && sceneManager.currentTransition == null)
-                SetScene(new DefaultScene());
+                sceneManager.SetScene(new DefaultScene());
         }
 
-    }
-
-    //
-    // System methods
-    //
-
-    /// <summary>
-    /// Registers a new game system.
-    /// All systems must be registered before use.
-    /// </summary>
-    /// <param name="system">The system to register.</param>
-    public void RegisterSystem(System system)
-    {
-        systemManager.RegisterSystem(system);
-    }
-
-    //
-    // Scene methods
-    //
-
-    /// <summary>
-    /// Returns the current top scene in the scene stack.
-    /// </summary>
-    /// <returns>The current top scene in the scene stack.</returns>
-    public Scene? GetCurrentScene()
-    {
-        return EngineGlobals.game.sceneManager.GetCurrentScene();
-    }
-
-    /// <summary>
-    /// Sets the current active game scene.
-    /// </summary>
-    /// <param name="scene">The scene to set as the active scene.</param>
-    /// <param name="transition">Specifies a transition between any current scenes and the newly-active scene (default = null).</param>
-    /// <param name="keepExistingScenes">Indicates whether to keep existing scenes on the scene stack, or remove them (default = false - remove all other scenes).</param>
-    public void SetScene(Scene scene, Transition? transition = null, bool keepExistingScenes = false)
-    {
-        EngineGlobals.game.sceneManager.SetScene([scene], transition, keepExistingScenes);
-    }
-
-    /// <summary>
-    /// Adds multiple scenes to the active scene stack.
-    /// </summary>
-    /// <param name="scenes">A list of scenes to add to the scene stack.</param>
-    /// <param name="transition">Specifies a transition between any current scenes and the newly-active scene (default = null).</param>
-    /// <param name="keepExistingScenes">Indicates whether to keep existing scenes on the scene stack, or remove them (default = false - remove all other scenes).</param>
-    public void SetScene(List<Scene> scenes, Transition? transition = null, bool keepExistingScenes = false)
-    {
-        EngineGlobals.game.sceneManager.SetScene(scenes, transition, keepExistingScenes);
-    }
-
-    /// <summary>
-    /// Removes the top, active scene from the scene stack.
-    /// </summary>
-    /// <param name="transition">Specifies a transition between any current scenes and the newly-active scene (default = null).</param>
-    /// <param name="numberOfScenesToRemove">The number of scenes to remove from the scene stack (default = 1).</param>
-    public void RemoveScene(Transition? transition = null, int numberOfScenesToRemove = 1)
-    {
-        EngineGlobals.game.sceneManager.RemoveScene(transition, numberOfScenesToRemove);
-    }
-
-    /// <summary>
-    /// Removes all scenes from the scene stack
-    /// (note: this will end the game loop).
-    /// </summary>
-    public void ClearScenes()
-    {
-        EngineGlobals.game.sceneManager.ClearScenes();
     }
 
     //
@@ -303,8 +217,7 @@ public class Game : Microsoft.Xna.Framework.Game
         }
 
         // Defer to the scene manager's draw method
-        EngineGlobals.game.sceneManager.Draw();
-        //EngineGlobals.inputManager.Draw();
+        sceneManager.Draw();
         base.Draw(gameTime);
 
     }
@@ -314,54 +227,8 @@ public class Game : Microsoft.Xna.Framework.Game
     /// </summary>
     public void Quit()
     {
-        ClearScenes();
+        sceneManager.ClearScenes();
         Exit();
-    }
-
-    //
-    // System methods
-    //
-
-    /// <summary>
-    /// Returns a string showing the order of execution of systems.
-    /// </summary>
-    /// <returns></returns>
-    public string PrintSystems()
-    {
-        return systemManager.PrintSystems();
-    }
-
-    /// <summary>
-    /// Positions the system of the specified type at the requested position.
-    /// This is useful for setting the order in which systems execute.
-    /// (Use `PrintSystems()` to see the order of systems.)
-    /// </summary>
-    /// <typeparam name="T">The type of system to move.</typeparam>
-    /// <param name="position">The new position of the system.</param>
-    public void PositionSystemType<T>(int position)
-    {
-        if (systemManager.IsRegistered<T>() && position >= 0 && position <= systemManager.registeredSystems.Count)
-        {
-            Type targetType = typeof(T);
-            object systemToMove = null;
-            for (int i = 0; i < systemManager.registeredSystems.Count; i++)
-            {
-                // Check the type of the current system in the list.
-                if (systemManager.registeredSystems[i].GetType() == targetType)
-                {
-                    systemToMove = systemManager.registeredSystems[i];
-                    break;
-                }
-            }
-            if (systemToMove != null)
-            {
-                // 4. Remove the system from its current position.
-                // This prevents duplication and ensures it's only in one place.
-                systemManager.registeredSystems.Remove((System)systemToMove);
-                // 6. Insert the system at the new position.
-                systemManager.registeredSystems.Insert(position, (System)systemToMove);
-            }
-        }
     }
 
 }

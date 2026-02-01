@@ -49,7 +49,7 @@ public class Camera
     /// </summary>
     public Vector2 ScreenSize;
 
-    private bool firstUpdate = true;
+    private bool _firstUpdate = true;
 
     /// <summary>
     /// The (x, y) target world position that the camera is focused on.
@@ -85,13 +85,12 @@ public class Camera
     /// </summary>
     public Color BorderColor;
 
-
     //
     // Zoom
     //
 
-    public float _currentZoom;
-    public float _startZoom;
+    private float _currentZoom;
+    private float _startZoom;
     private float _targetZoom;
     private float _startZoomLog;
     private float _targetZoomLog;
@@ -163,13 +162,11 @@ public class Camera
         UpdatePosition();
         UpdateClamp();
         
-        if (firstUpdate == true)
+        if (_firstUpdate == true)
         {
 
-            firstUpdate = false;
-
+            _firstUpdate = false;
             _currentWorldPosition = WorldPosition;
-
             _currentZoom = _targetZoom;
             _startZoom = _targetZoom;
             _zoomDuration = 0;

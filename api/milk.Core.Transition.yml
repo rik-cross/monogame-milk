@@ -7,15 +7,11 @@ items:
   children:
   - milk.Core.Transition.#ctor(System.Single,milk.Core.EasingFunctions.EasingDelegate)
   - milk.Core.Transition.Draw(Microsoft.Xna.Framework.Graphics.RenderTarget2D,Microsoft.Xna.Framework.Graphics.RenderTarget2D)
-  - milk.Core.Transition._Draw(Microsoft.Xna.Framework.Graphics.RenderTarget2D,Microsoft.Xna.Framework.Graphics.RenderTarget2D,System.Collections.Generic.List{milk.Core.Scene},System.Collections.Generic.List{milk.Core.Scene})
-  - milk.Core.Transition._Update(Microsoft.Xna.Framework.GameTime,System.Collections.Generic.List{milk.Core.Scene},System.Boolean)
   - milk.Core.Transition.easedPercentage
   - milk.Core.Transition.easing
   - milk.Core.Transition.elapsedDuration
   - milk.Core.Transition.finished
-  - milk.Core.Transition.graphicsDevice
   - milk.Core.Transition.percentageComplete
-  - milk.Core.Transition.spriteBatch
   - milk.Core.Transition.totalDuration
   langs:
   - csharp
@@ -31,10 +27,15 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: Transition
     path: Core/Transition.cs
-    startLine: 11
+    startLine: 15
   assemblies:
   - milk
   namespace: milk.Core
+  summary: >-
+    Transition base class. Not to be instantiated directly,
+
+    but new transitions should subclass this base class.
+  example: []
   syntax:
     content: public abstract class Transition
     content.vb: Public MustInherit Class Transition
@@ -70,7 +71,7 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: elapsedDuration
     path: Core/Transition.cs
-    startLine: 12
+    startLine: 16
   assemblies:
   - milk
   namespace: milk.Core
@@ -97,7 +98,7 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: totalDuration
     path: Core/Transition.cs
-    startLine: 13
+    startLine: 17
   assemblies:
   - milk
   namespace: milk.Core
@@ -124,7 +125,7 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: percentageComplete
     path: Core/Transition.cs
-    startLine: 14
+    startLine: 18
   assemblies:
   - milk
   namespace: milk.Core
@@ -151,7 +152,7 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: easedPercentage
     path: Core/Transition.cs
-    startLine: 15
+    startLine: 19
   assemblies:
   - milk
   namespace: milk.Core
@@ -178,7 +179,7 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: finished
     path: Core/Transition.cs
-    startLine: 16
+    startLine: 20
   assemblies:
   - milk
   namespace: milk.Core
@@ -205,7 +206,7 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: easing
     path: Core/Transition.cs
-    startLine: 17
+    startLine: 21
   assemblies:
   - milk
   namespace: milk.Core
@@ -214,60 +215,6 @@ items:
     return:
       type: milk.Core.EasingFunctions.EasingDelegate
     content.vb: Public easing As EasingFunctions.EasingDelegate
-- uid: milk.Core.Transition.spriteBatch
-  commentId: F:milk.Core.Transition.spriteBatch
-  id: spriteBatch
-  parent: milk.Core.Transition
-  langs:
-  - csharp
-  - vb
-  name: spriteBatch
-  nameWithType: Transition.spriteBatch
-  fullName: milk.Core.Transition.spriteBatch
-  type: Field
-  source:
-    remote:
-      path: Core/Transition.cs
-      branch: main
-      repo: git@github.com:rik-cross/monogame-milk.git
-    id: spriteBatch
-    path: Core/Transition.cs
-    startLine: 18
-  assemblies:
-  - milk
-  namespace: milk.Core
-  syntax:
-    content: public SpriteBatch spriteBatch
-    return:
-      type: Microsoft.Xna.Framework.Graphics.SpriteBatch
-    content.vb: Public spriteBatch As SpriteBatch
-- uid: milk.Core.Transition.graphicsDevice
-  commentId: F:milk.Core.Transition.graphicsDevice
-  id: graphicsDevice
-  parent: milk.Core.Transition
-  langs:
-  - csharp
-  - vb
-  name: graphicsDevice
-  nameWithType: Transition.graphicsDevice
-  fullName: milk.Core.Transition.graphicsDevice
-  type: Field
-  source:
-    remote:
-      path: Core/Transition.cs
-      branch: main
-      repo: git@github.com:rik-cross/monogame-milk.git
-    id: graphicsDevice
-    path: Core/Transition.cs
-    startLine: 19
-  assemblies:
-  - milk
-  namespace: milk.Core
-  syntax:
-    content: public GraphicsDevice graphicsDevice
-    return:
-      type: Microsoft.Xna.Framework.Graphics.GraphicsDevice
-    content.vb: Public graphicsDevice As GraphicsDevice
 - uid: milk.Core.Transition.#ctor(System.Single,milk.Core.EasingFunctions.EasingDelegate)
   commentId: M:milk.Core.Transition.#ctor(System.Single,milk.Core.EasingFunctions.EasingDelegate)
   id: '#ctor(System.Single,milk.Core.EasingFunctions.EasingDelegate)'
@@ -286,96 +233,22 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: .ctor
     path: Core/Transition.cs
-    startLine: 20
+    startLine: 23
   assemblies:
   - milk
   namespace: milk.Core
   syntax:
-    content: public Transition(float duration = 1000, EasingFunctions.EasingDelegate? easing = null)
+    content: protected Transition(float duration = 1, EasingFunctions.EasingDelegate? easing = null)
     parameters:
     - id: duration
       type: System.Single
     - id: easing
       type: milk.Core.EasingFunctions.EasingDelegate
-    content.vb: Public Sub New(duration As Single = 1000, easing As EasingFunctions.EasingDelegate = Nothing)
+    content.vb: Protected Sub New(duration As Single = 1, easing As EasingFunctions.EasingDelegate = Nothing)
   overload: milk.Core.Transition.#ctor*
   nameWithType.vb: Transition.New(Single, EasingFunctions.EasingDelegate)
   fullName.vb: milk.Core.Transition.New(Single, milk.Core.EasingFunctions.EasingDelegate)
   name.vb: New(Single, EasingDelegate)
-- uid: milk.Core.Transition._Draw(Microsoft.Xna.Framework.Graphics.RenderTarget2D,Microsoft.Xna.Framework.Graphics.RenderTarget2D,System.Collections.Generic.List{milk.Core.Scene},System.Collections.Generic.List{milk.Core.Scene})
-  commentId: M:milk.Core.Transition._Draw(Microsoft.Xna.Framework.Graphics.RenderTarget2D,Microsoft.Xna.Framework.Graphics.RenderTarget2D,System.Collections.Generic.List{milk.Core.Scene},System.Collections.Generic.List{milk.Core.Scene})
-  id: _Draw(Microsoft.Xna.Framework.Graphics.RenderTarget2D,Microsoft.Xna.Framework.Graphics.RenderTarget2D,System.Collections.Generic.List{milk.Core.Scene},System.Collections.Generic.List{milk.Core.Scene})
-  parent: milk.Core.Transition
-  langs:
-  - csharp
-  - vb
-  name: _Draw(RenderTarget2D, RenderTarget2D, List<Scene>, List<Scene>)
-  nameWithType: Transition._Draw(RenderTarget2D, RenderTarget2D, List<Scene>, List<Scene>)
-  fullName: milk.Core.Transition._Draw(Microsoft.Xna.Framework.Graphics.RenderTarget2D, Microsoft.Xna.Framework.Graphics.RenderTarget2D, System.Collections.Generic.List<milk.Core.Scene>, System.Collections.Generic.List<milk.Core.Scene>)
-  type: Method
-  source:
-    remote:
-      path: Core/Transition.cs
-      branch: main
-      repo: git@github.com:rik-cross/monogame-milk.git
-    id: _Draw
-    path: Core/Transition.cs
-    startLine: 35
-  assemblies:
-  - milk
-  namespace: milk.Core
-  syntax:
-    content: public void _Draw(RenderTarget2D existingScenesRenderTarget, RenderTarget2D newScenesRenderTarget, List<Scene> currentScenes, List<Scene> toScenes)
-    parameters:
-    - id: existingScenesRenderTarget
-      type: Microsoft.Xna.Framework.Graphics.RenderTarget2D
-    - id: newScenesRenderTarget
-      type: Microsoft.Xna.Framework.Graphics.RenderTarget2D
-    - id: currentScenes
-      type: System.Collections.Generic.List{milk.Core.Scene}
-    - id: toScenes
-      type: System.Collections.Generic.List{milk.Core.Scene}
-    content.vb: Public Sub _Draw(existingScenesRenderTarget As RenderTarget2D, newScenesRenderTarget As RenderTarget2D, currentScenes As List(Of Scene), toScenes As List(Of Scene))
-  overload: milk.Core.Transition._Draw*
-  nameWithType.vb: Transition._Draw(RenderTarget2D, RenderTarget2D, List(Of Scene), List(Of Scene))
-  fullName.vb: milk.Core.Transition._Draw(Microsoft.Xna.Framework.Graphics.RenderTarget2D, Microsoft.Xna.Framework.Graphics.RenderTarget2D, System.Collections.Generic.List(Of milk.Core.Scene), System.Collections.Generic.List(Of milk.Core.Scene))
-  name.vb: _Draw(RenderTarget2D, RenderTarget2D, List(Of Scene), List(Of Scene))
-- uid: milk.Core.Transition._Update(Microsoft.Xna.Framework.GameTime,System.Collections.Generic.List{milk.Core.Scene},System.Boolean)
-  commentId: M:milk.Core.Transition._Update(Microsoft.Xna.Framework.GameTime,System.Collections.Generic.List{milk.Core.Scene},System.Boolean)
-  id: _Update(Microsoft.Xna.Framework.GameTime,System.Collections.Generic.List{milk.Core.Scene},System.Boolean)
-  parent: milk.Core.Transition
-  langs:
-  - csharp
-  - vb
-  name: _Update(GameTime, List<Scene>, bool)
-  nameWithType: Transition._Update(GameTime, List<Scene>, bool)
-  fullName: milk.Core.Transition._Update(Microsoft.Xna.Framework.GameTime, System.Collections.Generic.List<milk.Core.Scene>, bool)
-  type: Method
-  source:
-    remote:
-      path: Core/Transition.cs
-      branch: main
-      repo: git@github.com:rik-cross/monogame-milk.git
-    id: _Update
-    path: Core/Transition.cs
-    startLine: 60
-  assemblies:
-  - milk
-  namespace: milk.Core
-  syntax:
-    content: public void _Update(GameTime gameTime, List<Scene> toScenes, bool unload)
-    parameters:
-    - id: gameTime
-      type: Microsoft.Xna.Framework.GameTime
-    - id: toScenes
-      type: System.Collections.Generic.List{milk.Core.Scene}
-    - id: unload
-      type: System.Boolean
-    content.vb: Public Sub _Update(gameTime As GameTime, toScenes As List(Of Scene), unload As Boolean)
-  overload: milk.Core.Transition._Update*
-  nameWithType.vb: Transition._Update(GameTime, List(Of Scene), Boolean)
-  fullName.vb: milk.Core.Transition._Update(Microsoft.Xna.Framework.GameTime, System.Collections.Generic.List(Of milk.Core.Scene), Boolean)
-  name.vb: _Update(GameTime, List(Of Scene), Boolean)
 - uid: milk.Core.Transition.Draw(Microsoft.Xna.Framework.Graphics.RenderTarget2D,Microsoft.Xna.Framework.Graphics.RenderTarget2D)
   commentId: M:milk.Core.Transition.Draw(Microsoft.Xna.Framework.Graphics.RenderTarget2D,Microsoft.Xna.Framework.Graphics.RenderTarget2D)
   id: Draw(Microsoft.Xna.Framework.Graphics.RenderTarget2D,Microsoft.Xna.Framework.Graphics.RenderTarget2D)
@@ -394,18 +267,18 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: Draw
     path: Core/Transition.cs
-    startLine: 77
+    startLine: 85
   assemblies:
   - milk
   namespace: milk.Core
   syntax:
-    content: public abstract void Draw(RenderTarget2D existingScenesRenderTarget, RenderTarget2D newScenesRenderTarget)
+    content: protected abstract void Draw(RenderTarget2D existingScenesRenderTarget, RenderTarget2D newScenesRenderTarget)
     parameters:
     - id: existingScenesRenderTarget
       type: Microsoft.Xna.Framework.Graphics.RenderTarget2D
     - id: newScenesRenderTarget
       type: Microsoft.Xna.Framework.Graphics.RenderTarget2D
-    content.vb: Public MustOverride Sub Draw(existingScenesRenderTarget As RenderTarget2D, newScenesRenderTarget As RenderTarget2D)
+    content.vb: Protected MustOverride Sub Draw(existingScenesRenderTarget As RenderTarget2D, newScenesRenderTarget As RenderTarget2D)
   overload: milk.Core.Transition.Draw*
 references:
 - uid: milk.Core
@@ -712,13 +585,28 @@ references:
   - uid: milk.Core.EasingFunctions.EasingDelegate
     name: EasingDelegate
     href: milk.Core.EasingFunctions.EasingDelegate.html
-- uid: Microsoft.Xna.Framework.Graphics.SpriteBatch
-  commentId: T:Microsoft.Xna.Framework.Graphics.SpriteBatch
+- uid: milk.Core.Transition.#ctor*
+  commentId: Overload:milk.Core.Transition.#ctor
+  href: milk.Core.Transition.html#milk_Core_Transition__ctor_System_Single_milk_Core_EasingFunctions_EasingDelegate_
+  name: Transition
+  nameWithType: Transition.Transition
+  fullName: milk.Core.Transition.Transition
+  nameWithType.vb: Transition.New
+  fullName.vb: milk.Core.Transition.New
+  name.vb: New
+- uid: milk.Core.Transition.Draw*
+  commentId: Overload:milk.Core.Transition.Draw
+  href: milk.Core.Transition.html#milk_Core_Transition_Draw_Microsoft_Xna_Framework_Graphics_RenderTarget2D_Microsoft_Xna_Framework_Graphics_RenderTarget2D_
+  name: Draw
+  nameWithType: Transition.Draw
+  fullName: milk.Core.Transition.Draw
+- uid: Microsoft.Xna.Framework.Graphics.RenderTarget2D
+  commentId: T:Microsoft.Xna.Framework.Graphics.RenderTarget2D
   parent: Microsoft.Xna.Framework.Graphics
   isExternal: true
-  name: SpriteBatch
-  nameWithType: SpriteBatch
-  fullName: Microsoft.Xna.Framework.Graphics.SpriteBatch
+  name: RenderTarget2D
+  nameWithType: RenderTarget2D
+  fullName: Microsoft.Xna.Framework.Graphics.RenderTarget2D
 - uid: Microsoft.Xna.Framework.Graphics
   commentId: N:Microsoft.Xna.Framework.Graphics
   isExternal: true
@@ -757,179 +645,3 @@ references:
   - uid: Microsoft.Xna.Framework.Graphics
     name: Graphics
     isExternal: true
-- uid: Microsoft.Xna.Framework.Graphics.GraphicsDevice
-  commentId: T:Microsoft.Xna.Framework.Graphics.GraphicsDevice
-  parent: Microsoft.Xna.Framework.Graphics
-  isExternal: true
-  name: GraphicsDevice
-  nameWithType: GraphicsDevice
-  fullName: Microsoft.Xna.Framework.Graphics.GraphicsDevice
-- uid: milk.Core.Transition.#ctor*
-  commentId: Overload:milk.Core.Transition.#ctor
-  href: milk.Core.Transition.html#milk_Core_Transition__ctor_System_Single_milk_Core_EasingFunctions_EasingDelegate_
-  name: Transition
-  nameWithType: Transition.Transition
-  fullName: milk.Core.Transition.Transition
-  nameWithType.vb: Transition.New
-  fullName.vb: milk.Core.Transition.New
-  name.vb: New
-- uid: milk.Core.Transition._Draw*
-  commentId: Overload:milk.Core.Transition._Draw
-  href: milk.Core.Transition.html#milk_Core_Transition__Draw_Microsoft_Xna_Framework_Graphics_RenderTarget2D_Microsoft_Xna_Framework_Graphics_RenderTarget2D_System_Collections_Generic_List_milk_Core_Scene__System_Collections_Generic_List_milk_Core_Scene__
-  name: _Draw
-  nameWithType: Transition._Draw
-  fullName: milk.Core.Transition._Draw
-- uid: Microsoft.Xna.Framework.Graphics.RenderTarget2D
-  commentId: T:Microsoft.Xna.Framework.Graphics.RenderTarget2D
-  parent: Microsoft.Xna.Framework.Graphics
-  isExternal: true
-  name: RenderTarget2D
-  nameWithType: RenderTarget2D
-  fullName: Microsoft.Xna.Framework.Graphics.RenderTarget2D
-- uid: System.Collections.Generic.List{milk.Core.Scene}
-  commentId: T:System.Collections.Generic.List{milk.Core.Scene}
-  parent: System.Collections.Generic
-  definition: System.Collections.Generic.List`1
-  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
-  name: List<Scene>
-  nameWithType: List<Scene>
-  fullName: System.Collections.Generic.List<milk.Core.Scene>
-  nameWithType.vb: List(Of Scene)
-  fullName.vb: System.Collections.Generic.List(Of milk.Core.Scene)
-  name.vb: List(Of Scene)
-  spec.csharp:
-  - uid: System.Collections.Generic.List`1
-    name: List
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
-  - name: <
-  - uid: milk.Core.Scene
-    name: Scene
-    href: milk.Core.Scene.html
-  - name: '>'
-  spec.vb:
-  - uid: System.Collections.Generic.List`1
-    name: List
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
-  - name: (
-  - name: Of
-  - name: " "
-  - uid: milk.Core.Scene
-    name: Scene
-    href: milk.Core.Scene.html
-  - name: )
-- uid: System.Collections.Generic.List`1
-  commentId: T:System.Collections.Generic.List`1
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
-  name: List<T>
-  nameWithType: List<T>
-  fullName: System.Collections.Generic.List<T>
-  nameWithType.vb: List(Of T)
-  fullName.vb: System.Collections.Generic.List(Of T)
-  name.vb: List(Of T)
-  spec.csharp:
-  - uid: System.Collections.Generic.List`1
-    name: List
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
-  - name: <
-  - name: T
-  - name: '>'
-  spec.vb:
-  - uid: System.Collections.Generic.List`1
-    name: List
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
-  - name: (
-  - name: Of
-  - name: " "
-  - name: T
-  - name: )
-- uid: System.Collections.Generic
-  commentId: N:System.Collections.Generic
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system
-  name: System.Collections.Generic
-  nameWithType: System.Collections.Generic
-  fullName: System.Collections.Generic
-  spec.csharp:
-  - uid: System
-    name: System
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system
-  - name: .
-  - uid: System.Collections
-    name: Collections
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections
-  - name: .
-  - uid: System.Collections.Generic
-    name: Generic
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
-  spec.vb:
-  - uid: System
-    name: System
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system
-  - name: .
-  - uid: System.Collections
-    name: Collections
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections
-  - name: .
-  - uid: System.Collections.Generic
-    name: Generic
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
-- uid: milk.Core.Transition._Update*
-  commentId: Overload:milk.Core.Transition._Update
-  href: milk.Core.Transition.html#milk_Core_Transition__Update_Microsoft_Xna_Framework_GameTime_System_Collections_Generic_List_milk_Core_Scene__System_Boolean_
-  name: _Update
-  nameWithType: Transition._Update
-  fullName: milk.Core.Transition._Update
-- uid: Microsoft.Xna.Framework.GameTime
-  commentId: T:Microsoft.Xna.Framework.GameTime
-  parent: Microsoft.Xna.Framework
-  isExternal: true
-  name: GameTime
-  nameWithType: GameTime
-  fullName: Microsoft.Xna.Framework.GameTime
-- uid: Microsoft.Xna.Framework
-  commentId: N:Microsoft.Xna.Framework
-  isExternal: true
-  name: Microsoft.Xna.Framework
-  nameWithType: Microsoft.Xna.Framework
-  fullName: Microsoft.Xna.Framework
-  spec.csharp:
-  - uid: Microsoft
-    name: Microsoft
-    isExternal: true
-  - name: .
-  - uid: Microsoft.Xna
-    name: Xna
-    isExternal: true
-  - name: .
-  - uid: Microsoft.Xna.Framework
-    name: Framework
-    isExternal: true
-  spec.vb:
-  - uid: Microsoft
-    name: Microsoft
-    isExternal: true
-  - name: .
-  - uid: Microsoft.Xna
-    name: Xna
-    isExternal: true
-  - name: .
-  - uid: Microsoft.Xna.Framework
-    name: Framework
-    isExternal: true
-- uid: milk.Core.Transition.Draw*
-  commentId: Overload:milk.Core.Transition.Draw
-  href: milk.Core.Transition.html#milk_Core_Transition_Draw_Microsoft_Xna_Framework_Graphics_RenderTarget2D_Microsoft_Xna_Framework_Graphics_RenderTarget2D_
-  name: Draw
-  nameWithType: Transition.Draw
-  fullName: milk.Core.Transition.Draw

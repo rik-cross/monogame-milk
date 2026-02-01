@@ -15,10 +15,10 @@ internal class EntityManager
     private SceneManager _sceneManager = EngineGlobals.game.sceneManager;
 
     public readonly int MaxExtities;
-    public List<Entity> _allEntities = new List<Entity>();
+    internal List<Entity> _allEntities = new List<Entity>();
     private Queue<int> IDPool = new Queue<int>();
 
-    public EntityManager(int maxExtities)
+    internal EntityManager(int maxExtities)
     {
 
         MaxExtities = maxExtities;
@@ -28,12 +28,12 @@ internal class EntityManager
 
     }
 
-    public void AddEntity(Entity entity)
+    internal void AddEntity(Entity entity)
     {
         _allEntities.Add(entity);
     }
 
-    public void DeleteEntities()
+    internal void DeleteEntities()
     {
 
         // delete entity from all scenes
@@ -56,7 +56,7 @@ internal class EntityManager
                         // only if the entity has the required components for the system
                         BitArray temp = (BitArray)system.RequiredComponentBitMask.Clone();
                         temp.And(e.bitMask);
-                        if (Utils.CompareBitArrays(temp, system.RequiredComponentBitMask) == true)
+                        if (Utilities.CompareBitArrays(temp, system.RequiredComponentBitMask) == true)
                             system.OnEntityRemovedFromScene(scene, e);
 
                     }
@@ -77,7 +77,7 @@ internal class EntityManager
         
     }
 
-    public void CheckInID(int ID)
+    internal void CheckInID(int ID)
     {
         IDPool.Enqueue(ID);
         IDPool.Order();
@@ -85,19 +85,19 @@ internal class EntityManager
         // should components be removed, etc.?
     }
 
-    public int CheckOutID()
+    internal int CheckOutID()
     {
         return IDPool.Dequeue();
     }
 
     // Get the (only) entity in the list of all entities
-    public Entity? GetEntityByName(string name)
+    internal Entity? GetEntityByName(string name)
     {
         return GetEntityByNameInList(_allEntities, name);
     }
 
     // Get the (only) entity in a provided list by name
-    public Entity? GetEntityByNameInList(List<Entity> entityList, string name)
+    internal Entity? GetEntityByNameInList(List<Entity> entityList, string name)
     {
         foreach (Entity entity in entityList)
         {
@@ -107,12 +107,12 @@ internal class EntityManager
         return null;
     }
 
-    public List<Entity> GetEntitiesByTag(params string[] tags)
+    internal List<Entity> GetEntitiesByTag(params string[] tags)
     {
         return GetEntitiesByTagInList(_allEntities, tags);
     }
 
-    public List<Entity> GetEntitiesByTagInList(List<Entity> entityList, params string[] tags)
+    internal List<Entity> GetEntitiesByTagInList(List<Entity> entityList, params string[] tags)
     {
         List<Entity> returnList = new List<Entity>();
         foreach (Entity entity in entityList)
@@ -123,7 +123,7 @@ internal class EntityManager
         return returnList;
     }
 
-    public void RemoveEntityByNameInList(List<Entity> entityList, string name)
+    internal void RemoveEntityByNameInList(List<Entity> entityList, string name)
     {
         foreach (Entity entity in entityList)
         {
@@ -139,24 +139,13 @@ internal class EntityManager
         }
     }
 
-    public void RemoveEntitiesByTagInList(List<Entity> entityList, params string[] tags)
+    internal void RemoveEntitiesByTagInList(List<Entity> entityList, params string[] tags)
     {
         for (int i = entityList.Count - 1; i > 0; i--)
         {
             if (entityList[i].HasTag(tags))
                 entityList.RemoveAt(i);
         }
-    }
-
-    public override string ToString()
-    {
-        string output = "";
-        output += Theme.CreateConsoleTitle("EntityManager");
-        int percentage = (int)((float)_allEntities.Count / (float)MaxExtities * 100 / 10);
-        string p = _allEntities.Count.ToString() + "/" + MaxExtities.ToString() + " created" + " ";
-        p += new string('◼', percentage) + new string('◻', 10 - percentage);
-        output += Theme.PrintConsoleVar("Entities", p);
-        return output;
     }
 
 }

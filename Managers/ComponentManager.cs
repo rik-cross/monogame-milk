@@ -10,7 +10,7 @@ internal class ComponentManager {
 
     // The maximum number of components is used to create
     // a 2D entity-component list of the correct size
-    public readonly int maxComponents;
+    internal readonly int maxComponents;
 
     // The component types list stores the type of all
     // registered component types. The ID of a component
@@ -21,7 +21,7 @@ internal class ComponentManager {
     // stored as _entityComponents[componentID][entityID]
     private Component[,] _entityComponents;
 
-    public ComponentManager(int maxComponents, int maxEntities) {
+    internal ComponentManager(int maxComponents, int maxEntities) {
         this.maxComponents = maxComponents;
         _entityComponents = new Component[maxComponents, maxEntities];
     }
@@ -32,7 +32,7 @@ internal class ComponentManager {
 
     // Registers a component type by adding it to the list of
     // component types. A component type can only be registered once
-    public void RegisterComponentType(Type componentType)
+    internal void RegisterComponentType(Type componentType)
     {
         if (_componentTypesList.Contains(componentType) == false)
             _componentTypesList.Add(componentType);
@@ -40,7 +40,7 @@ internal class ComponentManager {
 
     // Returns true if the component type exists in the
     // component types list
-    public bool IsComponentTypeRegistered(Type componentType)
+    internal bool IsComponentTypeRegistered(Type componentType)
     {
         if (_componentTypesList.Contains(componentType))
             return true;
@@ -51,7 +51,7 @@ internal class ComponentManager {
     // Returns the ID of a provided component type, which is just
     // the index of the component type in the registered types list.
     // (Only call this if the component type is already registered)
-    public int GetComponentTypeID(Type componentType)
+    internal int GetComponentTypeID(Type componentType)
     {
         return _componentTypesList.IndexOf(componentType);
     }
@@ -60,7 +60,7 @@ internal class ComponentManager {
     // Entities and components
     //
 
-    public void AddComponentToEntity(Entity entity, Component component)
+    internal void AddComponentToEntity(Entity entity, Component component)
     {
 
         // Register the type of the component if not already registered.
@@ -84,7 +84,7 @@ internal class ComponentManager {
     // Returns the component of the specified template type
     // for the specified entity. Returns null if the entity doesn't have
     // a component of the specified type
-    public T? GetComponentForEntity<T>(Entity entity) where T : Component
+    internal T? GetComponentForEntity<T>(Entity entity) where T : Component
     {
 
         // Return null if the component type isn't registered
@@ -103,7 +103,7 @@ internal class ComponentManager {
 
     // Returns true if the entity has a component of the specified
     // component type
-    public bool EntityHasComponentOfType<T>(Entity entity) where T : Component
+    internal bool EntityHasComponentOfType<T>(Entity entity) where T : Component
     {
 
         // Return false if the provided component type isn't registered
@@ -118,7 +118,7 @@ internal class ComponentManager {
 
     // Removes the component of the specified type from the entity provided
     // (if one exists)
-    public void RemoveComponentFromEntity<T>(Entity entity) where T : Component
+    internal void RemoveComponentFromEntity<T>(Entity entity) where T : Component
     {
 
         // Do nothing if the component type isn't registered
@@ -145,7 +145,7 @@ internal class ComponentManager {
     }
 
     // Removes all components for the specified entity
-    public void RemoveAllComponentsFromEntity(Entity entity)
+    internal void RemoveAllComponentsFromEntity(Entity entity)
     {
 
         // Loop through all components
@@ -169,7 +169,7 @@ internal class ComponentManager {
 
     // Keeps track of which components an entity has. This is useful
     // for running systems for entities with the correct set of components
-    public void UpdateEntityComponentFlagsForEntity(Entity entity)
+    internal void UpdateEntityComponentFlagsForEntity(Entity entity)
     {
         // Iterate over each component type
         for (int componentID = 0; componentID < _entityComponents.GetLength(0); componentID++)
@@ -179,30 +179,6 @@ internal class ComponentManager {
             // at the position of the component in the entity-component list
             entity.bitMask.Set(componentID, _entityComponents[componentID, entity.ID] != null);
         }
-    }
-
-    public override string ToString()
-    {
-        string output = "";
-        output += Theme.CreateConsoleTitle("ComponentManager");
-        string components = _componentTypesList.Count + "/" + _entityComponents.GetLength(0).ToString() + " created ";
-        int percentage = (int)((float)_componentTypesList.Count / (float)maxComponents * 100 / 10);
-        components += new string('◼', percentage) + new string('◻', 10-percentage);
-        output += Theme.PrintConsoleVar("Components", components);
-        output += " Entities→ / components↓\n";
-        for (int i = 0; i < _entityComponents.GetLength(0); i++)
-        {
-            output += " ";
-            for (int j = 0; j < _entityComponents.GetLength(1); j++)
-            {
-                if (_entityComponents[i, j] == null)
-                    output += "◻";
-                else
-                    output += "◼";
-            }
-            output += "\n";
-        }
-        return output;
     }
 
 }

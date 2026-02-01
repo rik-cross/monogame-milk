@@ -16,15 +16,17 @@ items:
   type: Class
   source:
     remote:
-      path: Utilities/Utilities.cs
+      path: Core/Utilities.cs
       branch: main
       repo: git@github.com:rik-cross/monogame-milk.git
     id: Utilities
-    path: Utilities/Utilities.cs
-    startLine: 6
+    path: Core/Utilities.cs
+    startLine: 16
   assemblies:
   - milk
   namespace: milk.Core
+  summary: A suite of useful additional utilities.
+  example: []
   syntax:
     content: public static class Utilities
     content.vb: Public Module Utilities
@@ -51,26 +53,35 @@ items:
   type: Method
   source:
     remote:
-      path: Utilities/Utilities.cs
+      path: Core/Utilities.cs
       branch: main
       repo: git@github.com:rik-cross/monogame-milk.git
     id: SplitTexture
-    path: Utilities/Utilities.cs
-    startLine: 8
+    path: Core/Utilities.cs
+    startLine: 27
   assemblies:
   - milk
   namespace: milk.Core
+  summary: >-
+    Splits an original source texture into a 2D list of sub-textures,
+
+    using the size and clipping rectangle provided.
+  example: []
   syntax:
     content: public static List<List<Texture2D>> SplitTexture(Texture2D originalTexture, Vector2 subTextureSize, Rectangle subTextureClippingRect = default)
     parameters:
     - id: originalTexture
       type: Microsoft.Xna.Framework.Graphics.Texture2D
+      description: The texture to split.
     - id: subTextureSize
       type: Microsoft.Xna.Framework.Vector2
+      description: The (w, h) size to split the original texture into.
     - id: subTextureClippingRect
       type: Microsoft.Xna.Framework.Rectangle
+      description: Specifies a sub-region of the sub-textures to split.
     return:
       type: System.Collections.Generic.List{System.Collections.Generic.List{Microsoft.Xna.Framework.Graphics.Texture2D}}
+      description: A 2D list of textures, mapped to the position of the sub-textures in the original texture.
     content.vb: Public Shared Function SplitTexture(originalTexture As Texture2D, subTextureSize As Vector2, subTextureClippingRect As Rectangle = Nothing) As List(Of List(Of Texture2D))
   overload: milk.Core.Utilities.SplitTexture*
 - uid: milk.Core.Utilities.GetSubTexture(Microsoft.Xna.Framework.Graphics.Texture2D,System.Int32,System.Int32,System.Int32,System.Int32)
@@ -86,30 +97,38 @@ items:
   type: Method
   source:
     remote:
-      path: Utilities/Utilities.cs
+      path: Core/Utilities.cs
       branch: main
       repo: git@github.com:rik-cross/monogame-milk.git
     id: GetSubTexture
-    path: Utilities/Utilities.cs
-    startLine: 42
+    path: Core/Utilities.cs
+    startLine: 77
   assemblies:
   - milk
   namespace: milk.Core
+  summary: Returns a sub-region of the specified texture.
+  example: []
   syntax:
     content: public static Texture2D GetSubTexture(Texture2D texture, int x, int y, int width, int height)
     parameters:
     - id: texture
       type: Microsoft.Xna.Framework.Graphics.Texture2D
+      description: The texture to crop.
     - id: x
       type: System.Int32
+      description: The starting x position.
     - id: y
       type: System.Int32
+      description: The starting y position.
     - id: width
       type: System.Int32
+      description: The width to crop to.
     - id: height
       type: System.Int32
+      description: The height to crop to.
     return:
       type: Microsoft.Xna.Framework.Graphics.Texture2D
+      description: A cropped texture.
     content.vb: Public Shared Function GetSubTexture(texture As Texture2D, x As Integer, y As Integer, width As Integer, height As Integer) As Texture2D
   overload: milk.Core.Utilities.GetSubTexture*
   nameWithType.vb: Utilities.GetSubTexture(Texture2D, Integer, Integer, Integer, Integer)

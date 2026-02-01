@@ -87,13 +87,21 @@
         <article data-uid="">
 <h1 id="introduction">Introduction</h1>
 
-<p>MonoGameECS is a minimal, beginner-friendly engine that prioritises ease of use. This means that the long-term goals for the project are:</p>
+<p>MonoGame Intuitive Library Toolkit (milk) is a minimal, beginner-friendly engine that prioritises ease of use. This means that the <strong>long-term</strong> goals for the project are:</p>
 <ul>
 <li>Minimal setup, e.g. users do not need to register components.</li>
 <li>Interaction only with tangible objects, e.g. <code>entity.AddComponent(component)</code> rather than <code>componentManager.AddComponentToEntity(entity, component)</code>.</li>
 <li>Maximise default object values, e.g. <code>myImage = new Image()</code> should be possible (creating a 'blank' placeholder image).</li>
-<li>Clear, fully commented code. This repo should serve as a guide to simple ECS development.</li>
+<li>Clear, fully commented code. This repository should serve as a guide to simple ECS development.</li>
 </ul>
+<p>milk is a layer on top of MonoGame, that provides additional functionality. For example, milk allows you to easily create scenes, entities, cameras, maps, UI, etc.</p>
+<p>milk is an ECS engine, which has the following structure:</p>
+<ul>
+<li>Entities are just collections of components</li>
+<li>Components are a way of grouping data</li>
+<li>Systems are the logic that act on the components</li>
+</ul>
+<p>Entities are added to scenes, and then components are added to entities. Systems them process entities that have all of the required components.</p>
 
 </article>
 

@@ -158,7 +158,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "milk.Components.SpriteComponent",
-      "Summary": "<p sourcefile=\"api/milk.Components.SpriteComponent.yml\" sourcestartlinenumber=\"1\">Associates one or more textures (in a <code sourcefile=\"api/milk.Components.SpriteComponent.yml\" sourcestartlinenumber=\"1\">Sprite</code>) with a state.</p>\n"
+      "Summary": "<p sourcefile=\"api/milk.Components.SpriteComponent.yml\" sourcestartlinenumber=\"1\">Associates one or more texture lists with a state,\nalong with some associated preferences for each list.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -372,6 +372,34 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/milk.Core.Milk.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/milk.Core.Milk.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "milk.Core.Milk",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/milk.Core.MilkMethods.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/milk.Core.MilkMethods.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "milk.Core.MilkMethods",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/milk.Core.Scene.yml",
       "output": {
         ".html": {
@@ -383,6 +411,20 @@
       "IsMRef": true,
       "Title": "milk.Core.Scene",
       "Summary": "<p sourcefile=\"api/milk.Core.Scene.yml\" sourcestartlinenumber=\"1\">A scene is a collection of entities and systems, and can be thought\nof as game 'screens'. Each system in a scene acts on all entities in\nthe scene with the required set of components.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/milk.Core.SceneManager.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/milk.Core.SceneManager.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "milk.Core.SceneManager",
+      "Summary": null
     },
     {
       "type": "ManagedReference",
@@ -428,6 +470,20 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/milk.Core.SystemManager.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/milk.Core.SystemManager.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "milk.Core.SystemManager",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/milk.Core.Text.yml",
       "output": {
         ".html": {
@@ -466,7 +522,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "milk.Core.Transition",
-      "Summary": null
+      "Summary": "<p sourcefile=\"api/milk.Core.Transition.yml\" sourcestartlinenumber=\"1\">Transition base class. Not to be instantiated directly,\nbut new transitions should subclass this base class.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -480,7 +536,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "milk.Core.Utilities",
-      "Summary": null
+      "Summary": "<p sourcefile=\"api/milk.Core.Utilities.yml\" sourcestartlinenumber=\"1\">A suite of useful additional utilities.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -1026,7 +1082,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "milk.Transitions.TransitionFadeBetween",
-      "Summary": null
+      "Summary": "<p sourcefile=\"api/milk.Transitions.TransitionFadeBetween.yml\" sourcestartlinenumber=\"1\">Fades between 2 scenes.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -1040,7 +1096,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "milk.Transitions.TransitionFadeIn",
-      "Summary": null
+      "Summary": "<p sourcefile=\"api/milk.Transitions.TransitionFadeIn.yml\" sourcestartlinenumber=\"1\">Fades a new scene into the current scene.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -1054,7 +1110,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "milk.Transitions.TransitionFadeToBlack",
-      "Summary": null
+      "Summary": "<p sourcefile=\"api/milk.Transitions.TransitionFadeToBlack.yml\" sourcestartlinenumber=\"1\">Fades to black between scenes.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -1114,6 +1170,20 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/milk.UI.Anchor.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/milk.UI.Anchor.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "milk.UI.Anchor",
+      "Summary": "<p sourcefile=\"api/milk.UI.Anchor.yml\" sourcestartlinenumber=\"1\">The part of a SceneRenderable to set the position against.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/milk.UI.Button.yml",
       "output": {
         ".html": {
@@ -1125,6 +1195,48 @@
       "IsMRef": true,
       "Title": "milk.UI.Button",
       "Summary": "<p sourcefile=\"api/milk.UI.Button.yml\" sourcestartlinenumber=\"1\">A button ties an area of the screen with callbacks.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/milk.UI.Image.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/milk.UI.Image.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "milk.UI.Image",
+      "Summary": "<p sourcefile=\"api/milk.UI.Image.yml\" sourcestartlinenumber=\"1\">An image can be displayed within a scene.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/milk.UI.SceneRenderable.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/milk.UI.SceneRenderable.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "milk.UI.SceneRenderable",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/milk.UI.Text.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/milk.UI.Text.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "milk.UI.Text",
+      "Summary": "<p sourcefile=\"api/milk.UI.Text.yml\" sourcestartlinenumber=\"1\">Displays text in a scene, in the font specified.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -1152,7 +1264,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "milk.UI.UIElement",
-      "Summary": "<p sourcefile=\"api/milk.UI.UIElement.yml\" sourcestartlinenumber=\"1\">A UI element is the base class for all UI items.\nThis class shouldn't be used directly.</p>\n"
+      "Summary": null
     },
     {
       "type": "ManagedReference",

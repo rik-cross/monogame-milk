@@ -6,11 +6,11 @@ items:
   parent: milk.Components
   children:
   - milk.Components.TriggerComponent.#ctor(Microsoft.Xna.Framework.Vector2,System.Nullable{Microsoft.Xna.Framework.Vector2},System.Action{milk.Core.Entity,milk.Core.Entity,System.Single},System.Action{milk.Core.Entity,milk.Core.Entity,System.Single},System.Action{milk.Core.Entity,milk.Core.Entity,System.Single})
-  - milk.Components.TriggerComponent.offset
-  - milk.Components.TriggerComponent.onCollide
-  - milk.Components.TriggerComponent.onCollisionEnter
-  - milk.Components.TriggerComponent.onCollisionExit
-  - milk.Components.TriggerComponent.size
+  - milk.Components.TriggerComponent.Offset
+  - milk.Components.TriggerComponent.OnCollide
+  - milk.Components.TriggerComponent.OnCollisionEnter
+  - milk.Components.TriggerComponent.OnCollisionExit
+  - milk.Components.TriggerComponent.Size
   langs:
   - csharp
   - vb
@@ -40,30 +40,30 @@ items:
   inheritedMembers:
   - milk.Core.Component.OnAddedToEntity(milk.Core.Entity)
   - milk.Core.Component.OnRemovedFromEntity(milk.Core.Entity)
-  - milk.Core.Component.ToString
   - System.Object.Equals(System.Object)
   - System.Object.Equals(System.Object,System.Object)
   - System.Object.GetHashCode
   - System.Object.GetType
   - System.Object.MemberwiseClone
   - System.Object.ReferenceEquals(System.Object,System.Object)
-- uid: milk.Components.TriggerComponent.size
-  commentId: F:milk.Components.TriggerComponent.size
-  id: size
+  - System.Object.ToString
+- uid: milk.Components.TriggerComponent.Size
+  commentId: F:milk.Components.TriggerComponent.Size
+  id: Size
   parent: milk.Components.TriggerComponent
   langs:
   - csharp
   - vb
-  name: size
-  nameWithType: TriggerComponent.size
-  fullName: milk.Components.TriggerComponent.size
+  name: Size
+  nameWithType: TriggerComponent.Size
+  fullName: milk.Components.TriggerComponent.Size
   type: Field
   source:
     remote:
       path: Components/TriggerComponent.cs
       branch: main
       repo: git@github.com:rik-cross/monogame-milk.git
-    id: size
+    id: Size
     path: Components/TriggerComponent.cs
     startLine: 20
   assemblies:
@@ -72,27 +72,27 @@ items:
   summary: The (x,y) size of the trigger.
   example: []
   syntax:
-    content: public Vector2 size
+    content: public Vector2 Size
     return:
       type: Microsoft.Xna.Framework.Vector2
-    content.vb: Public size As Vector2
-- uid: milk.Components.TriggerComponent.offset
-  commentId: F:milk.Components.TriggerComponent.offset
-  id: offset
+    content.vb: Public Size As Vector2
+- uid: milk.Components.TriggerComponent.Offset
+  commentId: F:milk.Components.TriggerComponent.Offset
+  id: Offset
   parent: milk.Components.TriggerComponent
   langs:
   - csharp
   - vb
-  name: offset
-  nameWithType: TriggerComponent.offset
-  fullName: milk.Components.TriggerComponent.offset
+  name: Offset
+  nameWithType: TriggerComponent.Offset
+  fullName: milk.Components.TriggerComponent.Offset
   type: Field
   source:
     remote:
       path: Components/TriggerComponent.cs
       branch: main
       repo: git@github.com:rik-cross/monogame-milk.git
-    id: offset
+    id: Offset
     path: Components/TriggerComponent.cs
     startLine: 25
   assemblies:
@@ -101,27 +101,27 @@ items:
   summary: The (x,y) offset from the entity top-left position.
   example: []
   syntax:
-    content: public Vector2 offset
+    content: public Vector2 Offset
     return:
       type: Microsoft.Xna.Framework.Vector2
-    content.vb: Public offset As Vector2
-- uid: milk.Components.TriggerComponent.onCollisionEnter
-  commentId: F:milk.Components.TriggerComponent.onCollisionEnter
-  id: onCollisionEnter
+    content.vb: Public Offset As Vector2
+- uid: milk.Components.TriggerComponent.OnCollisionEnter
+  commentId: F:milk.Components.TriggerComponent.OnCollisionEnter
+  id: OnCollisionEnter
   parent: milk.Components.TriggerComponent
   langs:
   - csharp
   - vb
-  name: onCollisionEnter
-  nameWithType: TriggerComponent.onCollisionEnter
-  fullName: milk.Components.TriggerComponent.onCollisionEnter
+  name: OnCollisionEnter
+  nameWithType: TriggerComponent.OnCollisionEnter
+  fullName: milk.Components.TriggerComponent.OnCollisionEnter
   type: Field
   source:
     remote:
       path: Components/TriggerComponent.cs
       branch: main
       repo: git@github.com:rik-cross/monogame-milk.git
-    id: onCollisionEnter
+    id: OnCollisionEnter
     path: Components/TriggerComponent.cs
     startLine: 30
   assemblies:
@@ -130,27 +130,27 @@ items:
   summary: Called once when 2 colliders first intersect.
   example: []
   syntax:
-    content: public Action<Entity, Entity, float>? onCollisionEnter
+    content: public Action<Entity, Entity, float>? OnCollisionEnter
     return:
       type: System.Action{milk.Core.Entity,milk.Core.Entity,System.Single}
-    content.vb: Public onCollisionEnter As Action(Of Entity, Entity, Single)
-- uid: milk.Components.TriggerComponent.onCollide
-  commentId: F:milk.Components.TriggerComponent.onCollide
-  id: onCollide
+    content.vb: Public OnCollisionEnter As Action(Of Entity, Entity, Single)
+- uid: milk.Components.TriggerComponent.OnCollide
+  commentId: F:milk.Components.TriggerComponent.OnCollide
+  id: OnCollide
   parent: milk.Components.TriggerComponent
   langs:
   - csharp
   - vb
-  name: onCollide
-  nameWithType: TriggerComponent.onCollide
-  fullName: milk.Components.TriggerComponent.onCollide
+  name: OnCollide
+  nameWithType: TriggerComponent.OnCollide
+  fullName: milk.Components.TriggerComponent.OnCollide
   type: Field
   source:
     remote:
       path: Components/TriggerComponent.cs
       branch: main
       repo: git@github.com:rik-cross/monogame-milk.git
-    id: onCollide
+    id: OnCollide
     path: Components/TriggerComponent.cs
     startLine: 35
   assemblies:
@@ -159,27 +159,27 @@ items:
   summary: Called for every frame that 2 colliders intersect.
   example: []
   syntax:
-    content: public Action<Entity, Entity, float>? onCollide
+    content: public Action<Entity, Entity, float>? OnCollide
     return:
       type: System.Action{milk.Core.Entity,milk.Core.Entity,System.Single}
-    content.vb: Public onCollide As Action(Of Entity, Entity, Single)
-- uid: milk.Components.TriggerComponent.onCollisionExit
-  commentId: F:milk.Components.TriggerComponent.onCollisionExit
-  id: onCollisionExit
+    content.vb: Public OnCollide As Action(Of Entity, Entity, Single)
+- uid: milk.Components.TriggerComponent.OnCollisionExit
+  commentId: F:milk.Components.TriggerComponent.OnCollisionExit
+  id: OnCollisionExit
   parent: milk.Components.TriggerComponent
   langs:
   - csharp
   - vb
-  name: onCollisionExit
-  nameWithType: TriggerComponent.onCollisionExit
-  fullName: milk.Components.TriggerComponent.onCollisionExit
+  name: OnCollisionExit
+  nameWithType: TriggerComponent.OnCollisionExit
+  fullName: milk.Components.TriggerComponent.OnCollisionExit
   type: Field
   source:
     remote:
       path: Components/TriggerComponent.cs
       branch: main
       repo: git@github.com:rik-cross/monogame-milk.git
-    id: onCollisionExit
+    id: OnCollisionExit
     path: Components/TriggerComponent.cs
     startLine: 40
   assemblies:
@@ -188,10 +188,10 @@ items:
   summary: Called once when 2 colliders no longer intersect.
   example: []
   syntax:
-    content: public Action<Entity, Entity, float>? onCollisionExit
+    content: public Action<Entity, Entity, float>? OnCollisionExit
     return:
       type: System.Action{milk.Core.Entity,milk.Core.Entity,System.Single}
-    content.vb: Public onCollisionExit As Action(Of Entity, Entity, Single)
+    content.vb: Public OnCollisionExit As Action(Of Entity, Entity, Single)
 - uid: milk.Components.TriggerComponent.#ctor(Microsoft.Xna.Framework.Vector2,System.Nullable{Microsoft.Xna.Framework.Vector2},System.Action{milk.Core.Entity,milk.Core.Entity,System.Single},System.Action{milk.Core.Entity,milk.Core.Entity,System.Single},System.Action{milk.Core.Entity,milk.Core.Entity,System.Single})
   commentId: M:milk.Components.TriggerComponent.#ctor(Microsoft.Xna.Framework.Vector2,System.Nullable{Microsoft.Xna.Framework.Vector2},System.Action{milk.Core.Entity,milk.Core.Entity,System.Single},System.Action{milk.Core.Entity,milk.Core.Entity,System.Single},System.Action{milk.Core.Entity,milk.Core.Entity,System.Single})
   id: '#ctor(Microsoft.Xna.Framework.Vector2,System.Nullable{Microsoft.Xna.Framework.Vector2},System.Action{milk.Core.Entity,milk.Core.Entity,System.Single},System.Action{milk.Core.Entity,milk.Core.Entity,System.Single},System.Action{milk.Core.Entity,milk.Core.Entity,System.Single})'
@@ -329,25 +329,6 @@ references:
   - uid: milk.Core.Entity
     name: Entity
     href: milk.Core.Entity.html
-  - name: )
-- uid: milk.Core.Component.ToString
-  commentId: M:milk.Core.Component.ToString
-  parent: milk.Core.Component
-  href: milk.Core.Component.html#milk_Core_Component_ToString
-  name: ToString()
-  nameWithType: Component.ToString()
-  fullName: milk.Core.Component.ToString()
-  spec.csharp:
-  - uid: milk.Core.Component.ToString
-    name: ToString
-    href: milk.Core.Component.html#milk_Core_Component_ToString
-  - name: (
-  - name: )
-  spec.vb:
-  - uid: milk.Core.Component.ToString
-    name: ToString
-    href: milk.Core.Component.html#milk_Core_Component_ToString
-  - name: (
   - name: )
 - uid: System.Object.Equals(System.Object)
   commentId: M:System.Object.Equals(System.Object)
@@ -543,6 +524,30 @@ references:
     name: Object
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
   - name: )
 - uid: System
   commentId: N:System

@@ -4,8 +4,11 @@ items:
   commentId: N:milk.UI
   id: milk.UI
   children:
+  - milk.UI.Anchor
   - milk.UI.Button
-  - milk.UI.Tween
+  - milk.UI.Image
+  - milk.UI.SceneRenderable
+  - milk.UI.Text
   - milk.UI.UIElement
   langs:
   - csharp
@@ -17,19 +20,38 @@ items:
   assemblies:
   - milk
 references:
+- uid: milk.UI.Anchor
+  commentId: T:milk.UI.Anchor
+  parent: milk.UI
+  href: milk.UI.Anchor.html
+  name: Anchor
+  nameWithType: Anchor
+  fullName: milk.UI.Anchor
 - uid: milk.UI.Button
   commentId: T:milk.UI.Button
   href: milk.UI.Button.html
   name: Button
   nameWithType: Button
   fullName: milk.UI.Button
-- uid: milk.UI.Tween
-  commentId: T:milk.UI.Tween
+- uid: milk.UI.Image
+  commentId: T:milk.UI.Image
+  href: milk.UI.Image.html
+  name: Image
+  nameWithType: Image
+  fullName: milk.UI.Image
+- uid: milk.UI.SceneRenderable
+  commentId: T:milk.UI.SceneRenderable
   parent: milk.UI
-  href: milk.UI.Tween.html
-  name: Tween
-  nameWithType: Tween
-  fullName: milk.UI.Tween
+  href: milk.UI.SceneRenderable.html
+  name: SceneRenderable
+  nameWithType: SceneRenderable
+  fullName: milk.UI.SceneRenderable
+- uid: milk.UI.Text
+  commentId: T:milk.UI.Text
+  href: milk.UI.Text.html
+  name: Text
+  nameWithType: Text
+  fullName: milk.UI.Text
 - uid: milk.UI.UIElement
   commentId: T:milk.UI.UIElement
   parent: milk.UI
