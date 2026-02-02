@@ -10,15 +10,18 @@ items:
   - milk.Core.Scene.AddAnimation(System.Action{System.Single},System.Single,milk.Core.EasingFunctions.EasingDelegate)
   - milk.Core.Scene.AddCamera(milk.Core.Camera)
   - milk.Core.Scene.AddEntity(milk.Core.Entity)
+  - milk.Core.Scene.AddSceneCollider(System.Int32,System.Int32,System.Int32,System.Int32)
   - milk.Core.Scene.AddSystem``1
   - milk.Core.Scene.AddTimedAction(System.Single,System.Action,System.String)
   - milk.Core.Scene.AddUIElement(milk.UI.UIElement)
   - milk.Core.Scene.BackgroundColor
+  - milk.Core.Scene.ClearSceneColliders
   - milk.Core.Scene.DeleteEntitiesByTag(System.String[])
   - milk.Core.Scene.DeleteEntityByName(System.String)
   - milk.Core.Scene.Draw
   - milk.Core.Scene.DrawSceneBelow
   - milk.Core.Scene.EntitySortMethod
+  - milk.Core.Scene.GetAllEntities
   - milk.Core.Scene.GetCameraByName(System.String)
   - milk.Core.Scene.GetEntitiesByTag(System.String[])
   - milk.Core.Scene.GetEntityByName(System.String)
@@ -498,7 +501,7 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: Velocity
     path: Core/Scene.cs
-    startLine: 121
+    startLine: 141
   assemblies:
   - milk
   namespace: milk.Core
@@ -527,7 +530,7 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: Acceleration
     path: Core/Scene.cs
-    startLine: 126
+    startLine: 146
   assemblies:
   - milk
   namespace: milk.Core
@@ -556,7 +559,7 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: .ctor
     path: Core/Scene.cs
-    startLine: 134
+    startLine: 154
   assemblies:
   - milk
   namespace: milk.Core
@@ -594,7 +597,7 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: AddCamera
     path: Core/Scene.cs
-    startLine: 386
+    startLine: 421
   assemblies:
   - milk
   namespace: milk.Core
@@ -626,7 +629,7 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: GetCameraByName
     path: Core/Scene.cs
-    startLine: 398
+    startLine: 433
   assemblies:
   - milk
   namespace: milk.Core
@@ -667,7 +670,7 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: HasEntity
     path: Core/Scene.cs
-    startLine: 417
+    startLine: 452
   assemblies:
   - milk
   namespace: milk.Core
@@ -702,7 +705,7 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: AddEntity
     path: Core/Scene.cs
-    startLine: 426
+    startLine: 461
   assemblies:
   - milk
   namespace: milk.Core
@@ -734,7 +737,7 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: RemoveEntity
     path: Core/Scene.cs
-    startLine: 460
+    startLine: 495
   assemblies:
   - milk
   namespace: milk.Core
@@ -769,7 +772,7 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: RemoveEntityByName
     path: Core/Scene.cs
-    startLine: 478
+    startLine: 513
   assemblies:
   - milk
   namespace: milk.Core
@@ -804,7 +807,7 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: RemoveEntitiesByTag
     path: Core/Scene.cs
-    startLine: 491
+    startLine: 524
   assemblies:
   - milk
   namespace: milk.Core
@@ -839,7 +842,7 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: RemoveAllEntities
     path: Core/Scene.cs
-    startLine: 503
+    startLine: 534
   assemblies:
   - milk
   namespace: milk.Core
@@ -849,6 +852,34 @@ items:
     content: public void RemoveAllEntities()
     content.vb: Public Sub RemoveAllEntities()
   overload: milk.Core.Scene.RemoveAllEntities*
+- uid: milk.Core.Scene.GetAllEntities
+  commentId: M:milk.Core.Scene.GetAllEntities
+  id: GetAllEntities
+  parent: milk.Core.Scene
+  langs:
+  - csharp
+  - vb
+  name: GetAllEntities()
+  nameWithType: Scene.GetAllEntities()
+  fullName: milk.Core.Scene.GetAllEntities()
+  type: Method
+  source:
+    remote:
+      path: Core/Scene.cs
+      branch: main
+      repo: git@github.com:rik-cross/monogame-milk.git
+    id: GetAllEntities
+    path: Core/Scene.cs
+    startLine: 580
+  assemblies:
+  - milk
+  namespace: milk.Core
+  syntax:
+    content: public List<Entity> GetAllEntities()
+    return:
+      type: System.Collections.Generic.List{milk.Core.Entity}
+    content.vb: Public Function GetAllEntities() As List(Of Entity)
+  overload: milk.Core.Scene.GetAllEntities*
 - uid: milk.Core.Scene.GetEntityByName(System.String)
   commentId: M:milk.Core.Scene.GetEntityByName(System.String)
   id: GetEntityByName(System.String)
@@ -867,7 +898,7 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: GetEntityByName
     path: Core/Scene.cs
-    startLine: 555
+    startLine: 591
   assemblies:
   - milk
   namespace: milk.Core
@@ -908,7 +939,7 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: GetEntitiesByTag
     path: Core/Scene.cs
-    startLine: 565
+    startLine: 601
   assemblies:
   - milk
   namespace: milk.Core
@@ -946,7 +977,7 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: DeleteEntityByName
     path: Core/Scene.cs
-    startLine: 579
+    startLine: 615
   assemblies:
   - milk
   namespace: milk.Core
@@ -984,7 +1015,7 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: DeleteEntitiesByTag
     path: Core/Scene.cs
-    startLine: 597
+    startLine: 633
   assemblies:
   - milk
   namespace: milk.Core
@@ -1022,7 +1053,7 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: AddSystem
     path: Core/Scene.cs
-    startLine: 616
+    startLine: 652
   assemblies:
   - milk
   namespace: milk.Core
@@ -1061,7 +1092,7 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: RemoveSystem
     path: Core/Scene.cs
-    startLine: 633
+    startLine: 669
   assemblies:
   - milk
   namespace: milk.Core
@@ -1095,7 +1126,7 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: RemoveAllSystems
     path: Core/Scene.cs
-    startLine: 644
+    startLine: 680
   assemblies:
   - milk
   namespace: milk.Core
@@ -1123,7 +1154,7 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: HasSystem
     path: Core/Scene.cs
-    startLine: 657
+    startLine: 693
   assemblies:
   - milk
   namespace: milk.Core
@@ -1163,7 +1194,7 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: PrintSystems
     path: Core/Scene.cs
-    startLine: 662
+    startLine: 698
   assemblies:
   - milk
   namespace: milk.Core
@@ -1191,7 +1222,7 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: PositionSystem
     path: Core/Scene.cs
-    startLine: 667
+    startLine: 703
   assemblies:
   - milk
   namespace: milk.Core
@@ -1225,7 +1256,7 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: GetSceneBelow
     path: Core/Scene.cs
-    startLine: 682
+    startLine: 718
   assemblies:
   - milk
   namespace: milk.Core
@@ -1248,6 +1279,70 @@ items:
   nameWithType.vb: Scene.GetSceneBelow(List(Of Scene))
   fullName.vb: milk.Core.Scene.GetSceneBelow(System.Collections.Generic.List(Of milk.Core.Scene))
   name.vb: GetSceneBelow(List(Of Scene))
+- uid: milk.Core.Scene.AddSceneCollider(System.Int32,System.Int32,System.Int32,System.Int32)
+  commentId: M:milk.Core.Scene.AddSceneCollider(System.Int32,System.Int32,System.Int32,System.Int32)
+  id: AddSceneCollider(System.Int32,System.Int32,System.Int32,System.Int32)
+  parent: milk.Core.Scene
+  langs:
+  - csharp
+  - vb
+  name: AddSceneCollider(int, int, int, int)
+  nameWithType: Scene.AddSceneCollider(int, int, int, int)
+  fullName: milk.Core.Scene.AddSceneCollider(int, int, int, int)
+  type: Method
+  source:
+    remote:
+      path: Core/Scene.cs
+      branch: main
+      repo: git@github.com:rik-cross/monogame-milk.git
+    id: AddSceneCollider
+    path: Core/Scene.cs
+    startLine: 736
+  assemblies:
+  - milk
+  namespace: milk.Core
+  syntax:
+    content: public void AddSceneCollider(int x, int y, int w, int h)
+    parameters:
+    - id: x
+      type: System.Int32
+    - id: y
+      type: System.Int32
+    - id: w
+      type: System.Int32
+    - id: h
+      type: System.Int32
+    content.vb: Public Sub AddSceneCollider(x As Integer, y As Integer, w As Integer, h As Integer)
+  overload: milk.Core.Scene.AddSceneCollider*
+  nameWithType.vb: Scene.AddSceneCollider(Integer, Integer, Integer, Integer)
+  fullName.vb: milk.Core.Scene.AddSceneCollider(Integer, Integer, Integer, Integer)
+  name.vb: AddSceneCollider(Integer, Integer, Integer, Integer)
+- uid: milk.Core.Scene.ClearSceneColliders
+  commentId: M:milk.Core.Scene.ClearSceneColliders
+  id: ClearSceneColliders
+  parent: milk.Core.Scene
+  langs:
+  - csharp
+  - vb
+  name: ClearSceneColliders()
+  nameWithType: Scene.ClearSceneColliders()
+  fullName: milk.Core.Scene.ClearSceneColliders()
+  type: Method
+  source:
+    remote:
+      path: Core/Scene.cs
+      branch: main
+      repo: git@github.com:rik-cross/monogame-milk.git
+    id: ClearSceneColliders
+    path: Core/Scene.cs
+    startLine: 741
+  assemblies:
+  - milk
+  namespace: milk.Core
+  syntax:
+    content: public void ClearSceneColliders()
+    content.vb: Public Sub ClearSceneColliders()
+  overload: milk.Core.Scene.ClearSceneColliders*
 - uid: milk.Core.Scene.AddTimedAction(System.Single,System.Action,System.String)
   commentId: M:milk.Core.Scene.AddTimedAction(System.Single,System.Action,System.String)
   id: AddTimedAction(System.Single,System.Action,System.String)
@@ -1266,7 +1361,7 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: AddTimedAction
     path: Core/Scene.cs
-    startLine: 724
+    startLine: 776
   assemblies:
   - milk
   namespace: milk.Core
@@ -1307,7 +1402,7 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: RemoveTimedActionByName
     path: Core/Scene.cs
-    startLine: 733
+    startLine: 785
   assemblies:
   - milk
   namespace: milk.Core
@@ -1342,7 +1437,7 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: AddAnimation
     path: Core/Scene.cs
-    startLine: 752
+    startLine: 804
   assemblies:
   - milk
   namespace: milk.Core
@@ -1383,7 +1478,7 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: AddUIElement
     path: Core/Scene.cs
-    startLine: 770
+    startLine: 820
   assemblies:
   - milk
   namespace: milk.Core
@@ -1415,7 +1510,7 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: Init
     path: Core/Scene.cs
-    startLine: 783
+    startLine: 833
   assemblies:
   - milk
   namespace: milk.Core
@@ -1443,7 +1538,7 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: Update
     path: Core/Scene.cs
-    startLine: 789
+    startLine: 839
   assemblies:
   - milk
   namespace: milk.Core
@@ -1475,7 +1570,7 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: Input
     path: Core/Scene.cs
-    startLine: 795
+    startLine: 845
   assemblies:
   - milk
   namespace: milk.Core
@@ -1507,7 +1602,7 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: Draw
     path: Core/Scene.cs
-    startLine: 800
+    startLine: 850
   assemblies:
   - milk
   namespace: milk.Core
@@ -1535,7 +1630,7 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: OnEnter
     path: Core/Scene.cs
-    startLine: 809
+    startLine: 859
   assemblies:
   - milk
   namespace: milk.Core
@@ -1563,7 +1658,7 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: OnExit
     path: Core/Scene.cs
-    startLine: 814
+    startLine: 864
   assemblies:
   - milk
   namespace: milk.Core
@@ -1591,7 +1686,7 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: OnEntityAdded
     path: Core/Scene.cs
-    startLine: 820
+    startLine: 870
   assemblies:
   - milk
   namespace: milk.Core
@@ -1623,7 +1718,7 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: OnEntityRemoved
     path: Core/Scene.cs
-    startLine: 826
+    startLine: 876
   assemblies:
   - milk
   namespace: milk.Core
@@ -2383,18 +2478,12 @@ references:
   name: RemoveAllEntities
   nameWithType: Scene.RemoveAllEntities
   fullName: milk.Core.Scene.RemoveAllEntities
-- uid: milk.Core.Scene.GetEntityByName*
-  commentId: Overload:milk.Core.Scene.GetEntityByName
-  href: milk.Core.Scene.html#milk_Core_Scene_GetEntityByName_System_String_
-  name: GetEntityByName
-  nameWithType: Scene.GetEntityByName
-  fullName: milk.Core.Scene.GetEntityByName
-- uid: milk.Core.Scene.GetEntitiesByTag*
-  commentId: Overload:milk.Core.Scene.GetEntitiesByTag
-  href: milk.Core.Scene.html#milk_Core_Scene_GetEntitiesByTag_System_String___
-  name: GetEntitiesByTag
-  nameWithType: Scene.GetEntitiesByTag
-  fullName: milk.Core.Scene.GetEntitiesByTag
+- uid: milk.Core.Scene.GetAllEntities*
+  commentId: Overload:milk.Core.Scene.GetAllEntities
+  href: milk.Core.Scene.html#milk_Core_Scene_GetAllEntities
+  name: GetAllEntities
+  nameWithType: Scene.GetAllEntities
+  fullName: milk.Core.Scene.GetAllEntities
 - uid: System.Collections.Generic.List{milk.Core.Entity}
   commentId: T:System.Collections.Generic.List{milk.Core.Entity}
   parent: System.Collections.Generic
@@ -2428,6 +2517,18 @@ references:
     name: Entity
     href: milk.Core.Entity.html
   - name: )
+- uid: milk.Core.Scene.GetEntityByName*
+  commentId: Overload:milk.Core.Scene.GetEntityByName
+  href: milk.Core.Scene.html#milk_Core_Scene_GetEntityByName_System_String_
+  name: GetEntityByName
+  nameWithType: Scene.GetEntityByName
+  fullName: milk.Core.Scene.GetEntityByName
+- uid: milk.Core.Scene.GetEntitiesByTag*
+  commentId: Overload:milk.Core.Scene.GetEntitiesByTag
+  href: milk.Core.Scene.html#milk_Core_Scene_GetEntitiesByTag_System_String___
+  name: GetEntitiesByTag
+  nameWithType: Scene.GetEntitiesByTag
+  fullName: milk.Core.Scene.GetEntitiesByTag
 - uid: milk.Core.Scene.DeleteEntityByName*
   commentId: Overload:milk.Core.Scene.DeleteEntityByName
   href: milk.Core.Scene.html#milk_Core_Scene_DeleteEntityByName_System_String_
@@ -2533,6 +2634,18 @@ references:
   name: Scene
   nameWithType: Scene
   fullName: milk.Core.Scene
+- uid: milk.Core.Scene.AddSceneCollider*
+  commentId: Overload:milk.Core.Scene.AddSceneCollider
+  href: milk.Core.Scene.html#milk_Core_Scene_AddSceneCollider_System_Int32_System_Int32_System_Int32_System_Int32_
+  name: AddSceneCollider
+  nameWithType: Scene.AddSceneCollider
+  fullName: milk.Core.Scene.AddSceneCollider
+- uid: milk.Core.Scene.ClearSceneColliders*
+  commentId: Overload:milk.Core.Scene.ClearSceneColliders
+  href: milk.Core.Scene.html#milk_Core_Scene_ClearSceneColliders
+  name: ClearSceneColliders
+  nameWithType: Scene.ClearSceneColliders
+  fullName: milk.Core.Scene.ClearSceneColliders
 - uid: milk.Core.Scene.AddTimedAction*
   commentId: Overload:milk.Core.Scene.AddTimedAction
   href: milk.Core.Scene.html#milk_Core_Scene_AddTimedAction_System_Single_System_Action_System_String_

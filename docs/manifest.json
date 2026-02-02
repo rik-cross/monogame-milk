@@ -400,6 +400,20 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/milk.Core.PhysicsSystem.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/milk.Core.PhysicsSystem.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "milk.Core.PhysicsSystem",
+      "Summary": "<p sourcefile=\"api/milk.Core.PhysicsSystem.yml\" sourcestartlinenumber=\"1\">The PhysicsSystem handles collision detection.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/milk.Core.Scene.yml",
       "output": {
         ".html": {
@@ -452,7 +466,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "milk.Core.Sprite",
-      "Summary": "<p sourcefile=\"api/milk.Core.Sprite.yml\" sourcestartlinenumber=\"1\">A sprite is added to a SpriteComponent, and is a collection\nof textures, along with some additional data. A sprite with more\nthan one texture automatically becomes an animated sprite.</p>\n"
+      "Summary": "<p sourcefile=\"api/milk.Core.Sprite.yml\" sourcestartlinenumber=\"1\">A Sprite is a container for one or more lists of textures,\nalong with some additional information.</p>\n"
     },
     {
       "type": "ManagedReference",

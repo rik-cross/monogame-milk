@@ -10,6 +10,9 @@ using milk.Core;
 
 namespace milk.Components;
 
+// TODO: sprite vs texture hue
+// should consider both
+
 /// <summary>
 /// Associates one or more texture lists with a state, 
 /// along with some associated preferences for each list.
@@ -104,13 +107,13 @@ public class SpriteComponent : Component
                     offset: offset,
                     scale: scale,
                     hue: hue,
-                    alpha: alpha,
                     flipH: flipH,
                     flipV: flipV
                 )
             },
             duration: duration,
             loop: true,
+            alpha: alpha,
             resizeToEntity: resizeToEntity)
         );
         sprites[state].CalculateFrames();
@@ -199,13 +202,13 @@ public class SpriteComponent : Component
                             offset: offset,
                             scale: scale,
                             hue: hue,
-                            alpha: alpha,
                             flipH: flipH,
                             flipV: flipV
                         )
                     },
                     duration: duration,
                     loop: loop,
+                    alpha: alpha,
                     resizeToEntity: resizeToEntity
                 )
             );
@@ -219,7 +222,6 @@ public class SpriteComponent : Component
                     offset: offset,
                     scale: scale,
                     hue: hue,
-                    alpha: alpha,
                     flipH: flipH,
                     flipV: flipV
                 )
@@ -240,8 +242,12 @@ public class SpriteComponent : Component
             sprites.Remove(state);
     }
 
-    // Get the Sprite object associated with a state
-    internal Sprite? GetSpriteForState(string state)
+    /// <summary>
+    /// Returns a Sprite object for the entity state provided.
+    /// </summary>
+    /// <param name="state">The entity state.</param>
+    /// <returns>A Sprite object.</returns>
+    public Sprite? GetSpriteForState(string state)
     {
         if (sprites == null || sprites.ContainsKey(state) == false || sprites[state] == null)
             return null;

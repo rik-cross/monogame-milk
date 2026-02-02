@@ -46,7 +46,7 @@ public abstract class Scene : MilkMethods
     internal List<System> systems;
     private UIMenu UIMenu;
     internal Animator animator;
-    
+
     /// <summary>
     /// Background color.
     /// </summary>
@@ -113,8 +113,28 @@ public abstract class Scene : MilkMethods
                 mapSize = Vector2.Zero;
                 _mapRenderer = null;
             }
+
+            TiledMapObjectLayer collisionLayer = _map.GetLayer<TiledMapObjectLayer>("collisions");
+            if (collisionLayer != null) {
+                ClearSceneColliders();
+                foreach (TiledMapObject collisionObject in collisionLayer.Objects)
+                {
+                    AddSceneCollider(
+                        (int)collisionObject.Position.X,
+                        (int)collisionObject.Position.Y,
+                        (int)collisionObject.Size.Width,
+                        (int)collisionObject.Size.Height
+                    );
+                }
+            }
+
         }
     }
+
+    /// <summary>
+    /// Collidable areas of the scene.
+    /// </summary>
+    internal List<SceneCollider> sceneColliders;
 
     /// <summary>
     /// The scene's velocity, which is applied to all entities.
@@ -148,6 +168,8 @@ public abstract class Scene : MilkMethods
         UIMenu = new UIMenu(this);
         animator = new Animator();
 
+        sceneColliders = new List<SceneCollider>();
+
         Init();
 
     }
@@ -164,9 +186,7 @@ public abstract class Scene : MilkMethods
 
         // Update entity State here??
         foreach (Entity e in entities)
-        {
             e.PreviousState = e.State;
-        }
 
         // Process the timed actions
         for (int i = timedActions.Count - 1; i >= 0; i--)
@@ -180,9 +200,7 @@ public abstract class Scene : MilkMethods
 
         // high-level update
         foreach (System system in systems)
-        {
             system.Update(gameTime, this);
-        }
 
         // entity-specific update
         foreach (System system in systems)
@@ -211,7 +229,6 @@ public abstract class Scene : MilkMethods
         if (EntitySortMethod != null)
             entities.Sort(EntitySortMethod);
         
-        //UIMenu.Update(gameTime, this);
         animator.Update(gameTime);
 
     }
@@ -226,9 +243,7 @@ public abstract class Scene : MilkMethods
 
         // high-level input
         foreach (System system in systems)
-        {
             system.Input(gameTime, this);
-        }
 
         // entity-specific update
         foreach (System system in systems)
@@ -245,7 +260,9 @@ public abstract class Scene : MilkMethods
         // Call the user-defined Input method
         Input(gameTime);
 
-        UIMenu.Input(gameTime, this);
+        // Update the menu (only if there's no active scene transition)
+        if (game.sceneManager.currentTransition == null)
+            UIMenu.Input(gameTime, this);
 
     }
 
@@ -333,6 +350,24 @@ public abstract class Scene : MilkMethods
                 if (system.DrawAboveEntities == true && system.DrawAboveMap == true)
                     system.Draw(this);
             }
+
+            // Debug draw scene colliders
+            if (game.Debug == true) {
+                foreach (SceneCollider sceneCollider in sceneColliders)
+                {
+                    milk.Core.Milk.Graphics.DrawRectangle(
+                        new RectangleF(
+                            sceneCollider.X,
+                            sceneCollider.Y,
+                            sceneCollider.Width,
+                            sceneCollider.Height
+                        ),
+                        Color.Red,
+                        1.0f
+                    );
+                }
+            }
+
             milk.Core.Milk.Graphics.End();
 
             _graphicsDevice.Viewport = new Viewport(0, 0, (int)Size.X, (int)Size.Y);
@@ -450,7 +485,7 @@ public abstract class Scene : MilkMethods
     }
 
     //
-    // entity removal (not deletion)
+    // Entity removal (not deletion)
     //
 
     /// <summary>
@@ -480,9 +515,7 @@ public abstract class Scene : MilkMethods
     {
         Entity? entity = GetEntityByName(name);
         if (entity != null)
-        {
             RemoveEntity(entity);
-        }
     }
 
     /// <summary>
@@ -493,9 +526,7 @@ public abstract class Scene : MilkMethods
     {
         List<Entity> entities = GetEntitiesByTag(tags);
         foreach (Entity entity in entities)
-        {
             RemoveEntity(entity);
-        }
     }
 
     /// <summary>
@@ -547,6 +578,11 @@ public abstract class Scene : MilkMethods
         entitiesToRemoveFromScene.Clear();
     }
 
+    public List<Entity> GetAllEntities()
+    {
+        return entities;
+    }
+
     /// <summary>
     /// Gets the entity with the provided (unique) name.
     /// The name supplied is converted to lower-case.
@@ -569,7 +605,7 @@ public abstract class Scene : MilkMethods
     }
 
     //
-    // entity deletion
+    // Entity deletion
     //
 
     /// <summary>
@@ -605,7 +641,7 @@ public abstract class Scene : MilkMethods
     }
 
     //
-    // system methods
+    // System methods
     //
 
     /// <summary>
@@ -689,12 +725,28 @@ public abstract class Scene : MilkMethods
         for (int i = 0; i < scenes.Count - 1; i++)
         {
             if (scenes[i] == this)
-            {
                 return scenes[i + 1];
-            }
         }
         return null;
     }
+
+    //
+    // Scene collision
+    //
+
+    public void AddSceneCollider(int x, int y, int w, int h)
+    {
+        sceneColliders.Add(new SceneCollider(x, y, w, h));
+    }
+
+    public void ClearSceneColliders()
+    {
+        sceneColliders.Clear();
+    }
+
+    //
+    // Map
+    //
 
     private void DrawMap(Camera camera, string? property = null, string? value = null)
     {
@@ -755,9 +807,7 @@ public abstract class Scene : MilkMethods
         float duration,
         EasingFunctions.EasingDelegate? easingFunction = null)
     {
-        animator.AddTween(
-            new Tween(action, duration, easingFunction)
-        );
+        animator.AddTween(new Tween(action, duration, easingFunction));
     }
 
     //

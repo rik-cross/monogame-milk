@@ -48,6 +48,8 @@ items:
     content.vb: Public MustInherit Class System
   inheritance:
   - System.Object
+  derivedClasses:
+  - milk.Core.PhysicsSystem
   inheritedMembers:
   - System.Object.Equals(System.Object)
   - System.Object.Equals(System.Object,System.Object)

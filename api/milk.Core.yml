@@ -15,8 +15,10 @@ items:
   - milk.Core.InputManager
   - milk.Core.Milk
   - milk.Core.MilkMethods
+  - milk.Core.PhysicsSystem
   - milk.Core.Scene
   - milk.Core.SceneManager
+  - milk.Core.Sprite
   - milk.Core.System
   - milk.Core.SystemManager
   - milk.Core.Transition
@@ -121,6 +123,13 @@ references:
   name: Scene
   nameWithType: Scene
   fullName: milk.Core.Scene
+- uid: milk.Core.Sprite
+  commentId: T:milk.Core.Sprite
+  parent: milk.Core
+  href: milk.Core.Sprite.html
+  name: Sprite
+  nameWithType: Sprite
+  fullName: milk.Core.Sprite
 - uid: milk.Core.System
   commentId: T:milk.Core.System
   parent: milk.Core
@@ -162,6 +171,12 @@ references:
   name: SystemManager
   nameWithType: SystemManager
   fullName: milk.Core.SystemManager
+- uid: milk.Core.PhysicsSystem
+  commentId: T:milk.Core.PhysicsSystem
+  href: milk.Core.PhysicsSystem.html
+  name: PhysicsSystem
+  nameWithType: PhysicsSystem
+  fullName: milk.Core.PhysicsSystem
 - uid: milk.Core
   commentId: N:milk.Core
   href: milk.html

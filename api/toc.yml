@@ -59,11 +59,17 @@ items:
   - uid: milk.Core.MilkMethods
     name: MilkMethods
     type: Class
+  - uid: milk.Core.PhysicsSystem
+    name: PhysicsSystem
+    type: Class
   - uid: milk.Core.Scene
     name: Scene
     type: Class
   - uid: milk.Core.SceneManager
     name: SceneManager
+    type: Class
+  - uid: milk.Core.Sprite
+    name: Sprite
     type: Class
   - uid: milk.Core.System
     name: System

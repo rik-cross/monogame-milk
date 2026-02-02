@@ -550,18 +550,18 @@ references:
   fullName.vb: milk.Components.ColliderComponent.New
   nameWithType: ColliderComponent.ColliderComponent
   nameWithType.vb: ColliderComponent.New
-- uid: milk.Components.ColliderComponent.offset
-  name: offset
-  href: api/milk.Components.ColliderComponent.html#milk_Components_ColliderComponent_offset
-  commentId: F:milk.Components.ColliderComponent.offset
-  fullName: milk.Components.ColliderComponent.offset
-  nameWithType: ColliderComponent.offset
-- uid: milk.Components.ColliderComponent.size
-  name: size
-  href: api/milk.Components.ColliderComponent.html#milk_Components_ColliderComponent_size
-  commentId: F:milk.Components.ColliderComponent.size
-  fullName: milk.Components.ColliderComponent.size
-  nameWithType: ColliderComponent.size
+- uid: milk.Components.ColliderComponent.Offset
+  name: Offset
+  href: api/milk.Components.ColliderComponent.html#milk_Components_ColliderComponent_Offset
+  commentId: F:milk.Components.ColliderComponent.Offset
+  fullName: milk.Components.ColliderComponent.Offset
+  nameWithType: ColliderComponent.Offset
+- uid: milk.Components.ColliderComponent.Size
+  name: Size
+  href: api/milk.Components.ColliderComponent.html#milk_Components_ColliderComponent_Size
+  commentId: F:milk.Components.ColliderComponent.Size
+  fullName: milk.Components.ColliderComponent.Size
+  nameWithType: ColliderComponent.Size
 - uid: milk.Components.InputComponent
   name: InputComponent
   href: api/milk.Components.InputComponent.html
@@ -763,6 +763,22 @@ references:
   isSpec: "True"
   fullName: milk.Components.SpriteComponent.ClearTextures
   nameWithType: SpriteComponent.ClearTextures
+- uid: milk.Components.SpriteComponent.GetSpriteForState(System.String)
+  name: GetSpriteForState(string)
+  href: api/milk.Components.SpriteComponent.html#milk_Components_SpriteComponent_GetSpriteForState_System_String_
+  commentId: M:milk.Components.SpriteComponent.GetSpriteForState(System.String)
+  name.vb: GetSpriteForState(String)
+  fullName: milk.Components.SpriteComponent.GetSpriteForState(string)
+  fullName.vb: milk.Components.SpriteComponent.GetSpriteForState(String)
+  nameWithType: SpriteComponent.GetSpriteForState(string)
+  nameWithType.vb: SpriteComponent.GetSpriteForState(String)
+- uid: milk.Components.SpriteComponent.GetSpriteForState*
+  name: GetSpriteForState
+  href: api/milk.Components.SpriteComponent.html#milk_Components_SpriteComponent_GetSpriteForState_
+  commentId: Overload:milk.Components.SpriteComponent.GetSpriteForState
+  isSpec: "True"
+  fullName: milk.Components.SpriteComponent.GetSpriteForState
+  nameWithType: SpriteComponent.GetSpriteForState
 - uid: milk.Components.SpriteComponent.Play
   name: Play
   href: api/milk.Components.SpriteComponent.html#milk_Components_SpriteComponent_Play
@@ -2606,6 +2622,25 @@ references:
   isSpec: "True"
   fullName: milk.Core.MilkMethods.Systems
   nameWithType: MilkMethods.Systems
+- uid: milk.Core.PhysicsSystem
+  name: PhysicsSystem
+  href: api/milk.Core.PhysicsSystem.html
+  commentId: T:milk.Core.PhysicsSystem
+  fullName: milk.Core.PhysicsSystem
+  nameWithType: PhysicsSystem
+- uid: milk.Core.PhysicsSystem.Update(Microsoft.Xna.Framework.GameTime,milk.Core.Scene)
+  name: Update(GameTime, Scene)
+  href: api/milk.Core.PhysicsSystem.html#milk_Core_PhysicsSystem_Update_Microsoft_Xna_Framework_GameTime_milk_Core_Scene_
+  commentId: M:milk.Core.PhysicsSystem.Update(Microsoft.Xna.Framework.GameTime,milk.Core.Scene)
+  fullName: milk.Core.PhysicsSystem.Update(Microsoft.Xna.Framework.GameTime, milk.Core.Scene)
+  nameWithType: PhysicsSystem.Update(GameTime, Scene)
+- uid: milk.Core.PhysicsSystem.Update*
+  name: Update
+  href: api/milk.Core.PhysicsSystem.html#milk_Core_PhysicsSystem_Update_
+  commentId: Overload:milk.Core.PhysicsSystem.Update
+  isSpec: "True"
+  fullName: milk.Core.PhysicsSystem.Update
+  nameWithType: PhysicsSystem.Update
 - uid: milk.Core.Scene
   name: Scene
   href: api/milk.Core.Scene.html
@@ -2679,6 +2714,22 @@ references:
   isSpec: "True"
   fullName: milk.Core.Scene.AddEntity
   nameWithType: Scene.AddEntity
+- uid: milk.Core.Scene.AddSceneCollider(System.Int32,System.Int32,System.Int32,System.Int32)
+  name: AddSceneCollider(int, int, int, int)
+  href: api/milk.Core.Scene.html#milk_Core_Scene_AddSceneCollider_System_Int32_System_Int32_System_Int32_System_Int32_
+  commentId: M:milk.Core.Scene.AddSceneCollider(System.Int32,System.Int32,System.Int32,System.Int32)
+  name.vb: AddSceneCollider(Integer, Integer, Integer, Integer)
+  fullName: milk.Core.Scene.AddSceneCollider(int, int, int, int)
+  fullName.vb: milk.Core.Scene.AddSceneCollider(Integer, Integer, Integer, Integer)
+  nameWithType: Scene.AddSceneCollider(int, int, int, int)
+  nameWithType.vb: Scene.AddSceneCollider(Integer, Integer, Integer, Integer)
+- uid: milk.Core.Scene.AddSceneCollider*
+  name: AddSceneCollider
+  href: api/milk.Core.Scene.html#milk_Core_Scene_AddSceneCollider_
+  commentId: Overload:milk.Core.Scene.AddSceneCollider
+  isSpec: "True"
+  fullName: milk.Core.Scene.AddSceneCollider
+  nameWithType: Scene.AddSceneCollider
 - uid: milk.Core.Scene.AddSystem*
   name: AddSystem
   href: api/milk.Core.Scene.html#milk_Core_Scene_AddSystem_
@@ -2730,6 +2781,19 @@ references:
   commentId: F:milk.Core.Scene.BackgroundColor
   fullName: milk.Core.Scene.BackgroundColor
   nameWithType: Scene.BackgroundColor
+- uid: milk.Core.Scene.ClearSceneColliders
+  name: ClearSceneColliders()
+  href: api/milk.Core.Scene.html#milk_Core_Scene_ClearSceneColliders
+  commentId: M:milk.Core.Scene.ClearSceneColliders
+  fullName: milk.Core.Scene.ClearSceneColliders()
+  nameWithType: Scene.ClearSceneColliders()
+- uid: milk.Core.Scene.ClearSceneColliders*
+  name: ClearSceneColliders
+  href: api/milk.Core.Scene.html#milk_Core_Scene_ClearSceneColliders_
+  commentId: Overload:milk.Core.Scene.ClearSceneColliders
+  isSpec: "True"
+  fullName: milk.Core.Scene.ClearSceneColliders
+  nameWithType: Scene.ClearSceneColliders
 - uid: milk.Core.Scene.DeleteEntitiesByTag(System.String[])
   name: DeleteEntitiesByTag(params string[])
   href: api/milk.Core.Scene.html#milk_Core_Scene_DeleteEntitiesByTag_System_String___
@@ -2787,6 +2851,19 @@ references:
   commentId: F:milk.Core.Scene.EntitySortMethod
   fullName: milk.Core.Scene.EntitySortMethod
   nameWithType: Scene.EntitySortMethod
+- uid: milk.Core.Scene.GetAllEntities
+  name: GetAllEntities()
+  href: api/milk.Core.Scene.html#milk_Core_Scene_GetAllEntities
+  commentId: M:milk.Core.Scene.GetAllEntities
+  fullName: milk.Core.Scene.GetAllEntities()
+  nameWithType: Scene.GetAllEntities()
+- uid: milk.Core.Scene.GetAllEntities*
+  name: GetAllEntities
+  href: api/milk.Core.Scene.html#milk_Core_Scene_GetAllEntities_
+  commentId: Overload:milk.Core.Scene.GetAllEntities
+  isSpec: "True"
+  fullName: milk.Core.Scene.GetAllEntities
+  nameWithType: Scene.GetAllEntities
 - uid: milk.Core.Scene.GetCameraByName(System.String)
   name: GetCameraByName(string)
   href: api/milk.Core.Scene.html#milk_Core_Scene_GetCameraByName_System_String_
@@ -3507,116 +3584,32 @@ references:
   commentId: T:milk.Core.Sprite
   fullName: milk.Core.Sprite
   nameWithType: Sprite
-- uid: milk.Core.Sprite.#ctor(System.Collections.Generic.List{Microsoft.Xna.Framework.Graphics.Texture2D},System.Boolean,System.Double,System.Nullable{Microsoft.Xna.Framework.Vector2},System.Nullable{Microsoft.Xna.Framework.Vector2},System.Boolean,System.Nullable{Microsoft.Xna.Framework.Color},System.Boolean,System.Boolean)
-  name: Sprite(List<Texture2D>, bool, double, Vector2?, Vector2?, bool, Color?, bool, bool)
-  href: api/milk.Core.Sprite.html#milk_Core_Sprite__ctor_System_Collections_Generic_List_Microsoft_Xna_Framework_Graphics_Texture2D__System_Boolean_System_Double_System_Nullable_Microsoft_Xna_Framework_Vector2__System_Nullable_Microsoft_Xna_Framework_Vector2__System_Boolean_System_Nullable_Microsoft_Xna_Framework_Color__System_Boolean_System_Boolean_
-  commentId: M:milk.Core.Sprite.#ctor(System.Collections.Generic.List{Microsoft.Xna.Framework.Graphics.Texture2D},System.Boolean,System.Double,System.Nullable{Microsoft.Xna.Framework.Vector2},System.Nullable{Microsoft.Xna.Framework.Vector2},System.Boolean,System.Nullable{Microsoft.Xna.Framework.Color},System.Boolean,System.Boolean)
-  name.vb: New(List(Of Texture2D), Boolean, Double, Vector2?, Vector2?, Boolean, Color?, Boolean, Boolean)
-  fullName: milk.Core.Sprite.Sprite(System.Collections.Generic.List<Microsoft.Xna.Framework.Graphics.Texture2D>, bool, double, Microsoft.Xna.Framework.Vector2?, Microsoft.Xna.Framework.Vector2?, bool, Microsoft.Xna.Framework.Color?, bool, bool)
-  fullName.vb: milk.Core.Sprite.New(System.Collections.Generic.List(Of Microsoft.Xna.Framework.Graphics.Texture2D), Boolean, Double, Microsoft.Xna.Framework.Vector2?, Microsoft.Xna.Framework.Vector2?, Boolean, Microsoft.Xna.Framework.Color?, Boolean, Boolean)
-  nameWithType: Sprite.Sprite(List<Texture2D>, bool, double, Vector2?, Vector2?, bool, Color?, bool, bool)
-  nameWithType.vb: Sprite.New(List(Of Texture2D), Boolean, Double, Vector2?, Vector2?, Boolean, Color?, Boolean, Boolean)
-- uid: milk.Core.Sprite.#ctor*
-  name: Sprite
-  href: api/milk.Core.Sprite.html#milk_Core_Sprite__ctor_
-  commentId: Overload:milk.Core.Sprite.#ctor
+- uid: milk.Core.Sprite.Alpha
+  name: Alpha
+  href: api/milk.Core.Sprite.html#milk_Core_Sprite_Alpha
+  commentId: P:milk.Core.Sprite.Alpha
+  fullName: milk.Core.Sprite.Alpha
+  nameWithType: Sprite.Alpha
+- uid: milk.Core.Sprite.Alpha*
+  name: Alpha
+  href: api/milk.Core.Sprite.html#milk_Core_Sprite_Alpha_
+  commentId: Overload:milk.Core.Sprite.Alpha
   isSpec: "True"
-  name.vb: New
-  fullName: milk.Core.Sprite.Sprite
-  fullName.vb: milk.Core.Sprite.New
-  nameWithType: Sprite.Sprite
-  nameWithType.vb: Sprite.New
-- uid: milk.Core.Sprite.GetCurrentTexture
-  name: GetCurrentTexture()
-  href: api/milk.Core.Sprite.html#milk_Core_Sprite_GetCurrentTexture
-  commentId: M:milk.Core.Sprite.GetCurrentTexture
-  fullName: milk.Core.Sprite.GetCurrentTexture()
-  nameWithType: Sprite.GetCurrentTexture()
-- uid: milk.Core.Sprite.GetCurrentTexture*
-  name: GetCurrentTexture
-  href: api/milk.Core.Sprite.html#milk_Core_Sprite_GetCurrentTexture_
-  commentId: Overload:milk.Core.Sprite.GetCurrentTexture
+  fullName: milk.Core.Sprite.Alpha
+  nameWithType: Sprite.Alpha
+- uid: milk.Core.Sprite.Hue
+  name: Hue
+  href: api/milk.Core.Sprite.html#milk_Core_Sprite_Hue
+  commentId: P:milk.Core.Sprite.Hue
+  fullName: milk.Core.Sprite.Hue
+  nameWithType: Sprite.Hue
+- uid: milk.Core.Sprite.Hue*
+  name: Hue
+  href: api/milk.Core.Sprite.html#milk_Core_Sprite_Hue_
+  commentId: Overload:milk.Core.Sprite.Hue
   isSpec: "True"
-  fullName: milk.Core.Sprite.GetCurrentTexture
-  nameWithType: Sprite.GetCurrentTexture
-- uid: milk.Core.Sprite.currentFrame
-  name: currentFrame
-  href: api/milk.Core.Sprite.html#milk_Core_Sprite_currentFrame
-  commentId: F:milk.Core.Sprite.currentFrame
-  fullName: milk.Core.Sprite.currentFrame
-  nameWithType: Sprite.currentFrame
-- uid: milk.Core.Sprite.duration
-  name: duration
-  href: api/milk.Core.Sprite.html#milk_Core_Sprite_duration
-  commentId: F:milk.Core.Sprite.duration
-  fullName: milk.Core.Sprite.duration
-  nameWithType: Sprite.duration
-- uid: milk.Core.Sprite.flipH
-  name: flipH
-  href: api/milk.Core.Sprite.html#milk_Core_Sprite_flipH
-  commentId: F:milk.Core.Sprite.flipH
-  fullName: milk.Core.Sprite.flipH
-  nameWithType: Sprite.flipH
-- uid: milk.Core.Sprite.flipV
-  name: flipV
-  href: api/milk.Core.Sprite.html#milk_Core_Sprite_flipV
-  commentId: F:milk.Core.Sprite.flipV
-  fullName: milk.Core.Sprite.flipV
-  nameWithType: Sprite.flipV
-- uid: milk.Core.Sprite.hue
-  name: hue
-  href: api/milk.Core.Sprite.html#milk_Core_Sprite_hue
-  commentId: F:milk.Core.Sprite.hue
-  fullName: milk.Core.Sprite.hue
-  nameWithType: Sprite.hue
-- uid: milk.Core.Sprite.loop
-  name: loop
-  href: api/milk.Core.Sprite.html#milk_Core_Sprite_loop
-  commentId: F:milk.Core.Sprite.loop
-  fullName: milk.Core.Sprite.loop
-  nameWithType: Sprite.loop
-- uid: milk.Core.Sprite.numberOfFrames
-  name: numberOfFrames
-  href: api/milk.Core.Sprite.html#milk_Core_Sprite_numberOfFrames
-  commentId: F:milk.Core.Sprite.numberOfFrames
-  fullName: milk.Core.Sprite.numberOfFrames
-  nameWithType: Sprite.numberOfFrames
-- uid: milk.Core.Sprite.offset
-  name: offset
-  href: api/milk.Core.Sprite.html#milk_Core_Sprite_offset
-  commentId: F:milk.Core.Sprite.offset
-  fullName: milk.Core.Sprite.offset
-  nameWithType: Sprite.offset
-- uid: milk.Core.Sprite.resizeToEntity
-  name: resizeToEntity
-  href: api/milk.Core.Sprite.html#milk_Core_Sprite_resizeToEntity
-  commentId: F:milk.Core.Sprite.resizeToEntity
-  fullName: milk.Core.Sprite.resizeToEntity
-  nameWithType: Sprite.resizeToEntity
-- uid: milk.Core.Sprite.scale
-  name: scale
-  href: api/milk.Core.Sprite.html#milk_Core_Sprite_scale
-  commentId: F:milk.Core.Sprite.scale
-  fullName: milk.Core.Sprite.scale
-  nameWithType: Sprite.scale
-- uid: milk.Core.Sprite.textureList
-  name: textureList
-  href: api/milk.Core.Sprite.html#milk_Core_Sprite_textureList
-  commentId: F:milk.Core.Sprite.textureList
-  fullName: milk.Core.Sprite.textureList
-  nameWithType: Sprite.textureList
-- uid: milk.Core.Sprite.timeOnCurrentFrame
-  name: timeOnCurrentFrame
-  href: api/milk.Core.Sprite.html#milk_Core_Sprite_timeOnCurrentFrame
-  commentId: F:milk.Core.Sprite.timeOnCurrentFrame
-  fullName: milk.Core.Sprite.timeOnCurrentFrame
-  nameWithType: Sprite.timeOnCurrentFrame
-- uid: milk.Core.Sprite.timePerFrame
-  name: timePerFrame
-  href: api/milk.Core.Sprite.html#milk_Core_Sprite_timePerFrame
-  commentId: F:milk.Core.Sprite.timePerFrame
-  fullName: milk.Core.Sprite.timePerFrame
-  nameWithType: Sprite.timePerFrame
+  fullName: milk.Core.Sprite.Hue
+  nameWithType: Sprite.Hue
 - uid: milk.Core.System
   name: System
   href: api/milk.Core.System.html

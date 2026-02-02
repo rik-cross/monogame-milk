@@ -1,8 +1,14 @@
 
 
+using Microsoft.Xna.Framework;
+
 namespace milk.Core;
 
-internal class Sprite
+/// <summary>
+/// A Sprite is a container for one or more lists of textures,
+/// along with some additional information.
+/// </summary>
+public class Sprite
 {
     
     internal List<SpriteTextureList> spriteTextureList;
@@ -43,16 +49,30 @@ internal class Sprite
     /// </summary>
     internal bool Loop { get; set; }
 
+    /// <summary>
+    /// Sprite transparency value.
+    /// </summary>
+    public float Alpha { get; set; }
+
+    /// <summary>
+    /// The overall hue of the sprite.
+    /// </summary>
+    public Color Hue { get; set; }
+
     internal Sprite(
         List<SpriteTextureList> spriteTextureList,
         double duration = 0,
         bool loop = true,
+        float alpha = 1.0f,
+        Color? hue = null,
         bool resizeToEntity = false
     )
     {
         this.spriteTextureList = spriteTextureList;
         this.duration = duration;
         this.Loop = loop;
+        this.Alpha = alpha;
+        this.Hue = hue ?? Color.White;
         this.resizeToEntity = resizeToEntity;
         CalculateFrames();
     }

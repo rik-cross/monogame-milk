@@ -16,8 +16,6 @@ internal class SpriteTextureList
 
     internal Color hue;
 
-    internal float Alpha;
-
     internal Vector2 offset;
 
     internal bool flipH;
@@ -31,7 +29,6 @@ internal class SpriteTextureList
         Vector2? offset = null,
         Vector2? scale = null,
         Color? hue = null,
-        float alpha = 1.0f,
         bool flipH = false,
         bool flipV = false
     )
@@ -40,7 +37,6 @@ internal class SpriteTextureList
         this.offset = offset ?? Vector2.Zero;
         this.scale = scale ?? Vector2.One;
         this.hue = hue ?? Color.White;
-        this.Alpha = alpha;
         this.flipH = flipH;
         this.flipV = flipV;
     }

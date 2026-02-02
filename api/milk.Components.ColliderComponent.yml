@@ -6,8 +6,8 @@ items:
   parent: milk.Components
   children:
   - milk.Components.ColliderComponent.#ctor(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
-  - milk.Components.ColliderComponent.offset
-  - milk.Components.ColliderComponent.size
+  - milk.Components.ColliderComponent.Offset
+  - milk.Components.ColliderComponent.Size
   langs:
   - csharp
   - vb
@@ -44,23 +44,23 @@ items:
   - System.Object.MemberwiseClone
   - System.Object.ReferenceEquals(System.Object,System.Object)
   - System.Object.ToString
-- uid: milk.Components.ColliderComponent.size
-  commentId: F:milk.Components.ColliderComponent.size
-  id: size
+- uid: milk.Components.ColliderComponent.Size
+  commentId: F:milk.Components.ColliderComponent.Size
+  id: Size
   parent: milk.Components.ColliderComponent
   langs:
   - csharp
   - vb
-  name: size
-  nameWithType: ColliderComponent.size
-  fullName: milk.Components.ColliderComponent.size
+  name: Size
+  nameWithType: ColliderComponent.Size
+  fullName: milk.Components.ColliderComponent.Size
   type: Field
   source:
     remote:
       path: Components/ColliderComponent.cs
       branch: main
       repo: git@github.com:rik-cross/monogame-milk.git
-    id: size
+    id: Size
     path: Components/ColliderComponent.cs
     startLine: 20
   assemblies:
@@ -69,27 +69,27 @@ items:
   summary: The (x,y) size of the collider.
   example: []
   syntax:
-    content: public Vector2 size
+    content: public Vector2 Size
     return:
       type: Microsoft.Xna.Framework.Vector2
-    content.vb: Public size As Vector2
-- uid: milk.Components.ColliderComponent.offset
-  commentId: F:milk.Components.ColliderComponent.offset
-  id: offset
+    content.vb: Public Size As Vector2
+- uid: milk.Components.ColliderComponent.Offset
+  commentId: F:milk.Components.ColliderComponent.Offset
+  id: Offset
   parent: milk.Components.ColliderComponent
   langs:
   - csharp
   - vb
-  name: offset
-  nameWithType: ColliderComponent.offset
-  fullName: milk.Components.ColliderComponent.offset
+  name: Offset
+  nameWithType: ColliderComponent.Offset
+  fullName: milk.Components.ColliderComponent.Offset
   type: Field
   source:
     remote:
       path: Components/ColliderComponent.cs
       branch: main
       repo: git@github.com:rik-cross/monogame-milk.git
-    id: offset
+    id: Offset
     path: Components/ColliderComponent.cs
     startLine: 25
   assemblies:
@@ -98,10 +98,10 @@ items:
   summary: The (x,y) distance from the entity position.
   example: []
   syntax:
-    content: public Vector2 offset
+    content: public Vector2 Offset
     return:
       type: Microsoft.Xna.Framework.Vector2
-    content.vb: Public offset As Vector2
+    content.vb: Public Offset As Vector2
 - uid: milk.Components.ColliderComponent.#ctor(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
   commentId: M:milk.Components.ColliderComponent.#ctor(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
   id: '#ctor(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)'

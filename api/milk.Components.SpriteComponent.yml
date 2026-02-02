@@ -11,6 +11,7 @@ items:
   - milk.Components.SpriteComponent.AddTextures(Microsoft.Xna.Framework.Graphics.Texture2D,System.String,System.Double,System.Boolean,System.Boolean,System.Nullable{Microsoft.Xna.Framework.Vector2},System.Nullable{Microsoft.Xna.Framework.Vector2},System.Nullable{Microsoft.Xna.Framework.Color},System.Single,System.Boolean,System.Boolean)
   - milk.Components.SpriteComponent.AddTextures(System.Collections.Generic.List{Microsoft.Xna.Framework.Graphics.Texture2D},System.String,System.Double,System.Boolean,System.Boolean,System.Nullable{Microsoft.Xna.Framework.Vector2},System.Nullable{Microsoft.Xna.Framework.Vector2},System.Nullable{Microsoft.Xna.Framework.Color},System.Single,System.Boolean,System.Boolean)
   - milk.Components.SpriteComponent.ClearTextures(System.String)
+  - milk.Components.SpriteComponent.GetSpriteForState(System.String)
   - milk.Components.SpriteComponent.Play
   langs:
   - csharp
@@ -26,7 +27,7 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: SpriteComponent
     path: Components/SpriteComponent.cs
-    startLine: 16
+    startLine: 19
   assemblies:
   - milk
   namespace: milk.Components
@@ -69,7 +70,7 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: Play
     path: Components/SpriteComponent.cs
-    startLine: 25
+    startLine: 28
   assemblies:
   - milk
   namespace: milk.Components
@@ -100,7 +101,7 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: .ctor
     path: Components/SpriteComponent.cs
-    startLine: 30
+    startLine: 33
   assemblies:
   - milk
   namespace: milk.Components
@@ -131,7 +132,7 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: .ctor
     path: Components/SpriteComponent.cs
-    startLine: 47
+    startLine: 50
   assemblies:
   - milk
   namespace: milk.Components
@@ -190,7 +191,7 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: .ctor
     path: Components/SpriteComponent.cs
-    startLine: 83
+    startLine: 86
   assemblies:
   - milk
   namespace: milk.Components
@@ -252,7 +253,7 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: AddTextures
     path: Components/SpriteComponent.cs
-    startLine: 132
+    startLine: 135
   assemblies:
   - milk
   namespace: milk.Components
@@ -317,7 +318,7 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: AddTextures
     path: Components/SpriteComponent.cs
-    startLine: 175
+    startLine: 178
   assemblies:
   - milk
   namespace: milk.Components
@@ -382,7 +383,7 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: ClearTextures
     path: Components/SpriteComponent.cs
-    startLine: 234
+    startLine: 236
   assemblies:
   - milk
   namespace: milk.Components
@@ -399,6 +400,44 @@ items:
   nameWithType.vb: SpriteComponent.ClearTextures(String)
   fullName.vb: milk.Components.SpriteComponent.ClearTextures(String)
   name.vb: ClearTextures(String)
+- uid: milk.Components.SpriteComponent.GetSpriteForState(System.String)
+  commentId: M:milk.Components.SpriteComponent.GetSpriteForState(System.String)
+  id: GetSpriteForState(System.String)
+  parent: milk.Components.SpriteComponent
+  langs:
+  - csharp
+  - vb
+  name: GetSpriteForState(string)
+  nameWithType: SpriteComponent.GetSpriteForState(string)
+  fullName: milk.Components.SpriteComponent.GetSpriteForState(string)
+  type: Method
+  source:
+    remote:
+      path: Components/SpriteComponent.cs
+      branch: main
+      repo: git@github.com:rik-cross/monogame-milk.git
+    id: GetSpriteForState
+    path: Components/SpriteComponent.cs
+    startLine: 249
+  assemblies:
+  - milk
+  namespace: milk.Components
+  summary: Returns a Sprite object for the entity state provided.
+  example: []
+  syntax:
+    content: public Sprite? GetSpriteForState(string state)
+    parameters:
+    - id: state
+      type: System.String
+      description: The entity state.
+    return:
+      type: milk.Core.Sprite
+      description: A Sprite object.
+    content.vb: Public Function GetSpriteForState(state As String) As Sprite
+  overload: milk.Components.SpriteComponent.GetSpriteForState*
+  nameWithType.vb: SpriteComponent.GetSpriteForState(String)
+  fullName.vb: milk.Components.SpriteComponent.GetSpriteForState(String)
+  name.vb: GetSpriteForState(String)
 references:
 - uid: milk.Components
   commentId: N:milk.Components
@@ -1014,3 +1053,16 @@ references:
   name: ClearTextures
   nameWithType: SpriteComponent.ClearTextures
   fullName: milk.Components.SpriteComponent.ClearTextures
+- uid: milk.Components.SpriteComponent.GetSpriteForState*
+  commentId: Overload:milk.Components.SpriteComponent.GetSpriteForState
+  href: milk.Components.SpriteComponent.html#milk_Components_SpriteComponent_GetSpriteForState_System_String_
+  name: GetSpriteForState
+  nameWithType: SpriteComponent.GetSpriteForState
+  fullName: milk.Components.SpriteComponent.GetSpriteForState
+- uid: milk.Core.Sprite
+  commentId: T:milk.Core.Sprite
+  parent: milk.Core
+  href: milk.Core.Sprite.html
+  name: Sprite
+  nameWithType: Sprite
+  fullName: milk.Core.Sprite

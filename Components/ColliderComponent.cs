@@ -18,12 +18,12 @@ public class ColliderComponent : Component
     /// <summary>
     /// The (x,y) size of the collider.
     /// </summary>
-    public Vector2 size;
+    public Vector2 Size;
 
     /// <summary>
     /// The (x,y) distance from the entity position.
     /// </summary>
-    public Vector2 offset;
+    public Vector2 Offset;
 
     /// <summary>
     /// Creates a new collider component.
@@ -32,8 +32,8 @@ public class ColliderComponent : Component
     /// <param name="offset">The (x,y) distance from the entity position.</param>
     public ColliderComponent(Vector2 size, Vector2 offset)
     {
-        this.size = size;
-        this.offset = offset;
+        this.Size = size;
+        this.Offset = offset;
     }
 
 }

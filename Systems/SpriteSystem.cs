@@ -148,7 +148,7 @@ internal class SpriteSystem : milk.Core.System
                 sourceRectangle: null,
                 rotation: 0f,
                 origin: Vector2.Zero,
-                color: textureList.hue * textureList.Alpha,
+                color: currentSprite.Hue * textureList.hue * currentSprite.Alpha,
                 effects: flipEffect,
                 layerDepth: 0f
             );
