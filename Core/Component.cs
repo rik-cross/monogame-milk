@@ -13,6 +13,11 @@ namespace milk.Core;
 public abstract class Component
 {
 
+    /// <summary>
+    /// The parent entity owner of the component
+    /// </summary>
+    public Entity? ParentEntity { get; set; }
+
     //
     // Optional callback methods
     //

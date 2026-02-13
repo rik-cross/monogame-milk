@@ -110,5 +110,32 @@ public static class Utilities
         }
         return true;
     }
+
+    public static void DrawTextureToContainerSize(Texture2D texture, Rectangle container, Color color)
+    {
+
+        // e.g. container = (100, 100, 64, 64)
+        // texture = (24, 30)
+
+        float largestDimension = texture.Height;
+        if (texture.Width >= texture.Height)
+            largestDimension = texture.Width;
+        
+        float adjustedWidth = texture.Width / largestDimension * container.Width;
+        float adjustedHeight = texture.Height / largestDimension * container.Height;
+
+        Rectangle newContainer = new Rectangle(
+            (int)(container.X + ((container.Width - adjustedWidth) / 2)),
+            (int)(container.Y + ((container.Height - adjustedHeight) / 2)),
+            (int)adjustedWidth,
+            (int)adjustedHeight
+        );
+
+        Milk.Graphics.Draw(
+            texture,
+            newContainer,
+            color
+        );
+    }
     
 }

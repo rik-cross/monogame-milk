@@ -5,8 +5,8 @@
 //   -- Shared under the MIT licence
 
 using System.Collections;
+using System.Linq;
 using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
 using MonoGame.Extended;
 using MonoGame.Extended.Tiled;
@@ -26,6 +26,7 @@ public abstract class Scene : MilkMethods
     private EntityManager _entityManager = EngineGlobals.game.entityManager;
     private GraphicsDevice _graphicsDevice = EngineGlobals.game.graphicsDevice;
     private List<Entity> entitiesToRemoveFromScene = new List<Entity>();
+    //private List<Entity> entitiesToAddToScene = new List<Entity>();
 
     /// <summary>
     /// The parent game object.
@@ -184,7 +185,6 @@ public abstract class Scene : MilkMethods
 
         elapsedTime += (float)gameTime.ElapsedGameTime.TotalSeconds;
 
-        // Update entity State here??
         foreach (Entity e in entities)
             e.PreviousState = e.State;
 
@@ -199,13 +199,13 @@ public abstract class Scene : MilkMethods
         }
 
         // high-level update
-        foreach (System system in systems)
+        foreach (System system in systems.ToList())
             system.Update(gameTime, this);
 
         // entity-specific update
-        foreach (System system in systems)
+        foreach (System system in systems.ToList())
         {
-            foreach (Entity entity in entities)
+            foreach (Entity entity in entities.ToList())
             {
                 BitArray temp = (BitArray)system.RequiredComponentBitMask.Clone();
                 temp.And(entity.bitMask);
@@ -242,13 +242,13 @@ public abstract class Scene : MilkMethods
             sceneBelow._Input(gameTime, scenes);
 
         // high-level input
-        foreach (System system in systems)
+        foreach (System system in systems.ToList())
             system.Input(gameTime, this);
 
         // entity-specific update
-        foreach (System system in systems)
+        foreach (System system in systems.ToList())
         {
-            foreach (Entity entity in entities)
+            foreach (Entity entity in entities.ToList())
             {
                 BitArray temp = (BitArray)system.RequiredComponentBitMask.Clone();
                 temp.And(entity.bitMask);
@@ -308,34 +308,20 @@ public abstract class Scene : MilkMethods
             // Draw the map layers marked as 'belowEntities: true'
             DrawMap(camera, "belowEntities", "true");
 
-            // High-level System.Draw() -- below entities
+            // Call DrawEntity() for those systems with DrawAboveMap == false
             foreach (System system in systems)
             {
-                if (system.DrawAboveEntities == false)
-                    system.Draw(this);
-            }
-
-            // Entity-specific system drawing
-            foreach (System system in systems)
-            {
-                foreach (Entity entity in entities)
-                {
-                    BitArray temp = (BitArray)system.RequiredComponentBitMask.Clone();
-                    temp.And(entity.bitMask);
-                    if (Utilities.CompareBitArrays(temp, system.RequiredComponentBitMask) == true)
-                        system.DrawEntity(this, entity);
+                if (system.DrawAboveMap == false) {
+                    foreach (Entity entity in entities)
+                    {
+                        BitArray temp = (BitArray)system.RequiredComponentBitMask.Clone();
+                        temp.And(entity.bitMask);
+                        if (Utilities.CompareBitArrays(temp, system.RequiredComponentBitMask) == true)
+                            system.DrawEntity(this, entity);
+                    }
                 }
             }
 
-            milk.Core.Milk.Graphics.End();
-
-            // High-level System.Draw() -- below map
-            milk.Core.Milk.Graphics.Begin(samplerState: SamplerState.PointClamp, transformMatrix: camera.getTransformMatrix());
-            foreach (System system in systems)
-            {
-                if (system.DrawAboveMap == false)
-                    system.Draw(this);
-            }
             milk.Core.Milk.Graphics.End();
 
             // Draw the map layers marked as 'belowEntities: true'
@@ -343,12 +329,20 @@ public abstract class Scene : MilkMethods
             DrawMap(camera, "belowEntities", "false");
             milk.Core.Milk.Graphics.End();
 
-            // High-level System.Draw() -- above all
             milk.Core.Milk.Graphics.Begin(samplerState: SamplerState.PointClamp, transformMatrix: camera.getTransformMatrix());
+
+            // Call DrawEntity() for those systems with DrawAboveMap == true
             foreach (System system in systems)
             {
-                if (system.DrawAboveEntities == true && system.DrawAboveMap == true)
-                    system.Draw(this);
+                if (system.DrawAboveMap == true) {
+                    foreach (Entity entity in entities)
+                    {
+                        BitArray temp = (BitArray)system.RequiredComponentBitMask.Clone();
+                        temp.And(entity.bitMask);
+                        if (Utilities.CompareBitArrays(temp, system.RequiredComponentBitMask) == true)
+                            system.DrawEntity(this, entity);
+                    }
+                }
             }
 
             // Debug draw scene colliders
@@ -397,12 +391,8 @@ public abstract class Scene : MilkMethods
         // no shader here
         milk.Core.Milk.Graphics.Begin(samplerState: SamplerState.PointClamp);
 
-        // high-level draw for those above entities
         foreach (System system in systems)
-        {
-            if (system.DrawAboveEntities == true)
-                system.Draw(this);
-        }
+            system.Draw(this);
 
         Draw();
         UIMenu.Draw();
@@ -461,6 +451,8 @@ public abstract class Scene : MilkMethods
     /// <param name="entity">The entity to add.</param>
     public void AddEntity(Entity entity)
     {
+
+        
 
         // only allow each entity to be added once
         if (entities.Contains(entity) == false)
@@ -577,6 +569,9 @@ public abstract class Scene : MilkMethods
         }
         entitiesToRemoveFromScene.Clear();
     }
+
+    //internal void AddEntitiesToSceneAtEndOfUpdate()
+    //{}
 
     public List<Entity> GetAllEntities()
     {

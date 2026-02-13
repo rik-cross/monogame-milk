@@ -48,6 +48,11 @@ public class Entity
         }
     }
 
+    /// <summary>
+    /// The type of entity.
+    /// </summary>
+    public string? Type;
+
     //
     // Entity state
     //
@@ -142,6 +147,7 @@ public class Entity
     /// Create a new entity.
     /// </summary>
     /// <param name="name">The unique name of the entity.</param>
+    /// <param name="type">The type of the entity.</param>
     /// <param name="tags">A list of tags to identify and/or categorise the entity.</param>
     /// <param name="state">The state of the entity.</param>
     /// <param name="visible">The entity visibility.</param>
@@ -149,6 +155,7 @@ public class Entity
     /// <param name="components">A list of components to add to the entity.</param>
     public Entity(
         string? name = null,
+        string? type = null,
         List<string>? tags = null,
         string state = "default",
         bool visible = true,
@@ -160,6 +167,7 @@ public class Entity
         bitMask = new BitArray(_componentManager.maxComponents, false);
         
         Name = name;
+        Type = type;
         Tags = tags ?? new List<string>();
         _state = state;
         PreviousState = state;

@@ -75,6 +75,9 @@ internal class ComponentManager {
         _entityComponents[GetComponentTypeID(component.GetType()), entity.ID] = component;
         UpdateEntityComponentFlagsForEntity(entity);
 
+        // Set the component's parent entity
+        component.ParentEntity = entity;
+
         // Execute the component callback for the parent entity
         // of the newly-added component
         component.OnAddedToEntity(entity);

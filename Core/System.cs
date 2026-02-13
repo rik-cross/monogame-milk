@@ -21,50 +21,12 @@ public abstract class System {
     /// MonoGame spriteBatch used for drawing.
     /// </summary>
     protected SpriteBatch spriteBatch = EngineGlobals.game.spriteBatch;
-
-    //
-    // System draw order
-    //
-
-    private bool _drawAboveEntities = true;
     
     /// <summary>
-    /// Decides whether the system Draw method is called before
-    /// (below) or after (above) the entities are drawn.
+    /// Decides whether the system DrawEntity() method is called before
+    /// (below) or after (above) the top layer of the map is drawn.
     /// </summary>
-    public bool DrawAboveEntities
-    {
-        get
-        {
-            return _drawAboveEntities;
-        }
-        set
-        {
-            _drawAboveEntities = value;
-            if (value == false)
-                _drawAboveMap = false;
-        }
-    }
-
-    private bool _drawAboveMap = true;
-    
-    /// <summary>
-    /// Decides whether the system Draw method is called before
-    /// (below) or after (above) the map is drawn.
-    /// </summary>
-    public bool DrawAboveMap
-    {
-        get
-        {
-            return _drawAboveMap;
-        }
-        set
-        {
-            _drawAboveMap = value;
-            if (value == true)
-                _drawAboveEntities = true;
-        }
-    }
+    public bool DrawAboveMap = false;
 
     internal BitArray RequiredComponentBitMask;
     
