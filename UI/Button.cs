@@ -141,10 +141,5 @@ public class Button : UIElement
 
     }
 
-    // 
-    public void DrawBackground() {}
-    public void DrawText() {}
-    public void DrawBorder() {}
-
     
 }

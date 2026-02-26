@@ -156,9 +156,9 @@ Systems in a Scene act on entities with the required set of components.</p>
 
   <a id="milk_Core_Entity__ctor_" data-uid="milk.Core.Entity.#ctor*"></a>
 
-  <h3 id="milk_Core_Entity__ctor_System_String_System_Collections_Generic_List_System_String__System_String_System_Boolean_milk_Core_Entity_milk_Core_Component___" data-uid="milk.Core.Entity.#ctor(System.String,System.Collections.Generic.List{System.String},System.String,System.Boolean,milk.Core.Entity,milk.Core.Component[])">
-  Entity(string?, List&lt;string&gt;?, string, bool, Entity?, Component[]?)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/rik-cross/monogame-milk/blob/main/Core/Entity.cs/#L150"><i class="bi bi-code-slash"></i></a>
+  <h3 id="milk_Core_Entity__ctor_System_String_System_String_System_Collections_Generic_List_System_String__System_String_System_Boolean_milk_Core_Entity_milk_Core_Component___" data-uid="milk.Core.Entity.#ctor(System.String,System.String,System.Collections.Generic.List{System.String},System.String,System.Boolean,milk.Core.Entity,milk.Core.Component[])">
+  Entity(string?, string?, List&lt;string&gt;?, string, bool, Entity?, Component[]?)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/rik-cross/monogame-milk/blob/main/Core/Entity.cs/#L156"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Create a new entity.</p>
@@ -166,13 +166,16 @@ Systems in a Scene act on entities with the required set of components.</p>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public Entity(string? name = null, List&lt;string&gt;? tags = null, string state = &quot;default&quot;, bool visible = true, Entity? owner = null, Component[]? components = null)</code></pre>
+    <pre><code class="lang-csharp hljs">public Entity(string? name = null, string? type = null, List&lt;string&gt;? tags = null, string state = &quot;default&quot;, bool visible = true, Entity? owner = null, Component[]? components = null)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
     <dt><code>name</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
     <dd><p>The unique name of the entity.</p>
+</dd>
+    <dt><code>type</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>The type of the entity.</p>
 </dd>
     <dt><code>tags</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;</dt>
     <dd><p>A list of tags to identify and/or categorise the entity.</p>
@@ -202,6 +205,41 @@ Systems in a Scene act on entities with the required set of components.</p>
 
 
 
+  <h2 class="section" id="fields">Fields
+</h2>
+
+
+
+  <h3 id="milk_Core_Entity_Type" data-uid="milk.Core.Entity.Type">
+  Type
+  <a class="header-action link-secondary" title="View source" href="https://github.com/rik-cross/monogame-milk/blob/main/Core/Entity.cs/#L54"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>The type of entity.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string? Type</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
   <h2 class="section" id="properties">Properties
 </h2>
 
@@ -210,7 +248,7 @@ Systems in a Scene act on entities with the required set of components.</p>
 
   <h3 id="milk_Core_Entity_Delete" data-uid="milk.Core.Entity.Delete">
   Delete
-  <a class="header-action link-secondary" title="View source" href="https://github.com/rik-cross/monogame-milk/blob/main/Core/Entity.cs/#L95"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/rik-cross/monogame-milk/blob/main/Core/Entity.cs/#L100"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Setting Delete = true marks an entity for deletion.
@@ -308,7 +346,7 @@ Setting a non-unique, non-null name will raise an InvalidOperationException.</p>
 
   <h3 id="milk_Core_Entity_Owner" data-uid="milk.Core.Entity.Owner">
   Owner
-  <a class="header-action link-secondary" title="View source" href="https://github.com/rik-cross/monogame-milk/blob/main/Core/Entity.cs/#L85"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/rik-cross/monogame-milk/blob/main/Core/Entity.cs/#L90"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>The owner Entity.
@@ -341,7 +379,7 @@ This is set to itself if null is passed.</p>
 
   <h3 id="milk_Core_Entity_PreviousState" data-uid="milk.Core.Entity.PreviousState">
   PreviousState
-  <a class="header-action link-secondary" title="View source" href="https://github.com/rik-cross/monogame-milk/blob/main/Core/Entity.cs/#L60"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/rik-cross/monogame-milk/blob/main/Core/Entity.cs/#L65"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>The state of the entity in the previous frame.</p>
@@ -373,7 +411,7 @@ This is set to itself if null is passed.</p>
 
   <h3 id="milk_Core_Entity_State" data-uid="milk.Core.Entity.State">
   State
-  <a class="header-action link-secondary" title="View source" href="https://github.com/rik-cross/monogame-milk/blob/main/Core/Entity.cs/#L65"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/rik-cross/monogame-milk/blob/main/Core/Entity.cs/#L70"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>The current state of the entity.</p>
@@ -405,7 +443,7 @@ This is set to itself if null is passed.</p>
 
   <h3 id="milk_Core_Entity_Tags" data-uid="milk.Core.Entity.Tags">
   Tags
-  <a class="header-action link-secondary" title="View source" href="https://github.com/rik-cross/monogame-milk/blob/main/Core/Entity.cs/#L121"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/rik-cross/monogame-milk/blob/main/Core/Entity.cs/#L126"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>A list of string tags, used to categorise and/or identify an entity.
@@ -441,7 +479,7 @@ but the same tag can exist across multiple entities.
 
   <h3 id="milk_Core_Entity_Visible" data-uid="milk.Core.Entity.Visible">
   Visible
-  <a class="header-action link-secondary" title="View source" href="https://github.com/rik-cross/monogame-milk/blob/main/Core/Entity.cs/#L139"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/rik-cross/monogame-milk/blob/main/Core/Entity.cs/#L144"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Sets the visibility of an entity.</p>
@@ -477,7 +515,7 @@ but the same tag can exist across multiple entities.
 
   <h3 id="milk_Core_Entity_AddComponent_milk_Core_Component___" data-uid="milk.Core.Entity.AddComponent(milk.Core.Component[])">
   AddComponent(params Component[])
-  <a class="header-action link-secondary" title="View source" href="https://github.com/rik-cross/monogame-milk/blob/main/Core/Entity.cs/#L198"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/rik-cross/monogame-milk/blob/main/Core/Entity.cs/#L206"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Adds one or more components to the entity,
@@ -511,7 +549,7 @@ overwriting an existing component if one exists.</p>
 
   <h3 id="milk_Core_Entity_AddTag_System_String___" data-uid="milk.Core.Entity.AddTag(System.String[])">
   AddTag(params string[])
-  <a class="header-action link-secondary" title="View source" href="https://github.com/rik-cross/monogame-milk/blob/main/Core/Entity.cs/#L231"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/rik-cross/monogame-milk/blob/main/Core/Entity.cs/#L239"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Adds one or more tags, stored in lower-case with duplicates removed.</p>
@@ -544,7 +582,7 @@ overwriting an existing component if one exists.</p>
 
   <h3 id="milk_Core_Entity_GetComponent__1" data-uid="milk.Core.Entity.GetComponent``1">
   GetComponent&lt;T&gt;()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/rik-cross/monogame-milk/blob/main/Core/Entity.cs/#L209"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/rik-cross/monogame-milk/blob/main/Core/Entity.cs/#L217"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Returns the component of the specified type.</p>
@@ -583,7 +621,7 @@ overwriting an existing component if one exists.</p>
 
   <h3 id="milk_Core_Entity_HasComponent__1" data-uid="milk.Core.Entity.HasComponent``1">
   HasComponent&lt;T&gt;()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/rik-cross/monogame-milk/blob/main/Core/Entity.cs/#L188"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/rik-cross/monogame-milk/blob/main/Core/Entity.cs/#L196"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Checks whether the entity has a component of the specified type.</p>
@@ -622,7 +660,7 @@ overwriting an existing component if one exists.</p>
 
   <h3 id="milk_Core_Entity_HasTag_System_String___" data-uid="milk.Core.Entity.HasTag(System.String[])">
   HasTag(params string[])
-  <a class="header-action link-secondary" title="View source" href="https://github.com/rik-cross/monogame-milk/blob/main/Core/Entity.cs/#L247"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/rik-cross/monogame-milk/blob/main/Core/Entity.cs/#L255"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Checks whether the entity has all of the tags specified.
@@ -662,7 +700,7 @@ Tags are checked as lower-case.</p>
 
   <h3 id="milk_Core_Entity_RemoveComponent__1" data-uid="milk.Core.Entity.RemoveComponent``1">
   RemoveComponent&lt;T&gt;()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/rik-cross/monogame-milk/blob/main/Core/Entity.cs/#L218"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/rik-cross/monogame-milk/blob/main/Core/Entity.cs/#L226"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Removes the component of the specified type (if one exists).</p>
@@ -695,7 +733,7 @@ Tags are checked as lower-case.</p>
 
   <h3 id="milk_Core_Entity_RemoveTag_System_String___" data-uid="milk.Core.Entity.RemoveTag(System.String[])">
   RemoveTag(params string[])
-  <a class="header-action link-secondary" title="View source" href="https://github.com/rik-cross/monogame-milk/blob/main/Core/Entity.cs/#L262"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/rik-cross/monogame-milk/blob/main/Core/Entity.cs/#L270"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Removes the specified tags (if they exist).</p>

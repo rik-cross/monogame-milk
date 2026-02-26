@@ -121,8 +121,10 @@ and has some useful additional callback methods.</p>
   <dl class="typelist derived">
     <dt>Derived</dt>
     <dd>
+      <div><a class="xref" href="milk.Components.CollectableComponent.html">CollectableComponent</a></div>
       <div><a class="xref" href="milk.Components.ColliderComponent.html">ColliderComponent</a></div>
       <div><a class="xref" href="milk.Components.InputComponent.html">InputComponent</a></div>
+      <div><a class="xref" href="milk.Components.InventoryComponent.html">InventoryComponent</a></div>
       <div><a class="xref" href="milk.Components.PhysicsComponent.html">PhysicsComponent</a></div>
       <div><a class="xref" href="milk.Components.SpriteComponent.html">SpriteComponent</a></div>
       <div><a class="xref" href="milk.Components.TransformComponent.html">TransformComponent</a></div>
@@ -161,6 +163,42 @@ and has some useful additional callback methods.</p>
 
 
 
+  <h2 class="section" id="properties">Properties
+</h2>
+
+
+  <a id="milk_Core_Component_ParentEntity_" data-uid="milk.Core.Component.ParentEntity*"></a>
+
+  <h3 id="milk_Core_Component_ParentEntity" data-uid="milk.Core.Component.ParentEntity">
+  ParentEntity
+  <a class="header-action link-secondary" title="View source" href="https://github.com/rik-cross/monogame-milk/blob/main/Core/Component.cs/#L19"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>The parent entity owner of the component</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Entity? ParentEntity { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="milk.Core.Entity.html">Entity</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <h2 class="section" id="methods">Methods
 </h2>
 
@@ -169,7 +207,7 @@ and has some useful additional callback methods.</p>
 
   <h3 id="milk_Core_Component_OnAddedToEntity_milk_Core_Entity_" data-uid="milk.Core.Component.OnAddedToEntity(milk.Core.Entity)">
   OnAddedToEntity(Entity)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/rik-cross/monogame-milk/blob/main/Core/Component.cs/#L24"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/rik-cross/monogame-milk/blob/main/Core/Component.cs/#L29"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>This method is called automatically whenever a component is added to an entity.</p>
@@ -202,7 +240,7 @@ and has some useful additional callback methods.</p>
 
   <h3 id="milk_Core_Component_OnRemovedFromEntity_milk_Core_Entity_" data-uid="milk.Core.Component.OnRemovedFromEntity(milk.Core.Entity)">
   OnRemovedFromEntity(Entity)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/rik-cross/monogame-milk/blob/main/Core/Component.cs/#L30"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/rik-cross/monogame-milk/blob/main/Core/Component.cs/#L35"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>This method is called automatically whenever a component is removed from an entity.</p>

@@ -8,7 +8,6 @@ items:
   - milk.Core.System.#ctor
   - milk.Core.System.AddRequiredComponentType``1
   - milk.Core.System.Draw(milk.Core.Scene)
-  - milk.Core.System.DrawAboveEntities
   - milk.Core.System.DrawAboveMap
   - milk.Core.System.DrawEntity(milk.Core.Scene,milk.Core.Entity)
   - milk.Core.System.Init
@@ -49,7 +48,12 @@ items:
   inheritance:
   - System.Object
   derivedClasses:
+  - milk.Core.InventorySystem
   - milk.Core.PhysicsSystem
+  - milk.Systems.CollectionSystem
+  - milk.Systems.InputSystem
+  - milk.Systems.SpriteSystem
+  - milk.Systems.TriggerSystem
   inheritedMembers:
   - System.Object.Equals(System.Object)
   - System.Object.Equals(System.Object,System.Object)
@@ -87,42 +91,8 @@ items:
     return:
       type: Microsoft.Xna.Framework.Graphics.SpriteBatch
     content.vb: Protected spriteBatch As SpriteBatch
-- uid: milk.Core.System.DrawAboveEntities
-  commentId: P:milk.Core.System.DrawAboveEntities
-  id: DrawAboveEntities
-  parent: milk.Core.System
-  langs:
-  - csharp
-  - vb
-  name: DrawAboveEntities
-  nameWithType: System.DrawAboveEntities
-  fullName: milk.Core.System.DrawAboveEntities
-  type: Property
-  source:
-    remote:
-      path: Core/System.cs
-      branch: main
-      repo: git@github.com:rik-cross/monogame-milk.git
-    id: DrawAboveEntities
-    path: Core/System.cs
-    startLine: 34
-  assemblies:
-  - milk
-  namespace: milk.Core
-  summary: >-
-    Decides whether the system Draw method is called before
-
-    (below) or after (above) the entities are drawn.
-  example: []
-  syntax:
-    content: public bool DrawAboveEntities { get; set; }
-    parameters: []
-    return:
-      type: System.Boolean
-    content.vb: Public Property DrawAboveEntities As Boolean
-  overload: milk.Core.System.DrawAboveEntities*
 - uid: milk.Core.System.DrawAboveMap
-  commentId: P:milk.Core.System.DrawAboveMap
+  commentId: F:milk.Core.System.DrawAboveMap
   id: DrawAboveMap
   parent: milk.Core.System
   langs:
@@ -131,7 +101,7 @@ items:
   name: DrawAboveMap
   nameWithType: System.DrawAboveMap
   fullName: milk.Core.System.DrawAboveMap
-  type: Property
+  type: Field
   source:
     remote:
       path: Core/System.cs
@@ -139,22 +109,20 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: DrawAboveMap
     path: Core/System.cs
-    startLine: 54
+    startLine: 28
   assemblies:
   - milk
   namespace: milk.Core
   summary: >-
-    Decides whether the system Draw method is called before
+    Decides whether the system DrawEntity() method is called before
 
-    (below) or after (above) the map is drawn.
+    (below) or after (above) the top layer of the map is drawn.
   example: []
   syntax:
-    content: public bool DrawAboveMap { get; set; }
-    parameters: []
+    content: public bool DrawAboveMap
     return:
       type: System.Boolean
-    content.vb: Public Property DrawAboveMap As Boolean
-  overload: milk.Core.System.DrawAboveMap*
+    content.vb: Public DrawAboveMap As Boolean
 - uid: milk.Core.System.#ctor
   commentId: M:milk.Core.System.#ctor
   id: '#ctor'
@@ -173,7 +141,7 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: .ctor
     path: Core/System.cs
-    startLine: 73
+    startLine: 35
   assemblies:
   - milk
   namespace: milk.Core
@@ -204,7 +172,7 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: AddRequiredComponentType
     path: Core/System.cs
-    startLine: 83
+    startLine: 45
   assemblies:
   - milk
   namespace: milk.Core
@@ -241,7 +209,7 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: Init
     path: Core/System.cs
-    startLine: 101
+    startLine: 63
   assemblies:
   - milk
   namespace: milk.Core
@@ -269,7 +237,7 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: Input
     path: Core/System.cs
-    startLine: 108
+    startLine: 70
   assemblies:
   - milk
   namespace: milk.Core
@@ -304,7 +272,7 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: InputEntity
     path: Core/System.cs
-    startLine: 117
+    startLine: 80
   assemblies:
   - milk
   namespace: milk.Core
@@ -314,7 +282,7 @@ items:
     for each entity with the required set of components.
   example: []
   syntax:
-    content: public virtual void InputEntity(GameTime gameTime, Scene scene, Entity entity)
+    content: public virtual bool InputEntity(GameTime gameTime, Scene scene, Entity entity)
     parameters:
     - id: gameTime
       type: Microsoft.Xna.Framework.GameTime
@@ -325,7 +293,10 @@ items:
     - id: entity
       type: milk.Core.Entity
       description: The entity to be acted upon.
-    content.vb: Public Overridable Sub InputEntity(gameTime As GameTime, scene As Scene, entity As Entity)
+    return:
+      type: System.Boolean
+      description: True if the input should be 'consumed' and not used by subsequent systems (default = false).
+    content.vb: Public Overridable Function InputEntity(gameTime As GameTime, scene As Scene, entity As Entity) As Boolean
   overload: milk.Core.System.InputEntity*
 - uid: milk.Core.System.Update(Microsoft.Xna.Framework.GameTime,milk.Core.Scene)
   commentId: M:milk.Core.System.Update(Microsoft.Xna.Framework.GameTime,milk.Core.Scene)
@@ -345,7 +316,7 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: Update
     path: Core/System.cs
-    startLine: 124
+    startLine: 87
   assemblies:
   - milk
   namespace: milk.Core
@@ -380,7 +351,7 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: UpdateEntity
     path: Core/System.cs
-    startLine: 133
+    startLine: 96
   assemblies:
   - milk
   namespace: milk.Core
@@ -421,7 +392,7 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: Draw
     path: Core/System.cs
-    startLine: 139
+    startLine: 102
   assemblies:
   - milk
   namespace: milk.Core
@@ -453,7 +424,7 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: DrawEntity
     path: Core/System.cs
-    startLine: 147
+    startLine: 110
   assemblies:
   - milk
   namespace: milk.Core
@@ -491,7 +462,7 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: OnEnterScene
     path: Core/System.cs
-    startLine: 157
+    startLine: 120
   assemblies:
   - milk
   namespace: milk.Core
@@ -523,7 +494,7 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: OnExitScene
     path: Core/System.cs
-    startLine: 163
+    startLine: 126
   assemblies:
   - milk
   namespace: milk.Core
@@ -555,7 +526,7 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: OnEntityAddedToScene
     path: Core/System.cs
-    startLine: 170
+    startLine: 133
   assemblies:
   - milk
   namespace: milk.Core
@@ -590,7 +561,7 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: OnEntityRemovedFromScene
     path: Core/System.cs
-    startLine: 177
+    startLine: 140
   assemblies:
   - milk
   namespace: milk.Core
@@ -625,7 +596,7 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: OnAddedToScene
     path: Core/System.cs
-    startLine: 183
+    startLine: 146
   assemblies:
   - milk
   namespace: milk.Core
@@ -657,7 +628,7 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: OnRemovedFromScene
     path: Core/System.cs
-    startLine: 189
+    startLine: 152
   assemblies:
   - milk
   namespace: milk.Core
@@ -976,12 +947,6 @@ references:
   - uid: Microsoft.Xna.Framework.Graphics
     name: Graphics
     isExternal: true
-- uid: milk.Core.System.DrawAboveEntities*
-  commentId: Overload:milk.Core.System.DrawAboveEntities
-  href: milk.Core.System.html#milk_Core_System_DrawAboveEntities
-  name: DrawAboveEntities
-  nameWithType: System.DrawAboveEntities
-  fullName: milk.Core.System.DrawAboveEntities
 - uid: System.Boolean
   commentId: T:System.Boolean
   parent: System
@@ -993,12 +958,6 @@ references:
   nameWithType.vb: Boolean
   fullName.vb: Boolean
   name.vb: Boolean
-- uid: milk.Core.System.DrawAboveMap*
-  commentId: Overload:milk.Core.System.DrawAboveMap
-  href: milk.Core.System.html#milk_Core_System_DrawAboveMap
-  name: DrawAboveMap
-  nameWithType: System.DrawAboveMap
-  fullName: milk.Core.System.DrawAboveMap
 - uid: milk.Core.System.#ctor*
   commentId: Overload:milk.Core.System.#ctor
   href: milk.Core.System.html#milk_Core_System__ctor

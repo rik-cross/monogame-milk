@@ -92,6 +92,7 @@ items:
   - milk.Core.MilkMethods.Controls
   - milk.Core.MilkMethods.Graphics
   - milk.Core.MilkMethods.Content
+  - milk.Core.MilkMethods.TotalGameTime
   - milk.Core.MilkMethods.Quit
   - System.Object.Equals(System.Object)
   - System.Object.Equals(System.Object,System.Object)
@@ -118,7 +119,7 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: game
     path: Core/Scene.cs
-    startLine: 32
+    startLine: 33
   assemblies:
   - milk
   namespace: milk.Core
@@ -147,7 +148,7 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: Size
     path: Core/Scene.cs
-    startLine: 37
+    startLine: 38
   assemblies:
   - milk
   namespace: milk.Core
@@ -176,7 +177,7 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: Middle
     path: Core/Scene.cs
-    startLine: 42
+    startLine: 43
   assemblies:
   - milk
   namespace: milk.Core
@@ -205,7 +206,7 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: elapsedTime
     path: Core/Scene.cs
-    startLine: 43
+    startLine: 44
   assemblies:
   - milk
   namespace: milk.Core
@@ -232,7 +233,7 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: BackgroundColor
     path: Core/Scene.cs
-    startLine: 52
+    startLine: 53
   assemblies:
   - milk
   namespace: milk.Core
@@ -261,7 +262,7 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: IncludeAlRegisteredSystems
     path: Core/Scene.cs
-    startLine: 59
+    startLine: 60
   assemblies:
   - milk
   namespace: milk.Core
@@ -295,7 +296,7 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: cameras
     path: Core/Scene.cs
-    startLine: 60
+    startLine: 61
   assemblies:
   - milk
   namespace: milk.Core
@@ -322,7 +323,7 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: UpdateSceneBelow
     path: Core/Scene.cs
-    startLine: 65
+    startLine: 66
   assemblies:
   - milk
   namespace: milk.Core
@@ -351,7 +352,7 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: InputSceneBelow
     path: Core/Scene.cs
-    startLine: 70
+    startLine: 71
   assemblies:
   - milk
   namespace: milk.Core
@@ -380,7 +381,7 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: DrawSceneBelow
     path: Core/Scene.cs
-    startLine: 75
+    startLine: 76
   assemblies:
   - milk
   namespace: milk.Core
@@ -409,7 +410,7 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: EntitySortMethod
     path: Core/Scene.cs
-    startLine: 82
+    startLine: 83
   assemblies:
   - milk
   namespace: milk.Core
@@ -438,7 +439,7 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: mapSize
     path: Core/Scene.cs
-    startLine: 88
+    startLine: 89
   assemblies:
   - milk
   namespace: milk.Core
@@ -470,7 +471,7 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: Map
     path: Core/Scene.cs
-    startLine: 96
+    startLine: 97
   assemblies:
   - milk
   namespace: milk.Core
@@ -501,7 +502,7 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: Velocity
     path: Core/Scene.cs
-    startLine: 141
+    startLine: 142
   assemblies:
   - milk
   namespace: milk.Core
@@ -530,7 +531,7 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: Acceleration
     path: Core/Scene.cs
-    startLine: 146
+    startLine: 147
   assemblies:
   - milk
   namespace: milk.Core
@@ -559,7 +560,7 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: .ctor
     path: Core/Scene.cs
-    startLine: 154
+    startLine: 155
   assemblies:
   - milk
   namespace: milk.Core
@@ -597,7 +598,7 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: AddCamera
     path: Core/Scene.cs
-    startLine: 421
+    startLine: 424
   assemblies:
   - milk
   namespace: milk.Core
@@ -629,7 +630,7 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: GetCameraByName
     path: Core/Scene.cs
-    startLine: 433
+    startLine: 436
   assemblies:
   - milk
   namespace: milk.Core
@@ -670,7 +671,7 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: HasEntity
     path: Core/Scene.cs
-    startLine: 452
+    startLine: 455
   assemblies:
   - milk
   namespace: milk.Core
@@ -705,7 +706,7 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: AddEntity
     path: Core/Scene.cs
-    startLine: 461
+    startLine: 464
   assemblies:
   - milk
   namespace: milk.Core
@@ -737,7 +738,7 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: RemoveEntity
     path: Core/Scene.cs
-    startLine: 495
+    startLine: 500
   assemblies:
   - milk
   namespace: milk.Core
@@ -772,7 +773,7 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: RemoveEntityByName
     path: Core/Scene.cs
-    startLine: 513
+    startLine: 518
   assemblies:
   - milk
   namespace: milk.Core
@@ -807,7 +808,7 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: RemoveEntitiesByTag
     path: Core/Scene.cs
-    startLine: 524
+    startLine: 529
   assemblies:
   - milk
   namespace: milk.Core
@@ -842,7 +843,7 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: RemoveAllEntities
     path: Core/Scene.cs
-    startLine: 534
+    startLine: 539
   assemblies:
   - milk
   namespace: milk.Core
@@ -870,7 +871,7 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: GetAllEntities
     path: Core/Scene.cs
-    startLine: 580
+    startLine: 588
   assemblies:
   - milk
   namespace: milk.Core
@@ -898,7 +899,7 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: GetEntityByName
     path: Core/Scene.cs
-    startLine: 591
+    startLine: 599
   assemblies:
   - milk
   namespace: milk.Core
@@ -939,7 +940,7 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: GetEntitiesByTag
     path: Core/Scene.cs
-    startLine: 601
+    startLine: 609
   assemblies:
   - milk
   namespace: milk.Core
@@ -977,7 +978,7 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: DeleteEntityByName
     path: Core/Scene.cs
-    startLine: 615
+    startLine: 623
   assemblies:
   - milk
   namespace: milk.Core
@@ -1015,7 +1016,7 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: DeleteEntitiesByTag
     path: Core/Scene.cs
-    startLine: 633
+    startLine: 641
   assemblies:
   - milk
   namespace: milk.Core
@@ -1053,7 +1054,7 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: AddSystem
     path: Core/Scene.cs
-    startLine: 652
+    startLine: 660
   assemblies:
   - milk
   namespace: milk.Core
@@ -1092,7 +1093,7 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: RemoveSystem
     path: Core/Scene.cs
-    startLine: 669
+    startLine: 677
   assemblies:
   - milk
   namespace: milk.Core
@@ -1126,7 +1127,7 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: RemoveAllSystems
     path: Core/Scene.cs
-    startLine: 680
+    startLine: 688
   assemblies:
   - milk
   namespace: milk.Core
@@ -1154,7 +1155,7 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: HasSystem
     path: Core/Scene.cs
-    startLine: 693
+    startLine: 701
   assemblies:
   - milk
   namespace: milk.Core
@@ -1194,7 +1195,7 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: PrintSystems
     path: Core/Scene.cs
-    startLine: 698
+    startLine: 706
   assemblies:
   - milk
   namespace: milk.Core
@@ -1222,7 +1223,7 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: PositionSystem
     path: Core/Scene.cs
-    startLine: 703
+    startLine: 711
   assemblies:
   - milk
   namespace: milk.Core
@@ -1256,7 +1257,7 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: GetSceneBelow
     path: Core/Scene.cs
-    startLine: 718
+    startLine: 726
   assemblies:
   - milk
   namespace: milk.Core
@@ -1297,7 +1298,7 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: AddSceneCollider
     path: Core/Scene.cs
-    startLine: 736
+    startLine: 744
   assemblies:
   - milk
   namespace: milk.Core
@@ -1335,7 +1336,7 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: ClearSceneColliders
     path: Core/Scene.cs
-    startLine: 741
+    startLine: 749
   assemblies:
   - milk
   namespace: milk.Core
@@ -1361,7 +1362,7 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: AddTimedAction
     path: Core/Scene.cs
-    startLine: 776
+    startLine: 784
   assemblies:
   - milk
   namespace: milk.Core
@@ -1402,7 +1403,7 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: RemoveTimedActionByName
     path: Core/Scene.cs
-    startLine: 785
+    startLine: 793
   assemblies:
   - milk
   namespace: milk.Core
@@ -1437,7 +1438,7 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: AddAnimation
     path: Core/Scene.cs
-    startLine: 804
+    startLine: 812
   assemblies:
   - milk
   namespace: milk.Core
@@ -1478,7 +1479,7 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: AddUIElement
     path: Core/Scene.cs
-    startLine: 820
+    startLine: 828
   assemblies:
   - milk
   namespace: milk.Core
@@ -1510,7 +1511,7 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: Init
     path: Core/Scene.cs
-    startLine: 833
+    startLine: 841
   assemblies:
   - milk
   namespace: milk.Core
@@ -1538,7 +1539,7 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: Update
     path: Core/Scene.cs
-    startLine: 839
+    startLine: 847
   assemblies:
   - milk
   namespace: milk.Core
@@ -1570,7 +1571,7 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: Input
     path: Core/Scene.cs
-    startLine: 845
+    startLine: 853
   assemblies:
   - milk
   namespace: milk.Core
@@ -1602,7 +1603,7 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: Draw
     path: Core/Scene.cs
-    startLine: 850
+    startLine: 858
   assemblies:
   - milk
   namespace: milk.Core
@@ -1630,7 +1631,7 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: OnEnter
     path: Core/Scene.cs
-    startLine: 859
+    startLine: 867
   assemblies:
   - milk
   namespace: milk.Core
@@ -1658,7 +1659,7 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: OnExit
     path: Core/Scene.cs
-    startLine: 864
+    startLine: 872
   assemblies:
   - milk
   namespace: milk.Core
@@ -1686,7 +1687,7 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: OnEntityAdded
     path: Core/Scene.cs
-    startLine: 870
+    startLine: 878
   assemblies:
   - milk
   namespace: milk.Core
@@ -1718,7 +1719,7 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: OnEntityRemoved
     path: Core/Scene.cs
-    startLine: 876
+    startLine: 884
   assemblies:
   - milk
   namespace: milk.Core
@@ -1808,6 +1809,13 @@ references:
   name: Content
   nameWithType: MilkMethods.Content
   fullName: milk.Core.MilkMethods.Content
+- uid: milk.Core.MilkMethods.TotalGameTime
+  commentId: P:milk.Core.MilkMethods.TotalGameTime
+  parent: milk.Core.MilkMethods
+  href: milk.Core.MilkMethods.html#milk_Core_MilkMethods_TotalGameTime
+  name: TotalGameTime
+  nameWithType: MilkMethods.TotalGameTime
+  fullName: milk.Core.MilkMethods.TotalGameTime
 - uid: milk.Core.MilkMethods.Quit
   commentId: M:milk.Core.MilkMethods.Quit
   parent: milk.Core.MilkMethods

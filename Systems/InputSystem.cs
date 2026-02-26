@@ -10,8 +10,13 @@ using milk.Components;
 
 namespace milk.Systems;
 
-internal class InputSystem : milk.Core.System
+public class InputSystem : milk.Core.System
 {
+
+    /// <summary>
+    /// If true, subsequent systems will not process input (default = false).
+    /// </summary>
+    public bool ConsumeInput { get; set; } = true;
 
     /// <summary>
     /// Initialises the input system, which only processes entities
@@ -28,7 +33,7 @@ internal class InputSystem : milk.Core.System
     /// <param name="gameTime">The MonoGame gameTime object for measuring elapsed time.</param>
     /// <param name="scene">The scene containing the system.</param>
     /// <param name="entity">The entity to be processed.</param>
-    public override void InputEntity(GameTime gameTime, Scene scene, Entity entity)
+    public override bool InputEntity(GameTime gameTime, Scene scene, Entity entity)
     {
         InputComponent inputComponent = entity.GetComponent<InputComponent>();
         
@@ -37,6 +42,7 @@ internal class InputSystem : milk.Core.System
         
         inputComponent.inputController(scene, entity, isSuspended);
 
+        return ConsumeInput;
     }
 
 }

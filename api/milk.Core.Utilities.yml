@@ -5,6 +5,7 @@ items:
   id: Utilities
   parent: milk.Core
   children:
+  - milk.Core.Utilities.DrawTextureToContainerSize(Microsoft.Xna.Framework.Graphics.Texture2D,Microsoft.Xna.Framework.Rectangle,Microsoft.Xna.Framework.Color)
   - milk.Core.Utilities.GetSubTexture(Microsoft.Xna.Framework.Graphics.Texture2D,System.Int32,System.Int32,System.Int32,System.Int32)
   - milk.Core.Utilities.SplitTexture(Microsoft.Xna.Framework.Graphics.Texture2D,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Rectangle)
   langs:
@@ -134,6 +135,39 @@ items:
   nameWithType.vb: Utilities.GetSubTexture(Texture2D, Integer, Integer, Integer, Integer)
   fullName.vb: milk.Core.Utilities.GetSubTexture(Microsoft.Xna.Framework.Graphics.Texture2D, Integer, Integer, Integer, Integer)
   name.vb: GetSubTexture(Texture2D, Integer, Integer, Integer, Integer)
+- uid: milk.Core.Utilities.DrawTextureToContainerSize(Microsoft.Xna.Framework.Graphics.Texture2D,Microsoft.Xna.Framework.Rectangle,Microsoft.Xna.Framework.Color)
+  commentId: M:milk.Core.Utilities.DrawTextureToContainerSize(Microsoft.Xna.Framework.Graphics.Texture2D,Microsoft.Xna.Framework.Rectangle,Microsoft.Xna.Framework.Color)
+  id: DrawTextureToContainerSize(Microsoft.Xna.Framework.Graphics.Texture2D,Microsoft.Xna.Framework.Rectangle,Microsoft.Xna.Framework.Color)
+  parent: milk.Core.Utilities
+  langs:
+  - csharp
+  - vb
+  name: DrawTextureToContainerSize(Texture2D, Rectangle, Color)
+  nameWithType: Utilities.DrawTextureToContainerSize(Texture2D, Rectangle, Color)
+  fullName: milk.Core.Utilities.DrawTextureToContainerSize(Microsoft.Xna.Framework.Graphics.Texture2D, Microsoft.Xna.Framework.Rectangle, Microsoft.Xna.Framework.Color)
+  type: Method
+  source:
+    remote:
+      path: Core/Utilities.cs
+      branch: main
+      repo: git@github.com:rik-cross/monogame-milk.git
+    id: DrawTextureToContainerSize
+    path: Core/Utilities.cs
+    startLine: 113
+  assemblies:
+  - milk
+  namespace: milk.Core
+  syntax:
+    content: public static void DrawTextureToContainerSize(Texture2D texture, Rectangle container, Color color)
+    parameters:
+    - id: texture
+      type: Microsoft.Xna.Framework.Graphics.Texture2D
+    - id: container
+      type: Microsoft.Xna.Framework.Rectangle
+    - id: color
+      type: Microsoft.Xna.Framework.Color
+    content.vb: Public Shared Sub DrawTextureToContainerSize(texture As Texture2D, container As Rectangle, color As Color)
+  overload: milk.Core.Utilities.DrawTextureToContainerSize*
 references:
 - uid: milk.Core
   commentId: N:milk.Core
@@ -618,3 +652,16 @@ references:
   nameWithType.vb: Integer
   fullName.vb: Integer
   name.vb: Integer
+- uid: milk.Core.Utilities.DrawTextureToContainerSize*
+  commentId: Overload:milk.Core.Utilities.DrawTextureToContainerSize
+  href: milk.Core.Utilities.html#milk_Core_Utilities_DrawTextureToContainerSize_Microsoft_Xna_Framework_Graphics_Texture2D_Microsoft_Xna_Framework_Rectangle_Microsoft_Xna_Framework_Color_
+  name: DrawTextureToContainerSize
+  nameWithType: Utilities.DrawTextureToContainerSize
+  fullName: milk.Core.Utilities.DrawTextureToContainerSize
+- uid: Microsoft.Xna.Framework.Color
+  commentId: T:Microsoft.Xna.Framework.Color
+  parent: Microsoft.Xna.Framework
+  isExternal: true
+  name: Color
+  nameWithType: Color
+  fullName: Microsoft.Xna.Framework.Color

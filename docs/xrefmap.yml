@@ -525,6 +525,12 @@ references:
   commentId: N:milk.Components
   fullName: milk.Components
   nameWithType: milk.Components
+- uid: milk.Components.CollectableComponent
+  name: CollectableComponent
+  href: api/milk.Components.CollectableComponent.html
+  commentId: T:milk.Components.CollectableComponent
+  fullName: milk.Components.CollectableComponent
+  nameWithType: CollectableComponent
 - uid: milk.Components.ColliderComponent
   name: ColliderComponent
   href: api/milk.Components.ColliderComponent.html
@@ -593,6 +599,547 @@ references:
   commentId: F:milk.Components.InputComponent.inputController
   fullName: milk.Components.InputComponent.inputController
   nameWithType: InputComponent.inputController
+- uid: milk.Components.InventoryComponent
+  name: InventoryComponent
+  href: api/milk.Components.InventoryComponent.html
+  commentId: T:milk.Components.InventoryComponent
+  fullName: milk.Components.InventoryComponent
+  nameWithType: InventoryComponent
+- uid: milk.Components.InventoryComponent.#ctor(System.Int32,System.Boolean,System.Nullable{Microsoft.Xna.Framework.Vector2},milk.UI.Anchor,System.Nullable{Microsoft.Xna.Framework.Vector2},System.Nullable{System.Int32},System.Int32,System.Single,System.Single,System.Nullable{Microsoft.Xna.Framework.Color},System.Nullable{Microsoft.Xna.Framework.Color},System.Nullable{Microsoft.Xna.Framework.Color},System.Nullable{Microsoft.Xna.Framework.Color},Microsoft.Xna.Framework.Graphics.SpriteFont,System.Action{milk.Components.InventoryComponent},System.Boolean,System.Boolean,System.Collections.Generic.Dictionary{Microsoft.Xna.Framework.Input.Keys,System.Action})
+  name: InventoryComponent(int, bool, Vector2?, Anchor, Vector2?, int?, int, float, float, Color?, Color?, Color?, Color?, SpriteFont?, Action<InventoryComponent>?, bool, bool, Dictionary<Keys, Action>?)
+  href: api/milk.Components.InventoryComponent.html#milk_Components_InventoryComponent__ctor_System_Int32_System_Boolean_System_Nullable_Microsoft_Xna_Framework_Vector2__milk_UI_Anchor_System_Nullable_Microsoft_Xna_Framework_Vector2__System_Nullable_System_Int32__System_Int32_System_Single_System_Single_System_Nullable_Microsoft_Xna_Framework_Color__System_Nullable_Microsoft_Xna_Framework_Color__System_Nullable_Microsoft_Xna_Framework_Color__System_Nullable_Microsoft_Xna_Framework_Color__Microsoft_Xna_Framework_Graphics_SpriteFont_System_Action_milk_Components_InventoryComponent__System_Boolean_System_Boolean_System_Collections_Generic_Dictionary_Microsoft_Xna_Framework_Input_Keys_System_Action__
+  commentId: M:milk.Components.InventoryComponent.#ctor(System.Int32,System.Boolean,System.Nullable{Microsoft.Xna.Framework.Vector2},milk.UI.Anchor,System.Nullable{Microsoft.Xna.Framework.Vector2},System.Nullable{System.Int32},System.Int32,System.Single,System.Single,System.Nullable{Microsoft.Xna.Framework.Color},System.Nullable{Microsoft.Xna.Framework.Color},System.Nullable{Microsoft.Xna.Framework.Color},System.Nullable{Microsoft.Xna.Framework.Color},Microsoft.Xna.Framework.Graphics.SpriteFont,System.Action{milk.Components.InventoryComponent},System.Boolean,System.Boolean,System.Collections.Generic.Dictionary{Microsoft.Xna.Framework.Input.Keys,System.Action})
+  name.vb: New(Integer, Boolean, Vector2?, Anchor, Vector2?, Integer?, Integer, Single, Single, Color?, Color?, Color?, Color?, SpriteFont, Action(Of InventoryComponent), Boolean, Boolean, Dictionary(Of Keys, Action))
+  fullName: milk.Components.InventoryComponent.InventoryComponent(int, bool, Microsoft.Xna.Framework.Vector2?, milk.UI.Anchor, Microsoft.Xna.Framework.Vector2?, int?, int, float, float, Microsoft.Xna.Framework.Color?, Microsoft.Xna.Framework.Color?, Microsoft.Xna.Framework.Color?, Microsoft.Xna.Framework.Color?, Microsoft.Xna.Framework.Graphics.SpriteFont?, System.Action<milk.Components.InventoryComponent>?, bool, bool, System.Collections.Generic.Dictionary<Microsoft.Xna.Framework.Input.Keys, System.Action>?)
+  fullName.vb: milk.Components.InventoryComponent.New(Integer, Boolean, Microsoft.Xna.Framework.Vector2?, milk.UI.Anchor, Microsoft.Xna.Framework.Vector2?, Integer?, Integer, Single, Single, Microsoft.Xna.Framework.Color?, Microsoft.Xna.Framework.Color?, Microsoft.Xna.Framework.Color?, Microsoft.Xna.Framework.Color?, Microsoft.Xna.Framework.Graphics.SpriteFont, System.Action(Of milk.Components.InventoryComponent), Boolean, Boolean, System.Collections.Generic.Dictionary(Of Microsoft.Xna.Framework.Input.Keys, System.Action))
+  nameWithType: InventoryComponent.InventoryComponent(int, bool, Vector2?, Anchor, Vector2?, int?, int, float, float, Color?, Color?, Color?, Color?, SpriteFont?, Action<InventoryComponent>?, bool, bool, Dictionary<Keys, Action>?)
+  nameWithType.vb: InventoryComponent.New(Integer, Boolean, Vector2?, Anchor, Vector2?, Integer?, Integer, Single, Single, Color?, Color?, Color?, Color?, SpriteFont, Action(Of InventoryComponent), Boolean, Boolean, Dictionary(Of Keys, Action))
+- uid: milk.Components.InventoryComponent.#ctor*
+  name: InventoryComponent
+  href: api/milk.Components.InventoryComponent.html#milk_Components_InventoryComponent__ctor_
+  commentId: Overload:milk.Components.InventoryComponent.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: milk.Components.InventoryComponent.InventoryComponent
+  fullName.vb: milk.Components.InventoryComponent.New
+  nameWithType: InventoryComponent.InventoryComponent
+  nameWithType.vb: InventoryComponent.New
+- uid: milk.Components.InventoryComponent.Active
+  name: Active
+  href: api/milk.Components.InventoryComponent.html#milk_Components_InventoryComponent_Active
+  commentId: P:milk.Components.InventoryComponent.Active
+  fullName: milk.Components.InventoryComponent.Active
+  nameWithType: InventoryComponent.Active
+- uid: milk.Components.InventoryComponent.Active*
+  name: Active
+  href: api/milk.Components.InventoryComponent.html#milk_Components_InventoryComponent_Active_
+  commentId: Overload:milk.Components.InventoryComponent.Active
+  isSpec: "True"
+  fullName: milk.Components.InventoryComponent.Active
+  nameWithType: InventoryComponent.Active
+- uid: milk.Components.InventoryComponent.AddEntity(milk.Core.Entity)
+  name: AddEntity(Entity)
+  href: api/milk.Components.InventoryComponent.html#milk_Components_InventoryComponent_AddEntity_milk_Core_Entity_
+  commentId: M:milk.Components.InventoryComponent.AddEntity(milk.Core.Entity)
+  fullName: milk.Components.InventoryComponent.AddEntity(milk.Core.Entity)
+  nameWithType: InventoryComponent.AddEntity(Entity)
+- uid: milk.Components.InventoryComponent.AddEntity*
+  name: AddEntity
+  href: api/milk.Components.InventoryComponent.html#milk_Components_InventoryComponent_AddEntity_
+  commentId: Overload:milk.Components.InventoryComponent.AddEntity
+  isSpec: "True"
+  fullName: milk.Components.InventoryComponent.AddEntity
+  nameWithType: InventoryComponent.AddEntity
+- uid: milk.Components.InventoryComponent.Alpha
+  name: Alpha
+  href: api/milk.Components.InventoryComponent.html#milk_Components_InventoryComponent_Alpha
+  commentId: P:milk.Components.InventoryComponent.Alpha
+  fullName: milk.Components.InventoryComponent.Alpha
+  nameWithType: InventoryComponent.Alpha
+- uid: milk.Components.InventoryComponent.Alpha*
+  name: Alpha
+  href: api/milk.Components.InventoryComponent.html#milk_Components_InventoryComponent_Alpha_
+  commentId: Overload:milk.Components.InventoryComponent.Alpha
+  isSpec: "True"
+  fullName: milk.Components.InventoryComponent.Alpha
+  nameWithType: InventoryComponent.Alpha
+- uid: milk.Components.InventoryComponent.AlphaInactive
+  name: AlphaInactive
+  href: api/milk.Components.InventoryComponent.html#milk_Components_InventoryComponent_AlphaInactive
+  commentId: P:milk.Components.InventoryComponent.AlphaInactive
+  fullName: milk.Components.InventoryComponent.AlphaInactive
+  nameWithType: InventoryComponent.AlphaInactive
+- uid: milk.Components.InventoryComponent.AlphaInactive*
+  name: AlphaInactive
+  href: api/milk.Components.InventoryComponent.html#milk_Components_InventoryComponent_AlphaInactive_
+  commentId: Overload:milk.Components.InventoryComponent.AlphaInactive
+  isSpec: "True"
+  fullName: milk.Components.InventoryComponent.AlphaInactive
+  nameWithType: InventoryComponent.AlphaInactive
+- uid: milk.Components.InventoryComponent.Anchor
+  name: Anchor
+  href: api/milk.Components.InventoryComponent.html#milk_Components_InventoryComponent_Anchor
+  commentId: P:milk.Components.InventoryComponent.Anchor
+  fullName: milk.Components.InventoryComponent.Anchor
+  nameWithType: InventoryComponent.Anchor
+- uid: milk.Components.InventoryComponent.Anchor*
+  name: Anchor
+  href: api/milk.Components.InventoryComponent.html#milk_Components_InventoryComponent_Anchor_
+  commentId: Overload:milk.Components.InventoryComponent.Anchor
+  isSpec: "True"
+  fullName: milk.Components.InventoryComponent.Anchor
+  nameWithType: InventoryComponent.Anchor
+- uid: milk.Components.InventoryComponent.Bottom
+  name: Bottom
+  href: api/milk.Components.InventoryComponent.html#milk_Components_InventoryComponent_Bottom
+  commentId: P:milk.Components.InventoryComponent.Bottom
+  fullName: milk.Components.InventoryComponent.Bottom
+  nameWithType: InventoryComponent.Bottom
+- uid: milk.Components.InventoryComponent.Bottom*
+  name: Bottom
+  href: api/milk.Components.InventoryComponent.html#milk_Components_InventoryComponent_Bottom_
+  commentId: Overload:milk.Components.InventoryComponent.Bottom
+  isSpec: "True"
+  fullName: milk.Components.InventoryComponent.Bottom
+  nameWithType: InventoryComponent.Bottom
+- uid: milk.Components.InventoryComponent.CalculateTopLeftPositionFromAnchor
+  name: CalculateTopLeftPositionFromAnchor()
+  href: api/milk.Components.InventoryComponent.html#milk_Components_InventoryComponent_CalculateTopLeftPositionFromAnchor
+  commentId: M:milk.Components.InventoryComponent.CalculateTopLeftPositionFromAnchor
+  fullName: milk.Components.InventoryComponent.CalculateTopLeftPositionFromAnchor()
+  nameWithType: InventoryComponent.CalculateTopLeftPositionFromAnchor()
+- uid: milk.Components.InventoryComponent.CalculateTopLeftPositionFromAnchor*
+  name: CalculateTopLeftPositionFromAnchor
+  href: api/milk.Components.InventoryComponent.html#milk_Components_InventoryComponent_CalculateTopLeftPositionFromAnchor_
+  commentId: Overload:milk.Components.InventoryComponent.CalculateTopLeftPositionFromAnchor
+  isSpec: "True"
+  fullName: milk.Components.InventoryComponent.CalculateTopLeftPositionFromAnchor
+  nameWithType: InventoryComponent.CalculateTopLeftPositionFromAnchor
+- uid: milk.Components.InventoryComponent.Center
+  name: Center
+  href: api/milk.Components.InventoryComponent.html#milk_Components_InventoryComponent_Center
+  commentId: P:milk.Components.InventoryComponent.Center
+  fullName: milk.Components.InventoryComponent.Center
+  nameWithType: InventoryComponent.Center
+- uid: milk.Components.InventoryComponent.Center*
+  name: Center
+  href: api/milk.Components.InventoryComponent.html#milk_Components_InventoryComponent_Center_
+  commentId: Overload:milk.Components.InventoryComponent.Center
+  isSpec: "True"
+  fullName: milk.Components.InventoryComponent.Center
+  nameWithType: InventoryComponent.Center
+- uid: milk.Components.InventoryComponent.Consolidate
+  name: Consolidate()
+  href: api/milk.Components.InventoryComponent.html#milk_Components_InventoryComponent_Consolidate
+  commentId: M:milk.Components.InventoryComponent.Consolidate
+  fullName: milk.Components.InventoryComponent.Consolidate()
+  nameWithType: InventoryComponent.Consolidate()
+- uid: milk.Components.InventoryComponent.Consolidate*
+  name: Consolidate
+  href: api/milk.Components.InventoryComponent.html#milk_Components_InventoryComponent_Consolidate_
+  commentId: Overload:milk.Components.InventoryComponent.Consolidate
+  isSpec: "True"
+  fullName: milk.Components.InventoryComponent.Consolidate
+  nameWithType: InventoryComponent.Consolidate
+- uid: milk.Components.InventoryComponent.CustomDrawMethod
+  name: CustomDrawMethod
+  href: api/milk.Components.InventoryComponent.html#milk_Components_InventoryComponent_CustomDrawMethod
+  commentId: F:milk.Components.InventoryComponent.CustomDrawMethod
+  fullName: milk.Components.InventoryComponent.CustomDrawMethod
+  nameWithType: InventoryComponent.CustomDrawMethod
+- uid: milk.Components.InventoryComponent.Font
+  name: Font
+  href: api/milk.Components.InventoryComponent.html#milk_Components_InventoryComponent_Font
+  commentId: F:milk.Components.InventoryComponent.Font
+  fullName: milk.Components.InventoryComponent.Font
+  nameWithType: InventoryComponent.Font
+- uid: milk.Components.InventoryComponent.GetSlot(System.Nullable{System.Int32})
+  name: GetSlot(int?)
+  href: api/milk.Components.InventoryComponent.html#milk_Components_InventoryComponent_GetSlot_System_Nullable_System_Int32__
+  commentId: M:milk.Components.InventoryComponent.GetSlot(System.Nullable{System.Int32})
+  name.vb: GetSlot(Integer?)
+  fullName: milk.Components.InventoryComponent.GetSlot(int?)
+  fullName.vb: milk.Components.InventoryComponent.GetSlot(Integer?)
+  nameWithType: InventoryComponent.GetSlot(int?)
+  nameWithType.vb: InventoryComponent.GetSlot(Integer?)
+- uid: milk.Components.InventoryComponent.GetSlot*
+  name: GetSlot
+  href: api/milk.Components.InventoryComponent.html#milk_Components_InventoryComponent_GetSlot_
+  commentId: Overload:milk.Components.InventoryComponent.GetSlot
+  isSpec: "True"
+  fullName: milk.Components.InventoryComponent.GetSlot
+  nameWithType: InventoryComponent.GetSlot
+- uid: milk.Components.InventoryComponent.Height
+  name: Height
+  href: api/milk.Components.InventoryComponent.html#milk_Components_InventoryComponent_Height
+  commentId: P:milk.Components.InventoryComponent.Height
+  fullName: milk.Components.InventoryComponent.Height
+  nameWithType: InventoryComponent.Height
+- uid: milk.Components.InventoryComponent.Height*
+  name: Height
+  href: api/milk.Components.InventoryComponent.html#milk_Components_InventoryComponent_Height_
+  commentId: Overload:milk.Components.InventoryComponent.Height
+  isSpec: "True"
+  fullName: milk.Components.InventoryComponent.Height
+  nameWithType: InventoryComponent.Height
+- uid: milk.Components.InventoryComponent.InputActions
+  name: InputActions
+  href: api/milk.Components.InventoryComponent.html#milk_Components_InventoryComponent_InputActions
+  commentId: P:milk.Components.InventoryComponent.InputActions
+  fullName: milk.Components.InventoryComponent.InputActions
+  nameWithType: InventoryComponent.InputActions
+- uid: milk.Components.InventoryComponent.InputActions*
+  name: InputActions
+  href: api/milk.Components.InventoryComponent.html#milk_Components_InventoryComponent_InputActions_
+  commentId: Overload:milk.Components.InventoryComponent.InputActions
+  isSpec: "True"
+  fullName: milk.Components.InventoryComponent.InputActions
+  nameWithType: InventoryComponent.InputActions
+- uid: milk.Components.InventoryComponent.Left
+  name: Left
+  href: api/milk.Components.InventoryComponent.html#milk_Components_InventoryComponent_Left
+  commentId: P:milk.Components.InventoryComponent.Left
+  fullName: milk.Components.InventoryComponent.Left
+  nameWithType: InventoryComponent.Left
+- uid: milk.Components.InventoryComponent.Left*
+  name: Left
+  href: api/milk.Components.InventoryComponent.html#milk_Components_InventoryComponent_Left_
+  commentId: Overload:milk.Components.InventoryComponent.Left
+  isSpec: "True"
+  fullName: milk.Components.InventoryComponent.Left
+  nameWithType: InventoryComponent.Left
+- uid: milk.Components.InventoryComponent.Margin
+  name: Margin
+  href: api/milk.Components.InventoryComponent.html#milk_Components_InventoryComponent_Margin
+  commentId: P:milk.Components.InventoryComponent.Margin
+  fullName: milk.Components.InventoryComponent.Margin
+  nameWithType: InventoryComponent.Margin
+- uid: milk.Components.InventoryComponent.Margin*
+  name: Margin
+  href: api/milk.Components.InventoryComponent.html#milk_Components_InventoryComponent_Margin_
+  commentId: Overload:milk.Components.InventoryComponent.Margin
+  isSpec: "True"
+  fullName: milk.Components.InventoryComponent.Margin
+  nameWithType: InventoryComponent.Margin
+- uid: milk.Components.InventoryComponent.Middle
+  name: Middle
+  href: api/milk.Components.InventoryComponent.html#milk_Components_InventoryComponent_Middle
+  commentId: P:milk.Components.InventoryComponent.Middle
+  fullName: milk.Components.InventoryComponent.Middle
+  nameWithType: InventoryComponent.Middle
+- uid: milk.Components.InventoryComponent.Middle*
+  name: Middle
+  href: api/milk.Components.InventoryComponent.html#milk_Components_InventoryComponent_Middle_
+  commentId: Overload:milk.Components.InventoryComponent.Middle
+  isSpec: "True"
+  fullName: milk.Components.InventoryComponent.Middle
+  nameWithType: InventoryComponent.Middle
+- uid: milk.Components.InventoryComponent.NumberOfSlots
+  name: NumberOfSlots
+  href: api/milk.Components.InventoryComponent.html#milk_Components_InventoryComponent_NumberOfSlots
+  commentId: P:milk.Components.InventoryComponent.NumberOfSlots
+  fullName: milk.Components.InventoryComponent.NumberOfSlots
+  nameWithType: InventoryComponent.NumberOfSlots
+- uid: milk.Components.InventoryComponent.NumberOfSlots*
+  name: NumberOfSlots
+  href: api/milk.Components.InventoryComponent.html#milk_Components_InventoryComponent_NumberOfSlots_
+  commentId: Overload:milk.Components.InventoryComponent.NumberOfSlots
+  isSpec: "True"
+  fullName: milk.Components.InventoryComponent.NumberOfSlots
+  nameWithType: InventoryComponent.NumberOfSlots
+- uid: milk.Components.InventoryComponent.Position
+  name: Position
+  href: api/milk.Components.InventoryComponent.html#milk_Components_InventoryComponent_Position
+  commentId: P:milk.Components.InventoryComponent.Position
+  fullName: milk.Components.InventoryComponent.Position
+  nameWithType: InventoryComponent.Position
+- uid: milk.Components.InventoryComponent.Position*
+  name: Position
+  href: api/milk.Components.InventoryComponent.html#milk_Components_InventoryComponent_Position_
+  commentId: Overload:milk.Components.InventoryComponent.Position
+  isSpec: "True"
+  fullName: milk.Components.InventoryComponent.Position
+  nameWithType: InventoryComponent.Position
+- uid: milk.Components.InventoryComponent.PrimaryColor
+  name: PrimaryColor
+  href: api/milk.Components.InventoryComponent.html#milk_Components_InventoryComponent_PrimaryColor
+  commentId: F:milk.Components.InventoryComponent.PrimaryColor
+  fullName: milk.Components.InventoryComponent.PrimaryColor
+  nameWithType: InventoryComponent.PrimaryColor
+- uid: milk.Components.InventoryComponent.PrimaryColorInactive
+  name: PrimaryColorInactive
+  href: api/milk.Components.InventoryComponent.html#milk_Components_InventoryComponent_PrimaryColorInactive
+  commentId: F:milk.Components.InventoryComponent.PrimaryColorInactive
+  fullName: milk.Components.InventoryComponent.PrimaryColorInactive
+  nameWithType: InventoryComponent.PrimaryColorInactive
+- uid: milk.Components.InventoryComponent.RemoveAllEntities
+  name: RemoveAllEntities()
+  href: api/milk.Components.InventoryComponent.html#milk_Components_InventoryComponent_RemoveAllEntities
+  commentId: M:milk.Components.InventoryComponent.RemoveAllEntities
+  fullName: milk.Components.InventoryComponent.RemoveAllEntities()
+  nameWithType: InventoryComponent.RemoveAllEntities()
+- uid: milk.Components.InventoryComponent.RemoveAllEntities*
+  name: RemoveAllEntities
+  href: api/milk.Components.InventoryComponent.html#milk_Components_InventoryComponent_RemoveAllEntities_
+  commentId: Overload:milk.Components.InventoryComponent.RemoveAllEntities
+  isSpec: "True"
+  fullName: milk.Components.InventoryComponent.RemoveAllEntities
+  nameWithType: InventoryComponent.RemoveAllEntities
+- uid: milk.Components.InventoryComponent.RemoveAllEntitiesFromSlot(System.Nullable{System.Int32})
+  name: RemoveAllEntitiesFromSlot(int?)
+  href: api/milk.Components.InventoryComponent.html#milk_Components_InventoryComponent_RemoveAllEntitiesFromSlot_System_Nullable_System_Int32__
+  commentId: M:milk.Components.InventoryComponent.RemoveAllEntitiesFromSlot(System.Nullable{System.Int32})
+  name.vb: RemoveAllEntitiesFromSlot(Integer?)
+  fullName: milk.Components.InventoryComponent.RemoveAllEntitiesFromSlot(int?)
+  fullName.vb: milk.Components.InventoryComponent.RemoveAllEntitiesFromSlot(Integer?)
+  nameWithType: InventoryComponent.RemoveAllEntitiesFromSlot(int?)
+  nameWithType.vb: InventoryComponent.RemoveAllEntitiesFromSlot(Integer?)
+- uid: milk.Components.InventoryComponent.RemoveAllEntitiesFromSlot*
+  name: RemoveAllEntitiesFromSlot
+  href: api/milk.Components.InventoryComponent.html#milk_Components_InventoryComponent_RemoveAllEntitiesFromSlot_
+  commentId: Overload:milk.Components.InventoryComponent.RemoveAllEntitiesFromSlot
+  isSpec: "True"
+  fullName: milk.Components.InventoryComponent.RemoveAllEntitiesFromSlot
+  nameWithType: InventoryComponent.RemoveAllEntitiesFromSlot
+- uid: milk.Components.InventoryComponent.RemoveEntity(System.Nullable{System.Int32})
+  name: RemoveEntity(int?)
+  href: api/milk.Components.InventoryComponent.html#milk_Components_InventoryComponent_RemoveEntity_System_Nullable_System_Int32__
+  commentId: M:milk.Components.InventoryComponent.RemoveEntity(System.Nullable{System.Int32})
+  name.vb: RemoveEntity(Integer?)
+  fullName: milk.Components.InventoryComponent.RemoveEntity(int?)
+  fullName.vb: milk.Components.InventoryComponent.RemoveEntity(Integer?)
+  nameWithType: InventoryComponent.RemoveEntity(int?)
+  nameWithType.vb: InventoryComponent.RemoveEntity(Integer?)
+- uid: milk.Components.InventoryComponent.RemoveEntity*
+  name: RemoveEntity
+  href: api/milk.Components.InventoryComponent.html#milk_Components_InventoryComponent_RemoveEntity_
+  commentId: Overload:milk.Components.InventoryComponent.RemoveEntity
+  isSpec: "True"
+  fullName: milk.Components.InventoryComponent.RemoveEntity
+  nameWithType: InventoryComponent.RemoveEntity
+- uid: milk.Components.InventoryComponent.RemoveEntityOfType(System.String)
+  name: RemoveEntityOfType(string)
+  href: api/milk.Components.InventoryComponent.html#milk_Components_InventoryComponent_RemoveEntityOfType_System_String_
+  commentId: M:milk.Components.InventoryComponent.RemoveEntityOfType(System.String)
+  name.vb: RemoveEntityOfType(String)
+  fullName: milk.Components.InventoryComponent.RemoveEntityOfType(string)
+  fullName.vb: milk.Components.InventoryComponent.RemoveEntityOfType(String)
+  nameWithType: InventoryComponent.RemoveEntityOfType(string)
+  nameWithType.vb: InventoryComponent.RemoveEntityOfType(String)
+- uid: milk.Components.InventoryComponent.RemoveEntityOfType*
+  name: RemoveEntityOfType
+  href: api/milk.Components.InventoryComponent.html#milk_Components_InventoryComponent_RemoveEntityOfType_
+  commentId: Overload:milk.Components.InventoryComponent.RemoveEntityOfType
+  isSpec: "True"
+  fullName: milk.Components.InventoryComponent.RemoveEntityOfType
+  nameWithType: InventoryComponent.RemoveEntityOfType
+- uid: milk.Components.InventoryComponent.Right
+  name: Right
+  href: api/milk.Components.InventoryComponent.html#milk_Components_InventoryComponent_Right
+  commentId: P:milk.Components.InventoryComponent.Right
+  fullName: milk.Components.InventoryComponent.Right
+  nameWithType: InventoryComponent.Right
+- uid: milk.Components.InventoryComponent.Right*
+  name: Right
+  href: api/milk.Components.InventoryComponent.html#milk_Components_InventoryComponent_Right_
+  commentId: Overload:milk.Components.InventoryComponent.Right
+  isSpec: "True"
+  fullName: milk.Components.InventoryComponent.Right
+  nameWithType: InventoryComponent.Right
+- uid: milk.Components.InventoryComponent.SecondaryColor
+  name: SecondaryColor
+  href: api/milk.Components.InventoryComponent.html#milk_Components_InventoryComponent_SecondaryColor
+  commentId: F:milk.Components.InventoryComponent.SecondaryColor
+  fullName: milk.Components.InventoryComponent.SecondaryColor
+  nameWithType: InventoryComponent.SecondaryColor
+- uid: milk.Components.InventoryComponent.SecondaryColorInactive
+  name: SecondaryColorInactive
+  href: api/milk.Components.InventoryComponent.html#milk_Components_InventoryComponent_SecondaryColorInactive
+  commentId: F:milk.Components.InventoryComponent.SecondaryColorInactive
+  fullName: milk.Components.InventoryComponent.SecondaryColorInactive
+  nameWithType: InventoryComponent.SecondaryColorInactive
+- uid: milk.Components.InventoryComponent.SelectAbove
+  name: SelectAbove()
+  href: api/milk.Components.InventoryComponent.html#milk_Components_InventoryComponent_SelectAbove
+  commentId: M:milk.Components.InventoryComponent.SelectAbove
+  fullName: milk.Components.InventoryComponent.SelectAbove()
+  nameWithType: InventoryComponent.SelectAbove()
+- uid: milk.Components.InventoryComponent.SelectAbove*
+  name: SelectAbove
+  href: api/milk.Components.InventoryComponent.html#milk_Components_InventoryComponent_SelectAbove_
+  commentId: Overload:milk.Components.InventoryComponent.SelectAbove
+  isSpec: "True"
+  fullName: milk.Components.InventoryComponent.SelectAbove
+  nameWithType: InventoryComponent.SelectAbove
+- uid: milk.Components.InventoryComponent.SelectBelow
+  name: SelectBelow()
+  href: api/milk.Components.InventoryComponent.html#milk_Components_InventoryComponent_SelectBelow
+  commentId: M:milk.Components.InventoryComponent.SelectBelow
+  fullName: milk.Components.InventoryComponent.SelectBelow()
+  nameWithType: InventoryComponent.SelectBelow()
+- uid: milk.Components.InventoryComponent.SelectBelow*
+  name: SelectBelow
+  href: api/milk.Components.InventoryComponent.html#milk_Components_InventoryComponent_SelectBelow_
+  commentId: Overload:milk.Components.InventoryComponent.SelectBelow
+  isSpec: "True"
+  fullName: milk.Components.InventoryComponent.SelectBelow
+  nameWithType: InventoryComponent.SelectBelow
+- uid: milk.Components.InventoryComponent.SelectLeft
+  name: SelectLeft()
+  href: api/milk.Components.InventoryComponent.html#milk_Components_InventoryComponent_SelectLeft
+  commentId: M:milk.Components.InventoryComponent.SelectLeft
+  fullName: milk.Components.InventoryComponent.SelectLeft()
+  nameWithType: InventoryComponent.SelectLeft()
+- uid: milk.Components.InventoryComponent.SelectLeft*
+  name: SelectLeft
+  href: api/milk.Components.InventoryComponent.html#milk_Components_InventoryComponent_SelectLeft_
+  commentId: Overload:milk.Components.InventoryComponent.SelectLeft
+  isSpec: "True"
+  fullName: milk.Components.InventoryComponent.SelectLeft
+  nameWithType: InventoryComponent.SelectLeft
+- uid: milk.Components.InventoryComponent.SelectRight
+  name: SelectRight()
+  href: api/milk.Components.InventoryComponent.html#milk_Components_InventoryComponent_SelectRight
+  commentId: M:milk.Components.InventoryComponent.SelectRight
+  fullName: milk.Components.InventoryComponent.SelectRight()
+  nameWithType: InventoryComponent.SelectRight()
+- uid: milk.Components.InventoryComponent.SelectRight*
+  name: SelectRight
+  href: api/milk.Components.InventoryComponent.html#milk_Components_InventoryComponent_SelectRight_
+  commentId: Overload:milk.Components.InventoryComponent.SelectRight
+  isSpec: "True"
+  fullName: milk.Components.InventoryComponent.SelectRight
+  nameWithType: InventoryComponent.SelectRight
+- uid: milk.Components.InventoryComponent.SelectedSlot
+  name: SelectedSlot
+  href: api/milk.Components.InventoryComponent.html#milk_Components_InventoryComponent_SelectedSlot
+  commentId: P:milk.Components.InventoryComponent.SelectedSlot
+  fullName: milk.Components.InventoryComponent.SelectedSlot
+  nameWithType: InventoryComponent.SelectedSlot
+- uid: milk.Components.InventoryComponent.SelectedSlot*
+  name: SelectedSlot
+  href: api/milk.Components.InventoryComponent.html#milk_Components_InventoryComponent_SelectedSlot_
+  commentId: Overload:milk.Components.InventoryComponent.SelectedSlot
+  isSpec: "True"
+  fullName: milk.Components.InventoryComponent.SelectedSlot
+  nameWithType: InventoryComponent.SelectedSlot
+- uid: milk.Components.InventoryComponent.Size
+  name: Size
+  href: api/milk.Components.InventoryComponent.html#milk_Components_InventoryComponent_Size
+  commentId: P:milk.Components.InventoryComponent.Size
+  fullName: milk.Components.InventoryComponent.Size
+  nameWithType: InventoryComponent.Size
+- uid: milk.Components.InventoryComponent.Size*
+  name: Size
+  href: api/milk.Components.InventoryComponent.html#milk_Components_InventoryComponent_Size_
+  commentId: Overload:milk.Components.InventoryComponent.Size
+  isSpec: "True"
+  fullName: milk.Components.InventoryComponent.Size
+  nameWithType: InventoryComponent.Size
+- uid: milk.Components.InventoryComponent.SlotSize
+  name: SlotSize
+  href: api/milk.Components.InventoryComponent.html#milk_Components_InventoryComponent_SlotSize
+  commentId: P:milk.Components.InventoryComponent.SlotSize
+  fullName: milk.Components.InventoryComponent.SlotSize
+  nameWithType: InventoryComponent.SlotSize
+- uid: milk.Components.InventoryComponent.SlotSize*
+  name: SlotSize
+  href: api/milk.Components.InventoryComponent.html#milk_Components_InventoryComponent_SlotSize_
+  commentId: Overload:milk.Components.InventoryComponent.SlotSize
+  isSpec: "True"
+  fullName: milk.Components.InventoryComponent.SlotSize
+  nameWithType: InventoryComponent.SlotSize
+- uid: milk.Components.InventoryComponent.SlotsPerRow
+  name: SlotsPerRow
+  href: api/milk.Components.InventoryComponent.html#milk_Components_InventoryComponent_SlotsPerRow
+  commentId: P:milk.Components.InventoryComponent.SlotsPerRow
+  fullName: milk.Components.InventoryComponent.SlotsPerRow
+  nameWithType: InventoryComponent.SlotsPerRow
+- uid: milk.Components.InventoryComponent.SlotsPerRow*
+  name: SlotsPerRow
+  href: api/milk.Components.InventoryComponent.html#milk_Components_InventoryComponent_SlotsPerRow_
+  commentId: Overload:milk.Components.InventoryComponent.SlotsPerRow
+  isSpec: "True"
+  fullName: milk.Components.InventoryComponent.SlotsPerRow
+  nameWithType: InventoryComponent.SlotsPerRow
+- uid: milk.Components.InventoryComponent.Top
+  name: Top
+  href: api/milk.Components.InventoryComponent.html#milk_Components_InventoryComponent_Top
+  commentId: P:milk.Components.InventoryComponent.Top
+  fullName: milk.Components.InventoryComponent.Top
+  nameWithType: InventoryComponent.Top
+- uid: milk.Components.InventoryComponent.Top*
+  name: Top
+  href: api/milk.Components.InventoryComponent.html#milk_Components_InventoryComponent_Top_
+  commentId: Overload:milk.Components.InventoryComponent.Top
+  isSpec: "True"
+  fullName: milk.Components.InventoryComponent.Top
+  nameWithType: InventoryComponent.Top
+- uid: milk.Components.InventoryComponent.Visible
+  name: Visible
+  href: api/milk.Components.InventoryComponent.html#milk_Components_InventoryComponent_Visible
+  commentId: P:milk.Components.InventoryComponent.Visible
+  fullName: milk.Components.InventoryComponent.Visible
+  nameWithType: InventoryComponent.Visible
+- uid: milk.Components.InventoryComponent.Visible*
+  name: Visible
+  href: api/milk.Components.InventoryComponent.html#milk_Components_InventoryComponent_Visible_
+  commentId: Overload:milk.Components.InventoryComponent.Visible
+  isSpec: "True"
+  fullName: milk.Components.InventoryComponent.Visible
+  nameWithType: InventoryComponent.Visible
+- uid: milk.Components.InventoryComponent.Width
+  name: Width
+  href: api/milk.Components.InventoryComponent.html#milk_Components_InventoryComponent_Width
+  commentId: P:milk.Components.InventoryComponent.Width
+  fullName: milk.Components.InventoryComponent.Width
+  nameWithType: InventoryComponent.Width
+- uid: milk.Components.InventoryComponent.Width*
+  name: Width
+  href: api/milk.Components.InventoryComponent.html#milk_Components_InventoryComponent_Width_
+  commentId: Overload:milk.Components.InventoryComponent.Width
+  isSpec: "True"
+  fullName: milk.Components.InventoryComponent.Width
+  nameWithType: InventoryComponent.Width
+- uid: milk.Components.InventoryComponent.X
+  name: X
+  href: api/milk.Components.InventoryComponent.html#milk_Components_InventoryComponent_X
+  commentId: P:milk.Components.InventoryComponent.X
+  fullName: milk.Components.InventoryComponent.X
+  nameWithType: InventoryComponent.X
+- uid: milk.Components.InventoryComponent.X*
+  name: X
+  href: api/milk.Components.InventoryComponent.html#milk_Components_InventoryComponent_X_
+  commentId: Overload:milk.Components.InventoryComponent.X
+  isSpec: "True"
+  fullName: milk.Components.InventoryComponent.X
+  nameWithType: InventoryComponent.X
+- uid: milk.Components.InventoryComponent.Y
+  name: Y
+  href: api/milk.Components.InventoryComponent.html#milk_Components_InventoryComponent_Y
+  commentId: P:milk.Components.InventoryComponent.Y
+  fullName: milk.Components.InventoryComponent.Y
+  nameWithType: InventoryComponent.Y
+- uid: milk.Components.InventoryComponent.Y*
+  name: Y
+  href: api/milk.Components.InventoryComponent.html#milk_Components_InventoryComponent_Y_
+  commentId: Overload:milk.Components.InventoryComponent.Y
+  isSpec: "True"
+  fullName: milk.Components.InventoryComponent.Y
+  nameWithType: InventoryComponent.Y
+- uid: milk.Components.InventoryComponent.allowInputWrapping
+  name: allowInputWrapping
+  href: api/milk.Components.InventoryComponent.html#milk_Components_InventoryComponent_allowInputWrapping
+  commentId: P:milk.Components.InventoryComponent.allowInputWrapping
+  fullName: milk.Components.InventoryComponent.allowInputWrapping
+  nameWithType: InventoryComponent.allowInputWrapping
+- uid: milk.Components.InventoryComponent.allowInputWrapping*
+  name: allowInputWrapping
+  href: api/milk.Components.InventoryComponent.html#milk_Components_InventoryComponent_allowInputWrapping_
+  commentId: Overload:milk.Components.InventoryComponent.allowInputWrapping
+  isSpec: "True"
+  fullName: milk.Components.InventoryComponent.allowInputWrapping
+  nameWithType: InventoryComponent.allowInputWrapping
 - uid: milk.Components.LightingComponent
   name: LightingComponent
   href: api/milk.Components.LightingComponent.html
@@ -1255,6 +1802,19 @@ references:
   isSpec: "True"
   fullName: milk.Core.Component.OnRemovedFromEntity
   nameWithType: Component.OnRemovedFromEntity
+- uid: milk.Core.Component.ParentEntity
+  name: ParentEntity
+  href: api/milk.Core.Component.html#milk_Core_Component_ParentEntity
+  commentId: P:milk.Core.Component.ParentEntity
+  fullName: milk.Core.Component.ParentEntity
+  nameWithType: Component.ParentEntity
+- uid: milk.Core.Component.ParentEntity*
+  name: ParentEntity
+  href: api/milk.Core.Component.html#milk_Core_Component_ParentEntity_
+  commentId: Overload:milk.Core.Component.ParentEntity
+  isSpec: "True"
+  fullName: milk.Core.Component.ParentEntity
+  nameWithType: Component.ParentEntity
 - uid: milk.Core.EasingFunctions
   name: EasingFunctions
   href: api/milk.Core.EasingFunctions.html
@@ -1855,15 +2415,15 @@ references:
   commentId: T:milk.Core.Entity
   fullName: milk.Core.Entity
   nameWithType: Entity
-- uid: milk.Core.Entity.#ctor(System.String,System.Collections.Generic.List{System.String},System.String,System.Boolean,milk.Core.Entity,milk.Core.Component[])
-  name: Entity(string?, List<string>?, string, bool, Entity?, Component[]?)
-  href: api/milk.Core.Entity.html#milk_Core_Entity__ctor_System_String_System_Collections_Generic_List_System_String__System_String_System_Boolean_milk_Core_Entity_milk_Core_Component___
-  commentId: M:milk.Core.Entity.#ctor(System.String,System.Collections.Generic.List{System.String},System.String,System.Boolean,milk.Core.Entity,milk.Core.Component[])
-  name.vb: New(String, List(Of String), String, Boolean, Entity, Component())
-  fullName: milk.Core.Entity.Entity(string?, System.Collections.Generic.List<string>?, string, bool, milk.Core.Entity?, milk.Core.Component[]?)
-  fullName.vb: milk.Core.Entity.New(String, System.Collections.Generic.List(Of String), String, Boolean, milk.Core.Entity, milk.Core.Component())
-  nameWithType: Entity.Entity(string?, List<string>?, string, bool, Entity?, Component[]?)
-  nameWithType.vb: Entity.New(String, List(Of String), String, Boolean, Entity, Component())
+- uid: milk.Core.Entity.#ctor(System.String,System.String,System.Collections.Generic.List{System.String},System.String,System.Boolean,milk.Core.Entity,milk.Core.Component[])
+  name: Entity(string?, string?, List<string>?, string, bool, Entity?, Component[]?)
+  href: api/milk.Core.Entity.html#milk_Core_Entity__ctor_System_String_System_String_System_Collections_Generic_List_System_String__System_String_System_Boolean_milk_Core_Entity_milk_Core_Component___
+  commentId: M:milk.Core.Entity.#ctor(System.String,System.String,System.Collections.Generic.List{System.String},System.String,System.Boolean,milk.Core.Entity,milk.Core.Component[])
+  name.vb: New(String, String, List(Of String), String, Boolean, Entity, Component())
+  fullName: milk.Core.Entity.Entity(string?, string?, System.Collections.Generic.List<string>?, string, bool, milk.Core.Entity?, milk.Core.Component[]?)
+  fullName.vb: milk.Core.Entity.New(String, String, System.Collections.Generic.List(Of String), String, Boolean, milk.Core.Entity, milk.Core.Component())
+  nameWithType: Entity.Entity(string?, string?, List<string>?, string, bool, Entity?, Component[]?)
+  nameWithType.vb: Entity.New(String, String, List(Of String), String, Boolean, Entity, Component())
 - uid: milk.Core.Entity.#ctor*
   name: Entity
   href: api/milk.Core.Entity.html#milk_Core_Entity__ctor_
@@ -2077,6 +2637,12 @@ references:
   isSpec: "True"
   fullName: milk.Core.Entity.Tags
   nameWithType: Entity.Tags
+- uid: milk.Core.Entity.Type
+  name: Type
+  href: api/milk.Core.Entity.html#milk_Core_Entity_Type
+  commentId: F:milk.Core.Entity.Type
+  fullName: milk.Core.Entity.Type
+  nameWithType: Entity.Type
 - uid: milk.Core.Entity.Visible
   name: Visible
   href: api/milk.Core.Entity.html#milk_Core_Entity_Visible
@@ -2210,6 +2776,19 @@ references:
   commentId: F:milk.Core.Game.Title
   fullName: milk.Core.Game.Title
   nameWithType: Game.Title
+- uid: milk.Core.Game.TotalGameTime
+  name: TotalGameTime
+  href: api/milk.Core.Game.html#milk_Core_Game_TotalGameTime
+  commentId: P:milk.Core.Game.TotalGameTime
+  fullName: milk.Core.Game.TotalGameTime
+  nameWithType: Game.TotalGameTime
+- uid: milk.Core.Game.TotalGameTime*
+  name: TotalGameTime
+  href: api/milk.Core.Game.html#milk_Core_Game_TotalGameTime_
+  commentId: Overload:milk.Core.Game.TotalGameTime
+  isSpec: "True"
+  fullName: milk.Core.Game.TotalGameTime
+  nameWithType: Game.TotalGameTime
 - uid: milk.Core.Game.Update(Microsoft.Xna.Framework.GameTime)
   name: Update(GameTime)
   href: api/milk.Core.Game.html#milk_Core_Game_Update_Microsoft_Xna_Framework_GameTime_
@@ -2428,6 +3007,186 @@ references:
   isSpec: "True"
   fullName: milk.Core.InputManager.NumberOfControllersConnected
   nameWithType: InputManager.NumberOfControllersConnected
+- uid: milk.Core.InventorySlot
+  name: InventorySlot
+  href: api/milk.Core.InventorySlot.html
+  commentId: T:milk.Core.InventorySlot
+  fullName: milk.Core.InventorySlot
+  nameWithType: InventorySlot
+- uid: milk.Core.InventorySlot.Items
+  name: Items
+  href: api/milk.Core.InventorySlot.html#milk_Core_InventorySlot_Items
+  commentId: P:milk.Core.InventorySlot.Items
+  fullName: milk.Core.InventorySlot.Items
+  nameWithType: InventorySlot.Items
+- uid: milk.Core.InventorySlot.Items*
+  name: Items
+  href: api/milk.Core.InventorySlot.html#milk_Core_InventorySlot_Items_
+  commentId: Overload:milk.Core.InventorySlot.Items
+  isSpec: "True"
+  fullName: milk.Core.InventorySlot.Items
+  nameWithType: InventorySlot.Items
+- uid: milk.Core.InventorySlot.LastUpdateType
+  name: LastUpdateType
+  href: api/milk.Core.InventorySlot.html#milk_Core_InventorySlot_LastUpdateType
+  commentId: P:milk.Core.InventorySlot.LastUpdateType
+  fullName: milk.Core.InventorySlot.LastUpdateType
+  nameWithType: InventorySlot.LastUpdateType
+- uid: milk.Core.InventorySlot.LastUpdateType*
+  name: LastUpdateType
+  href: api/milk.Core.InventorySlot.html#milk_Core_InventorySlot_LastUpdateType_
+  commentId: Overload:milk.Core.InventorySlot.LastUpdateType
+  isSpec: "True"
+  fullName: milk.Core.InventorySlot.LastUpdateType
+  nameWithType: InventorySlot.LastUpdateType
+- uid: milk.Core.InventorySlot.LastUpdated
+  name: LastUpdated
+  href: api/milk.Core.InventorySlot.html#milk_Core_InventorySlot_LastUpdated
+  commentId: P:milk.Core.InventorySlot.LastUpdated
+  fullName: milk.Core.InventorySlot.LastUpdated
+  nameWithType: InventorySlot.LastUpdated
+- uid: milk.Core.InventorySlot.LastUpdated*
+  name: LastUpdated
+  href: api/milk.Core.InventorySlot.html#milk_Core_InventorySlot_LastUpdated_
+  commentId: Overload:milk.Core.InventorySlot.LastUpdated
+  isSpec: "True"
+  fullName: milk.Core.InventorySlot.LastUpdated
+  nameWithType: InventorySlot.LastUpdated
+- uid: milk.Core.InventorySlot.Type
+  name: Type
+  href: api/milk.Core.InventorySlot.html#milk_Core_InventorySlot_Type
+  commentId: P:milk.Core.InventorySlot.Type
+  fullName: milk.Core.InventorySlot.Type
+  nameWithType: InventorySlot.Type
+- uid: milk.Core.InventorySlot.Type*
+  name: Type
+  href: api/milk.Core.InventorySlot.html#milk_Core_InventorySlot_Type_
+  commentId: Overload:milk.Core.InventorySlot.Type
+  isSpec: "True"
+  fullName: milk.Core.InventorySlot.Type
+  nameWithType: InventorySlot.Type
+- uid: milk.Core.InventorySystem
+  name: InventorySystem
+  href: api/milk.Core.InventorySystem.html
+  commentId: T:milk.Core.InventorySystem
+  fullName: milk.Core.InventorySystem
+  nameWithType: InventorySystem
+- uid: milk.Core.InventorySystem.ConsumeInput
+  name: ConsumeInput
+  href: api/milk.Core.InventorySystem.html#milk_Core_InventorySystem_ConsumeInput
+  commentId: P:milk.Core.InventorySystem.ConsumeInput
+  fullName: milk.Core.InventorySystem.ConsumeInput
+  nameWithType: InventorySystem.ConsumeInput
+- uid: milk.Core.InventorySystem.ConsumeInput*
+  name: ConsumeInput
+  href: api/milk.Core.InventorySystem.html#milk_Core_InventorySystem_ConsumeInput_
+  commentId: Overload:milk.Core.InventorySystem.ConsumeInput
+  isSpec: "True"
+  fullName: milk.Core.InventorySystem.ConsumeInput
+  nameWithType: InventorySystem.ConsumeInput
+- uid: milk.Core.InventorySystem.Draw(milk.Core.Scene)
+  name: Draw(Scene)
+  href: api/milk.Core.InventorySystem.html#milk_Core_InventorySystem_Draw_milk_Core_Scene_
+  commentId: M:milk.Core.InventorySystem.Draw(milk.Core.Scene)
+  fullName: milk.Core.InventorySystem.Draw(milk.Core.Scene)
+  nameWithType: InventorySystem.Draw(Scene)
+- uid: milk.Core.InventorySystem.Draw*
+  name: Draw
+  href: api/milk.Core.InventorySystem.html#milk_Core_InventorySystem_Draw_
+  commentId: Overload:milk.Core.InventorySystem.Draw
+  isSpec: "True"
+  fullName: milk.Core.InventorySystem.Draw
+  nameWithType: InventorySystem.Draw
+- uid: milk.Core.InventorySystem.GetStackSize(System.String)
+  name: GetStackSize(string)
+  href: api/milk.Core.InventorySystem.html#milk_Core_InventorySystem_GetStackSize_System_String_
+  commentId: M:milk.Core.InventorySystem.GetStackSize(System.String)
+  name.vb: GetStackSize(String)
+  fullName: milk.Core.InventorySystem.GetStackSize(string)
+  fullName.vb: milk.Core.InventorySystem.GetStackSize(String)
+  nameWithType: InventorySystem.GetStackSize(string)
+  nameWithType.vb: InventorySystem.GetStackSize(String)
+- uid: milk.Core.InventorySystem.GetStackSize*
+  name: GetStackSize
+  href: api/milk.Core.InventorySystem.html#milk_Core_InventorySystem_GetStackSize_
+  commentId: Overload:milk.Core.InventorySystem.GetStackSize
+  isSpec: "True"
+  fullName: milk.Core.InventorySystem.GetStackSize
+  nameWithType: InventorySystem.GetStackSize
+- uid: milk.Core.InventorySystem.GetTexture(System.String)
+  name: GetTexture(string)
+  href: api/milk.Core.InventorySystem.html#milk_Core_InventorySystem_GetTexture_System_String_
+  commentId: M:milk.Core.InventorySystem.GetTexture(System.String)
+  name.vb: GetTexture(String)
+  fullName: milk.Core.InventorySystem.GetTexture(string)
+  fullName.vb: milk.Core.InventorySystem.GetTexture(String)
+  nameWithType: InventorySystem.GetTexture(string)
+  nameWithType.vb: InventorySystem.GetTexture(String)
+- uid: milk.Core.InventorySystem.GetTexture*
+  name: GetTexture
+  href: api/milk.Core.InventorySystem.html#milk_Core_InventorySystem_GetTexture_
+  commentId: Overload:milk.Core.InventorySystem.GetTexture
+  isSpec: "True"
+  fullName: milk.Core.InventorySystem.GetTexture
+  nameWithType: InventorySystem.GetTexture
+- uid: milk.Core.InventorySystem.Init
+  name: Init()
+  href: api/milk.Core.InventorySystem.html#milk_Core_InventorySystem_Init
+  commentId: M:milk.Core.InventorySystem.Init
+  fullName: milk.Core.InventorySystem.Init()
+  nameWithType: InventorySystem.Init()
+- uid: milk.Core.InventorySystem.Init*
+  name: Init
+  href: api/milk.Core.InventorySystem.html#milk_Core_InventorySystem_Init_
+  commentId: Overload:milk.Core.InventorySystem.Init
+  isSpec: "True"
+  fullName: milk.Core.InventorySystem.Init
+  nameWithType: InventorySystem.Init
+- uid: milk.Core.InventorySystem.InputEntity(Microsoft.Xna.Framework.GameTime,milk.Core.Scene,milk.Core.Entity)
+  name: InputEntity(GameTime, Scene, Entity)
+  href: api/milk.Core.InventorySystem.html#milk_Core_InventorySystem_InputEntity_Microsoft_Xna_Framework_GameTime_milk_Core_Scene_milk_Core_Entity_
+  commentId: M:milk.Core.InventorySystem.InputEntity(Microsoft.Xna.Framework.GameTime,milk.Core.Scene,milk.Core.Entity)
+  fullName: milk.Core.InventorySystem.InputEntity(Microsoft.Xna.Framework.GameTime, milk.Core.Scene, milk.Core.Entity)
+  nameWithType: InventorySystem.InputEntity(GameTime, Scene, Entity)
+- uid: milk.Core.InventorySystem.InputEntity*
+  name: InputEntity
+  href: api/milk.Core.InventorySystem.html#milk_Core_InventorySystem_InputEntity_
+  commentId: Overload:milk.Core.InventorySystem.InputEntity
+  isSpec: "True"
+  fullName: milk.Core.InventorySystem.InputEntity
+  nameWithType: InventorySystem.InputEntity
+- uid: milk.Core.InventorySystem.SetStackSize(System.String,System.Int32)
+  name: SetStackSize(string, int)
+  href: api/milk.Core.InventorySystem.html#milk_Core_InventorySystem_SetStackSize_System_String_System_Int32_
+  commentId: M:milk.Core.InventorySystem.SetStackSize(System.String,System.Int32)
+  name.vb: SetStackSize(String, Integer)
+  fullName: milk.Core.InventorySystem.SetStackSize(string, int)
+  fullName.vb: milk.Core.InventorySystem.SetStackSize(String, Integer)
+  nameWithType: InventorySystem.SetStackSize(string, int)
+  nameWithType.vb: InventorySystem.SetStackSize(String, Integer)
+- uid: milk.Core.InventorySystem.SetStackSize*
+  name: SetStackSize
+  href: api/milk.Core.InventorySystem.html#milk_Core_InventorySystem_SetStackSize_
+  commentId: Overload:milk.Core.InventorySystem.SetStackSize
+  isSpec: "True"
+  fullName: milk.Core.InventorySystem.SetStackSize
+  nameWithType: InventorySystem.SetStackSize
+- uid: milk.Core.InventorySystem.SetTexture(System.String,Microsoft.Xna.Framework.Graphics.Texture2D)
+  name: SetTexture(string, Texture2D)
+  href: api/milk.Core.InventorySystem.html#milk_Core_InventorySystem_SetTexture_System_String_Microsoft_Xna_Framework_Graphics_Texture2D_
+  commentId: M:milk.Core.InventorySystem.SetTexture(System.String,Microsoft.Xna.Framework.Graphics.Texture2D)
+  name.vb: SetTexture(String, Texture2D)
+  fullName: milk.Core.InventorySystem.SetTexture(string, Microsoft.Xna.Framework.Graphics.Texture2D)
+  fullName.vb: milk.Core.InventorySystem.SetTexture(String, Microsoft.Xna.Framework.Graphics.Texture2D)
+  nameWithType: InventorySystem.SetTexture(string, Texture2D)
+  nameWithType.vb: InventorySystem.SetTexture(String, Texture2D)
+- uid: milk.Core.InventorySystem.SetTexture*
+  name: SetTexture
+  href: api/milk.Core.InventorySystem.html#milk_Core_InventorySystem_SetTexture_
+  commentId: Overload:milk.Core.InventorySystem.SetTexture
+  isSpec: "True"
+  fullName: milk.Core.InventorySystem.SetTexture
+  nameWithType: InventorySystem.SetTexture
 - uid: milk.Core.Milk
   name: Milk
   href: api/milk.Core.Milk.html
@@ -2525,6 +3284,19 @@ references:
   isSpec: "True"
   fullName: milk.Core.Milk.Systems
   nameWithType: Milk.Systems
+- uid: milk.Core.Milk.TotalGameTime
+  name: TotalGameTime
+  href: api/milk.Core.Milk.html#milk_Core_Milk_TotalGameTime
+  commentId: P:milk.Core.Milk.TotalGameTime
+  fullName: milk.Core.Milk.TotalGameTime
+  nameWithType: Milk.TotalGameTime
+- uid: milk.Core.Milk.TotalGameTime*
+  name: TotalGameTime
+  href: api/milk.Core.Milk.html#milk_Core_Milk_TotalGameTime_
+  commentId: Overload:milk.Core.Milk.TotalGameTime
+  isSpec: "True"
+  fullName: milk.Core.Milk.TotalGameTime
+  nameWithType: Milk.TotalGameTime
 - uid: milk.Core.MilkMethods
   name: MilkMethods
   href: api/milk.Core.MilkMethods.html
@@ -2622,6 +3394,19 @@ references:
   isSpec: "True"
   fullName: milk.Core.MilkMethods.Systems
   nameWithType: MilkMethods.Systems
+- uid: milk.Core.MilkMethods.TotalGameTime
+  name: TotalGameTime
+  href: api/milk.Core.MilkMethods.html#milk_Core_MilkMethods_TotalGameTime
+  commentId: P:milk.Core.MilkMethods.TotalGameTime
+  fullName: milk.Core.MilkMethods.TotalGameTime
+  nameWithType: MilkMethods.TotalGameTime
+- uid: milk.Core.MilkMethods.TotalGameTime*
+  name: TotalGameTime
+  href: api/milk.Core.MilkMethods.html#milk_Core_MilkMethods_TotalGameTime_
+  commentId: Overload:milk.Core.MilkMethods.TotalGameTime
+  isSpec: "True"
+  fullName: milk.Core.MilkMethods.TotalGameTime
+  nameWithType: MilkMethods.TotalGameTime
 - uid: milk.Core.PhysicsSystem
   name: PhysicsSystem
   href: api/milk.Core.PhysicsSystem.html
@@ -3578,6 +4363,30 @@ references:
   isSpec: "True"
   fullName: milk.Core.SceneRenderable.Y
   nameWithType: SceneRenderable.Y
+- uid: milk.Core.SlotChangeType
+  name: SlotChangeType
+  href: api/milk.Core.SlotChangeType.html
+  commentId: T:milk.Core.SlotChangeType
+  fullName: milk.Core.SlotChangeType
+  nameWithType: SlotChangeType
+- uid: milk.Core.SlotChangeType.Added
+  name: Added
+  href: api/milk.Core.SlotChangeType.html#milk_Core_SlotChangeType_Added
+  commentId: F:milk.Core.SlotChangeType.Added
+  fullName: milk.Core.SlotChangeType.Added
+  nameWithType: SlotChangeType.Added
+- uid: milk.Core.SlotChangeType.None
+  name: None
+  href: api/milk.Core.SlotChangeType.html#milk_Core_SlotChangeType_None
+  commentId: F:milk.Core.SlotChangeType.None
+  fullName: milk.Core.SlotChangeType.None
+  nameWithType: SlotChangeType.None
+- uid: milk.Core.SlotChangeType.Removed
+  name: Removed
+  href: api/milk.Core.SlotChangeType.html#milk_Core_SlotChangeType_Removed
+  commentId: F:milk.Core.SlotChangeType.Removed
+  fullName: milk.Core.SlotChangeType.Removed
+  nameWithType: SlotChangeType.Removed
 - uid: milk.Core.Sprite
   name: Sprite
   href: api/milk.Core.Sprite.html
@@ -3664,30 +4473,10 @@ references:
   isSpec: "True"
   fullName: milk.Core.System.Draw
   nameWithType: System.Draw
-- uid: milk.Core.System.DrawAboveEntities
-  name: DrawAboveEntities
-  href: api/milk.Core.System.html#milk_Core_System_DrawAboveEntities
-  commentId: P:milk.Core.System.DrawAboveEntities
-  fullName: milk.Core.System.DrawAboveEntities
-  nameWithType: System.DrawAboveEntities
-- uid: milk.Core.System.DrawAboveEntities*
-  name: DrawAboveEntities
-  href: api/milk.Core.System.html#milk_Core_System_DrawAboveEntities_
-  commentId: Overload:milk.Core.System.DrawAboveEntities
-  isSpec: "True"
-  fullName: milk.Core.System.DrawAboveEntities
-  nameWithType: System.DrawAboveEntities
 - uid: milk.Core.System.DrawAboveMap
   name: DrawAboveMap
   href: api/milk.Core.System.html#milk_Core_System_DrawAboveMap
-  commentId: P:milk.Core.System.DrawAboveMap
-  fullName: milk.Core.System.DrawAboveMap
-  nameWithType: System.DrawAboveMap
-- uid: milk.Core.System.DrawAboveMap*
-  name: DrawAboveMap
-  href: api/milk.Core.System.html#milk_Core_System_DrawAboveMap_
-  commentId: Overload:milk.Core.System.DrawAboveMap
-  isSpec: "True"
+  commentId: F:milk.Core.System.DrawAboveMap
   fullName: milk.Core.System.DrawAboveMap
   nameWithType: System.DrawAboveMap
 - uid: milk.Core.System.DrawEntity(milk.Core.Scene,milk.Core.Entity)
@@ -4181,6 +4970,19 @@ references:
   commentId: T:milk.Core.Utilities
   fullName: milk.Core.Utilities
   nameWithType: Utilities
+- uid: milk.Core.Utilities.DrawTextureToContainerSize(Microsoft.Xna.Framework.Graphics.Texture2D,Microsoft.Xna.Framework.Rectangle,Microsoft.Xna.Framework.Color)
+  name: DrawTextureToContainerSize(Texture2D, Rectangle, Color)
+  href: api/milk.Core.Utilities.html#milk_Core_Utilities_DrawTextureToContainerSize_Microsoft_Xna_Framework_Graphics_Texture2D_Microsoft_Xna_Framework_Rectangle_Microsoft_Xna_Framework_Color_
+  commentId: M:milk.Core.Utilities.DrawTextureToContainerSize(Microsoft.Xna.Framework.Graphics.Texture2D,Microsoft.Xna.Framework.Rectangle,Microsoft.Xna.Framework.Color)
+  fullName: milk.Core.Utilities.DrawTextureToContainerSize(Microsoft.Xna.Framework.Graphics.Texture2D, Microsoft.Xna.Framework.Rectangle, Microsoft.Xna.Framework.Color)
+  nameWithType: Utilities.DrawTextureToContainerSize(Texture2D, Rectangle, Color)
+- uid: milk.Core.Utilities.DrawTextureToContainerSize*
+  name: DrawTextureToContainerSize
+  href: api/milk.Core.Utilities.html#milk_Core_Utilities_DrawTextureToContainerSize_
+  commentId: Overload:milk.Core.Utilities.DrawTextureToContainerSize
+  isSpec: "True"
+  fullName: milk.Core.Utilities.DrawTextureToContainerSize
+  nameWithType: Utilities.DrawTextureToContainerSize
 - uid: milk.Core.Utilities.GetSubTexture(Microsoft.Xna.Framework.Graphics.Texture2D,System.Int32,System.Int32,System.Int32,System.Int32)
   name: GetSubTexture(Texture2D, int, int, int, int)
   href: api/milk.Core.Utilities.html#milk_Core_Utilities_GetSubTexture_Microsoft_Xna_Framework_Graphics_Texture2D_System_Int32_System_Int32_System_Int32_System_Int32_
@@ -7452,12 +8254,88 @@ references:
   commentId: N:milk.Systems
   fullName: milk.Systems
   nameWithType: milk.Systems
+- uid: milk.Systems.CollectionSystem
+  name: CollectionSystem
+  href: api/milk.Systems.CollectionSystem.html
+  commentId: T:milk.Systems.CollectionSystem
+  fullName: milk.Systems.CollectionSystem
+  nameWithType: CollectionSystem
+- uid: milk.Systems.CollectionSystem.CollectNearestEntity(milk.Core.Scene,milk.Core.Entity)
+  name: CollectNearestEntity(Scene, Entity)
+  href: api/milk.Systems.CollectionSystem.html#milk_Systems_CollectionSystem_CollectNearestEntity_milk_Core_Scene_milk_Core_Entity_
+  commentId: M:milk.Systems.CollectionSystem.CollectNearestEntity(milk.Core.Scene,milk.Core.Entity)
+  fullName: milk.Systems.CollectionSystem.CollectNearestEntity(milk.Core.Scene, milk.Core.Entity)
+  nameWithType: CollectionSystem.CollectNearestEntity(Scene, Entity)
+- uid: milk.Systems.CollectionSystem.CollectNearestEntity*
+  name: CollectNearestEntity
+  href: api/milk.Systems.CollectionSystem.html#milk_Systems_CollectionSystem_CollectNearestEntity_
+  commentId: Overload:milk.Systems.CollectionSystem.CollectNearestEntity
+  isSpec: "True"
+  fullName: milk.Systems.CollectionSystem.CollectNearestEntity
+  nameWithType: CollectionSystem.CollectNearestEntity
+- uid: milk.Systems.CollectionSystem.DropEntities(milk.Core.Scene,milk.Core.Entity,System.Collections.Generic.List{milk.Core.Entity},System.Func{milk.Core.Scene,milk.Core.Entity,milk.Core.Entity,Microsoft.Xna.Framework.Vector2})
+  name: DropEntities(Scene, Entity, List<Entity>, Func<Scene, Entity, Entity, Vector2>)
+  href: api/milk.Systems.CollectionSystem.html#milk_Systems_CollectionSystem_DropEntities_milk_Core_Scene_milk_Core_Entity_System_Collections_Generic_List_milk_Core_Entity__System_Func_milk_Core_Scene_milk_Core_Entity_milk_Core_Entity_Microsoft_Xna_Framework_Vector2__
+  commentId: M:milk.Systems.CollectionSystem.DropEntities(milk.Core.Scene,milk.Core.Entity,System.Collections.Generic.List{milk.Core.Entity},System.Func{milk.Core.Scene,milk.Core.Entity,milk.Core.Entity,Microsoft.Xna.Framework.Vector2})
+  name.vb: DropEntities(Scene, Entity, List(Of Entity), Func(Of Scene, Entity, Entity, Vector2))
+  fullName: milk.Systems.CollectionSystem.DropEntities(milk.Core.Scene, milk.Core.Entity, System.Collections.Generic.List<milk.Core.Entity>, System.Func<milk.Core.Scene, milk.Core.Entity, milk.Core.Entity, Microsoft.Xna.Framework.Vector2>)
+  fullName.vb: milk.Systems.CollectionSystem.DropEntities(milk.Core.Scene, milk.Core.Entity, System.Collections.Generic.List(Of milk.Core.Entity), System.Func(Of milk.Core.Scene, milk.Core.Entity, milk.Core.Entity, Microsoft.Xna.Framework.Vector2))
+  nameWithType: CollectionSystem.DropEntities(Scene, Entity, List<Entity>, Func<Scene, Entity, Entity, Vector2>)
+  nameWithType.vb: CollectionSystem.DropEntities(Scene, Entity, List(Of Entity), Func(Of Scene, Entity, Entity, Vector2))
+- uid: milk.Systems.CollectionSystem.DropEntities*
+  name: DropEntities
+  href: api/milk.Systems.CollectionSystem.html#milk_Systems_CollectionSystem_DropEntities_
+  commentId: Overload:milk.Systems.CollectionSystem.DropEntities
+  isSpec: "True"
+  fullName: milk.Systems.CollectionSystem.DropEntities
+  nameWithType: CollectionSystem.DropEntities
+- uid: milk.Systems.CollectionSystem.DropEntity(milk.Core.Scene,milk.Core.Entity,milk.Core.Entity,System.Func{milk.Core.Scene,milk.Core.Entity,milk.Core.Entity,Microsoft.Xna.Framework.Vector2})
+  name: DropEntity(Scene, Entity, Entity, Func<Scene, Entity, Entity, Vector2>)
+  href: api/milk.Systems.CollectionSystem.html#milk_Systems_CollectionSystem_DropEntity_milk_Core_Scene_milk_Core_Entity_milk_Core_Entity_System_Func_milk_Core_Scene_milk_Core_Entity_milk_Core_Entity_Microsoft_Xna_Framework_Vector2__
+  commentId: M:milk.Systems.CollectionSystem.DropEntity(milk.Core.Scene,milk.Core.Entity,milk.Core.Entity,System.Func{milk.Core.Scene,milk.Core.Entity,milk.Core.Entity,Microsoft.Xna.Framework.Vector2})
+  name.vb: DropEntity(Scene, Entity, Entity, Func(Of Scene, Entity, Entity, Vector2))
+  fullName: milk.Systems.CollectionSystem.DropEntity(milk.Core.Scene, milk.Core.Entity, milk.Core.Entity, System.Func<milk.Core.Scene, milk.Core.Entity, milk.Core.Entity, Microsoft.Xna.Framework.Vector2>)
+  fullName.vb: milk.Systems.CollectionSystem.DropEntity(milk.Core.Scene, milk.Core.Entity, milk.Core.Entity, System.Func(Of milk.Core.Scene, milk.Core.Entity, milk.Core.Entity, Microsoft.Xna.Framework.Vector2))
+  nameWithType: CollectionSystem.DropEntity(Scene, Entity, Entity, Func<Scene, Entity, Entity, Vector2>)
+  nameWithType.vb: CollectionSystem.DropEntity(Scene, Entity, Entity, Func(Of Scene, Entity, Entity, Vector2))
+- uid: milk.Systems.CollectionSystem.DropEntity*
+  name: DropEntity
+  href: api/milk.Systems.CollectionSystem.html#milk_Systems_CollectionSystem_DropEntity_
+  commentId: Overload:milk.Systems.CollectionSystem.DropEntity
+  isSpec: "True"
+  fullName: milk.Systems.CollectionSystem.DropEntity
+  nameWithType: CollectionSystem.DropEntity
+- uid: milk.Systems.CollectionSystem.OnCollectEntity
+  name: OnCollectEntity
+  href: api/milk.Systems.CollectionSystem.html#milk_Systems_CollectionSystem_OnCollectEntity
+  commentId: F:milk.Systems.CollectionSystem.OnCollectEntity
+  fullName: milk.Systems.CollectionSystem.OnCollectEntity
+  nameWithType: CollectionSystem.OnCollectEntity
+- uid: milk.Systems.CollectionSystem.OnDropEntity
+  name: OnDropEntity
+  href: api/milk.Systems.CollectionSystem.html#milk_Systems_CollectionSystem_OnDropEntity
+  commentId: F:milk.Systems.CollectionSystem.OnDropEntity
+  fullName: milk.Systems.CollectionSystem.OnDropEntity
+  nameWithType: CollectionSystem.OnDropEntity
 - uid: milk.Systems.InputSystem
   name: InputSystem
   href: api/milk.Systems.InputSystem.html
   commentId: T:milk.Systems.InputSystem
   fullName: milk.Systems.InputSystem
   nameWithType: InputSystem
+- uid: milk.Systems.InputSystem.ConsumeInput
+  name: ConsumeInput
+  href: api/milk.Systems.InputSystem.html#milk_Systems_InputSystem_ConsumeInput
+  commentId: P:milk.Systems.InputSystem.ConsumeInput
+  fullName: milk.Systems.InputSystem.ConsumeInput
+  nameWithType: InputSystem.ConsumeInput
+- uid: milk.Systems.InputSystem.ConsumeInput*
+  name: ConsumeInput
+  href: api/milk.Systems.InputSystem.html#milk_Systems_InputSystem_ConsumeInput_
+  commentId: Overload:milk.Systems.InputSystem.ConsumeInput
+  isSpec: "True"
+  fullName: milk.Systems.InputSystem.ConsumeInput
+  nameWithType: InputSystem.ConsumeInput
 - uid: milk.Systems.InputSystem.Init
   name: Init()
   href: api/milk.Systems.InputSystem.html#milk_Systems_InputSystem_Init
@@ -7471,19 +8349,6 @@ references:
   isSpec: "True"
   fullName: milk.Systems.InputSystem.Init
   nameWithType: InputSystem.Init
-- uid: milk.Systems.InputSystem.Input(Microsoft.Xna.Framework.GameTime,milk.Core.Scene)
-  name: Input(GameTime, Scene)
-  href: api/milk.Systems.InputSystem.html#milk_Systems_InputSystem_Input_Microsoft_Xna_Framework_GameTime_milk_Core_Scene_
-  commentId: M:milk.Systems.InputSystem.Input(Microsoft.Xna.Framework.GameTime,milk.Core.Scene)
-  fullName: milk.Systems.InputSystem.Input(Microsoft.Xna.Framework.GameTime, milk.Core.Scene)
-  nameWithType: InputSystem.Input(GameTime, Scene)
-- uid: milk.Systems.InputSystem.Input*
-  name: Input
-  href: api/milk.Systems.InputSystem.html#milk_Systems_InputSystem_Input_
-  commentId: Overload:milk.Systems.InputSystem.Input
-  isSpec: "True"
-  fullName: milk.Systems.InputSystem.Input
-  nameWithType: InputSystem.Input
 - uid: milk.Systems.InputSystem.InputEntity(Microsoft.Xna.Framework.GameTime,milk.Core.Scene,milk.Core.Entity)
   name: InputEntity(GameTime, Scene, Entity)
   href: api/milk.Systems.InputSystem.html#milk_Systems_InputSystem_InputEntity_Microsoft_Xna_Framework_GameTime_milk_Core_Scene_milk_Core_Entity_
@@ -8571,45 +9436,6 @@ references:
   fullName.vb: milk.UI.Button.New
   nameWithType: Button.Button
   nameWithType.vb: Button.New
-- uid: milk.UI.Button.DrawBackground
-  name: DrawBackground()
-  href: api/milk.UI.Button.html#milk_UI_Button_DrawBackground
-  commentId: M:milk.UI.Button.DrawBackground
-  fullName: milk.UI.Button.DrawBackground()
-  nameWithType: Button.DrawBackground()
-- uid: milk.UI.Button.DrawBackground*
-  name: DrawBackground
-  href: api/milk.UI.Button.html#milk_UI_Button_DrawBackground_
-  commentId: Overload:milk.UI.Button.DrawBackground
-  isSpec: "True"
-  fullName: milk.UI.Button.DrawBackground
-  nameWithType: Button.DrawBackground
-- uid: milk.UI.Button.DrawBorder
-  name: DrawBorder()
-  href: api/milk.UI.Button.html#milk_UI_Button_DrawBorder
-  commentId: M:milk.UI.Button.DrawBorder
-  fullName: milk.UI.Button.DrawBorder()
-  nameWithType: Button.DrawBorder()
-- uid: milk.UI.Button.DrawBorder*
-  name: DrawBorder
-  href: api/milk.UI.Button.html#milk_UI_Button_DrawBorder_
-  commentId: Overload:milk.UI.Button.DrawBorder
-  isSpec: "True"
-  fullName: milk.UI.Button.DrawBorder
-  nameWithType: Button.DrawBorder
-- uid: milk.UI.Button.DrawText
-  name: DrawText()
-  href: api/milk.UI.Button.html#milk_UI_Button_DrawText
-  commentId: M:milk.UI.Button.DrawText
-  fullName: milk.UI.Button.DrawText()
-  nameWithType: Button.DrawText()
-- uid: milk.UI.Button.DrawText*
-  name: DrawText
-  href: api/milk.UI.Button.html#milk_UI_Button_DrawText_
-  commentId: Overload:milk.UI.Button.DrawText
-  isSpec: "True"
-  fullName: milk.UI.Button.DrawText
-  nameWithType: Button.DrawText
 - uid: milk.UI.Image
   name: Image
   href: api/milk.UI.Image.html

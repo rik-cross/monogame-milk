@@ -89,12 +89,12 @@
 
 
   <h1 id="milk_Systems_InputSystem" data-uid="milk.Systems.InputSystem" class="text-break">
-Class InputSystem  <a class="header-action link-secondary" title="View source" href="https://github.com/rik-cross/monogame-milk/blob/main/Systems/InputSystem.cs/#L9"><i class="bi bi-code-slash"></i></a>
+Class InputSystem  <a class="header-action link-secondary" title="View source" href="https://github.com/rik-cross/monogame-milk/blob/main/Systems/InputSystem.cs/#L13"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
     <dl><dt>Namespace</dt><dd><a class="xref" href="milk.html">milk</a>.<a class="xref" href="milk.Systems.html">Systems</a></dd></dl>
-  <dl><dt>Assembly</dt><dd>MonoGameECS.dll</dd></dl>
+  <dl><dt>Assembly</dt><dd>milk.dll</dd></dl>
   </div>
 
   <div class="markdown summary"></div>
@@ -125,13 +125,13 @@ Class InputSystem  <a class="header-action link-secondary" title="View source" h
       <a class="xref" href="milk.Core.System.html#milk_Core_System_spriteBatch">System.spriteBatch</a>
     </div>
     <div>
-      <a class="xref" href="milk.Core.System.html#milk_Core_System_DrawAboveEntities">System.DrawAboveEntities</a>
-    </div>
-    <div>
       <a class="xref" href="milk.Core.System.html#milk_Core_System_DrawAboveMap">System.DrawAboveMap</a>
     </div>
     <div>
       <a class="xref" href="milk.Core.System.html#milk_Core_System_AddRequiredComponentType__1">System.AddRequiredComponentType&lt;T&gt;()</a>
+    </div>
+    <div>
+      <a class="xref" href="milk.Core.System.html#milk_Core_System_Input_Microsoft_Xna_Framework_GameTime_milk_Core_Scene_">System.Input(GameTime, Scene)</a>
     </div>
     <div>
       <a class="xref" href="milk.Core.System.html#milk_Core_System_Update_Microsoft_Xna_Framework_GameTime_milk_Core_Scene_">System.Update(GameTime, Scene)</a>
@@ -191,6 +191,42 @@ Class InputSystem  <a class="header-action link-secondary" title="View source" h
 
 
 
+  <h2 class="section" id="properties">Properties
+</h2>
+
+
+  <a id="milk_Systems_InputSystem_ConsumeInput_" data-uid="milk.Systems.InputSystem.ConsumeInput*"></a>
+
+  <h3 id="milk_Systems_InputSystem_ConsumeInput" data-uid="milk.Systems.InputSystem.ConsumeInput">
+  ConsumeInput
+  <a class="header-action link-secondary" title="View source" href="https://github.com/rik-cross/monogame-milk/blob/main/Systems/InputSystem.cs/#L19"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>If true, subsequent systems will not process input (default = false).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool ConsumeInput { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <h2 class="section" id="methods">Methods
 </h2>
 
@@ -199,10 +235,11 @@ Class InputSystem  <a class="header-action link-secondary" title="View source" h
 
   <h3 id="milk_Systems_InputSystem_Init" data-uid="milk.Systems.InputSystem.Init">
   Init()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/rik-cross/monogame-milk/blob/main/Systems/InputSystem.cs/#L12"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/rik-cross/monogame-milk/blob/main/Systems/InputSystem.cs/#L25"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p>Called once when a system is created.</p>
+  <div class="markdown level1 summary"><p>Initialises the input system, which only processes entities
+with an input component.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
@@ -222,71 +259,39 @@ Class InputSystem  <a class="header-action link-secondary" title="View source" h
 
 
 
-  <a id="milk_Systems_InputSystem_Input_" data-uid="milk.Systems.InputSystem.Input*"></a>
-
-  <h3 id="milk_Systems_InputSystem_Input_Microsoft_Xna_Framework_GameTime_milk_Core_Scene_" data-uid="milk.Systems.InputSystem.Input(Microsoft.Xna.Framework.GameTime,milk.Core.Scene)">
-  Input(GameTime, Scene)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/rik-cross/monogame-milk/blob/main/Systems/InputSystem.cs/#L17"><i class="bi bi-code-slash"></i></a>
-  </h3>
-
-  <div class="markdown level1 summary"><p>A top-level input method, called once per frame.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public override void Input(GameTime gameTime, Scene scene)</code></pre>
-  </div>
-
-  <h4 class="section">Parameters</h4>
-  <dl class="parameters">
-    <dt><code>gameTime</code> <span class="xref">GameTime</span></dt>
-    <dd><p>The MonoGame gameTime object.</p>
-</dd>
-    <dt><code>scene</code> <a class="xref" href="milk.Core.Scene.html">Scene</a></dt>
-    <dd><p>The scene that the system is in.</p>
-</dd>
-  </dl>
-
-
-
-
-
-
-
-
-
-
-
-
   <a id="milk_Systems_InputSystem_InputEntity_" data-uid="milk.Systems.InputSystem.InputEntity*"></a>
 
   <h3 id="milk_Systems_InputSystem_InputEntity_Microsoft_Xna_Framework_GameTime_milk_Core_Scene_milk_Core_Entity_" data-uid="milk.Systems.InputSystem.InputEntity(Microsoft.Xna.Framework.GameTime,milk.Core.Scene,milk.Core.Entity)">
   InputEntity(GameTime, Scene, Entity)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/rik-cross/monogame-milk/blob/main/Systems/InputSystem.cs/#L21"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/rik-cross/monogame-milk/blob/main/Systems/InputSystem.cs/#L36"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p>An entity-specific input method, called once per frame
-for each entity with the required set of components.</p>
+  <div class="markdown level1 summary"><p>Processes the input of each entity with an input component.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public override void InputEntity(GameTime gameTime, Scene scene, Entity entity)</code></pre>
+    <pre><code class="lang-csharp hljs">public override bool InputEntity(GameTime gameTime, Scene scene, Entity entity)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
     <dt><code>gameTime</code> <span class="xref">GameTime</span></dt>
-    <dd><p>The MonoGame gameTime object.</p>
+    <dd><p>The MonoGame gameTime object for measuring elapsed time.</p>
 </dd>
     <dt><code>scene</code> <a class="xref" href="milk.Core.Scene.html">Scene</a></dt>
-    <dd><p>The scene that the system is in</p>
+    <dd><p>The scene containing the system.</p>
 </dd>
     <dt><code>entity</code> <a class="xref" href="milk.Core.Entity.html">Entity</a></dt>
-    <dd><p>The entity to be acted upon.</p>
+    <dd><p>The entity to be processed.</p>
 </dd>
   </dl>
 
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
 
 
 
@@ -302,7 +307,7 @@ for each entity with the required set of components.</p>
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/rik-cross/monogame-milk/blob/main/Systems/InputSystem.cs/#L9" class="edit-link">Edit this page</a>
+          <a href="https://github.com/rik-cross/monogame-milk/blob/main/Systems/InputSystem.cs/#L13" class="edit-link">Edit this page</a>
         </div>
 
 

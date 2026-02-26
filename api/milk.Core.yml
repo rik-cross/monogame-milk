@@ -13,11 +13,14 @@ items:
   - milk.Core.EntitySortMethods
   - milk.Core.Game
   - milk.Core.InputManager
+  - milk.Core.InventorySlot
+  - milk.Core.InventorySystem
   - milk.Core.Milk
   - milk.Core.MilkMethods
   - milk.Core.PhysicsSystem
   - milk.Core.Scene
   - milk.Core.SceneManager
+  - milk.Core.SlotChangeType
   - milk.Core.Sprite
   - milk.Core.System
   - milk.Core.SystemManager
@@ -103,6 +106,20 @@ references:
   name: Game
   nameWithType: Game
   fullName: milk.Core.Game
+- uid: milk.Core.SlotChangeType
+  commentId: T:milk.Core.SlotChangeType
+  parent: milk.Core
+  href: milk.Core.SlotChangeType.html
+  name: SlotChangeType
+  nameWithType: SlotChangeType
+  fullName: milk.Core.SlotChangeType
+- uid: milk.Core.InventorySlot
+  commentId: T:milk.Core.InventorySlot
+  parent: milk.Core
+  href: milk.Core.InventorySlot.html
+  name: InventorySlot
+  nameWithType: InventorySlot
+  fullName: milk.Core.InventorySlot
 - uid: milk.Core.Milk
   commentId: T:milk.Core.Milk
   href: milk.Core.Milk.html
@@ -171,6 +188,12 @@ references:
   name: SystemManager
   nameWithType: SystemManager
   fullName: milk.Core.SystemManager
+- uid: milk.Core.InventorySystem
+  commentId: T:milk.Core.InventorySystem
+  href: milk.Core.InventorySystem.html
+  name: InventorySystem
+  nameWithType: InventorySystem
+  fullName: milk.Core.InventorySystem
 - uid: milk.Core.PhysicsSystem
   commentId: T:milk.Core.PhysicsSystem
   href: milk.Core.PhysicsSystem.html

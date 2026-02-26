@@ -12,6 +12,7 @@ items:
   - milk.Core.Milk.Scenes
   - milk.Core.Milk.Size
   - milk.Core.Milk.Systems
+  - milk.Core.Milk.TotalGameTime
   langs:
   - csharp
   - vb
@@ -188,6 +189,35 @@ items:
       type: Microsoft.Xna.Framework.Content.ContentManager
     content.vb: Public Shared ReadOnly Property Content As ContentManager
   overload: milk.Core.Milk.Content*
+- uid: milk.Core.Milk.TotalGameTime
+  commentId: P:milk.Core.Milk.TotalGameTime
+  id: TotalGameTime
+  parent: milk.Core.Milk
+  langs:
+  - csharp
+  - vb
+  name: TotalGameTime
+  nameWithType: Milk.TotalGameTime
+  fullName: milk.Core.Milk.TotalGameTime
+  type: Property
+  source:
+    remote:
+      path: Core/Milk.cs
+      branch: main
+      repo: git@github.com:rik-cross/monogame-milk.git
+    id: TotalGameTime
+    path: Core/Milk.cs
+    startLine: 28
+  assemblies:
+  - milk
+  namespace: milk.Core
+  syntax:
+    content: public static double TotalGameTime { get; }
+    parameters: []
+    return:
+      type: System.Double
+    content.vb: Public Shared ReadOnly Property TotalGameTime As Double
+  overload: milk.Core.Milk.TotalGameTime*
 - uid: milk.Core.Milk.Size
   commentId: P:milk.Core.Milk.Size
   id: Size
@@ -206,7 +236,7 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: Size
     path: Core/Milk.cs
-    startLine: 28
+    startLine: 29
   assemblies:
   - milk
   namespace: milk.Core
@@ -235,7 +265,7 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: Quit
     path: Core/Milk.cs
-    startLine: 29
+    startLine: 30
   assemblies:
   - milk
   namespace: milk.Core
@@ -644,6 +674,23 @@ references:
   - uid: Microsoft.Xna.Framework.Content
     name: Content
     isExternal: true
+- uid: milk.Core.Milk.TotalGameTime*
+  commentId: Overload:milk.Core.Milk.TotalGameTime
+  href: milk.Core.Milk.html#milk_Core_Milk_TotalGameTime
+  name: TotalGameTime
+  nameWithType: Milk.TotalGameTime
+  fullName: milk.Core.Milk.TotalGameTime
+- uid: System.Double
+  commentId: T:System.Double
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.double
+  name: double
+  nameWithType: double
+  fullName: double
+  nameWithType.vb: Double
+  fullName.vb: Double
+  name.vb: Double
 - uid: milk.Core.Milk.Size*
   commentId: Overload:milk.Core.Milk.Size
   href: milk.Core.Milk.html#milk_Core_Milk_Size

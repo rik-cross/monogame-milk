@@ -7,6 +7,7 @@ items:
   children:
   - milk.Core.Component.OnAddedToEntity(milk.Core.Entity)
   - milk.Core.Component.OnRemovedFromEntity(milk.Core.Entity)
+  - milk.Core.Component.ParentEntity
   langs:
   - csharp
   - vb
@@ -36,8 +37,10 @@ items:
   inheritance:
   - System.Object
   derivedClasses:
+  - milk.Components.CollectableComponent
   - milk.Components.ColliderComponent
   - milk.Components.InputComponent
+  - milk.Components.InventoryComponent
   - milk.Components.PhysicsComponent
   - milk.Components.SpriteComponent
   - milk.Components.TransformComponent
@@ -50,6 +53,37 @@ items:
   - System.Object.MemberwiseClone
   - System.Object.ReferenceEquals(System.Object,System.Object)
   - System.Object.ToString
+- uid: milk.Core.Component.ParentEntity
+  commentId: P:milk.Core.Component.ParentEntity
+  id: ParentEntity
+  parent: milk.Core.Component
+  langs:
+  - csharp
+  - vb
+  name: ParentEntity
+  nameWithType: Component.ParentEntity
+  fullName: milk.Core.Component.ParentEntity
+  type: Property
+  source:
+    remote:
+      path: Core/Component.cs
+      branch: main
+      repo: git@github.com:rik-cross/monogame-milk.git
+    id: ParentEntity
+    path: Core/Component.cs
+    startLine: 18
+  assemblies:
+  - milk
+  namespace: milk.Core
+  summary: The parent entity owner of the component
+  example: []
+  syntax:
+    content: public Entity? ParentEntity { get; set; }
+    parameters: []
+    return:
+      type: milk.Core.Entity
+    content.vb: Public Property ParentEntity As Entity
+  overload: milk.Core.Component.ParentEntity*
 - uid: milk.Core.Component.OnAddedToEntity(milk.Core.Entity)
   commentId: M:milk.Core.Component.OnAddedToEntity(milk.Core.Entity)
   id: OnAddedToEntity(milk.Core.Entity)
@@ -68,7 +102,7 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: OnAddedToEntity
     path: Core/Component.cs
-    startLine: 23
+    startLine: 28
   assemblies:
   - milk
   namespace: milk.Core
@@ -100,7 +134,7 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: OnRemovedFromEntity
     path: Core/Component.cs
-    startLine: 29
+    startLine: 34
   assemblies:
   - milk
   namespace: milk.Core
@@ -374,12 +408,12 @@ references:
   name: System
   nameWithType: System
   fullName: System
-- uid: milk.Core.Component.OnAddedToEntity*
-  commentId: Overload:milk.Core.Component.OnAddedToEntity
-  href: milk.Core.Component.html#milk_Core_Component_OnAddedToEntity_milk_Core_Entity_
-  name: OnAddedToEntity
-  nameWithType: Component.OnAddedToEntity
-  fullName: milk.Core.Component.OnAddedToEntity
+- uid: milk.Core.Component.ParentEntity*
+  commentId: Overload:milk.Core.Component.ParentEntity
+  href: milk.Core.Component.html#milk_Core_Component_ParentEntity
+  name: ParentEntity
+  nameWithType: Component.ParentEntity
+  fullName: milk.Core.Component.ParentEntity
 - uid: milk.Core.Entity
   commentId: T:milk.Core.Entity
   parent: milk.Core
@@ -387,6 +421,12 @@ references:
   name: Entity
   nameWithType: Entity
   fullName: milk.Core.Entity
+- uid: milk.Core.Component.OnAddedToEntity*
+  commentId: Overload:milk.Core.Component.OnAddedToEntity
+  href: milk.Core.Component.html#milk_Core_Component_OnAddedToEntity_milk_Core_Entity_
+  name: OnAddedToEntity
+  nameWithType: Component.OnAddedToEntity
+  fullName: milk.Core.Component.OnAddedToEntity
 - uid: milk.Core.Component.OnRemovedFromEntity*
   commentId: Overload:milk.Core.Component.OnRemovedFromEntity
   href: milk.Core.Component.html#milk_Core_Component_OnRemovedFromEntity_milk_Core_Entity_

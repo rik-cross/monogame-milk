@@ -12,6 +12,7 @@ items:
   - milk.Core.MilkMethods.Scenes
   - milk.Core.MilkMethods.Size
   - milk.Core.MilkMethods.Systems
+  - milk.Core.MilkMethods.TotalGameTime
   langs:
   - csharp
   - vb
@@ -190,6 +191,35 @@ items:
       type: Microsoft.Xna.Framework.Content.ContentManager
     content.vb: Protected ReadOnly Property Content As ContentManager
   overload: milk.Core.MilkMethods.Content*
+- uid: milk.Core.MilkMethods.TotalGameTime
+  commentId: P:milk.Core.MilkMethods.TotalGameTime
+  id: TotalGameTime
+  parent: milk.Core.MilkMethods
+  langs:
+  - csharp
+  - vb
+  name: TotalGameTime
+  nameWithType: MilkMethods.TotalGameTime
+  fullName: milk.Core.MilkMethods.TotalGameTime
+  type: Property
+  source:
+    remote:
+      path: Core/MilkMethods.cs
+      branch: main
+      repo: git@github.com:rik-cross/monogame-milk.git
+    id: TotalGameTime
+    path: Core/MilkMethods.cs
+    startLine: 24
+  assemblies:
+  - milk
+  namespace: milk.Core
+  syntax:
+    content: protected double TotalGameTime { get; }
+    parameters: []
+    return:
+      type: System.Double
+    content.vb: Protected ReadOnly Property TotalGameTime As Double
+  overload: milk.Core.MilkMethods.TotalGameTime*
 - uid: milk.Core.MilkMethods.Size
   commentId: P:milk.Core.MilkMethods.Size
   id: Size
@@ -208,7 +238,7 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: Size
     path: Core/MilkMethods.cs
-    startLine: 24
+    startLine: 25
   assemblies:
   - milk
   namespace: milk.Core
@@ -237,7 +267,7 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: Quit
     path: Core/MilkMethods.cs
-    startLine: 25
+    startLine: 26
   assemblies:
   - milk
   namespace: milk.Core
@@ -646,6 +676,23 @@ references:
   - uid: Microsoft.Xna.Framework.Content
     name: Content
     isExternal: true
+- uid: milk.Core.MilkMethods.TotalGameTime*
+  commentId: Overload:milk.Core.MilkMethods.TotalGameTime
+  href: milk.Core.MilkMethods.html#milk_Core_MilkMethods_TotalGameTime
+  name: TotalGameTime
+  nameWithType: MilkMethods.TotalGameTime
+  fullName: milk.Core.MilkMethods.TotalGameTime
+- uid: System.Double
+  commentId: T:System.Double
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.double
+  name: double
+  nameWithType: double
+  fullName: double
+  nameWithType.vb: Double
+  fullName.vb: Double
+  name.vb: Double
 - uid: milk.Core.MilkMethods.Size*
   commentId: Overload:milk.Core.MilkMethods.Size
   href: milk.Core.MilkMethods.html#milk_Core_MilkMethods_Size

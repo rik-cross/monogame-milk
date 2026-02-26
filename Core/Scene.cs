@@ -246,6 +246,9 @@ public abstract class Scene : MilkMethods
             system.Input(gameTime, this);
 
         // entity-specific update
+
+        HashSet<Entity> consumedEntities = new HashSet<Entity>();
+
         foreach (System system in systems.ToList())
         {
             foreach (Entity entity in entities.ToList())
@@ -253,7 +256,17 @@ public abstract class Scene : MilkMethods
                 BitArray temp = (BitArray)system.RequiredComponentBitMask.Clone();
                 temp.And(entity.bitMask);
                 if (Utilities.CompareBitArrays(temp, system.RequiredComponentBitMask) == true)
-                    system.InputEntity(gameTime, this, entity);
+                {
+                    if (consumedEntities.Contains(entity))
+                        continue;    
+                    else
+                    {
+                        bool consume = system.InputEntity(gameTime, this, entity);
+                        if (consume == true)
+                            consumedEntities.Add(entity);
+                    }
+                    
+                }
             }
         }
 

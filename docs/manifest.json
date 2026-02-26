@@ -92,6 +92,20 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/milk.Components.CollectableComponent.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/milk.Components.CollectableComponent.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "milk.Components.CollectableComponent",
+      "Summary": "<p sourcefile=\"api/milk.Components.CollectableComponent.yml\" sourcestartlinenumber=\"1\">Entities with this component can be picked up.\n(This component is a flag, and doesn't contain any)\ndata or functionality.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/milk.Components.ColliderComponent.yml",
       "output": {
         ".html": {
@@ -117,6 +131,20 @@
       "IsMRef": true,
       "Title": "milk.Components.InputComponent",
       "Summary": "<p sourcefile=\"api/milk.Components.InputComponent.yml\" sourcestartlinenumber=\"1\">Supports entity input through an input controller.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/milk.Components.InventoryComponent.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/milk.Components.InventoryComponent.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "milk.Components.InventoryComponent",
+      "Summary": "<p sourcefile=\"api/milk.Components.InventoryComponent.yml\" sourcestartlinenumber=\"1\">An InventoryComponent manages the storage of entities.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -372,6 +400,34 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/milk.Core.InventorySlot.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/milk.Core.InventorySlot.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "milk.Core.InventorySlot",
+      "Summary": "<p sourcefile=\"api/milk.Core.InventorySlot.yml\" sourcestartlinenumber=\"1\">An InventorySlot links an Entity ID to a list\nof entities of that type. Inventory slots can be\naccessed, but not created or modified directly.\nUse the parent InventoryComponent To modify.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/milk.Core.InventorySystem.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/milk.Core.InventorySystem.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "milk.Core.InventorySystem",
+      "Summary": "<p sourcefile=\"api/milk.Core.InventorySystem.yml\" sourcestartlinenumber=\"1\">The inventory system processes and draws all inventory components.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/milk.Core.Milk.yml",
       "output": {
         ".html": {
@@ -453,6 +509,20 @@
       "IsMRef": true,
       "Title": "milk.Core.SceneRenderable",
       "Summary": "<p sourcefile=\"api/milk.Core.SceneRenderable.yml\" sourcestartlinenumber=\"1\">Used as a superclass for images, text, UI, etc.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/milk.Core.SlotChangeType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/milk.Core.SlotChangeType.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "milk.Core.SlotChangeType",
+      "Summary": "<p sourcefile=\"api/milk.Core.SlotChangeType.yml\" sourcestartlinenumber=\"1\">Describes the type of recent action.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -929,6 +999,20 @@
       "IsMRef": true,
       "Title": "milk.SystemManager",
       "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/milk.Systems.CollectionSystem.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/milk.Systems.CollectionSystem.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "milk.Systems.CollectionSystem",
+      "Summary": "<p sourcefile=\"api/milk.Systems.CollectionSystem.yml\" sourcestartlinenumber=\"1\">Provides methods for dropping and picking up entities.\nNote that only entities with a CollectableComponent and\na TriggerComponent can be collected.</p>\n"
     },
     {
       "type": "ManagedReference",

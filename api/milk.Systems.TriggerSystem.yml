@@ -25,7 +25,7 @@ items:
     path: Systems/TriggerSystem.cs
     startLine: 17
   assemblies:
-  - MonoGameECS
+  - milk
   namespace: milk.Systems
   summary: >-
     Processes entities with trigger components, and calls the relevant
@@ -40,7 +40,6 @@ items:
   - milk.Core.System
   inheritedMembers:
   - milk.Core.System.spriteBatch
-  - milk.Core.System.DrawAboveEntities
   - milk.Core.System.DrawAboveMap
   - milk.Core.System.AddRequiredComponentType``1
   - milk.Core.System.Input(Microsoft.Xna.Framework.GameTime,milk.Core.Scene)
@@ -79,7 +78,7 @@ items:
     path: Systems/TriggerSystem.cs
     startLine: 24
   assemblies:
-  - MonoGameECS
+  - milk
   namespace: milk.Systems
   summary: >-
     Initialises the trigger system, which only processes entities
@@ -111,7 +110,7 @@ items:
     path: Systems/TriggerSystem.cs
     startLine: 36
   assemblies:
-  - MonoGameECS
+  - milk
   namespace: milk.Systems
   summary: Updates each of the entities with the required components.
   example: []
@@ -148,9 +147,9 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: DrawEntity
     path: Systems/TriggerSystem.cs
-    startLine: 128
+    startLine: 122
   assemblies:
-  - MonoGameECS
+  - milk
   namespace: milk.Systems
   summary: Draws each of the entity triggers if in DEBUG mode.
   example: []
@@ -184,9 +183,9 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: OnEntityRemovedFromScene
     path: Systems/TriggerSystem.cs
-    startLine: 155
+    startLine: 149
   assemblies:
-  - MonoGameECS
+  - milk
   namespace: milk.Systems
   summary: >-
     Removes the entity to be removed from the scene from the list
@@ -253,15 +252,8 @@ references:
   name: spriteBatch
   nameWithType: System.spriteBatch
   fullName: milk.Core.System.spriteBatch
-- uid: milk.Core.System.DrawAboveEntities
-  commentId: P:milk.Core.System.DrawAboveEntities
-  parent: milk.Core.System
-  href: milk.Core.System.html#milk_Core_System_DrawAboveEntities
-  name: DrawAboveEntities
-  nameWithType: System.DrawAboveEntities
-  fullName: milk.Core.System.DrawAboveEntities
 - uid: milk.Core.System.DrawAboveMap
-  commentId: P:milk.Core.System.DrawAboveMap
+  commentId: F:milk.Core.System.DrawAboveMap
   parent: milk.Core.System
   href: milk.Core.System.html#milk_Core_System_DrawAboveMap
   name: DrawAboveMap

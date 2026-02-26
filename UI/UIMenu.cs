@@ -25,39 +25,41 @@ internal class UIMenu
     /// (i.e. to select the `ElementAbove` for the current `UIElement`,
     /// default = `keys.W`.)
     /// </summary>
-    public List<Keys> Up {get; set; }
+    public List<Keys> Up { get; set; }
 
     /// <summary>
     /// The key(s) pressed to move 'down' the menu
     /// (i.e. to select the `ElementBelow` for the current `UIElement`,
     /// default = `keys.S`.)
     /// </summary>
-    public List<Keys> Down {get; set; }
+    public List<Keys> Down { get; set; }
 
     /// <summary>
     /// The key(s) pressed to move 'left' in the menu
     /// (i.e. to select the `ElementLeft` for the current `UIElement`,
     /// default = `keys.A`.)
     /// </summary>
-    public List<Keys> Left {get; set; }
+    public List<Keys> Left { get; set; }
 
     /// <summary>
     /// The key(s) pressed to move 'right' in the menu
     /// (i.e. to select the `ElementRight` for the current `UIElement`, 
     /// default = `keys.D`.)
     /// </summary>
-    public List<Keys> Right {get; set; }
+    public List<Keys> Right { get; set; }
 
     /// <summary>
     /// The key(s) pressed to 'select' the current `UIElement`.
     /// (`keys.Enter` by default.)
     /// </summary>
-    public List<Keys> Select {get; set; }
+    public List<Keys> Select { get; set; }
 
     /// <summary>
     /// Setting a menu visibility to 'false' hides the menu and all of its UIElements.
     /// </summary>
     public bool Visible { get; set; }
+
+    public bool AllowInputWrapping { get; set; }
 
     internal UIMenu(Scene parentScene)
     {
@@ -70,6 +72,7 @@ internal class UIMenu
         Right = new List<Keys>() {Keys.D};
         Select = new List<Keys>() {Keys.Enter};
         Visible = true;
+        AllowInputWrapping = true;
     }
 
     internal void AddElement(UIElement element)
@@ -81,60 +84,60 @@ internal class UIMenu
 
     internal void Input(GameTime gameTime, Scene scene)
     {
-
         if (selectedElement == null)
             return;
 
-        // To go Up
-        UIElement? resultUp = GetNextElement(Up, e => e.ElementAbove);
-        if (resultUp != null) selectedElement = resultUp;
+        GetNextElement(Up, e => e.ElementAbove, e => e.ElementBelow);
+        GetNextElement(Down, e => e.ElementBelow, e => e.ElementAbove);
+        GetNextElement(Left, e => e.ElementLeft, e => e.ElementRight);
+        GetNextElement(Right, e => e.ElementRight, e => e.ElementLeft);
 
-        // To go Down
-        UIElement? resultDown = GetNextElement(Down, e => e.ElementBelow);
-        if (resultDown != null) selectedElement = resultDown;
-
-        // To go Left
-        UIElement? resultLeft = GetNextElement(Left, e => e.ElementLeft);
-        if (resultLeft != null) selectedElement = resultLeft;
-
-        // To go Right
-        UIElement? resultRight = GetNextElement(Right, e => e.ElementRight);
-        if (resultRight != null) selectedElement = resultRight;
-
-        // To select
+        // Call selected element
         foreach (Keys key in Select)
-        {
             if (EngineGlobals.game.inputManager.IsKeyPressed(key))
-            {
-                if (selectedElement.OnSelected != null)
-                {
+                if (selectedElement.Active && selectedElement.OnSelected != null)
                     selectedElement.OnSelected(selectedElement, scene);
-                }
-            }
-        }
-  
     }
 
-    private UIElement? GetNextElement(List<Keys> keys, Func<UIElement, UIElement?> getDirection)
+    private void GetNextElement(List<Keys> keys, Func<UIElement, UIElement?> getForward, Func<UIElement, UIElement?> getBackward)
     {
-        // 1. Check if any of the keys were pressed
-        if (keys.Exists(key => EngineGlobals.game.inputManager.IsKeyPressed(key)))
-        {
-            // 2. Start from the neighbor in the specified direction
-            UIElement? next = getDirection(selectedElement);
+        if (!keys.Exists(key => EngineGlobals.game.inputManager.IsKeyPressed(key)))
+            return;
 
-            // 3. Keep searching while we hit inactive elements
-            while (next != null && !next.Active)
-            {
-                next = getDirection(next);
-            }
-
-            // 4. Return the result (could be an active element or null)
-            return next;
-        }
+        UIElement initialElement = selectedElement!;
         
-        return null;
+        // 1. Try to find the next active element forward
+        UIElement? next = getForward(selectedElement);
+        while (next != null && !next.Active)
+            next = getForward(next);
+
+        if (next != null && next.Active)
+        {
+            selectedElement = next;
+            return;
+        }
+
+        // 2. Wrap if allowed
+        if (AllowInputWrapping)
+        {
+            UIElement? boundary = selectedElement;
+            while (getBackward(boundary!) != null)
+                boundary = getBackward(boundary!);
+
+            UIElement? wrapped = boundary;
+            while (wrapped != null && !wrapped.Active && wrapped != initialElement)
+                wrapped = getForward(wrapped);
+
+            if (wrapped != null && wrapped.Active && wrapped != initialElement)
+            {
+                selectedElement = wrapped;
+                return;
+            }
+        }
+
+        return;
     }
+
 
     internal void Draw()
     {

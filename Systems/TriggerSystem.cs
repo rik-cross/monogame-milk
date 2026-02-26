@@ -15,7 +15,7 @@ namespace milk.Systems;
 /// Processes entities with trigger components, and calls the relevant
 /// callbacks when 2 entities have overlapping colliders.
 /// </summary>
-internal class TriggerSystem : milk.Core.System
+public class TriggerSystem : milk.Core.System
 {
 
     /// <summary>

@@ -34,7 +34,6 @@ items:
   - milk.Core.System
   inheritedMembers:
   - milk.Core.System.spriteBatch
-  - milk.Core.System.DrawAboveEntities
   - milk.Core.System.DrawAboveMap
   - milk.Core.System.AddRequiredComponentType``1
   - milk.Core.System.Init
@@ -140,15 +139,8 @@ references:
   name: spriteBatch
   nameWithType: System.spriteBatch
   fullName: milk.Core.System.spriteBatch
-- uid: milk.Core.System.DrawAboveEntities
-  commentId: P:milk.Core.System.DrawAboveEntities
-  parent: milk.Core.System
-  href: milk.Core.System.html#milk_Core_System_DrawAboveEntities
-  name: DrawAboveEntities
-  nameWithType: System.DrawAboveEntities
-  fullName: milk.Core.System.DrawAboveEntities
 - uid: milk.Core.System.DrawAboveMap
-  commentId: P:milk.Core.System.DrawAboveMap
+  commentId: F:milk.Core.System.DrawAboveMap
   parent: milk.Core.System
   href: milk.Core.System.html#milk_Core_System_DrawAboveMap
   name: DrawAboveMap

@@ -4,6 +4,9 @@ items:
   commentId: N:milk.Systems
   id: milk.Systems
   children:
+  - milk.Systems.CollectionSystem
+  - milk.Systems.InputSystem
+  - milk.Systems.SpriteSystem
   - milk.Systems.TriggerSystem
   langs:
   - csharp
@@ -13,8 +16,26 @@ items:
   fullName: milk.Systems
   type: Namespace
   assemblies:
-  - MonoGameECS
+  - milk
 references:
+- uid: milk.Systems.CollectionSystem
+  commentId: T:milk.Systems.CollectionSystem
+  href: milk.Systems.CollectionSystem.html
+  name: CollectionSystem
+  nameWithType: CollectionSystem
+  fullName: milk.Systems.CollectionSystem
+- uid: milk.Systems.InputSystem
+  commentId: T:milk.Systems.InputSystem
+  href: milk.Systems.InputSystem.html
+  name: InputSystem
+  nameWithType: InputSystem
+  fullName: milk.Systems.InputSystem
+- uid: milk.Systems.SpriteSystem
+  commentId: T:milk.Systems.SpriteSystem
+  href: milk.Systems.SpriteSystem.html
+  name: SpriteSystem
+  nameWithType: SpriteSystem
+  fullName: milk.Systems.SpriteSystem
 - uid: milk.Systems.TriggerSystem
   commentId: T:milk.Systems.TriggerSystem
   href: milk.Systems.TriggerSystem.html

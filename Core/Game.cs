@@ -43,6 +43,7 @@ public class Game : Microsoft.Xna.Framework.Game
     internal GraphicsDevice graphicsDevice;
     public SpriteBatch spriteBatch;
     public EngineResourceManager _engineResources;
+    public double TotalGameTime { get; private set; }
 
     // Manager instances
     internal EntityManager entityManager;
@@ -101,6 +102,8 @@ public class Game : Microsoft.Xna.Framework.Game
         _showSplash = showSplash;
         Debug = debug;
 
+        TotalGameTime = 0;
+
     }
 
     //
@@ -147,10 +150,12 @@ public class Game : Microsoft.Xna.Framework.Game
         inputManager = new InputManager();
 
         // Register all provided systems
-        systemManager.RegisterSystem(new InputSystem());
         systemManager.RegisterSystem(new SpriteSystem());
         systemManager.RegisterSystem(new TriggerSystem());
         systemManager.RegisterSystem(new PhysicsSystem());
+        systemManager.RegisterSystem(new InventorySystem());
+        systemManager.RegisterSystem(new CollectionSystem());
+        systemManager.RegisterSystem(new InputSystem());
 
         if (_showSplash == true)
         {
@@ -190,7 +195,8 @@ public class Game : Microsoft.Xna.Framework.Game
     /// <param name="gameTime"></param>
     protected override void Update(GameTime gameTime)
     {
-
+        TotalGameTime = gameTime.TotalGameTime.TotalSeconds;
+        
         inputManager.Update();
         EngineGlobals.game.sceneManager.Input(gameTime);
 

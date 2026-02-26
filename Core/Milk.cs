@@ -26,6 +26,7 @@ public static class Milk
     public static InputManager Controls { get; } = EngineGlobals.game.inputManager;
     public static SpriteBatch Graphics { get; } = EngineGlobals.game.spriteBatch;
     public static ContentManager Content { get; } = EngineGlobals.game.Content;
+    public static double TotalGameTime => EngineGlobals.game.TotalGameTime;
     public static Vector2 Size { get; } = EngineGlobals.game.Size;
     public static void Quit() => EngineGlobals.game.Quit();
 

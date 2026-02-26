@@ -1,0 +1,2612 @@
+### YamlMime:ManagedReference
+items:
+- uid: milk.Components.InventoryComponent
+  commentId: T:milk.Components.InventoryComponent
+  id: InventoryComponent
+  parent: milk.Components
+  children:
+  - milk.Components.InventoryComponent.#ctor(System.Int32,System.Boolean,System.Nullable{Microsoft.Xna.Framework.Vector2},milk.UI.Anchor,System.Nullable{Microsoft.Xna.Framework.Vector2},System.Nullable{System.Int32},System.Int32,System.Single,System.Single,System.Nullable{Microsoft.Xna.Framework.Color},System.Nullable{Microsoft.Xna.Framework.Color},System.Nullable{Microsoft.Xna.Framework.Color},System.Nullable{Microsoft.Xna.Framework.Color},Microsoft.Xna.Framework.Graphics.SpriteFont,System.Action{milk.Components.InventoryComponent},System.Boolean,System.Boolean,System.Collections.Generic.Dictionary{Microsoft.Xna.Framework.Input.Keys,System.Action})
+  - milk.Components.InventoryComponent.Active
+  - milk.Components.InventoryComponent.AddEntity(milk.Core.Entity)
+  - milk.Components.InventoryComponent.Alpha
+  - milk.Components.InventoryComponent.AlphaInactive
+  - milk.Components.InventoryComponent.Anchor
+  - milk.Components.InventoryComponent.Bottom
+  - milk.Components.InventoryComponent.CalculateTopLeftPositionFromAnchor
+  - milk.Components.InventoryComponent.Center
+  - milk.Components.InventoryComponent.Consolidate
+  - milk.Components.InventoryComponent.CustomDrawMethod
+  - milk.Components.InventoryComponent.Font
+  - milk.Components.InventoryComponent.GetSlot(System.Nullable{System.Int32})
+  - milk.Components.InventoryComponent.Height
+  - milk.Components.InventoryComponent.InputActions
+  - milk.Components.InventoryComponent.Left
+  - milk.Components.InventoryComponent.Margin
+  - milk.Components.InventoryComponent.Middle
+  - milk.Components.InventoryComponent.NumberOfSlots
+  - milk.Components.InventoryComponent.Position
+  - milk.Components.InventoryComponent.PrimaryColor
+  - milk.Components.InventoryComponent.PrimaryColorInactive
+  - milk.Components.InventoryComponent.RemoveAllEntities
+  - milk.Components.InventoryComponent.RemoveAllEntitiesFromSlot(System.Nullable{System.Int32})
+  - milk.Components.InventoryComponent.RemoveEntity(System.Nullable{System.Int32})
+  - milk.Components.InventoryComponent.RemoveEntityOfType(System.String)
+  - milk.Components.InventoryComponent.Right
+  - milk.Components.InventoryComponent.SecondaryColor
+  - milk.Components.InventoryComponent.SecondaryColorInactive
+  - milk.Components.InventoryComponent.SelectAbove
+  - milk.Components.InventoryComponent.SelectBelow
+  - milk.Components.InventoryComponent.SelectLeft
+  - milk.Components.InventoryComponent.SelectRight
+  - milk.Components.InventoryComponent.SelectedSlot
+  - milk.Components.InventoryComponent.Size
+  - milk.Components.InventoryComponent.SlotSize
+  - milk.Components.InventoryComponent.SlotsPerRow
+  - milk.Components.InventoryComponent.Top
+  - milk.Components.InventoryComponent.Visible
+  - milk.Components.InventoryComponent.Width
+  - milk.Components.InventoryComponent.X
+  - milk.Components.InventoryComponent.Y
+  - milk.Components.InventoryComponent.allowInputWrapping
+  langs:
+  - csharp
+  - vb
+  name: InventoryComponent
+  nameWithType: InventoryComponent
+  fullName: milk.Components.InventoryComponent
+  type: Class
+  source:
+    remote:
+      path: Components/InventoryComponent.cs
+      branch: main
+      repo: git@github.com:rik-cross/monogame-milk.git
+    id: InventoryComponent
+    path: Components/InventoryComponent.cs
+    startLine: 17
+  assemblies:
+  - milk
+  namespace: milk.Components
+  summary: An InventoryComponent manages the storage of entities.
+  example: []
+  syntax:
+    content: 'public class InventoryComponent : Component'
+    content.vb: Public Class InventoryComponent Inherits Component
+  inheritance:
+  - System.Object
+  - milk.Core.Component
+  inheritedMembers:
+  - milk.Core.Component.ParentEntity
+  - milk.Core.Component.OnAddedToEntity(milk.Core.Entity)
+  - milk.Core.Component.OnRemovedFromEntity(milk.Core.Entity)
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: milk.Components.InventoryComponent.NumberOfSlots
+  commentId: P:milk.Components.InventoryComponent.NumberOfSlots
+  id: NumberOfSlots
+  parent: milk.Components.InventoryComponent
+  langs:
+  - csharp
+  - vb
+  name: NumberOfSlots
+  nameWithType: InventoryComponent.NumberOfSlots
+  fullName: milk.Components.InventoryComponent.NumberOfSlots
+  type: Property
+  source:
+    remote:
+      path: Components/InventoryComponent.cs
+      branch: main
+      repo: git@github.com:rik-cross/monogame-milk.git
+    id: NumberOfSlots
+    path: Components/InventoryComponent.cs
+    startLine: 28
+  assemblies:
+  - milk
+  namespace: milk.Components
+  summary: >-
+    The number of spaces in the inventory. This cannot
+
+    be set once
+  example: []
+  syntax:
+    content: public int NumberOfSlots { get; set; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public Property NumberOfSlots As Integer
+  overload: milk.Components.InventoryComponent.NumberOfSlots*
+- uid: milk.Components.InventoryComponent.SelectedSlot
+  commentId: P:milk.Components.InventoryComponent.SelectedSlot
+  id: SelectedSlot
+  parent: milk.Components.InventoryComponent
+  langs:
+  - csharp
+  - vb
+  name: SelectedSlot
+  nameWithType: InventoryComponent.SelectedSlot
+  fullName: milk.Components.InventoryComponent.SelectedSlot
+  type: Property
+  source:
+    remote:
+      path: Components/InventoryComponent.cs
+      branch: main
+      repo: git@github.com:rik-cross/monogame-milk.git
+    id: SelectedSlot
+    path: Components/InventoryComponent.cs
+    startLine: 49
+  assemblies:
+  - milk
+  namespace: milk.Components
+  summary: >-
+    The index of the currently selected slot,
+
+    from left-to-right, and top-to-bottom.
+
+    The selected slot number is clamped to the
+
+    number of available slots.
+  example: []
+  syntax:
+    content: public int SelectedSlot { get; set; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public Property SelectedSlot As Integer
+  overload: milk.Components.InventoryComponent.SelectedSlot*
+- uid: milk.Components.InventoryComponent.allowInputWrapping
+  commentId: P:milk.Components.InventoryComponent.allowInputWrapping
+  id: allowInputWrapping
+  parent: milk.Components.InventoryComponent
+  langs:
+  - csharp
+  - vb
+  name: allowInputWrapping
+  nameWithType: InventoryComponent.allowInputWrapping
+  fullName: milk.Components.InventoryComponent.allowInputWrapping
+  type: Property
+  source:
+    remote:
+      path: Components/InventoryComponent.cs
+      branch: main
+      repo: git@github.com:rik-cross/monogame-milk.git
+    id: allowInputWrapping
+    path: Components/InventoryComponent.cs
+    startLine: 65
+  assemblies:
+  - milk
+  namespace: milk.Components
+  summary: >-
+    Allows selecting previous and next slots to wrap
+
+    around to the other side of the component.
+  example: []
+  syntax:
+    content: public bool allowInputWrapping { get; set; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public Property allowInputWrapping As Boolean
+  overload: milk.Components.InventoryComponent.allowInputWrapping*
+- uid: milk.Components.InventoryComponent.Size
+  commentId: P:milk.Components.InventoryComponent.Size
+  id: Size
+  parent: milk.Components.InventoryComponent
+  langs:
+  - csharp
+  - vb
+  name: Size
+  nameWithType: InventoryComponent.Size
+  fullName: milk.Components.InventoryComponent.Size
+  type: Property
+  source:
+    remote:
+      path: Components/InventoryComponent.cs
+      branch: main
+      repo: git@github.com:rik-cross/monogame-milk.git
+    id: Size
+    path: Components/InventoryComponent.cs
+    startLine: 72
+  assemblies:
+  - milk
+  namespace: milk.Components
+  summary: >-
+    Get the size of the component. The size can't
+
+    be set directly, as it depends on the number of
+
+    inventory slots, and the margin between slots.
+  example: []
+  syntax:
+    content: public Vector2 Size { get; }
+    parameters: []
+    return:
+      type: Microsoft.Xna.Framework.Vector2
+    content.vb: Public Property Size As Vector2
+  overload: milk.Components.InventoryComponent.Size*
+- uid: milk.Components.InventoryComponent.Position
+  commentId: P:milk.Components.InventoryComponent.Position
+  id: Position
+  parent: milk.Components.InventoryComponent
+  langs:
+  - csharp
+  - vb
+  name: Position
+  nameWithType: InventoryComponent.Position
+  fullName: milk.Components.InventoryComponent.Position
+  type: Property
+  source:
+    remote:
+      path: Components/InventoryComponent.cs
+      branch: main
+      repo: git@github.com:rik-cross/monogame-milk.git
+    id: Position
+    path: Components/InventoryComponent.cs
+    startLine: 78
+  assemblies:
+  - milk
+  namespace: milk.Components
+  summary: >-
+    The (x, y) position of the component, relative
+
+    to its Anchor, which default to the top-left.
+  example: []
+  syntax:
+    content: public Vector2 Position { get; set; }
+    parameters: []
+    return:
+      type: Microsoft.Xna.Framework.Vector2
+    content.vb: Public Property Position As Vector2
+  overload: milk.Components.InventoryComponent.Position*
+- uid: milk.Components.InventoryComponent.Anchor
+  commentId: P:milk.Components.InventoryComponent.Anchor
+  id: Anchor
+  parent: milk.Components.InventoryComponent
+  langs:
+  - csharp
+  - vb
+  name: Anchor
+  nameWithType: InventoryComponent.Anchor
+  fullName: milk.Components.InventoryComponent.Anchor
+  type: Property
+  source:
+    remote:
+      path: Components/InventoryComponent.cs
+      branch: main
+      repo: git@github.com:rik-cross/monogame-milk.git
+    id: Anchor
+    path: Components/InventoryComponent.cs
+    startLine: 83
+  assemblies:
+  - milk
+  namespace: milk.Components
+  summary: The part of the component to set the position against.
+  example: []
+  syntax:
+    content: public Anchor Anchor { get; set; }
+    parameters: []
+    return:
+      type: milk.UI.Anchor
+    content.vb: Public Property Anchor As Anchor
+  overload: milk.Components.InventoryComponent.Anchor*
+- uid: milk.Components.InventoryComponent.SlotSize
+  commentId: P:milk.Components.InventoryComponent.SlotSize
+  id: SlotSize
+  parent: milk.Components.InventoryComponent
+  langs:
+  - csharp
+  - vb
+  name: SlotSize
+  nameWithType: InventoryComponent.SlotSize
+  fullName: milk.Components.InventoryComponent.SlotSize
+  type: Property
+  source:
+    remote:
+      path: Components/InventoryComponent.cs
+      branch: main
+      repo: git@github.com:rik-cross/monogame-milk.git
+    id: SlotSize
+    path: Components/InventoryComponent.cs
+    startLine: 89
+  assemblies:
+  - milk
+  namespace: milk.Components
+  summary: The (x, y) size of each inventory slot, in pixels.
+  example: []
+  syntax:
+    content: public Vector2 SlotSize { get; set; }
+    parameters: []
+    return:
+      type: Microsoft.Xna.Framework.Vector2
+    content.vb: Public Property SlotSize As Vector2
+  overload: milk.Components.InventoryComponent.SlotSize*
+- uid: milk.Components.InventoryComponent.SlotsPerRow
+  commentId: P:milk.Components.InventoryComponent.SlotsPerRow
+  id: SlotsPerRow
+  parent: milk.Components.InventoryComponent
+  langs:
+  - csharp
+  - vb
+  name: SlotsPerRow
+  nameWithType: InventoryComponent.SlotsPerRow
+  fullName: milk.Components.InventoryComponent.SlotsPerRow
+  type: Property
+  source:
+    remote:
+      path: Components/InventoryComponent.cs
+      branch: main
+      repo: git@github.com:rik-cross/monogame-milk.git
+    id: SlotsPerRow
+    path: Components/InventoryComponent.cs
+    startLine: 106
+  assemblies:
+  - milk
+  namespace: milk.Components
+  summary: The number of inventory slots per row of the drawn inventory.
+  example: []
+  syntax:
+    content: public int SlotsPerRow { get; set; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public Property SlotsPerRow As Integer
+  overload: milk.Components.InventoryComponent.SlotsPerRow*
+- uid: milk.Components.InventoryComponent.Margin
+  commentId: P:milk.Components.InventoryComponent.Margin
+  id: Margin
+  parent: milk.Components.InventoryComponent
+  langs:
+  - csharp
+  - vb
+  name: Margin
+  nameWithType: InventoryComponent.Margin
+  fullName: milk.Components.InventoryComponent.Margin
+  type: Property
+  source:
+    remote:
+      path: Components/InventoryComponent.cs
+      branch: main
+      repo: git@github.com:rik-cross/monogame-milk.git
+    id: Margin
+    path: Components/InventoryComponent.cs
+    startLine: 123
+  assemblies:
+  - milk
+  namespace: milk.Components
+  summary: The space (in pixels) between inventory slots.
+  example: []
+  syntax:
+    content: public int Margin { get; set; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public Property Margin As Integer
+  overload: milk.Components.InventoryComponent.Margin*
+- uid: milk.Components.InventoryComponent.Alpha
+  commentId: P:milk.Components.InventoryComponent.Alpha
+  id: Alpha
+  parent: milk.Components.InventoryComponent
+  langs:
+  - csharp
+  - vb
+  name: Alpha
+  nameWithType: InventoryComponent.Alpha
+  fullName: milk.Components.InventoryComponent.Alpha
+  type: Property
+  source:
+    remote:
+      path: Components/InventoryComponent.cs
+      branch: main
+      repo: git@github.com:rik-cross/monogame-milk.git
+    id: Alpha
+    path: Components/InventoryComponent.cs
+    startLine: 139
+  assemblies:
+  - milk
+  namespace: milk.Components
+  summary: The opcity of the component when active, between 0 and 1.
+  example: []
+  syntax:
+    content: public float Alpha { get; set; }
+    parameters: []
+    return:
+      type: System.Single
+    content.vb: Public Property Alpha As Single
+  overload: milk.Components.InventoryComponent.Alpha*
+- uid: milk.Components.InventoryComponent.AlphaInactive
+  commentId: P:milk.Components.InventoryComponent.AlphaInactive
+  id: AlphaInactive
+  parent: milk.Components.InventoryComponent
+  langs:
+  - csharp
+  - vb
+  name: AlphaInactive
+  nameWithType: InventoryComponent.AlphaInactive
+  fullName: milk.Components.InventoryComponent.AlphaInactive
+  type: Property
+  source:
+    remote:
+      path: Components/InventoryComponent.cs
+      branch: main
+      repo: git@github.com:rik-cross/monogame-milk.git
+    id: AlphaInactive
+    path: Components/InventoryComponent.cs
+    startLine: 144
+  assemblies:
+  - milk
+  namespace: milk.Components
+  summary: The opcity of the component when inactive, between 0 and 1.
+  example: []
+  syntax:
+    content: public float AlphaInactive { get; set; }
+    parameters: []
+    return:
+      type: System.Single
+    content.vb: Public Property AlphaInactive As Single
+  overload: milk.Components.InventoryComponent.AlphaInactive*
+- uid: milk.Components.InventoryComponent.PrimaryColor
+  commentId: F:milk.Components.InventoryComponent.PrimaryColor
+  id: PrimaryColor
+  parent: milk.Components.InventoryComponent
+  langs:
+  - csharp
+  - vb
+  name: PrimaryColor
+  nameWithType: InventoryComponent.PrimaryColor
+  fullName: milk.Components.InventoryComponent.PrimaryColor
+  type: Field
+  source:
+    remote:
+      path: Components/InventoryComponent.cs
+      branch: main
+      repo: git@github.com:rik-cross/monogame-milk.git
+    id: PrimaryColor
+    path: Components/InventoryComponent.cs
+    startLine: 149
+  assemblies:
+  - milk
+  namespace: milk.Components
+  summary: The main color used to draw the inventory.
+  example: []
+  syntax:
+    content: public Color PrimaryColor
+    return:
+      type: Microsoft.Xna.Framework.Color
+    content.vb: Public PrimaryColor As Color
+- uid: milk.Components.InventoryComponent.PrimaryColorInactive
+  commentId: F:milk.Components.InventoryComponent.PrimaryColorInactive
+  id: PrimaryColorInactive
+  parent: milk.Components.InventoryComponent
+  langs:
+  - csharp
+  - vb
+  name: PrimaryColorInactive
+  nameWithType: InventoryComponent.PrimaryColorInactive
+  fullName: milk.Components.InventoryComponent.PrimaryColorInactive
+  type: Field
+  source:
+    remote:
+      path: Components/InventoryComponent.cs
+      branch: main
+      repo: git@github.com:rik-cross/monogame-milk.git
+    id: PrimaryColorInactive
+    path: Components/InventoryComponent.cs
+    startLine: 154
+  assemblies:
+  - milk
+  namespace: milk.Components
+  summary: The main color used to draw the inventory when inactive.
+  example: []
+  syntax:
+    content: public Color PrimaryColorInactive
+    return:
+      type: Microsoft.Xna.Framework.Color
+    content.vb: Public PrimaryColorInactive As Color
+- uid: milk.Components.InventoryComponent.SecondaryColor
+  commentId: F:milk.Components.InventoryComponent.SecondaryColor
+  id: SecondaryColor
+  parent: milk.Components.InventoryComponent
+  langs:
+  - csharp
+  - vb
+  name: SecondaryColor
+  nameWithType: InventoryComponent.SecondaryColor
+  fullName: milk.Components.InventoryComponent.SecondaryColor
+  type: Field
+  source:
+    remote:
+      path: Components/InventoryComponent.cs
+      branch: main
+      repo: git@github.com:rik-cross/monogame-milk.git
+    id: SecondaryColor
+    path: Components/InventoryComponent.cs
+    startLine: 159
+  assemblies:
+  - milk
+  namespace: milk.Components
+  summary: The accent color used to draw the inventory.
+  example: []
+  syntax:
+    content: public Color SecondaryColor
+    return:
+      type: Microsoft.Xna.Framework.Color
+    content.vb: Public SecondaryColor As Color
+- uid: milk.Components.InventoryComponent.SecondaryColorInactive
+  commentId: F:milk.Components.InventoryComponent.SecondaryColorInactive
+  id: SecondaryColorInactive
+  parent: milk.Components.InventoryComponent
+  langs:
+  - csharp
+  - vb
+  name: SecondaryColorInactive
+  nameWithType: InventoryComponent.SecondaryColorInactive
+  fullName: milk.Components.InventoryComponent.SecondaryColorInactive
+  type: Field
+  source:
+    remote:
+      path: Components/InventoryComponent.cs
+      branch: main
+      repo: git@github.com:rik-cross/monogame-milk.git
+    id: SecondaryColorInactive
+    path: Components/InventoryComponent.cs
+    startLine: 164
+  assemblies:
+  - milk
+  namespace: milk.Components
+  summary: The accent color used to draw the inventory when inactive.
+  example: []
+  syntax:
+    content: public Color SecondaryColorInactive
+    return:
+      type: Microsoft.Xna.Framework.Color
+    content.vb: Public SecondaryColorInactive As Color
+- uid: milk.Components.InventoryComponent.Font
+  commentId: F:milk.Components.InventoryComponent.Font
+  id: Font
+  parent: milk.Components.InventoryComponent
+  langs:
+  - csharp
+  - vb
+  name: Font
+  nameWithType: InventoryComponent.Font
+  fullName: milk.Components.InventoryComponent.Font
+  type: Field
+  source:
+    remote:
+      path: Components/InventoryComponent.cs
+      branch: main
+      repo: git@github.com:rik-cross/monogame-milk.git
+    id: Font
+    path: Components/InventoryComponent.cs
+    startLine: 169
+  assemblies:
+  - milk
+  namespace: milk.Components
+  summary: The font used to draw entity names and amounts.
+  example: []
+  syntax:
+    content: public SpriteFont Font
+    return:
+      type: Microsoft.Xna.Framework.Graphics.SpriteFont
+    content.vb: Public Font As SpriteFont
+- uid: milk.Components.InventoryComponent.CustomDrawMethod
+  commentId: F:milk.Components.InventoryComponent.CustomDrawMethod
+  id: CustomDrawMethod
+  parent: milk.Components.InventoryComponent
+  langs:
+  - csharp
+  - vb
+  name: CustomDrawMethod
+  nameWithType: InventoryComponent.CustomDrawMethod
+  fullName: milk.Components.InventoryComponent.CustomDrawMethod
+  type: Field
+  source:
+    remote:
+      path: Components/InventoryComponent.cs
+      branch: main
+      repo: git@github.com:rik-cross/monogame-milk.git
+    id: CustomDrawMethod
+    path: Components/InventoryComponent.cs
+    startLine: 174
+  assemblies:
+  - milk
+  namespace: milk.Components
+  summary: Specifies a method used to override the default Draw() method.
+  example: []
+  syntax:
+    content: public Action<InventoryComponent>? CustomDrawMethod
+    return:
+      type: System.Action{milk.Components.InventoryComponent}
+    content.vb: Public CustomDrawMethod As Action(Of InventoryComponent)
+- uid: milk.Components.InventoryComponent.Visible
+  commentId: P:milk.Components.InventoryComponent.Visible
+  id: Visible
+  parent: milk.Components.InventoryComponent
+  langs:
+  - csharp
+  - vb
+  name: Visible
+  nameWithType: InventoryComponent.Visible
+  fullName: milk.Components.InventoryComponent.Visible
+  type: Property
+  source:
+    remote:
+      path: Components/InventoryComponent.cs
+      branch: main
+      repo: git@github.com:rik-cross/monogame-milk.git
+    id: Visible
+    path: Components/InventoryComponent.cs
+    startLine: 180
+  assemblies:
+  - milk
+  namespace: milk.Components
+  summary: Hides and shows the component.
+  example: []
+  syntax:
+    content: public bool Visible { get; set; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public Property Visible As Boolean
+  overload: milk.Components.InventoryComponent.Visible*
+- uid: milk.Components.InventoryComponent.Active
+  commentId: P:milk.Components.InventoryComponent.Active
+  id: Active
+  parent: milk.Components.InventoryComponent
+  langs:
+  - csharp
+  - vb
+  name: Active
+  nameWithType: InventoryComponent.Active
+  fullName: milk.Components.InventoryComponent.Active
+  type: Property
+  source:
+    remote:
+      path: Components/InventoryComponent.cs
+      branch: main
+      repo: git@github.com:rik-cross/monogame-milk.git
+    id: Active
+    path: Components/InventoryComponent.cs
+    startLine: 199
+  assemblies:
+  - milk
+  namespace: milk.Components
+  summary: Enables or disables use of the component.
+  example: []
+  syntax:
+    content: public bool Active { get; set; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public Property Active As Boolean
+  overload: milk.Components.InventoryComponent.Active*
+- uid: milk.Components.InventoryComponent.InputActions
+  commentId: P:milk.Components.InventoryComponent.InputActions
+  id: InputActions
+  parent: milk.Components.InventoryComponent
+  langs:
+  - csharp
+  - vb
+  name: InputActions
+  nameWithType: InventoryComponent.InputActions
+  fullName: milk.Components.InventoryComponent.InputActions
+  type: Property
+  source:
+    remote:
+      path: Components/InventoryComponent.cs
+      branch: main
+      repo: git@github.com:rik-cross/monogame-milk.git
+    id: InputActions
+    path: Components/InventoryComponent.cs
+    startLine: 217
+  assemblies:
+  - milk
+  namespace: milk.Components
+  summary: Maps keys to inventory methods.
+  example: []
+  syntax:
+    content: public Dictionary<Keys, Action> InputActions { get; set; }
+    parameters: []
+    return:
+      type: System.Collections.Generic.Dictionary{Microsoft.Xna.Framework.Input.Keys,System.Action}
+    content.vb: Public Property InputActions As Dictionary(Of Keys, Action)
+  overload: milk.Components.InventoryComponent.InputActions*
+- uid: milk.Components.InventoryComponent.#ctor(System.Int32,System.Boolean,System.Nullable{Microsoft.Xna.Framework.Vector2},milk.UI.Anchor,System.Nullable{Microsoft.Xna.Framework.Vector2},System.Nullable{System.Int32},System.Int32,System.Single,System.Single,System.Nullable{Microsoft.Xna.Framework.Color},System.Nullable{Microsoft.Xna.Framework.Color},System.Nullable{Microsoft.Xna.Framework.Color},System.Nullable{Microsoft.Xna.Framework.Color},Microsoft.Xna.Framework.Graphics.SpriteFont,System.Action{milk.Components.InventoryComponent},System.Boolean,System.Boolean,System.Collections.Generic.Dictionary{Microsoft.Xna.Framework.Input.Keys,System.Action})
+  commentId: M:milk.Components.InventoryComponent.#ctor(System.Int32,System.Boolean,System.Nullable{Microsoft.Xna.Framework.Vector2},milk.UI.Anchor,System.Nullable{Microsoft.Xna.Framework.Vector2},System.Nullable{System.Int32},System.Int32,System.Single,System.Single,System.Nullable{Microsoft.Xna.Framework.Color},System.Nullable{Microsoft.Xna.Framework.Color},System.Nullable{Microsoft.Xna.Framework.Color},System.Nullable{Microsoft.Xna.Framework.Color},Microsoft.Xna.Framework.Graphics.SpriteFont,System.Action{milk.Components.InventoryComponent},System.Boolean,System.Boolean,System.Collections.Generic.Dictionary{Microsoft.Xna.Framework.Input.Keys,System.Action})
+  id: '#ctor(System.Int32,System.Boolean,System.Nullable{Microsoft.Xna.Framework.Vector2},milk.UI.Anchor,System.Nullable{Microsoft.Xna.Framework.Vector2},System.Nullable{System.Int32},System.Int32,System.Single,System.Single,System.Nullable{Microsoft.Xna.Framework.Color},System.Nullable{Microsoft.Xna.Framework.Color},System.Nullable{Microsoft.Xna.Framework.Color},System.Nullable{Microsoft.Xna.Framework.Color},Microsoft.Xna.Framework.Graphics.SpriteFont,System.Action{milk.Components.InventoryComponent},System.Boolean,System.Boolean,System.Collections.Generic.Dictionary{Microsoft.Xna.Framework.Input.Keys,System.Action})'
+  parent: milk.Components.InventoryComponent
+  langs:
+  - csharp
+  - vb
+  name: InventoryComponent(int, bool, Vector2?, Anchor, Vector2?, int?, int, float, float, Color?, Color?, Color?, Color?, SpriteFont?, Action<InventoryComponent>?, bool, bool, Dictionary<Keys, Action>?)
+  nameWithType: InventoryComponent.InventoryComponent(int, bool, Vector2?, Anchor, Vector2?, int?, int, float, float, Color?, Color?, Color?, Color?, SpriteFont?, Action<InventoryComponent>?, bool, bool, Dictionary<Keys, Action>?)
+  fullName: milk.Components.InventoryComponent.InventoryComponent(int, bool, Microsoft.Xna.Framework.Vector2?, milk.UI.Anchor, Microsoft.Xna.Framework.Vector2?, int?, int, float, float, Microsoft.Xna.Framework.Color?, Microsoft.Xna.Framework.Color?, Microsoft.Xna.Framework.Color?, Microsoft.Xna.Framework.Color?, Microsoft.Xna.Framework.Graphics.SpriteFont?, System.Action<milk.Components.InventoryComponent>?, bool, bool, System.Collections.Generic.Dictionary<Microsoft.Xna.Framework.Input.Keys, System.Action>?)
+  type: Constructor
+  source:
+    remote:
+      path: Components/InventoryComponent.cs
+      branch: main
+      repo: git@github.com:rik-cross/monogame-milk.git
+    id: .ctor
+    path: Components/InventoryComponent.cs
+    startLine: 240
+  assemblies:
+  - milk
+  namespace: milk.Components
+  summary: Creates a new inventory.
+  example: []
+  syntax:
+    content: public InventoryComponent(int numberOfSlots = 8, bool allowInputWrapping = false, Vector2? position = null, Anchor anchor = Anchor.TopLeft, Vector2? slotSize = null, int? slotsPerRow = null, int margin = 8, float alpha = 1, float alphaInactive = 1, Color? primaryColor = null, Color? primaryColorInactive = null, Color? secondaryColor = null, Color? secondaryColorInactive = null, SpriteFont? font = null, Action<InventoryComponent>? customDrawMethod = null, bool visible = true, bool active = true, Dictionary<Keys, Action>? inputActions = null)
+    parameters:
+    - id: numberOfSlots
+      type: System.Int32
+      description: The number of inventory slots (default = 8).
+    - id: allowInputWrapping
+      type: System.Boolean
+      description: Allows cyclical movement between inventory slots (default = false).
+    - id: position
+      type: System.Nullable{Microsoft.Xna.Framework.Vector2}
+      description: The (x, y) position of the inventory (default = null - (0, 0)).
+    - id: anchor
+      type: milk.UI.Anchor
+      description: The anchor to set the position against (default = Anchor.TopLeft).
+    - id: slotSize
+      type: System.Nullable{Microsoft.Xna.Framework.Vector2}
+      description: The (w, h) slot size in pixels (default = null - (64, 64)).
+    - id: slotsPerRow
+      type: System.Nullable{System.Int32}
+      description: The number of slots in a row (default = null - all on a single row).
+    - id: margin
+      type: System.Int32
+      description: The gap between slots (default = 8).
+    - id: alpha
+      type: System.Single
+      description: The opacity of the inventory, between 0 anf 1 (default = 1 - fully opaque).
+    - id: alphaInactive
+      type: System.Single
+      description: The opacity of the inventory when inactive, between 0 anf 1 (default = 1 - fully opaque).
+    - id: primaryColor
+      type: System.Nullable{Microsoft.Xna.Framework.Color}
+      description: The main color used to draw the inventory (default = null - Color.White).
+    - id: primaryColorInactive
+      type: System.Nullable{Microsoft.Xna.Framework.Color}
+      description: The main color used to draw the inventory when inactive (default = null - Color.LightGray).
+    - id: secondaryColor
+      type: System.Nullable{Microsoft.Xna.Framework.Color}
+      description: The accent color used to draw the inventory (default = null - Color.Black).
+    - id: secondaryColorInactive
+      type: System.Nullable{Microsoft.Xna.Framework.Color}
+      description: The accent color used to draw the inventory when inactive (default = null - Color.DarkGray).
+    - id: font
+      type: Microsoft.Xna.Framework.Graphics.SpriteFont
+      description: The font used to draw slot names and numbers (default = null - FontSmall).
+    - id: customDrawMethod
+      type: System.Action{milk.Components.InventoryComponent}
+      description: Specifies a method to override the drawing of the inventory (default = null).
+    - id: visible
+      type: System.Boolean
+      description: Sets the visibility of the inventory (default = true).
+    - id: active
+      type: System.Boolean
+      description: Sets the ability to interact with the component (default = true).
+    - id: inputActions
+      type: System.Collections.Generic.Dictionary{Microsoft.Xna.Framework.Input.Keys,System.Action}
+      description: Maps Keys to Actions (default = null - no actions mapped).
+    content.vb: Public Sub New(numberOfSlots As Integer = 8, allowInputWrapping As Boolean = False, position As Vector2? = Nothing, anchor As Anchor = Anchor.TopLeft, slotSize As Vector2? = Nothing, slotsPerRow As Integer? = Nothing, margin As Integer = 8, alpha As Single = 1, alphaInactive As Single = 1, primaryColor As Color? = Nothing, primaryColorInactive As Color? = Nothing, secondaryColor As Color? = Nothing, secondaryColorInactive As Color? = Nothing, font As SpriteFont = Nothing, customDrawMethod As Action(Of InventoryComponent) = Nothing, visible As Boolean = True, active As Boolean = True, inputActions As Dictionary(Of Keys, Action) = Nothing)
+  overload: milk.Components.InventoryComponent.#ctor*
+  nameWithType.vb: InventoryComponent.New(Integer, Boolean, Vector2?, Anchor, Vector2?, Integer?, Integer, Single, Single, Color?, Color?, Color?, Color?, SpriteFont, Action(Of InventoryComponent), Boolean, Boolean, Dictionary(Of Keys, Action))
+  fullName.vb: milk.Components.InventoryComponent.New(Integer, Boolean, Microsoft.Xna.Framework.Vector2?, milk.UI.Anchor, Microsoft.Xna.Framework.Vector2?, Integer?, Integer, Single, Single, Microsoft.Xna.Framework.Color?, Microsoft.Xna.Framework.Color?, Microsoft.Xna.Framework.Color?, Microsoft.Xna.Framework.Color?, Microsoft.Xna.Framework.Graphics.SpriteFont, System.Action(Of milk.Components.InventoryComponent), Boolean, Boolean, System.Collections.Generic.Dictionary(Of Microsoft.Xna.Framework.Input.Keys, System.Action))
+  name.vb: New(Integer, Boolean, Vector2?, Anchor, Vector2?, Integer?, Integer, Single, Single, Color?, Color?, Color?, Color?, SpriteFont, Action(Of InventoryComponent), Boolean, Boolean, Dictionary(Of Keys, Action))
+- uid: milk.Components.InventoryComponent.GetSlot(System.Nullable{System.Int32})
+  commentId: M:milk.Components.InventoryComponent.GetSlot(System.Nullable{System.Int32})
+  id: GetSlot(System.Nullable{System.Int32})
+  parent: milk.Components.InventoryComponent
+  langs:
+  - csharp
+  - vb
+  name: GetSlot(int?)
+  nameWithType: InventoryComponent.GetSlot(int?)
+  fullName: milk.Components.InventoryComponent.GetSlot(int?)
+  type: Method
+  source:
+    remote:
+      path: Components/InventoryComponent.cs
+      branch: main
+      repo: git@github.com:rik-cross/monogame-milk.git
+    id: GetSlot
+    path: Components/InventoryComponent.cs
+    startLine: 306
+  assemblies:
+  - milk
+  namespace: milk.Components
+  summary: >-
+    Gets the slot specified, or the currently-selected
+
+    slot if no slot is specified.
+  example: []
+  syntax:
+    content: public InventorySlot GetSlot(int? slotNumber = null)
+    parameters:
+    - id: slotNumber
+      type: System.Nullable{System.Int32}
+      description: The slot number to get from (default = null - current slot).
+    return:
+      type: milk.Core.InventorySlot
+      description: ''
+    content.vb: Public Function GetSlot(slotNumber As Integer? = Nothing) As InventorySlot
+  overload: milk.Components.InventoryComponent.GetSlot*
+  nameWithType.vb: InventoryComponent.GetSlot(Integer?)
+  fullName.vb: milk.Components.InventoryComponent.GetSlot(Integer?)
+  name.vb: GetSlot(Integer?)
+- uid: milk.Components.InventoryComponent.AddEntity(milk.Core.Entity)
+  commentId: M:milk.Components.InventoryComponent.AddEntity(milk.Core.Entity)
+  id: AddEntity(milk.Core.Entity)
+  parent: milk.Components.InventoryComponent
+  langs:
+  - csharp
+  - vb
+  name: AddEntity(Entity)
+  nameWithType: InventoryComponent.AddEntity(Entity)
+  fullName: milk.Components.InventoryComponent.AddEntity(milk.Core.Entity)
+  type: Method
+  source:
+    remote:
+      path: Components/InventoryComponent.cs
+      branch: main
+      repo: git@github.com:rik-cross/monogame-milk.git
+    id: AddEntity
+    path: Components/InventoryComponent.cs
+    startLine: 319
+  assemblies:
+  - milk
+  namespace: milk.Components
+  summary: >-
+    Adds the specified entity to the inventory, first by attempting to add
+
+    the entity to any slot of the same type with space for more entities, and
+
+    then by attempting to add the entity to a new slot.
+  example: []
+  syntax:
+    content: public bool AddEntity(Entity entity)
+    parameters:
+    - id: entity
+      type: milk.Core.Entity
+      description: The entity to add.
+    return:
+      type: System.Boolean
+      description: True if the entity was successfully added.
+    content.vb: Public Function AddEntity(entity As Entity) As Boolean
+  overload: milk.Components.InventoryComponent.AddEntity*
+- uid: milk.Components.InventoryComponent.RemoveEntity(System.Nullable{System.Int32})
+  commentId: M:milk.Components.InventoryComponent.RemoveEntity(System.Nullable{System.Int32})
+  id: RemoveEntity(System.Nullable{System.Int32})
+  parent: milk.Components.InventoryComponent
+  langs:
+  - csharp
+  - vb
+  name: RemoveEntity(int?)
+  nameWithType: InventoryComponent.RemoveEntity(int?)
+  fullName: milk.Components.InventoryComponent.RemoveEntity(int?)
+  type: Method
+  source:
+    remote:
+      path: Components/InventoryComponent.cs
+      branch: main
+      repo: git@github.com:rik-cross/monogame-milk.git
+    id: RemoveEntity
+    path: Components/InventoryComponent.cs
+    startLine: 361
+  assemblies:
+  - milk
+  namespace: milk.Components
+  summary: >-
+    Removes an entity from the specified slot number,
+
+    or from the currently-selected slot if no slot number is provided.
+  example: []
+  syntax:
+    content: public Entity? RemoveEntity(int? slotNumber = null)
+    parameters:
+    - id: slotNumber
+      type: System.Nullable{System.Int32}
+      description: The slot number to remove an entity from (default = null - remove from currently-selected slot).
+    return:
+      type: milk.Core.Entity
+      description: An entity if one exists at the slot specified, or null.
+    content.vb: Public Function RemoveEntity(slotNumber As Integer? = Nothing) As Entity
+  overload: milk.Components.InventoryComponent.RemoveEntity*
+  nameWithType.vb: InventoryComponent.RemoveEntity(Integer?)
+  fullName.vb: milk.Components.InventoryComponent.RemoveEntity(Integer?)
+  name.vb: RemoveEntity(Integer?)
+- uid: milk.Components.InventoryComponent.RemoveEntityOfType(System.String)
+  commentId: M:milk.Components.InventoryComponent.RemoveEntityOfType(System.String)
+  id: RemoveEntityOfType(System.String)
+  parent: milk.Components.InventoryComponent
+  langs:
+  - csharp
+  - vb
+  name: RemoveEntityOfType(string)
+  nameWithType: InventoryComponent.RemoveEntityOfType(string)
+  fullName: milk.Components.InventoryComponent.RemoveEntityOfType(string)
+  type: Method
+  source:
+    remote:
+      path: Components/InventoryComponent.cs
+      branch: main
+      repo: git@github.com:rik-cross/monogame-milk.git
+    id: RemoveEntityOfType
+    path: Components/InventoryComponent.cs
+    startLine: 373
+  assemblies:
+  - milk
+  namespace: milk.Components
+  summary: Removes the first entity found of the specified type.
+  example: []
+  syntax:
+    content: public Entity? RemoveEntityOfType(string type)
+    parameters:
+    - id: type
+      type: System.String
+      description: The entity type to remove.
+    return:
+      type: milk.Core.Entity
+      description: An entity, or null is no entity is found.
+    content.vb: Public Function RemoveEntityOfType(type As String) As Entity
+  overload: milk.Components.InventoryComponent.RemoveEntityOfType*
+  nameWithType.vb: InventoryComponent.RemoveEntityOfType(String)
+  fullName.vb: milk.Components.InventoryComponent.RemoveEntityOfType(String)
+  name.vb: RemoveEntityOfType(String)
+- uid: milk.Components.InventoryComponent.RemoveAllEntitiesFromSlot(System.Nullable{System.Int32})
+  commentId: M:milk.Components.InventoryComponent.RemoveAllEntitiesFromSlot(System.Nullable{System.Int32})
+  id: RemoveAllEntitiesFromSlot(System.Nullable{System.Int32})
+  parent: milk.Components.InventoryComponent
+  langs:
+  - csharp
+  - vb
+  name: RemoveAllEntitiesFromSlot(int?)
+  nameWithType: InventoryComponent.RemoveAllEntitiesFromSlot(int?)
+  fullName: milk.Components.InventoryComponent.RemoveAllEntitiesFromSlot(int?)
+  type: Method
+  source:
+    remote:
+      path: Components/InventoryComponent.cs
+      branch: main
+      repo: git@github.com:rik-cross/monogame-milk.git
+    id: RemoveAllEntitiesFromSlot
+    path: Components/InventoryComponent.cs
+    startLine: 392
+  assemblies:
+  - milk
+  namespace: milk.Components
+  summary: >-
+    Removes all entities from the slot number specified,
+
+    or from the currently-selected slot if no slot number is specified
+  example: []
+  syntax:
+    content: public List<Entity> RemoveAllEntitiesFromSlot(int? slotNumber = null)
+    parameters:
+    - id: slotNumber
+      type: System.Nullable{System.Int32}
+      description: The slotNumber to remove entities from (default = null, currently-selected slot).
+    return:
+      type: System.Collections.Generic.List{milk.Core.Entity}
+      description: A list of all entities removed.
+    content.vb: Public Function RemoveAllEntitiesFromSlot(slotNumber As Integer? = Nothing) As List(Of Entity)
+  overload: milk.Components.InventoryComponent.RemoveAllEntitiesFromSlot*
+  nameWithType.vb: InventoryComponent.RemoveAllEntitiesFromSlot(Integer?)
+  fullName.vb: milk.Components.InventoryComponent.RemoveAllEntitiesFromSlot(Integer?)
+  name.vb: RemoveAllEntitiesFromSlot(Integer?)
+- uid: milk.Components.InventoryComponent.RemoveAllEntities
+  commentId: M:milk.Components.InventoryComponent.RemoveAllEntities
+  id: RemoveAllEntities
+  parent: milk.Components.InventoryComponent
+  langs:
+  - csharp
+  - vb
+  name: RemoveAllEntities()
+  nameWithType: InventoryComponent.RemoveAllEntities()
+  fullName: milk.Components.InventoryComponent.RemoveAllEntities()
+  type: Method
+  source:
+    remote:
+      path: Components/InventoryComponent.cs
+      branch: main
+      repo: git@github.com:rik-cross/monogame-milk.git
+    id: RemoveAllEntities
+    path: Components/InventoryComponent.cs
+    startLine: 407
+  assemblies:
+  - milk
+  namespace: milk.Components
+  summary: Empties the inventory.
+  example: []
+  syntax:
+    content: public List<Entity> RemoveAllEntities()
+    return:
+      type: System.Collections.Generic.List{milk.Core.Entity}
+      description: A list of all entities removed.
+    content.vb: Public Function RemoveAllEntities() As List(Of Entity)
+  overload: milk.Components.InventoryComponent.RemoveAllEntities*
+- uid: milk.Components.InventoryComponent.Consolidate
+  commentId: M:milk.Components.InventoryComponent.Consolidate
+  id: Consolidate
+  parent: milk.Components.InventoryComponent
+  langs:
+  - csharp
+  - vb
+  name: Consolidate()
+  nameWithType: InventoryComponent.Consolidate()
+  fullName: milk.Components.InventoryComponent.Consolidate()
+  type: Method
+  source:
+    remote:
+      path: Components/InventoryComponent.cs
+      branch: main
+      repo: git@github.com:rik-cross/monogame-milk.git
+    id: Consolidate
+    path: Components/InventoryComponent.cs
+    startLine: 424
+  assemblies:
+  - milk
+  namespace: milk.Components
+  summary: >-
+    Consolidates entities of the same type into as few slots as possible,
+
+    to maximise the number of available inventory slots.
+  example: []
+  syntax:
+    content: public void Consolidate()
+    content.vb: Public Sub Consolidate()
+  overload: milk.Components.InventoryComponent.Consolidate*
+- uid: milk.Components.InventoryComponent.SelectAbove
+  commentId: M:milk.Components.InventoryComponent.SelectAbove
+  id: SelectAbove
+  parent: milk.Components.InventoryComponent
+  langs:
+  - csharp
+  - vb
+  name: SelectAbove()
+  nameWithType: InventoryComponent.SelectAbove()
+  fullName: milk.Components.InventoryComponent.SelectAbove()
+  type: Method
+  source:
+    remote:
+      path: Components/InventoryComponent.cs
+      branch: main
+      repo: git@github.com:rik-cross/monogame-milk.git
+    id: SelectAbove
+    path: Components/InventoryComponent.cs
+    startLine: 466
+  assemblies:
+  - milk
+  namespace: milk.Components
+  summary: >-
+    Selects the inventory slot above the currently selected slot, if one exists.
+
+    If allowInputWrapping == true, the selection wraps around to the bottom-most slot.
+  example: []
+  syntax:
+    content: public bool SelectAbove()
+    return:
+      type: System.Boolean
+      description: Returns true if the selected slot was already the top-most.
+    content.vb: Public Function SelectAbove() As Boolean
+  overload: milk.Components.InventoryComponent.SelectAbove*
+- uid: milk.Components.InventoryComponent.SelectBelow
+  commentId: M:milk.Components.InventoryComponent.SelectBelow
+  id: SelectBelow
+  parent: milk.Components.InventoryComponent
+  langs:
+  - csharp
+  - vb
+  name: SelectBelow()
+  nameWithType: InventoryComponent.SelectBelow()
+  fullName: milk.Components.InventoryComponent.SelectBelow()
+  type: Method
+  source:
+    remote:
+      path: Components/InventoryComponent.cs
+      branch: main
+      repo: git@github.com:rik-cross/monogame-milk.git
+    id: SelectBelow
+    path: Components/InventoryComponent.cs
+    startLine: 494
+  assemblies:
+  - milk
+  namespace: milk.Components
+  summary: >-
+    Selects the inventory slot below the currently selected slot, if one exists.
+
+    If allowInputWrapping == true, the selection wraps around to the top-most slot.
+  example: []
+  syntax:
+    content: public bool SelectBelow()
+    return:
+      type: System.Boolean
+      description: Returns true if the selected slot was already the bottom-most.
+    content.vb: Public Function SelectBelow() As Boolean
+  overload: milk.Components.InventoryComponent.SelectBelow*
+- uid: milk.Components.InventoryComponent.SelectLeft
+  commentId: M:milk.Components.InventoryComponent.SelectLeft
+  id: SelectLeft
+  parent: milk.Components.InventoryComponent
+  langs:
+  - csharp
+  - vb
+  name: SelectLeft()
+  nameWithType: InventoryComponent.SelectLeft()
+  fullName: milk.Components.InventoryComponent.SelectLeft()
+  type: Method
+  source:
+    remote:
+      path: Components/InventoryComponent.cs
+      branch: main
+      repo: git@github.com:rik-cross/monogame-milk.git
+    id: SelectLeft
+    path: Components/InventoryComponent.cs
+    startLine: 516
+  assemblies:
+  - milk
+  namespace: milk.Components
+  summary: >-
+    Selects the inventory slot to the left of the currently selected slot, if one exists.
+
+    If allowInputWrapping == true, the selection wraps around to the right-most slot.
+  example: []
+  syntax:
+    content: public bool SelectLeft()
+    return:
+      type: System.Boolean
+      description: Returns true if the selected slot was already the left-most.
+    content.vb: Public Function SelectLeft() As Boolean
+  overload: milk.Components.InventoryComponent.SelectLeft*
+- uid: milk.Components.InventoryComponent.SelectRight
+  commentId: M:milk.Components.InventoryComponent.SelectRight
+  id: SelectRight
+  parent: milk.Components.InventoryComponent
+  langs:
+  - csharp
+  - vb
+  name: SelectRight()
+  nameWithType: InventoryComponent.SelectRight()
+  fullName: milk.Components.InventoryComponent.SelectRight()
+  type: Method
+  source:
+    remote:
+      path: Components/InventoryComponent.cs
+      branch: main
+      repo: git@github.com:rik-cross/monogame-milk.git
+    id: SelectRight
+    path: Components/InventoryComponent.cs
+    startLine: 538
+  assemblies:
+  - milk
+  namespace: milk.Components
+  summary: >-
+    Selects the inventory slot to the right of the currently selected slot, if one exists.
+
+    If allowInputWrapping == true, the selection wraps around to the left-most slot.
+  example: []
+  syntax:
+    content: public bool SelectRight()
+    return:
+      type: System.Boolean
+      description: Returns true if the selected slot was already the right-most.
+    content.vb: Public Function SelectRight() As Boolean
+  overload: milk.Components.InventoryComponent.SelectRight*
+- uid: milk.Components.InventoryComponent.CalculateTopLeftPositionFromAnchor
+  commentId: M:milk.Components.InventoryComponent.CalculateTopLeftPositionFromAnchor
+  id: CalculateTopLeftPositionFromAnchor
+  parent: milk.Components.InventoryComponent
+  langs:
+  - csharp
+  - vb
+  name: CalculateTopLeftPositionFromAnchor()
+  nameWithType: InventoryComponent.CalculateTopLeftPositionFromAnchor()
+  fullName: milk.Components.InventoryComponent.CalculateTopLeftPositionFromAnchor()
+  type: Method
+  source:
+    remote:
+      path: Components/InventoryComponent.cs
+      branch: main
+      repo: git@github.com:rik-cross/monogame-milk.git
+    id: CalculateTopLeftPositionFromAnchor
+    path: Components/InventoryComponent.cs
+    startLine: 576
+  assemblies:
+  - milk
+  namespace: milk.Components
+  summary: Uses the anchor to find the top-left position.
+  example: []
+  syntax:
+    content: public Vector2 CalculateTopLeftPositionFromAnchor()
+    return:
+      type: Microsoft.Xna.Framework.Vector2
+      description: ''
+    content.vb: Public Function CalculateTopLeftPositionFromAnchor() As Vector2
+  overload: milk.Components.InventoryComponent.CalculateTopLeftPositionFromAnchor*
+- uid: milk.Components.InventoryComponent.Width
+  commentId: P:milk.Components.InventoryComponent.Width
+  id: Width
+  parent: milk.Components.InventoryComponent
+  langs:
+  - csharp
+  - vb
+  name: Width
+  nameWithType: InventoryComponent.Width
+  fullName: milk.Components.InventoryComponent.Width
+  type: Property
+  source:
+    remote:
+      path: Components/InventoryComponent.cs
+      branch: main
+      repo: git@github.com:rik-cross/monogame-milk.git
+    id: Width
+    path: Components/InventoryComponent.cs
+    startLine: 600
+  assemblies:
+  - milk
+  namespace: milk.Components
+  summary: The width.
+  example: []
+  syntax:
+    content: public float Width { get; set; }
+    parameters: []
+    return:
+      type: System.Single
+    content.vb: Public Property Width As Single
+  overload: milk.Components.InventoryComponent.Width*
+- uid: milk.Components.InventoryComponent.Height
+  commentId: P:milk.Components.InventoryComponent.Height
+  id: Height
+  parent: milk.Components.InventoryComponent
+  langs:
+  - csharp
+  - vb
+  name: Height
+  nameWithType: InventoryComponent.Height
+  fullName: milk.Components.InventoryComponent.Height
+  type: Property
+  source:
+    remote:
+      path: Components/InventoryComponent.cs
+      branch: main
+      repo: git@github.com:rik-cross/monogame-milk.git
+    id: Height
+    path: Components/InventoryComponent.cs
+    startLine: 609
+  assemblies:
+  - milk
+  namespace: milk.Components
+  summary: The height.
+  example: []
+  syntax:
+    content: public float Height { get; set; }
+    parameters: []
+    return:
+      type: System.Single
+    content.vb: Public Property Height As Single
+  overload: milk.Components.InventoryComponent.Height*
+- uid: milk.Components.InventoryComponent.X
+  commentId: P:milk.Components.InventoryComponent.X
+  id: X
+  parent: milk.Components.InventoryComponent
+  langs:
+  - csharp
+  - vb
+  name: X
+  nameWithType: InventoryComponent.X
+  fullName: milk.Components.InventoryComponent.X
+  type: Property
+  source:
+    remote:
+      path: Components/InventoryComponent.cs
+      branch: main
+      repo: git@github.com:rik-cross/monogame-milk.git
+    id: X
+    path: Components/InventoryComponent.cs
+    startLine: 618
+  assemblies:
+  - milk
+  namespace: milk.Components
+  summary: The x position.
+  example: []
+  syntax:
+    content: public float X { get; set; }
+    parameters: []
+    return:
+      type: System.Single
+    content.vb: Public Property X As Single
+  overload: milk.Components.InventoryComponent.X*
+- uid: milk.Components.InventoryComponent.Y
+  commentId: P:milk.Components.InventoryComponent.Y
+  id: Y
+  parent: milk.Components.InventoryComponent
+  langs:
+  - csharp
+  - vb
+  name: Y
+  nameWithType: InventoryComponent.Y
+  fullName: milk.Components.InventoryComponent.Y
+  type: Property
+  source:
+    remote:
+      path: Components/InventoryComponent.cs
+      branch: main
+      repo: git@github.com:rik-cross/monogame-milk.git
+    id: Y
+    path: Components/InventoryComponent.cs
+    startLine: 627
+  assemblies:
+  - milk
+  namespace: milk.Components
+  summary: The y position.
+  example: []
+  syntax:
+    content: public float Y { get; set; }
+    parameters: []
+    return:
+      type: System.Single
+    content.vb: Public Property Y As Single
+  overload: milk.Components.InventoryComponent.Y*
+- uid: milk.Components.InventoryComponent.Top
+  commentId: P:milk.Components.InventoryComponent.Top
+  id: Top
+  parent: milk.Components.InventoryComponent
+  langs:
+  - csharp
+  - vb
+  name: Top
+  nameWithType: InventoryComponent.Top
+  fullName: milk.Components.InventoryComponent.Top
+  type: Property
+  source:
+    remote:
+      path: Components/InventoryComponent.cs
+      branch: main
+      repo: git@github.com:rik-cross/monogame-milk.git
+    id: Top
+    path: Components/InventoryComponent.cs
+    startLine: 636
+  assemblies:
+  - milk
+  namespace: milk.Components
+  summary: The top (y) position.
+  example: []
+  syntax:
+    content: public float Top { get; set; }
+    parameters: []
+    return:
+      type: System.Single
+    content.vb: Public Property Top As Single
+  overload: milk.Components.InventoryComponent.Top*
+- uid: milk.Components.InventoryComponent.Middle
+  commentId: P:milk.Components.InventoryComponent.Middle
+  id: Middle
+  parent: milk.Components.InventoryComponent
+  langs:
+  - csharp
+  - vb
+  name: Middle
+  nameWithType: InventoryComponent.Middle
+  fullName: milk.Components.InventoryComponent.Middle
+  type: Property
+  source:
+    remote:
+      path: Components/InventoryComponent.cs
+      branch: main
+      repo: git@github.com:rik-cross/monogame-milk.git
+    id: Middle
+    path: Components/InventoryComponent.cs
+    startLine: 645
+  assemblies:
+  - milk
+  namespace: milk.Components
+  summary: The middle (y + 1/2 height).
+  example: []
+  syntax:
+    content: public float Middle { get; set; }
+    parameters: []
+    return:
+      type: System.Single
+    content.vb: Public Property Middle As Single
+  overload: milk.Components.InventoryComponent.Middle*
+- uid: milk.Components.InventoryComponent.Bottom
+  commentId: P:milk.Components.InventoryComponent.Bottom
+  id: Bottom
+  parent: milk.Components.InventoryComponent
+  langs:
+  - csharp
+  - vb
+  name: Bottom
+  nameWithType: InventoryComponent.Bottom
+  fullName: milk.Components.InventoryComponent.Bottom
+  type: Property
+  source:
+    remote:
+      path: Components/InventoryComponent.cs
+      branch: main
+      repo: git@github.com:rik-cross/monogame-milk.git
+    id: Bottom
+    path: Components/InventoryComponent.cs
+    startLine: 654
+  assemblies:
+  - milk
+  namespace: milk.Components
+  summary: The bottom (y + height).
+  example: []
+  syntax:
+    content: public float Bottom { get; set; }
+    parameters: []
+    return:
+      type: System.Single
+    content.vb: Public Property Bottom As Single
+  overload: milk.Components.InventoryComponent.Bottom*
+- uid: milk.Components.InventoryComponent.Left
+  commentId: P:milk.Components.InventoryComponent.Left
+  id: Left
+  parent: milk.Components.InventoryComponent
+  langs:
+  - csharp
+  - vb
+  name: Left
+  nameWithType: InventoryComponent.Left
+  fullName: milk.Components.InventoryComponent.Left
+  type: Property
+  source:
+    remote:
+      path: Components/InventoryComponent.cs
+      branch: main
+      repo: git@github.com:rik-cross/monogame-milk.git
+    id: Left
+    path: Components/InventoryComponent.cs
+    startLine: 663
+  assemblies:
+  - milk
+  namespace: milk.Components
+  summary: The left (x) position.
+  example: []
+  syntax:
+    content: public float Left { get; set; }
+    parameters: []
+    return:
+      type: System.Single
+    content.vb: Public Property Left As Single
+  overload: milk.Components.InventoryComponent.Left*
+- uid: milk.Components.InventoryComponent.Center
+  commentId: P:milk.Components.InventoryComponent.Center
+  id: Center
+  parent: milk.Components.InventoryComponent
+  langs:
+  - csharp
+  - vb
+  name: Center
+  nameWithType: InventoryComponent.Center
+  fullName: milk.Components.InventoryComponent.Center
+  type: Property
+  source:
+    remote:
+      path: Components/InventoryComponent.cs
+      branch: main
+      repo: git@github.com:rik-cross/monogame-milk.git
+    id: Center
+    path: Components/InventoryComponent.cs
+    startLine: 672
+  assemblies:
+  - milk
+  namespace: milk.Components
+  summary: The center (x + 1/2 width).
+  example: []
+  syntax:
+    content: public float Center { get; set; }
+    parameters: []
+    return:
+      type: System.Single
+    content.vb: Public Property Center As Single
+  overload: milk.Components.InventoryComponent.Center*
+- uid: milk.Components.InventoryComponent.Right
+  commentId: P:milk.Components.InventoryComponent.Right
+  id: Right
+  parent: milk.Components.InventoryComponent
+  langs:
+  - csharp
+  - vb
+  name: Right
+  nameWithType: InventoryComponent.Right
+  fullName: milk.Components.InventoryComponent.Right
+  type: Property
+  source:
+    remote:
+      path: Components/InventoryComponent.cs
+      branch: main
+      repo: git@github.com:rik-cross/monogame-milk.git
+    id: Right
+    path: Components/InventoryComponent.cs
+    startLine: 681
+  assemblies:
+  - milk
+  namespace: milk.Components
+  summary: The right (x + width).
+  example: []
+  syntax:
+    content: public float Right { get; set; }
+    parameters: []
+    return:
+      type: System.Single
+    content.vb: Public Property Right As Single
+  overload: milk.Components.InventoryComponent.Right*
+references:
+- uid: milk.Components
+  commentId: N:milk.Components
+  href: milk.html
+  name: milk.Components
+  nameWithType: milk.Components
+  fullName: milk.Components
+  spec.csharp:
+  - uid: milk
+    name: milk
+    href: milk.html
+  - name: .
+  - uid: milk.Components
+    name: Components
+    href: milk.Components.html
+  spec.vb:
+  - uid: milk
+    name: milk
+    href: milk.html
+  - name: .
+  - uid: milk.Components
+    name: Components
+    href: milk.Components.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: milk.Core.Component
+  commentId: T:milk.Core.Component
+  parent: milk.Core
+  href: milk.Core.Component.html
+  name: Component
+  nameWithType: Component
+  fullName: milk.Core.Component
+- uid: milk.Core.Component.ParentEntity
+  commentId: P:milk.Core.Component.ParentEntity
+  parent: milk.Core.Component
+  href: milk.Core.Component.html#milk_Core_Component_ParentEntity
+  name: ParentEntity
+  nameWithType: Component.ParentEntity
+  fullName: milk.Core.Component.ParentEntity
+- uid: milk.Core.Component.OnAddedToEntity(milk.Core.Entity)
+  commentId: M:milk.Core.Component.OnAddedToEntity(milk.Core.Entity)
+  parent: milk.Core.Component
+  href: milk.Core.Component.html#milk_Core_Component_OnAddedToEntity_milk_Core_Entity_
+  name: OnAddedToEntity(Entity)
+  nameWithType: Component.OnAddedToEntity(Entity)
+  fullName: milk.Core.Component.OnAddedToEntity(milk.Core.Entity)
+  spec.csharp:
+  - uid: milk.Core.Component.OnAddedToEntity(milk.Core.Entity)
+    name: OnAddedToEntity
+    href: milk.Core.Component.html#milk_Core_Component_OnAddedToEntity_milk_Core_Entity_
+  - name: (
+  - uid: milk.Core.Entity
+    name: Entity
+    href: milk.Core.Entity.html
+  - name: )
+  spec.vb:
+  - uid: milk.Core.Component.OnAddedToEntity(milk.Core.Entity)
+    name: OnAddedToEntity
+    href: milk.Core.Component.html#milk_Core_Component_OnAddedToEntity_milk_Core_Entity_
+  - name: (
+  - uid: milk.Core.Entity
+    name: Entity
+    href: milk.Core.Entity.html
+  - name: )
+- uid: milk.Core.Component.OnRemovedFromEntity(milk.Core.Entity)
+  commentId: M:milk.Core.Component.OnRemovedFromEntity(milk.Core.Entity)
+  parent: milk.Core.Component
+  href: milk.Core.Component.html#milk_Core_Component_OnRemovedFromEntity_milk_Core_Entity_
+  name: OnRemovedFromEntity(Entity)
+  nameWithType: Component.OnRemovedFromEntity(Entity)
+  fullName: milk.Core.Component.OnRemovedFromEntity(milk.Core.Entity)
+  spec.csharp:
+  - uid: milk.Core.Component.OnRemovedFromEntity(milk.Core.Entity)
+    name: OnRemovedFromEntity
+    href: milk.Core.Component.html#milk_Core_Component_OnRemovedFromEntity_milk_Core_Entity_
+  - name: (
+  - uid: milk.Core.Entity
+    name: Entity
+    href: milk.Core.Entity.html
+  - name: )
+  spec.vb:
+  - uid: milk.Core.Component.OnRemovedFromEntity(milk.Core.Entity)
+    name: OnRemovedFromEntity
+    href: milk.Core.Component.html#milk_Core_Component_OnRemovedFromEntity_milk_Core_Entity_
+  - name: (
+  - uid: milk.Core.Entity
+    name: Entity
+    href: milk.Core.Entity.html
+  - name: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: milk.Core
+  commentId: N:milk.Core
+  href: milk.html
+  name: milk.Core
+  nameWithType: milk.Core
+  fullName: milk.Core
+  spec.csharp:
+  - uid: milk
+    name: milk
+    href: milk.html
+  - name: .
+  - uid: milk.Core
+    name: Core
+    href: milk.Core.html
+  spec.vb:
+  - uid: milk
+    name: milk
+    href: milk.html
+  - name: .
+  - uid: milk.Core
+    name: Core
+    href: milk.Core.html
+- uid: milk.Components.InventoryComponent.NumberOfSlots*
+  commentId: Overload:milk.Components.InventoryComponent.NumberOfSlots
+  href: milk.Components.InventoryComponent.html#milk_Components_InventoryComponent_NumberOfSlots
+  name: NumberOfSlots
+  nameWithType: InventoryComponent.NumberOfSlots
+  fullName: milk.Components.InventoryComponent.NumberOfSlots
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer
+- uid: milk.Components.InventoryComponent.SelectedSlot*
+  commentId: Overload:milk.Components.InventoryComponent.SelectedSlot
+  href: milk.Components.InventoryComponent.html#milk_Components_InventoryComponent_SelectedSlot
+  name: SelectedSlot
+  nameWithType: InventoryComponent.SelectedSlot
+  fullName: milk.Components.InventoryComponent.SelectedSlot
+- uid: milk.Components.InventoryComponent.allowInputWrapping*
+  commentId: Overload:milk.Components.InventoryComponent.allowInputWrapping
+  href: milk.Components.InventoryComponent.html#milk_Components_InventoryComponent_allowInputWrapping
+  name: allowInputWrapping
+  nameWithType: InventoryComponent.allowInputWrapping
+  fullName: milk.Components.InventoryComponent.allowInputWrapping
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: bool
+  nameWithType: bool
+  fullName: bool
+  nameWithType.vb: Boolean
+  fullName.vb: Boolean
+  name.vb: Boolean
+- uid: milk.Components.InventoryComponent.Size*
+  commentId: Overload:milk.Components.InventoryComponent.Size
+  href: milk.Components.InventoryComponent.html#milk_Components_InventoryComponent_Size
+  name: Size
+  nameWithType: InventoryComponent.Size
+  fullName: milk.Components.InventoryComponent.Size
+- uid: Microsoft.Xna.Framework.Vector2
+  commentId: T:Microsoft.Xna.Framework.Vector2
+  parent: Microsoft.Xna.Framework
+  isExternal: true
+  name: Vector2
+  nameWithType: Vector2
+  fullName: Microsoft.Xna.Framework.Vector2
+- uid: Microsoft.Xna.Framework
+  commentId: N:Microsoft.Xna.Framework
+  isExternal: true
+  name: Microsoft.Xna.Framework
+  nameWithType: Microsoft.Xna.Framework
+  fullName: Microsoft.Xna.Framework
+  spec.csharp:
+  - uid: Microsoft
+    name: Microsoft
+    isExternal: true
+  - name: .
+  - uid: Microsoft.Xna
+    name: Xna
+    isExternal: true
+  - name: .
+  - uid: Microsoft.Xna.Framework
+    name: Framework
+    isExternal: true
+  spec.vb:
+  - uid: Microsoft
+    name: Microsoft
+    isExternal: true
+  - name: .
+  - uid: Microsoft.Xna
+    name: Xna
+    isExternal: true
+  - name: .
+  - uid: Microsoft.Xna.Framework
+    name: Framework
+    isExternal: true
+- uid: milk.Components.InventoryComponent.Position*
+  commentId: Overload:milk.Components.InventoryComponent.Position
+  href: milk.Components.InventoryComponent.html#milk_Components_InventoryComponent_Position
+  name: Position
+  nameWithType: InventoryComponent.Position
+  fullName: milk.Components.InventoryComponent.Position
+- uid: milk.Components.InventoryComponent.Anchor*
+  commentId: Overload:milk.Components.InventoryComponent.Anchor
+  href: milk.Components.InventoryComponent.html#milk_Components_InventoryComponent_Anchor
+  name: Anchor
+  nameWithType: InventoryComponent.Anchor
+  fullName: milk.Components.InventoryComponent.Anchor
+- uid: milk.UI.Anchor
+  commentId: T:milk.UI.Anchor
+  parent: milk.UI
+  href: milk.UI.Anchor.html
+  name: Anchor
+  nameWithType: Anchor
+  fullName: milk.UI.Anchor
+- uid: milk.UI
+  commentId: N:milk.UI
+  href: milk.html
+  name: milk.UI
+  nameWithType: milk.UI
+  fullName: milk.UI
+  spec.csharp:
+  - uid: milk
+    name: milk
+    href: milk.html
+  - name: .
+  - uid: milk.UI
+    name: UI
+    href: milk.UI.html
+  spec.vb:
+  - uid: milk
+    name: milk
+    href: milk.html
+  - name: .
+  - uid: milk.UI
+    name: UI
+    href: milk.UI.html
+- uid: milk.Components.InventoryComponent.SlotSize*
+  commentId: Overload:milk.Components.InventoryComponent.SlotSize
+  href: milk.Components.InventoryComponent.html#milk_Components_InventoryComponent_SlotSize
+  name: SlotSize
+  nameWithType: InventoryComponent.SlotSize
+  fullName: milk.Components.InventoryComponent.SlotSize
+- uid: milk.Components.InventoryComponent.SlotsPerRow*
+  commentId: Overload:milk.Components.InventoryComponent.SlotsPerRow
+  href: milk.Components.InventoryComponent.html#milk_Components_InventoryComponent_SlotsPerRow
+  name: SlotsPerRow
+  nameWithType: InventoryComponent.SlotsPerRow
+  fullName: milk.Components.InventoryComponent.SlotsPerRow
+- uid: milk.Components.InventoryComponent.Margin*
+  commentId: Overload:milk.Components.InventoryComponent.Margin
+  href: milk.Components.InventoryComponent.html#milk_Components_InventoryComponent_Margin
+  name: Margin
+  nameWithType: InventoryComponent.Margin
+  fullName: milk.Components.InventoryComponent.Margin
+- uid: milk.Components.InventoryComponent.Alpha*
+  commentId: Overload:milk.Components.InventoryComponent.Alpha
+  href: milk.Components.InventoryComponent.html#milk_Components_InventoryComponent_Alpha
+  name: Alpha
+  nameWithType: InventoryComponent.Alpha
+  fullName: milk.Components.InventoryComponent.Alpha
+- uid: System.Single
+  commentId: T:System.Single
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.single
+  name: float
+  nameWithType: float
+  fullName: float
+  nameWithType.vb: Single
+  fullName.vb: Single
+  name.vb: Single
+- uid: milk.Components.InventoryComponent.AlphaInactive*
+  commentId: Overload:milk.Components.InventoryComponent.AlphaInactive
+  href: milk.Components.InventoryComponent.html#milk_Components_InventoryComponent_AlphaInactive
+  name: AlphaInactive
+  nameWithType: InventoryComponent.AlphaInactive
+  fullName: milk.Components.InventoryComponent.AlphaInactive
+- uid: Microsoft.Xna.Framework.Color
+  commentId: T:Microsoft.Xna.Framework.Color
+  parent: Microsoft.Xna.Framework
+  isExternal: true
+  name: Color
+  nameWithType: Color
+  fullName: Microsoft.Xna.Framework.Color
+- uid: Microsoft.Xna.Framework.Graphics.SpriteFont
+  commentId: T:Microsoft.Xna.Framework.Graphics.SpriteFont
+  parent: Microsoft.Xna.Framework.Graphics
+  isExternal: true
+  name: SpriteFont
+  nameWithType: SpriteFont
+  fullName: Microsoft.Xna.Framework.Graphics.SpriteFont
+- uid: Microsoft.Xna.Framework.Graphics
+  commentId: N:Microsoft.Xna.Framework.Graphics
+  isExternal: true
+  name: Microsoft.Xna.Framework.Graphics
+  nameWithType: Microsoft.Xna.Framework.Graphics
+  fullName: Microsoft.Xna.Framework.Graphics
+  spec.csharp:
+  - uid: Microsoft
+    name: Microsoft
+    isExternal: true
+  - name: .
+  - uid: Microsoft.Xna
+    name: Xna
+    isExternal: true
+  - name: .
+  - uid: Microsoft.Xna.Framework
+    name: Framework
+    isExternal: true
+  - name: .
+  - uid: Microsoft.Xna.Framework.Graphics
+    name: Graphics
+    isExternal: true
+  spec.vb:
+  - uid: Microsoft
+    name: Microsoft
+    isExternal: true
+  - name: .
+  - uid: Microsoft.Xna
+    name: Xna
+    isExternal: true
+  - name: .
+  - uid: Microsoft.Xna.Framework
+    name: Framework
+    isExternal: true
+  - name: .
+  - uid: Microsoft.Xna.Framework.Graphics
+    name: Graphics
+    isExternal: true
+- uid: System.Action{milk.Components.InventoryComponent}
+  commentId: T:System.Action{milk.Components.InventoryComponent}
+  parent: System
+  definition: System.Action`1
+  href: https://learn.microsoft.com/dotnet/api/system.action-1
+  name: Action<InventoryComponent>
+  nameWithType: Action<InventoryComponent>
+  fullName: System.Action<milk.Components.InventoryComponent>
+  nameWithType.vb: Action(Of InventoryComponent)
+  fullName.vb: System.Action(Of milk.Components.InventoryComponent)
+  name.vb: Action(Of InventoryComponent)
+  spec.csharp:
+  - uid: System.Action`1
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-1
+  - name: <
+  - uid: milk.Components.InventoryComponent
+    name: InventoryComponent
+    href: milk.Components.InventoryComponent.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Action`1
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: milk.Components.InventoryComponent
+    name: InventoryComponent
+    href: milk.Components.InventoryComponent.html
+  - name: )
+- uid: System.Action`1
+  commentId: T:System.Action`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.action-1
+  name: Action<T>
+  nameWithType: Action<T>
+  fullName: System.Action<T>
+  nameWithType.vb: Action(Of T)
+  fullName.vb: System.Action(Of T)
+  name.vb: Action(Of T)
+  spec.csharp:
+  - uid: System.Action`1
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Action`1
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: milk.Components.InventoryComponent.Visible*
+  commentId: Overload:milk.Components.InventoryComponent.Visible
+  href: milk.Components.InventoryComponent.html#milk_Components_InventoryComponent_Visible
+  name: Visible
+  nameWithType: InventoryComponent.Visible
+  fullName: milk.Components.InventoryComponent.Visible
+- uid: milk.Components.InventoryComponent.Active*
+  commentId: Overload:milk.Components.InventoryComponent.Active
+  href: milk.Components.InventoryComponent.html#milk_Components_InventoryComponent_Active
+  name: Active
+  nameWithType: InventoryComponent.Active
+  fullName: milk.Components.InventoryComponent.Active
+- uid: milk.Components.InventoryComponent.InputActions*
+  commentId: Overload:milk.Components.InventoryComponent.InputActions
+  href: milk.Components.InventoryComponent.html#milk_Components_InventoryComponent_InputActions
+  name: InputActions
+  nameWithType: InventoryComponent.InputActions
+  fullName: milk.Components.InventoryComponent.InputActions
+- uid: System.Collections.Generic.Dictionary{Microsoft.Xna.Framework.Input.Keys,System.Action}
+  commentId: T:System.Collections.Generic.Dictionary{Microsoft.Xna.Framework.Input.Keys,System.Action}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.Dictionary`2
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
+  name: Dictionary<Keys, Action>
+  nameWithType: Dictionary<Keys, Action>
+  fullName: System.Collections.Generic.Dictionary<Microsoft.Xna.Framework.Input.Keys, System.Action>
+  nameWithType.vb: Dictionary(Of Keys, Action)
+  fullName.vb: System.Collections.Generic.Dictionary(Of Microsoft.Xna.Framework.Input.Keys, System.Action)
+  name.vb: Dictionary(Of Keys, Action)
+  spec.csharp:
+  - uid: System.Collections.Generic.Dictionary`2
+    name: Dictionary
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
+  - name: <
+  - uid: Microsoft.Xna.Framework.Input.Keys
+    name: Keys
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: System.Action
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.Dictionary`2
+    name: Dictionary
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: Microsoft.Xna.Framework.Input.Keys
+    name: Keys
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: System.Action
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action
+  - name: )
+- uid: System.Collections.Generic.Dictionary`2
+  commentId: T:System.Collections.Generic.Dictionary`2
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
+  name: Dictionary<TKey, TValue>
+  nameWithType: Dictionary<TKey, TValue>
+  fullName: System.Collections.Generic.Dictionary<TKey, TValue>
+  nameWithType.vb: Dictionary(Of TKey, TValue)
+  fullName.vb: System.Collections.Generic.Dictionary(Of TKey, TValue)
+  name.vb: Dictionary(Of TKey, TValue)
+  spec.csharp:
+  - uid: System.Collections.Generic.Dictionary`2
+    name: Dictionary
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
+  - name: <
+  - name: TKey
+  - name: ','
+  - name: " "
+  - name: TValue
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.Dictionary`2
+    name: Dictionary
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TKey
+  - name: ','
+  - name: " "
+  - name: TValue
+  - name: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+- uid: milk.Components.InventoryComponent.#ctor*
+  commentId: Overload:milk.Components.InventoryComponent.#ctor
+  href: milk.Components.InventoryComponent.html#milk_Components_InventoryComponent__ctor_System_Int32_System_Boolean_System_Nullable_Microsoft_Xna_Framework_Vector2__milk_UI_Anchor_System_Nullable_Microsoft_Xna_Framework_Vector2__System_Nullable_System_Int32__System_Int32_System_Single_System_Single_System_Nullable_Microsoft_Xna_Framework_Color__System_Nullable_Microsoft_Xna_Framework_Color__System_Nullable_Microsoft_Xna_Framework_Color__System_Nullable_Microsoft_Xna_Framework_Color__Microsoft_Xna_Framework_Graphics_SpriteFont_System_Action_milk_Components_InventoryComponent__System_Boolean_System_Boolean_System_Collections_Generic_Dictionary_Microsoft_Xna_Framework_Input_Keys_System_Action__
+  name: InventoryComponent
+  nameWithType: InventoryComponent.InventoryComponent
+  fullName: milk.Components.InventoryComponent.InventoryComponent
+  nameWithType.vb: InventoryComponent.New
+  fullName.vb: milk.Components.InventoryComponent.New
+  name.vb: New
+- uid: System.Nullable{Microsoft.Xna.Framework.Vector2}
+  commentId: T:System.Nullable{Microsoft.Xna.Framework.Vector2}
+  parent: System
+  definition: System.Nullable`1
+  name: Vector2?
+  nameWithType: Vector2?
+  fullName: Microsoft.Xna.Framework.Vector2?
+  spec.csharp:
+  - uid: Microsoft.Xna.Framework.Vector2
+    name: Vector2
+    isExternal: true
+  - name: '?'
+  spec.vb:
+  - uid: Microsoft.Xna.Framework.Vector2
+    name: Vector2
+    isExternal: true
+  - name: '?'
+- uid: System.Nullable{System.Int32}
+  commentId: T:System.Nullable{System.Int32}
+  parent: System
+  definition: System.Nullable`1
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int?
+  nameWithType: int?
+  fullName: int?
+  nameWithType.vb: Integer?
+  fullName.vb: Integer?
+  name.vb: Integer?
+  spec.csharp:
+  - uid: System.Int32
+    name: int
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: '?'
+  spec.vb:
+  - uid: System.Int32
+    name: Integer
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: '?'
+- uid: System.Nullable{Microsoft.Xna.Framework.Color}
+  commentId: T:System.Nullable{Microsoft.Xna.Framework.Color}
+  parent: System
+  definition: System.Nullable`1
+  name: Color?
+  nameWithType: Color?
+  fullName: Microsoft.Xna.Framework.Color?
+  spec.csharp:
+  - uid: Microsoft.Xna.Framework.Color
+    name: Color
+    isExternal: true
+  - name: '?'
+  spec.vb:
+  - uid: Microsoft.Xna.Framework.Color
+    name: Color
+    isExternal: true
+  - name: '?'
+- uid: System.Nullable`1
+  commentId: T:System.Nullable`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.nullable-1
+  name: Nullable<T>
+  nameWithType: Nullable<T>
+  fullName: System.Nullable<T>
+  nameWithType.vb: Nullable(Of T)
+  fullName.vb: System.Nullable(Of T)
+  name.vb: Nullable(Of T)
+  spec.csharp:
+  - uid: System.Nullable`1
+    name: Nullable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.nullable-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Nullable`1
+    name: Nullable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.nullable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: milk.Components.InventoryComponent.GetSlot*
+  commentId: Overload:milk.Components.InventoryComponent.GetSlot
+  href: milk.Components.InventoryComponent.html#milk_Components_InventoryComponent_GetSlot_System_Nullable_System_Int32__
+  name: GetSlot
+  nameWithType: InventoryComponent.GetSlot
+  fullName: milk.Components.InventoryComponent.GetSlot
+- uid: milk.Core.InventorySlot
+  commentId: T:milk.Core.InventorySlot
+  parent: milk.Core
+  href: milk.Core.InventorySlot.html
+  name: InventorySlot
+  nameWithType: InventorySlot
+  fullName: milk.Core.InventorySlot
+- uid: milk.Components.InventoryComponent.AddEntity*
+  commentId: Overload:milk.Components.InventoryComponent.AddEntity
+  href: milk.Components.InventoryComponent.html#milk_Components_InventoryComponent_AddEntity_milk_Core_Entity_
+  name: AddEntity
+  nameWithType: InventoryComponent.AddEntity
+  fullName: milk.Components.InventoryComponent.AddEntity
+- uid: milk.Core.Entity
+  commentId: T:milk.Core.Entity
+  parent: milk.Core
+  href: milk.Core.Entity.html
+  name: Entity
+  nameWithType: Entity
+  fullName: milk.Core.Entity
+- uid: milk.Components.InventoryComponent.RemoveEntity*
+  commentId: Overload:milk.Components.InventoryComponent.RemoveEntity
+  href: milk.Components.InventoryComponent.html#milk_Components_InventoryComponent_RemoveEntity_System_Nullable_System_Int32__
+  name: RemoveEntity
+  nameWithType: InventoryComponent.RemoveEntity
+  fullName: milk.Components.InventoryComponent.RemoveEntity
+- uid: milk.Components.InventoryComponent.RemoveEntityOfType*
+  commentId: Overload:milk.Components.InventoryComponent.RemoveEntityOfType
+  href: milk.Components.InventoryComponent.html#milk_Components_InventoryComponent_RemoveEntityOfType_System_String_
+  name: RemoveEntityOfType
+  nameWithType: InventoryComponent.RemoveEntityOfType
+  fullName: milk.Components.InventoryComponent.RemoveEntityOfType
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: milk.Components.InventoryComponent.RemoveAllEntitiesFromSlot*
+  commentId: Overload:milk.Components.InventoryComponent.RemoveAllEntitiesFromSlot
+  href: milk.Components.InventoryComponent.html#milk_Components_InventoryComponent_RemoveAllEntitiesFromSlot_System_Nullable_System_Int32__
+  name: RemoveAllEntitiesFromSlot
+  nameWithType: InventoryComponent.RemoveAllEntitiesFromSlot
+  fullName: milk.Components.InventoryComponent.RemoveAllEntitiesFromSlot
+- uid: System.Collections.Generic.List{milk.Core.Entity}
+  commentId: T:System.Collections.Generic.List{milk.Core.Entity}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.List`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  name: List<Entity>
+  nameWithType: List<Entity>
+  fullName: System.Collections.Generic.List<milk.Core.Entity>
+  nameWithType.vb: List(Of Entity)
+  fullName.vb: System.Collections.Generic.List(Of milk.Core.Entity)
+  name.vb: List(Of Entity)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: <
+  - uid: milk.Core.Entity
+    name: Entity
+    href: milk.Core.Entity.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: milk.Core.Entity
+    name: Entity
+    href: milk.Core.Entity.html
+  - name: )
+- uid: System.Collections.Generic.List`1
+  commentId: T:System.Collections.Generic.List`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  name: List<T>
+  nameWithType: List<T>
+  fullName: System.Collections.Generic.List<T>
+  nameWithType.vb: List(Of T)
+  fullName.vb: System.Collections.Generic.List(Of T)
+  name.vb: List(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: milk.Components.InventoryComponent.RemoveAllEntities*
+  commentId: Overload:milk.Components.InventoryComponent.RemoveAllEntities
+  href: milk.Components.InventoryComponent.html#milk_Components_InventoryComponent_RemoveAllEntities
+  name: RemoveAllEntities
+  nameWithType: InventoryComponent.RemoveAllEntities
+  fullName: milk.Components.InventoryComponent.RemoveAllEntities
+- uid: milk.Components.InventoryComponent.Consolidate*
+  commentId: Overload:milk.Components.InventoryComponent.Consolidate
+  href: milk.Components.InventoryComponent.html#milk_Components_InventoryComponent_Consolidate
+  name: Consolidate
+  nameWithType: InventoryComponent.Consolidate
+  fullName: milk.Components.InventoryComponent.Consolidate
+- uid: milk.Components.InventoryComponent.SelectAbove*
+  commentId: Overload:milk.Components.InventoryComponent.SelectAbove
+  href: milk.Components.InventoryComponent.html#milk_Components_InventoryComponent_SelectAbove
+  name: SelectAbove
+  nameWithType: InventoryComponent.SelectAbove
+  fullName: milk.Components.InventoryComponent.SelectAbove
+- uid: milk.Components.InventoryComponent.SelectBelow*
+  commentId: Overload:milk.Components.InventoryComponent.SelectBelow
+  href: milk.Components.InventoryComponent.html#milk_Components_InventoryComponent_SelectBelow
+  name: SelectBelow
+  nameWithType: InventoryComponent.SelectBelow
+  fullName: milk.Components.InventoryComponent.SelectBelow
+- uid: milk.Components.InventoryComponent.SelectLeft*
+  commentId: Overload:milk.Components.InventoryComponent.SelectLeft
+  href: milk.Components.InventoryComponent.html#milk_Components_InventoryComponent_SelectLeft
+  name: SelectLeft
+  nameWithType: InventoryComponent.SelectLeft
+  fullName: milk.Components.InventoryComponent.SelectLeft
+- uid: milk.Components.InventoryComponent.SelectRight*
+  commentId: Overload:milk.Components.InventoryComponent.SelectRight
+  href: milk.Components.InventoryComponent.html#milk_Components_InventoryComponent_SelectRight
+  name: SelectRight
+  nameWithType: InventoryComponent.SelectRight
+  fullName: milk.Components.InventoryComponent.SelectRight
+- uid: milk.Components.InventoryComponent.CalculateTopLeftPositionFromAnchor*
+  commentId: Overload:milk.Components.InventoryComponent.CalculateTopLeftPositionFromAnchor
+  href: milk.Components.InventoryComponent.html#milk_Components_InventoryComponent_CalculateTopLeftPositionFromAnchor
+  name: CalculateTopLeftPositionFromAnchor
+  nameWithType: InventoryComponent.CalculateTopLeftPositionFromAnchor
+  fullName: milk.Components.InventoryComponent.CalculateTopLeftPositionFromAnchor
+- uid: milk.Components.InventoryComponent.Width*
+  commentId: Overload:milk.Components.InventoryComponent.Width
+  href: milk.Components.InventoryComponent.html#milk_Components_InventoryComponent_Width
+  name: Width
+  nameWithType: InventoryComponent.Width
+  fullName: milk.Components.InventoryComponent.Width
+- uid: milk.Components.InventoryComponent.Height*
+  commentId: Overload:milk.Components.InventoryComponent.Height
+  href: milk.Components.InventoryComponent.html#milk_Components_InventoryComponent_Height
+  name: Height
+  nameWithType: InventoryComponent.Height
+  fullName: milk.Components.InventoryComponent.Height
+- uid: milk.Components.InventoryComponent.X*
+  commentId: Overload:milk.Components.InventoryComponent.X
+  href: milk.Components.InventoryComponent.html#milk_Components_InventoryComponent_X
+  name: X
+  nameWithType: InventoryComponent.X
+  fullName: milk.Components.InventoryComponent.X
+- uid: milk.Components.InventoryComponent.Y*
+  commentId: Overload:milk.Components.InventoryComponent.Y
+  href: milk.Components.InventoryComponent.html#milk_Components_InventoryComponent_Y
+  name: Y
+  nameWithType: InventoryComponent.Y
+  fullName: milk.Components.InventoryComponent.Y
+- uid: milk.Components.InventoryComponent.Top*
+  commentId: Overload:milk.Components.InventoryComponent.Top
+  href: milk.Components.InventoryComponent.html#milk_Components_InventoryComponent_Top
+  name: Top
+  nameWithType: InventoryComponent.Top
+  fullName: milk.Components.InventoryComponent.Top
+- uid: milk.Components.InventoryComponent.Middle*
+  commentId: Overload:milk.Components.InventoryComponent.Middle
+  href: milk.Components.InventoryComponent.html#milk_Components_InventoryComponent_Middle
+  name: Middle
+  nameWithType: InventoryComponent.Middle
+  fullName: milk.Components.InventoryComponent.Middle
+- uid: milk.Components.InventoryComponent.Bottom*
+  commentId: Overload:milk.Components.InventoryComponent.Bottom
+  href: milk.Components.InventoryComponent.html#milk_Components_InventoryComponent_Bottom
+  name: Bottom
+  nameWithType: InventoryComponent.Bottom
+  fullName: milk.Components.InventoryComponent.Bottom
+- uid: milk.Components.InventoryComponent.Left*
+  commentId: Overload:milk.Components.InventoryComponent.Left
+  href: milk.Components.InventoryComponent.html#milk_Components_InventoryComponent_Left
+  name: Left
+  nameWithType: InventoryComponent.Left
+  fullName: milk.Components.InventoryComponent.Left
+- uid: milk.Components.InventoryComponent.Center*
+  commentId: Overload:milk.Components.InventoryComponent.Center
+  href: milk.Components.InventoryComponent.html#milk_Components_InventoryComponent_Center
+  name: Center
+  nameWithType: InventoryComponent.Center
+  fullName: milk.Components.InventoryComponent.Center
+- uid: milk.Components.InventoryComponent.Right*
+  commentId: Overload:milk.Components.InventoryComponent.Right
+  href: milk.Components.InventoryComponent.html#milk_Components_InventoryComponent_Right
+  name: Right
+  nameWithType: InventoryComponent.Right
+  fullName: milk.Components.InventoryComponent.Right

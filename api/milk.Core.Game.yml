@@ -14,6 +14,7 @@ items:
   - milk.Core.Game.Quit
   - milk.Core.Game.Size
   - milk.Core.Game.Title
+  - milk.Core.Game.TotalGameTime
   - milk.Core.Game.Update(Microsoft.Xna.Framework.GameTime)
   - milk.Core.Game._engineResources
   - milk.Core.Game.inputManager
@@ -231,6 +232,35 @@ items:
     return:
       type: milk.Core.EngineResourceManager
     content.vb: Public _engineResources As EngineResourceManager
+- uid: milk.Core.Game.TotalGameTime
+  commentId: P:milk.Core.Game.TotalGameTime
+  id: TotalGameTime
+  parent: milk.Core.Game
+  langs:
+  - csharp
+  - vb
+  name: TotalGameTime
+  nameWithType: Game.TotalGameTime
+  fullName: milk.Core.Game.TotalGameTime
+  type: Property
+  source:
+    remote:
+      path: Core/Game.cs
+      branch: main
+      repo: git@github.com:rik-cross/monogame-milk.git
+    id: TotalGameTime
+    path: Core/Game.cs
+    startLine: 45
+  assemblies:
+  - milk
+  namespace: milk.Core
+  syntax:
+    content: public double TotalGameTime { get; }
+    parameters: []
+    return:
+      type: System.Double
+    content.vb: Public Property TotalGameTime As Double
+  overload: milk.Core.Game.TotalGameTime*
 - uid: milk.Core.Game.inputManager
   commentId: F:milk.Core.Game.inputManager
   id: inputManager
@@ -249,7 +279,7 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: inputManager
     path: Core/Game.cs
-    startLine: 55
+    startLine: 56
   assemblies:
   - milk
   namespace: milk.Core
@@ -278,7 +308,7 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: Debug
     path: Core/Game.cs
-    startLine: 64
+    startLine: 65
   assemblies:
   - milk
   namespace: milk.Core
@@ -307,7 +337,7 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: .ctor
     path: Core/Game.cs
-    startLine: 76
+    startLine: 77
   assemblies:
   - milk
   namespace: milk.Core
@@ -360,7 +390,7 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: Initialize
     path: Core/Game.cs
-    startLine: 112
+    startLine: 115
   assemblies:
   - milk
   namespace: milk.Core
@@ -389,7 +419,7 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: LoadContent
     path: Core/Game.cs
-    startLine: 124
+    startLine: 127
   assemblies:
   - milk
   namespace: milk.Core
@@ -418,7 +448,7 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: Update
     path: Core/Game.cs
-    startLine: 190
+    startLine: 195
   assemblies:
   - milk
   namespace: milk.Core
@@ -451,7 +481,7 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: Draw
     path: Core/Game.cs
-    startLine: 209
+    startLine: 215
   assemblies:
   - milk
   namespace: milk.Core
@@ -484,7 +514,7 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: Quit
     path: Core/Game.cs
-    startLine: 227
+    startLine: 233
   assemblies:
   - milk
   namespace: milk.Core
@@ -1400,6 +1430,23 @@ references:
   name: EngineResourceManager
   nameWithType: EngineResourceManager
   fullName: milk.Core.EngineResourceManager
+- uid: milk.Core.Game.TotalGameTime*
+  commentId: Overload:milk.Core.Game.TotalGameTime
+  href: milk.Core.Game.html#milk_Core_Game_TotalGameTime
+  name: TotalGameTime
+  nameWithType: Game.TotalGameTime
+  fullName: milk.Core.Game.TotalGameTime
+- uid: System.Double
+  commentId: T:System.Double
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.double
+  name: double
+  nameWithType: double
+  fullName: double
+  nameWithType.vb: Double
+  fullName.vb: Double
+  name.vb: Double
 - uid: milk.Core.InputManager
   commentId: T:milk.Core.InputManager
   parent: milk.Core

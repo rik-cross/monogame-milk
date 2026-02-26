@@ -22,6 +22,7 @@ public abstract class MilkMethods
     protected milk.Core.InputManager Controls => milk.Core.Milk.Controls;
     protected Microsoft.Xna.Framework.Graphics.SpriteBatch Graphics => milk.Core.Milk.Graphics;
     protected Microsoft.Xna.Framework.Content.ContentManager Content => milk.Core.Milk.Content;
+    protected double TotalGameTime => milk.Core.Milk.TotalGameTime;
     protected Vector2 Size => milk.Core.Milk.Size;
     protected void Quit() => milk.Core.Milk.Quit();
 }

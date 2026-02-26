@@ -4,8 +4,10 @@ items:
   commentId: N:milk.Components
   id: milk.Components
   children:
+  - milk.Components.CollectableComponent
   - milk.Components.ColliderComponent
   - milk.Components.InputComponent
+  - milk.Components.InventoryComponent
   - milk.Components.PhysicsComponent
   - milk.Components.SpriteComponent
   - milk.Components.TransformComponent
@@ -20,6 +22,12 @@ items:
   assemblies:
   - milk
 references:
+- uid: milk.Components.CollectableComponent
+  commentId: T:milk.Components.CollectableComponent
+  href: milk.Components.CollectableComponent.html
+  name: CollectableComponent
+  nameWithType: CollectableComponent
+  fullName: milk.Components.CollectableComponent
 - uid: milk.Components.ColliderComponent
   commentId: T:milk.Components.ColliderComponent
   href: milk.Components.ColliderComponent.html
@@ -32,6 +40,12 @@ references:
   name: InputComponent
   nameWithType: InputComponent
   fullName: milk.Components.InputComponent
+- uid: milk.Components.InventoryComponent
+  commentId: T:milk.Components.InventoryComponent
+  href: milk.Components.InventoryComponent.html
+  name: InventoryComponent
+  nameWithType: InventoryComponent
+  fullName: milk.Components.InventoryComponent
 - uid: milk.Components.PhysicsComponent
   commentId: T:milk.Components.PhysicsComponent
   href: milk.Components.PhysicsComponent.html

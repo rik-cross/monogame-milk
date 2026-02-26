@@ -22,9 +22,9 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: SpriteSystem
     path: Systems/SpriteSystem.cs
-    startLine: 10
+    startLine: 14
   assemblies:
-  - MonoGameECS
+  - milk
   namespace: milk.Systems
   syntax:
     content: 'public class SpriteSystem : System'
@@ -34,7 +34,6 @@ items:
   - milk.Core.System
   inheritedMembers:
   - milk.Core.System.spriteBatch
-  - milk.Core.System.DrawAboveEntities
   - milk.Core.System.DrawAboveMap
   - milk.Core.System.AddRequiredComponentType``1
   - milk.Core.System.Input(Microsoft.Xna.Framework.GameTime,milk.Core.Scene)
@@ -72,11 +71,14 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: Init
     path: Systems/SpriteSystem.cs
-    startLine: 12
+    startLine: 21
   assemblies:
-  - MonoGameECS
+  - milk
   namespace: milk.Systems
-  summary: Called once when a system is created.
+  summary: >-
+    Initialises the sprite system, which only processes entities
+
+    with a transform component and a sprite component.
   example: []
   syntax:
     content: public override void Init()
@@ -101,27 +103,27 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: UpdateEntity
     path: Systems/SpriteSystem.cs
-    startLine: 18
+    startLine: 34
   assemblies:
-  - MonoGameECS
+  - milk
   namespace: milk.Systems
   summary: >-
-    An entity-specific update method, called once per frame
+    Updates each of the entity sprites if animated
 
-    for each entity with the required set of components.
+    (i.e. if &gt;1 texture is specified for the current state).
   example: []
   syntax:
     content: public override void UpdateEntity(GameTime gameTime, Scene scene, Entity entity)
     parameters:
     - id: gameTime
       type: Microsoft.Xna.Framework.GameTime
-      description: The MonoGame gameTime object.
+      description: The MonoGame gameTime object for measuring elapsed time.
     - id: scene
       type: milk.Core.Scene
-      description: The scene that the system is in
+      description: The scene containing the system.
     - id: entity
       type: milk.Core.Entity
-      description: The entity to be acted upon.
+      description: The entity to be processed.
     content.vb: Public Overrides Sub UpdateEntity(gameTime As GameTime, scene As Scene, entity As Entity)
   overridden: milk.Core.System.UpdateEntity(Microsoft.Xna.Framework.GameTime,milk.Core.Scene,milk.Core.Entity)
   overload: milk.Systems.SpriteSystem.UpdateEntity*
@@ -143,24 +145,21 @@ items:
       repo: git@github.com:rik-cross/monogame-milk.git
     id: DrawEntity
     path: Systems/SpriteSystem.cs
-    startLine: 59
+    startLine: 84
   assemblies:
-  - MonoGameECS
+  - milk
   namespace: milk.Systems
-  summary: >-
-    An entity-specific draw method, called once per frame
-
-    for each entity with the required set of components.
+  summary: Draws each entity sprite for the correct state and index.
   example: []
   syntax:
     content: public override void DrawEntity(Scene scene, Entity entity)
     parameters:
     - id: scene
       type: milk.Core.Scene
-      description: The scene that the system is in
+      description: The scene containing the system.
     - id: entity
       type: milk.Core.Entity
-      description: The entity to be acted upon.
+      description: The entity to be processed.
     content.vb: Public Overrides Sub DrawEntity(scene As Scene, entity As Entity)
   overridden: milk.Core.System.DrawEntity(milk.Core.Scene,milk.Core.Entity)
   overload: milk.Systems.SpriteSystem.DrawEntity*
@@ -212,15 +211,8 @@ references:
   name: spriteBatch
   nameWithType: System.spriteBatch
   fullName: milk.Core.System.spriteBatch
-- uid: milk.Core.System.DrawAboveEntities
-  commentId: P:milk.Core.System.DrawAboveEntities
-  parent: milk.Core.System
-  href: milk.Core.System.html#milk_Core_System_DrawAboveEntities
-  name: DrawAboveEntities
-  nameWithType: System.DrawAboveEntities
-  fullName: milk.Core.System.DrawAboveEntities
 - uid: milk.Core.System.DrawAboveMap
-  commentId: P:milk.Core.System.DrawAboveMap
+  commentId: F:milk.Core.System.DrawAboveMap
   parent: milk.Core.System
   href: milk.Core.System.html#milk_Core_System_DrawAboveMap
   name: DrawAboveMap

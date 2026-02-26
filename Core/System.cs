@@ -77,7 +77,8 @@ public abstract class System {
     /// <param name="gameTime">The MonoGame gameTime object.</param>
     /// <param name="scene">The scene that the system is in</param>
     /// <param name="entity">The entity to be acted upon.</param>
-    public virtual void InputEntity(GameTime gameTime, Scene scene, Entity entity) { }    
+    /// <returns>True if the input should be 'consumed' and not used by subsequent systems (default = false).</returns>
+    public virtual bool InputEntity(GameTime gameTime, Scene scene, Entity entity) { return false; }    
 
     /// <summary>
     /// A top-level update method, called once per frame.

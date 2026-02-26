@@ -89,12 +89,12 @@
 
 
   <h1 id="milk_Systems_SpriteSystem" data-uid="milk.Systems.SpriteSystem" class="text-break">
-Class SpriteSystem  <a class="header-action link-secondary" title="View source" href="https://github.com/rik-cross/monogame-milk/blob/main/Systems/SpriteSystem.cs/#L11"><i class="bi bi-code-slash"></i></a>
+Class SpriteSystem  <a class="header-action link-secondary" title="View source" href="https://github.com/rik-cross/monogame-milk/blob/main/Systems/SpriteSystem.cs/#L15"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
     <dl><dt>Namespace</dt><dd><a class="xref" href="milk.html">milk</a>.<a class="xref" href="milk.Systems.html">Systems</a></dd></dl>
-  <dl><dt>Assembly</dt><dd>MonoGameECS.dll</dd></dl>
+  <dl><dt>Assembly</dt><dd>milk.dll</dd></dl>
   </div>
 
   <div class="markdown summary"></div>
@@ -123,9 +123,6 @@ Class SpriteSystem  <a class="header-action link-secondary" title="View source" 
     <dd>
     <div>
       <a class="xref" href="milk.Core.System.html#milk_Core_System_spriteBatch">System.spriteBatch</a>
-    </div>
-    <div>
-      <a class="xref" href="milk.Core.System.html#milk_Core_System_DrawAboveEntities">System.DrawAboveEntities</a>
     </div>
     <div>
       <a class="xref" href="milk.Core.System.html#milk_Core_System_DrawAboveMap">System.DrawAboveMap</a>
@@ -199,11 +196,10 @@ Class SpriteSystem  <a class="header-action link-secondary" title="View source" 
 
   <h3 id="milk_Systems_SpriteSystem_DrawEntity_milk_Core_Scene_milk_Core_Entity_" data-uid="milk.Systems.SpriteSystem.DrawEntity(milk.Core.Scene,milk.Core.Entity)">
   DrawEntity(Scene, Entity)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/rik-cross/monogame-milk/blob/main/Systems/SpriteSystem.cs/#L60"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/rik-cross/monogame-milk/blob/main/Systems/SpriteSystem.cs/#L85"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p>An entity-specific draw method, called once per frame
-for each entity with the required set of components.</p>
+  <div class="markdown level1 summary"><p>Draws each entity sprite for the correct state and index.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
@@ -214,10 +210,10 @@ for each entity with the required set of components.</p>
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
     <dt><code>scene</code> <a class="xref" href="milk.Core.Scene.html">Scene</a></dt>
-    <dd><p>The scene that the system is in</p>
+    <dd><p>The scene containing the system.</p>
 </dd>
     <dt><code>entity</code> <a class="xref" href="milk.Core.Entity.html">Entity</a></dt>
-    <dd><p>The entity to be acted upon.</p>
+    <dd><p>The entity to be processed.</p>
 </dd>
   </dl>
 
@@ -236,10 +232,11 @@ for each entity with the required set of components.</p>
 
   <h3 id="milk_Systems_SpriteSystem_Init" data-uid="milk.Systems.SpriteSystem.Init">
   Init()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/rik-cross/monogame-milk/blob/main/Systems/SpriteSystem.cs/#L13"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/rik-cross/monogame-milk/blob/main/Systems/SpriteSystem.cs/#L22"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p>Called once when a system is created.</p>
+  <div class="markdown level1 summary"><p>Initialises the sprite system, which only processes entities
+with a transform component and a sprite component.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
@@ -263,11 +260,11 @@ for each entity with the required set of components.</p>
 
   <h3 id="milk_Systems_SpriteSystem_UpdateEntity_Microsoft_Xna_Framework_GameTime_milk_Core_Scene_milk_Core_Entity_" data-uid="milk.Systems.SpriteSystem.UpdateEntity(Microsoft.Xna.Framework.GameTime,milk.Core.Scene,milk.Core.Entity)">
   UpdateEntity(GameTime, Scene, Entity)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/rik-cross/monogame-milk/blob/main/Systems/SpriteSystem.cs/#L19"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/rik-cross/monogame-milk/blob/main/Systems/SpriteSystem.cs/#L35"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p>An entity-specific update method, called once per frame
-for each entity with the required set of components.</p>
+  <div class="markdown level1 summary"><p>Updates each of the entity sprites if animated
+(i.e. if &gt;1 texture is specified for the current state).</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
@@ -278,13 +275,13 @@ for each entity with the required set of components.</p>
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
     <dt><code>gameTime</code> <span class="xref">GameTime</span></dt>
-    <dd><p>The MonoGame gameTime object.</p>
+    <dd><p>The MonoGame gameTime object for measuring elapsed time.</p>
 </dd>
     <dt><code>scene</code> <a class="xref" href="milk.Core.Scene.html">Scene</a></dt>
-    <dd><p>The scene that the system is in</p>
+    <dd><p>The scene containing the system.</p>
 </dd>
     <dt><code>entity</code> <a class="xref" href="milk.Core.Entity.html">Entity</a></dt>
-    <dd><p>The entity to be acted upon.</p>
+    <dd><p>The entity to be processed.</p>
 </dd>
   </dl>
 
@@ -303,7 +300,7 @@ for each entity with the required set of components.</p>
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/rik-cross/monogame-milk/blob/main/Systems/SpriteSystem.cs/#L11" class="edit-link">Edit this page</a>
+          <a href="https://github.com/rik-cross/monogame-milk/blob/main/Systems/SpriteSystem.cs/#L15" class="edit-link">Edit this page</a>
         </div>
 
 

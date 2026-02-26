@@ -4,11 +4,17 @@ items:
   name: milk.Components
   type: Namespace
   items:
+  - uid: milk.Components.CollectableComponent
+    name: CollectableComponent
+    type: Class
   - uid: milk.Components.ColliderComponent
     name: ColliderComponent
     type: Class
   - uid: milk.Components.InputComponent
     name: InputComponent
+    type: Class
+  - uid: milk.Components.InventoryComponent
+    name: InventoryComponent
     type: Class
   - uid: milk.Components.PhysicsComponent
     name: PhysicsComponent
@@ -53,6 +59,12 @@ items:
   - uid: milk.Core.InputManager
     name: InputManager
     type: Class
+  - uid: milk.Core.InventorySlot
+    name: InventorySlot
+    type: Class
+  - uid: milk.Core.InventorySystem
+    name: InventorySystem
+    type: Class
   - uid: milk.Core.Milk
     name: Milk
     type: Class
@@ -68,6 +80,9 @@ items:
   - uid: milk.Core.SceneManager
     name: SceneManager
     type: Class
+  - uid: milk.Core.SlotChangeType
+    name: SlotChangeType
+    type: Enum
   - uid: milk.Core.Sprite
     name: Sprite
     type: Class
@@ -82,6 +97,22 @@ items:
     type: Class
   - uid: milk.Core.Utilities
     name: Utilities
+    type: Class
+- uid: milk.Systems
+  name: milk.Systems
+  type: Namespace
+  items:
+  - uid: milk.Systems.CollectionSystem
+    name: CollectionSystem
+    type: Class
+  - uid: milk.Systems.InputSystem
+    name: InputSystem
+    type: Class
+  - uid: milk.Systems.SpriteSystem
+    name: SpriteSystem
+    type: Class
+  - uid: milk.Systems.TriggerSystem
+    name: TriggerSystem
     type: Class
 - uid: milk.Transitions
   name: milk.Transitions

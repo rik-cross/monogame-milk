@@ -1,0 +1,141 @@
+### YamlMime:ManagedReference
+items:
+- uid: milk.Core.SlotChangeType
+  commentId: T:milk.Core.SlotChangeType
+  id: SlotChangeType
+  parent: milk.Core
+  children:
+  - milk.Core.SlotChangeType.Added
+  - milk.Core.SlotChangeType.None
+  - milk.Core.SlotChangeType.Removed
+  langs:
+  - csharp
+  - vb
+  name: SlotChangeType
+  nameWithType: SlotChangeType
+  fullName: milk.Core.SlotChangeType
+  type: Enum
+  source:
+    remote:
+      path: Core/InventorySlot.cs
+      branch: main
+      repo: git@github.com:rik-cross/monogame-milk.git
+    id: SlotChangeType
+    path: Core/InventorySlot.cs
+    startLine: 11
+  assemblies:
+  - milk
+  namespace: milk.Core
+  summary: Describes the type of recent action.
+  example: []
+  syntax:
+    content: public enum SlotChangeType
+    content.vb: Public Enum SlotChangeType
+- uid: milk.Core.SlotChangeType.None
+  commentId: F:milk.Core.SlotChangeType.None
+  id: None
+  parent: milk.Core.SlotChangeType
+  langs:
+  - csharp
+  - vb
+  name: None
+  nameWithType: SlotChangeType.None
+  fullName: milk.Core.SlotChangeType.None
+  type: Field
+  source:
+    remote:
+      path: Core/InventorySlot.cs
+      branch: main
+      repo: git@github.com:rik-cross/monogame-milk.git
+    id: None
+    path: Core/InventorySlot.cs
+    startLine: 11
+  assemblies:
+  - milk
+  namespace: milk.Core
+  syntax:
+    content: None = 0
+    return:
+      type: milk.Core.SlotChangeType
+- uid: milk.Core.SlotChangeType.Added
+  commentId: F:milk.Core.SlotChangeType.Added
+  id: Added
+  parent: milk.Core.SlotChangeType
+  langs:
+  - csharp
+  - vb
+  name: Added
+  nameWithType: SlotChangeType.Added
+  fullName: milk.Core.SlotChangeType.Added
+  type: Field
+  source:
+    remote:
+      path: Core/InventorySlot.cs
+      branch: main
+      repo: git@github.com:rik-cross/monogame-milk.git
+    id: Added
+    path: Core/InventorySlot.cs
+    startLine: 11
+  assemblies:
+  - milk
+  namespace: milk.Core
+  syntax:
+    content: Added = 1
+    return:
+      type: milk.Core.SlotChangeType
+- uid: milk.Core.SlotChangeType.Removed
+  commentId: F:milk.Core.SlotChangeType.Removed
+  id: Removed
+  parent: milk.Core.SlotChangeType
+  langs:
+  - csharp
+  - vb
+  name: Removed
+  nameWithType: SlotChangeType.Removed
+  fullName: milk.Core.SlotChangeType.Removed
+  type: Field
+  source:
+    remote:
+      path: Core/InventorySlot.cs
+      branch: main
+      repo: git@github.com:rik-cross/monogame-milk.git
+    id: Removed
+    path: Core/InventorySlot.cs
+    startLine: 11
+  assemblies:
+  - milk
+  namespace: milk.Core
+  syntax:
+    content: Removed = 2
+    return:
+      type: milk.Core.SlotChangeType
+references:
+- uid: milk.Core
+  commentId: N:milk.Core
+  href: milk.html
+  name: milk.Core
+  nameWithType: milk.Core
+  fullName: milk.Core
+  spec.csharp:
+  - uid: milk
+    name: milk
+    href: milk.html
+  - name: .
+  - uid: milk.Core
+    name: Core
+    href: milk.Core.html
+  spec.vb:
+  - uid: milk
+    name: milk
+    href: milk.html
+  - name: .
+  - uid: milk.Core
+    name: Core
+    href: milk.Core.html
+- uid: milk.Core.SlotChangeType
+  commentId: T:milk.Core.SlotChangeType
+  parent: milk.Core
+  href: milk.Core.SlotChangeType.html
+  name: SlotChangeType
+  nameWithType: SlotChangeType
+  fullName: milk.Core.SlotChangeType

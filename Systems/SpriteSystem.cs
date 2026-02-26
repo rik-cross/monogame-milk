@@ -12,7 +12,7 @@ using milk.Components;
 
 namespace milk.Systems;
 
-internal class SpriteSystem : milk.Core.System
+public class SpriteSystem : milk.Core.System
 {
 
     /// <summary>

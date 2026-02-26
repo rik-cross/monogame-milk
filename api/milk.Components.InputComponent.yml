@@ -34,6 +34,7 @@ items:
   - System.Object
   - milk.Core.Component
   inheritedMembers:
+  - milk.Core.Component.ParentEntity
   - milk.Core.Component.OnAddedToEntity(milk.Core.Entity)
   - milk.Core.Component.OnRemovedFromEntity(milk.Core.Entity)
   - System.Object.Equals(System.Object)
@@ -148,6 +149,13 @@ references:
   name: Component
   nameWithType: Component
   fullName: milk.Core.Component
+- uid: milk.Core.Component.ParentEntity
+  commentId: P:milk.Core.Component.ParentEntity
+  parent: milk.Core.Component
+  href: milk.Core.Component.html#milk_Core_Component_ParentEntity
+  name: ParentEntity
+  nameWithType: Component.ParentEntity
+  fullName: milk.Core.Component.ParentEntity
 - uid: milk.Core.Component.OnAddedToEntity(milk.Core.Entity)
   commentId: M:milk.Core.Component.OnAddedToEntity(milk.Core.Entity)
   parent: milk.Core.Component
