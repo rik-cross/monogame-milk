@@ -31,6 +31,16 @@ public class CollectionSystem : milk.Core.System
     public Action? OnDropEntity = null;
 
     /// <summary>
+    /// Option to show or hide log info.
+    /// </summary>
+    public bool ShowLogInfo { get; set; } = true;
+
+    /// <summary>
+    /// Defines a delegate method for dropping entities.
+    /// </summary>
+    public Func<Scene, Entity, Entity, Vector2>? PositionCalculationMethod { get; set; } = null;
+
+    /// <summary>
     /// Finds an entities closest overlapping entity, and adds it
     /// to their inventory.
     /// Note that both entities must have a TriggerComponents, and
@@ -95,6 +105,9 @@ public class CollectionSystem : milk.Core.System
             scene.RemoveEntity(collectionCandidateEntities[0]);
             // Add the entity to the inventory
             entity.GetComponent<InventoryComponent>()!.AddEntity(collectionCandidateEntities[0]);
+            // Show log info
+            if (ShowLogInfo == true)
+                Log.Add("Collected " + collectionCandidateEntities[0].Type);
             // Execute the callback if one exists
             OnCollectEntity?.Invoke();
             return;
@@ -131,6 +144,9 @@ public class CollectionSystem : milk.Core.System
                 scene.RemoveEntity(closestEntity);
                 // Add the entity to the inventory
                 entity.GetComponent<InventoryComponent>()!.AddEntity(closestEntity);
+                // Show log info
+                if (ShowLogInfo == true)
+                    Log.Add("Collected " + closestEntity.Type);
                 // Execute the callback if one exists
                 OnCollectEntity?.Invoke();
                 return;
@@ -146,10 +162,9 @@ public class CollectionSystem : milk.Core.System
     /// <param name="scene">The scene to drop the entity in.</param>
     /// <param name="entityDropping">The entity wanting to drop another entity.</param>
     /// <param name="droppedEntity">The entity being dropped.</param>
-    /// <param name="positionCalculationMethod">A delegated method to calculate the drop position.</param>
-    public void DropEntity(Scene scene, Entity entityDropping, Entity droppedEntity, Func<Scene, Entity, Entity, Vector2> positionCalculationMethod)
+    public void DropEntity(Scene scene, Entity entityDropping, Entity droppedEntity)
     {
-        DropEntities(scene, entityDropping, new List<Entity>(){droppedEntity}, positionCalculationMethod);
+        DropEntities(scene, entityDropping, new List<Entity>(){droppedEntity});
     }
 
     /// <summary>
@@ -158,9 +173,13 @@ public class CollectionSystem : milk.Core.System
     /// <param name="scene">The scene to drop the entity in.</param>
     /// <param name="entityDropping">The entity wanting to drop another entity.</param>
     /// <param name="droppedEntities">The entities being dropped.</param>
-    /// <param name="positionCalculationMethod">A delegated method to calculate the drop position.</param>
-    public void DropEntities(Scene scene, Entity entityDropping, List<Entity> droppedEntities, Func<Scene, Entity, Entity, Vector2> positionCalculationMethod)
+    public void DropEntities(Scene scene, Entity entityDropping, List<Entity> droppedEntities)
     {
+
+        // Only drop if there's a method specified for calculating the position
+        if (PositionCalculationMethod == null)
+            return;
+            
         // This flag checks that at least one entity has been dropped
         // in order to call the OnDropEntity callback
         bool dropped = false;
@@ -169,13 +188,36 @@ public class CollectionSystem : milk.Core.System
         foreach (Entity droppedEntity in droppedEntities)
         {
             // Use the delegated method to calculate the drop position
-            Vector2 p = positionCalculationMethod(scene, entityDropping, droppedEntity);
+            Vector2 p = PositionCalculationMethod(scene, entityDropping, droppedEntity);
             // Set the entity position
             droppedEntity.GetComponent<TransformComponent>()!.Position = p;
             // Add the entity to the scene
             scene.AddEntity(droppedEntity);
+            
             // At least one entity has been dropped
             dropped = true;
+        }
+
+        // Show log info
+        if (ShowLogInfo == true)
+        {
+            // Log message for single item
+            if (droppedEntities.Count == 1)
+                Log.Add("Dropped " + droppedEntities[0].Type);
+            // Log message for multiple items
+            else
+            {
+                Dictionary<string, int> itemInfo = new Dictionary<string, int>();
+                foreach (Entity e in droppedEntities)
+                {
+                    if (itemInfo.ContainsKey(e.Type) == false)
+                        itemInfo.Add(e.Type, 1);
+                    else
+                        itemInfo[e.Type] += 1;
+                }
+                foreach (var ie in itemInfo)
+                    Log.Add("Dropped " + ie.Key + " x " + ie.Value);
+            }
         }
 
         if (dropped == true)

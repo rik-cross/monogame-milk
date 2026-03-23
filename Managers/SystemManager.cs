@@ -28,13 +28,15 @@ public class SystemManager
         string returnString = "";
 
         foreach (System system in systemsList)
-        {
             returnString += system.ToString() + " ";
-        }
 
         return returnString;        
     }
 
+    /// <summary>
+    /// Registers a system.
+    /// </summary>
+    /// <param name="system">The system to register.</param>
     public void RegisterSystem(System system)
     {
 
@@ -204,10 +206,10 @@ public class SystemManager
             }
             if (systemToMove != null)
             {
-                // 4. Remove the system from its current position.
+                // Remove the system from its current position.
                 // This prevents duplication and ensures it's only in one place.
                 systemList.Remove((System)systemToMove);
-                // 6. Insert the system at the new position.
+                // Insert the system at the new position.
                 systemList.Insert(position, (System)systemToMove);
             }
         }

@@ -54,6 +54,21 @@ public abstract class System {
 
     }
 
+    /// <summary>
+    /// Returns true if the specified entity has all system required components.
+    /// </summary>
+    /// <param name="entity">The entity to check.</param>
+    /// <returns>True if the entity has all components.</returns>
+    public bool EntityHasRequiredComponents(Entity entity)
+    {
+        for (int i = 0; i < RequiredComponentBitMask.Count; i++)
+        {
+            if (RequiredComponentBitMask[i] == true && entity.bitMask[i] == false)
+                return false;
+        }
+        return true;
+    }
+
     //
     // Optional game loop methods
     //

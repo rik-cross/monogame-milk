@@ -144,6 +144,11 @@ public class Entity
     public bool Visible { get; set; }
 
     /// <summary>
+    /// Entity timed actions
+    /// </summary>
+    internal List<TimedAction> timedActions = new List<TimedAction>();
+
+    /// <summary>
     /// Create a new entity.
     /// </summary>
     /// <param name="name">The unique name of the entity.</param>
@@ -276,5 +281,31 @@ public class Entity
                 _tags.Remove(tag.ToLower());
         }
     }
+
+    /// <summary>
+    /// Adds a timed action to the entity, which is processed
+    /// whenever the entity is in an active scene
+    /// </summary>
+    /// <param name="elapsedTime">Elapsed game time.</param>
+    /// <param name="action">The action to perform.</param>
+    /// <param name="name">The name of the action, for optional removal</param>
+    public void AddTimedAction(float elapsedTime, Action action, string? name = null)
+    {
+        timedActions.Add(new TimedAction(elapsedTime, action, name));
+    }
+
+    /// <summary>
+    /// Remove a timed action by name, if one has been set.
+    /// </summary>
+    /// <param name="name">The name of the action to remove.</param>
+    public void RemoveTimedActionByName(string name)
+    {
+        for (int i = timedActions.Count - 1; i >= 0; i--)
+        {
+            if (timedActions[i].Name.ToLower() == name.ToLower())
+                timedActions.RemoveAt(i);
+        }
+    }
+
 
 }

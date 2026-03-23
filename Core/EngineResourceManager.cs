@@ -16,6 +16,7 @@ public class EngineResourceManager : ContentManager
     public SpriteFont FontSmall { get; private set; }
     public SpriteFont FontMedium { get; private set; }
     public SpriteFont FontLarge { get; private set; }
+    public Texture2D ImgPOIMarker { get; private set; }
     
     private readonly Assembly _assembly;
 
@@ -45,6 +46,7 @@ public class EngineResourceManager : ContentManager
             FontSmall = this.Load<SpriteFont>("milk.Assets.Fonts.Small");
             FontMedium = this.Load<SpriteFont>("milk.Assets.Fonts.Medium");
             FontLarge = this.Load<SpriteFont>("milk.Assets.Fonts.Large");
+            ImgPOIMarker = this.Load<Texture2D>("milk.Assets.Images.POIMarker");
         }
         catch (Exception ex)
         {

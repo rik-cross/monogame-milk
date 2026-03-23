@@ -153,9 +153,13 @@ public class Game : Microsoft.Xna.Framework.Game
         systemManager.RegisterSystem(new SpriteSystem());
         systemManager.RegisterSystem(new TriggerSystem());
         systemManager.RegisterSystem(new PhysicsSystem());
+        systemManager.RegisterSystem(new EmoteSystem());
         systemManager.RegisterSystem(new InventorySystem());
+        systemManager.RegisterSystem(new CraftingSystem());
         systemManager.RegisterSystem(new CollectionSystem());
         systemManager.RegisterSystem(new InputSystem());
+
+        Log.Init();
 
         if (_showSplash == true)
         {
@@ -205,6 +209,7 @@ public class Game : Microsoft.Xna.Framework.Game
 
         // Defer to the scene manager's update method
         EngineGlobals.game.sceneManager.Update(gameTime);
+        
         base.Update(gameTime);
 
     }

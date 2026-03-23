@@ -5,16 +5,17 @@
 //   -- Shared under the MIT licence
 
 using Microsoft.Xna.Framework;
-using MonoGame.Extended;
-using milk.Components;
 using Microsoft.Xna.Framework.Graphics;
+using MonoGame.Extended;
+using milk.Core;
+using milk.Components;
 
-namespace milk.Core;
+namespace milk.Systems;
 
 /// <summary>
 /// The inventory system processes and draws all inventory components.
 /// </summary>
-public class InventorySystem : System
+public class InventorySystem : milk.Core.System
 {
 
     //
@@ -52,6 +53,16 @@ public class InventorySystem : System
     {
 
         InventoryComponent inventoryComponent = entity.GetComponent<InventoryComponent>()!;
+
+        // Process active value
+        if (inventoryComponent.HasActiveValueChanged == true)
+        {
+            inventoryComponent.HasActiveValueChanged = false;
+            if (inventoryComponent.Active == true)
+                inventoryComponent.OnActivate?.Invoke(inventoryComponent, scene);
+            else
+                inventoryComponent.OnDeactivate?.Invoke(inventoryComponent, scene);
+        }
 
         // Process the specified input
         foreach (var input in inventoryComponent.InputActions)

@@ -17,6 +17,7 @@ namespace milk.Core;
 
 public abstract class MilkMethods
 {
+    protected milk.Core.EntityManager Entities => milk.Core.Milk.Entities;
     protected milk.Core.SceneManager Scenes => milk.Core.Milk.Scenes;
     protected milk.Core.SystemManager Systems => milk.Core.Milk.Systems;
     protected milk.Core.InputManager Controls => milk.Core.Milk.Controls;

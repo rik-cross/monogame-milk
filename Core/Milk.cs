@@ -21,6 +21,7 @@ namespace milk.Core;
 public static class Milk
 {
     
+    public static EntityManager Entities { get; } = EngineGlobals.game.entityManager;
     public static SceneManager Scenes { get; } = EngineGlobals.game.sceneManager;
     public static SystemManager Systems { get; } = EngineGlobals.game.systemManager;
     public static InputManager Controls { get; } = EngineGlobals.game.inputManager;

@@ -48,4 +48,18 @@ internal class Animator
 
     }
 
+    internal void RemoveByName(string name)
+    {
+        for (int i = _tweenList.Count - 1; i >= 0; i--)
+        {
+            if (_tweenList[i].Name != null && _tweenList[i].Name == name)
+                _tweenList.RemoveAt(i);
+        }
+    }
+
+    internal void Clear()
+    {
+        _tweenList.Clear();
+    }
+
 }

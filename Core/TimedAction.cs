@@ -13,6 +13,11 @@ internal class TimedAction
 {
 
     /// <summary>
+    /// The time the timed action was created.
+    /// </summary>
+    internal readonly float StartTime;
+
+    /// <summary>
     /// Amount of elapsed scene time before executing action.
     /// </summary>
     internal readonly float ElapsedTime;
@@ -33,14 +38,18 @@ internal class TimedAction
     /// <param name="elapsedTime">The amount of elapsed time in seconds (default = 0 - instant).</param>
     /// <param name="action">The action callback to execute (default = null).</param>
     /// <param name="name">The name of the timed action, to allow finding and deleting later (default = null).</param>
+    /// <param name="startTimerFromNow">Decide whether elapsed time starts from the start of the game or the creation of the timed action (default = true - start from creation).</param>
    internal TimedAction(
         float elapsedTime = 0f,
         Action? action = null,
-        string? name = null)
+        string? name = null,
+        bool startTimerFromNow = true
+    )
     {
         ElapsedTime = elapsedTime;
         Action = action;
         Name = name;
+        StartTime = startTimerFromNow == true ? (float)Milk.TotalGameTime : 0; 
     }
 
     internal void Execute()

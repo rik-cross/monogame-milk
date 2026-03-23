@@ -5,7 +5,6 @@
 //   -- Shared under the MIT licence
 
 using System.Collections;
-using System.Linq;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using MonoGame.Extended;
@@ -27,6 +26,8 @@ public abstract class Scene : MilkMethods
     private GraphicsDevice _graphicsDevice = EngineGlobals.game.graphicsDevice;
     private List<Entity> entitiesToRemoveFromScene = new List<Entity>();
     //private List<Entity> entitiesToAddToScene = new List<Entity>();
+
+    public POIMarkerCollection POIMarkers = new POIMarkerCollection();
 
     /// <summary>
     /// The parent game object.
@@ -59,7 +60,7 @@ public abstract class Scene : MilkMethods
     /// systems should be present within a scene.
     /// </summary>
     public bool IncludeAlRegisteredSystems = true;
-    protected List<Camera> cameras = new List<Camera>();
+    public List<Camera> cameras = new List<Camera>();
 
     /// <summary>
     /// Specifies whether to update the scene below this one in the scene stack.
@@ -121,10 +122,8 @@ public abstract class Scene : MilkMethods
                 foreach (TiledMapObject collisionObject in collisionLayer.Objects)
                 {
                     AddSceneCollider(
-                        (int)collisionObject.Position.X,
-                        (int)collisionObject.Position.Y,
-                        (int)collisionObject.Size.Width,
-                        (int)collisionObject.Size.Height
+                        new Vector2(collisionObject.Position.X, collisionObject.Position.Y),
+                        new Vector2(collisionObject.Size.Width, collisionObject.Size.Height)
                     );
                 }
             }
@@ -188,13 +187,26 @@ public abstract class Scene : MilkMethods
         foreach (Entity e in entities)
             e.PreviousState = e.State;
 
-        // Process the timed actions
+        // Process the scene timed actions
         for (int i = timedActions.Count - 1; i >= 0; i--)
         {
-            if (elapsedTime >= timedActions[i].ElapsedTime)
+            if (elapsedTime - timedActions[i].StartTime >= timedActions[i].ElapsedTime)
             {
                 timedActions[i].Execute();
                 timedActions.RemoveAt(i);
+            }
+        }
+
+        // Process entity timed actions
+        foreach (Entity ee in entities)
+        {
+            for (int i = ee.timedActions.Count - 1; i >= 0; i--)
+            {
+                if (elapsedTime - ee.timedActions[i].StartTime >= ee.timedActions[i].ElapsedTime )
+                {
+                    ee.timedActions[i].Execute();
+                    ee.timedActions.RemoveAt(i);
+                }
             }
         }
 
@@ -219,6 +231,8 @@ public abstract class Scene : MilkMethods
 
         Update(gameTime);
 
+        POIMarkers.Update(gameTime, this);
+
         // Remove entities
         RemoveEntitiesFromSceneAtEndOfUpdate();
 
@@ -228,7 +242,7 @@ public abstract class Scene : MilkMethods
         // Sort entities
         if (EntitySortMethod != null)
             entities.Sort(EntitySortMethod);
-        
+
         animator.Update(gameTime);
 
     }
@@ -309,14 +323,14 @@ public abstract class Scene : MilkMethods
         {
 
             // Set the viewport to the camera
-            _graphicsDevice.Viewport = camera.getViewport();
+            _graphicsDevice.Viewport = camera.GetViewport();
 
             // Draw camera background
             milk.Core.Milk.Graphics.Begin(samplerState: SamplerState.PointClamp);
             milk.Core.Milk.Graphics.FillRectangle(new Rectangle(0, 0, (int)Size.X, (int)Size.Y), camera.BackgroundColor);
             milk.Core.Milk.Graphics.End();
 
-            milk.Core.Milk.Graphics.Begin(samplerState: SamplerState.PointClamp, transformMatrix: camera.getTransformMatrix());
+            milk.Core.Milk.Graphics.Begin(samplerState: SamplerState.PointClamp, transformMatrix: camera.GetTransformMatrix());
 
             // Draw the map layers marked as 'belowEntities: true'
             DrawMap(camera, "belowEntities", "true");
@@ -338,11 +352,11 @@ public abstract class Scene : MilkMethods
             milk.Core.Milk.Graphics.End();
 
             // Draw the map layers marked as 'belowEntities: true'
-            milk.Core.Milk.Graphics.Begin(samplerState: SamplerState.PointClamp, transformMatrix: camera.getTransformMatrix());
+            milk.Core.Milk.Graphics.Begin(samplerState: SamplerState.PointClamp, transformMatrix: camera.GetTransformMatrix());
             DrawMap(camera, "belowEntities", "false");
             milk.Core.Milk.Graphics.End();
 
-            milk.Core.Milk.Graphics.Begin(samplerState: SamplerState.PointClamp, transformMatrix: camera.getTransformMatrix());
+            milk.Core.Milk.Graphics.Begin(samplerState: SamplerState.PointClamp, transformMatrix: camera.GetTransformMatrix());
 
             // Call DrawEntity() for those systems with DrawAboveMap == true
             foreach (System system in systems)
@@ -364,10 +378,10 @@ public abstract class Scene : MilkMethods
                 {
                     milk.Core.Milk.Graphics.DrawRectangle(
                         new RectangleF(
-                            sceneCollider.X,
-                            sceneCollider.Y,
-                            sceneCollider.Width,
-                            sceneCollider.Height
+                            sceneCollider.Position.X,
+                            sceneCollider.Position.Y,
+                            sceneCollider.Size.X,
+                            sceneCollider.Size.Y
                         ),
                         Color.Red,
                         1.0f
@@ -406,7 +420,8 @@ public abstract class Scene : MilkMethods
 
         foreach (System system in systems)
             system.Draw(this);
-
+        
+        POIMarkers.Draw(this);
         Draw();
         UIMenu.Draw();
 
@@ -583,9 +598,11 @@ public abstract class Scene : MilkMethods
         entitiesToRemoveFromScene.Clear();
     }
 
-    //internal void AddEntitiesToSceneAtEndOfUpdate()
-    //{}
 
+    /// <summary>
+    /// Returns a list of all entities in the scene.
+    /// </summary>
+    /// <returns>A list of scene entities.</returns>
     public List<Entity> GetAllEntities()
     {
         return entities;
@@ -603,13 +620,23 @@ public abstract class Scene : MilkMethods
     }
 
     /// <summary>
-    /// Gets all entities that include all supplied tags.
+    /// Gets all entities that include all specified tags.
     /// </summary>
     /// <param name="tags">One or more tags to check.</param>
     /// <returns>A list of all entities with all tags. This is always a list, and could be empty.</returns>
     public List<Entity> GetEntitiesByTag(params string[] tags)
     {
         return _entityManager.GetEntitiesByTagInList(entities, tags);
+    }
+
+    /// <summary>
+    /// Gets all entities that match the specified type.
+    /// </summary>
+    /// <param name="type">The entity type to get.</param>
+    /// <returns>A list of all entities of the specified type.</returns>
+    public List<Entity> GetEntitiesByType(string type)
+    {
+        return _entityManager.GetEntitiesByTypeInList(entities, type);
     }
 
     //
@@ -644,6 +671,20 @@ public abstract class Scene : MilkMethods
         foreach (Entity entity in entities)
         {
             if (entity.HasTag(tags))
+                entity.Delete = true;
+        }
+    }
+
+    /// <summary>
+    /// Marks all entities containing the specified type for deletion.
+    /// The type is checked in lower-case.
+    /// </summary>
+    /// <param name="type">The entity type to remove.</param>
+    public void DeleteEntitiesByType(string type)
+    {
+        foreach (Entity entity in entities)
+        {
+            if (entity.Type == type)
                 entity.Delete = true;
         }
     }
@@ -704,11 +745,22 @@ public abstract class Scene : MilkMethods
         return milk.Core.Milk.Systems.HasSystemOfTypeInList<T>(systems);
     }
 
+    /// <summary>
+    /// Generates a string showing all scene systems.
+    /// </summary>
+    /// <returns>A string list of all systems.</returns>
     public string PrintSystems()
     {
         return milk.Core.Milk.Systems.PrintSystemsInList(systems);
     }
 
+    /// <summary>
+    /// Positions the system of the specified type at the requested position.
+    /// This is useful for setting the order in which systems execute.
+    /// (Use `PrintSystems()` to see the order of systems.)
+    /// </summary>
+    /// <typeparam name="T">The type of system to move.</typeparam>
+    /// <param name="position">The new position of the system.</param>
     public void PositionSystem<T>(int position)
     {
         milk.Core.Milk.Systems.PositionSystemTypeInList<T>(position, systems);
@@ -742,11 +794,15 @@ public abstract class Scene : MilkMethods
     // Scene collision
     //
 
-    public void AddSceneCollider(int x, int y, int w, int h)
+
+    public void AddSceneCollider(Vector2 position, Vector2 size)
     {
-        sceneColliders.Add(new SceneCollider(x, y, w, h));
+        sceneColliders.Add(new SceneCollider(position, size));
     }
 
+    /// <summary>
+    /// Removes all scene colliders.
+    /// </summary>
     public void ClearSceneColliders()
     {
         sceneColliders.Clear();
@@ -767,7 +823,7 @@ public abstract class Scene : MilkMethods
         foreach (TiledMapLayer layer in _map.Layers)
         {
             if (property == null || (property != null && layer.Properties.TryGetValue(property, out string propValue) && propValue == value))
-                _mapRenderer.Draw(layer, camera.getTransformMatrix());
+                _mapRenderer.Draw(layer, camera.GetTransformMatrix());
         }
 
     }
@@ -784,7 +840,7 @@ public abstract class Scene : MilkMethods
     /// <param name="name">Optional name, to facilitate deletion.</param>
     public void AddTimedAction(float elapsedTime, Action action, string? name = null)
     {
-        timedActions.Add(new TimedAction(elapsedTime, action, name));
+        timedActions.Add(new TimedAction(elapsedTime, action, name.ToLower()));
     }
 
     /// <summary>
@@ -795,7 +851,7 @@ public abstract class Scene : MilkMethods
     {
         for (int i = timedActions.Count - 1; i >= 0; i--)
         {
-            if (timedActions[i].Name.ToLower() == name.ToLower())
+            if (timedActions[i].Name != null && timedActions[i].Name!.ToLower() == name.ToLower())
                 timedActions.RemoveAt(i);
         }
     }
@@ -810,12 +866,32 @@ public abstract class Scene : MilkMethods
     /// <param name="action">The 'lerp' function that controls the changing value(s).</param>
     /// <param name="duration">The length of the lerp or animation.</param>
     /// <param name="easingFunction">The easing function (default = null - linear easing).</param>
+    /// <param name="name">A name for the animation, to allow for later removal (default = null).</param>
     public void AddAnimation(
         Action<float> action,
         float duration,
-        EasingFunctions.EasingDelegate? easingFunction = null)
+        EasingFunctions.EasingDelegate? easingFunction = null,
+        string? name = null
+    )
     {
-        animator.AddTween(new Tween(action, duration, easingFunction));
+        animator.AddTween(new Tween(action, duration, easingFunction, name));
+    }
+
+    /// <summary>
+    /// Removes an animation with the specified name, if one exists.
+    /// </summary>
+    /// <param name="name">The name of the animation to remove.</param>
+    public void RemoveAnimationByName(string name)
+    {
+        animator.RemoveByName(name);
+    }
+
+    /// <summary>
+    /// Removes all scene animations.
+    /// </summary>
+    public void ClearAnimations()
+    {
+        animator.Clear();
     }
 
     //

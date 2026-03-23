@@ -5,10 +5,11 @@
 //   -- Shared under the MIT licence
 
 using System.Collections;
+using Microsoft.Xna.Framework;
 
 namespace milk.Core;
 
-internal class EntityManager
+public class EntityManager
 {
     // Store local references to manager objects
     private ComponentManager _componentManager = EngineGlobals.game.componentManager;
@@ -17,6 +18,7 @@ internal class EntityManager
     public readonly int MaxExtities;
     internal List<Entity> _allEntities = new List<Entity>();
     private Queue<int> IDPool = new Queue<int>();
+    private Dictionary<string, Func<Vector2?, Entity>> _prototypes = new();
 
     internal EntityManager(int maxExtities)
     {
@@ -81,8 +83,6 @@ internal class EntityManager
     {
         IDPool.Enqueue(ID);
         IDPool.Order();
-        //Console.WriteLine("check in " + ID);
-        // should components be removed, etc.?
     }
 
     internal int CheckOutID()
@@ -123,6 +123,22 @@ internal class EntityManager
         return returnList;
     }
 
+    internal List<Entity> GetEntitiesByType(string type)
+    {
+        return GetEntitiesByTypeInList(_allEntities, type);
+    }
+
+    internal List<Entity> GetEntitiesByTypeInList(List<Entity> entityList, string type)
+    {
+        List<Entity> returnList = new List<Entity>();
+        foreach (Entity entity in entityList)
+        {
+            if (entity.Type != null && entity.Type.ToLower() == type.ToLower())
+                returnList.Add(entity);
+        }
+        return returnList;
+    }
+
     internal void RemoveEntityByNameInList(List<Entity> entityList, string name)
     {
         foreach (Entity entity in entityList)
@@ -146,6 +162,62 @@ internal class EntityManager
             if (entityList[i].HasTag(tags))
                 entityList.RemoveAt(i);
         }
+    }
+
+    internal void RemoveEntitiesByTypeInList(List<Entity> entityList, string type)
+    {
+        for (int i = entityList.Count - 1; i > 0; i--)
+        {
+            if (entityList[i].Type != null && entityList[i].Type!.ToLower() == type.ToLower())
+                entityList.RemoveAt(i);
+        }
+    }  
+
+    //
+    // Entity prototyping
+    //
+
+    /// <summary>
+    /// Add a method for creating a new instance of an entity of a particular type.
+    /// </summary>
+    /// <param name="entityType">The type of the entity to create, which should match Entity.Type</param>
+    /// <param name="prototypeMethod">The method used to create a new entity (optionally specifying a Vector2 position and returning an Entity)</param>
+    public void AddPrototype(string entityType, Func<Vector2?, Entity> prototypeMethod)
+    {
+        if (_prototypes.ContainsKey(entityType) == false)
+            RemovePrototype(entityType);
+        _prototypes.Add(entityType, prototypeMethod);
+    }
+
+    /// <summary>
+    /// Call the method associated with an entity type to create a new entity.
+    /// </summary>
+    /// <param name="entityType">The 'type' of entity to create.</param>
+    /// <param name="position">The optional (x, y) world position.</param>
+    /// <returns>An entity if a ethod exists for the type, or null.</returns>
+    public Entity? CreateFromPrototype(string entityType, Vector2? position)
+    {
+        return _prototypes.ContainsKey(entityType) ? _prototypes[entityType].Invoke(position) : null;
+    }
+
+    /// <summary>
+    /// Removes the method for creating an entity of the specified type if one exists.
+    /// </summary>
+    /// <param name="entityType">The type of entity creation method to remove.</param>
+    public void RemovePrototype(string entityType)
+    {
+        if (_prototypes.ContainsKey(entityType))
+            _prototypes.Remove(entityType);
+    }
+
+    /// <summary>
+    /// Returns whether an entity creation prototype exists for a particular entity type.
+    /// </summary>
+    /// <param name="entityType">The entity type to check.</param>
+    /// <returns>True if a prototype method exists, false otherwise.</returns>
+    public bool HasPrototype(string entityType)
+    {
+        return _prototypes.ContainsKey(entityType);
     }
 
 }

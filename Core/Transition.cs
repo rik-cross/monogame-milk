@@ -79,7 +79,7 @@ public abstract class Transition {
             if (toScenes.Count > 0)
                 Milk.Scenes.SetScene(toScenes, null, !unload, true);
             else
-                Milk.Scenes.RemoveScene(null, Milk.Scenes.numberOfScenesToRemove, true);
+                Milk.Scenes.RemoveSceneViaTransition(null, Milk.Scenes.numberOfScenesToRemove);
         }
     }
 

@@ -8,19 +8,18 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using milk.Core;
-using milk.Systems;
 using milk.UI;
 
 namespace milk.Components;
 
 /// <summary>
-/// An InventoryComponent manages the storage of entities.
+/// An CraftingComponent manages recipes.
 /// </summary>
-public class InventoryComponent : Component
+public class CraftingComponent : Component
 {
 
     // Maps an Entity.Tag to an InventorySlot
-    internal List<InventorySlot> inventory;
+    internal List<CraftingSlot> inventory;
 
     private int _numberOfSlots;
     /// <summary>
@@ -35,7 +34,7 @@ public class InventoryComponent : Component
         {
             _numberOfSlots = value;
             while (inventory.Count < _numberOfSlots)
-                inventory.Add(new InventorySlot());
+                inventory.Add(new CraftingSlot());
             CalculateSize();
         }
     }
@@ -172,7 +171,7 @@ public class InventoryComponent : Component
     /// <summary>
     /// Specifies a method used to override the default Draw() method.
     /// </summary>
-    public Action<InventoryComponent>? CustomDrawMethod;
+    public Action<CraftingComponent>? CustomDrawMethod;
 
     private bool _visible;
     /// <summary>
@@ -211,14 +210,22 @@ public class InventoryComponent : Component
         }
     }
 
-    public Action<InventoryComponent, Scene>? OnActivate;
-    public Action<InventoryComponent, Scene>? OnDeactivate;
+    public Action<CraftingComponent, Scene>? OnActivate;
+    public Action<CraftingComponent, Scene>? OnDeactivate;
 
     /// <summary>
     /// Maps keys to inventory methods.
     /// </summary>
     public Dictionary<Keys, Action> InputActions { get; set; } = new Dictionary<Keys, Action>();
     
+    internal bool WaitingToCraft;
+    public bool IsCrafting;
+    public CraftingRecipe? RecipeToCraft;
+    public int SlotNumberToCraft;
+    public double CurrentCraftingDuration;
+    public Action? OnCraftStart;
+    public Action? OnCraftEnd;
+
     /// <summary>
     /// Creates a new inventory.
     /// </summary>
@@ -240,7 +247,7 @@ public class InventoryComponent : Component
     /// <param name="visible">Sets the visibility of the inventory (default = true).</param>
     /// <param name="active">Sets the ability to interact with the component (default = true).</param>
     /// <param name="inputActions">Maps Keys to Actions (default = null - no actions mapped).</param>
-    public InventoryComponent(
+    public CraftingComponent(
         int numberOfSlots = 8,
         bool allowInputWrapping = false,
         Vector2? position = null,
@@ -255,7 +262,7 @@ public class InventoryComponent : Component
         Color? secondaryColor = null,
         Color? secondaryColorInactive = null,
         SpriteFont? font = null,
-        Action<InventoryComponent>? customDrawMethod = null,
+        Action<CraftingComponent>? customDrawMethod = null,
         bool visible = true,
         bool active = true,
         Dictionary<Keys, Action>? inputActions = null
@@ -263,9 +270,9 @@ public class InventoryComponent : Component
     {
 
         // Create a new list of empty inventory slots
-        inventory = new List<InventorySlot>();
+        inventory = new List<CraftingSlot>();
         for (int i=0; i<numberOfSlots; i++)
-            inventory.Add(new InventorySlot());
+            inventory.Add(new CraftingSlot());
 
         // Slots
         NumberOfSlots = numberOfSlots;
@@ -298,180 +305,104 @@ public class InventoryComponent : Component
 
         CalculateSize();
 
+        // Todo: add to constructor
+        WaitingToCraft = false;
+        IsCrafting = false;
+        CurrentCraftingDuration = 0;
+        OnCraftStart = null;
+        OnCraftEnd = null;
+        SlotNumberToCraft = -1;
+
     }
 
-    /// <summary>
-    /// Gets the slot specified, or the currently-selected
-    /// slot if no slot is specified. 
-    /// </summary>
-    /// <param name="slotNumber">The slot number to get from (default = null - current slot).</param>
-    /// <returns></returns>
-    public InventorySlot GetSlot(int? slotNumber = null)
+    public CraftingSlot GetSlot(int? slotNumber = null)
+    {
+        if (slotNumber == null)
+            return inventory[SelectedSlot];
+        else
+            return inventory[slotNumber.Value];
+    }
+
+    public void Craft()
+    {
+        WaitingToCraft = true;
+    }
+
+    public bool CanBeCrafted(int slotNumber)
+    {
+        // todo
+        return true;
+    }
+
+    public CraftingRecipe? GetRecipe(int? slotNumber = null)
     {
         int slot = slotNumber ?? SelectedSlot;
-        return inventory[slot];
+        return inventory[slot].Recipe;
     }
 
-    /// <summary>
-    /// Adds the specified entity to the inventory, first by attempting to add
-    /// the entity to any slot of the same type with space for more entities, and
-    /// then by attempting to add the entity to a new slot.
-    /// </summary>
-    /// <param name="entity">The entity to add.</param>
-    /// <returns>True if the entity was successfully added.</returns>
-    public bool AddEntity(Entity entity)
+    public string? GetRecipeInfo(int? slotNumber = null)
     {
+        int slot = slotNumber ?? SelectedSlot;
+        if (inventory[slot] != null && inventory[slot].Recipe != null)
+            return "1 x wood\n3 x something";
+        else
+            return null;
+    }
+
+    // overwrites
+    public bool AddRecipe(CraftingRecipe recipe, int? slotNumber = null)
+    {
+
+        bool added = false;
+        int slot = -1;
         
-        // Only entities with a 'type' string can be stored
-        if (entity.Type == null)
-            return false;
-
-        // Add entity to a slot with existing entities
-        // of the same type if possible
-        foreach(InventorySlot slot in inventory)
+        // Find the slot to add to
+        if (slotNumber == null)
         {
-            if(
-                slot.Type == entity.Type &&
-                slot.Items.Count < Milk.Systems.GetSystem<InventorySystem>().GetStackSize(entity.Type)
-            )
+            // Find first available slot
+            for (int i=0; i<inventory.Count; i++)
             {
-                return slot.AddEntity(entity);
-            }
-        }
-
-        // If no existing slot is available,
-        // add to a new slot if one is free
-        foreach(InventorySlot slot in inventory)
-        {
-            if (slot.Type == null)
-            {
-                slot.AddEntity(entity);
-                return true;
-            }
-        }
-
-        // No space in inventory
-        return false;
-
-    }
-
-    /// <summary>
-    /// Removes an entity from the specified slot number,
-    /// or from the currently-selected slot if no slot number is provided.
-    /// </summary>
-    /// <param name="slotNumber">The slot number to remove an entity from (default = null - remove from currently-selected slot).</param>
-    /// <returns>An entity if one exists at the slot specified, or null.</returns>
-    public Entity? RemoveEntity(int? slotNumber = null)
-    {
-        int slot = slotNumber ?? SelectedSlot;
-        // Defer to the slot remove method
-        return inventory[slot].RemoveEntity();
-    }
-
-    /// <summary>
-    /// Removes the first entity found of the specified type.
-    /// </summary>
-    /// <param name="type">The entity type to remove.</param>
-    /// <returns>An entity, or null is no entity is found.</returns>
-    public Entity? RemoveEntityOfType(string type)
-    {
-        // Check slots from right to left
-        for(int i = inventory.Count - 1; i >= 0; i--)
-        {
-            // Return an entity if the types match
-            if (inventory[i].Type == type)
-                return inventory[i].RemoveEntity();
-        }
-        // No entity found
-        return null;
-    }
-
-    /// <summary>
-    /// Removes all entities from the slot number specified,
-    /// or from the currently-selected slot if no slot number is specified
-    /// </summary>
-    /// <param name="slotNumber">The slotNumber to remove entities from (default = null, currently-selected slot).</param>
-    /// <returns>A list of all entities removed.</returns>
-    public List<Entity> RemoveAllEntitiesFromSlot(int? slotNumber = null)
-    {
-        List<Entity> entities = new List<Entity>();
-        // Determine the slot number to remove entities from
-        int slot = slotNumber ?? SelectedSlot;
-        // Remove entities until there are none left to remove
-        while (inventory[slot].Items.Count > 0)
-            entities.Add(inventory[slot].RemoveEntity());
-        return entities;
-    }
-
-    /// <summary>
-    /// Empties the inventory.
-    /// </summary>
-    /// <returns>A list of all entities removed.</returns>
-    public List<Entity> RemoveAllEntities()
-    {
-        List<Entity> entities = new List<Entity>();
-        // Loop through each slot
-        for (int i=0; i<inventory.Count; i++)
-        {
-            // Remove entities until there are none left
-            while (inventory[i].Items.Count > 0)
-                entities.Add(inventory[i].RemoveEntity());
-        }
-        return entities;
-    } 
-
-    /// <summary>
-    /// Consolidates entities of the same type into as few slots as possible,
-    /// to maximise the number of available inventory slots.
-    /// </summary>
-    public void Consolidate()
-    {
-        // Consolidate slots from right-to-left
-        for (int i = inventory.Count - 1; i >= 0; i--)
-        {
-            string? type = inventory[i].Type;
-
-            // Only consolidate slots with entities in
-            if (type == null) continue;
-
-            // Find a slot of the same type with space
-            for (int j = 0; j < i; j++)
-            {
-                string? type2 = inventory[j].Type;
-                // Only move entity into another slot if it has the same type
-                if (type2 == type)
+                if (inventory[i].Recipe == null)
                 {
-                    // Keep moving entities between slots until:
-                    // - there's no more room, or
-                    // - there are no more items to move
-                    while (
-                        inventory[j].Items.Count < Milk.Systems.GetSystem<InventorySystem>().GetStackSize(type) &&
-                        inventory[i].Items.Count > 0
-                    )
-                    {
-                        // Move entity between slots
-                        inventory[j].Items.Add(inventory[i].RemoveEntity());
-                    }
+                    slot = i;
+                    break;
                 }
             }
         }
-    }
-
-    public int NumberOfEntityType(string type)
-    {
-        
-        int number = 0;
-
-        foreach (InventorySlot slot in inventory)
+        else
         {
-            if (slot.Type == type)
-            {
-                number += slot.Items.Count;
-            }
+            slot = slotNumber.Value;
         }
 
-        return number;
+        if (slot != -1 && inventory[slot] != null)
+        {
+            inventory[slot].Recipe = recipe;
+            added = true;
+        }
 
+        return added;
+    }
+
+    public void ClearRecipeType(string type)
+    {
+        foreach(CraftingSlot slot in inventory)
+        {
+            if (slot.Recipe != null && slot.Recipe.EntityTypeCreated == type)
+                slot.Clear();
+        }
+    }
+
+    public void Clear(int? slotNumber = null)
+    {
+        if (slotNumber == null)
+        {
+            foreach (CraftingSlot slot in inventory)
+                slot.Clear();  
+        }
+        else
+        {
+            inventory[slotNumber.Value].Clear();
+        }
     }
 
     //

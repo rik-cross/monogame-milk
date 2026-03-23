@@ -55,7 +55,7 @@ public class Camera
     /// The (x, y) target world position that the camera is focused on.
     /// </summary>
     public Vector2 WorldPosition;
-    private Vector2 _currentWorldPosition;
+    internal Vector2 _currentWorldPosition;
 
     /// <summary>
     /// If set to true, the camera is locked to the map dimensions,
@@ -89,7 +89,7 @@ public class Camera
     // Zoom
     //
 
-    private float _currentZoom;
+    internal float _currentZoom;
     private float _startZoom;
     private float _targetZoom;
     private float _startZoomLog;
@@ -151,7 +151,7 @@ public class Camera
             Scene.entities.Contains(TrackedEntity) &&
             TrackedEntity.HasComponent<TransformComponent>())
         {
-            TransformComponent transformComponent = TrackedEntity.GetComponent<TransformComponent>();
+            TransformComponent transformComponent = TrackedEntity.GetComponent<TransformComponent>()!;
             WorldPosition = new Vector2(
                 transformComponent.Center * -1,
                 transformComponent.Middle * -1
@@ -278,7 +278,7 @@ public class Camera
 
     }
 
-    internal Viewport getViewport()
+    internal Viewport GetViewport()
     {
         return new Viewport(
             (int)ScreenPosition.X, (int)ScreenPosition.Y,
@@ -286,7 +286,7 @@ public class Camera
         );
     }
 
-    internal Matrix getTransformMatrix()
+    internal Matrix GetTransformMatrix()
     {
         Vector2 centrePosition = _currentWorldPosition;
         centrePosition.X = _currentWorldPosition.X + ScreenSize.X / 2 / _currentZoom;

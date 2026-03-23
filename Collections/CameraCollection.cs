@@ -5,16 +5,15 @@
 //   -- Shared under the MIT licence
 
 using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
+using milk.Components;
 
 namespace milk.Core;
 
-/// Defines a collidable area of a scene.
-internal struct SceneCollider
-{
-    internal Vector2 Position, Size;
-    internal SceneCollider(Vector2 position, Vector2 size) 
-    { 
-        Position = position;
-        Size = size;
-    }
-}
+/// <summary>
+/// A collection of scene cameras.
+/// </summary>
+//public class CameraCollection : Collection<Camera>
+//{
+    
+//}

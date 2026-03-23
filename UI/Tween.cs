@@ -27,6 +27,9 @@ internal class Tween
     /// </summary>
     internal Action<float> Action;
 
+    internal string? Name;
+    // TODO: OnComplete?
+
     /// <summary>
     /// An easing function for the animation.
     /// </summary>
@@ -48,11 +51,14 @@ internal class Tween
     internal Tween(
         Action<float> action,
         float duration,
-        EasingFunctions.EasingDelegate? easingFunction = null)
+        EasingFunctions.EasingDelegate? easingFunction = null,
+        string? name = null
+    )
     {
         Action = action;
         Duration = duration;
         EasingFunction = easingFunction ?? EasingFunctions.Linear;
+        Name = name ?? null;
     }
 
     internal void Update(GameTime gameTime)

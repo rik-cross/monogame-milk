@@ -77,7 +77,7 @@ public class PhysicsSystem : System
             {
                 foreach (var sc in scene.sceneColliders)
                 {
-                    MilkRectangleF obsBox = new MilkRectangleF(sc.X, sc.Y, sc.Width, sc.Height);
+                    MilkRectangleF obsBox = new MilkRectangleF(sc.Position.X, sc.Position.Y, sc.Size.X, sc.Size.Y);
                     float t = SweptAABB(playerBox, obsBox, moveAmount, out Vector2 normal);
 
                     if (t < hitTime)

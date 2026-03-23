@@ -11,14 +11,11 @@ namespace milk.Core;
 
 public class SceneManager
 {
-    // should this store one of each type of scene?
-    // and then use LoadScene<>() etc...
     internal List<Scene> allScenes = new List<Scene>();
     internal List<Scene> _currentSceneList = new List<Scene>();
     internal List<Scene> _newSceneList = new List<Scene>();
     internal int numberOfScenesToRemove = 1;
     internal bool unload = true;
-
 
     internal Transition? currentTransition = null;
     private RenderTarget2D existingScenesRenderTarget = new RenderTarget2D(
@@ -65,15 +62,13 @@ public class SceneManager
 
         if (currentTransition != null && _newSceneList != null && _newSceneList.Count > 0)
             _newSceneList[0]._Update(gameTime, _newSceneList);
+        
+        Log.Update(gameTime);
 
     }
 
     internal void Input(GameTime gameTime)
     {
-
-        //if (currentTransition != null)
-        //    return;
-
         // Call the Input method for the top scene on the stack
         if (_currentSceneList.Count > 0)
             _currentSceneList[0]._Input(gameTime, _currentSceneList);
@@ -112,6 +107,12 @@ public class SceneManager
                 _currentSceneList,
                 _newSceneList
             );
+        
+        // Draw the log
+        graphicsDevice.SetRenderTarget(null);
+        spriteBatch.Begin();
+        Log.Draw();
+        spriteBatch.End();
 
     }
 
@@ -181,11 +182,30 @@ public class SceneManager
 
         }
 
-        
-
     }
 
+    /// <summary>
+    /// Removes one or more scenes from the scene stack.
+    /// </summary>
+    /// <param name="transition">An optional transition.</param>
+    /// <param name="nScenesToRemove">Number of scenes to remove (default = 1).</param>
     public void RemoveScene(
+        Transition? transition = null,
+        int nScenesToRemove = 1
+    )
+    {
+        RemoveSceneBaseMethod(transition, nScenesToRemove, false);
+    }
+    
+    internal void RemoveSceneViaTransition(
+        Transition? transition = null,
+        int nScenesToRemove = 1
+    )
+    {
+        RemoveSceneBaseMethod(transition, nScenesToRemove, true);
+    }
+
+    internal void RemoveSceneBaseMethod(
         Transition? transition = null,
         int nScenesToRemove = 1,
         bool calledFromTransition = false
@@ -199,11 +219,8 @@ public class SceneManager
 
                 // systems.onExit(scene)
                 foreach (System system in _currentSceneList[0].systems)
-                {
                     system.OnExitScene(_currentSceneList[0]);
-                }
 
-                //Console.WriteLine("Exit");
                 if (calledFromTransition == false)
                     _currentSceneList[0].OnExit();
 
@@ -214,15 +231,10 @@ public class SceneManager
             {
 
                 foreach (System system in _currentSceneList[0].systems)
-                {
                     system.OnEnterScene(_currentSceneList[0]);
-                }
 
-                // ??
-                //if (calledFromTransition == false) {
-                    //Console.WriteLine("Enter -- no transition");
-                    _currentSceneList[0].OnEnter();
-                //}
+                _currentSceneList[0].OnEnter();
+
             } 
                 
         }
@@ -231,22 +243,22 @@ public class SceneManager
             currentTransition = transition;
 
             _currentSceneList[0].OnExit();
-            //_currentSceneList[nScenesToRemove].OnEnter();
 
             unload = false;
             this.numberOfScenesToRemove = nScenesToRemove;
         }
     }
 
+    /// <summary>
+    /// Removes all scenes, effectively quitting the game.
+    /// </summary>
     public void ClearScenes()
     {
         while (_currentSceneList.Count > 0)
         {
 
             foreach(System system in _currentSceneList[0].systems)
-            {
                 system.OnExitScene(_currentSceneList[0]);
-            }
 
             _currentSceneList[0].OnExit();
             _currentSceneList.RemoveAt(0);
