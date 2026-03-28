@@ -45,48 +45,54 @@ internal class SplashScene : Scene
         // Fade in the image and text after 0.5 seconds,
         // by setting their alpha values to 1
         AddTimedAction(
-            elapsedTime: 0.5f,
-            action: () =>
-            {
-                animator.AddTween(
-                    new Tween(
-                        action: (float t) => {
-                            imgMilk.Alpha = MathHelper.Lerp(0, 1, t);
-                            txtMilk.Alpha = MathHelper.Lerp(0, 1, t);
-                        },
-                        duration: 0.5f
-                    )
-                );
-            }
+            new TimedAction(
+                elapsedTime: 0.5f,
+                action: () =>
+                {
+                    AddTween(
+                        new Tween(
+                            action: (float t) => {
+                                imgMilk.Alpha = MathHelper.Lerp(0, 1, t);
+                                txtMilk.Alpha = MathHelper.Lerp(0, 1, t);
+                            },
+                            duration: 0.5f
+                        )
+                    );
+                }    
+            )
         );
 
         // Fade out the image and text after 2 seconds,
         // by setting their alpha values to 0
         AddTimedAction(
-            elapsedTime: 2.0f,
-            action: () =>
-            {
-                animator.AddTween(
-                    new Tween(
-                        action: (float t) => {
-                            imgMilk.Alpha = MathHelper.Lerp(1, 0, t);
-                            txtMilk.Alpha = MathHelper.Lerp(1, 0, t);
-                        },
-                        duration: 0.5f
-                    )
-                );
-            }
+            new TimedAction(
+                elapsedTime: 2.0f,
+                action: () =>
+                {
+                    AddTween(
+                        new Tween(
+                            action: (float t) => {
+                                imgMilk.Alpha = MathHelper.Lerp(1, 0, t);
+                                txtMilk.Alpha = MathHelper.Lerp(1, 0, t);
+                            },
+                            duration: 0.5f
+                        )
+                    );
+                }    
+            )
         );
 
         // Remove this splash scene after 3 seconds
         AddTimedAction(
-            elapsedTime: 3f,
-            action: () =>
-            {
-                Scenes.RemoveScene(
-                    transition: new TransitionFadeToBlack(duration: 0.75f)
-                );
-            }
+            new TimedAction(
+                elapsedTime: 3f,
+                action: () =>
+                {
+                    Scenes.RemoveScene(
+                        transition: new TransitionFadeToBlack(duration: 0.75f)
+                    );
+                }    
+            )
         );
 
     }

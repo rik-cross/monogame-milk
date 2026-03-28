@@ -102,7 +102,7 @@ public class InventorySystem : milk.Core.System
                 // Defer to the custom draw method, if one has been specified
                 if (inventoryComponent.CustomDrawMethod != null)
                 {
-                    inventoryComponent.CustomDrawMethod(inventoryComponent);
+                    inventoryComponent.CustomDrawMethod(entity);
                     continue;
                 }
                 

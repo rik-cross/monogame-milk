@@ -5,15 +5,16 @@
 //   -- Shared under the MIT licence
 
 using Microsoft.Xna.Framework;
-using milk.Core;
 
-namespace milk.UI;
+namespace milk.Core;
 
 /// <summary>
 /// A tween is added to a scene's animator, and links an action to a duration.
 /// </summary>
-internal class Tween
+public class Tween : ISceneParent, INameable, milk.Core.IUpdateable
 {
+
+    public Scene ParentScene { get; set; }
     
     // TODO: OnComplete
 
@@ -27,7 +28,24 @@ internal class Tween
     /// </summary>
     internal Action<float> Action;
 
-    internal string? Name;
+    private string? _name;
+    /// <summary>
+    /// The name of the tween, unique to a scene.
+    /// Names are stored trimmed and in lowercase.
+    /// </summary>
+    public string? Name
+    {
+        get
+        { return _name; }
+        set
+        {
+            if (value == null)
+                _name = value;
+            else
+                _name = value.Trim().ToLower();
+        }
+    }
+
     // TODO: OnComplete?
 
     /// <summary>
@@ -48,7 +66,7 @@ internal class Tween
     /// <param name="action">The animation action.</param>
     /// <param name="duration">The length of the animation, in seconds.</param>
     /// <param name="easingFunction">The animation easing (default = null - linear).</param>
-    internal Tween(
+    public Tween(
         Action<float> action,
         float duration,
         EasingFunctions.EasingDelegate? easingFunction = null,
@@ -61,7 +79,7 @@ internal class Tween
         Name = name ?? null;
     }
 
-    internal void Update(GameTime gameTime)
+    public void Update(GameTime gameTime)
     {
         
         elapsedTime += (float)gameTime.ElapsedGameTime.TotalSeconds;
@@ -69,12 +87,19 @@ internal class Tween
         float progress = MathHelper.Clamp(elapsedTime / Duration, 0f, 1f);
         float easedProgress = EasingFunction(progress);
 
-        if (Action != null)
-            Action(easedProgress);
+        Action?.Invoke(easedProgress);
 
         if (elapsedTime >= Duration)
             Finished = true;
 
+    }
+
+    public void Complete()
+    {
+        elapsedTime = Duration;
+        float easedProgress = EasingFunction(1f);
+        Action?.Invoke(easedProgress);
+        Finished = true;
     }
 
 }

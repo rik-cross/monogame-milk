@@ -11,21 +11,38 @@ using milk.Components;
 namespace milk.Core;
 
 /// <summary>
-/// A marker points to a 'point of interest', which is either an
-/// entity, or a position in the world. When pointing to an entity,
-/// the marker points to the entity center-top position. When a
-/// point of interest is outside a camera's viewport, the marker
-/// sticks to the edge of the camera and points in the direction of
-/// the entity or position.
+/// A marker points to a 'point of interest' within a scene,
+/// which is either an entity, or a position in the world. When
+/// pointing to an entity, the marker points to the entity
+/// center-top position. When a point of interest is outside a
+/// camera's viewport, the marker sticks to the edge of the camera
+/// and points in the direction of the entity or position.
 /// </summary>
-public class POIMarker : ICollectionItem
+public class Marker : ISceneParent, INameable, IVisible, IUpdateable, IDrawable
 {
 
     /// <summary>
-    /// The name of the marker, which is useful for
-    /// getting or removing a particular marker.
+    /// The parent scene, which is set by the scene
+    /// when added via Scene.AddMarker().
     /// </summary>
-    public string? Name { get; set; }
+    public Scene ParentScene { get; set; }
+
+    private string? _name;
+    /// <summary>
+    /// The name of the marker, unique to a scene.
+    /// Names are stored trimmed and in lowercase.
+    /// </summary>
+    public string? Name
+    {
+        get { return _name; }
+        set
+        {
+            if (value == null)
+                _name = value;
+            else
+                _name = value.Trim().ToLower();
+        }
+    }
 
     /// <summary>
     /// An optional entity to point to. If an entity is
@@ -89,7 +106,7 @@ public class POIMarker : ICollectionItem
     /// </summary>
     public int BounceAmplitude { get; set; }
 
-    public POIMarker(
+    public Marker(
         string? name = null,
         Entity? targetEntity = null,
         Vector2? targetPosition = null,
@@ -127,6 +144,22 @@ public class POIMarker : ICollectionItem
         BounceFrequency = bounceFrequency;
         BounceAmplitude = bounceAmplitude;
 
+    }
+
+    public void Update(GameTime gameTime)
+    {
+        if (TargetEntity != null && TargetEntity.HasComponent<TransformComponent>() == true)
+        {
+            TargetPosition = new Vector2(
+                TargetEntity.GetComponent<TransformComponent>()!.Center,
+                TargetEntity.GetComponent<TransformComponent>()!.Position.Y
+            );
+        }
+    }
+
+    public void Draw()
+    {
+        
     }
 
 }

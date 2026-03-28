@@ -152,7 +152,14 @@ public class SceneManager
                 }
 
                 if (calledFromTransition == false)
+                {
+                    foreach (Tween tween in _currentSceneList[0].Tweens)
+                    {
+                        tween.Complete();
+                    }
+                    _currentSceneList[0].RemoveTween();
                     _currentSceneList[0].OnExit();
+                }
             }
 
             if (keepExistingScenes == false)
@@ -174,8 +181,15 @@ public class SceneManager
             currentTransition = transition;
 
             if (_currentSceneList.Count > 0)
+            {
+                foreach (Tween tween in _currentSceneList[0].Tweens)
+                {
+                    tween.Complete();
+                }
+                _currentSceneList[0].RemoveTween();
                 _currentSceneList[0].OnExit();
-            
+            }
+
             _newSceneList = sceneList;
             unload = !keepExistingScenes;
             numberOfScenesToRemove = 1;
@@ -222,7 +236,14 @@ public class SceneManager
                     system.OnExitScene(_currentSceneList[0]);
 
                 if (calledFromTransition == false)
+                {
+                    foreach (Tween tween in _currentSceneList[0].Tweens)
+                    {
+                        tween.Complete();
+                    }
+                    _currentSceneList[0].RemoveTween();
                     _currentSceneList[0].OnExit();
+                }
 
                 _currentSceneList.RemoveAt(0);
                 nScenesToRemove--;
@@ -242,6 +263,12 @@ public class SceneManager
         {
             currentTransition = transition;
 
+            foreach (Tween tween in _currentSceneList[0].Tweens)
+            {
+                tween.Complete();
+            }
+            _currentSceneList[0].RemoveTween();
+
             _currentSceneList[0].OnExit();
 
             unload = false;
@@ -259,6 +286,12 @@ public class SceneManager
 
             foreach(System system in _currentSceneList[0].systems)
                 system.OnExitScene(_currentSceneList[0]);
+
+            foreach (Tween tween in _currentSceneList[0].Tweens)
+            {
+                tween.Complete();
+            }
+            _currentSceneList[0].RemoveTween();
 
             _currentSceneList[0].OnExit();
             _currentSceneList.RemoveAt(0);

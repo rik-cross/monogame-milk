@@ -93,11 +93,19 @@ public class CraftingSystem : milk.Core.System
             // Check if the selected component can be crafted
             CraftingRecipe recipe = craftingComponent.inventory[craftingComponent.SelectedSlot].Recipe!;
 
+            // TODO
+            // Store the position when the craft button was pressed,
+            // not the current index 2 seconds later!
+
             foreach(var ingredient in recipe.Ingredients)
             {
                 if (inventoryComponent.NumberOfEntityType(ingredient.Key) < ingredient.Value)
                 {
                     canCraft = false;
+                    Log.Add(
+                        "Cannot craft " +
+                        craftingComponent.inventory[craftingComponent.SelectedSlot].Recipe!.EntityTypeCreated
+                    );
                     break;
                 }
             }
@@ -198,7 +206,7 @@ public class CraftingSystem : milk.Core.System
                 // Defer to the custom draw method, if one has been specified
                 if (craftingComponent.CustomDrawMethod != null)
                 {
-                    craftingComponent.CustomDrawMethod(craftingComponent);
+                    craftingComponent.CustomDrawMethod(entity);
                     continue;
                 }
                 
@@ -278,7 +286,6 @@ public class CraftingSystem : milk.Core.System
                             }
                         }
 
-                        // test dot
                         Milk.Graphics.FillRectangle(
                             (int)pos.X,
                             (int)pos.Y,

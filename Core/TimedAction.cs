@@ -4,13 +4,17 @@
 //   -- Docs: rik-cross.github.io/monogame-milk
 //   -- Shared under the MIT licence
 
+using Microsoft.Xna.Framework;
+
 namespace milk.Core;
 
 /// <summary>
 /// Runs the specified action after an amount of elapsed scene time.
 /// </summary>
-internal class TimedAction
+public class TimedAction : ISceneParent, INameable, IUpdateable
 {
+
+    public Scene ParentScene { get; set; }
 
     /// <summary>
     /// The time the timed action was created.
@@ -27,10 +31,23 @@ internal class TimedAction
     /// </summary>
     internal readonly Action? Action;
 
+        private string? _name;
     /// <summary>
-    /// The name of the action, for finding and deleting later.
+    /// The name of the timed action, unique to a scene.
+    /// Names are stored trimmed and in lowercase.
     /// </summary>
-    internal readonly string? Name;
+    public string? Name
+    {
+        get
+        { return _name; }
+        set
+        {
+            if (value == null)
+                _name = value;
+            else
+                _name = value.Trim().ToLower();
+        }
+    }
 
     /// <summary>
     /// Create a new timed action.
@@ -56,6 +73,11 @@ internal class TimedAction
     {
         if (Action != null)
             Action();
+    }
+
+    public void Update(GameTime gameTime)
+    {
+        
     }
 
 }

@@ -19,7 +19,7 @@ public class CraftingComponent : Component
 {
 
     // Maps an Entity.Tag to an InventorySlot
-    internal List<CraftingSlot> inventory;
+    public List<CraftingSlot> inventory;
 
     private int _numberOfSlots;
     /// <summary>
@@ -171,7 +171,7 @@ public class CraftingComponent : Component
     /// <summary>
     /// Specifies a method used to override the default Draw() method.
     /// </summary>
-    public Action<CraftingComponent>? CustomDrawMethod;
+    public Action<Entity>? CustomDrawMethod;
 
     private bool _visible;
     /// <summary>
@@ -262,7 +262,7 @@ public class CraftingComponent : Component
         Color? secondaryColor = null,
         Color? secondaryColorInactive = null,
         SpriteFont? font = null,
-        Action<CraftingComponent>? customDrawMethod = null,
+        Action<Entity>? customDrawMethod = null,
         bool visible = true,
         bool active = true,
         Dictionary<Keys, Action>? inputActions = null

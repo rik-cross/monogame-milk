@@ -14,28 +14,31 @@ namespace milk.Core;
 /// A camera can be added to a Scene via scene.AddCamera(),
 /// and draws a scene's world to the screen. 
 /// </summary>
-public class Camera
+public class Camera : ISceneParent, INameable, IVisible, IUpdateable, IDrawable
 {
 
     /// <summary>
     /// The parent scene of the camera.
     /// </summary>
-    public Scene? Scene;
+    public Scene? ParentScene { get; set; }
+
+    public bool Visible { get; set; }
 
     private string? _name;
     /// <summary>
-    /// The name of the camera.
-    /// Useful for getting / removing a specific camera.
+    /// The name of the camera, unique to a scene.
+    /// Names are stored trimmed and in lowercase.
     /// </summary>
     public string? Name
     {
         get
-        {
-            return _name;
-        }
+        { return _name; }
         set
         {
-            _name = value;
+            if (value == null)
+                _name = value;
+            else
+                _name = value.Trim().ToLower();
         }
     }
 
@@ -144,11 +147,11 @@ public class Camera
 
     }
 
-    internal void Update(GameTime gameTime)
+    public void Update(GameTime gameTime)
     {
 
-        if (TrackedEntity != null && Scene != null &&
-            Scene.entities.Contains(TrackedEntity) &&
+        if (TrackedEntity != null && ParentScene != null &&
+            ParentScene.entities.Contains(TrackedEntity) &&
             TrackedEntity.HasComponent<TransformComponent>())
         {
             TransformComponent transformComponent = TrackedEntity.GetComponent<TransformComponent>()!;
@@ -178,15 +181,15 @@ public class Camera
 
     private void UpdateClamp()
     {
-        if (ClampToMap == true && Scene != null && Scene.mapSize.HasValue)
+        if (ClampToMap == true && ParentScene != null && ParentScene.mapSize.HasValue)
         {
 
             // Set the camera world center to the map center
             // if the map*zoom is smaller than the camera screen size
 
             // X
-            if (ScreenSize.X > Scene.mapSize.Value.X * _currentZoom)
-                _currentWorldPosition.X = Scene.mapSize.Value.X / 2 * -1;
+            if (ScreenSize.X > ParentScene.mapSize.Value.X * _currentZoom)
+                _currentWorldPosition.X = ParentScene.mapSize.Value.X / 2 * -1;
             // else ensure no off-world is seen
             else
             {
@@ -194,13 +197,13 @@ public class Camera
                 if (_currentWorldPosition.X * -1 < ScreenSize.X / _currentZoom / 2)
                     _currentWorldPosition.X = ScreenSize.X / _currentZoom / 2 * -1;
                 // right
-                if (_currentWorldPosition.X * -1 > (Scene.mapSize.Value.X - (ScreenSize.X / _currentZoom / 2)))
-                    _currentWorldPosition.X = (Scene.mapSize.Value.X - (ScreenSize.X / _currentZoom / 2)) * -1;
+                if (_currentWorldPosition.X * -1 > (ParentScene.mapSize.Value.X - (ScreenSize.X / _currentZoom / 2)))
+                    _currentWorldPosition.X = (ParentScene.mapSize.Value.X - (ScreenSize.X / _currentZoom / 2)) * -1;
             }
 
             // Y
-            if (ScreenSize.Y > Scene.mapSize.Value.Y * _currentZoom)
-                _currentWorldPosition.Y = Scene.mapSize.Value.Y / 2 * -1;
+            if (ScreenSize.Y > ParentScene.mapSize.Value.Y * _currentZoom)
+                _currentWorldPosition.Y = ParentScene.mapSize.Value.Y / 2 * -1;
             // else ensure no off-world is seen
             else
             {
@@ -208,8 +211,8 @@ public class Camera
                 if (_currentWorldPosition.Y * -1 < ScreenSize.Y / _currentZoom / 2)
                     _currentWorldPosition.Y = ScreenSize.Y / _currentZoom / 2 * -1;
                 // right
-                if (_currentWorldPosition.Y * -1 > (Scene.mapSize.Value.Y - (ScreenSize.Y / _currentZoom / 2)))
-                    _currentWorldPosition.Y = (Scene.mapSize.Value.Y - (ScreenSize.Y / _currentZoom / 2)) * -1;
+                if (_currentWorldPosition.Y * -1 > (ParentScene.mapSize.Value.Y - (ScreenSize.Y / _currentZoom / 2)))
+                    _currentWorldPosition.Y = (ParentScene.mapSize.Value.Y - (ScreenSize.Y / _currentZoom / 2)) * -1;
             }
 
         }
@@ -329,6 +332,11 @@ public class Camera
     public Vector2 GetWorldPosition()
     {
         return WorldPosition * -1;
+    }
+
+    public void Draw()
+    {
+        
     }
 
 }

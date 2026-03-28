@@ -73,9 +73,9 @@ public class PhysicsSystem : System
 
             // 1. Check Scene Colliders (Static list in Scene.cs)
             // Note: Using 'sceneColliders' as defined in your uploaded Scene.cs
-            if (scene.sceneColliders != null)
+            if (scene.SceneColliders != null)
             {
-                foreach (var sc in scene.sceneColliders)
+                foreach (var sc in scene.SceneColliders)
                 {
                     MilkRectangleF obsBox = new MilkRectangleF(sc.Position.X, sc.Position.Y, sc.Size.X, sc.Size.Y);
                     float t = SweptAABB(playerBox, obsBox, moveAmount, out Vector2 normal);

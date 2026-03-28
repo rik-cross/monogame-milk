@@ -172,7 +172,7 @@ public class InventoryComponent : Component
     /// <summary>
     /// Specifies a method used to override the default Draw() method.
     /// </summary>
-    public Action<InventoryComponent>? CustomDrawMethod;
+    public Action<Entity>? CustomDrawMethod;
 
     private bool _visible;
     /// <summary>
@@ -255,7 +255,7 @@ public class InventoryComponent : Component
         Color? secondaryColor = null,
         Color? secondaryColorInactive = null,
         SpriteFont? font = null,
-        Action<InventoryComponent>? customDrawMethod = null,
+        Action<Entity>? customDrawMethod = null,
         bool visible = true,
         bool active = true,
         Dictionary<Keys, Action>? inputActions = null
