@@ -31,7 +31,7 @@ public class TimedAction : ISceneParent, INameable, IUpdateable
     /// </summary>
     internal readonly Action? Action;
 
-        private string? _name;
+    private string? _name;
     /// <summary>
     /// The name of the timed action, unique to a scene.
     /// Names are stored trimmed and in lowercase.
@@ -48,6 +48,9 @@ public class TimedAction : ISceneParent, INameable, IUpdateable
                 _name = value.Trim().ToLower();
         }
     }
+
+    // Finished flag, set to true once the action is executed.
+    public bool Finished;
 
     /// <summary>
     /// Create a new timed action.
@@ -66,18 +69,16 @@ public class TimedAction : ISceneParent, INameable, IUpdateable
         ElapsedTime = elapsedTime;
         Action = action;
         Name = name;
-        StartTime = startTimerFromNow == true ? (float)Milk.TotalGameTime : 0; 
-    }
-
-    internal void Execute()
-    {
-        if (Action != null)
-            Action();
+        StartTime = startTimerFromNow == true ? (float)Milk.GameTime.TotalGameTime.Seconds : 0;
+        Finished = false;
     }
 
     public void Update(GameTime gameTime)
     {
-        
+        if (gameTime.TotalGameTime.TotalSeconds - StartTime >= ElapsedTime) {
+            Action?.Invoke();
+            Finished = true;
+        }
     }
 
 }

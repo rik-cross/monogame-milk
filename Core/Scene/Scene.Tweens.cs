@@ -47,6 +47,18 @@ public abstract partial class Scene
     /// Iterates over all elements and runs their `Update()` method.
     /// </summary>
     /// <param name="gameTime">The MonoGame GameTime object.</param>
-    public void UpdateTweens(GameTime gameTime) => UpdateCollection<Tween>(Tweens, gameTime);
+    public void UpdateTweens(GameTime gameTime)
+    {
+        // Call the update method on each TimedAction
+        UpdateCollection<Tween>(Tweens, gameTime);
+        
+        // Remove completed actions
+        for (int i = Tweens.Count - 1; i >= 0; i--) {
+            if (Tweens[i].Finished == true)
+            {
+                Tweens.RemoveAt(i);
+            }
+        }
+    }
 
 }

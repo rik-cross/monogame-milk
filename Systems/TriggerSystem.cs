@@ -48,7 +48,7 @@ public class TriggerSystem : milk.Core.System
         );
 
         // check against others
-        foreach (Entity otherEntity in scene.entities)
+        foreach (Entity otherEntity in scene.Entities)
         {
             if (
                 otherEntity != entity &&
@@ -154,7 +154,7 @@ public class TriggerSystem : milk.Core.System
         triggerComponent.collidedEntities.Clear();
 
         // Remove the entity from other scene entities trigger's collided components
-        foreach (Entity e in scene.entities)
+        foreach (Entity e in scene.Entities)
         {
             if (e.HasComponent<TriggerComponent>() && e != entity)
             {

@@ -47,6 +47,9 @@ public class CraftingSystem : milk.Core.System
 
         CraftingComponent craftingComponent = entity.GetComponent<CraftingComponent>()!;
 
+        if (craftingComponent.IsCrafting == true)
+            return ConsumeInput;
+
         // Process the specified input
         foreach (var input in craftingComponent.InputActions)
         {
@@ -104,7 +107,7 @@ public class CraftingSystem : milk.Core.System
                     canCraft = false;
                     Log.Add(
                         "Cannot craft " +
-                        craftingComponent.inventory[craftingComponent.SelectedSlot].Recipe!.EntityTypeCreated
+                        craftingComponent.inventory[craftingComponent.SlotNumberToCraft].Recipe!.EntityTypeCreated
                     );
                     break;
                 }
@@ -138,10 +141,10 @@ public class CraftingSystem : milk.Core.System
                 craftingComponent.CurrentCraftingDuration = 0;
                 craftingComponent.IsCrafting = false;
                 craftingComponent.OnCraftEnd?.Invoke();
-                craftingComponent.inventory[craftingComponent.SlotNumberToCraft].LastUsed = Milk.TotalGameTime;
+                craftingComponent.inventory[craftingComponent.SlotNumberToCraft].LastUsed = gameTime.TotalGameTime.Seconds;
                 Log.Add(
                     "Crafted " +
-                    craftingComponent.inventory[craftingComponent.SelectedSlot].Recipe!.EntityTypeCreated
+                    craftingComponent.inventory[craftingComponent.SlotNumberToCraft].Recipe!.EntityTypeCreated
                 );
 
                 // Create entity
@@ -149,7 +152,7 @@ public class CraftingSystem : milk.Core.System
                 {
                     Entity? e = Milk.Entities.CreateFromPrototype(
                         craftingComponent.RecipeToCraft.EntityTypeCreated,
-                        new Vector2(0,0)
+                        new Vector2(0,0) // TODO...
                     );
 
                     if (e != null)
@@ -190,7 +193,7 @@ public class CraftingSystem : milk.Core.System
     {
 
         // Iterate over all entities...
-        foreach (Entity entity in scene.entities)
+        foreach (Entity entity in scene.Entities)
         {
             // ... with an crafting component
             if (entity.HasComponent<CraftingComponent>() == true)

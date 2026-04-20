@@ -52,6 +52,7 @@ public class Text : SceneRenderable
     public Color Color { get; set; }
 
     private int _outlineWidth = 0;
+
     /// <summary>
     /// Text outline width.
     /// </summary>
@@ -111,6 +112,9 @@ public class Text : SceneRenderable
             );
     }
 
+    /// <summary>
+    /// Draws a Text object.
+    /// </summary>
     public override void Draw()
     {
 

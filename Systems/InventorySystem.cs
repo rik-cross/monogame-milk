@@ -86,7 +86,7 @@ public class InventorySystem : milk.Core.System
     {
 
         // Iterate over all entities...
-        foreach (Entity entity in scene.entities)
+        foreach (Entity entity in scene.Entities)
         {
             // ... with an inventory component
             if (entity.HasComponent<InventoryComponent>() == true)

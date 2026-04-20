@@ -51,7 +51,7 @@ public class Entity
     /// <summary>
     /// The type of entity.
     /// </summary>
-    public string? Type;
+    public string? Type { get; set; }
 
     //
     // Entity state
@@ -62,7 +62,7 @@ public class Entity
     /// <summary>
     /// The state of the entity in the previous frame.
     /// </summary>
-    public string PreviousState{ get; internal set; }
+    public string PreviousState { get; internal set; }
     
     /// <summary>
     /// The current state of the entity.
@@ -98,11 +98,6 @@ public class Entity
     /// Deletion happens at the end of each game loop.
     /// </summary>
     public bool Delete { get; set; }
-
-    // A bit array indicating which components
-    // the entity contains. The position of each
-    // bit in the array is the ID of the associated
-    // component 
 
     /// <summary>
     /// The bitMask of an Entity uses each component ID
@@ -142,11 +137,6 @@ public class Entity
     /// Sets the visibility of an entity.
     /// </summary>
     public bool Visible { get; set; }
-
-    /// <summary>
-    /// Entity timed actions
-    /// </summary>
-    internal List<TimedAction> timedActions = new List<TimedAction>();
 
     /// <summary>
     /// Create a new entity.
@@ -281,31 +271,5 @@ public class Entity
                 _tags.Remove(tag.ToLower());
         }
     }
-
-    /// <summary>
-    /// Adds a timed action to the entity, which is processed
-    /// whenever the entity is in an active scene
-    /// </summary>
-    /// <param name="elapsedTime">Elapsed game time.</param>
-    /// <param name="action">The action to perform.</param>
-    /// <param name="name">The name of the action, for optional removal</param>
-    public void AddTimedAction(float elapsedTime, Action action, string? name = null)
-    {
-        timedActions.Add(new TimedAction(elapsedTime, action, name));
-    }
-
-    /// <summary>
-    /// Remove a timed action by name, if one has been set.
-    /// </summary>
-    /// <param name="name">The name of the action to remove.</param>
-    public void RemoveTimedActionByName(string name)
-    {
-        for (int i = timedActions.Count - 1; i >= 0; i--)
-        {
-            if (timedActions[i].Name.ToLower() == name.ToLower())
-                timedActions.RemoveAt(i);
-        }
-    }
-
 
 }

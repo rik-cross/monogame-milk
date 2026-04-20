@@ -218,6 +218,8 @@ public class CraftingComponent : Component
     /// </summary>
     public Dictionary<Keys, Action> InputActions { get; set; } = new Dictionary<Keys, Action>();
     
+
+
     internal bool WaitingToCraft;
     public bool IsCrafting;
     public CraftingRecipe? RecipeToCraft;
@@ -225,6 +227,8 @@ public class CraftingComponent : Component
     public double CurrentCraftingDuration;
     public Action? OnCraftStart;
     public Action? OnCraftEnd;
+
+
 
     /// <summary>
     /// Creates a new inventory.

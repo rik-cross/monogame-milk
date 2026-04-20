@@ -9,48 +9,60 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace milk.Core;
 
-internal class LogItem
-{
-    internal string Text { get; private set; }
-    internal double Lifetime { get; set; }
-    internal bool Finished { get; set; }
-    internal float Alpha { get; set; }
-    internal LogItem(string message)
-    {
-        Text = message;
-        Lifetime = 0;
-        Finished = false;
-        Alpha = 1;
-    }
-}
-
 /// <summary>
 /// In-game logger
 /// </summary>
 public static class Log
 {
     private static List<LogItem> _logItems;
-    private static SpriteFont _font;
-    private static Color _color;
-    private static Vector2 _position;
-    private static double _duration;
-    private static double _fadeOutTime;
+
+    /// <summary>
+    /// Display font.
+    /// </summary>
+    public static SpriteFont Font;
+
+    /// <summary>
+    /// Text colour.
+    /// </summary>
+    public static Color Color;
+
+    /// <summary>
+    /// The (x, y) screen position of the top log item.
+    /// </summary>
+    public static Vector2 Position;
+
+    /// <summary>
+    /// The time (in seconds) to display each log item.
+    /// </summary>
+    public static double Duration;
+
+    /// <summary>
+    /// The time (in seconds) for log items to fade out.
+    /// </summary>
+    public static double FadeOutTime;
 
     static Log()
     {
         _logItems = new List<LogItem>();
-        _color = Color.White;
-        _position = Vector2.Zero;
-        _duration = 3;
-        _fadeOutTime = 0.5;
+        Color = Color.White;
+        Position = Vector2.Zero;
+        Duration = 3;
+        FadeOutTime = 0.5;
     }
 
-    internal static void Init(SpriteFont? font = null, Color? color = null, Vector2? position = null, float duration = 3.0f)
+    internal static void Init(
+        SpriteFont? font = null,
+        Color? color = null,
+        Vector2? position = null,
+        float duration = 3.0f,
+        float fadeOutTime = 0.5f
+    )
     {
-        _font = font ?? EngineGlobals.game._engineResources.FontSmall;
-        _color = color ?? Color.White;
-        _position = position ?? new Vector2(20, Milk.Size.Y / 2);
-        _duration = duration;
+        Font = font ?? EngineGlobals.game._engineResources.FontSmall;
+        Color = color ?? Color.White;
+        Position = position ?? new Vector2(20, Milk.Size.Y / 2);
+        Duration = duration;
+        FadeOutTime = fadeOutTime;
     }
 
     /// <summary>
@@ -76,13 +88,13 @@ public static class Log
             {
                 if (logItem.Finished == false)
                 {
-                    if (logItem.Lifetime >= _duration)
+                    if (logItem.Lifetime >= Duration)
                         logItem.Finished = true;
                     else
                         logItem.Lifetime += gameTime.ElapsedGameTime.TotalSeconds;
                 }
                 else
-                    logItem.Alpha -= (float)(gameTime.ElapsedGameTime.TotalSeconds / _fadeOutTime);
+                    logItem.Alpha -= (float)(gameTime.ElapsedGameTime.TotalSeconds / FadeOutTime);
             }
         }
 
@@ -91,18 +103,19 @@ public static class Log
     internal static void Draw()
     {
         // Ensure we don't crash if Draw is called before Init
-        if (_font == null) _font = EngineGlobals.game._engineResources.FontSmall;
+        if (Font == null)
+            Font = EngineGlobals.game._engineResources.FontSmall;
 
         float y = 0;
         foreach(LogItem logItem in _logItems)
         {
             Milk.Graphics.DrawString(
-                _font,
+                Font,
                 logItem.Text,
-                _position + new Vector2(0, y),
-                _color * logItem.Alpha
+                Position + new Vector2(0, y),
+                Color * logItem.Alpha
             );
-            y += _font.MeasureString(logItem.Text).Y;
+            y += Font.MeasureString(logItem.Text).Y;
         }
     }
     

@@ -71,7 +71,7 @@ public class CollectionSystem : milk.Core.System
             (int)entityTrigger.Size.Y
         );
 
-        foreach(Entity entityToCollect in scene.entities)
+        foreach(Entity entityToCollect in scene.Entities)
         {
             if (
                 entityToCollect != entity &&

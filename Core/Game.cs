@@ -43,7 +43,7 @@ public class Game : Microsoft.Xna.Framework.Game
     internal GraphicsDevice graphicsDevice;
     public SpriteBatch spriteBatch;
     public EngineResourceManager _engineResources;
-    public double TotalGameTime { get; private set; }
+    public GameTime GameTime { get; private set; }
 
     // Manager instances
     internal EntityManager entityManager;
@@ -102,7 +102,7 @@ public class Game : Microsoft.Xna.Framework.Game
         _showSplash = showSplash;
         Debug = debug;
 
-        TotalGameTime = 0;
+        GameTime = new GameTime();
 
     }
 
@@ -199,7 +199,7 @@ public class Game : Microsoft.Xna.Framework.Game
     /// <param name="gameTime"></param>
     protected override void Update(GameTime gameTime)
     {
-        TotalGameTime = gameTime.TotalGameTime.TotalSeconds;
+        GameTime = gameTime;
         
         inputManager.Update();
         EngineGlobals.game.sceneManager.Input(gameTime);

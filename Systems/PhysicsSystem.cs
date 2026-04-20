@@ -27,7 +27,7 @@ public class PhysicsSystem : System
         float deltaTime = (float)gameTime.ElapsedGameTime.TotalSeconds;
 
         // Follows the Milk pattern of filtering entities with required components
-        var entities = scene.entities.Where(e => e.HasComponent<TransformComponent>() && e.HasComponent<PhysicsComponent>());
+        var entities = scene.Entities.Where(e => e.HasComponent<TransformComponent>() && e.HasComponent<PhysicsComponent>());
 
         foreach (var entity in entities)
         {
@@ -90,7 +90,7 @@ public class PhysicsSystem : System
             }
 
             // 2. Check Entity Colliders (Dynamic entities in scene.entities)
-            foreach (var obstacle in scene.entities.Where(e => e != entity && e.HasComponent<ColliderComponent>()))
+            foreach (var obstacle in scene.Entities.Where(e => e != entity && e.HasComponent<ColliderComponent>()))
             {
                 var obsTransform = obstacle.GetComponent<TransformComponent>();
                 var obsCollider = obstacle.GetComponent<ColliderComponent>();

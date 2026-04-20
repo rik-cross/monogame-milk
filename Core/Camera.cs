@@ -22,6 +22,9 @@ public class Camera : ISceneParent, INameable, IVisible, IUpdateable, IDrawable
     /// </summary>
     public Scene? ParentScene { get; set; }
 
+    /// <summary>
+    /// The visibility of the camera.
+    /// </summary>
     public bool Visible { get; set; }
 
     private string? _name;
@@ -151,7 +154,7 @@ public class Camera : ISceneParent, INameable, IVisible, IUpdateable, IDrawable
     {
 
         if (TrackedEntity != null && ParentScene != null &&
-            ParentScene.entities.Contains(TrackedEntity) &&
+            ParentScene.Entities.Contains(TrackedEntity) &&
             TrackedEntity.HasComponent<TransformComponent>())
         {
             TransformComponent transformComponent = TrackedEntity.GetComponent<TransformComponent>()!;
@@ -281,6 +284,12 @@ public class Camera : ISceneParent, INameable, IVisible, IUpdateable, IDrawable
 
     }
 
+    /// <summary>
+    /// Returns the centre position of the camera.
+    /// </summary>
+    /// <returns>The (x, y) camera center.</returns>
+    public Vector2 GetScreenCenter() => ScreenPosition + (ScreenSize / 2);
+
     internal Viewport GetViewport()
     {
         return new Viewport(
@@ -323,6 +332,56 @@ public class Camera : ISceneParent, INameable, IVisible, IUpdateable, IDrawable
             UpdateClamp();
         }
 
+    }
+
+    /// <summary>
+    /// Converts a camera screen position to a world position.
+    /// </summary>
+    /// <param name="position">The position to convert.</param>
+    /// <returns>The (x, y) world position.</returns>
+    public Vector2 ScreenToWorldPosition(Vector2 position)
+    {
+        Vector2 distanceFromscreenCenter = new Vector2(
+            ScreenPosition.X + ScreenSize.X / 2 - position.X,
+            ScreenPosition.Y + ScreenSize.Y / 2 - position.Y
+        );
+        Vector2 worldPosition = _currentWorldPosition + (distanceFromscreenCenter / _currentZoom);
+        return worldPosition * -1;
+    }
+
+    /// <summary>
+    /// Converts a world position to a screen position.
+    /// </summary>
+    /// <param name="position">The positino to convert.</param>
+    /// <returns>The (x. y) screen position.</returns>
+    public Vector2 WorldToScreenPosition(Vector2 position)
+    {
+        Vector2 relativeToCamera = (position - _currentWorldPosition * -1) * _currentZoom;
+        Vector2 screenPosition = new Vector2(
+            relativeToCamera.X + ScreenSize.X / 2 - ScreenPosition.X,
+            relativeToCamera.Y + ScreenSize.Y / 2 - ScreenPosition.Y
+        );
+        return screenPosition;   
+    }
+
+    /// <summary>
+    /// Returns true if the world position specified is visible
+    /// (i.e. it is within the camera bounds).
+    /// </summary>
+    /// <param name="position">The world position to check.</param>
+    /// <returns>True if the position is within the screen bounds.</returns>
+    public bool IsWorldPositionVisible(Vector2 position)
+    {
+        Vector2 screenPosition = WorldToScreenPosition(position);
+        if (
+            screenPosition.X < ScreenPosition.X ||
+            screenPosition.X > ScreenPosition.X + ScreenSize.X ||
+            screenPosition.Y < ScreenPosition.Y ||
+            screenPosition.Y > ScreenPosition.Y + ScreenSize.Y
+        )
+            return false;
+        else
+            return true;
     }
 
     /// <summary>

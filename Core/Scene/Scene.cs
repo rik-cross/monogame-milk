@@ -6,10 +6,12 @@
 
 using System.Collections;
 using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Graphics;
 using MonoGame.Extended;
 using MonoGame.Extended.Tiled;
 using MonoGame.Extended.Tiled.Renderers;
+using milk.Components;
 using milk.UI;
 
 namespace milk.Core;
@@ -51,9 +53,18 @@ public abstract partial class Scene : MilkMethods
     /// The (x,y) center point of the scene.
     /// </summary>
     public readonly Vector2 Middle;
-    public float elapsedTime;
-    internal List<Entity> entities;
-    internal List<System> systems;
+    public float ElapsedTime;
+
+    /// <summary>
+    /// Scene entities.
+    /// </summary>
+    public List<Entity> Entities;
+    
+    /// <summary>
+    /// Scene systems.
+    /// </summary>
+    public List<System> systems;
+    
     private UIMenu UIMenu;
 
     /// <summary>
@@ -113,54 +124,97 @@ public abstract partial class Scene : MilkMethods
             if (value != null)
             {
                 mapSize = new Vector2(_map.Width * _map.TileWidth, _map.Height * _map.TileHeight);
-                _mapRenderer = new TiledMapRenderer(_graphicsDevice, _map);
+                if (_graphicsDevice != null)
+                    _mapRenderer = new TiledMapRenderer(_graphicsDevice, _map);
             } else
             {
                 mapSize = Vector2.Zero;
                 _mapRenderer = null;
             }
 
-            TiledMapObjectLayer collisionLayer = _map.GetLayer<TiledMapObjectLayer>("collisions");
-            if (collisionLayer != null) {
-                RemoveSceneCollider();
-                foreach (TiledMapObject collisionObject in collisionLayer.Objects)
-                {
-                    AddSceneCollider(
-                        new SceneCollider(
-                            position: new Vector2(collisionObject.Position.X, collisionObject.Position.Y),
-                            size: new Vector2(collisionObject.Size.Width, collisionObject.Size.Height),
-                            name: collisionObject.Name  
-                        )
-                    );
+            //
+            // Collisions
+            //
+
+            if (value != null && _graphicsDevice != null)
+            {
+
+                TiledMapObjectLayer collisionLayer = _map.GetLayer<TiledMapObjectLayer>("collisions");
+                if (collisionLayer != null) {
+                    RemoveSceneCollider();
+                    foreach (TiledMapObject collisionObject in collisionLayer.Objects)
+                    {
+                        AddSceneCollider(
+                            new SceneCollider(
+                                position: new Vector2(collisionObject.Position.X, collisionObject.Position.Y),
+                                size: new Vector2(collisionObject.Size.Width, collisionObject.Size.Height),
+                                name: collisionObject.Name  
+                            )
+                        );
+                    }
                 }
+            
+            }
+
+            //
+            // Entities
+            //
+
+            if (value != null && _graphicsDevice != null)
+            {
+
+                var entityLayer = _map.GetLayer<TiledMapObjectLayer>("entities");
+                if (entityLayer != null)
+                {
+                    foreach (var obj in entityLayer.Objects)
+                    {
+                        Entity? e = Milk.Entities.CreateFromPrototype(obj.Name, obj.Position);
+
+                        if (e != null) {
+
+                            if (e.HasComponent<TransformComponent>()) {
+                                TransformComponent tc = e.GetComponent<TransformComponent>()!;
+                                tc.X -= tc.Width / 2;
+                                tc.Y -= tc.Height;
+                            }
+
+                            AddEntity(e);
+
+                        }
+            
+                    }
+                }
+
             }
 
         }
     }
 
     /// <summary>
-    /// The scene's velocity, which is applied to all entities.
+    /// The scene's velocity, which is applied to all entities
+    /// with a PhysicsComponent.
     /// </summary>
     public Vector2 Velocity = Vector2.Zero;
 
     /// <summary>
-    /// The scene's acceleration, which is applied to all entities.
+    /// The scene's acceleration, which is applied to all entities
+    /// with a PhysicsComponent.
     /// </summary>
     public Vector2 Acceleration = Vector2.Zero;
 
     /// <summary>
     /// A scene is a bit like a game 'screen' and holds
     /// entities and systems, along with other functionalilty
-    /// such as cameras. Systems in a scene act on scene entities
-    /// with the required set of components present.
+    /// such as cameras and a map. Systems in a scene act on
+    /// scene entities with the required set of components present.
     /// </summary>
     public Scene()
     {
 
         Size = game.Size;
         Middle = new Vector2(Size.X / 2, Size.Y / 2);
-        elapsedTime = 0f;
-        entities = new List<Entity>();
+        ElapsedTime = 0f;
+        Entities = new List<Entity>();
         systems = new List<System>();
         milk.Core.Milk.Scenes.allScenes.Add(this);
 
@@ -176,47 +230,26 @@ public abstract partial class Scene : MilkMethods
     internal void _Update(GameTime gameTime, List<Scene> scenes)
     {
 
-        // update scene below
+        // Update scene below
         Scene? sceneBelow = GetSceneBelow(scenes);
         if (sceneBelow!= null && UpdateSceneBelow == true)
             sceneBelow._Update(gameTime, scenes);
 
-        elapsedTime += (float)gameTime.ElapsedGameTime.TotalSeconds;
+        // Update the scene-specific elapsed time
+        ElapsedTime += (float)gameTime.ElapsedGameTime.TotalSeconds;
 
-        foreach (Entity e in entities)
-            e.PreviousState = e.State;
+        // Update entity states
+        foreach (Entity entity in Entities)
+            entity.PreviousState = entity.State;
 
-        // Process the scene timed actions
-        for (int i = TimedActions.Count - 1; i >= 0; i--)
-        {
-            if (elapsedTime - TimedActions[i].StartTime >= TimedActions[i].ElapsedTime)
-            {
-                TimedActions[i].Execute();
-                TimedActions.RemoveAt(i);
-            }
-        }
-
-        // Process entity timed actions
-        foreach (Entity ee in entities)
-        {
-            for (int i = ee.timedActions.Count - 1; i >= 0; i--)
-            {
-                if (elapsedTime - ee.timedActions[i].StartTime >= ee.timedActions[i].ElapsedTime )
-                {
-                    ee.timedActions[i].Execute();
-                    ee.timedActions.RemoveAt(i);
-                }
-            }
-        }
-
-        // high-level update
+        // High-level system updates
         foreach (System system in systems.ToList())
             system.Update(gameTime, this);
 
-        // entity-specific update
+        // Entity-specific update
         foreach (System system in systems.ToList())
         {
-            foreach (Entity entity in entities.ToList())
+            foreach (Entity entity in Entities.ToList())
             {
                 BitArray temp = (BitArray)system.RequiredComponentBitMask.Clone();
                 temp.And(entity.bitMask);
@@ -225,8 +258,13 @@ public abstract partial class Scene : MilkMethods
             }
         }
 
+        // Update scene collections
+        UpdateTimedActions(gameTime);
         UpdateCameras(gameTime);
         UpdateMarkers(gameTime);
+        UpdateTweens(gameTime);
+
+        // Call the user-defined scene Update method
         Update(gameTime);
 
         // Remove entities
@@ -237,45 +275,50 @@ public abstract partial class Scene : MilkMethods
 
         // Sort entities
         if (EntitySortMethod != null)
-            entities.Sort(EntitySortMethod);
-
-        UpdateTweens(gameTime);
-        for (int i = Tweens.Count - 1; i >= 0; i--)
-        {
-            if (Tweens[i].Finished)
-                Tweens.RemoveAt(i);
-        }
+            Entities.Sort(EntitySortMethod);
 
     }
 
     internal void _Input(GameTime gameTime, List<Scene> scenes)
     {
 
-        // Process the scene below's input
+        // Process the scene below's input, if required
         Scene? sceneBelow = GetSceneBelow(scenes);
         if (sceneBelow != null && InputSceneBelow == true)
             sceneBelow._Input(gameTime, scenes);
 
-        // high-level input
+        // Run the high-level Input() method for each of the scene's active systems
         foreach (System system in systems.ToList())
             system.Input(gameTime, this);
 
-        // entity-specific update
+        //
+        // Call InputEntity() for each entity for each system.
+        // If a system 'consumes' an entity, the entity is added
+        // to the consumedEntities list, so that subsequent systems
+        // don't run their InputEntity() method.
+        //
 
+        // A list of entities that have had their input consumed
         HashSet<Entity> consumedEntities = new HashSet<Entity>();
 
+        // Iterate over all entities in each system
         foreach (System system in systems.ToList())
         {
-            foreach (Entity entity in entities.ToList())
+            foreach (Entity entity in Entities.ToList())
             {
+                // Compare bitArrays, and only run InputEntity() for those
+                // entities with all of the required components
                 BitArray temp = (BitArray)system.RequiredComponentBitMask.Clone();
                 temp.And(entity.bitMask);
                 if (Utilities.CompareBitArrays(temp, system.RequiredComponentBitMask) == true)
                 {
+                    // Don't run if the entities input has already been consumed
                     if (consumedEntities.Contains(entity))
                         continue;    
                     else
                     {
+                        // Run InputEntity(), and add the entity to the consumedEntities
+                        // list if the system has consumed the input
                         bool consume = system.InputEntity(gameTime, this, entity);
                         if (consume == true)
                             consumedEntities.Add(entity);
@@ -285,7 +328,7 @@ public abstract partial class Scene : MilkMethods
             }
         }
 
-        // Call the user-defined Input method
+        // Call the user-defined scene Input method
         Input(gameTime);
 
         // Update the menu (only if there's no active scene transition)
@@ -334,14 +377,13 @@ public abstract partial class Scene : MilkMethods
             milk.Core.Milk.Graphics.Begin(samplerState: SamplerState.PointClamp, transformMatrix: camera.GetTransformMatrix());
 
             // Draw the map layers marked as 'belowEntities: true'
-            //DrawMap(camera: camera, property: "belowEntities", value: "true");
             DrawMapLayers(camera, GetFilteredMapLayers(includeAbove: false));
 
             // Call DrawEntity() for those systems with DrawAboveMap == false
             foreach (System system in systems)
             {
                 if (system.DrawAboveMap == false) {
-                    foreach (Entity entity in entities)
+                    foreach (Entity entity in Entities)
                     {
                         BitArray temp = (BitArray)system.RequiredComponentBitMask.Clone();
                         temp.And(entity.bitMask);
@@ -355,7 +397,6 @@ public abstract partial class Scene : MilkMethods
 
             // Draw the map layers marked as 'belowEntities: true'
             milk.Core.Milk.Graphics.Begin(samplerState: SamplerState.PointClamp, transformMatrix: camera.GetTransformMatrix());
-            //DrawMap(camera, "belowEntities", "false");
             DrawMapLayers(camera, GetFilteredMapLayers(includeBelow: false));
             milk.Core.Milk.Graphics.End();
 
@@ -365,7 +406,7 @@ public abstract partial class Scene : MilkMethods
             foreach (System system in systems)
             {
                 if (system.DrawAboveMap == true) {
-                    foreach (Entity entity in entities)
+                    foreach (Entity entity in Entities)
                     {
                         BitArray temp = (BitArray)system.RequiredComponentBitMask.Clone();
                         temp.And(entity.bitMask);
@@ -424,6 +465,11 @@ public abstract partial class Scene : MilkMethods
         foreach (System system in systems)
             system.Draw(this);
         
+        //
+        // Markers
+        // TODO -- add to camera update?
+        //
+
         foreach (Marker marker in Markers)
         {
             if (marker.Visible == false)
@@ -448,38 +494,21 @@ public abstract partial class Scene : MilkMethods
                 if (isExcluded)
                     continue;
 
-                Vector2 cameraWorldCenter = camera._currentWorldPosition * -1;
-                Vector2 cameraScreenCenter = camera.ScreenPosition + (camera.ScreenSize / 2);
-                Vector2 cameraSize = camera.ScreenSize;
+                Vector2 markerScreenPosition = camera.WorldToScreenPosition(marker.TargetPosition);
 
-                double x = 
-                    (marker.TargetPosition.X * camera._currentZoom) - 
-                    (cameraWorldCenter.X * camera._currentZoom) +
-                    cameraScreenCenter.X;
-
-                double y =
-                    (marker.TargetPosition.Y * camera._currentZoom) -
-                    (cameraWorldCenter.Y * camera._currentZoom) +
-                    cameraScreenCenter.Y;
-
-                // Clamp values to screen
-                double nx = Math.Clamp(x, camera.ScreenPosition.X + marker.CameraBorder, camera.ScreenPosition.X + camera.ScreenSize.X - marker.CameraBorder);
-                double ny = Math.Clamp(y, camera.ScreenPosition.Y + marker.CameraBorder, camera.ScreenPosition.Y + camera.ScreenSize.Y - marker.CameraBorder);
-
-                // If the value hasn't been clamped, then
-                // the marker position is within the camera viewport
-                if ( (int)nx == (int)x && (int)ny == (int)y )
+                // If the marker position is within the camera viewport
+                // then show the marker in the target position, with some bounce
+                if (camera.IsWorldPositionVisible(marker.TargetPosition) == true)
                 {
 
                     // Point downwards
-
                     Milk.Graphics.Draw(
                         marker.Texture,
                         new Rectangle(
-                            (int)(nx),
-                            (int)(ny + Math.Sin(elapsedTime * marker.BounceFrequency * MathHelper.TwoPi) * marker.BounceAmplitude),
-                            (int)(marker.Size.X),
-                            (int)(marker.Size.Y)
+                            (int)markerScreenPosition.X,
+                            (int)(markerScreenPosition.Y + Math.Sin(ElapsedTime * marker.BounceFrequency * MathHelper.TwoPi) * marker.BounceAmplitude),
+                            (int)marker.Size.X,
+                            (int)marker.Size.Y
                         ),
                         null,
                         Color.White,
@@ -490,24 +519,42 @@ public abstract partial class Scene : MilkMethods
                     );
 
                 }
+                // Otherwise, if the marker is not within the camera viewport
+                // then clamp the marker to the edge of the camera and point
+                // towards the marker's target position.
                 else
                 {
-                    
+                    Vector2 clampedScreenPosition = new Vector2(
+                        
+                        Math.Clamp(
+                            markerScreenPosition.X,
+                            camera.ScreenPosition.X + marker.CameraBorder,
+                            camera.ScreenPosition.X + camera.ScreenSize.X - marker.CameraBorder
+                        ),
+
+                        Math.Clamp(
+                            markerScreenPosition.Y,
+                            camera.ScreenPosition.Y + marker.CameraBorder,
+                            camera.ScreenPosition.Y + camera.ScreenSize.Y - marker.CameraBorder
+                        )
+
+                    );
+
                     Vector2 direction = 
-                        new Vector2((float)x, (float)y) - 
-                        new Vector2((float)cameraScreenCenter.X, (float)cameraScreenCenter.Y);
+                        markerScreenPosition - 
+                        camera.GetScreenCenter();
 
                     Milk.Graphics.Draw(
                         marker.Texture,
                         new Rectangle(
-                            (int)(nx),
-                            (int)(ny),
-                            (int)(marker.Size.X),
-                            (int)(marker.Size.Y)
+                            (int)clampedScreenPosition.X,
+                            (int)clampedScreenPosition.Y,
+                            (int)marker.Size.X,
+                            (int)marker.Size.Y
                         ),
                         null,
                         Color.White,
-                        (float)(Math.Atan2(direction.Y, direction.X)),
+                        (float)Math.Atan2(direction.Y, direction.X),
                         new Vector2(marker.Texture.Width, marker.Texture.Height / 2),
                         SpriteEffects.None,
                         0
@@ -515,38 +562,30 @@ public abstract partial class Scene : MilkMethods
 
                     if (marker.Text != null)
                     {
-                        // 1. Get the direction from the screen center to the marker
-                        Vector2 screenCenter = camera.ScreenPosition + (camera.ScreenSize / 2);
-                        Vector2 toMarker = new Vector2((float)nx, (float)ny) - screenCenter;
+                        Vector2 toMarker = clampedScreenPosition - camera.GetScreenCenter();
 
-                        // 2. Normalize to get a consistent push distance
-                        if (toMarker != Vector2.Zero) toMarker.Normalize();
+                        if (toMarker != Vector2.Zero)
+                            toMarker.Normalize();
 
-                        // 3. Initial text position (pushing back towards center by 45 pixels)
-                        Vector2 textPos = new Vector2((float)nx, (float)ny) - (toMarker * 45f);
+                        Vector2 textPos = clampedScreenPosition - (toMarker * 45f);
 
-                        // 4. Setup Font and Measurements
-                        string label = marker.Text;
                         SpriteFont font = EngineGlobals.game._engineResources.FontSmall;
-                        Vector2 textSize = font.MeasureString(label);
+                        Vector2 textSize = font.MeasureString(marker.Text);
                         Vector2 textOrigin = textSize / 2;
 
-                        // 5. Clamp the text position so the EDGES of the text stay 20px from screen boundaries
-                        // We calculate the min/max allowed X based on half the text width
+                        // Calculate min / max text position for clamping
                         float minX = camera.ScreenPosition.X + (textSize.X / 2) + marker.CameraBorder;
                         float maxX = camera.ScreenPosition.X + camera.ScreenSize.X - (textSize.X / 2) - marker.CameraBorder;
-
-                        // We calculate the min/max allowed Y based on half the text height
                         float minY = camera.ScreenPosition.Y + (textSize.Y / 2) + marker.CameraBorder;
                         float maxY = camera.ScreenPosition.Y + camera.ScreenSize.Y - (textSize.Y / 2) - marker.CameraBorder;
 
+                        // Clamp the text position
                         textPos.X = Math.Clamp(textPos.X, minX, maxX);
                         textPos.Y = Math.Clamp(textPos.Y, minY, maxY);
 
-                        // 6. Draw the string
                         Milk.Graphics.DrawString(
                             font,
-                            label,
+                            marker.Text,
                             textPos,
                             Color.White,
                             0f,
@@ -565,9 +604,43 @@ public abstract partial class Scene : MilkMethods
         Draw();
         UIMenu.Draw();
 
-        milk.Core.Milk.Graphics.End();
+        if (Milk.Debug == true)
+        {
+            MouseState mouseState = Microsoft.Xna.Framework.Input.Mouse.GetState();
+            Vector2 mousePosition = new Vector2(mouseState.X, mouseState.Y);
+            milk.Core.Milk.Graphics.DrawCircle(mousePosition, 10, 10, Color.Blue);
 
-        
+            milk.Core.Milk.Graphics.DrawString(
+                milk.Core.Milk.Assets.FontSmall,
+                "Scene pos: " + mousePosition.X + ", " + mousePosition.Y,
+                mousePosition + new Vector2(10, 0),
+                Color.White
+            );
+
+            foreach (Camera camera in Cameras)
+            {
+                Rectangle r = new Rectangle(
+                    (int)camera.ScreenPosition.X,
+                    (int)camera.ScreenPosition.Y,
+                    (int)camera.ScreenSize.X,
+                    (int)camera.ScreenSize.Y
+                );
+                if (r.Contains(new Point((int)mousePosition.X, (int)mousePosition.Y)))
+                {
+                    Vector2 worldPos = camera.ScreenToWorldPosition(mousePosition);
+                    milk.Core.Milk.Graphics.DrawString(
+                        milk.Core.Milk.Assets.FontSmall,
+                        "World pos: " + (int)worldPos.X + ", " + (int)worldPos.Y,
+                        mousePosition + new Vector2(10, milk.Core.Milk.Assets.FontSmall.MeasureString("X").Y),
+                        Color.White
+                    );
+                    break;
+                }
+            }
+
+        }
+
+        milk.Core.Milk.Graphics.End();
 
     }
 
@@ -582,7 +655,7 @@ public abstract partial class Scene : MilkMethods
     /// <returns>A Boolean indicating the presence of the entity in the scene.</returns>
     public bool HasEntity(Entity entity)
     {
-        return entities.Contains(entity);
+        return Entities.Contains(entity);
     }
 
     /// <summary>
@@ -593,10 +666,10 @@ public abstract partial class Scene : MilkMethods
     {
 
         // only allow each entity to be added once
-        if (entities.Contains(entity) == false)
+        if (Entities.Contains(entity) == false)
         {
 
-            entities.Add(entity);
+            Entities.Add(entity);
 
             // call OnEntityAddedToScene for all relevant systems in the scene
             foreach (System system in systems)
@@ -664,7 +737,7 @@ public abstract partial class Scene : MilkMethods
     /// </summary>
     public void RemoveAllEntities()
     {
-        foreach (Entity entity in entities)
+        foreach (Entity entity in Entities)
             RemoveEntity(entity);
     }
 
@@ -676,7 +749,7 @@ public abstract partial class Scene : MilkMethods
     {
         foreach (Entity entity in entitiesToRemoveFromScene)
         {
-            if (entities.Contains(entity))
+            if (Entities.Contains(entity))
             {
 
                 // OnEntityRemovedFromScene
@@ -701,21 +774,11 @@ public abstract partial class Scene : MilkMethods
                 }
 
                 OnEntityRemoved(entity);
-                entities.Remove(entity);
+                Entities.Remove(entity);
 
             }
         }
         entitiesToRemoveFromScene.Clear();
-    }
-
-
-    /// <summary>
-    /// Returns a list of all entities in the scene.
-    /// </summary>
-    /// <returns>A list of scene entities.</returns>
-    public List<Entity> GetAllEntities()
-    {
-        return entities;
     }
 
     /// <summary>
@@ -726,7 +789,7 @@ public abstract partial class Scene : MilkMethods
     /// <returns>An entity if one is found, or null.</returns>
     public Entity? GetEntityByName(string name)
     {
-        return _entityManager.GetEntityByNameInList(entities, name);
+        return _entityManager.GetEntityByNameInList(Entities, name);
     }
 
     /// <summary>
@@ -736,7 +799,7 @@ public abstract partial class Scene : MilkMethods
     /// <returns>A list of all entities with all tags. This is always a list, and could be empty.</returns>
     public List<Entity> GetEntitiesByTag(params string[] tags)
     {
-        return _entityManager.GetEntitiesByTagInList(entities, tags);
+        return _entityManager.GetEntitiesByTagInList(Entities, tags);
     }
 
     /// <summary>
@@ -746,7 +809,7 @@ public abstract partial class Scene : MilkMethods
     /// <returns>A list of all entities of the specified type.</returns>
     public List<Entity> GetEntitiesByType(string type)
     {
-        return _entityManager.GetEntitiesByTypeInList(entities, type);
+        return _entityManager.GetEntitiesByTypeInList(Entities, type);
     }
 
     //
@@ -760,7 +823,7 @@ public abstract partial class Scene : MilkMethods
     /// <param name="name">The name of the entity to delete.</param>
     public void DeleteEntityByName(string name)
     {
-        foreach (Entity entity in entities)
+        foreach (Entity entity in Entities)
         {
             if (entity.Name != null && entity.Name.ToLower() == name.ToLower())
             {
@@ -778,7 +841,7 @@ public abstract partial class Scene : MilkMethods
     /// <param name="tags">One or more tags to</param>
     public void DeleteEntitiesByTag(params string[] tags)
     {
-        foreach (Entity entity in entities)
+        foreach (Entity entity in Entities)
         {
             if (entity.HasTag(tags))
                 entity.Delete = true;
@@ -792,7 +855,7 @@ public abstract partial class Scene : MilkMethods
     /// <param name="type">The entity type to remove.</param>
     public void DeleteEntitiesByType(string type)
     {
-        foreach (Entity entity in entities)
+        foreach (Entity entity in Entities)
         {
             if (entity.Type == type)
                 entity.Delete = true;

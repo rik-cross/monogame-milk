@@ -41,14 +41,14 @@ public class EntityManager
         // delete entity from all scenes
         foreach (Scene scene in _sceneManager.allScenes)
         {
-            for (int i = scene.entities.Count - 1; i >= 0; i--)
+            for (int i = scene.Entities.Count - 1; i >= 0; i--)
             {
-                if (scene.entities[i].Delete == true)
+                if (scene.Entities[i].Delete == true)
                 {
-                    Entity? e = scene.entities[i];
-                    _componentManager.RemoveAllComponentsFromEntity(scene.entities[i]);
+                    Entity? e = scene.Entities[i];
+                    _componentManager.RemoveAllComponentsFromEntity(scene.Entities[i]);
                     scene.OnEntityRemoved(e);
-                    scene.entities.RemoveAt(i);
+                    scene.Entities.RemoveAt(i);
 
                     // System.OnEntityRemovedFromScene
 

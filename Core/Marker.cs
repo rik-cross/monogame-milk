@@ -139,7 +139,16 @@ public class Marker : ISceneParent, INameable, IVisible, IUpdateable, IDrawable
         TextColor = textColor ?? Color.White;
         Texture = texture ?? EngineGlobals.game._engineResources.ImgPOIMarker;
         Size = size ?? new Vector2(Texture.Width, Texture.Height);
-        CamerasToExclude = camerasToExclude ?? new List<string>();
+    
+        CamerasToExclude = new List<string>();
+        if (camerasToExclude != null)
+        {
+            foreach (string s in camerasToExclude)
+            {
+                CamerasToExclude!.Append(s.Trim().ToLower());
+            }
+        }
+
         CameraBorder = cameraBorder;
         BounceFrequency = bounceFrequency;
         BounceAmplitude = bounceAmplitude;

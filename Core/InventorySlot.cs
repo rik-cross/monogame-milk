@@ -64,7 +64,7 @@ public class InventorySlot
         Items.Add(entity);
 
         // Set the last updated time and action
-        LastUpdated = Milk.TotalGameTime;
+        LastUpdated = Milk.GameTime.TotalGameTime.Seconds;
         LastUpdateType = SlotChangeType.Added;
 
         return true;
@@ -86,7 +86,7 @@ public class InventorySlot
         if (Items.Count == 0) Type = null;
         
         // Set the last updated time and action
-        LastUpdated = Milk.TotalGameTime;
+        LastUpdated = Milk.GameTime.TotalGameTime.Seconds;
         LastUpdateType = SlotChangeType.Removed;
         
         // Return the entity
